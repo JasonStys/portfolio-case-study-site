@@ -1,0 +1,13 @@
+<!-- File: 1200-by-630 social preview artwork for the engineering portfolio. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Jason Stys engineering portfolio</title>
+  <desc id="description">Evidence-first software, systems, artificial intelligence, data, cloud, web, and game technology.</desc>
+  <defs><pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse"><path d="M38 0H0V38" fill="none" stroke="#24414c" stroke-width="1"/></pattern></defs>
+  <rect width="1200" height="630" fill="#07151d"/><rect width="1200" height="630" fill="url(#grid)" opacity=".55"/>
+  <circle cx="1030" cy="95" r="225" fill="#78d6cd" opacity=".16"/><circle cx="1080" cy="570" r="190" fill="#f05d3e" opacity=".15"/>
+  <rect x="72" y="65" width="76" height="76" rx="38" fill="#f5f2e9"/><text x="110" y="114" text-anchor="middle" fill="#07151d" font-family="ui-monospace, monospace" font-size="24" font-weight="800">JS</text>
+  <text x="72" y="225" fill="#78d6cd" font-family="ui-monospace, monospace" font-size="22" letter-spacing="4">ENGINEERING PORTFOLIO</text>
+  <text x="72" y="324" fill="#f5f2e9" font-family="Georgia, serif" font-size="76">Systems that explain</text><text x="72" y="408" fill="#f5f2e9" font-family="Georgia, serif" font-size="76">why they work.</text>
+  <text x="72" y="492" fill="#c7d3d1" font-family="ui-sans-serif, sans-serif" font-size="25">Software · AI · Data · Cloud · Web · Game Technology</text>
+  <rect x="72" y="545" width="400" height="4" rx="2" fill="#f05d3e"/>
+</svg>

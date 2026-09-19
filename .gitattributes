@@ -1,0 +1,5 @@
+# File: Cross-platform line-ending and generated-file classification policy.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.woff2 binary

@@ -1,0 +1,12 @@
+# File: Generated, dependency, build, and browser-report exclusions for Prettier.
+node_modules
+dist
+.astro
+coverage
+playwright-report
+test-results
+.runtime
+docs/reports/generated
+docs/CODE_INDEX.md
+docs/FILE_CATALOG.md
+package-lock.json

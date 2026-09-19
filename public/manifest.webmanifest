@@ -1,0 +1,18 @@
+{
+  "name": "Jason Stys Engineering Portfolio",
+  "short_name": "Jason Stys",
+  "description": "Evidence-first software, systems, AI, data, cloud, web, and game-technology case studies.",
+  "start_url": "/portfolio-case-study-site/",
+  "scope": "/portfolio-case-study-site/",
+  "display": "browser",
+  "background_color": "#f5f2e9",
+  "theme_color": "#07151d",
+  "icons": [
+    {
+      "src": "/portfolio-case-study-site/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

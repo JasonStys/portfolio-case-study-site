@@ -1,0 +1,45 @@
+---
+/**
+ * @file Renders the skip link, portfolio identity, and primary navigation.
+ * Functions: active-link comparison.
+ * Variables: pathname and navigation items.
+ * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
+ */
+import { withBase } from "@/lib/url";
+
+const pathname = Astro.url.pathname;
+const navigation = [
+  { href: withBase(""), label: "Overview" },
+  { href: withBase("projects/"), label: "Projects" },
+  { href: withBase("about/"), label: "About" },
+] as const;
+---
+
+<a class="skip-link" href="#main-content">
+  Skip to main content
+</a>
+<header class="site-header" data-site-header>
+  <a class="identity" href={withBase("")} aria-label="Jason Stys engineering portfolio home">
+    <span class="identity-mark" aria-hidden="true">
+      JS
+    </span>
+    <span>
+      <strong>Jason Stys</strong>
+      <small>Engineering portfolio</small>
+    </span>
+  </a>
+  <nav aria-label="Primary navigation">
+    <ul>
+      {navigation.map((item) => (
+        <li>
+          <a href={item.href} aria-current={pathname === item.href ? "page" : undefined}>
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+  <a class="header-cta" href="https://github.com/JasonStys" rel="me">
+    GitHub ↗
+  </a>
+</header>

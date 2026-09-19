@@ -1,0 +1,115 @@
+---
+/**
+ * @file Presents the portfolio owner's engineering focus, working principles, and role alignment.
+ * Functions: none; semantic profile content.
+ * Variables: role groups and external profile links.
+ * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
+ */
+import BaseLayout from "@/components/BaseLayout.astro";
+import { withBase } from "@/lib/url";
+
+const roleGroups = [
+  [
+    "Software & full stack",
+    "Reliable APIs, stateful workflows, integration boundaries, and accessible interfaces.",
+  ],
+  [
+    "AI, ML & data",
+    "Reproducible evaluation, deployment gates, monitoring, SQL transformations, and honest model limits.",
+  ],
+  [
+    "Systems & cloud",
+    "C++, Rust, firmware recovery, protocols, orchestration, containers, Kubernetes, and infrastructure as code.",
+  ],
+  [
+    "Games & engines",
+    "Deterministic simulation, ECS design, pathfinding, tactical AI, telemetry, and replay verification.",
+  ],
+] as const;
+---
+
+<BaseLayout
+  title="About Jason Stys — Engineering portfolio"
+  description="About Jason Stys, a software engineer working across reliable systems, applied AI, analytics, cloud platforms, accessible web products, and game technology."
+  canonicalPath="about/"
+>
+  <header class="page-intro section-shell">
+    <p class="eyebrow">About the engineer</p>
+    <h1>Curiosity, made testable.</h1>
+    <p>
+      I am a software developer with interests spanning full-stack systems, AI and data, cloud
+      computing, accessible web engineering, and game technology. The common thread is turning
+      uncertain behavior into something explicit, measurable, and recoverable.
+    </p>
+  </header>
+  <section class="section-shell about-grid">
+    <div class="about-copy">
+      <h2>How I work</h2>
+      <p>
+        I prefer small, explicit contracts over invisible assumptions. That means validating
+        external data, documenting tradeoffs, bounding retries and resources, separating domain
+        logic from infrastructure, and treating failure paths as part of the product.
+      </p>
+      <p>
+        The projects in this portfolio use synthetic data and public-safe scenarios. They are
+        designed to make engineering judgment visible without publishing employer code, customer
+        data, credentials, or unsupported production claims.
+      </p>
+      <div class="button-row">
+        <a class="button button--primary" href={withBase("projects/")}>
+          Browse project evidence
+        </a>
+        <a
+          class="button button--secondary"
+          href="https://www.linkedin.com/in/jason-stys-31b30b351/"
+        >
+          LinkedIn profile ↗
+        </a>
+      </div>
+    </div>
+    <div class="principles">
+      <h2>Working principles</h2>
+      <ol>
+        <li>
+          <span>01</span>
+          <div>
+            <strong>Model the failure first.</strong>
+            <p>Retries, recovery, invalid input, and partial work shape the design.</p>
+          </div>
+        </li>
+        <li>
+          <span>02</span>
+          <div>
+            <strong>Make claims reproducible.</strong>
+            <p>Tests, benchmarks, and generated reports travel with the source.</p>
+          </div>
+        </li>
+        <li>
+          <span>03</span>
+          <div>
+            <strong>Preserve the reader's time.</strong>
+            <p>Shallow structure, clear names, fast starts, and explicit limitations.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="proof-band">
+    <div class="section-shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Role alignment</p>
+          <h2>Broad range, connected by engineering discipline.</h2>
+        </div>
+      </div>
+      <div class="role-grid">
+        {roleGroups.map(([title, description]) => (
+          <article>
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

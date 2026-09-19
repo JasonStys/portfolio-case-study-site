@@ -1,0 +1,169 @@
+---
+/**
+ * @file Renders the employer-facing portfolio overview and six featured engineering cases.
+ * Functions: none; build-time metric derivation and page composition.
+ * Variables: featuredProjects, languageCount, roleCount, and profileSchema.
+ * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
+ */
+import ArchitectureFigure from "@/components/ArchitectureFigure.astro";
+import BaseLayout from "@/components/BaseLayout.astro";
+import MetricRail from "@/components/MetricRail.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import { featuredProjects, projects } from "@/lib/catalog";
+import { absoluteUrl, withBase } from "@/lib/url";
+
+const languageCount = new Set(projects.flatMap((project) => project.languages)).size;
+const roleCount = new Set(projects.flatMap((project) => project.roles)).size;
+const profileSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  url: absoluteUrl(""),
+  name: "Jason Stys engineering portfolio",
+  mainEntity: {
+    "@type": "Person",
+    name: "Jason Stys",
+    url: absoluteUrl(""),
+    sameAs: ["https://github.com/JasonStys", "https://www.linkedin.com/in/jason-stys-31b30b351/"],
+    description:
+      "Software engineer focused on reliable systems, full-stack products, applied AI, data, and game technology.",
+    knowsAbout: [
+      "Software engineering",
+      "Machine learning",
+      "Data engineering",
+      "Cloud computing",
+      "Game engines",
+      "Web accessibility",
+    ],
+  },
+};
+---
+
+<BaseLayout
+  title="Jason Stys — Software, Systems & AI Engineer"
+  description="Evidence-first engineering portfolio covering reliable full-stack systems, applied AI, data platforms, accessible web development, cloud infrastructure, and game technology."
+  structuredData={profileSchema}
+>
+  <section class="hero section-shell">
+    <div class="hero__copy">
+      <p class="eyebrow">
+        <span class="pulse" aria-hidden="true"></span> Available for engineering opportunities
+      </p>
+      <h1>
+        I build systems that explain <em>why they work.</em>
+      </h1>
+      <p class="hero__lede">
+        Software, AI, data, cloud, and game-engine projects backed by architecture decisions,
+        failure tests, performance budgets, and honest limitations.
+      </p>
+      <div class="button-row">
+        <a class="button button--primary" href={withBase("projects/")}>
+          Explore the work <span aria-hidden="true">→</span>
+        </a>
+        <a
+          class="button button--secondary"
+          href="https://www.linkedin.com/in/jason-stys-31b30b351/"
+        >
+          Experience & résumé <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+    <aside class="hero__console" aria-label="Portfolio operating principles">
+      <div class="console-bar">
+        <span></span>
+        <span></span>
+        <span></span>
+        <code>evidence.json</code>
+      </div>
+      <pre><code><span class="code-key">focus</span>: [<span class="code-value">"reliability"</span>, <span class="code-value">"clarity"</span>]
+<span class="code-key">default</span>: <span class="code-value">"measure before claiming"</span>
+<span class="code-key">failure_mode</span>: <span class="code-value">"bounded + observable"</span>
+<span class="code-key">delivery</span>: &#123;
+  tests: <span class="code-number">true</span>,
+  docs: <span class="code-number">true</span>,
+  rollback: <span class="code-number">true</span>
+&#125;</code></pre>
+    </aside>
+  </section>
+
+  <div class="section-shell">
+    <MetricRail
+      projectCount={projects.length}
+      {languageCount}
+      {roleCount}
+      caseStudyCount={featuredProjects.length}
+    />
+  </div>
+
+  <section class="section-shell section-block" aria-labelledby="featured-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Selected case studies</p>
+        <h2 id="featured-title">Six systems. Six different engineering risks.</h2>
+      </div>
+      <a class="text-link" href={withBase("projects/")}>
+        View all {projects.length} projects <span aria-hidden="true">→</span>
+      </a>
+    </div>
+    <div class="featured-grid">
+      {featuredProjects.map((project) => (
+        <ProjectCard {project} compact />
+      ))}
+    </div>
+  </section>
+
+  <section class="proof-band">
+    <div class="section-shell proof-grid">
+      <div>
+        <p class="eyebrow">How to evaluate this work</p>
+        <h2>Start with the evidence, not the adjectives.</h2>
+      </div>
+      <ol class="proof-steps">
+        <li>
+          <span>01</span>
+          <div>
+            <strong>Open a case</strong>
+            <p>Understand the problem, constraints, and design tradeoffs.</p>
+          </div>
+        </li>
+        <li>
+          <span>02</span>
+          <div>
+            <strong>Inspect the tests</strong>
+            <p>Follow the automated evidence from local checks to CI.</p>
+          </div>
+        </li>
+        <li>
+          <span>03</span>
+          <div>
+            <strong>Challenge the limits</strong>
+            <p>Read what the project does not claim and what comes next.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section-shell section-block split-section">
+    <div>
+      <p class="eyebrow">Architecture of this site</p>
+      <h2>Static by design. Current by review.</h2>
+      <p>
+        The portfolio does not call GitHub during a visitor request. Repository facts are refreshed
+        into a reviewed cache, case studies are schema-checked, and Astro pre-renders every route.
+      </p>
+      <p>
+        This keeps the deploy inexpensive, the failure surface small, and the content available even
+        when an external API is not.
+      </p>
+    </div>
+    <ArchitectureFigure />
+  </section>
+
+  <section class="section-shell callout">
+    <p class="eyebrow">Looking for a specific fit?</p>
+    <h2>Filter by role, language, or problem domain.</h2>
+    <a class="button button--primary" href={withBase("projects/")}>
+      Open the project index <span aria-hidden="true">→</span>
+    </a>
+  </section>
+</BaseLayout>

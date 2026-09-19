@@ -1,0 +1,30 @@
+---
+/**
+ * @file Provides a useful static not-found page for GitHub Pages fallback routing.
+ * Functions: none; static recovery content.
+ * Variables: project index URL.
+ * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
+ */
+import BaseLayout from "@/components/BaseLayout.astro";
+import { withBase } from "@/lib/url";
+---
+
+<BaseLayout
+  title="Page not found — Jason Stys"
+  description="The requested portfolio page could not be found."
+  canonicalPath="404.html"
+>
+  <section class="not-found section-shell">
+    <p class="eyebrow">404 · Route not found</p>
+    <h1>This path is not part of the build.</h1>
+    <p>The project index and case studies are still available.</p>
+    <div class="button-row">
+      <a class="button button--primary" href={withBase("")}>
+        Return home
+      </a>
+      <a class="button button--secondary" href={withBase("projects/")}>
+        Browse projects
+      </a>
+    </div>
+  </section>
+</BaseLayout>

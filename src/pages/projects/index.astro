@@ -1,0 +1,112 @@
+---
+/**
+ * @file Renders the progressively enhanced catalog with query and exact-facet controls.
+ * Functions: option rendering through Astro map expressions.
+ * Variables: projects, facet arrays, and search index URL.
+ * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
+ */
+import BaseLayout from "@/components/BaseLayout.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import { listFacetValues, projects } from "@/lib/catalog";
+import { withBase } from "@/lib/url";
+
+const roles = listFacetValues(projects, "roles");
+const languages = listFacetValues(projects, "languages");
+const domains = listFacetValues(projects, "domains");
+const maturities = listFacetValues(projects, "maturity");
+---
+
+<BaseLayout
+  title="Project index — Jason Stys"
+  description="Search and filter validated software, AI, data, cloud, web, systems, and game-technology projects by role, language, and domain."
+  canonicalPath="projects/"
+>
+  <header class="page-intro section-shell">
+    <p class="eyebrow">Project index · {projects.length} repositories</p>
+    <h1>Find the evidence that matches the role.</h1>
+    <p>
+      Every entry links to public source, documentation, tests, and limitations. The six featured
+      projects add a deeper engineering narrative.
+    </p>
+  </header>
+
+  <section
+    class="section-shell catalog"
+    data-project-filter
+    data-index-url={withBase("search-index.json")}
+  >
+    <search class="filter-panel" aria-labelledby="filter-title">
+      <div class="filter-panel__heading">
+        <div>
+          <p class="eyebrow">Narrow the catalog</p>
+          <h2 id="filter-title">Search the work</h2>
+        </div>
+        <output id="project-count" aria-live="polite">
+          {projects.length} projects
+        </output>
+      </div>
+      <div class="filter-grid">
+        <label class="filter-query">
+          Keywords
+          <input
+            id="project-query"
+            type="search"
+            placeholder="e.g. retries, pathfinding, accessibility"
+            autocomplete="off"
+          />
+        </label>
+        <label>
+          Role
+          <select id="project-role">
+            <option value="">All roles</option>
+            {roles.map((value) => (
+              <option value={value}>{value}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          Language
+          <select id="project-language">
+            <option value="">All languages</option>
+            {languages.map((value) => (
+              <option value={value}>{value}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          Domain
+          <select id="project-domain">
+            <option value="">All domains</option>
+            {domains.map((value) => (
+              <option value={value}>{value}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          Maturity
+          <select id="project-maturity">
+            <option value="">All levels</option>
+            {maturities.map((value) => (
+              <option value={value}>{value}</option>
+            ))}
+          </select>
+        </label>
+        <button id="project-reset" class="button button--secondary" type="button">
+          Reset filters
+        </button>
+      </div>
+      <noscript>
+        <p class="notice">Filtering requires JavaScript. All projects remain available below.</p>
+      </noscript>
+    </search>
+    <div class="project-grid" id="project-results">
+      {projects.map((project) => (
+        <ProjectCard {project} />
+      ))}
+    </div>
+    <p class="empty-state">
+      No projects match every selected condition. Reset a facet or try a broader keyword.
+    </p>
+  </section>
+  <script src="../../scripts/project-filter.ts"></script>
+</BaseLayout>

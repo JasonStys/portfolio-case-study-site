@@ -1,0 +1,60 @@
+{
+  "name": "portfolio-case-study-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Evidence-first engineering portfolio with validated case studies, searchable project metadata, and accessible static delivery.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  },
+  "scripts": {
+    "dev": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "test:unit": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "benchmark": "node scripts/benchmark-search.ts",
+    "benchmark:check": "node scripts/benchmark-search.ts --check",
+    "metadata:refresh": "node scripts/refresh-github-metadata.mjs",
+    "metadata:check": "node scripts/refresh-github-metadata.mjs --check",
+    "code-index": "node scripts/generate-code-index.mjs",
+    "code-index:check": "node scripts/generate-code-index.mjs --check",
+    "file-catalog": "node scripts/generate-file-catalog.mjs",
+    "file-catalog:check": "node scripts/generate-file-catalog.mjs --check",
+    "repository:check": "node scripts/validate-repository.mjs",
+    "dist:check": "node scripts/validate-dist.mjs",
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "audit": "npm audit --audit-level=high",
+    "verify": "npm run format:check && npm run lint && npm run typecheck && npm run test:unit && npm run benchmark:check && npm run build && npm run dist:check && npm run repository:check && npm run code-index:check && npm run file-catalog:check"
+  },
+  "dependencies": {
+    "astro": "7.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@axe-core/playwright": "4.13.0",
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.63.0",
+    "@types/node": "26.6.2",
+    "@vitest/coverage-v8": "5.0.1",
+    "chrome-launcher": "1.2.1",
+    "cross-env": "10.1.0",
+    "eslint": "10.11.0",
+    "eslint-plugin-astro": "3.2.1",
+    "globals": "17.12.0",
+    "lighthouse": "13.5.0",
+    "prettier": "3.9.8",
+    "prettier-plugin-astro": "1.0.1",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.70.0",
+    "vitest": "5.0.1"
+  }
+}

@@ -1,0 +1,12 @@
+# File: Generated dependencies, builds, coverage, browser evidence, and local runtime artifacts.
+node_modules/
+dist/
+.astro/
+coverage/
+playwright-report/
+test-results/
+.runtime/
+.npm-cache/
+*.log
+.DS_Store
+Thumbs.db

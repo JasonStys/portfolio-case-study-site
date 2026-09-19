@@ -1,0 +1,126 @@
+---
+/**
+ * @file Pre-renders each schema-validated case study with repository and evidence context.
+ * Functions: getStaticPaths and Astro content render.
+ * Variables: entry, project, Content, and SoftwareSourceCode JSON-LD.
+ * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
+ */
+import BaseLayout from "@/components/BaseLayout.astro";
+import { projects } from "@/lib/catalog";
+import { absoluteUrl, withBase } from "@/lib/url";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("caseStudies");
+  return entries.map((entry) => {
+    const project = projects.find((candidate) => candidate.caseStudySlug === entry.id);
+    if (!project) throw new Error(`Case study ${entry.id} does not map to a curated project.`);
+    return { params: { slug: entry.id }, props: { entry, projectName: project.name } };
+  });
+}
+
+type Props = { entry: CollectionEntry<"caseStudies">; projectName: string };
+const { entry, projectName } = Astro.props;
+const project = projects.find((candidate) => candidate.name === projectName);
+if (!project) throw new Error(`Curated project ${projectName} is missing.`);
+const { Content } = await render(entry);
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  name: project.name,
+  description: entry.data.summary,
+  codeRepository: project.url,
+  url: absoluteUrl(`case-studies/${entry.id}/`),
+  author: { "@type": "Person", name: "Jason Stys", url: absoluteUrl("") },
+  programmingLanguage: project.languages,
+};
+---
+
+<BaseLayout
+  title={`${entry.data.title} — Jason Stys`}
+  description={entry.data.summary}
+  canonicalPath={`case-studies/${entry.id}/`}
+  structuredData={schema}
+>
+  <article class="case-study section-shell">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href={withBase("")}>Overview</a>
+      <span aria-hidden="true">/</span>
+      <a href={withBase("projects/")}>Projects</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{project.name}</span>
+    </nav>
+    <header class="case-hero">
+      <div>
+        <p class="eyebrow">
+          Case study {String(entry.data.featuredOrder).padStart(2, "0")} · {entry.data.role}
+        </p>
+        <h1>{entry.data.title}</h1>
+        <p class="case-summary">{entry.data.summary}</p>
+        <div class="button-row">
+          <a class="button button--primary" href={project.url}>
+            Inspect repository <span aria-hidden="true">↗</span>
+          </a>
+          <a class="button button--secondary" href={withBase("projects/")}>
+            Back to index
+          </a>
+        </div>
+      </div>
+      <aside class="evidence-card" aria-labelledby="evidence-title">
+        <p class="eyebrow" id="evidence-title">
+          Evidence at a glance
+        </p>
+        <ul>
+          {entry.data.evidence.map((item) => (
+            <li>
+              <span aria-hidden="true">✓</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="language-line">
+          {entry.data.languages.map((language) => (
+            <span>{language}</span>
+          ))}
+        </div>
+      </aside>
+    </header>
+    <div class="case-layout">
+      <aside class="case-sidebar">
+        <p class="eyebrow">On this page</p>
+        <ol>
+          <li>
+            <a href="#problem">Problem</a>
+          </li>
+          <li>
+            <a href="#constraints">Constraints</a>
+          </li>
+          <li>
+            <a href="#design">Design</a>
+          </li>
+          <li>
+            <a href="#verification">Verification</a>
+          </li>
+          <li>
+            <a href="#measured-result">Measured result</a>
+          </li>
+          <li>
+            <a href="#limitations">Limitations</a>
+          </li>
+        </ol>
+      </aside>
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+    <footer class="case-footer">
+      <div>
+        <p class="eyebrow">Next step</p>
+        <h2>Read the implementation and its evidence.</h2>
+      </div>
+      <a class="button button--primary" href={project.url}>
+        Open {project.name} <span aria-hidden="true">↗</span>
+      </a>
+    </footer>
+  </article>
+</BaseLayout>

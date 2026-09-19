@@ -1,0 +1,30 @@
+---
+/**
+ * @file Summarizes portfolio breadth with count-based evidence derived from the catalog.
+ * Functions: none; static metric rendering.
+ * Variables: projectCount, languageCount, roleCount, and caseStudyCount props.
+ * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
+ */
+type Props = {
+  projectCount: number;
+  languageCount: number;
+  roleCount: number;
+  caseStudyCount: number;
+};
+const { projectCount, languageCount, roleCount, caseStudyCount } = Astro.props;
+const metrics = [
+  [projectCount, "validated projects"],
+  [languageCount, "languages"],
+  [roleCount, "role paths"],
+  [caseStudyCount, "deep dives"],
+] as const;
+---
+
+<dl class="metric-rail" aria-label="Portfolio evidence summary">
+  {metrics.map(([value, label]) => (
+    <div>
+      <dt>{value}</dt>
+      <dd>{label}</dd>
+    </div>
+  ))}
+</dl>

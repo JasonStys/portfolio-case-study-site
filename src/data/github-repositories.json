@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "owner": "JasonStys",
+  "fetchedAt": "2026-09-19T07:18:00.000Z",
+  "source": "https://api.github.com/users/JasonStys/repos",
+  "repositories": [
+    {
+      "name": "integration-operations-console",
+      "description": "Full-stack reliability lab for idempotent integrations, retries, dead-letter recovery, audit trails, and operational metrics.",
+      "url": "https://github.com/JasonStys/integration-operations-console",
+      "primaryLanguage": "Java",
+      "languages": ["Java", "TypeScript", "SQL", "HTML", "CSS", "Shell"],
+      "topics": [
+        "integration-testing",
+        "java",
+        "openapi",
+        "postgresql",
+        "react",
+        "reliability-engineering",
+        "spring-boot",
+        "typescript"
+      ],
+      "pushedAt": "2026-09-18T20:01:39Z"
+    },
+    {
+      "name": "player-telemetry-analytics-platform",
+      "description": "Synthetic game telemetry platform with privacy-aware ingestion, SQL transformations, cohort and funnel analytics, anomaly review, and an accessible dashboard.",
+      "url": "https://github.com/JasonStys/player-telemetry-analytics-platform",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "SQL", "TypeScript", "HTML", "CSS", "Shell"],
+      "topics": [
+        "analytics",
+        "data-engineering",
+        "duckdb",
+        "game-analytics",
+        "postgresql",
+        "python",
+        "sql",
+        "typescript"
+      ],
+      "pushedAt": "2026-09-18T20:11:04Z"
+    },
+    {
+      "name": "ml-model-lifecycle-observatory",
+      "description": "Reproducible ML lifecycle with calibrated models, safe artifacts, promotion gates, drift monitoring, canary routing, and rollback.",
+      "url": "https://github.com/JasonStys/ml-model-lifecycle-observatory",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "SQL", "Shell", "JavaScript"],
+      "topics": [
+        "canary-deployment",
+        "drift-detection",
+        "fastapi",
+        "machine-learning",
+        "mlops",
+        "model-monitoring",
+        "postgresql",
+        "python"
+      ],
+      "pushedAt": "2026-09-18T23:21:50Z"
+    },
+    {
+      "name": "forge2d-engine",
+      "description": "Deterministic C++20 2D engine with sparse-set ECS, A* pathfinding, collision broadphase, replays, SDL3, fuzzing, and cross-platform CI.",
+      "url": "https://github.com/JasonStys/forge2d-engine",
+      "primaryLanguage": "C++",
+      "languages": ["C++", "C", "CMake", "Shell"],
+      "topics": [
+        "collision-detection",
+        "cpp",
+        "entity-component-system",
+        "fuzzing",
+        "game-engine",
+        "pathfinding",
+        "sdl3"
+      ],
+      "pushedAt": "2026-09-18T19:43:29Z"
+    },
+    {
+      "name": "accessible-design-system-lab",
+      "description": "Native-first React components with TypeScript, Storybook, accessibility testing, and measurable quality gates.",
+      "url": "https://github.com/JasonStys/accessible-design-system-lab",
+      "primaryLanguage": "TypeScript",
+      "languages": ["TypeScript", "JavaScript", "HTML", "CSS"],
+      "topics": [
+        "accessibility",
+        "design-system",
+        "frontend",
+        "playwright",
+        "react",
+        "storybook",
+        "typescript"
+      ],
+      "pushedAt": "2026-09-18T22:05:35Z"
+    },
+    {
+      "name": "cloud-job-orchestrator",
+      "description": "Safe, observable DAG job control plane with Rust, PostgreSQL leases, TypeScript operations UI, and cloud deployment tooling.",
+      "url": "https://github.com/JasonStys/cloud-job-orchestrator",
+      "primaryLanguage": "Rust",
+      "languages": ["Rust", "SQL", "TypeScript", "HTML", "CSS", "Shell", "HCL"],
+      "topics": [
+        "distributed-systems",
+        "job-scheduler",
+        "kubernetes",
+        "postgresql",
+        "rust",
+        "terraform",
+        "typescript"
+      ],
+      "pushedAt": "2026-09-19T03:44:35Z"
+    },
+    {
+      "name": "edge-vision-deployment-benchmark",
+      "description": "Reproducible edge vision deployment benchmark with ONNX, native C++ and Rust inference, quantization analysis, and cross-runtime validation.",
+      "url": "https://github.com/JasonStys/edge-vision-deployment-benchmark",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "C++", "Rust", "CMake", "Shell"],
+      "topics": [
+        "computer-vision",
+        "cpp",
+        "edge-ai",
+        "machine-learning",
+        "model-quantization",
+        "onnx",
+        "python",
+        "rust"
+      ],
+      "pushedAt": "2026-09-19T05:05:14Z"
+    },
+    {
+      "name": "unity-tactical-ai-sandbox",
+      "description": "Deterministic C# tactical AI lab with A*, utility scoring, replay verification, Unity integration, and headless telemetry.",
+      "url": "https://github.com/JasonStys/unity-tactical-ai-sandbox",
+      "primaryLanguage": "C#",
+      "languages": ["C#", "JavaScript"],
+      "topics": [
+        "c-sharp",
+        "deterministic-simulation",
+        "game-ai",
+        "pathfinding",
+        "unity",
+        "utility-ai"
+      ],
+      "pushedAt": "2026-09-19T02:19:15Z"
+    },
+    {
+      "name": "mips-pipeline-workbench",
+      "description": "MIPS-like assembler, reference emulator, five-stage pipeline simulator, cache model, and accessible trace visualizer in Rust and TypeScript.",
+      "url": "https://github.com/JasonStys/mips-pipeline-workbench",
+      "primaryLanguage": "Rust",
+      "languages": ["Rust", "Assembly", "TypeScript", "HTML", "CSS", "Shell"],
+      "topics": ["assembly", "computer-architecture", "mips", "pipeline", "rust", "typescript"],
+      "pushedAt": "2026-09-19T01:38:58Z"
+    },
+    {
+      "name": "secure-service-desk",
+      "description": "Auditable multi-tenant service desk with reliable outbox delivery, signed webhooks, and PostgreSQL-backed workflows.",
+      "url": "https://github.com/JasonStys/secure-service-desk",
+      "primaryLanguage": "PHP",
+      "languages": ["PHP", "SQL", "JavaScript", "HTML", "CSS", "Shell"],
+      "topics": ["laravel", "outbox-pattern", "php", "postgresql", "security", "webhooks"],
+      "pushedAt": "2026-09-19T01:03:05Z"
+    },
+    {
+      "name": "offline-first-field-app",
+      "description": "Offline-first .NET MAUI field app with transactional SQLite sync, conflict handling, ASP.NET Core API, and verified CI.",
+      "url": "https://github.com/JasonStys/offline-first-field-app",
+      "primaryLanguage": "C#",
+      "languages": ["C#", "SQL", "Shell", "PowerShell"],
+      "topics": [
+        "android",
+        "aspnet-core",
+        "csharp",
+        "dotnet",
+        "maui",
+        "offline-first",
+        "sqlite",
+        "windows"
+      ],
+      "pushedAt": "2026-09-19T00:00:35Z"
+    },
+    {
+      "name": "offline-incident-timeline-pwa",
+      "description": "Framework-free offline incident timeline with worker parsing, IndexedDB migrations, accessible visualization, and cross-browser reliability evidence.",
+      "url": "https://github.com/JasonStys/offline-incident-timeline-pwa",
+      "primaryLanguage": "JavaScript",
+      "languages": ["JavaScript", "HTML", "CSS"],
+      "topics": [
+        "accessibility",
+        "indexeddb",
+        "javascript",
+        "offline-first",
+        "playwright",
+        "pwa",
+        "service-worker",
+        "web-workers"
+      ],
+      "pushedAt": "2026-09-19T07:10:46Z"
+    },
+    {
+      "name": "mqtt-lifecycle-reliability-lab",
+      "description": "TypeScript MQTT lifecycle lab with bounded offline buffering, retained state, ordering analysis, ACL modeling, fault scenarios, and reproducible telemetry reports.",
+      "url": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab",
+      "primaryLanguage": "TypeScript",
+      "languages": ["TypeScript", "JavaScript", "HTML", "CSS", "Shell"],
+      "topics": [
+        "fault-injection",
+        "industrial-iot",
+        "mqtt",
+        "mqtt5",
+        "reliability-engineering",
+        "telemetry",
+        "typescript"
+      ],
+      "pushedAt": "2026-09-18T20:01:37Z"
+    },
+    {
+      "name": "industrial-edge-digital-twin",
+      "description": "Deterministic C++20 process twin with typed edge APIs, MQTT telemetry, fault injection, an accessible HMI, and cross-platform CI.",
+      "url": "https://github.com/JasonStys/industrial-edge-digital-twin",
+      "primaryLanguage": "C++",
+      "languages": ["C++", "TypeScript", "JavaScript", "HTML", "CSS", "CMake"],
+      "topics": ["cpp", "digital-twin", "industrial-iot", "mqtt", "simulation", "telemetry"],
+      "pushedAt": "2026-09-18T20:01:36Z"
+    },
+    {
+      "name": "firmware-release-recovery-lab",
+      "description": "Deterministic Rust simulator for signed A/B firmware updates, bounded trial boots, rollback, and power-loss recovery testing.",
+      "url": "https://github.com/JasonStys/firmware-release-recovery-lab",
+      "primaryLanguage": "Rust",
+      "languages": ["Rust", "Python", "Shell"],
+      "topics": ["firmware", "property-testing", "rollback", "rust", "secure-boot"],
+      "pushedAt": "2026-09-18T19:43:23Z"
+    },
+    {
+      "name": "documentation-quality-gate",
+      "description": "TypeScript CLI and GitHub Action for deterministic documentation checks, exact diagnostics, expiring suppressions, SARIF, and accessible reports.",
+      "url": "https://github.com/JasonStys/documentation-quality-gate",
+      "primaryLanguage": "TypeScript",
+      "languages": ["TypeScript", "JavaScript"],
+      "topics": [
+        "accessibility",
+        "developer-tools",
+        "documentation",
+        "github-actions",
+        "sarif",
+        "static-analysis",
+        "typescript"
+      ],
+      "pushedAt": "2026-09-18T19:43:22Z"
+    },
+    {
+      "name": "node-red-resilient-metadata",
+      "description": "TypeScript Node-RED package for credential-safe, bounded product metadata lookups with cancellation, structured errors, example flows, and lifecycle tests.",
+      "url": "https://github.com/JasonStys/node-red-resilient-metadata",
+      "primaryLanguage": "TypeScript",
+      "languages": ["TypeScript", "JavaScript", "HTML"],
+      "topics": [
+        "bounded-concurrency",
+        "industrial-iot",
+        "json-schema",
+        "mqtt",
+        "node-red",
+        "reliability-engineering",
+        "typescript"
+      ],
+      "pushedAt": "2026-09-18T19:43:20Z"
+    },
+    {
+      "name": "industrial-memory-protocol-workbench",
+      "description": "Defensive C++20 workbench for a synthetic industrial memory protocol, with fuzzing, fault injection, packet traces, and cross-platform CI.",
+      "url": "https://github.com/JasonStys/industrial-memory-protocol-workbench",
+      "primaryLanguage": "C++",
+      "languages": ["C++", "Python", "CMake", "Shell"],
+      "topics": [
+        "binary-protocol",
+        "cpp",
+        "fault-injection",
+        "fuzzing",
+        "industrial-systems",
+        "sanitizers"
+      ],
+      "pushedAt": "2026-09-18T19:43:17Z"
+    },
+    {
+      "name": "versioned-product-knowledge-portal",
+      "description": "Accessible static product documentation with version-aware search, relevance evaluation, citations, provenance, and secure CI.",
+      "url": "https://github.com/JasonStys/versioned-product-knowledge-portal",
+      "primaryLanguage": "TypeScript",
+      "languages": ["TypeScript", "Astro", "JavaScript", "HTML", "CSS"],
+      "topics": ["accessibility", "astro", "documentation", "search", "static-site", "typescript"],
+      "pushedAt": "2026-09-18T19:43:14Z"
+    },
+    {
+      "name": "engineering-documentation-foundry",
+      "description": "Deterministic PDF-to-HTML documentation migration with provenance, quality gates, accessible output, and secure CI.",
+      "url": "https://github.com/JasonStys/engineering-documentation-foundry",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "HTML", "CSS"],
+      "topics": ["accessibility", "documentation", "etl", "pdf", "provenance", "python"],
+      "pushedAt": "2026-09-18T19:43:12Z"
+    }
+  ]
+}

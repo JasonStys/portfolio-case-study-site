@@ -21,7 +21,7 @@ test("guides a recruiter from overview to implementation evidence", async ({ pag
   await expect(page.getByRole("heading", { name: "Verification" })).toBeVisible();
   await expect(page.getByRole("link", { name: /Inspect repository/ })).toHaveAttribute(
     "href",
-    /github\.com\/JasonStys/,
+    "https://github.com/JasonStys/integration-operations-console",
   );
 });
 

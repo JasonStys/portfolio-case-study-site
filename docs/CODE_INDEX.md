@@ -137,21 +137,26 @@
 | ---: | --- | --- |
 | 12 | variable | `ROOT` |
 | 13 | variable | `CACHE_PATH` |
-| 14 | variable | `MAX_CACHE_AGE_DAYS` |
-| 15 | variable | `checkOnly` |
-| 17 | function | `validateExisting` |
-| 25 | variable | `names` |
-| 31 | function | `fetchJson` |
-| 32 | variable | `headers` |
-| 37 | variable | `response` |
-| 42 | function | `refreshRepository` |
-| 49 | variable | `detectedLanguages` |
-| 61 | function | `checkCache` |
-| 62 | variable | `ageDays` |
-| 76 | function | `main` |
-| 77 | variable | `existing` |
-| 79 | variable | `repositories` |
-| 82 | variable | `refreshed` |
+| 14 | variable | `OWNER` |
+| 15 | variable | `REVIEWED_REPOSITORY_NAMES` |
+| 37 | variable | `MAX_CACHE_AGE_DAYS` |
+| 38 | variable | `checkOnly` |
+| 40 | function | `validateExisting` |
+| 48 | variable | `names` |
+| 49 | variable | `expectedNames` |
+| 59 | function | `fetchJson` |
+| 60 | variable | `headers` |
+| 65 | variable | `response` |
+| 70 | function | `refreshRepository` |
+| 77 | variable | `detectedLanguages` |
+| 89 | function | `checkCache` |
+| 90 | variable | `ageDays` |
+| 104 | function | `main` |
+| 105 | variable | `existing` |
+| 107 | variable | `repositories` |
+| 108 | variable | `existingByName` |
+| 112 | variable | `repository` |
+| 116 | variable | `refreshed` |
 
 ## `scripts/validate-dist.mjs`
 

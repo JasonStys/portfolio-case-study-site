@@ -1,7 +1,7 @@
 /**
  * @file Refreshes selected public GitHub facts while keeping reviewed technology annotations reproducible.
  * Functions: validateExisting, fetchJson, refreshRepository, checkCache, main.
- * Variables: ROOT, CACHE_PATH, MAX_CACHE_AGE_DAYS, checkOnly.
+ * Variables: ROOT, CACHE_PATH, OWNER, REVIEWED_REPOSITORY_NAMES, MAX_CACHE_AGE_DAYS, checkOnly.
  * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
  */
 import { readFile, writeFile } from "node:fs/promises";
@@ -11,20 +11,48 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CACHE_PATH = path.join(ROOT, "src", "data", "github-repositories.json");
+const OWNER = "JasonStys";
+const REVIEWED_REPOSITORY_NAMES = Object.freeze([
+  "integration-operations-console",
+  "player-telemetry-analytics-platform",
+  "ml-model-lifecycle-observatory",
+  "forge2d-engine",
+  "accessible-design-system-lab",
+  "cloud-job-orchestrator",
+  "edge-vision-deployment-benchmark",
+  "unity-tactical-ai-sandbox",
+  "mips-pipeline-workbench",
+  "secure-service-desk",
+  "offline-first-field-app",
+  "offline-incident-timeline-pwa",
+  "mqtt-lifecycle-reliability-lab",
+  "industrial-edge-digital-twin",
+  "firmware-release-recovery-lab",
+  "documentation-quality-gate",
+  "node-red-resilient-metadata",
+  "industrial-memory-protocol-workbench",
+  "versioned-product-knowledge-portal",
+  "engineering-documentation-foundry",
+]);
 const MAX_CACHE_AGE_DAYS = 90;
 const checkOnly = process.argv.includes("--check");
 
 function validateExisting(value) {
   if (
     value?.schemaVersion !== 1 ||
-    value.owner !== "JasonStys" ||
+    value.owner !== OWNER ||
     !Array.isArray(value.repositories) ||
     value.repositories.length === 0
   )
     throw new Error("Repository cache has an unsupported shape.");
   const names = value.repositories.map((repository) => repository.name);
-  if (new Set(names).size !== names.length)
-    throw new Error("Repository cache contains duplicate names.");
+  const expectedNames = new Set(REVIEWED_REPOSITORY_NAMES);
+  if (
+    new Set(names).size !== names.length ||
+    names.length !== expectedNames.size ||
+    names.some((name) => !expectedNames.has(name))
+  )
+    throw new Error("Repository cache names must match the reviewed public allowlist.");
   return value;
 }
 
@@ -39,10 +67,10 @@ async function fetchJson(url) {
   return response.json();
 }
 
-async function refreshRepository(owner, existing) {
+async function refreshRepository(repositoryName, existing) {
   const [repository, languageBytes] = await Promise.all([
-    fetchJson(`https://api.github.com/repos/${owner}/${existing.name}`),
-    fetchJson(`https://api.github.com/repos/${owner}/${existing.name}/languages`),
+    fetchJson(`https://api.github.com/repos/${OWNER}/${repositoryName}`),
+    fetchJson(`https://api.github.com/repos/${OWNER}/${repositoryName}/languages`),
   ]);
   if (repository.private || repository.archived)
     throw new Error(`${existing.name} is not an active public repository.`);
@@ -77,8 +105,14 @@ async function main() {
   const existing = validateExisting(JSON.parse(await readFile(CACHE_PATH, "utf8")));
   if (checkOnly) return checkCache(existing);
   const repositories = [];
-  for (const repository of existing.repositories)
-    repositories.push(await refreshRepository(existing.owner, repository));
+  const existingByName = new Map(
+    existing.repositories.map((repository) => [repository.name, repository]),
+  );
+  for (const repositoryName of REVIEWED_REPOSITORY_NAMES) {
+    const repository = existingByName.get(repositoryName);
+    if (!repository) throw new Error(`Missing reviewed repository: ${repositoryName}.`);
+    repositories.push(await refreshRepository(repositoryName, repository));
+  }
   const refreshed = { ...existing, fetchedAt: new Date().toISOString(), repositories };
   await writeFile(CACHE_PATH, `${JSON.stringify(refreshed, null, 2)}\n`, "utf8");
   checkCache(refreshed);

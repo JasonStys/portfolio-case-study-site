@@ -37,4 +37,17 @@ Measured on Node.js 24.18.1 on Windows x64 on 2026-09-19:
 | Largest HTML route         |  33,570 B | ≤55 KiB     | 38.96% |
 | Production search index    |  35,611 B | ≤100 KiB    | 64.39% |
 
+GitHub Actions ran three fresh desktop Lighthouse sessions on Ubuntu and recorded the conservative aggregate below. Category values are the minimum score across runs except performance, which uses the median; timing values are the worst run.
+
+| Lighthouse metric        | Result |    Budget |
+| ------------------------ | -----: | --------: |
+| Accessibility            |   1.00 |     ≥1.00 |
+| Best practices           |   1.00 |     ≥0.95 |
+| Performance              |   0.99 |     ≥0.92 |
+| SEO                      |   1.00 |     ≥0.95 |
+| First Contentful Paint   | 756 ms | ≤1,800 ms |
+| Largest Contentful Paint | 906 ms | ≤2,500 ms |
+| Total Blocking Time      |   0 ms |   ≤200 ms |
+| Cumulative Layout Shift  |   0.00 |     ≤0.05 |
+
 `npm run benchmark` writes the machine-readable search report to `docs/reports/generated/search-benchmark.json`. Generated-output validation prints exact asset sizes. Lighthouse runs three independent production sessions in CI, stores the raw reports and conservative summary under `.runtime/lighthouse/`, and fails the release when any budget is missed.

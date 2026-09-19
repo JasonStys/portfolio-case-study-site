@@ -17,7 +17,7 @@
     "preview": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint": "eslint . --max-warnings 0",
+    "lint": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro sync && eslint . --max-warnings 0",
     "typecheck": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro check",
     "test:unit": "vitest run --coverage",
     "test:e2e": "playwright test",

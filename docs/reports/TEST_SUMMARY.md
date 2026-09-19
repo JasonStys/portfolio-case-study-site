@@ -17,21 +17,21 @@ The release gate covers catalog/cache contracts, search behavior, URL/XML helper
 | Lighthouse       | Accessibility 1.00; performance ≥0.92; best practices ≥0.95; SEO ≥0.95. |
 | Security         | Zero high/critical npm findings and zero unresolved CodeQL findings.    |
 
-## Release-candidate result
+## Release result
 
 Measured on Node.js 24.18.1 on 2026-09-19:
 
-| Gate                         | Result                                                                          |
-| ---------------------------- | ------------------------------------------------------------------------------- |
-| Static analysis              | ESLint and Astro type/content checks passed with zero diagnostics.              |
-| Unit tests                   | 12/12 passed across three files.                                                |
-| Coverage                     | 99.10% statements, 97.10% branches, 100% functions, 99.00% lines.               |
-| Chromium browser flow        | 5/5 passed, including axe WCAG A/AA analysis.                                   |
-| WebKit browser flow          | 5/5 passed, including axe WCAG A/AA analysis.                                   |
-| Firefox browser flow         | Reserved for Linux CI; this Windows host blocks the downloaded launcher.        |
-| Search benchmark             | All budgets passed; exact figures are in `PERFORMANCE.md`.                      |
-| Build and repository checks  | 10 HTML routes and 82 authored text files passed their contracts.               |
-| Dependency audit             | 0 vulnerabilities across the 501-package installed graph.                       |
-| Lighthouse and Linux Firefox | Enforced in GitHub Actions because this Windows host blocks the audit launcher. |
+| Gate                        | Result                                                                   |
+| --------------------------- | ------------------------------------------------------------------------ |
+| Static analysis             | ESLint and Astro type/content checks passed with zero diagnostics.       |
+| Unit tests                  | 12/12 passed across three files.                                         |
+| Coverage                    | 99.10% statements, 97.10% branches, 100% functions, 99.00% lines.        |
+| Chromium browser flow       | 5/5 passed, including axe WCAG A/AA analysis.                            |
+| WebKit browser flow         | 5/5 passed, including axe WCAG A/AA analysis.                            |
+| Firefox browser flow        | 5/5 passed in GitHub Actions on Ubuntu.                                  |
+| Search benchmark            | All budgets passed; exact figures are in `PERFORMANCE.md`.               |
+| Build and repository checks | 10 HTML routes and 82 authored text files passed their contracts.        |
+| Dependency audit            | 0 vulnerabilities across the 501-package installed graph.                |
+| Lighthouse                  | Accessibility 1.00, best practices 1.00, performance 0.99, and SEO 1.00. |
 
-The GitHub Actions run for the deployed commit is the authoritative release result. Failed local browser-launch attempts are environment limitations, not omitted tests: CI installs and executes all three browser engines on Ubuntu.
+The GitHub Actions run for the deployed commit is the authoritative release result. The Windows host blocks the downloaded Firefox and Lighthouse launchers, so GitHub installs and executes those checks independently on Ubuntu. All 15 GitHub-hosted browser tests and the three-run Lighthouse gate passed.

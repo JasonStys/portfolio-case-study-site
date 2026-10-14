@@ -100,6 +100,14 @@ function validateWorkflows(records) {
     ({ relative }) => relative.startsWith(".github/workflows/") && /\.ya?ml$/u.test(relative),
   );
   for (const workflow of workflows) {
+    const codeqlVersions = new Set(
+      Array.from(
+        workflow.source.matchAll(/uses:\s*github\/codeql-action\/[^@\s]+@([^\s#]+)/gu),
+        (match) => match[1],
+      ),
+    );
+    if (codeqlVersions.size > 1)
+      throw new Error(`${workflow.relative} mixes incompatible CodeQL action commits.`);
     if (!/^# File:/u.test(workflow.source))
       throw new Error(`${workflow.relative} lacks its descriptive file header.`);
     for (const match of workflow.source.matchAll(/^\s*uses:\s*([^\s#]+).*$/gmu)) {

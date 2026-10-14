@@ -25,6 +25,7 @@
 | `docs/FILE_CATALOG.md`                                            | Project documentation described by its title and sections.                                                 |
 | `docs/LIMITATIONS.md`                                             | Project documentation described by its title and sections.                                                 |
 | `docs/OPERATIONS.md`                                              | Project documentation described by its title and sections.                                                 |
+| `docs/reports/ACTIONS_REVIEW_2026-10-14.md`                       | Project documentation described by its title and sections.                                                 |
 | `docs/reports/generated/search-benchmark.json`                    | Repository support file.                                                                                   |
 | `docs/reports/PERFORMANCE.md`                                     | Project documentation described by its title and sections.                                                 |
 | `docs/reports/SITE_QUALITY.md`                                    | Project documentation described by its title and sections.                                                 |

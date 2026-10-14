@@ -212,14 +212,15 @@
 | 88 | variable | `header` |
 | 98 | function | `validateWorkflows` |
 | 99 | variable | `workflows` |
-| 106 | variable | `action` |
-| 113 | function | `validateContent` |
-| 114 | variable | `combined` |
-| 118 | variable | `sourceRecords` |
-| 125 | variable | `caseStudies` |
-| 143 | function | `main` |
-| 145 | variable | `files` |
-| 146 | variable | `records` |
+| 103 | variable | `codeqlVersions` |
+| 114 | variable | `action` |
+| 121 | function | `validateContent` |
+| 122 | variable | `combined` |
+| 126 | variable | `sourceRecords` |
+| 133 | variable | `caseStudies` |
+| 151 | function | `main` |
+| 153 | variable | `files` |
+| 154 | variable | `records` |
 
 ## `src/components/ArchitectureFigure.astro`
 

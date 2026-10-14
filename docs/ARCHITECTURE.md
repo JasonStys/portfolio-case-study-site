@@ -79,7 +79,7 @@ CI runs quality, browser, and performance jobs independently. The deployment job
 
 ## Scale and reliability
 
-The current catalog has 20 entries. A benchmark uses 10,000 deterministic synthetic projects to expose accidental algorithmic regressions. Static hosting removes server capacity planning. The largest foreseeable constraint is content review, not request throughput.
+The current catalog has 46 entries. A canonical priority JSON list orders every card, search result, and README entry; six featured studies and five retained reference studies share the same evidence format. Duplicate, missing, unknown, or contradictory priorities fail the build. Compact catalog cards preserve initial-HTML availability without relaxing the 55 KB HTML budget. A benchmark uses 10,000 deterministic synthetic projects to expose accidental algorithmic regressions. Static hosting removes server capacity planning. The largest foreseeable constraint is content review, not request throughput.
 
 ## Tradeoffs
 

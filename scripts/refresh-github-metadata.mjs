@@ -12,28 +12,14 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CACHE_PATH = path.join(ROOT, "src", "data", "github-repositories.json");
 const OWNER = "JasonStys";
-const REVIEWED_REPOSITORY_NAMES = Object.freeze([
-  "integration-operations-console",
-  "player-telemetry-analytics-platform",
-  "ml-model-lifecycle-observatory",
-  "forge2d-engine",
-  "accessible-design-system-lab",
-  "cloud-job-orchestrator",
-  "edge-vision-deployment-benchmark",
-  "unity-tactical-ai-sandbox",
-  "mips-pipeline-workbench",
-  "secure-service-desk",
-  "offline-first-field-app",
-  "offline-incident-timeline-pwa",
-  "mqtt-lifecycle-reliability-lab",
-  "industrial-edge-digital-twin",
-  "firmware-release-recovery-lab",
-  "documentation-quality-gate",
-  "node-red-resilient-metadata",
-  "industrial-memory-protocol-workbench",
-  "versioned-product-knowledge-portal",
-  "engineering-documentation-foundry",
-]);
+const REVIEWED_REPOSITORY_NAMES = Object.freeze(
+  JSON.parse(await readFile(path.join(ROOT, "src/data/portfolio-priority.json"), "utf8")),
+);
+if (
+  !Array.isArray(REVIEWED_REPOSITORY_NAMES) ||
+  new Set(REVIEWED_REPOSITORY_NAMES).size !== REVIEWED_REPOSITORY_NAMES.length
+)
+  throw new Error("Reviewed repository priority must be a unique array.");
 const MAX_CACHE_AGE_DAYS = 90;
 const checkOnly = process.argv.includes("--check");
 

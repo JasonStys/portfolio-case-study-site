@@ -5,7 +5,6 @@ summary: "A reproducible ML service that treats calibration, promotion, drift, c
 role: "Machine-learning engineering and MLOps"
 languages: ["Python", "SQL", "Bash"]
 evidence: ["Reproducible training", "Promotion gates", "Drift monitoring", "Canary rollback"]
-featuredOrder: 3
 ---
 
 ## Problem

@@ -6,6 +6,7 @@
  */
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
+import portfolioPriority from "../../src/data/portfolio-priority.json" with { type: "json" };
 
 test("guides a recruiter from overview to implementation evidence", async ({ page }) => {
   await page.goto("./");
@@ -16,12 +17,12 @@ test("guides a recruiter from overview to implementation evidence", async ({ pag
     .first()
     .click();
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "Reliable integration operations",
+    "Polyglot AI development with verifiable revisions",
   );
   await expect(page.getByRole("heading", { name: "Verification" })).toBeVisible();
   await expect(page.getByRole("link", { name: /Inspect repository/ })).toHaveAttribute(
     "href",
-    "https://github.com/JasonStys/integration-operations-console",
+    "https://github.com/JasonStys/code-flow-studio",
   );
 });
 
@@ -29,17 +30,24 @@ test("filters projects with text, exact facets, reset, and restorable URL state"
   page,
 }) => {
   await page.goto("./projects/");
-  await page.getByLabel("Keywords").fill("leases");
+  await page.getByLabel("Keywords").fill("dag leases");
   await expect(page.locator("[data-project-card]:not([hidden])")).toHaveCount(1);
   await expect(page.locator("[data-project-card]:not([hidden])")).toContainText(
     "cloud-job-orchestrator",
   );
   await page.getByLabel("Language").selectOption("Rust");
-  await expect(page).toHaveURL(/q=leases.*language=Rust|language=Rust.*q=leases/);
+  await expect(page).toHaveURL(/q=dag\+leases.*language=Rust|language=Rust.*q=dag\+leases/);
   await page.reload();
-  await expect(page.getByLabel("Keywords")).toHaveValue("leases");
+  await expect(page.getByLabel("Keywords")).toHaveValue("dag leases");
   await page.getByRole("button", { name: "Reset filters" }).click();
-  await expect(page.locator("[data-project-card]:not([hidden])")).toHaveCount(20);
+  await expect(page.locator("[data-project-card]:not([hidden])")).toHaveCount(
+    portfolioPriority.length,
+  );
+  expect(
+    await page
+      .locator("[data-project-card]")
+      .evaluateAll((cards) => cards.map((card) => card.getAttribute("data-project-id"))),
+  ).toEqual(portfolioPriority);
 });
 
 test("supports keyboard navigation and has no detectable WCAG A or AA violations", async ({

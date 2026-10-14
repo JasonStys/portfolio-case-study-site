@@ -14,6 +14,7 @@ import {
   validateCache,
 } from "@/lib/catalog";
 import { projectCuration } from "@/data/project-curation";
+import portfolioPriority from "@/data/portfolio-priority.json";
 
 describe("portfolio catalog", () => {
   it("merges every curated project with a unique cached repository", () => {
@@ -25,6 +26,38 @@ describe("portfolio catalog", () => {
   it("keeps six case studies in explicit order", () => {
     expect(featuredProjects.map((project) => project.featuredOrder)).toEqual([1, 2, 3, 4, 5, 6]);
     expect(featuredProjects.every((project) => project.caseStudySlug)).toBe(true);
+  });
+
+  it("covers all 46 repositories in canonical priority order", () => {
+    expect(projects).toHaveLength(46);
+    expect(repositoryCache.repositories).toHaveLength(46);
+    expect(projects.map((project) => project.name)).toEqual(portfolioPriority);
+    expect(projects.map((project) => project.portfolioOrder)).toEqual(
+      Array.from({ length: 46 }, (_, index) => index + 1),
+    );
+    expect(featuredProjects.map((project) => project.name)).toEqual(portfolioPriority.slice(0, 6));
+    expect(listFacetValues(projects, "roles")).toContain("Security engineer");
+    expect(listFacetValues(projects, "roles")).toContain("DevOps engineer");
+  });
+
+  it("rejects duplicate, omitted, unknown and contradictory editorial priorities", () => {
+    expect(() =>
+      buildCatalog(repositoryCache, projectCuration, [...portfolioPriority, "code-flow-studio"]),
+    ).toThrow(/must be unique/);
+    expect(() =>
+      buildCatalog(repositoryCache, projectCuration, portfolioPriority.slice(1)),
+    ).toThrow(/cover exactly/);
+    expect(() =>
+      buildCatalog(repositoryCache, projectCuration, ["unknown", ...portfolioPriority.slice(1)]),
+    ).toThrow(/cover exactly/);
+    expect(() =>
+      buildCatalog(repositoryCache, projectCuration, [...portfolioPriority].reverse()),
+    ).toThrow(/must agree/);
+    const references = projectCuration.slice(6).map((entry) => ({ ...entry }));
+    const reversed = references.map((entry) => entry.name).reverse();
+    expect(
+      buildCatalog(repositoryCache, references, reversed).map((project) => project.name),
+    ).toEqual(reversed);
   });
 
   it("derives sorted, deduplicated facets", () => {

@@ -133,8 +133,9 @@ function validateContent(records) {
   const caseStudies = records.filter(
     ({ relative }) => relative.startsWith("src/content/case-studies/") && relative.endsWith(".md"),
   );
-  if (caseStudies.length !== 6)
-    throw new Error(`Expected 6 featured case studies, found ${caseStudies.length}.`);
+  const featured = caseStudies.filter((study) => /^featuredOrder: [1-6]$/mu.test(study.source));
+  if (featured.length !== 6)
+    throw new Error(`Expected 6 featured case studies, found ${featured.length}.`);
   for (const study of caseStudies)
     for (const heading of [
       "## Problem",

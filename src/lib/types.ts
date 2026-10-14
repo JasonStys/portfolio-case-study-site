@@ -35,7 +35,7 @@ export type ProjectCuration = Readonly<{
   caseStudySlug?: string;
 }>;
 
-export type Project = CachedRepository & ProjectCuration;
+export type Project = CachedRepository & ProjectCuration & Readonly<{ portfolioOrder: number }>;
 
 export type SearchFacet = "roles" | "languages" | "domains" | "maturity";
 

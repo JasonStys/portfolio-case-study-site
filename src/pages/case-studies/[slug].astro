@@ -12,9 +12,15 @@ import { getCollection, render, type CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
   const entries = await getCollection("caseStudies");
+  const slugs = new Set(entries.map((entry) => entry.id));
+  for (const project of projects)
+    if (project.caseStudySlug && !slugs.has(project.caseStudySlug))
+      throw new Error(`Curated case study ${project.caseStudySlug} is missing.`);
   return entries.map((entry) => {
     const project = projects.find((candidate) => candidate.caseStudySlug === entry.id);
     if (!project) throw new Error(`Case study ${entry.id} does not map to a curated project.`);
+    if (entry.data.featuredOrder !== project.featuredOrder || entry.data.repository !== project.url)
+      throw new Error(`Case study ${entry.id} has inconsistent order or repository metadata.`);
     return { params: { slug: entry.id }, props: { entry, projectName: project.name } };
   });
 }
@@ -53,7 +59,10 @@ const schema = {
     <header class="case-hero">
       <div>
         <p class="eyebrow">
-          Case study {String(entry.data.featuredOrder).padStart(2, "0")} · {entry.data.role}
+          {entry.data.featuredOrder === undefined
+            ? "Reference case study"
+            : `Featured case ${String(entry.data.featuredOrder).padStart(2, "0")}`}{" "}
+          · {entry.data.role}
         </p>
         <h1>{entry.data.title}</h1>
         <p class="case-summary">{entry.data.summary}</p>

@@ -2,7 +2,7 @@
 
 ## Workloads
 
-- Real production catalog: 20 curated repositories and six case studies.
+- Real production catalog: 46 curated repositories, six featured and five reference case studies.
 - Synthetic search benchmark: 10,000 projects, four primary-language groups, 137 cohorts, and 500 deterministic text-plus-facet queries.
 - Browser performance: three new desktop Lighthouse sessions against production output.
 
@@ -23,6 +23,12 @@
 | Lighthouse CLS worst run   |     ≤0.05 |
 
 ## Release-candidate measurements
+
+Current 46-project validation on Windows x64 / Node 24.18.1, 2026-10-14:
+10,000-project build 106.083 ms, query p95 4.615 ms, serialized synthetic index
+7.205 MiB. Static output: JavaScript gzip 1,228 B; CSS gzip 4,348 B; largest
+HTML 54,588 B; search index 85,367 B. All original byte/time gates passed.
+Results below remain the historical first release, not current Lighthouse claims.
 
 Measured on Node.js 24.18.1 on Windows x64 on 2026-09-19:
 

@@ -12,9 +12,9 @@ import type { APIRoute } from "astro";
 export const prerender = true;
 
 export const GET: APIRoute = async () => {
-  const entries = (await getCollection("caseStudies")).sort(
-    (left, right) => left.data.featuredOrder - right.data.featuredOrder,
-  );
+  const entries = (await getCollection("caseStudies"))
+    .filter((entry) => entry.data.featuredOrder !== undefined)
+    .sort((left, right) => (left.data.featuredOrder ?? 0) - (right.data.featuredOrder ?? 0));
   const items = entries.map((entry) => {
     const url = absoluteUrl(`case-studies/${entry.id}/`);
     return `<item><title>${escapeXml(entry.data.title)}</title><link>${escapeXml(url)}</link><guid>${escapeXml(url)}</guid><description>${escapeXml(entry.data.summary)}</description></item>`;

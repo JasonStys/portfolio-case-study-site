@@ -11,7 +11,6 @@ evidence:
     "Cohort and funnel tests",
     "Accessible analytics UI",
   ]
-featuredOrder: 2
 ---
 
 ## Problem

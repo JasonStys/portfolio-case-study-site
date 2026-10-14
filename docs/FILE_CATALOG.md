@@ -28,6 +28,7 @@
 | `docs/reports/ACTIONS_REVIEW_2026-10-14.md`                       | Project documentation described by its title and sections.                                                 |
 | `docs/reports/generated/search-benchmark.json`                    | Repository support file.                                                                                   |
 | `docs/reports/PERFORMANCE.md`                                     | Project documentation described by its title and sections.                                                 |
+| `docs/reports/portfolio-sync-2026-10-14.md`                       | Project documentation described by its title and sections.                                                 |
 | `docs/reports/SITE_QUALITY.md`                                    | Project documentation described by its title and sections.                                                 |
 | `docs/reports/TEST_SUMMARY.md`                                    | Project documentation described by its title and sections.                                                 |
 | `docs/RESEARCH.md`                                                | Project documentation described by its title and sections.                                                 |
@@ -57,14 +58,20 @@
 | `src/components/SiteFooter.astro`                                 | Renders contact paths, provenance, and the current copyright year.                                         |
 | `src/components/SiteHeader.astro`                                 | Renders the skip link, portfolio identity, and primary navigation.                                         |
 | `src/content/case-studies/accessible-design-system-lab.md`        | Project documentation described by its title and sections.                                                 |
+| `src/content/case-studies/applicant-evidence-studio.md`           | Project documentation described by its title and sections.                                                 |
+| `src/content/case-studies/business-knowledge-workbench.md`        | Project documentation described by its title and sections.                                                 |
 | `src/content/case-studies/cloud-job-orchestrator.md`              | Project documentation described by its title and sections.                                                 |
+| `src/content/case-studies/code-flow-studio.md`                    | Project documentation described by its title and sections.                                                 |
 | `src/content/case-studies/forge2d-engine.md`                      | Project documentation described by its title and sections.                                                 |
 | `src/content/case-studies/integration-operations-console.md`      | Project documentation described by its title and sections.                                                 |
 | `src/content/case-studies/ml-model-lifecycle-observatory.md`      | Project documentation described by its title and sections.                                                 |
+| `src/content/case-studies/personal-image-model-studio.md`         | Project documentation described by its title and sections.                                                 |
 | `src/content/case-studies/player-telemetry-analytics-platform.md` | Project documentation described by its title and sections.                                                 |
+| `src/content/case-studies/secure-delivery-pipeline-lab.md`        | Project documentation described by its title and sections.                                                 |
 | `src/content.config.ts`                                           | Defines the schema-validated Markdown collection for consistent engineering case studies.                  |
 | `src/data/github-repositories.json`                               | Reviewed GitHub repository metadata cache used by offline builds.                                          |
-| `src/data/project-curation.ts`                                    | Curates employer-facing roles, domains, outcomes, maturity, and featured ordering.                         |
+| `src/data/portfolio-priority.json`                                | Canonical reviewed ordering of all 46 public portfolio repositories.                                       |
+| `src/data/project-curation.ts`                                    | Curates reviewed roles, domains, outcomes, maturity, and six featured cases.                               |
 | `src/lib/catalog.ts`                                              | Validates cached GitHub metadata, merges curation, and derives deterministic facets.                       |
 | `src/lib/search.ts`                                               | Builds and queries a deterministic inverted index for project text and exact facets.                       |
 | `src/lib/types.ts`                                                | Defines the validated repository, curation, search, and evidence domain types.                             |

@@ -8,7 +8,9 @@
 4. Ensure every measurement can be reproduced from linked source or reports.
 5. Run `npm run typecheck`; the content schema catches malformed frontmatter.
 
-Featured order is unique and limited to 1–6. Changing the featured set requires updating the curation entry and ensuring the total remains six.
+Featured order is unique and limited to 1–6. Changing the featured set requires updating curation and frontmatter together, with the first six names in `src/data/portfolio-priority.json` matching those featured orders. Nonfeatured reference cases omit `featuredOrder`; retain useful old case URLs rather than deleting their evidence. The build rejects missing case routes and mismatched repository/order fields.
+
+The canonical priority list must cover every curated repository exactly once. Reorder by integration depth, reproducible evidence, and role coverage—not stars, inflated claims, or manufactured activity. Update the README table in the same change. GitHub's complete Repositories tab has no custom editorial ordering; use the six profile pins and this full catalog.
 
 ## Refresh GitHub facts
 

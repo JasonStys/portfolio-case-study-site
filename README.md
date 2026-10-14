@@ -11,13 +11,72 @@ An evidence-first engineering portfolio that helps employers evaluate the design
 
 ## Why this exists
 
-A broad GitHub profile can make strong work harder to evaluate. This site creates one consistent navigation layer across software engineering, full-stack systems, AI/ML, analytics, cloud infrastructure, accessible web development, firmware, and game technology.
+A broad GitHub profile can make strong work harder to evaluate. This site creates one consistent navigation layer across software engineering, full-stack systems, AI/ML, analytics, cloud infrastructure, cybersecurity, DevOps, accessible web development, firmware, and game technology.
 
 Six featured projects use the same employer-friendly narrative:
 
 > problem → constraints → design → verification → measured result → limitations
 
-The complete catalog remains searchable by role, language, domain, maturity, and free text.
+The complete **46-repository catalog** remains searchable by role, language, domain, maturity, and free text. Six featured cases lead; five earlier case studies remain available as references.
+
+## Ordered portfolio
+
+Created by [Jason Stys](https://github.com/JasonStys) · [Professional contact](https://www.linkedin.com/in/jason-stys-31b30b351/).
+
+This is a reviewed presentation order, not a numeric skill rating. Broad integrated systems lead, followed by specialized systems and defensive assurance labs. Integration depth, reproducible evidence, and role breadth matter more than repository size or popularity. Lower placement does not mean lower quality. The portfolio hub is linked prominently above but is last here because it organizes the engineering work.
+
+GitHub supports six ordered profile pins, but not a custom ordering of every repository in its Repositories tab. The first six below are the selected profile pins and starred highlights; this README and [project catalog](https://jasonstys.github.io/portfolio-case-study-site/projects/) provide the complete curated order. Search filtering preserves that order.
+
+| Order | Repository                                                                                                | Demonstrated outcome                                                                                                                        |
+| ----- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1     | [code-flow-studio](https://github.com/JasonStys/code-flow-studio)                                         | Connects a polyglot editor, isolated compiler workers, bounded fuzzing, revision evidence, and private local accounts.                      |
+| 2     | [business-knowledge-workbench](https://github.com/JasonStys/business-knowledge-workbench)                 | Combines HTML-first document ingestion, dimension-safe units, provenance, role previews, and encrypted local workspaces.                    |
+| 3     | [personal-image-model-studio](https://github.com/JasonStys/personal-image-model-studio)                   | Trains a real caption-conditioned image model with held-out evaluation, rights-aware datasets, and encrypted local accounts.                |
+| 4     | [forge2d-engine](https://github.com/JasonStys/forge2d-engine)                                             | Combines a sparse-set ECS, deterministic replays, A*, collision broadphase, fuzzing, and SDL3.                                              |
+| 5     | [secure-delivery-pipeline-lab](https://github.com/JasonStys/secure-delivery-pipeline-lab)                 | Verifies signed build identity, SBOMs, tamper resistance, staged promotion, and independently authenticated rollback.                       |
+| 6     | [applicant-evidence-studio](https://github.com/JasonStys/applicant-evidence-studio)                       | Links job-relevant skills to source evidence, preserves education uncertainty, and offers factual resume coaching without automated hiring. |
+| 7     | [cloud-job-orchestrator](https://github.com/JasonStys/cloud-job-orchestrator)                             | Builds a safe DAG control plane with leases, observability, Kubernetes, and Terraform.                                                      |
+| 8     | [integration-operations-console](https://github.com/JasonStys/integration-operations-console)             | Makes retries, rate limits, audit trails, and dead-letter recovery inspectable end to end.                                                  |
+| 9     | [ml-model-lifecycle-observatory](https://github.com/JasonStys/ml-model-lifecycle-observatory)             | Demonstrates promotion gates, drift detection, canary routing, monitoring, and rollback.                                                    |
+| 10    | [player-telemetry-analytics-platform](https://github.com/JasonStys/player-telemetry-analytics-platform)   | Turns synthetic player events into tested funnels, cohorts, timelines, and anomaly reviews.                                                 |
+| 11    | [industrial-edge-digital-twin](https://github.com/JasonStys/industrial-edge-digital-twin)                 | Pairs a deterministic C++ process twin with typed edge APIs, MQTT telemetry, faults, and an HMI.                                            |
+| 12    | [accessible-design-system-lab](https://github.com/JasonStys/accessible-design-system-lab)                 | Packages native-first React components with Storybook, accessibility evidence, and bundle budgets.                                          |
+| 13    | [edge-vision-deployment-benchmark](https://github.com/JasonStys/edge-vision-deployment-benchmark)         | Compares reproducible ONNX inference across Python, C++, and Rust with quantization analysis.                                               |
+| 14    | [secure-service-desk](https://github.com/JasonStys/secure-service-desk)                                   | Models multi-tenant support workflows with an outbox, signed webhooks, and auditable state.                                                 |
+| 15    | [offline-first-field-app](https://github.com/JasonStys/offline-first-field-app)                           | Demonstrates transactional SQLite sync, conflict handling, and a compatible ASP.NET Core API.                                               |
+| 16    | [mips-pipeline-workbench](https://github.com/JasonStys/mips-pipeline-workbench)                           | Connects assembly, emulation, a five-stage pipeline, cache behavior, and an accessible trace UI.                                            |
+| 17    | [firmware-release-recovery-lab](https://github.com/JasonStys/firmware-release-recovery-lab)               | Simulates signed A/B updates, bounded trial boots, rollback, and power-loss recovery.                                                       |
+| 18    | [ot-security-monitor-lab](https://github.com/JasonStys/ot-security-monitor-lab)                           | Analyzes bounded Modbus captures against asset baselines and scoped maintenance windows without contacting industrial devices.              |
+| 19    | [industrial-memory-protocol-workbench](https://github.com/JasonStys/industrial-memory-protocol-workbench) | Exercises defensive binary parsing with packet traces, fault injection, fuzzing, and sanitizers.                                            |
+| 20    | [detection-engineering-lab](https://github.com/JasonStys/detection-engineering-lab)                       | Evaluates synthetic endpoint and cloud events with explainable rules, correlation windows, and false-positive evidence.                     |
+| 21    | [sre-observability-workbench](https://github.com/JasonStys/sre-observability-workbench)                   | Traces real service calls through telemetry and exact SLO burn-rate checks with finite fault and recovery scenarios.                        |
+| 22    | [gitops-platform-lab](https://github.com/JasonStys/gitops-platform-lab)                                   | Tests declarative platform reconciliation, promotion policies, drift handling, and recovery in an isolated cluster lab.                     |
+| 23    | [container-runtime-security-lab](https://github.com/JasonStys/container-runtime-security-lab)             | Combines Falco replay checks with live isolated container probes and privacy-preserving runtime evidence.                                   |
+| 24    | [zero-trust-segmentation-lab](https://github.com/JasonStys/zero-trust-segmentation-lab)                   | Checks admission boundaries and real Linux IPv4 TCP segmentation with synthetic identities and explicit trust limits.                       |
+| 25    | [application-security-regression-lab](https://github.com/JasonStys/application-security-regression-lab)   | Exercises four native services with authorization, session isolation, negative HTTP cases, and concurrency regressions.                     |
+| 26    | [cloud-identity-access-lab](https://github.com/JasonStys/cloud-identity-access-lab)                       | Validates Ed25519 tokens and least-privilege policies with typed reviews and provider-free IAM fixtures.                                    |
+| 27    | [ai-security-evaluation-lab](https://github.com/JasonStys/ai-security-evaluation-lab)                     | Evaluates tenant, approval, schema, canary, and integrity boundaries using reproducible offline agent fixtures.                             |
+| 28    | [infrastructure-policy-lab](https://github.com/JasonStys/infrastructure-policy-lab)                       | Checks infrastructure policy against explicit allowed and denied fixtures before deployment.                                                |
+| 29    | [disaster-recovery-drill-lab](https://github.com/JasonStys/disaster-recovery-drill-lab)                   | Restores encrypted backups and isolated PostgreSQL data while measuring RPO, RTO, and failure budgets.                                      |
+| 30    | [disconnected-release-kit](https://github.com/JasonStys/disconnected-release-kit)                         | Builds independently verified signed offline bundles with staged activation and a hash-locked wheelhouse.                                   |
+| 31    | [incident-response-evidence-kit](https://github.com/JasonStys/incident-response-evidence-kit)             | Organizes synthetic incident evidence with reproducible integrity checks and traceable investigation records.                               |
+| 32    | [secret-rotation-reliability-lab](https://github.com/JasonStys/secret-rotation-reliability-lab)           | Tests real OpenBao and PostgreSQL credential handoff, expiry, revocation, and bounded outage recovery.                                      |
+| 33    | [vulnerability-prioritization-console](https://github.com/JasonStys/vulnerability-prioritization-console) | Prioritizes supplied findings using exposure, applicability, confidence, and dated remediation evidence—not live scanning.                  |
+| 34    | [windows-identity-audit-lab](https://github.com/JasonStys/windows-identity-audit-lab)                     | Reviews read-only SID and group metadata with nested-membership, cycle, and unknown-identity handling.                                      |
+| 35    | [network-defense-analysis-lab](https://github.com/JasonStys/network-defense-analysis-lab)                 | Analyzes supplied synthetic traffic evidence with bounded parsing and documented detection limitations.                                     |
+| 36    | [memory-safety-analysis-lab](https://github.com/JasonStys/memory-safety-analysis-lab)                     | Pairs native memory-safety checks, sanitizer evidence, and defensive regression fixtures.                                                   |
+| 37    | [unity-tactical-ai-sandbox](https://github.com/JasonStys/unity-tactical-ai-sandbox)                       | Explores deterministic A*, utility decisions, replay verification, and Unity integration.                                                   |
+| 38    | [mqtt-lifecycle-reliability-lab](https://github.com/JasonStys/mqtt-lifecycle-reliability-lab)             | Makes MQTT ordering, retained state, ACL behavior, fault injection, and bounded buffering measurable.                                       |
+| 39    | [offline-incident-timeline-pwa](https://github.com/JasonStys/offline-incident-timeline-pwa)               | Processes large local incident logs with Web Workers, IndexedDB, visualization, and PWA recovery.                                           |
+| 40    | [documentation-quality-gate](https://github.com/JasonStys/documentation-quality-gate)                     | Provides deterministic document diagnostics, expiring suppressions, SARIF, and accessible reports.                                          |
+| 41    | [versioned-product-knowledge-portal](https://github.com/JasonStys/versioned-product-knowledge-portal)     | Builds version-aware product search with relevance evaluation, citations, provenance, and static output.                                    |
+| 42    | [engineering-documentation-foundry](https://github.com/JasonStys/engineering-documentation-foundry)       | Migrates synthetic PDFs into accessible HTML with provenance and deterministic quality gates.                                               |
+| 43    | [node-red-resilient-metadata](https://github.com/JasonStys/node-red-resilient-metadata)                   | Adds credential-safe, bounded metadata lookups with cancellation and structured lifecycle errors.                                           |
+| 44    | [host-hardening-assurance-lab](https://github.com/JasonStys/host-hardening-assurance-lab)                 | Tests host-hardening evidence and explicit policy exceptions without silently changing the workstation.                                     |
+| 45    | [rmf-evidence-workbench](https://github.com/JasonStys/rmf-evidence-workbench)                             | Links six OSCAL model types to hashed artifacts, observations, milestones, and fictional authorization history.                             |
+| 46    | [portfolio-case-study-site](https://github.com/JasonStys/portfolio-case-study-site)                       | Provides the ranked, searchable navigation hub with schema-checked case studies and static delivery budgets.                                |
+
+Use the Role/Domain filters for security, DevOps, cloud, AI/ML, data, frontend, systems, and game-engine paths. Government-oriented governance examples use fictional evidence and do not claim authorization or certification. Local account apps remain local-first, with explicit unsigned-package and trusted-host limits; they are not advertised as public production services.
 
 ## Sixty-second quick start
 
@@ -118,8 +177,8 @@ Coverage thresholds are enforced at 92% statements, functions, and lines and 88%
 | ----------------- | -------------------------------------------------------------------------------- |
 | `.github/`        | Least-privilege CI, Pages, CodeQL, dependency review, and update policy.         |
 | `src/components/` | Shared Astro layout, navigation, project, metric, and diagram components.        |
-| `src/content/`    | Six schema-validated Markdown engineering case studies.                          |
-| `src/data/`       | Reviewed public GitHub cache and employer-facing curation.                       |
+| `src/content/`    | Six featured and five reference Markdown engineering case studies.               |
+| `src/data/`       | Public GitHub cache, editorial curation, and canonical priority order.           |
 | `src/lib/`        | Catalog validation, inverted search, URLs, XML, and domain types.                |
 | `src/pages/`      | Static overview, catalog, case routes, feeds, sitemap, robots, and 404.          |
 | `src/scripts/`    | The only browser-delivered TypeScript enhancement: catalog filtering.            |

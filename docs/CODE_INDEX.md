@@ -32,19 +32,19 @@
 | 20 | variable | `checkOnly` |
 | 22 | function | `createProject` |
 | 23 | variable | `language` |
-| 39 | function | `percentile` |
-| 40 | variable | `sorted` |
-| 44 | function | `measure` |
-| 45 | variable | `startedAt` |
-| 46 | variable | `value` |
-| 50 | function | `main` |
-| 51 | variable | `projects` |
-| 52 | variable | `build` |
-| 53 | variable | `queryDurations` |
-| 63 | variable | `serializedMiB` |
-| 64 | variable | `metrics` |
-| 70 | variable | `report` |
-| 81 | variable | `failures` |
+| 40 | function | `percentile` |
+| 41 | variable | `sorted` |
+| 45 | function | `measure` |
+| 46 | variable | `startedAt` |
+| 47 | variable | `value` |
+| 51 | function | `main` |
+| 52 | variable | `projects` |
+| 53 | variable | `build` |
+| 54 | variable | `queryDurations` |
+| 64 | variable | `serializedMiB` |
+| 65 | variable | `metrics` |
+| 71 | variable | `report` |
+| 82 | variable | `failures` |
 
 ## `scripts/generate-code-index.mjs`
 
@@ -80,23 +80,23 @@
 | 15 | variable | `EXCLUDED_DIRECTORIES` |
 | 25 | variable | `checkOnly` |
 | 26 | variable | `STATIC_DESCRIPTIONS` |
-| 45 | function | `collectFiles` |
-| 46 | variable | `entries` |
-| 47 | variable | `results` |
-| 50 | variable | `absolute` |
-| 57 | function | `extractDescription` |
-| 58 | variable | `fileTag` |
-| 60 | variable | `fileLine` |
-| 62 | variable | `withoutEnd` |
-| 70 | function | `describeFile` |
-| 71 | variable | `staticDescription` |
-| 73 | variable | `extracted` |
-| 87 | function | `renderCatalog` |
-| 88 | variable | `lines` |
-| 101 | function | `main` |
-| 102 | variable | `files` |
-| 103 | variable | `records` |
-| 109 | variable | `rendered` |
+| 49 | function | `collectFiles` |
+| 50 | variable | `entries` |
+| 51 | variable | `results` |
+| 54 | variable | `absolute` |
+| 61 | function | `extractDescription` |
+| 62 | variable | `fileTag` |
+| 64 | variable | `fileLine` |
+| 66 | variable | `withoutEnd` |
+| 74 | function | `describeFile` |
+| 75 | variable | `staticDescription` |
+| 77 | variable | `extracted` |
+| 91 | function | `renderCatalog` |
+| 92 | variable | `lines` |
+| 105 | function | `main` |
+| 106 | variable | `files` |
+| 107 | variable | `records` |
+| 113 | variable | `rendered` |
 
 ## `scripts/lighthouse.mjs`
 
@@ -139,24 +139,24 @@
 | 13 | variable | `CACHE_PATH` |
 | 14 | variable | `OWNER` |
 | 15 | variable | `REVIEWED_REPOSITORY_NAMES` |
-| 37 | variable | `MAX_CACHE_AGE_DAYS` |
-| 38 | variable | `checkOnly` |
-| 40 | function | `validateExisting` |
-| 48 | variable | `names` |
-| 49 | variable | `expectedNames` |
-| 59 | function | `fetchJson` |
-| 60 | variable | `headers` |
-| 65 | variable | `response` |
-| 70 | function | `refreshRepository` |
-| 77 | variable | `detectedLanguages` |
-| 89 | function | `checkCache` |
-| 90 | variable | `ageDays` |
-| 104 | function | `main` |
-| 105 | variable | `existing` |
-| 107 | variable | `repositories` |
-| 108 | variable | `existingByName` |
-| 112 | variable | `repository` |
-| 116 | variable | `refreshed` |
+| 23 | variable | `MAX_CACHE_AGE_DAYS` |
+| 24 | variable | `checkOnly` |
+| 26 | function | `validateExisting` |
+| 34 | variable | `names` |
+| 35 | variable | `expectedNames` |
+| 45 | function | `fetchJson` |
+| 46 | variable | `headers` |
+| 51 | variable | `response` |
+| 56 | function | `refreshRepository` |
+| 63 | variable | `detectedLanguages` |
+| 75 | function | `checkCache` |
+| 76 | variable | `ageDays` |
+| 90 | function | `main` |
+| 91 | variable | `existing` |
+| 93 | variable | `repositories` |
+| 94 | variable | `existingByName` |
+| 98 | variable | `repository` |
+| 102 | variable | `refreshed` |
 
 ## `scripts/validate-dist.mjs`
 
@@ -218,9 +218,10 @@
 | 122 | variable | `combined` |
 | 126 | variable | `sourceRecords` |
 | 133 | variable | `caseStudies` |
-| 151 | function | `main` |
-| 153 | variable | `files` |
-| 154 | variable | `records` |
+| 136 | variable | `featured` |
+| 152 | function | `main` |
+| 154 | variable | `files` |
+| 155 | variable | `records` |
 
 ## `src/components/ArchitectureFigure.astro`
 
@@ -278,32 +279,33 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 17 | variable | `GITHUB_REPOSITORY_PREFIX` |
-| 19 | function | `requireText` |
-| 26 | function | `requireStringArray` |
-| 30 | variable | `entries` |
-| 37 | function | `validateCache` |
-| 41 | variable | `candidate` |
-| 43 | variable | `owner` |
-| 44 | variable | `fetchedAt` |
-| 47 | variable | `source` |
-| 51 | variable | `names` |
-| 52 | variable | `repositories` |
-| 56 | variable | `repository` |
-| 57 | variable | `name` |
-| 60 | variable | `url` |
-| 77 | function | `buildCatalog` |
-| 81 | variable | `repositories` |
-| 84 | variable | `curationNames` |
-| 85 | variable | `merged` |
-| 89 | variable | `repository` |
-| 96 | variable | `orders` |
-| 110 | function | `listFacetValues` |
-| 114 | variable | `values` |
-| 116 | variable | `projectValues` |
-| 122 | variable | `repositoryCache` |
-| 123 | variable | `projects` |
-| 124 | variable | `featuredProjects` |
+| 18 | variable | `GITHUB_REPOSITORY_PREFIX` |
+| 20 | function | `requireText` |
+| 27 | function | `requireStringArray` |
+| 31 | variable | `entries` |
+| 38 | function | `validateCache` |
+| 42 | variable | `candidate` |
+| 44 | variable | `owner` |
+| 45 | variable | `fetchedAt` |
+| 48 | variable | `source` |
+| 52 | variable | `names` |
+| 53 | variable | `repositories` |
+| 57 | variable | `repository` |
+| 58 | variable | `name` |
+| 61 | variable | `url` |
+| 79 | function | `buildCatalog` |
+| 84 | variable | `repositories` |
+| 87 | variable | `curationNames` |
+| 88 | variable | `priorityOrders` |
+| 89 | variable | `merged` |
+| 93 | variable | `repository` |
+| 104 | variable | `orders` |
+| 122 | function | `listFacetValues` |
+| 126 | variable | `values` |
+| 128 | variable | `projectValues` |
+| 134 | variable | `repositoryCache` |
+| 135 | variable | `projects` |
+| 136 | variable | `featuredProjects` |
 
 ## `src/lib/search.ts`
 
@@ -367,9 +369,10 @@
 | ---: | --- | --- |
 | 13 | function | `getStaticPaths` |
 | 14 | variable | `entries` |
-| 16 | variable | `project` |
-| 24 | variable | `project` |
-| 27 | variable | `schema` |
+| 15 | variable | `slugs` |
+| 20 | variable | `project` |
+| 30 | variable | `project` |
+| 33 | variable | `schema` |
 
 ## `src/pages/feed.xml.ts`
 
@@ -479,20 +482,22 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 49 | variable | `skipLink` |
-| 59 | variable | `results` |
-| 70 | variable | `bodyWidth` |
-| 72 | variable | `cards` |
-| 73 | variable | `first` |
-| 74 | variable | `second` |
+| 57 | variable | `skipLink` |
+| 67 | variable | `results` |
+| 78 | variable | `bodyWidth` |
+| 80 | variable | `cards` |
+| 81 | variable | `first` |
+| 82 | variable | `second` |
 
 ## `tests/unit/catalog.test.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 31 | variable | `languages` |
-| 63 | variable | `repository` |
-| 64 | variable | `envelope` |
+| 56 | variable | `references` |
+| 57 | variable | `reversed` |
+| 64 | variable | `languages` |
+| 96 | variable | `repository` |
+| 97 | variable | `envelope` |
 
 ## `tests/unit/search.test.ts`
 

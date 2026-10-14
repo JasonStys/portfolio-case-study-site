@@ -6,7 +6,6 @@ role: "Frontend and design-system engineering"
 languages: ["TypeScript", "JavaScript", "HTML", "CSS"]
 evidence:
   ["WCAG-focused interactions", "Storybook documentation", "Package smoke tests", "Bundle budgets"]
-featuredOrder: 5
 ---
 
 ## Problem

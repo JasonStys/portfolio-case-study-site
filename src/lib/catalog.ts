@@ -5,6 +5,7 @@
  * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
  */
 import rawRepositoryCache from "@/data/github-repositories.json";
+import portfolioPriority from "@/data/portfolio-priority.json";
 import { projectCuration } from "@/data/project-curation";
 import type {
   CachedRepository,
@@ -74,14 +75,17 @@ export function validateCache(value: unknown): RepositoryCache {
   return Object.freeze({ schemaVersion: 1, owner, fetchedAt, source, repositories });
 }
 
+/** Merge reviewed metadata and validate a complete, unique editorial order. No popularity scoring. */
 export function buildCatalog(
   cache: RepositoryCache,
   curation: readonly ProjectCuration[],
+  priorityNames: readonly string[] = curation.map((entry) => entry.name),
 ): readonly Project[] {
   const repositories = new Map(
     cache.repositories.map((repository) => [repository.name, repository]),
   );
   const curationNames = new Set<string>();
+  const priorityOrders = new Map(priorityNames.map((name, index) => [name, index + 1]));
   const merged = curation.map((entry) => {
     if (curationNames.has(entry.name))
       throw new TypeError(`Duplicate curation entry: ${entry.name}.`);
@@ -91,20 +95,28 @@ export function buildCatalog(
     if (entry.featuredOrder !== undefined && entry.caseStudySlug === undefined) {
       throw new TypeError(`Featured project ${entry.name} requires a case study slug.`);
     }
-    return Object.freeze({ ...repository, ...entry });
+    return Object.freeze({
+      ...repository,
+      ...entry,
+      portfolioOrder: priorityOrders.get(entry.name) ?? 0,
+    });
   });
   const orders = merged
     .map((project) => project.featuredOrder)
     .filter((order): order is number => order !== undefined);
   if (new Set(orders).size !== orders.length)
     throw new TypeError("Featured order values must be unique.");
-  return Object.freeze(
-    merged.sort(
-      (left, right) =>
-        (left.featuredOrder ?? Number.MAX_SAFE_INTEGER) -
-          (right.featuredOrder ?? Number.MAX_SAFE_INTEGER) || left.name.localeCompare(right.name),
-    ),
-  );
+  if (new Set(priorityNames).size !== priorityNames.length)
+    throw new TypeError("Portfolio priority names must be unique.");
+  if (
+    priorityNames.length !== curation.length ||
+    priorityNames.some((name) => !curationNames.has(name))
+  )
+    throw new TypeError("Portfolio priority must cover exactly the curated projects.");
+  for (const project of merged)
+    if (project.featuredOrder !== undefined && project.featuredOrder !== project.portfolioOrder)
+      throw new TypeError("Featured order must agree with portfolio priority.");
+  return Object.freeze(merged.sort((left, right) => left.portfolioOrder - right.portfolioOrder));
 }
 
 export function listFacetValues(
@@ -120,5 +132,5 @@ export function listFacetValues(
 }
 
 export const repositoryCache = validateCache(rawRepositoryCache);
-export const projects = buildCatalog(repositoryCache, projectCuration);
+export const projects = buildCatalog(repositoryCache, projectCuration, portfolioPriority);
 export const featuredProjects = projects.filter((project) => project.featuredOrder !== undefined);

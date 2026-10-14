@@ -19,6 +19,15 @@ The release gate covers catalog/cache contracts, search behavior, URL/XML helper
 
 ## Release result
 
+Current portfolio synchronization (2026-10-14): 46 ordered projects, six featured
+and five reference cases. Local strict lint/type/content checks passed; 14 unit
+tests passed, 99.18% statements, 97.36% branches, 100% functions, 99.09% lines.
+All original search and byte budgets passed for 15 HTML routes and 90 authored
+text files; npm audit found zero known vulnerabilities. Complete native browser,
+Lighthouse, and deployment evidence is recorded in the exact candidate/main
+[Actions runs](https://github.com/JasonStys/portfolio-case-study-site/actions).
+The results below are retained first-release history.
+
 Measured on Node.js 24.18.1 on 2026-09-19:
 
 | Gate                        | Result                                                                   |

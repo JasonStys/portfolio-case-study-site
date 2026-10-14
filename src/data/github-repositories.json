@@ -1,86 +1,228 @@
 {
   "schemaVersion": 1,
   "owner": "JasonStys",
-  "fetchedAt": "2026-09-19T07:18:00.000Z",
+  "fetchedAt": "2026-10-14T23:14:16.129239+00:00",
   "source": "https://api.github.com/users/JasonStys/repos",
   "repositories": [
     {
-      "name": "integration-operations-console",
-      "description": "Full-stack reliability lab for idempotent integrations, retries, dead-letter recovery, audit trails, and operational metrics.",
-      "url": "https://github.com/JasonStys/integration-operations-console",
-      "primaryLanguage": "Java",
-      "languages": ["Java", "TypeScript", "SQL", "HTML", "CSS", "Shell"],
-      "topics": [
-        "integration-testing",
-        "java",
-        "openapi",
-        "postgresql",
-        "react",
-        "reliability-engineering",
-        "spring-boot",
-        "typescript"
-      ],
-      "pushedAt": "2026-09-18T20:01:39Z"
-    },
-    {
-      "name": "player-telemetry-analytics-platform",
-      "description": "Synthetic game telemetry platform with privacy-aware ingestion, SQL transformations, cohort and funnel analytics, anomaly review, and an accessible dashboard.",
-      "url": "https://github.com/JasonStys/player-telemetry-analytics-platform",
+      "name": "code-flow-studio",
+      "description": "Private local-account development studio with encrypted code history, an offline editor, isolated polyglot testing, and opt-in AI assistance",
+      "url": "https://github.com/JasonStys/code-flow-studio",
       "primaryLanguage": "Python",
-      "languages": ["Python", "SQL", "TypeScript", "HTML", "CSS", "Shell"],
+      "languages": ["Python", "TypeScript", "CSS", "JavaScript", "Dockerfile", "HTML"],
       "topics": [
-        "analytics",
-        "data-engineering",
-        "duckdb",
-        "game-analytics",
-        "postgresql",
+        "ai-assisted-development",
+        "electron",
+        "fuzzing",
+        "github-actions",
         "python",
-        "sql",
+        "testing",
         "typescript"
       ],
-      "pushedAt": "2026-09-18T20:11:04Z"
+      "pushedAt": "2026-10-13T05:19:10Z"
     },
     {
-      "name": "ml-model-lifecycle-observatory",
-      "description": "Reproducible ML lifecycle with calibrated models, safe artifacts, promotion gates, drift monitoring, canary routing, and rollback.",
-      "url": "https://github.com/JasonStys/ml-model-lifecycle-observatory",
+      "name": "business-knowledge-workbench",
+      "description": "Configurable business knowledge workspace: HTML-first documents, normalized data, scoped portals, reporting, AI adapters and installable PWA.",
+      "url": "https://github.com/JasonStys/business-knowledge-workbench",
       "primaryLanguage": "Python",
-      "languages": ["Python", "SQL", "Shell", "JavaScript"],
+      "languages": ["Python", "TypeScript", "CSS", "JavaScript", "HTML", "Dockerfile", "Shell"],
       "topics": [
-        "canary-deployment",
-        "drift-detection",
-        "fastapi",
-        "machine-learning",
-        "mlops",
-        "model-monitoring",
-        "postgresql",
-        "python"
+        "ai-integration",
+        "data-normalization",
+        "document-processing",
+        "progressive-web-app",
+        "python",
+        "typescript"
       ],
-      "pushedAt": "2026-09-18T23:21:50Z"
+      "pushedAt": "2026-10-13T07:25:29Z"
+    },
+    {
+      "name": "personal-image-model-studio",
+      "description": "Local image studio with structured prompts, safe datasets, custom diffusion training, LoRA, and reproducible validation.",
+      "url": "https://github.com/JasonStys/personal-image-model-studio",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "TypeScript", "CSS", "JavaScript", "HTML"],
+      "topics": ["engineering-portfolio"],
+      "pushedAt": "2026-10-13T03:15:53Z"
     },
     {
       "name": "forge2d-engine",
       "description": "Deterministic C++20 2D engine with sparse-set ECS, A* pathfinding, collision broadphase, replays, SDL3, fuzzing, and cross-platform CI.",
       "url": "https://github.com/JasonStys/forge2d-engine",
       "primaryLanguage": "C++",
-      "languages": ["C++", "C", "CMake", "Shell"],
+      "languages": ["C++", "C", "CMake", "Shell", "JavaScript", "Dockerfile"],
       "topics": [
+        "cmake",
         "collision-detection",
+        "cplusplus",
         "cpp",
+        "deterministic",
         "entity-component-system",
         "fuzzing",
+        "game-development",
         "game-engine",
         "pathfinding",
+        "sanitizers",
         "sdl3"
       ],
-      "pushedAt": "2026-09-18T19:43:29Z"
+      "pushedAt": "2026-10-14T23:10:59Z"
+    },
+    {
+      "name": "secure-delivery-pipeline-lab",
+      "description": "Verified software delivery with keyless provenance, signed SBOMs, adversarial release checks, and atomic lab promotion and rollback. Created by Jason Stys.",
+      "url": "https://github.com/JasonStys/secure-delivery-pipeline-lab",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "Dockerfile", "Shell"],
+      "topics": [
+        "bash",
+        "cybersecurity",
+        "devsecops",
+        "github-actions",
+        "python",
+        "reproducible-builds",
+        "sbom",
+        "supply-chain-security"
+      ],
+      "pushedAt": "2026-10-13T17:29:16Z"
+    },
+    {
+      "name": "applicant-evidence-studio",
+      "description": "Private accounts and browser-encrypted applicant evidence review and coaching, with portable desktop apps. Created by Jason Stys; human review required.",
+      "url": "https://github.com/JasonStys/applicant-evidence-studio",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "TypeScript", "JavaScript", "CSS", "Dockerfile", "HTML"],
+      "topics": ["engineering-portfolio"],
+      "pushedAt": "2026-10-13T00:23:50Z"
+    },
+    {
+      "name": "cloud-job-orchestrator",
+      "description": "Safe, observable DAG job control plane with Rust, PostgreSQL leases, TypeScript operations UI, and cloud deployment tooling",
+      "url": "https://github.com/JasonStys/cloud-job-orchestrator",
+      "primaryLanguage": "Rust",
+      "languages": [
+        "Rust",
+        "SQL",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "Shell",
+        "HCL",
+        "JavaScript",
+        "Dockerfile"
+      ],
+      "topics": [
+        "axum",
+        "devops",
+        "distributed-systems",
+        "job-scheduler",
+        "kubernetes",
+        "postgresql",
+        "rust",
+        "terraform",
+        "typescript"
+      ],
+      "pushedAt": "2026-10-14T23:10:50Z"
+    },
+    {
+      "name": "integration-operations-console",
+      "description": "Full-stack reliability lab for idempotent integrations, retries, dead-letter recovery, audit trails, and operational metrics.",
+      "url": "https://github.com/JasonStys/integration-operations-console",
+      "primaryLanguage": "Java",
+      "languages": [
+        "Java",
+        "TypeScript",
+        "SQL",
+        "HTML",
+        "CSS",
+        "Shell",
+        "JavaScript",
+        "Dockerfile"
+      ],
+      "topics": [
+        "docker",
+        "integration-testing",
+        "java",
+        "openapi",
+        "postgresql",
+        "prometheus",
+        "react",
+        "reliability-engineering",
+        "spring-boot",
+        "typescript"
+      ],
+      "pushedAt": "2026-10-14T23:11:01Z"
+    },
+    {
+      "name": "ml-model-lifecycle-observatory",
+      "description": "Reproducible ML lifecycle with calibrated models, safe artifacts, promotion gates, drift monitoring, canary routing, and rollback.",
+      "url": "https://github.com/JasonStys/ml-model-lifecycle-observatory",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "SQL", "Shell", "JavaScript", "Dockerfile"],
+      "topics": [
+        "canary-deployment",
+        "docker",
+        "drift-detection",
+        "fastapi",
+        "kubernetes",
+        "machine-learning",
+        "mlops",
+        "model-monitoring",
+        "model-registry",
+        "postgresql",
+        "python",
+        "reproducible-research",
+        "scikit-learn",
+        "sqlite"
+      ],
+      "pushedAt": "2026-10-14T23:11:05Z"
+    },
+    {
+      "name": "player-telemetry-analytics-platform",
+      "description": "Synthetic game telemetry platform with privacy-aware ingestion, SQL transformations, cohort and funnel analytics, anomaly review, and an accessible dashboard.",
+      "url": "https://github.com/JasonStys/player-telemetry-analytics-platform",
+      "primaryLanguage": "Python",
+      "languages": [
+        "Python",
+        "SQL",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "Shell",
+        "JavaScript",
+        "Dockerfile"
+      ],
+      "topics": [
+        "analytics",
+        "data-engineering",
+        "data-quality",
+        "duckdb",
+        "fastapi",
+        "game-analytics",
+        "parquet",
+        "postgresql",
+        "python",
+        "react",
+        "sql",
+        "typescript"
+      ],
+      "pushedAt": "2026-10-09T07:06:44Z"
+    },
+    {
+      "name": "industrial-edge-digital-twin",
+      "description": "Deterministic C++20 process twin with typed edge APIs, MQTT telemetry, fault injection, an accessible HMI, and cross-platform CI.",
+      "url": "https://github.com/JasonStys/industrial-edge-digital-twin",
+      "primaryLanguage": "TypeScript",
+      "languages": ["C++", "TypeScript", "JavaScript", "HTML", "CSS", "CMake"],
+      "topics": ["cpp", "digital-twin", "industrial-iot", "mqtt", "simulation", "telemetry"],
+      "pushedAt": "2026-10-12T03:50:41Z"
     },
     {
       "name": "accessible-design-system-lab",
       "description": "Native-first React components with TypeScript, Storybook, accessibility testing, and measurable quality gates.",
       "url": "https://github.com/JasonStys/accessible-design-system-lab",
       "primaryLanguage": "TypeScript",
-      "languages": ["TypeScript", "JavaScript", "HTML", "CSS"],
+      "languages": ["TypeScript", "JavaScript", "HTML", "CSS", "Shell"],
       "topics": [
         "accessibility",
         "design-system",
@@ -90,83 +232,46 @@
         "storybook",
         "typescript"
       ],
-      "pushedAt": "2026-09-18T22:05:35Z"
-    },
-    {
-      "name": "cloud-job-orchestrator",
-      "description": "Safe, observable DAG job control plane with Rust, PostgreSQL leases, TypeScript operations UI, and cloud deployment tooling.",
-      "url": "https://github.com/JasonStys/cloud-job-orchestrator",
-      "primaryLanguage": "Rust",
-      "languages": ["Rust", "SQL", "TypeScript", "HTML", "CSS", "Shell", "HCL"],
-      "topics": [
-        "distributed-systems",
-        "job-scheduler",
-        "kubernetes",
-        "postgresql",
-        "rust",
-        "terraform",
-        "typescript"
-      ],
-      "pushedAt": "2026-09-19T03:44:35Z"
+      "pushedAt": "2026-10-14T23:10:50Z"
     },
     {
       "name": "edge-vision-deployment-benchmark",
       "description": "Reproducible edge vision deployment benchmark with ONNX, native C++ and Rust inference, quantization analysis, and cross-runtime validation.",
       "url": "https://github.com/JasonStys/edge-vision-deployment-benchmark",
       "primaryLanguage": "Python",
-      "languages": ["Python", "C++", "Rust", "CMake", "Shell"],
+      "languages": ["Python", "C++", "Rust", "CMake", "Shell", "JavaScript", "Dockerfile"],
       "topics": [
+        "benchmarking",
         "computer-vision",
         "cpp",
         "edge-ai",
+        "github-actions",
         "machine-learning",
+        "mlops",
         "model-quantization",
         "onnx",
+        "onnxruntime",
         "python",
+        "reproducibility",
         "rust"
       ],
-      "pushedAt": "2026-09-19T05:05:14Z"
-    },
-    {
-      "name": "unity-tactical-ai-sandbox",
-      "description": "Deterministic C# tactical AI lab with A*, utility scoring, replay verification, Unity integration, and headless telemetry.",
-      "url": "https://github.com/JasonStys/unity-tactical-ai-sandbox",
-      "primaryLanguage": "C#",
-      "languages": ["C#", "JavaScript"],
-      "topics": [
-        "c-sharp",
-        "deterministic-simulation",
-        "game-ai",
-        "pathfinding",
-        "unity",
-        "utility-ai"
-      ],
-      "pushedAt": "2026-09-19T02:19:15Z"
-    },
-    {
-      "name": "mips-pipeline-workbench",
-      "description": "MIPS-like assembler, reference emulator, five-stage pipeline simulator, cache model, and accessible trace visualizer in Rust and TypeScript.",
-      "url": "https://github.com/JasonStys/mips-pipeline-workbench",
-      "primaryLanguage": "Rust",
-      "languages": ["Rust", "Assembly", "TypeScript", "HTML", "CSS", "Shell"],
-      "topics": ["assembly", "computer-architecture", "mips", "pipeline", "rust", "typescript"],
-      "pushedAt": "2026-09-19T01:38:58Z"
+      "pushedAt": "2026-10-14T23:10:55Z"
     },
     {
       "name": "secure-service-desk",
       "description": "Auditable multi-tenant service desk with reliable outbox delivery, signed webhooks, and PostgreSQL-backed workflows.",
       "url": "https://github.com/JasonStys/secure-service-desk",
       "primaryLanguage": "PHP",
-      "languages": ["PHP", "SQL", "JavaScript", "HTML", "CSS", "Shell"],
+      "languages": ["PHP", "SQL", "JavaScript", "HTML", "CSS", "Shell", "Blade", "Dockerfile"],
       "topics": ["laravel", "outbox-pattern", "php", "postgresql", "security", "webhooks"],
-      "pushedAt": "2026-09-19T01:03:05Z"
+      "pushedAt": "2026-10-14T23:11:13Z"
     },
     {
       "name": "offline-first-field-app",
       "description": "Offline-first .NET MAUI field app with transactional SQLite sync, conflict handling, ASP.NET Core API, and verified CI.",
       "url": "https://github.com/JasonStys/offline-first-field-app",
       "primaryLanguage": "C#",
-      "languages": ["C#", "SQL", "Shell", "PowerShell"],
+      "languages": ["C#", "SQL", "Shell", "PowerShell", "Dockerfile"],
       "topics": [
         "android",
         "aspnet-core",
@@ -177,51 +282,25 @@
         "sqlite",
         "windows"
       ],
-      "pushedAt": "2026-09-19T00:00:35Z"
+      "pushedAt": "2026-10-14T23:11:09Z"
     },
     {
-      "name": "offline-incident-timeline-pwa",
-      "description": "Framework-free offline incident timeline with worker parsing, IndexedDB migrations, accessible visualization, and cross-browser reliability evidence.",
-      "url": "https://github.com/JasonStys/offline-incident-timeline-pwa",
-      "primaryLanguage": "JavaScript",
-      "languages": ["JavaScript", "HTML", "CSS"],
-      "topics": [
-        "accessibility",
-        "indexeddb",
-        "javascript",
-        "offline-first",
-        "playwright",
-        "pwa",
-        "service-worker",
-        "web-workers"
+      "name": "mips-pipeline-workbench",
+      "description": "MIPS-like assembler, reference emulator, five-stage pipeline simulator, cache model, and accessible trace visualizer in Rust and TypeScript.",
+      "url": "https://github.com/JasonStys/mips-pipeline-workbench",
+      "primaryLanguage": "Rust",
+      "languages": [
+        "Rust",
+        "Assembly",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "Shell",
+        "JavaScript",
+        "Dockerfile"
       ],
-      "pushedAt": "2026-09-19T07:10:46Z"
-    },
-    {
-      "name": "mqtt-lifecycle-reliability-lab",
-      "description": "TypeScript MQTT lifecycle lab with bounded offline buffering, retained state, ordering analysis, ACL modeling, fault scenarios, and reproducible telemetry reports.",
-      "url": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab",
-      "primaryLanguage": "TypeScript",
-      "languages": ["TypeScript", "JavaScript", "HTML", "CSS", "Shell"],
-      "topics": [
-        "fault-injection",
-        "industrial-iot",
-        "mqtt",
-        "mqtt5",
-        "reliability-engineering",
-        "telemetry",
-        "typescript"
-      ],
-      "pushedAt": "2026-09-18T20:01:37Z"
-    },
-    {
-      "name": "industrial-edge-digital-twin",
-      "description": "Deterministic C++20 process twin with typed edge APIs, MQTT telemetry, fault injection, an accessible HMI, and cross-platform CI.",
-      "url": "https://github.com/JasonStys/industrial-edge-digital-twin",
-      "primaryLanguage": "C++",
-      "languages": ["C++", "TypeScript", "JavaScript", "HTML", "CSS", "CMake"],
-      "topics": ["cpp", "digital-twin", "industrial-iot", "mqtt", "simulation", "telemetry"],
-      "pushedAt": "2026-09-18T20:01:36Z"
+      "topics": ["assembly", "computer-architecture", "mips", "pipeline", "rust", "typescript"],
+      "pushedAt": "2026-10-14T23:11:04Z"
     },
     {
       "name": "firmware-release-recovery-lab",
@@ -230,41 +309,25 @@
       "primaryLanguage": "Rust",
       "languages": ["Rust", "Python", "Shell"],
       "topics": ["firmware", "property-testing", "rollback", "rust", "secure-boot"],
-      "pushedAt": "2026-09-18T19:43:23Z"
+      "pushedAt": "2026-10-14T23:10:55Z"
     },
     {
-      "name": "documentation-quality-gate",
-      "description": "TypeScript CLI and GitHub Action for deterministic documentation checks, exact diagnostics, expiring suppressions, SARIF, and accessible reports.",
-      "url": "https://github.com/JasonStys/documentation-quality-gate",
-      "primaryLanguage": "TypeScript",
-      "languages": ["TypeScript", "JavaScript"],
+      "name": "ot-security-monitor-lab",
+      "description": "Passive offline Modbus/TCP monitoring with asset-aware detections, capture fidelity, SQLite evidence and independent validation. Created by Jason Stys.",
+      "url": "https://github.com/JasonStys/ot-security-monitor-lab",
+      "primaryLanguage": "Python",
+      "languages": ["Python"],
       "topics": [
-        "accessibility",
-        "developer-tools",
-        "documentation",
-        "github-actions",
-        "sarif",
-        "static-analysis",
-        "typescript"
+        "cybersecurity",
+        "detection-engineering",
+        "devops",
+        "industrial-control-systems",
+        "modbus",
+        "operational-technology",
+        "python",
+        "sqlite"
       ],
-      "pushedAt": "2026-09-18T19:43:22Z"
-    },
-    {
-      "name": "node-red-resilient-metadata",
-      "description": "TypeScript Node-RED package for credential-safe, bounded product metadata lookups with cancellation, structured errors, example flows, and lifecycle tests.",
-      "url": "https://github.com/JasonStys/node-red-resilient-metadata",
-      "primaryLanguage": "TypeScript",
-      "languages": ["TypeScript", "JavaScript", "HTML"],
-      "topics": [
-        "bounded-concurrency",
-        "industrial-iot",
-        "json-schema",
-        "mqtt",
-        "node-red",
-        "reliability-engineering",
-        "typescript"
-      ],
-      "pushedAt": "2026-09-18T19:43:20Z"
+      "pushedAt": "2026-10-14T18:36:25Z"
     },
     {
       "name": "industrial-memory-protocol-workbench",
@@ -280,7 +343,345 @@
         "industrial-systems",
         "sanitizers"
       ],
-      "pushedAt": "2026-09-18T19:43:17Z"
+      "pushedAt": "2026-10-14T23:11:00Z"
+    },
+    {
+      "name": "detection-engineering-lab",
+      "description": "Defensive Sigma rule engineering, synthetic Windows/Linux/cloud replay, burst correlations, measured false positives/misses, SQLite evidence and secure cross-platform CI. By Jason Stys.",
+      "url": "https://github.com/JasonStys/detection-engineering-lab",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "Shell"],
+      "topics": [
+        "cybersecurity",
+        "detection-engineering",
+        "devsecops",
+        "github-actions",
+        "mitre-attack",
+        "python",
+        "sigma",
+        "sql"
+      ],
+      "pushedAt": "2026-10-13T18:16:46Z"
+    },
+    {
+      "name": "sre-observability-workbench",
+      "description": "Synthetic SRE lab with OpenTelemetry trace correlation, Prometheus and Grafana, exact SLO/error-budget analysis, controlled failure drills and cross-platform security-tested delivery.",
+      "url": "https://github.com/JasonStys/sre-observability-workbench",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "TypeScript", "JavaScript", "Shell"],
+      "topics": [
+        "devops",
+        "error-budget",
+        "grafana",
+        "observability",
+        "opentelemetry",
+        "prometheus",
+        "python",
+        "sre",
+        "typescript"
+      ],
+      "pushedAt": "2026-10-13T22:02:23Z"
+    },
+    {
+      "name": "gitops-platform-lab",
+      "description": "Disposable Flux and Helm Kubernetes platform lab with tested Git reconciliation, drift repair, scoped identities, network enforcement, and failed-release recovery.",
+      "url": "https://github.com/JasonStys/gitops-platform-lab",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "Shell", "Dockerfile"],
+      "topics": [
+        "cybersecurity",
+        "devops",
+        "fluxcd",
+        "gitops",
+        "helm",
+        "kubernetes",
+        "python",
+        "reliability-engineering"
+      ],
+      "pushedAt": "2026-10-14T02:51:30Z"
+    },
+    {
+      "name": "container-runtime-security-lab",
+      "description": "Falco Kubernetes audit replay, isolated live container probes and privacy-minimized evidence review. Created by Jason Stys.",
+      "url": "https://github.com/JasonStys/container-runtime-security-lab",
+      "primaryLanguage": "Python",
+      "languages": ["Python"],
+      "topics": ["cybersecurity", "devops", "falco", "kubernetes", "python", "runtime-security"],
+      "pushedAt": "2026-10-14T20:32:26Z"
+    },
+    {
+      "name": "zero-trust-segmentation-lab",
+      "description": "Default-deny workload policies, synthetic identity/posture admission, pivot analysis and isolated native packet assurance. Created by Jason Stys.",
+      "url": "https://github.com/JasonStys/zero-trust-segmentation-lab",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "Shell"],
+      "topics": [
+        "devsecops",
+        "network-security",
+        "network-segmentation",
+        "nftables",
+        "python",
+        "zero-trust"
+      ],
+      "pushedAt": "2026-10-14T16:49:30Z"
+    },
+    {
+      "name": "application-security-regression-lab",
+      "description": "Native Java, C#, PHP/SQLite and Node/TypeScript security regressions with owned-loopback evidence, test-only vulnerable comparisons and browser checks. Created by Jason Stys.",
+      "url": "https://github.com/JasonStys/application-security-regression-lab",
+      "primaryLanguage": "Python",
+      "languages": [
+        "Python",
+        "PHP",
+        "Java",
+        "JavaScript",
+        "C#",
+        "HTML",
+        "TypeScript",
+        "CSS",
+        "Shell"
+      ],
+      "topics": [
+        "application-security",
+        "csharp",
+        "devsecops",
+        "java",
+        "php",
+        "portfolio",
+        "security-testing",
+        "typescript"
+      ],
+      "pushedAt": "2026-10-14T08:12:52Z"
+    },
+    {
+      "name": "cloud-identity-access-lab",
+      "description": "Signed synthetic OIDC identity, MFA and least-privilege assurance with native OPA, provider-free Terraform IAM documents and TypeScript evidence. Created by Jason Stys.",
+      "url": "https://github.com/JasonStys/cloud-identity-access-lab",
+      "primaryLanguage": "Python",
+      "languages": [
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "HCL",
+        "Open Policy Agent",
+        "HTML",
+        "CSS",
+        "Shell"
+      ],
+      "topics": [
+        "devsecops",
+        "identity-and-access-management",
+        "oidc",
+        "open-policy-agent",
+        "portfolio",
+        "terraform"
+      ],
+      "pushedAt": "2026-10-14T09:30:30Z"
+    },
+    {
+      "name": "ai-security-evaluation-lab",
+      "description": "Offline AI security evaluations: tool authorization, tenant isolation, exact approvals and reproducible evidence. Created by Jason Stys.",
+      "url": "https://github.com/JasonStys/ai-security-evaluation-lab",
+      "primaryLanguage": "Python",
+      "languages": ["Python"],
+      "topics": [
+        "ai-security",
+        "devsecops",
+        "prompt-injection",
+        "python",
+        "security-testing",
+        "sqlite"
+      ],
+      "pushedAt": "2026-10-14T16:01:19Z"
+    },
+    {
+      "name": "infrastructure-policy-lab",
+      "description": "Credential-free Terraform and OPA plan assurance with selected cloud controls, drift review, cost scenarios and tested evidence reports by Jason Stys.",
+      "url": "https://github.com/JasonStys/infrastructure-policy-lab",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "HCL", "Open Policy Agent", "Shell"],
+      "topics": ["cloud-security", "devsecops", "policy-as-code", "portfolio", "terraform"],
+      "pushedAt": "2026-10-13T21:16:31Z"
+    },
+    {
+      "name": "disaster-recovery-drill-lab",
+      "description": "Encrypted restic backups, isolated PostgreSQL snapshot recovery, independent ledger consistency, and measured recovery objectives with explicit data loss.",
+      "url": "https://github.com/JasonStys/disaster-recovery-drill-lab",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "PLpgSQL", "Dockerfile", "Shell"],
+      "topics": ["engineering-portfolio"],
+      "pushedAt": "2026-10-14T02:51:25Z"
+    },
+    {
+      "name": "disconnected-release-kit",
+      "description": "Deterministic signed offline delivery, hash-locked wheelhouse installation, SPDX inventory and explicit recovery. Created by Jason Stys.",
+      "url": "https://github.com/JasonStys/disconnected-release-kit",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "Shell"],
+      "topics": [
+        "air-gapped",
+        "cybersecurity",
+        "devops",
+        "ed25519",
+        "python",
+        "reproducible-builds",
+        "sbom",
+        "supply-chain-security"
+      ],
+      "pushedAt": "2026-10-14T17:50:08Z"
+    },
+    {
+      "name": "incident-response-evidence-kit",
+      "description": "Local incident evidence integrity, anchored custody and minimized timelines by Jason Stys",
+      "url": "https://github.com/JasonStys/incident-response-evidence-kit",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "Rust", "Shell"],
+      "topics": ["engineering-portfolio"],
+      "pushedAt": "2026-10-14T05:36:25Z"
+    },
+    {
+      "name": "secret-rotation-reliability-lab",
+      "description": "Real OpenBao/PostgreSQL credential lifecycle, bounded refresh, outage recovery and private evidence by Jason Stys",
+      "url": "https://github.com/JasonStys/secret-rotation-reliability-lab",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "Shell", "Dockerfile", "HCL"],
+      "topics": ["engineering-portfolio"],
+      "pushedAt": "2026-10-14T04:46:02Z"
+    },
+    {
+      "name": "vulnerability-prioritization-console",
+      "description": "Explainable defensive vulnerability triage with dated KEV/EPSS evidence, asset context, atomic remediation history, and a local TypeScript console. Created by Jason Stys.",
+      "url": "https://github.com/JasonStys/vulnerability-prioritization-console",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "TypeScript", "JavaScript", "HTML", "CSS", "Shell"],
+      "topics": [
+        "cybersecurity",
+        "devops",
+        "portfolio",
+        "python",
+        "sqlite",
+        "typescript",
+        "vulnerability-management"
+      ],
+      "pushedAt": "2026-10-14T06:46:55Z"
+    },
+    {
+      "name": "windows-identity-audit-lab",
+      "description": "Read-only Windows identity assurance with PowerShell collection, SID graph review, private evidence and tested CI. Created by Jason Stys.",
+      "url": "https://github.com/JasonStys/windows-identity-audit-lab",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "PowerShell"],
+      "topics": [
+        "cybersecurity",
+        "devops",
+        "identity-security",
+        "powershell",
+        "python",
+        "security-audit",
+        "windows"
+      ],
+      "pushedAt": "2026-10-14T19:22:24Z"
+    },
+    {
+      "name": "network-defense-analysis-lab",
+      "description": "Offline synthetic packet and log analysis with Rust, Python and SQL; explainable findings and bounded parser assurance. Created by Jason Stys.",
+      "url": "https://github.com/JasonStys/network-defense-analysis-lab",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "Rust"],
+      "topics": [
+        "cybersecurity",
+        "detection-engineering",
+        "devops",
+        "network-security",
+        "portfolio",
+        "python",
+        "rust"
+      ],
+      "pushedAt": "2026-10-14T14:04:29Z"
+    },
+    {
+      "name": "memory-safety-analysis-lab",
+      "description": "Defensive C++ and Rust memory-safety lab with sanitizer evidence, ownership fixes, differential tests and coverage-guided fuzzing. Created by Jason Stys.",
+      "url": "https://github.com/JasonStys/memory-safety-analysis-lab",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "C++", "Rust", "CMake"],
+      "topics": ["cpp", "cybersecurity", "devsecops", "fuzzing", "portfolio", "rust", "sanitizers"],
+      "pushedAt": "2026-10-14T15:03:36Z"
+    },
+    {
+      "name": "unity-tactical-ai-sandbox",
+      "description": "Deterministic C# tactical AI lab with A*, utility scoring, replay verification, Unity integration, and headless telemetry.",
+      "url": "https://github.com/JasonStys/unity-tactical-ai-sandbox",
+      "primaryLanguage": "C#",
+      "languages": ["C#", "JavaScript", "Dockerfile"],
+      "topics": [
+        "c-sharp",
+        "deterministic-simulation",
+        "game-ai",
+        "game-development",
+        "pathfinding",
+        "unity",
+        "utility-ai"
+      ],
+      "pushedAt": "2026-10-14T23:11:14Z"
+    },
+    {
+      "name": "mqtt-lifecycle-reliability-lab",
+      "description": "TypeScript MQTT lifecycle lab with bounded offline buffering, retained state, ordering analysis, ACL modeling, fault scenarios, and reproducible telemetry reports.",
+      "url": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab",
+      "primaryLanguage": "TypeScript",
+      "languages": ["TypeScript", "JavaScript", "HTML", "CSS", "Shell"],
+      "topics": [
+        "edge-computing",
+        "fault-injection",
+        "industrial-iot",
+        "iot",
+        "mqtt",
+        "mqtt5",
+        "reliability-engineering",
+        "state-machine",
+        "telemetry",
+        "typescript"
+      ],
+      "pushedAt": "2026-10-14T23:11:05Z"
+    },
+    {
+      "name": "offline-incident-timeline-pwa",
+      "description": "Framework-free offline incident timeline with worker parsing, IndexedDB migrations, accessible visualization, and cross-browser reliability evidence.",
+      "url": "https://github.com/JasonStys/offline-incident-timeline-pwa",
+      "primaryLanguage": "JavaScript",
+      "languages": ["JavaScript", "HTML", "CSS"],
+      "topics": [
+        "accessibility",
+        "incident-response",
+        "indexeddb",
+        "javascript",
+        "lighthouse",
+        "offline-first",
+        "playwright",
+        "pwa",
+        "service-worker",
+        "web-workers"
+      ],
+      "pushedAt": "2026-10-14T23:11:13Z"
+    },
+    {
+      "name": "documentation-quality-gate",
+      "description": "TypeScript CLI and GitHub Action for deterministic documentation checks, exact diagnostics, expiring suppressions, SARIF, and accessible reports.",
+      "url": "https://github.com/JasonStys/documentation-quality-gate",
+      "primaryLanguage": "TypeScript",
+      "languages": ["TypeScript", "JavaScript"],
+      "topics": [
+        "accessibility",
+        "developer-tools",
+        "documentation",
+        "github-actions",
+        "quality-gate",
+        "sarif",
+        "static-analysis",
+        "typescript"
+      ],
+      "pushedAt": "2026-10-14T23:10:51Z"
     },
     {
       "name": "versioned-product-knowledge-portal",
@@ -289,7 +690,7 @@
       "primaryLanguage": "TypeScript",
       "languages": ["TypeScript", "Astro", "JavaScript", "HTML", "CSS"],
       "topics": ["accessibility", "astro", "documentation", "search", "static-site", "typescript"],
-      "pushedAt": "2026-09-18T19:43:14Z"
+      "pushedAt": "2026-10-14T23:11:17Z"
     },
     {
       "name": "engineering-documentation-foundry",
@@ -298,7 +699,82 @@
       "primaryLanguage": "Python",
       "languages": ["Python", "HTML", "CSS"],
       "topics": ["accessibility", "documentation", "etl", "pdf", "provenance", "python"],
-      "pushedAt": "2026-09-18T19:43:12Z"
+      "pushedAt": "2026-10-14T23:10:54Z"
+    },
+    {
+      "name": "node-red-resilient-metadata",
+      "description": "TypeScript Node-RED package for credential-safe, bounded product metadata lookups with cancellation, structured errors, example flows, and lifecycle tests.",
+      "url": "https://github.com/JasonStys/node-red-resilient-metadata",
+      "primaryLanguage": "TypeScript",
+      "languages": ["TypeScript", "JavaScript", "HTML"],
+      "topics": [
+        "bounded-concurrency",
+        "industrial-iot",
+        "integration-testing",
+        "json-schema",
+        "mqtt",
+        "node-red",
+        "reliability-engineering",
+        "typescript"
+      ],
+      "pushedAt": "2026-10-14T23:11:08Z"
+    },
+    {
+      "name": "host-hardening-assurance-lab",
+      "description": "Read-only Windows/Linux baseline assurance, typed evidence, drift detection, expiring deviations and reproducible security validation. By Jason Stys.",
+      "url": "https://github.com/JasonStys/host-hardening-assurance-lab",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "PowerShell", "Shell"],
+      "topics": [
+        "configuration-management",
+        "cybersecurity",
+        "devsecops",
+        "github-actions",
+        "linux",
+        "policy-as-code",
+        "powershell",
+        "python",
+        "security-hardening",
+        "windows"
+      ],
+      "pushedAt": "2026-10-13T19:34:00Z"
+    },
+    {
+      "name": "rmf-evidence-workbench",
+      "description": "Offline educational control-evidence workspace with real OSCAL validation, integrity and freshness checks, remediation milestones, and verified assessment history.",
+      "url": "https://github.com/JasonStys/rmf-evidence-workbench",
+      "primaryLanguage": "Python",
+      "languages": ["Python", "TypeScript", "JavaScript", "Shell"],
+      "topics": [
+        "cybersecurity",
+        "devops",
+        "evidence",
+        "oscal",
+        "python",
+        "rmf",
+        "security-assessment",
+        "typescript"
+      ],
+      "pushedAt": "2026-10-13T23:18:04Z"
+    },
+    {
+      "name": "portfolio-case-study-site",
+      "description": "Evidence-first engineering portfolio with accessible case studies, searchable project metadata, and validated static delivery.",
+      "url": "https://github.com/JasonStys/portfolio-case-study-site",
+      "primaryLanguage": "TypeScript",
+      "languages": ["TypeScript", "JavaScript", "Astro", "CSS"],
+      "topics": [
+        "accessibility",
+        "astro",
+        "case-studies",
+        "github-pages",
+        "performance",
+        "portfolio",
+        "software-engineering",
+        "static-site",
+        "typescript"
+      ],
+      "pushedAt": "2026-10-14T22:06:44Z"
     }
   ]
 }

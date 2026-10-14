@@ -23,6 +23,7 @@ function createProject(index: number): Project {
   const language = ["TypeScript", "Python", "C++", "Rust"][index % 4] ?? "TypeScript";
   return {
     name: `synthetic-project-${index.toString().padStart(5, "0")}`,
+    portfolioOrder: index + 1,
     description: `Deterministic ${language} service with retry telemetry cohort ${index % 137}`,
     url: `https://github.com/JasonStys/synthetic-project-${index}`,
     primaryLanguage: language,

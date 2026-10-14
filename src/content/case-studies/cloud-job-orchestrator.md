@@ -5,7 +5,6 @@ summary: "A Rust and PostgreSQL control plane for dependency-aware jobs, leases,
 role: "Cloud, backend, and distributed-systems engineering"
 languages: ["Rust", "SQL", "TypeScript", "Bash"]
 evidence: ["DAG validation", "PostgreSQL leases", "Failure recovery", "Kubernetes and Terraform"]
-featuredOrder: 6
 ---
 
 ## Problem

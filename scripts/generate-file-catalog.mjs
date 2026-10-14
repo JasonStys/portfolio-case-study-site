@@ -24,6 +24,10 @@ const EXCLUDED_DIRECTORIES = new Set([
 ]);
 const checkOnly = process.argv.includes("--check");
 const STATIC_DESCRIPTIONS = new Map([
+  [
+    "src/data/portfolio-priority.json",
+    "Canonical reviewed ordering of all 46 public portfolio repositories.",
+  ],
   [".editorconfig", "Editor-neutral whitespace, encoding, and newline policy."],
   [".gitattributes", "Cross-platform line-ending and binary-file policy."],
   [".gitignore", "Generated dependency, build, coverage, browser, and runtime exclusions."],

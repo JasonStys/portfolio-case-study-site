@@ -17,7 +17,7 @@ const caseStudies = defineCollection({
     role: z.string().min(3).max(80),
     languages: z.array(z.string().min(1)).min(1),
     evidence: z.array(z.string().min(3).max(100)).min(3).max(6),
-    featuredOrder: z.number().int().min(1).max(6),
+    featuredOrder: z.number().int().min(1).max(6).optional(),
   }),
 });
 

@@ -11,7 +11,6 @@ evidence:
     "PostgreSQL integration tests",
     "Playwright operator flows",
   ]
-featuredOrder: 1
 ---
 
 ## Problem

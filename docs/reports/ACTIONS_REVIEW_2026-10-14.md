@@ -13,8 +13,13 @@ generated asset budgets, source index and file catalog. npm audit reported zero
 known vulnerabilities. Browser engines, Lighthouse and Pages deployment remain
 independent native CI gates and are not claimed as locally completed.
 
-Final native workflow links will be appended after verification. Raw historical
-evidence stays in a private PC archive, not in this repository.
+Accepted source: 940cc24494ba290ee44402b2f740e682e318da63.
+[CI and Pages 38639974642](https://github.com/JasonStys/portfolio-case-study-site/actions/runs/38639974642)
+passed all six jobs: quality, Chromium, Firefox, WebKit, Lighthouse and deployment.
+[CodeQL 38639974606](https://github.com/JasonStys/portfolio-case-study-site/actions/runs/38639974606)
+also passed. Dependabot closed the obsolete init-only proposal after the main
+correction; it was not manually merged. Final documentation reruns the gates.
+Approved cleanup may remove historical URLs; raw evidence remains privately archived.
 
 Primary advisory references: [source-map-js](https://github.com/advisories/GHSA-68fv-2mgg-jv7q),
 [sharp](https://github.com/advisories/GHSA-wq5f-xc86-pv6w),

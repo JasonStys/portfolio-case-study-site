@@ -12,6 +12,12 @@ Featured order is unique and limited to 1–6. Changing the featured set require
 
 The canonical priority list must cover every curated repository exactly once. Reorder by integration depth, reproducible evidence, and role coverage—not stars, inflated claims, or manufactured activity. Update the README table in the same change. GitHub's complete Repositories tab has no custom editorial ordering; use the six profile pins and this full catalog.
 
+`src/data/space-systems.ts` defines the complete 14-project civilian space/energy collection and four specialist highlights. It is shared with main curation, the homepage and `/space-systems/`. Keep its reviewed order aligned with positions 7–20 of the canonical priority list; tests verify exact membership, order, case routes and domain-filter results. Broad featured cases remain six; specialist references do not imply new profile pins, military affiliation or operational experience.
+
+After editing curation or ordering, run `npm run summary:sync`. The literal-AST generator changes only the README's canonical ordered table. `npm run summary:check` is a required verification gate and fails on drift. It never evaluates arbitrary curation code. For a newly approved repository, metadata refresh can fetch missing allowlisted entries; check-only mode still requires the exact complete public allowlist. Unreviewed extras and private/archived repositories remain rejected.
+
+New case measurements must point to a published source/release and identify them as historical results, not freshly executed certifications. Preserve synthetic/public-data distinctions. This update reruns portfolio checks, not 14 simulation suites or any real mission equipment.
+
 ## Refresh GitHub facts
 
 ```bash

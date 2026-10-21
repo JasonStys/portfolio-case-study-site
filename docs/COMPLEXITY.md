@@ -20,11 +20,11 @@ Let:
 | Query plus facets        | `O((q + f) × n)` worst case |            `O(n)` | Stable catalog order is preserved.             |
 | Render catalog           |                      `O(n)` |  `O(n)` DOM nodes | All cards exist for no-script access.          |
 
-At 20 real projects, clarity dominates micro-optimization. The benchmark uses 10,000 projects and 500 queries to keep the implementation honest at a much larger scale.
+At 60 real projects, clarity remains important. Schema 2 uses one dictionary of repository names and integer posting references, reducing repeated wire data without changing AND/facet semantics or curated ordering. Own-property checks prevent inherited object names from being treated as results. The benchmark uses 10,000 projects and 500 queries to check a much larger workload.
 
 ## Build and network bounds
 
-- Exactly six featured case-study routes.
+- Six broad featured cases, nine reference cases and a complete 14-project space/energy collection; 20 HTML routes in the current build.
 - Metadata cache must contain at least one project and no duplicate names.
 - Cache age is bounded to 90 days in CI.
 - Browser filter debounce is 120 ms; no repeating timer or background poll exists.

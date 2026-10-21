@@ -15,6 +15,8 @@ import {
 } from "@/lib/catalog";
 import { projectCuration } from "@/data/project-curation";
 import portfolioPriority from "@/data/portfolio-priority.json";
+import { spaceSystemsCuration, spaceHighlightNames } from "@/data/space-systems";
+import { buildSearchIndex, searchProjectIds } from "@/lib/search";
 
 describe("portfolio catalog", () => {
   it("merges every curated project with a unique cached repository", () => {
@@ -28,16 +30,35 @@ describe("portfolio catalog", () => {
     expect(featuredProjects.every((project) => project.caseStudySlug)).toBe(true);
   });
 
-  it("covers all 46 repositories in canonical priority order", () => {
-    expect(projects).toHaveLength(46);
-    expect(repositoryCache.repositories).toHaveLength(46);
+  it("covers all 60 repositories in canonical priority order", () => {
+    expect(projects).toHaveLength(60);
+    expect(repositoryCache.repositories).toHaveLength(60);
     expect(projects.map((project) => project.name)).toEqual(portfolioPriority);
     expect(projects.map((project) => project.portfolioOrder)).toEqual(
-      Array.from({ length: 46 }, (_, index) => index + 1),
+      Array.from({ length: 60 }, (_, index) => index + 1),
     );
     expect(featuredProjects.map((project) => project.name)).toEqual(portfolioPriority.slice(0, 6));
     expect(listFacetValues(projects, "roles")).toContain("Security engineer");
     expect(listFacetValues(projects, "roles")).toContain("DevOps engineer");
+  });
+
+  it("includes exactly the 14 reviewed space/energy projects with four inspectable highlights", () => {
+    const names = spaceSystemsCuration.map((project) => project.name);
+    expect(names).toHaveLength(14);
+    expect(new Set(names).size).toBe(14);
+    expect(portfolioPriority.slice(6, 20)).toEqual(names);
+    expect(spaceHighlightNames).toHaveLength(4);
+    for (const name of spaceHighlightNames) {
+      const project = projects.find((project) => project.name === name);
+      expect(project?.caseStudySlug).toBe(name);
+      expect(project?.domains).toContain("Space systems");
+    }
+    const index = buildSearchIndex(projects, "reviewed-test");
+    expect(searchProjectIds(index, "", { domain: "Space systems" })).toEqual(names);
+    expect(searchProjectIds(index, "watchdog", { domain: "Space systems" })).toContain(
+      "spacecraft-flight-software-testbed",
+    );
+    expect(projects.filter((project) => project.caseStudySlug)).toHaveLength(15);
   });
 
   it("rejects duplicate, omitted, unknown and contradictory editorial priorities", () => {

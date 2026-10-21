@@ -19,15 +19,15 @@ export function tokenize(value: string): readonly string[] {
   return [...new Set(normalized.match(TOKEN_PATTERN) ?? [])];
 }
 
-function addPosting(index: Map<string, Set<string>>, key: string, projectId: string): void {
-  const postings = index.get(key) ?? new Set<string>();
+function addPosting(index: Map<string, Set<number>>, key: string, projectId: number): void {
+  const postings = index.get(key) ?? new Set<number>();
   postings.add(projectId);
   index.set(key, postings);
 }
 
 function serializeMap(
-  index: Map<string, Set<string>>,
-): Readonly<Record<string, readonly string[]>> {
+  index: Map<string, Set<number>>,
+): Readonly<Record<string, readonly number[]>> {
   return Object.fromEntries(
     [...index.entries()]
       .sort(([left], [right]) => left.localeCompare(right))
@@ -39,12 +39,12 @@ export function buildSearchIndex(
   catalog: readonly Project[],
   generatedFrom: string,
 ): SerializedSearchIndex {
-  const terms = new Map<string, Set<string>>();
+  const terms = new Map<string, Set<number>>();
   const facets = Object.fromEntries(
-    facetKeys.map((facet) => [facet, new Map<string, Set<string>>()]),
-  ) as Record<SearchFacet, Map<string, Set<string>>>;
+    facetKeys.map((facet) => [facet, new Map<string, Set<number>>()]),
+  ) as Record<SearchFacet, Map<string, Set<number>>>;
 
-  for (const project of catalog) {
+  for (const [position, project] of catalog.entries()) {
     const searchable = [
       project.name,
       project.description,
@@ -55,16 +55,16 @@ export function buildSearchIndex(
       ...project.domains,
       ...project.topics,
     ].join(" ");
-    for (const token of tokenize(searchable)) addPosting(terms, token, project.name);
+    for (const token of tokenize(searchable)) addPosting(terms, token, position);
     for (const facet of facetKeys) {
       const values = facet === "maturity" ? [project.maturity] : project[facet];
       for (const value of values)
-        addPosting(facets[facet], value.toLocaleLowerCase("en-US"), project.name);
+        addPosting(facets[facet], value.toLocaleLowerCase("en-US"), position);
     }
   }
 
   return Object.freeze({
-    schemaVersion: 1,
+    schemaVersion: 2,
     generatedFrom,
     projectOrder: catalog.map((project) => project.name),
     terms: serializeMap(terms),
@@ -75,9 +75,9 @@ export function buildSearchIndex(
 }
 
 function intersectOrdered(
-  current: readonly string[],
-  allowed: ReadonlySet<string>,
-): readonly string[] {
+  current: readonly number[],
+  allowed: ReadonlySet<number>,
+): readonly number[] {
   return current.filter((projectId) => allowed.has(projectId));
 }
 
@@ -86,10 +86,11 @@ export function searchProjectIds(
   query: string,
   filters: ProjectFilters = {},
 ): readonly string[] {
-  let matches: readonly string[] = index.projectOrder;
+  let matches: readonly number[] = index.projectOrder.map((_, position) => position);
   for (const token of tokenize(query)) {
-    matches = intersectOrdered(matches, new Set(index.terms[token] ?? []));
-    if (matches.length === 0) return matches;
+    const postings = Object.hasOwn(index.terms, token) ? index.terms[token] : [];
+    matches = intersectOrdered(matches, new Set(postings));
+    if (matches.length === 0) return [];
   }
   const selections: readonly [SearchFacet, string | undefined][] = [
     ["roles", filters.role],
@@ -99,8 +100,13 @@ export function searchProjectIds(
   ];
   for (const [facet, selection] of selections) {
     if (!selection) continue;
-    const allowed = index.facets[facet][selection.toLocaleLowerCase("en-US")] ?? [];
+    const key = selection.toLocaleLowerCase("en-US");
+    const allowed = Object.hasOwn(index.facets[facet], key) ? index.facets[facet][key] : [];
     matches = intersectOrdered(matches, new Set(allowed));
   }
-  return matches;
+  return matches.map((position) => {
+    const name = index.projectOrder[position];
+    if (name === undefined) throw new Error("Search posting is outside the project dictionary");
+    return name;
+  });
 }

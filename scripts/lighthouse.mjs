@@ -69,7 +69,7 @@ async function stopChrome(chrome) {
 async function runAudit(runNumber) {
   const chrome = await launch({
     chromePath: process.env.CHROME_PATH || chromium.executablePath(),
-    chromeFlags: ["--headless", "--no-sandbox", "--disable-dev-shm-usage"],
+    chromeFlags: ["--headless", "--disable-dev-shm-usage"],
   });
   try {
     const result = await lighthouse(TARGET_URL, {

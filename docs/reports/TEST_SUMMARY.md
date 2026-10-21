@@ -17,9 +17,33 @@ The release gate covers catalog/cache contracts, search behavior, URL/XML helper
 | Lighthouse       | Accessibility 1.00; performance ≥0.92; best practices ≥0.95; SEO ≥0.95. |
 | Security         | Zero high/critical npm findings and zero unresolved CodeQL findings.    |
 
-## Release result
+## Current synchronization: 2026-10-21
 
-Current portfolio synchronization (2026-10-14): 46 ordered projects, six featured
+The catalog contains 60 ordered projects, six broad featured cases and nine
+reference cases. All 14 Space & energy projects have exact subset/order tests;
+four have new evidence-linked case studies. Local verification passed formatting,
+lint, types/content schemas (zero diagnostics), README synchronization, generated
+indexes, metadata freshness, all 17 unit tests, build/link/repository contracts,
+original byte/search budgets, and the dependency audit (zero known findings).
+
+Coverage: 98.46% statements (128/130), 97.43% branches (76/78), 100% functions
+(35/35), 99.13% lines (114/115). No coverage threshold was lowered.
+All 24 browser tests passed across Chromium, Firefox and WebKit, including the
+14-project collection, four case studies without JavaScript, exact filtering,
+URL restoration, keyboard navigation, axe WCAG checks and 390-pixel reflow.
+Three local Lighthouse runs also passed with the browser sandbox enabled.
+
+The source projects' 42 latest exact-main workflow results and 14 published
+releases were inspected read-only; those projects were not re-executed or
+recertified by this documentation update. See
+[the synchronization evidence](portfolio-sync-2026-10-21.md) for source links.
+Independent CI, CodeQL and Pages results are attached to the exact published
+commit in [Actions](https://github.com/JasonStys/portfolio-case-study-site/actions).
+Post-deployment checks must target that same published build.
+
+## Historical release results
+
+Earlier portfolio synchronization (2026-10-14): 46 ordered projects, six featured
 and five reference cases. Local strict lint/type/content checks passed; 14 unit
 tests passed, 99.18% statements, 97.36% branches, 100% functions, 99.09% lines.
 All original search and byte budgets passed for 15 HTML routes and 90 authored
@@ -43,4 +67,7 @@ Measured on Node.js 24.18.1 on 2026-09-19:
 | Dependency audit            | 0 vulnerabilities across the 501-package installed graph.                |
 | Lighthouse                  | Accessibility 1.00, best practices 1.00, performance 0.99, and SEO 1.00. |
 
-The GitHub Actions run for the deployed commit is the authoritative release result. The Windows host blocks the downloaded Firefox and Lighthouse launchers, so GitHub installs and executes those checks independently on Ubuntu. All 15 GitHub-hosted browser tests and the three-run Lighthouse gate passed.
+For that first release, GitHub Actions installed and executed checks independently
+on Ubuntu because the local launchers were blocked. All 15 GitHub-hosted browser
+tests and the three-run Lighthouse gate passed. This historical host limitation
+does not describe the current local validation above.

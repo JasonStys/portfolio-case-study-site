@@ -3,7 +3,8 @@
 ## Functional acceptance
 
 - Overview communicates engineering focus and exposes six featured cases.
-- Project index renders all 20 entries before JavaScript enhancement.
+- Project index renders all 60 entries before JavaScript enhancement.
+- Space & energy collection renders all 14 entries, with four evidence-linked specialist highlights alongside the existing six broad highlights.
 - Keyword and exact role/language/domain/maturity facets preserve catalog order.
 - Filter state is shareable and restorable through bounded URL parameters.
 - Case studies expose problem, constraints, design, verification, result, and limitations.
@@ -16,7 +17,7 @@
 - Keyboard-operable navigation and filtering.
 - Responsive reflow without horizontal page overflow at 390 CSS pixels.
 - Reduced-motion and forced-colors accommodations.
-- Automated axe WCAG A/AA checks in the populated overview state.
+- Automated axe WCAG A/AA checks on the overview and new collection.
 
 ## SEO and sharing acceptance
 
@@ -26,7 +27,22 @@
 - Open Graph and Twitter metadata.
 - RSS, sitemap, and permissive robots policy.
 
-## Release status
+## Current synchronization: 2026-10-21
+
+- Production output includes 20 HTML routes and all 15 case studies in the sitemap.
+- All eight production-flow tests passed in each of Chromium, Firefox and WebKit (24 total locally).
+- The overview and Space & energy collection passed configured axe WCAG A/AA checks and 390-pixel overflow checks.
+- All 14 collection entries and four specialist cases remain readable without JavaScript.
+- The complete catalog's Space systems facet preserves the exact 14-project reviewed order.
+- Metadata, README table, source-line index and file catalog have deterministic drift checks.
+- Original performance gates passed; exact observed measurements and unchanged limits are in [PERFORMANCE.md](PERFORMANCE.md).
+- Civilian educational scope, source-data provenance, model limitations and historical release measurements are explicit; no agency endorsement or real mission experience is implied.
+
+These checks are automated evidence, not a claim of exhaustive accessibility,
+security or real-world scientific validation. The final release also requires
+same-commit CI, CodeQL, Pages deployment and deployed-site acceptance.
+
+## Historical first-release status
 
 - Production build generated 10 HTML routes plus RSS, sitemap, robots, and search artifacts.
 - Chromium and WebKit each passed five production-flow tests locally.

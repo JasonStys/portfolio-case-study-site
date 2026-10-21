@@ -79,7 +79,9 @@ CI runs quality, browser, and performance jobs independently. The deployment job
 
 ## Scale and reliability
 
-The current catalog has 46 entries. A canonical priority JSON list orders every card, search result, and README entry; six featured studies and five retained reference studies share the same evidence format. Duplicate, missing, unknown, or contradictory priorities fail the build. Compact catalog cards preserve initial-HTML availability without relaxing the 55 KB HTML budget. A benchmark uses 10,000 deterministic synthetic projects to expose accidental algorithmic regressions. Static hosting removes server capacity planning. The largest foreseeable constraint is content review, not request throughput.
+The current catalog has 60 entries, including all 14 civilian space/energy projects. A canonical priority JSON list orders every card, search result, and README entry; six broad featured studies and nine reference studies share the same evidence format. The space collection highlights four detailed references without changing existing profile pins. Duplicate, missing, unknown, or contradictory priorities fail the build. A restricted literal-AST generator keeps the README table synchronized with curation; no curation code is executed by the generator.
+
+Compact catalog cards preserve all initial HTML links/outcomes and no-script access without relaxing the 55 KB HTML budget. Search schema 2 stores numeric project-dictionary positions instead of repeating long repository names in every posting. Lookup checks use own properties so inherited JavaScript names cannot act like posting lists. The build-generated schema/cache revision in the index request URL prevents a new page from reusing a stale schema-1 cache response. Older pages retain readable unfiltered HTML if their enhancement becomes unavailable. The 100 KB index budget remains unchanged. A benchmark uses 10,000 deterministic synthetic projects to expose accidental algorithmic regressions. Static hosting removes server capacity planning; content review remains the main scaling constraint.
 
 ## Tradeoffs
 

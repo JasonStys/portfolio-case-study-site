@@ -29,6 +29,7 @@
 | `docs/reports/generated/search-benchmark.json`                    | Repository support file.                                                                                   |
 | `docs/reports/PERFORMANCE.md`                                     | Project documentation described by its title and sections.                                                 |
 | `docs/reports/portfolio-sync-2026-10-14.md`                       | Project documentation described by its title and sections.                                                 |
+| `docs/reports/portfolio-sync-2026-10-21.md`                       | Project documentation described by its title and sections.                                                 |
 | `docs/reports/SITE_QUALITY.md`                                    | Project documentation described by its title and sections.                                                 |
 | `docs/reports/TEST_SUMMARY.md`                                    | Project documentation described by its title and sections.                                                 |
 | `docs/RESEARCH.md`                                                | Project documentation described by its title and sections.                                                 |
@@ -48,6 +49,7 @@
 | `scripts/generate-file-catalog.mjs`                               | Generates a complete repository file catalog from source headers and curated fallbacks.                    |
 | `scripts/lighthouse.mjs`                                          | Runs three production Lighthouse audits and enforces category, paint, blocking, and layout budgets.        |
 | `scripts/refresh-github-metadata.mjs`                             | Refreshes selected public GitHub facts while keeping reviewed technology annotations reproducible.         |
+| `scripts/sync-readme.mjs`                                         | Jason Stys: keeps the README portfolio summary aligned with reviewed site curation.                        |
 | `scripts/validate-dist.mjs`                                       | Validates generated routes, repository-base links, metadata, and compressed asset budgets.                 |
 | `scripts/validate-repository.mjs`                                 | Enforces documentation, source-header, case-study, action-pin, secret, and content-safety contracts.       |
 | `SECURITY.md`                                                     | Supported versions, reporting process, and public-data policy.                                             |
@@ -64,14 +66,19 @@
 | `src/content/case-studies/code-flow-studio.md`                    | Project documentation described by its title and sections.                                                 |
 | `src/content/case-studies/forge2d-engine.md`                      | Project documentation described by its title and sections.                                                 |
 | `src/content/case-studies/integration-operations-console.md`      | Project documentation described by its title and sections.                                                 |
+| `src/content/case-studies/mission-contact-resource-scheduler.md`  | Project documentation described by its title and sections.                                                 |
+| `src/content/case-studies/mission-verification-evidence-kit.md`   | Project documentation described by its title and sections.                                                 |
 | `src/content/case-studies/ml-model-lifecycle-observatory.md`      | Project documentation described by its title and sections.                                                 |
 | `src/content/case-studies/personal-image-model-studio.md`         | Project documentation described by its title and sections.                                                 |
 | `src/content/case-studies/player-telemetry-analytics-platform.md` | Project documentation described by its title and sections.                                                 |
 | `src/content/case-studies/secure-delivery-pipeline-lab.md`        | Project documentation described by its title and sections.                                                 |
+| `src/content/case-studies/spacecraft-flight-software-testbed.md`  | Project documentation described by its title and sections.                                                 |
+| `src/content/case-studies/spacecraft-telemetry-anomaly-studio.md` | Project documentation described by its title and sections.                                                 |
 | `src/content.config.ts`                                           | Defines the schema-validated Markdown collection for consistent engineering case studies.                  |
 | `src/data/github-repositories.json`                               | Reviewed GitHub repository metadata cache used by offline builds.                                          |
-| `src/data/portfolio-priority.json`                                | Canonical reviewed ordering of all 46 public portfolio repositories.                                       |
+| `src/data/portfolio-priority.json`                                | Canonical reviewed ordering of all 60 public portfolio repositories.                                       |
 | `src/data/project-curation.ts`                                    | Curates reviewed roles, domains, outcomes, maturity, and six featured cases.                               |
+| `src/data/space-systems.ts`                                       | Jason Stys's reviewed civilian space/energy portfolio collection and highlight rationale.                  |
 | `src/lib/catalog.ts`                                              | Validates cached GitHub metadata, merges curation, and derives deterministic facets.                       |
 | `src/lib/search.ts`                                               | Builds and queries a deterministic inverted index for project text and exact facets.                       |
 | `src/lib/types.ts`                                                | Defines the validated repository, curation, search, and evidence domain types.                             |
@@ -86,6 +93,7 @@
 | `src/pages/robots.txt.ts`                                         | Publishes crawler policy and the absolute sitemap location.                                                |
 | `src/pages/search-index.json.ts`                                  | Pre-renders the versioned project text and facet index consumed by catalog enhancement.                    |
 | `src/pages/sitemap.xml.ts`                                        | Generates a deterministic sitemap for static pages and every featured case study.                          |
+| `src/pages/space-systems.astro`                                   | Jason Stys's complete civilian space/energy project collection and employer reading path.                  |
 | `src/scripts/project-filter.ts`                                   | Enhances the project catalog with debounced text search, exact facets, URL state, and announcements.       |
 | `src/styles/global.css`                                           | Defines the evidence-first visual system, responsive layouts, focus states, and motion policy.             |
 | `tests/e2e/portfolio.spec.ts`                                     | Exercises navigation, progressive catalog filtering, URL state, case studies, and accessibility.           |

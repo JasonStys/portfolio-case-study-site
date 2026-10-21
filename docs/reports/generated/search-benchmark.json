@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-19T07:47:07.106Z",
+  "generatedAt": "2026-10-21T16:27:27.024Z",
   "runtime": "v24.18.1",
   "platform": "win32-x64",
   "projectCount": 10000,
   "queryCount": 500,
   "metrics": {
-    "buildMs": 117.97859999999999,
-    "queryP50Ms": 2.2971000000000004,
-    "queryP95Ms": 3.6580999999999904,
-    "serializedMiB": 7.204885482788086
+    "buildMs": 105.91489999999999,
+    "queryP50Ms": 1.7335000000000491,
+    "queryP95Ms": 3.129099999999994,
+    "serializedMiB": 1.634765625
   },
   "budgets": {
     "buildMs": 1500,

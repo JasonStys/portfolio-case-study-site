@@ -35,9 +35,28 @@ describe("project search", () => {
   });
 
   it("serializes stable, duplicate-free postings", () => {
-    expect(index.schemaVersion).toBe(1);
+    expect(index.schemaVersion).toBe(2);
     expect(index.projectOrder).toHaveLength(projects.length);
-    for (const postings of Object.values(index.terms))
+    for (const postings of Object.values(index.terms)) {
       expect(new Set(postings).size).toBe(postings.length);
+      expect(
+        postings.every(
+          (position) => Number.isInteger(position) && position >= 0 && position < projects.length,
+        ),
+      ).toBe(true);
+    }
+  });
+
+  it("treats inherited object names as missing terms and facets", () => {
+    expect(searchProjectIds(index, "constructor")).toEqual([]);
+    expect(searchProjectIds(index, "", { domain: "constructor" })).toEqual([]);
+    expect(searchProjectIds(index, "prototype")).toEqual([]);
+  });
+
+  it("retains the byte budget with integer dictionary references", () => {
+    const bytes = new TextEncoder().encode(JSON.stringify(index)).length;
+    expect(bytes).toBeLessThan(100000);
+    for (const project of projects)
+      expect(searchProjectIds(index, project.name)).toContain(project.name);
   });
 });

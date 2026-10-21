@@ -8,12 +8,15 @@
 
 - [ ] Worktree is clean and the intended commit is on `main`.
 - [ ] Case-study claims and repository cache diff contain only public-safe information.
+- [ ] Actions artifact bytes and any available account quota have been checked; caches and billing usage are reported separately, with no unauthorized cleanup.
 - [ ] `npm ci` completes from the committed lockfile without unreviewed install-script warnings.
 - [ ] `npm run verify` passes formatting, lint, types, unit coverage, search benchmark, build, output validation, repository contract, and generated-doc checks.
 - [ ] `npm run test:e2e` passes the locally available production browser suite.
 - [ ] `npm run lighthouse` passes three-run category and timing budgets.
 - [ ] `npm run audit` reports no high or critical vulnerability.
 - [ ] `npm run metadata:check` confirms the cache is within 90 days.
+- [ ] `npm run summary:check` confirms README ordering and outcomes match site curation.
+- [ ] Browser and Lighthouse suites read stable output, with no concurrent build replacing `dist/`.
 - [ ] Rollback target is the most recent successful Pages deployment commit.
 
 ## Deploy
@@ -31,7 +34,8 @@
 - [ ] Follow overview → project index → filter → case study → repository.
 - [ ] Check mobile width, keyboard focus, social metadata source, feed, sitemap, robots, and 404.
 - [ ] Confirm repository homepage points to the deployed URL.
-- [ ] Confirm no open pull requests, temporary branches, security alerts, or local changes remain.
+- [ ] Confirm no release-blocking changes, security alerts, task-created temporary branches or local edits remain; leave unrelated proposals and intentional branches unchanged.
+- [ ] Run the full deployed-site browser suite using `PORTFOLIO_BASE_URL`.
 - [ ] Record final run links and measurements in the handoff.
 
 ## Rollback triggers

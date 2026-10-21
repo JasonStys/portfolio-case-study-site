@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "JasonStys",
-  "fetchedAt": "2026-10-14T23:14:16.129239+00:00",
+  "fetchedAt": "2026-10-21T16:19:11.855Z",
   "source": "https://api.github.com/users/JasonStys/repos",
   "repositories": [
     {
@@ -66,7 +66,7 @@
         "sanitizers",
         "sdl3"
       ],
-      "pushedAt": "2026-10-14T23:10:59Z"
+      "pushedAt": "2026-10-16T03:56:04Z"
     },
     {
       "name": "secure-delivery-pipeline-lab",
@@ -96,6 +96,258 @@
       "pushedAt": "2026-10-13T00:23:50Z"
     },
     {
+      "name": "spacecraft-flight-software-testbed",
+      "languages": ["Python", "C++", "TypeScript", "HTML", "CSS", "CMake"],
+      "topics": [
+        "cpp20",
+        "fault-injection",
+        "portfolio",
+        "python",
+        "reliability-engineering",
+        "software-in-the-loop",
+        "spacecraft",
+        "typescript"
+      ],
+      "description": "Deterministic C++ spacecraft executive teaching testbed: fault injection, watchdog recovery, validated checkpoints and replay evidence. Software-only; not flight qualified.",
+      "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed",
+      "primaryLanguage": "Python",
+      "pushedAt": "2026-10-20T22:03:41Z"
+    },
+    {
+      "name": "spacecraft-telemetry-anomaly-studio",
+      "languages": ["Python", "TypeScript", "HTML", "CSS"],
+      "topics": [
+        "anomaly-detection",
+        "data-quality",
+        "explainable-ai",
+        "portfolio",
+        "python",
+        "spacecraft",
+        "telemetry",
+        "typescript"
+      ],
+      "description": "Explainable offline telemetry anomaly studio: context-aware robust limits, causal drift/flatline detection, honest evaluation and reproducible synthetic data. Not an operational flight tool.",
+      "url": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio",
+      "primaryLanguage": "Python",
+      "pushedAt": "2026-10-20T22:33:23Z"
+    },
+    {
+      "name": "mission-contact-resource-scheduler",
+      "languages": ["Python", "TypeScript", "CSS", "HTML"],
+      "topics": [
+        "branch-and-bound",
+        "optimization",
+        "portfolio",
+        "python",
+        "resource-allocation",
+        "scheduling",
+        "space-systems",
+        "typescript"
+      ],
+      "description": "Offline synthetic contact scheduling: exact optimization, resource constraints, explainable decisions, reproducible evidence and portable apps by Jason Stys",
+      "url": "https://github.com/JasonStys/mission-contact-resource-scheduler",
+      "primaryLanguage": "Python",
+      "pushedAt": "2026-10-20T23:08:43Z"
+    },
+    {
+      "name": "spacecraft-power-thermal-lab",
+      "languages": ["Python", "TypeScript", "C++", "CSS", "CMake", "HTML"],
+      "topics": [
+        "cpp20",
+        "numerical-methods",
+        "portfolio",
+        "power-systems",
+        "python",
+        "scientific-computing",
+        "spacecraft",
+        "thermal-simulation",
+        "typescript"
+      ],
+      "description": "Offline C++20/Python spacecraft power and thermal experiments with independent numerical checks, accessible TypeScript replay and portable apps",
+      "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab",
+      "primaryLanguage": "Python",
+      "pushedAt": "2026-10-21T03:10:20Z"
+    },
+    {
+      "name": "mission-verification-evidence-kit",
+      "languages": ["Python", "TypeScript", "HTML", "CSS"],
+      "topics": [
+        "python",
+        "requirements-traceability",
+        "space-software",
+        "sqlite",
+        "systems-engineering",
+        "typescript",
+        "verification"
+      ],
+      "description": "Local requirements, test, fault and release evidence traceability with independent SQL verification and portable apps. By Jason Stys.",
+      "url": "https://github.com/JasonStys/mission-verification-evidence-kit",
+      "primaryLanguage": "Python",
+      "pushedAt": "2026-10-21T08:15:14Z"
+    },
+    {
+      "name": "orbital-safety-workbench",
+      "languages": ["Python", "TypeScript", "CSS", "HTML"],
+      "topics": [
+        "orbital-mechanics",
+        "portfolio",
+        "python",
+        "scientific-computing",
+        "sgp4",
+        "space-situational-awareness",
+        "testing",
+        "typescript",
+        "visualization"
+      ],
+      "description": "Civilian archived orbit replay, synthetic multi-object screening, and reproducible scientific evidence by Jason Stys",
+      "url": "https://github.com/JasonStys/orbital-safety-workbench",
+      "primaryLanguage": "Python",
+      "pushedAt": "2026-10-20T20:26:07Z"
+    },
+    {
+      "name": "ccsds-telemetry-integrity-lab",
+      "languages": ["Python", "TypeScript", "CSS", "Rust", "HTML"],
+      "topics": [
+        "ccsds",
+        "portfolio",
+        "protocol-validation",
+        "python",
+        "rust",
+        "space-systems",
+        "telemetry",
+        "typescript"
+      ],
+      "description": "Safe Rust telemetry packet inspection, independent Python verification, sequence review, byte-level UI and reproducible synthetic evidence by Jason Stys",
+      "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab",
+      "primaryLanguage": "Python",
+      "pushedAt": "2026-10-21T00:46:28Z"
+    },
+    {
+      "name": "delay-tolerant-mission-network-lab",
+      "languages": ["Python", "TypeScript", "Rust", "CSS", "HTML"],
+      "topics": [
+        "delay-tolerant-networking",
+        "distributed-systems",
+        "fault-injection",
+        "portfolio",
+        "python",
+        "rust",
+        "simulation",
+        "typescript"
+      ],
+      "description": "Offline store-and-forward network simulation with a safe Rust core, independent Python verification, TypeScript replay, and tested checkpoint recovery.",
+      "url": "https://github.com/JasonStys/delay-tolerant-mission-network-lab",
+      "primaryLanguage": "Python",
+      "pushedAt": "2026-10-21T02:20:50Z"
+    },
+    {
+      "name": "earth-observation-change-studio",
+      "languages": ["Python", "TypeScript", "CSS", "HTML"],
+      "topics": [
+        "data-provenance",
+        "earth-observation",
+        "environmental-monitoring",
+        "geospatial",
+        "portfolio",
+        "python",
+        "rasterio",
+        "remote-sensing",
+        "typescript"
+      ],
+      "description": "Offline environmental imagery review with traceable Sentinel-2 data, geospatial exports, independent spectral verification and portable desktop apps",
+      "url": "https://github.com/JasonStys/earth-observation-change-studio",
+      "primaryLanguage": "Python",
+      "pushedAt": "2026-10-21T04:04:53Z"
+    },
+    {
+      "name": "mission-clock-integrity-lab",
+      "languages": ["Python", "TypeScript", "C++", "CSS", "Rust", "CMake", "HTML"],
+      "topics": [
+        "clock-synchronization",
+        "cpp",
+        "distributed-systems",
+        "python",
+        "rust",
+        "simulation",
+        "typescript",
+        "verification"
+      ],
+      "description": "Offline clock drift, holdover and timestamp interval-ordering lab with C++/Rust workers, independent Python verification and a typed browser instrument.",
+      "url": "https://github.com/JasonStys/mission-clock-integrity-lab",
+      "primaryLanguage": "Python",
+      "pushedAt": "2026-10-21T04:52:10Z"
+    },
+    {
+      "name": "resilient-energy-microgrid-lab",
+      "languages": ["Python", "TypeScript", "CSS", "HTML"],
+      "topics": [
+        "battery-storage",
+        "devops",
+        "energy-simulation",
+        "microgrid",
+        "portfolio",
+        "python",
+        "testing",
+        "typescript"
+      ],
+      "description": "Offline renewable, battery and critical-load energy accounting with independently verified dispatch policies, TypeScript workbench and portable desktop apps by Jason Stys.",
+      "url": "https://github.com/JasonStys/resilient-energy-microgrid-lab",
+      "primaryLanguage": "Python",
+      "pushedAt": "2026-10-21T06:17:50Z"
+    },
+    {
+      "name": "scientific-sensor-calibration-lab",
+      "languages": ["Python", "TypeScript", "CSS", "C#", "HTML"],
+      "topics": [
+        "calibration",
+        "csharp",
+        "metrology",
+        "portfolio",
+        "python",
+        "testing",
+        "typescript",
+        "uncertainty"
+      ],
+      "description": "Offline scientific sensor calibration with a C# weighted-fit kernel, independent rational Python verification, standard uncertainty, TypeScript UI and portable apps by Jason Stys.",
+      "url": "https://github.com/JasonStys/scientific-sensor-calibration-lab",
+      "primaryLanguage": "Python",
+      "pushedAt": "2026-10-21T07:06:28Z"
+    },
+    {
+      "name": "space-weather-impact-observatory",
+      "languages": ["Python", "TypeScript", "CSS", "HTML"],
+      "topics": [
+        "data-quality",
+        "forecast-verification",
+        "portfolio",
+        "python",
+        "scientific-computing",
+        "space-weather",
+        "typescript"
+      ],
+      "description": "Offline space-weather evidence, UTC data quality, leakage-aware forecast verification and accessible analysis by Jason Stys",
+      "url": "https://github.com/JasonStys/space-weather-impact-observatory",
+      "primaryLanguage": "Python",
+      "pushedAt": "2026-10-21T01:23:37Z"
+    },
+    {
+      "name": "reactor-systems-simulator",
+      "languages": ["Python", "TypeScript", "C++", "HTML", "CSS", "CMake"],
+      "topics": [
+        "cpp20",
+        "educational",
+        "heat-transfer",
+        "numerical-methods",
+        "python",
+        "scientific-computing",
+        "typescript"
+      ],
+      "description": "An offline fictional thermal-system learning workbench: C++ numerical core, TypeScript visualization, Python evidence service, tested portable apps. Not real reactor physics or plant software.",
+      "url": "https://github.com/JasonStys/reactor-systems-simulator",
+      "primaryLanguage": "Python",
+      "pushedAt": "2026-10-20T21:22:42Z"
+    },
+    {
       "name": "cloud-job-orchestrator",
       "description": "Safe, observable DAG job control plane with Rust, PostgreSQL leases, TypeScript operations UI, and cloud deployment tooling",
       "url": "https://github.com/JasonStys/cloud-job-orchestrator",
@@ -122,7 +374,7 @@
         "terraform",
         "typescript"
       ],
-      "pushedAt": "2026-10-14T23:10:50Z"
+      "pushedAt": "2026-10-17T04:03:30Z"
     },
     {
       "name": "integration-operations-console",
@@ -151,7 +403,7 @@
         "spring-boot",
         "typescript"
       ],
-      "pushedAt": "2026-10-14T23:11:01Z"
+      "pushedAt": "2026-10-19T15:38:50Z"
     },
     {
       "name": "ml-model-lifecycle-observatory",
@@ -175,7 +427,7 @@
         "scikit-learn",
         "sqlite"
       ],
-      "pushedAt": "2026-10-14T23:11:05Z"
+      "pushedAt": "2026-10-16T23:14:38Z"
     },
     {
       "name": "player-telemetry-analytics-platform",
@@ -206,7 +458,7 @@
         "sql",
         "typescript"
       ],
-      "pushedAt": "2026-10-09T07:06:44Z"
+      "pushedAt": "2026-10-16T07:06:59Z"
     },
     {
       "name": "industrial-edge-digital-twin",
@@ -215,7 +467,7 @@
       "primaryLanguage": "TypeScript",
       "languages": ["C++", "TypeScript", "JavaScript", "HTML", "CSS", "CMake"],
       "topics": ["cpp", "digital-twin", "industrial-iot", "mqtt", "simulation", "telemetry"],
-      "pushedAt": "2026-10-12T03:50:41Z"
+      "pushedAt": "2026-10-19T01:18:07Z"
     },
     {
       "name": "accessible-design-system-lab",
@@ -232,7 +484,7 @@
         "storybook",
         "typescript"
       ],
-      "pushedAt": "2026-10-14T23:10:50Z"
+      "pushedAt": "2026-10-19T12:23:12Z"
     },
     {
       "name": "edge-vision-deployment-benchmark",
@@ -255,7 +507,7 @@
         "reproducibility",
         "rust"
       ],
-      "pushedAt": "2026-10-14T23:10:55Z"
+      "pushedAt": "2026-10-17T07:44:40Z"
     },
     {
       "name": "secure-service-desk",
@@ -264,7 +516,7 @@
       "primaryLanguage": "PHP",
       "languages": ["PHP", "SQL", "JavaScript", "HTML", "CSS", "Shell", "Blade", "Dockerfile"],
       "topics": ["laravel", "outbox-pattern", "php", "postgresql", "security", "webhooks"],
-      "pushedAt": "2026-10-14T23:11:13Z"
+      "pushedAt": "2026-10-19T07:37:32Z"
     },
     {
       "name": "offline-first-field-app",
@@ -282,7 +534,7 @@
         "sqlite",
         "windows"
       ],
-      "pushedAt": "2026-10-14T23:11:09Z"
+      "pushedAt": "2026-10-19T16:16:56Z"
     },
     {
       "name": "mips-pipeline-workbench",
@@ -300,7 +552,7 @@
         "Dockerfile"
       ],
       "topics": ["assembly", "computer-architecture", "mips", "pipeline", "rust", "typescript"],
-      "pushedAt": "2026-10-14T23:11:04Z"
+      "pushedAt": "2026-10-19T20:09:23Z"
     },
     {
       "name": "firmware-release-recovery-lab",
@@ -309,7 +561,7 @@
       "primaryLanguage": "Rust",
       "languages": ["Rust", "Python", "Shell"],
       "topics": ["firmware", "property-testing", "rollback", "rust", "secure-boot"],
-      "pushedAt": "2026-10-14T23:10:55Z"
+      "pushedAt": "2026-10-16T11:13:47Z"
     },
     {
       "name": "ot-security-monitor-lab",
@@ -343,7 +595,7 @@
         "industrial-systems",
         "sanitizers"
       ],
-      "pushedAt": "2026-10-14T23:11:00Z"
+      "pushedAt": "2026-10-19T16:11:18Z"
     },
     {
       "name": "detection-engineering-lab",
@@ -623,7 +875,7 @@
         "unity",
         "utility-ai"
       ],
-      "pushedAt": "2026-10-14T23:11:14Z"
+      "pushedAt": "2026-10-14T23:25:08Z"
     },
     {
       "name": "mqtt-lifecycle-reliability-lab",
@@ -643,7 +895,7 @@
         "telemetry",
         "typescript"
       ],
-      "pushedAt": "2026-10-14T23:11:05Z"
+      "pushedAt": "2026-10-19T05:04:42Z"
     },
     {
       "name": "offline-incident-timeline-pwa",
@@ -663,7 +915,7 @@
         "service-worker",
         "web-workers"
       ],
-      "pushedAt": "2026-10-14T23:11:13Z"
+      "pushedAt": "2026-10-17T01:23:35Z"
     },
     {
       "name": "documentation-quality-gate",
@@ -681,7 +933,7 @@
         "static-analysis",
         "typescript"
       ],
-      "pushedAt": "2026-10-14T23:10:51Z"
+      "pushedAt": "2026-10-15T16:45:03Z"
     },
     {
       "name": "versioned-product-knowledge-portal",
@@ -690,7 +942,7 @@
       "primaryLanguage": "TypeScript",
       "languages": ["TypeScript", "Astro", "JavaScript", "HTML", "CSS"],
       "topics": ["accessibility", "astro", "documentation", "search", "static-site", "typescript"],
-      "pushedAt": "2026-10-14T23:11:17Z"
+      "pushedAt": "2026-10-15T19:46:00Z"
     },
     {
       "name": "engineering-documentation-foundry",
@@ -699,7 +951,7 @@
       "primaryLanguage": "Python",
       "languages": ["Python", "HTML", "CSS"],
       "topics": ["accessibility", "documentation", "etl", "pdf", "provenance", "python"],
-      "pushedAt": "2026-10-14T23:10:54Z"
+      "pushedAt": "2026-10-14T23:24:08Z"
     },
     {
       "name": "node-red-resilient-metadata",
@@ -717,7 +969,7 @@
         "reliability-engineering",
         "typescript"
       ],
-      "pushedAt": "2026-10-14T23:11:08Z"
+      "pushedAt": "2026-10-19T21:47:40Z"
     },
     {
       "name": "host-hardening-assurance-lab",
@@ -774,7 +1026,7 @@
         "static-site",
         "typescript"
       ],
-      "pushedAt": "2026-10-14T22:06:44Z"
+      "pushedAt": "2026-10-19T16:38:30Z"
     }
   ]
 }

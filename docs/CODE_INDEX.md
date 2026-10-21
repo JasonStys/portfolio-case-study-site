@@ -18,7 +18,8 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 9 | variable | `baseURL` |
+| 9 | variable | `external` |
+| 10 | variable | `baseURL` |
 
 ## `scripts/benchmark-search.ts`
 
@@ -149,14 +150,34 @@
 | 51 | variable | `response` |
 | 56 | function | `refreshRepository` |
 | 63 | variable | `detectedLanguages` |
-| 75 | function | `checkCache` |
-| 76 | variable | `ageDays` |
-| 90 | function | `main` |
-| 91 | variable | `existing` |
-| 93 | variable | `repositories` |
-| 94 | variable | `existingByName` |
-| 98 | variable | `repository` |
-| 102 | variable | `refreshed` |
+| 76 | function | `checkCache` |
+| 77 | variable | `ageDays` |
+| 91 | function | `main` |
+| 92 | variable | `existing` |
+| 94 | variable | `repositories` |
+| 95 | variable | `existingByName` |
+| 99 | variable | `repository` |
+| 106 | variable | `refreshed` |
+
+## `scripts/sync-readme.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 13 | variable | `ROOT` |
+| 16 | function | `evaluate` |
+| 51 | function | `loadCuration` |
+| 52 | variable | `declarations` |
+| 54 | variable | `source` |
+| 70 | function | `main` |
+| 71 | variable | `entries` |
+| 72 | variable | `priority` |
+| 75 | variable | `byName` |
+| 83 | variable | `rows` |
+| 87 | variable | `table` |
+| 92 | variable | `target` |
+| 93 | variable | `source` |
+| 94 | variable | `pattern` |
+| 96 | variable | `output` |
 
 ## `scripts/validate-dist.mjs`
 
@@ -166,31 +187,31 @@
 | 13 | variable | `DIST` |
 | 14 | variable | `BASE` |
 | 15 | variable | `REQUIRED_OUTPUTS` |
-| 27 | variable | `BUDGETS` |
-| 34 | function | `collectFiles` |
-| 35 | variable | `entries` |
-| 36 | variable | `files` |
-| 38 | variable | `absolute` |
-| 45 | function | `targetForUrl` |
-| 46 | variable | `pathname` |
-| 48 | variable | `relative` |
-| 54 | function | `validateHtml` |
-| 55 | variable | `html` |
-| 65 | variable | `urls` |
-| 67 | variable | `target` |
-| 73 | variable | `inlineJavaScript` |
-| 79 | function | `validateBudgets` |
-| 80 | variable | `javascript` |
-| 81 | variable | `css` |
-| 82 | variable | `compressedSize` |
-| 88 | variable | `metrics` |
-| 96 | variable | `failures` |
-| 104 | function | `main` |
-| 106 | variable | `files` |
-| 107 | variable | `htmlFiles` |
-| 108 | variable | `htmlSizes` |
-| 109 | variable | `inlineJavaScript` |
-| 111 | variable | `result` |
+| 28 | variable | `BUDGETS` |
+| 35 | function | `collectFiles` |
+| 36 | variable | `entries` |
+| 37 | variable | `files` |
+| 39 | variable | `absolute` |
+| 46 | function | `targetForUrl` |
+| 47 | variable | `pathname` |
+| 49 | variable | `relative` |
+| 55 | function | `validateHtml` |
+| 56 | variable | `html` |
+| 66 | variable | `urls` |
+| 68 | variable | `target` |
+| 74 | variable | `inlineJavaScript` |
+| 80 | function | `validateBudgets` |
+| 81 | variable | `javascript` |
+| 82 | variable | `css` |
+| 83 | variable | `compressedSize` |
+| 89 | variable | `metrics` |
+| 97 | variable | `failures` |
+| 105 | function | `main` |
+| 107 | variable | `files` |
+| 108 | variable | `htmlFiles` |
+| 109 | variable | `htmlSizes` |
+| 110 | variable | `inlineJavaScript` |
+| 112 | variable | `result` |
 
 ## `scripts/validate-repository.mjs`
 
@@ -273,7 +294,14 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 9 | variable | `projectCuration` |
+| 10 | variable | `projectCuration` |
+
+## `src/data/space-systems.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 9 | variable | `spaceHighlightNames` |
+| 16 | variable | `spaceSystemsCuration` |
 
 ## `src/lib/catalog.ts`
 
@@ -326,8 +354,11 @@
 | 77 | function | `intersectOrdered` |
 | 84 | function | `searchProjectIds` |
 | 89 | variable | `matches` |
-| 94 | variable | `selections` |
-| 102 | variable | `allowed` |
+| 91 | variable | `postings` |
+| 95 | variable | `selections` |
+| 103 | variable | `key` |
+| 104 | variable | `allowed` |
+| 108 | variable | `name` |
 
 ## `src/lib/types.ts`
 
@@ -389,9 +420,10 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 15 | variable | `languageCount` |
-| 16 | variable | `roleCount` |
-| 17 | variable | `profileSchema` |
+| 16 | variable | `languageCount` |
+| 17 | variable | `roleCount` |
+| 18 | variable | `spaceHighlights` |
+| 21 | variable | `profileSchema` |
 
 ## `src/pages/projects/index.astro`
 
@@ -423,8 +455,17 @@
 | 12 | variable | `prerender` |
 | 14 | variable | `GET` |
 | 15 | variable | `caseStudyPaths` |
-| 20 | variable | `paths` |
-| 21 | variable | `urls` |
+| 22 | variable | `paths` |
+| 23 | variable | `urls` |
+
+## `src/pages/space-systems.astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 14 | variable | `spaceNames` |
+| 15 | variable | `collection` |
+| 16 | variable | `highlights` |
+| 17 | variable | `project` |
 
 ## `src/scripts/project-filter.ts`
 
@@ -476,34 +517,42 @@
 | 64 | custom property | `--radius` |
 | 65 | custom property | `--radius-lg` |
 | 66 | custom property | `--shell` |
-| 983 | custom property | `--shell` |
+| 990 | custom property | `--shell` |
 
 ## `tests/e2e/portfolio.spec.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 57 | variable | `skipLink` |
-| 67 | variable | `results` |
-| 78 | variable | `bodyWidth` |
-| 80 | variable | `cards` |
-| 81 | variable | `first` |
-| 82 | variable | `second` |
+| 48 | variable | `context` |
+| 53 | variable | `page` |
+| 57 | variable | `response` |
+| 72 | variable | `scan` |
+| 108 | variable | `skipLink` |
+| 118 | variable | `results` |
+| 129 | variable | `bodyWidth` |
+| 131 | variable | `cards` |
+| 132 | variable | `first` |
+| 133 | variable | `second` |
 
 ## `tests/unit/catalog.test.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 56 | variable | `references` |
-| 57 | variable | `reversed` |
-| 64 | variable | `languages` |
-| 96 | variable | `repository` |
-| 97 | variable | `envelope` |
+| 46 | variable | `names` |
+| 52 | variable | `project` |
+| 56 | variable | `index` |
+| 77 | variable | `references` |
+| 78 | variable | `reversed` |
+| 85 | variable | `languages` |
+| 117 | variable | `repository` |
+| 118 | variable | `envelope` |
 
 ## `tests/unit/search.test.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
 | 11 | variable | `index` |
+| 57 | variable | `bytes` |
 
 ## `tests/unit/utilities.test.ts`
 

@@ -19,7 +19,11 @@ Use this runbook to refresh repository facts, verify a release, deploy through G
 4. Review every changed description, language, topic, and timestamp.
 5. Run `npm run metadata:check` and `npm run verify`.
 
-The refresh script requests only the 20 selected public repositories and their language maps. It does not enumerate or record private repositories.
+The refresh script requests only the 60 approved public repositories and their
+language maps. It does not enumerate or record private repositories. New names
+must first be approved in the priority and curation files; refresh then fetches
+their real metadata. Run `npm run summary:sync` after changing reviewed ordering
+or outcomes, and review its generated README table before committing.
 
 ## Release procedure
 
@@ -31,6 +35,15 @@ The refresh script requests only the 20 selected public repositories and their l
 6. Open the environment URL from the deployment job.
 7. Smoke-test overview → project filter → case study → repository.
 8. Confirm `sitemap.xml`, `feed.xml`, and `search-index.json` return successfully.
+9. Set `PORTFOLIO_BASE_URL=https://jasonstys.github.io/portfolio-case-study-site/`
+   in the process environment and run `npm run test:e2e` for the full deployed-site
+   acceptance suite. Remove the variable afterward to restore local preview mode.
+
+The search index uses schema 2 with a revisioned request URL, so new client code
+does not reuse an older cached schema. This is a public static portfolio; there
+are no visitor accounts, private project data, remote AI calls or analytics.
+Check Actions storage before remote validation; do not delete runs, artifacts or
+caches, or alter retention policy, without fresh authorization.
 
 ## Failure triage
 
@@ -49,6 +62,14 @@ Download the browser evidence artifact. Reproduce with `npx playwright test --pr
 ### Lighthouse failure
 
 Download all three reports. Compare the median performance score and worst deterministic/timing values. Do not raise a budget without a documented user-facing reason.
+
+Astro permits one preview process per checkout. Stop only a preview you own
+before running Lighthouse (which starts its own preview), and run browser and
+Lighthouse checks sequentially. Do not run another build or `npm run verify`
+while a preview-based suite is reading `dist/`: rebuilding replaces that output
+and can cause temporary 404s. CI jobs use separate runner checkouts.
+Keep the browser sandbox enabled; a launcher
+permission problem is not a reason to disable operating-system protections.
 
 ### Metadata age failure
 

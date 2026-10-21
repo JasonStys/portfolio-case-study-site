@@ -1,0 +1,114 @@
+---
+/**
+ * @file Jason Stys's complete civilian space/energy project collection and employer reading path.
+ * Functions: data-only project selection; no runtime network, tracking, or institution claims.
+ * Variables: collection, highlights, spaceNames, project; editorial order emphasizes inspectable evidence.
+ * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
+ */
+import BaseLayout from "@/components/BaseLayout.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import { projects } from "@/lib/catalog";
+import { spaceHighlightNames, spaceSystemsCuration } from "@/data/space-systems";
+import { withBase } from "@/lib/url";
+
+const spaceNames = new Set<string>(spaceSystemsCuration.map((project) => project.name));
+const collection = projects.filter((project) => spaceNames.has(project.name));
+const highlights = spaceHighlightNames.map((name) => {
+  const project = collection.find((project) => project.name === name);
+  if (!project) throw new Error(`Missing space highlight: ${name}`);
+  return project;
+});
+---
+
+<BaseLayout
+  title="Space & energy systems — Jason Stys"
+  description="Four evidence-led engineering highlights and the complete 14-project civilian space and energy collection: flight software, telemetry, scheduling, verification, protocols, timing and scientific models."
+  canonicalPath="space-systems/"
+>
+  <header class="page-intro section-shell">
+    <p class="eyebrow">Space &amp; energy systems · 14 repositories</p>
+    <h1>
+      Mission-inspired engineering.
+      <br />
+      Evidence you can inspect.
+    </h1>
+    <p>
+      Software recovery, causal telemetry analysis, finite optimization, scientific computing and
+      traceable verification. Built by Jason Stys to demonstrate transferable engineering skills
+      relevant to space-sector, government and contractor roles—not employment history or
+      operational mission experience.
+    </p>
+    <div class="button-row">
+      <a class="button button--primary" href="#space-highlights">
+        Start with four highlights
+      </a>
+      <a class="button button--secondary" href="#space-collection">
+        Explore all 14
+      </a>
+    </div>
+  </header>
+  <section
+    class="section-shell section-block"
+    id="space-highlights"
+    aria-labelledby="space-highlights-title"
+  >
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Recommended reading path</p>
+        <h2 id="space-highlights-title">Four projects. Four kinds of evidence.</h2>
+      </div>
+    </div>
+    <p>
+      Start with the C++ executive for recovery behavior; telemetry for causal evaluation and
+      missing-data handling; scheduling for an independently checked finite optimum; then
+      verification for stale-evidence detection. Selection reflects scope, reproducible checks and
+      clear failure modes—not stars, repository size or a seniority score.
+    </p>
+    <div class="featured-grid space-highlights-grid">
+      {highlights.map((project) => (
+        <ProjectCard project={project} compact />
+      ))}
+    </div>
+  </section>
+  <section class="proof-band">
+    <div class="section-shell">
+      <p class="eyebrow">Read the boundaries</p>
+      <h2>Educational models. Explicit limits.</h2>
+      <p>
+        These are civilian portfolio and teaching applications, not flight-qualified software,
+        operational mission systems, weapon targeting, reactor monitoring or regulatory
+        certification. Most scenarios are synthetic; the Earth-observation project includes
+        attributed public Sentinel-2 imagery and the space-weather project includes frozen NOAA
+        data, not live conditions. Checksums identify content; they are not signatures or proof of
+        technical adequacy. Desktop releases are unsigned and platform-specific. No agency or
+        employer endorsement is implied.
+      </p>
+    </div>
+  </section>
+  <section
+    class="section-shell section-block"
+    id="space-collection"
+    aria-labelledby="space-collection-title"
+  >
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Complete collection</p>
+        <h2 id="space-collection-title">All 14 repositories, in reviewed order.</h2>
+      </div>
+      <a class="text-link" href={withBase("projects/?domain=Space+systems")}>
+        Filter the full catalog →
+      </a>
+    </div>
+    <p>
+      Each repository links its own source, model assumptions, tests and release evidence. The four
+      highlights above have deeper portfolio case studies. Other projects extend the same
+      engineering discipline to protocols, communications, timing, geospatial data, energy
+      resilience and calibration.
+    </p>
+    <div class="project-grid" data-space-collection>
+      {collection.map((project) => (
+        <ProjectCard project={project} compact />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

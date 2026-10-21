@@ -25,6 +25,8 @@
     "benchmark:check": "node scripts/benchmark-search.ts --check",
     "metadata:refresh": "node scripts/refresh-github-metadata.mjs",
     "metadata:check": "node scripts/refresh-github-metadata.mjs --check",
+    "summary:sync": "node scripts/sync-readme.mjs",
+    "summary:check": "node scripts/sync-readme.mjs --check",
     "code-index": "node scripts/generate-code-index.mjs",
     "code-index:check": "node scripts/generate-code-index.mjs --check",
     "file-catalog": "node scripts/generate-file-catalog.mjs",
@@ -33,7 +35,7 @@
     "dist:check": "node scripts/validate-dist.mjs",
     "lighthouse": "node scripts/lighthouse.mjs",
     "audit": "npm audit --audit-level=high",
-    "verify": "npm run format:check && npm run lint && npm run typecheck && npm run test:unit && npm run benchmark:check && npm run build && npm run dist:check && npm run repository:check && npm run code-index:check && npm run file-catalog:check"
+    "verify": "npm run format:check && npm run lint && npm run typecheck && npm run test:unit && npm run benchmark:check && npm run build && npm run dist:check && npm run repository:check && npm run summary:check && npm run code-index:check && npm run file-catalog:check"
   },
   "dependencies": {
     "astro": "7.3.8"

@@ -40,11 +40,11 @@ export type Project = CachedRepository & ProjectCuration & Readonly<{ portfolioO
 export type SearchFacet = "roles" | "languages" | "domains" | "maturity";
 
 export type SerializedSearchIndex = Readonly<{
-  schemaVersion: 1;
+  schemaVersion: 2;
   generatedFrom: string;
   projectOrder: readonly string[];
-  terms: Readonly<Record<string, readonly string[]>>;
-  facets: Readonly<Record<SearchFacet, Readonly<Record<string, readonly string[]>>>>;
+  terms: Readonly<Record<string, readonly number[]>>;
+  facets: Readonly<Record<SearchFacet, Readonly<Record<string, readonly number[]>>>>;
 }>;
 
 export type ProjectFilters = Readonly<{

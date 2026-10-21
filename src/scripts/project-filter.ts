@@ -58,7 +58,7 @@ async function initializeFilter(): Promise<void> {
   const response = await fetch(indexUrl, { credentials: "same-origin" });
   if (!response.ok) throw new Error(`Project search index failed with ${response.status}.`);
   const searchIndex = (await response.json()) as SerializedSearchIndex;
-  if (searchIndex.schemaVersion !== 1) throw new Error("Unsupported project search index schema.");
+  if (searchIndex.schemaVersion !== 2) throw new Error("Unsupported project search index schema.");
 
   const query = requireElement("#project-query", HTMLInputElement);
   const controls = {

@@ -15,6 +15,7 @@ const BASE = "/portfolio-case-study-site/";
 const REQUIRED_OUTPUTS = [
   "index.html",
   "projects/index.html",
+  "space-systems/index.html",
   "about/index.html",
   "404.html",
   "search-index.json",

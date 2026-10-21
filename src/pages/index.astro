@@ -10,10 +10,14 @@ import BaseLayout from "@/components/BaseLayout.astro";
 import MetricRail from "@/components/MetricRail.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
 import { featuredProjects, projects } from "@/lib/catalog";
+import { spaceHighlightNames } from "@/data/space-systems";
 import { absoluteUrl, withBase } from "@/lib/url";
 
 const languageCount = new Set(projects.flatMap((project) => project.languages)).size;
 const roleCount = new Set(projects.flatMap((project) => project.roles)).size;
+const spaceHighlights = projects.filter((project) =>
+  spaceHighlightNames.some((name) => name === project.name),
+);
 const profileSchema = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
@@ -104,9 +108,32 @@ const profileSchema = {
         View all {projects.length} projects <span aria-hidden="true">→</span>
       </a>
     </div>
-    <div class="featured-grid">
+    <div class="featured-grid" id="featured-projects">
       {featuredProjects.map((project) => (
         <ProjectCard {project} compact />
+      ))}
+    </div>
+  </section>
+
+  <section class="section-shell section-block" aria-labelledby="space-title" id="space-highlights">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">New collection · 14 projects</p>
+        <h2 id="space-title">Space &amp; energy systems. Built to be questioned.</h2>
+      </div>
+      <a class="text-link" href={withBase("space-systems/")}>
+        Explore all 14 projects →
+      </a>
+    </div>
+    <p>
+      Start with flight-software recovery, explainable telemetry, exact contact scheduling and
+      verification evidence. These civilian educational projects demonstrate transferable
+      engineering skills, not flight qualification, operational mission experience or agency
+      endorsement.
+    </p>
+    <div class="featured-grid space-highlights-grid">
+      {spaceHighlights.map((project) => (
+        <ProjectCard project={project} compact />
       ))}
     </div>
   </section>

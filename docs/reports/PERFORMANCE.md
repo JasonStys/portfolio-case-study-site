@@ -2,7 +2,7 @@
 
 ## Workloads
 
-- Real production catalog: 46 curated repositories, six featured and five reference case studies.
+- Real production catalog: 60 curated repositories, six featured and nine reference case studies, including a complete 14-project Space & energy collection.
 - Synthetic search benchmark: 10,000 projects, four primary-language groups, 137 cohorts, and 500 deterministic text-plus-facet queries.
 - Browser performance: three new desktop Lighthouse sessions against production output.
 
@@ -22,9 +22,27 @@
 | Lighthouse TBT worst run   |   ≤200 ms |
 | Lighthouse CLS worst run   |     ≤0.05 |
 
-## Release-candidate measurements
+## Current synchronization: 2026-10-21
 
-Current 46-project validation on Windows x64 / Node 24.18.1, 2026-10-14:
+Measured locally on Windows x64 / Node 24.18.1: all original budgets passed.
+The 10,000-project search benchmark built in 114.037 ms with query p95
+3.123 ms and a 1.635 MiB serialized index. Production output was 1,305 B
+JavaScript gzip, 4,360 B CSS gzip, 52,766 B largest HTML, and 25,499 B search
+index, across 20 HTML routes. These are observed samples, not universal timing guarantees.
+
+The expanded catalog initially exceeded the HTML and search-index budgets.
+Schema 2 replaces repeated repository names in postings with integer dictionary
+positions; compact catalog cards remove redundant markup without removing
+descriptions, outcomes, links, or no-JavaScript access. No limit was raised.
+
+Three fresh local Lighthouse sessions passed with the browser sandbox enabled.
+Conservative aggregate: accessibility 1.00, best practices 1.00, median performance
+0.98, SEO 1.00; worst FCP/LCP 1,002.74 ms, TBT 0 ms, CLS 0.00.
+See the exact deployed commit's Actions evidence for independent Linux results.
+
+## Historical measurements
+
+Earlier 46-project validation on Windows x64 / Node 24.18.1, 2026-10-14:
 10,000-project build 106.083 ms, query p95 4.615 ms, serialized synthetic index
 7.205 MiB. Static output: JavaScript gzip 1,228 B; CSS gzip 4,348 B; largest
 HTML 54,588 B; search index 85,367 B. All original byte/time gates passed.

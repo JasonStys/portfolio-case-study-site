@@ -4,7 +4,7 @@
  * Variables: route paths and absolute URLs.
  * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
  */
-import { featuredProjects } from "@/lib/catalog";
+import { projects } from "@/lib/catalog";
 import { absoluteUrl } from "@/lib/url";
 import { escapeXml } from "@/lib/xml";
 import type { APIRoute } from "astro";
@@ -12,12 +12,14 @@ import type { APIRoute } from "astro";
 export const prerender = true;
 
 export const GET: APIRoute = () => {
-  const caseStudyPaths = featuredProjects.map((project) => {
-    if (!project.caseStudySlug)
-      throw new Error(`Featured project ${project.name} has no case study.`);
-    return `case-studies/${project.caseStudySlug}/`;
-  });
-  const paths = ["", "projects/", "about/", ...caseStudyPaths];
+  const caseStudyPaths = projects
+    .filter((project) => project.caseStudySlug)
+    .map((project) => {
+      if (!project.caseStudySlug)
+        throw new Error(`Featured project ${project.name} has no case study.`);
+      return `case-studies/${project.caseStudySlug}/`;
+    });
+  const paths = ["", "projects/", "space-systems/", "about/", ...caseStudyPaths];
   const urls = paths
     .map((path) => `<url><loc>${escapeXml(absoluteUrl(path))}</loc></url>`)
     .join("");

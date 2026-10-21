@@ -7,11 +7,13 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 import portfolioPriority from "../../src/data/portfolio-priority.json" with { type: "json" };
+import { spaceHighlightNames, spaceSystemsCuration } from "../../src/data/space-systems";
 
 test("guides a recruiter from overview to implementation evidence", async ({ page }) => {
   await page.goto("./");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("why they work");
-  await expect(page.locator("[data-project-card]")).toHaveCount(6);
+  await expect(page.locator("#featured-projects [data-project-card]")).toHaveCount(6);
+  await expect(page.locator("#space-highlights [data-project-card]")).toHaveCount(4);
   await page
     .getByRole("link", { name: /Read case study/ })
     .first()
@@ -24,6 +26,55 @@ test("guides a recruiter from overview to implementation evidence", async ({ pag
     "href",
     "https://github.com/JasonStys/code-flow-studio",
   );
+});
+
+test("shows all 14 space/energy projects and restores their catalog filter", async ({ page }) => {
+  await page.goto("./space-systems/");
+  await expect(page.locator("#space-highlights [data-project-card]")).toHaveCount(4);
+  expect(
+    await page
+      .locator("[data-space-collection] [data-project-card]")
+      .evaluateAll((cards) => cards.map((card) => card.getAttribute("data-project-id"))),
+  ).toEqual(spaceSystemsCuration.map((project) => project.name));
+  await expect(page.getByText(/not flight-qualified software/)).toBeVisible();
+  await page.getByRole("link", { name: "Filter the full catalog" }).click();
+  await expect(page.getByLabel("Domain")).toHaveValue("Space systems");
+  await expect(page.locator("[data-project-card]:not([hidden])")).toHaveCount(14);
+  await page.reload();
+  await expect(page.locator("[data-project-card]:not([hidden])")).toHaveCount(14);
+});
+
+test("new collection and case studies work without client JavaScript", async ({ browser }) => {
+  const context = await browser.newContext({
+    javaScriptEnabled: false,
+    baseURL: String(test.info().project.use.baseURL),
+  });
+  try {
+    const page = await context.newPage();
+    await page.goto("./space-systems/");
+    await expect(page.locator("[data-space-collection] [data-project-card]")).toHaveCount(14);
+    for (const name of spaceHighlightNames) {
+      const response = await page.goto(`./case-studies/${name}/`);
+      expect(response?.ok()).toBe(true);
+      await expect(page.getByRole("heading", { name: "Limitations", exact: true })).toBeVisible();
+      await expect(page.getByRole("link", { name: /Inspect repository/ })).toHaveAttribute(
+        "href",
+        `https://github.com/JasonStys/${name}`,
+      );
+    }
+  } finally {
+    await context.close();
+  }
+});
+
+test("space collection has accessible content and no mobile overflow", async ({ page }) => {
+  await page.goto("./space-systems/");
+  const scan = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+    .analyze();
+  expect(scan.violations).toEqual([]);
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(await page.locator("body").evaluate((body) => body.scrollWidth)).toBeLessThanOrEqual(390);
 });
 
 test("filters projects with text, exact facets, reset, and restorable URL state", async ({
@@ -95,6 +146,8 @@ test("publishes valid discovery and search artifacts", async ({ request }) => {
   expect(await feed.text()).toContain('<rss version="2.0">');
   expect(sitemap.ok()).toBe(true);
   expect(await sitemap.text()).toContain("case-studies/forge2d-engine/");
+  expect(await sitemap.text()).toContain("space-systems/");
+  expect(await sitemap.text()).toContain("case-studies/mission-verification-evidence-kit/");
   expect(search.ok()).toBe(true);
-  expect((await search.json()).schemaVersion).toBe(1);
+  expect((await search.json()).schemaVersion).toBe(2);
 });

@@ -5,6 +5,7 @@
  * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
  */
 import type { ProjectCuration } from "@/lib/types";
+import { spaceSystemsCuration } from "@/data/space-systems";
 
 export const projectCuration = [
   {
@@ -67,6 +68,7 @@ export const projectCuration = [
     featuredOrder: 6,
     caseStudySlug: "applicant-evidence-studio",
   },
+  ...spaceSystemsCuration,
   {
     name: "cloud-job-orchestrator",
     roles: ["Cloud engineer", "Backend engineer", "DevOps engineer"],

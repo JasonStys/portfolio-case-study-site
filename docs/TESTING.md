@@ -33,6 +33,15 @@ The site must remain understandable without JavaScript, navigable by keyboard, c
 | Vulnerable dependency/change                | Audit, dependency review, CodeQL    | Push, PR, and scheduled analysis.                                                                                           |
 | Bad release replaces good site              | Deployment dependency graph         | Pages job requires all quality/browser/performance jobs.                                                                    |
 
+The Code Flow v0.3.0 content regression follows the real featured card → keyword
+search → case-study journey, checks immutable validation/acceptance and release
+links, verifies the coverage denominator and measurement caveats, and scans the
+full case for accessibility and mobile overflow in all three browser engines.
+Unit checks retain its first-place priority and searchable source-evidence terms.
+The README synchronization gate checks the same outcome text. These portfolio
+checks validate presentation; Code Flow's compiler results remain separately
+linked, previously completed evidence rather than newly executed site tests.
+
 ## Coverage targets
 
 Core TypeScript library thresholds:

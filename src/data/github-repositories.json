@@ -9,7 +9,16 @@
       "description": "Private local-account development studio with encrypted code history, an offline editor, isolated polyglot testing, and opt-in AI assistance",
       "url": "https://github.com/JasonStys/code-flow-studio",
       "primaryLanguage": "Python",
-      "languages": ["Python", "TypeScript", "CSS", "JavaScript", "Dockerfile", "HTML"],
+      "languages": [
+        "Python",
+        "TypeScript",
+        "CSS",
+        "JavaScript",
+        "Dockerfile",
+        "PHP",
+        "Shell",
+        "HTML"
+      ],
       "topics": [
         "ai-assisted-development",
         "electron",
@@ -19,7 +28,7 @@
         "testing",
         "typescript"
       ],
-      "pushedAt": "2026-10-13T05:19:10Z"
+      "pushedAt": "2026-10-21T21:37:01Z"
     },
     {
       "name": "business-knowledge-workbench",

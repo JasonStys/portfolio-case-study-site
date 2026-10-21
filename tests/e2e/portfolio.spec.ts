@@ -28,6 +28,48 @@ test("guides a recruiter from overview to implementation evidence", async ({ pag
   );
 });
 
+test("highlights Code Flow native evidence with verified results and measurement limits", async ({
+  page,
+}) => {
+  await page.goto("./");
+  const featured = page.locator('#featured-projects [data-project-id="code-flow-studio"]');
+  await expect(featured).toContainText("file/line diagnostics");
+  await expect(featured).toContainText("review-only unused-code candidates");
+  await page.goto("./projects/");
+  await expect(page.locator("[data-project-filter]")).toHaveAttribute("data-enhanced", "true");
+  await page.getByLabel("Keywords").fill("coverage unused");
+  await expect(page).toHaveURL(/q=coverage\+unused(?:&|$)/u);
+  const result = page.locator('[data-project-id="code-flow-studio"]');
+  await expect(result).toBeVisible();
+  await result.getByRole("link", { name: /Read case study/ }).click();
+  await expect(page.locator(".case-summary")).toContainText("v0.3.0");
+  for (const text of [
+    "148 unit tests",
+    "40 isolated-worker scenarios",
+    "24 browser/account checks",
+  ])
+    await expect(page.getByText(text, { exact: true })).toBeVisible();
+  await expect(page.getByText(/controller\/training.dataset statement coverage/)).toBeVisible();
+  await expect(
+    page.getByText(/SQLite measures completed top-level statement-start lines/),
+  ).toBeVisible();
+  await expect(page.getByText(/not trusted attestation against malicious targets/)).toBeVisible();
+  const links = {
+    "verified v0.3.0 validation report":
+      "blob/2d837e558420e4d7a775affdecd3dfd401eb7e7b/docs/validation-polyglot.md",
+    "native acceptance records": "blob/v0.3.0/docs/evidence/polyglot-locations.json",
+    "published v0.3.0 release": "releases/tag/v0.3.0",
+  };
+  for (const [name, suffix] of Object.entries(links))
+    await expect(page.getByRole("link", { name, exact: true })).toHaveAttribute(
+      "href",
+      `https://github.com/JasonStys/code-flow-studio/${suffix}`,
+    );
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(await page.locator("body").evaluate((body) => body.scrollWidth)).toBeLessThanOrEqual(390);
+});
+
 test("explains governed business standards and links versioned source evidence", async ({
   page,
 }) => {

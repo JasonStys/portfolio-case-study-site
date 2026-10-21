@@ -14,7 +14,7 @@ export const projectCuration = [
     domains: ["AI developer tools", "Testing", "Security"],
     maturity: "validated",
     outcome:
-      "Connects a polyglot editor, isolated compiler workers, bounded fuzzing, revision evidence, and private local accounts.",
+      "Reports source-bound file/line diagnostics, language-specific coverage, and review-only unused-code candidates across 12 isolated CLI adapters, with private revision histories.",
     featuredOrder: 1,
     caseStudySlug: "code-flow-studio",
   },

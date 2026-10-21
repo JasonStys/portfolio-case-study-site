@@ -45,6 +45,16 @@ describe("portfolio catalog", () => {
     expect(featuredProjects.every((project) => project.caseStudySlug)).toBe(true);
   });
 
+  it("keeps Code Flow first and makes its reviewed source evidence searchable", () => {
+    expect(projects[0]?.name).toBe("code-flow-studio");
+    expect(projects[0]?.outcome).toContain("12 isolated CLI adapters");
+    expect(projects[0]?.outcome).toContain("review-only unused-code candidates");
+    const index = buildSearchIndex(projects, "code-flow-evidence");
+    for (const query of ["source-bound diagnostics", "coverage unused", "private revision"]) {
+      expect(searchProjectIds(index, query)).toContain("code-flow-studio");
+    }
+  });
+
   it("covers all 60 repositories in canonical priority order", () => {
     expect(projects).toHaveLength(60);
     expect(repositoryCache.repositories).toHaveLength(60);

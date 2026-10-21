@@ -530,21 +530,24 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 35 | variable | `workbench` |
-| 44 | variable | `catalogEntry` |
-| 86 | variable | `context` |
-| 91 | variable | `page` |
-| 95 | variable | `response` |
-| 110 | variable | `scan` |
-| 146 | variable | `skipLink` |
-| 156 | variable | `results` |
-| 167 | variable | `bodyWidth` |
-| 169 | variable | `cards` |
-| 170 | variable | `first` |
-| 171 | variable | `second` |
-| 190 | variable | `revision` |
-| 192 | variable | `search` |
-| 194 | variable | `index` |
+| 35 | variable | `featured` |
+| 42 | variable | `result` |
+| 57 | variable | `links` |
+| 77 | variable | `workbench` |
+| 86 | variable | `catalogEntry` |
+| 128 | variable | `context` |
+| 133 | variable | `page` |
+| 137 | variable | `response` |
+| 152 | variable | `scan` |
+| 188 | variable | `skipLink` |
+| 198 | variable | `results` |
+| 209 | variable | `bodyWidth` |
+| 211 | variable | `cards` |
+| 212 | variable | `first` |
+| 213 | variable | `second` |
+| 232 | variable | `revision` |
+| 234 | variable | `search` |
+| 236 | variable | `index` |
 
 ## `tests/unit/catalog.test.ts`
 
@@ -552,14 +555,15 @@
 | ---: | --- | --- |
 | 24 | variable | `revision` |
 | 27 | variable | `edited` |
-| 61 | variable | `names` |
-| 67 | variable | `project` |
-| 71 | variable | `index` |
-| 92 | variable | `references` |
-| 93 | variable | `reversed` |
-| 100 | variable | `languages` |
-| 132 | variable | `repository` |
-| 133 | variable | `envelope` |
+| 52 | variable | `index` |
+| 71 | variable | `names` |
+| 77 | variable | `project` |
+| 81 | variable | `index` |
+| 102 | variable | `references` |
+| 103 | variable | `reversed` |
+| 110 | variable | `languages` |
+| 142 | variable | `repository` |
+| 143 | variable | `envelope` |
 
 ## `tests/unit/search.test.ts`
 

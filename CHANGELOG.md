@@ -13,6 +13,8 @@ All notable changes use a simplified Keep a Changelog structure. Version numbers
 
 ### Improved
 
+- Code Flow Studio remains the leading case; its README summary, cards, search and detailed case now highlight v0.3.0 source-bound locations, language-specific coverage, review-only unused candidates, verified native/browser/package checks and explicit measurement limits.
+- Unit and three-engine browser regressions check Code Flow search, immutable validation/acceptance links, release downloads, accessibility and mobile layout without changing portfolio order or quality budgets.
 - Business Knowledge Workbench summary, featured card, catalog metadata, and detailed case now describe v1.2.0 governed document/data standards, versioned evidence, published validation, and local-owner limitations.
 - Case-study footer labels use high-contrast dark text on teal; the new workbench case regression checks evidence links, catalog search, and full-page accessibility in three browser engines.
 - Content-bound search revision URLs invalidate stale indexes after editorial-only updates without falsely refreshing the entire GitHub metadata snapshot.

@@ -38,7 +38,7 @@
     "verify": "npm run format:check && npm run lint && npm run typecheck && npm run test:unit && npm run benchmark:check && npm run build && npm run dist:check && npm run repository:check && npm run summary:check && npm run code-index:check && npm run file-catalog:check"
   },
   "dependencies": {
-    "astro": "7.3.8"
+    "astro": "7.4.0"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",

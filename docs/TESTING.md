@@ -55,6 +55,7 @@ npm run benchmark:check
 npm run build
 npm run dist:check
 npm run repository:check
+npm run summary:check
 npm run code-index:check
 npm run file-catalog:check
 npm run test:e2e
@@ -66,7 +67,7 @@ npm run audit
 
 - `quality` runs deterministic checks, build validation, metadata freshness, and audit.
 - `browser` runs the same production flows independently in Chromium, Firefox, and WebKit.
-- `lighthouse` installs Chromium and evaluates three fresh sessions.
+- `lighthouse` identifies the runner's installed Google Chrome and evaluates three fresh sandboxed sessions, recording the browser version in its job log.
 - `deploy` runs only for a green push to `main` and rebuilds the exact artifact.
 - `CodeQL` runs on changes and a weekly schedule.
 - `dependency-review` rejects risky pull-request dependency changes.

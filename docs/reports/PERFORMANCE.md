@@ -35,9 +35,12 @@ Schema 2 replaces repeated repository names in postings with integer dictionary
 positions; compact catalog cards remove redundant markup without removing
 descriptions, outcomes, links, or no-JavaScript access. No limit was raised.
 
-Three fresh local Lighthouse sessions passed with the browser sandbox enabled.
+An initial three-session local Lighthouse sample passed with the browser sandbox enabled.
 Conservative aggregate: accessibility 1.00, best practices 1.00, median performance
 0.98, SEO 1.00; worst FCP/LCP 1,002.74 ms, TBT 0 ms, CLS 0.00.
+After the launcher diagnostic change, three new local sessions again passed:
+median performance 0.97, other categories 1.00, worst FCP/LCP 994.19 ms,
+TBT 0 ms and CLS 0.00. Differences between samples are measurement variability.
 See the exact deployed commit's Actions evidence for independent Linux results.
 
 ## Historical measurements

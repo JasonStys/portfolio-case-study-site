@@ -118,19 +118,19 @@
 | 60 | function | `stopChrome` |
 | 69 | function | `runAudit` |
 | 70 | variable | `chrome` |
-| 75 | variable | `result` |
-| 97 | function | `median` |
-| 100 | variable | `sorted` |
-| 104 | function | `summarize` |
-| 105 | variable | `categories` |
-| 107 | variable | `scores` |
-| 111 | variable | `audits` |
-| 122 | function | `enforceBudgets` |
-| 123 | variable | `failures` |
-| 131 | function | `main` |
-| 133 | variable | `preview` |
-| 136 | variable | `results` |
-| 139 | variable | `summary` |
+| 76 | variable | `result` |
+| 98 | function | `median` |
+| 101 | variable | `sorted` |
+| 105 | function | `summarize` |
+| 106 | variable | `categories` |
+| 108 | variable | `scores` |
+| 112 | variable | `audits` |
+| 123 | function | `enforceBudgets` |
+| 124 | variable | `failures` |
+| 132 | function | `main` |
+| 134 | variable | `preview` |
+| 137 | variable | `results` |
+| 140 | variable | `summary` |
 
 ## `scripts/refresh-github-metadata.mjs`
 

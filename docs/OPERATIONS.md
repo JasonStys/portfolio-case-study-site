@@ -71,6 +71,17 @@ and can cause temporary 404s. CI jobs use separate runner checkouts.
 Keep the browser sandbox enabled; a launcher
 permission problem is not a reason to disable operating-system protections.
 
+CI Lighthouse uses the Ubuntu runner's installed Google Chrome at
+`/opt/google/chrome/chrome`, prints its version and keeps its sandbox enabled.
+This uses the OS-integrated browser instead of a separately downloaded Chromium
+path that may not have Ubuntu's user-namespace permission. Launcher errors now
+include Chromium stderr in the job log. Do not change AppArmor, sysctl settings,
+permissions or sandbox flags to make a check green. See the
+[official browser troubleshooting guidance](https://pptr.dev/troubleshooting#issues-with-apparmor-on-ubuntu)
+and [runner image installation source](https://github.com/actions/runner-images/blob/main/images/ubuntu/scripts/build/install-google-chrome.sh).
+The three-engine acceptance suite still uses its lockfile-selected Playwright
+browsers; Lighthouse's system Chrome version is supplied by the runner image.
+
 ### Metadata age failure
 
 Refresh with an authenticated GitHub token, review the diff, and rerun deterministic checks. Do not bypass the age policy by editing only the timestamp.

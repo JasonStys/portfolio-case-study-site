@@ -70,6 +70,7 @@ async function runAudit(runNumber) {
   const chrome = await launch({
     chromePath: process.env.CHROME_PATH || chromium.executablePath(),
     chromeFlags: ["--headless", "--disable-dev-shm-usage"],
+    logLevel: "error",
   });
   try {
     const result = await lighthouse(TARGET_URL, {

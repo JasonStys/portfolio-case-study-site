@@ -73,6 +73,19 @@ browser checks must run against a stable output directory, with no concurrent
 build. The operations runbook now states this explicitly. CI uses separate
 runner checkouts, not a shared local build directory.
 
+The [first candidate CI run](https://github.com/JasonStys/portfolio-case-study-site/actions/runs/39636809280)
+passed quality and all three browser jobs, while CodeQL passed separately.
+Lighthouse failed before auditing: its downloaded Chromium did not expose a
+debugging port. This is consistent with the documented Ubuntu AppArmor
+restriction on non-system Chrome binaries, rather than a failed site metric.
+The repair selects the runner's existing OS-integrated Google Chrome and prints
+its version, enables launcher error diagnostics, and retains all sandbox and
+quality gates. It does not change host security settings. See the official
+[sandbox guidance](https://pptr.dev/troubleshooting#issues-with-apparmor-on-ubuntu)
+and [runner browser installation](https://github.com/actions/runner-images/blob/main/images/ubuntu/scripts/build/install-google-chrome.sh).
+The repaired launcher also passed three new local audits: median performance
+0.97, other categories 1.00, worst FCP/LCP 994.19 ms, TBT 0 ms and CLS 0.00.
+
 Public deployment is gated independently by the exact commit's
 [CI and Pages](https://github.com/JasonStys/portfolio-case-study-site/actions/workflows/ci.yml)
 and [CodeQL](https://github.com/JasonStys/portfolio-case-study-site/actions/workflows/codeql.yml).

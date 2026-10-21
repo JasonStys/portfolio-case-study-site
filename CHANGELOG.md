@@ -17,6 +17,7 @@ All notable changes use a simplified Keep a Changelog structure. Version numbers
 - Compact card markup preserves no-script access while retaining the original HTML, JavaScript, CSS, search and Lighthouse budgets.
 - Sitemap includes all case studies and the new collection; cached public metadata refreshed after allowlist review.
 - Lighthouse uses normal sandboxed Chromium instead of disabling its sandbox.
+- Ubuntu CI selects the runner's OS-integrated Chrome for Lighthouse and exposes launcher errors without changing host security settings.
 
 ## [1.0.0] - 2026-09-19
 

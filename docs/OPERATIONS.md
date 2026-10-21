@@ -39,8 +39,12 @@ or outcomes, and review its generated README table before committing.
    in the process environment and run `npm run test:e2e` for the full deployed-site
    acceptance suite. Remove the variable afterward to restore local preview mode.
 
-The search index uses schema 2 with a revisioned request URL, so new client code
-does not reuse an older cached schema. This is a public static portfolio; there
+The search index uses schema 2 with a revisioned request URL. Its build-time
+SHA-256 identity includes the reviewed catalog and metadata timestamp, so an
+editorial-only description or ordering change invalidates the URL even without
+a full GitHub metadata refresh. The index's `generatedFrom` value matches that
+revision; browser tests check the binding. This is a cache identity, not an
+approval signature. Node crypto stays in build-only code. This is a public static portfolio; there
 are no visitor accounts, private project data, remote AI calls or analytics.
 Check Actions storage before remote validation; do not delete runs, artifacts or
 caches, or alter retention policy, without fresh authorization.

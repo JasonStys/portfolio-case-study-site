@@ -21,10 +21,10 @@ export const projectCuration = [
   {
     name: "business-knowledge-workbench",
     roles: ["Full-stack engineer", "Data engineer", "App developer"],
-    domains: ["Document processing", "Analytics", "Privacy"],
+    domains: ["Document processing", "Data normalization", "Privacy"],
     maturity: "validated",
     outcome:
-      "Combines HTML-first document ingestion, dimension-safe units, provenance, role previews, and encrypted local workspaces.",
+      "Standardizes business documents and data with owner-controlled units, field schemas, layouts, export types, and revision history in encrypted local workspaces.",
     featuredOrder: 2,
     caseStudySlug: "business-knowledge-workbench",
   },

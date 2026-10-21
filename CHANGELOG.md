@@ -13,6 +13,9 @@ All notable changes use a simplified Keep a Changelog structure. Version numbers
 
 ### Improved
 
+- Business Knowledge Workbench summary, featured card, catalog metadata, and detailed case now describe v1.2.0 governed document/data standards, versioned evidence, published validation, and local-owner limitations.
+- Case-study footer labels use high-contrast dark text on teal; the new workbench case regression checks evidence links, catalog search, and full-page accessibility in three browser engines.
+- Content-bound search revision URLs invalidate stale indexes after editorial-only updates without falsely refreshing the entire GitHub metadata snapshot.
 - Search schema 2 uses numeric dictionary postings and own-property lookup guards; schema/revision URLs avoid stale-schema cache reuse.
 - Compact card markup preserves no-script access while retaining the original HTML, JavaScript, CSS, search and Lighthouse budgets.
 - Sitemap includes all case studies and the new collection; cached public metadata refreshed after allowlist review.

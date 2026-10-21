@@ -303,6 +303,12 @@
 | 9 | variable | `spaceHighlightNames` |
 | 16 | variable | `spaceSystemsCuration` |
 
+## `src/lib/catalog-revision.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 11 | function | `catalogRevision` |
+
 ## `src/lib/catalog.ts`
 
 | Line | Kind | Symbol |
@@ -429,10 +435,11 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 13 | variable | `roles` |
-| 14 | variable | `languages` |
-| 15 | variable | `domains` |
-| 16 | variable | `maturities` |
+| 14 | variable | `roles` |
+| 15 | variable | `languages` |
+| 16 | variable | `domains` |
+| 17 | variable | `maturities` |
+| 18 | variable | `revision` |
 
 ## `src/pages/robots.txt.ts`
 
@@ -445,8 +452,8 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 11 | variable | `prerender` |
-| 13 | variable | `GET` |
+| 12 | variable | `prerender` |
+| 14 | variable | `GET` |
 
 ## `src/pages/sitemap.xml.ts`
 
@@ -517,35 +524,42 @@
 | 64 | custom property | `--radius` |
 | 65 | custom property | `--radius-lg` |
 | 66 | custom property | `--shell` |
-| 990 | custom property | `--shell` |
+| 994 | custom property | `--shell` |
 
 ## `tests/e2e/portfolio.spec.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 48 | variable | `context` |
-| 53 | variable | `page` |
-| 57 | variable | `response` |
-| 72 | variable | `scan` |
-| 108 | variable | `skipLink` |
-| 118 | variable | `results` |
-| 129 | variable | `bodyWidth` |
-| 131 | variable | `cards` |
-| 132 | variable | `first` |
-| 133 | variable | `second` |
+| 35 | variable | `workbench` |
+| 44 | variable | `catalogEntry` |
+| 86 | variable | `context` |
+| 91 | variable | `page` |
+| 95 | variable | `response` |
+| 110 | variable | `scan` |
+| 146 | variable | `skipLink` |
+| 156 | variable | `results` |
+| 167 | variable | `bodyWidth` |
+| 169 | variable | `cards` |
+| 170 | variable | `first` |
+| 171 | variable | `second` |
+| 190 | variable | `revision` |
+| 192 | variable | `search` |
+| 194 | variable | `index` |
 
 ## `tests/unit/catalog.test.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 46 | variable | `names` |
-| 52 | variable | `project` |
-| 56 | variable | `index` |
-| 77 | variable | `references` |
-| 78 | variable | `reversed` |
-| 85 | variable | `languages` |
-| 117 | variable | `repository` |
-| 118 | variable | `envelope` |
+| 24 | variable | `revision` |
+| 27 | variable | `edited` |
+| 61 | variable | `names` |
+| 67 | variable | `project` |
+| 71 | variable | `index` |
+| 92 | variable | `references` |
+| 93 | variable | `reversed` |
+| 100 | variable | `languages` |
+| 132 | variable | `repository` |
+| 133 | variable | `envelope` |
 
 ## `tests/unit/search.test.ts`
 

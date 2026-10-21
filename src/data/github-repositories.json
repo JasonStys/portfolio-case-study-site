@@ -23,7 +23,7 @@
     },
     {
       "name": "business-knowledge-workbench",
-      "description": "Configurable business knowledge workspace: HTML-first documents, normalized data, scoped portals, reporting, AI adapters and installable PWA.",
+      "description": "Private local-first document and data standardization: owner-controlled units, field schemas, document layouts, HTML-first exports, revision history and desktop apps.",
       "url": "https://github.com/JasonStys/business-knowledge-workbench",
       "primaryLanguage": "Python",
       "languages": ["Python", "TypeScript", "CSS", "JavaScript", "HTML", "Dockerfile", "Shell"],
@@ -35,7 +35,7 @@
         "python",
         "typescript"
       ],
-      "pushedAt": "2026-10-13T07:25:29Z"
+      "pushedAt": "2026-10-21T18:45:30Z"
     },
     {
       "name": "personal-image-model-studio",

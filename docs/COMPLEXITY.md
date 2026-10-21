@@ -27,6 +27,7 @@ At 60 real projects, clarity remains important. Schema 2 uses one dictionary of 
 - Six broad featured cases, nine reference cases and a complete 14-project space/energy collection; 20 HTML routes in the current build.
 - Metadata cache must contain at least one project and no duplicate names.
 - Cache age is bounded to 90 days in CI.
+- The build-only search revision hashes the serialized reviewed catalog in `O(metadata bytes)` time and space; it does not add browser cryptography or runtime network calls.
 - Browser filter debounce is 120 ms; no repeating timer or background poll exists.
 - Search index is capped at 100 KiB in production output.
 - Total compressed JavaScript is capped at 32 KiB and CSS at 24 KiB.

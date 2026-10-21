@@ -17,8 +17,23 @@ import { projectCuration } from "@/data/project-curation";
 import portfolioPriority from "@/data/portfolio-priority.json";
 import { spaceSystemsCuration, spaceHighlightNames } from "@/data/space-systems";
 import { buildSearchIndex, searchProjectIds } from "@/lib/search";
+import { catalogRevision } from "@/lib/catalog-revision";
 
 describe("portfolio catalog", () => {
+  it("binds search cache revisions to editorial content, order and metadata", () => {
+    const revision = catalogRevision(projects, repositoryCache.fetchedAt);
+    expect(revision).toMatch(/^[a-f0-9]{64}$/u);
+    expect(catalogRevision(structuredClone(projects), repositoryCache.fetchedAt)).toBe(revision);
+    const edited = projects.map((project) =>
+      project.name === "business-knowledge-workbench"
+        ? { ...project, outcome: project.outcome + " Reviewed standards update." }
+        : project,
+    );
+    expect(catalogRevision(edited, repositoryCache.fetchedAt)).not.toBe(revision);
+    expect(catalogRevision([...projects].reverse(), repositoryCache.fetchedAt)).not.toBe(revision);
+    expect(catalogRevision(projects, "2026-10-20T00:00:00.000Z")).not.toBe(revision);
+  });
+
   it("merges every curated project with a unique cached repository", () => {
     expect(projects).toHaveLength(projectCuration.length);
     expect(new Set(projects.map((project) => project.name)).size).toBe(projects.length);

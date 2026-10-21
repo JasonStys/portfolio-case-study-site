@@ -8,12 +8,14 @@
 import BaseLayout from "@/components/BaseLayout.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
 import { listFacetValues, projects, repositoryCache } from "@/lib/catalog";
+import { catalogRevision } from "@/lib/catalog-revision";
 import { withBase } from "@/lib/url";
 
 const roles = listFacetValues(projects, "roles");
 const languages = listFacetValues(projects, "languages");
 const domains = listFacetValues(projects, "domains");
 const maturities = listFacetValues(projects, "maturity");
+const revision = catalogRevision(projects, repositoryCache.fetchedAt);
 ---
 
 <BaseLayout
@@ -40,9 +42,7 @@ const maturities = listFacetValues(projects, "maturity");
   <section
     class="section-shell catalog"
     data-project-filter
-    data-index-url={withBase(
-      `search-index.json?schema=2&revision=${encodeURIComponent(repositoryCache.fetchedAt)}`,
-    )}
+    data-index-url={withBase(`search-index.json?schema=2&revision=${revision}`)}
   >
     <search class="filter-panel" aria-labelledby="filter-title">
       <div class="filter-panel__heading">

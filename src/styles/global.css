@@ -859,6 +859,10 @@
     max-width: 14ch;
     margin-top: 0.6rem;
   }
+  .case-footer .eyebrow {
+    /* Small text needs stronger contrast on the teal case-study footer. */
+    color: var(--ink);
+  }
 
   .about-grid {
     display: grid;

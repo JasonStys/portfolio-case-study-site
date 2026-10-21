@@ -28,6 +28,44 @@ test("guides a recruiter from overview to implementation evidence", async ({ pag
   );
 });
 
+test("explains governed business standards and links versioned source evidence", async ({
+  page,
+}) => {
+  await page.goto("./");
+  const workbench = page.locator(
+    '#featured-projects [data-project-id="business-knowledge-workbench"]',
+  );
+  await expect(workbench).toContainText("owner-controlled units");
+  await page.goto("./projects/");
+  await expect(page.locator("[data-project-filter]")).toHaveAttribute("data-enhanced", "true");
+  await page.getByLabel("Keywords").fill("schemas");
+  // Wait for the actual debounced result before following its moving card link.
+  await expect(page).toHaveURL(/q=schemas(?:&|$)/u);
+  const catalogEntry = page.locator('[data-project-id="business-knowledge-workbench"]');
+  await expect(catalogEntry).toBeVisible();
+  await catalogEntry.getByRole("link", { name: /Read case study/ }).click();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "Governed standards for business documents and data",
+  );
+  await expect(page.getByText(/4\.25 in → 107\.95 mm/)).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "version 1.2 validation", exact: true }),
+  ).toHaveAttribute(
+    "href",
+    "https://github.com/JasonStys/business-knowledge-workbench/blob/v1.2.0/docs/validation-v1.2.md",
+  );
+  await expect(
+    page.getByRole("link", { name: "published v1.2.0 release", exact: true }),
+  ).toHaveAttribute(
+    "href",
+    "https://github.com/JasonStys/business-knowledge-workbench/releases/tag/v1.2.0",
+  );
+  await expect(
+    page.getByText(/not shared-business membership or delegated coworker permissions/),
+  ).toBeVisible();
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+});
+
 test("shows all 14 space/energy projects and restores their catalog filter", async ({ page }) => {
   await page.goto("./space-systems/");
   await expect(page.locator("#space-highlights [data-project-card]")).toHaveCount(4);
@@ -137,10 +175,10 @@ test("preserves a single-column mobile reading order without horizontal overflow
 });
 
 test("publishes valid discovery and search artifacts", async ({ request }) => {
-  const [feed, sitemap, search] = await Promise.all([
+  const [feed, sitemap, catalog] = await Promise.all([
     request.get("./feed.xml"),
     request.get("./sitemap.xml"),
-    request.get("./search-index.json"),
+    request.get("./projects/"),
   ]);
   expect(feed.ok()).toBe(true);
   expect(await feed.text()).toContain('<rss version="2.0">');
@@ -148,6 +186,12 @@ test("publishes valid discovery and search artifacts", async ({ request }) => {
   expect(await sitemap.text()).toContain("case-studies/forge2d-engine/");
   expect(await sitemap.text()).toContain("space-systems/");
   expect(await sitemap.text()).toContain("case-studies/mission-verification-evidence-kit/");
+  expect(catalog.ok()).toBe(true);
+  const revision = /revision=([a-f0-9]{64})/u.exec(await catalog.text())?.[1];
+  expect(revision).toMatch(/^[a-f0-9]{64}$/u);
+  const search = await request.get(`./search-index.json?schema=2&revision=${revision}`);
   expect(search.ok()).toBe(true);
-  expect((await search.json()).schemaVersion).toBe(2);
+  const index = await search.json();
+  expect(index.schemaVersion).toBe(2);
+  expect(index.generatedFrom).toBe(revision);
 });

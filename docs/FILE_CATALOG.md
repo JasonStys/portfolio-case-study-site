@@ -26,6 +26,7 @@
 | `docs/LIMITATIONS.md`                                             | Project documentation described by its title and sections.                                                 |
 | `docs/OPERATIONS.md`                                              | Project documentation described by its title and sections.                                                 |
 | `docs/reports/ACTIONS_REVIEW_2026-10-14.md`                       | Project documentation described by its title and sections.                                                 |
+| `docs/reports/business-standards-sync-2026-10-21.md`              | Project documentation described by its title and sections.                                                 |
 | `docs/reports/generated/search-benchmark.json`                    | Repository support file.                                                                                   |
 | `docs/reports/PERFORMANCE.md`                                     | Project documentation described by its title and sections.                                                 |
 | `docs/reports/portfolio-sync-2026-10-14.md`                       | Project documentation described by its title and sections.                                                 |
@@ -79,6 +80,7 @@
 | `src/data/portfolio-priority.json`                                | Canonical reviewed ordering of all 60 public portfolio repositories.                                       |
 | `src/data/project-curation.ts`                                    | Curates reviewed roles, domains, outcomes, maturity, and six featured cases.                               |
 | `src/data/space-systems.ts`                                       | Jason Stys's reviewed civilian space/energy portfolio collection and highlight rationale.                  |
+| `src/lib/catalog-revision.ts`                                     | Derives build-only search cache identities from the complete reviewed catalog and metadata timestamp.      |
 | `src/lib/catalog.ts`                                              | Validates cached GitHub metadata, merges curation, and derives deterministic facets.                       |
 | `src/lib/search.ts`                                               | Builds and queries a deterministic inverted index for project text and exact facets.                       |
 | `src/lib/types.ts`                                                | Defines the validated repository, curation, search, and evidence domain types.                             |

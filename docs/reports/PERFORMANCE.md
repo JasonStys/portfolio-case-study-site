@@ -2,7 +2,7 @@
 
 ## Workloads
 
-- Real production catalog: 60 curated repositories, six featured and nine reference case studies, including a complete 14-project Space & energy collection.
+- Real production catalog: 67 curated repositories, six featured and nine reference case studies, a complete 14-project Space & energy collection and seven-project drone-safety collection.
 - Synthetic search benchmark: 10,000 projects, four primary-language groups, 137 cohorts, and 500 deterministic text-plus-facet queries.
 - Browser performance: three new desktop Lighthouse sessions against production output.
 

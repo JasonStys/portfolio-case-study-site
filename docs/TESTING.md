@@ -14,24 +14,24 @@ The site must remain understandable without JavaScript, navigable by keyboard, c
 
 ## Risk matrix
 
-| Risk                                        | Test layer                          | Evidence                                                                                                                    |
-| ------------------------------------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Incorrect case-study frontmatter            | Astro content schema                | Build fails before route generation.                                                                                        |
-| Missing/duplicate repository data           | Unit and build contract             | Cache and curation failure cases.                                                                                           |
-| Missing or contradictory portfolio ordering | Unit, route build, browser          | Exact 60-name coverage, all 14 space projects, four new case mappings, six broad featured mappings, and reset-order checks. |
-| Search returns wrong intersection           | Unit                                | Text AND behavior and four exact facets.                                                                                    |
-| C++ or C# token is lost                     | Unit                                | Punctuation-preserving token case.                                                                                          |
-| JavaScript failure hides work               | Architecture and no-script contract | Cards are server-rendered; enhancement only sets `hidden`.                                                                  |
-| Filter state cannot be shared               | Browser                             | Query and facet survive reload through URL parameters.                                                                      |
-| Keyboard user cannot reach content          | Browser                             | Skip link focus and activation.                                                                                             |
-| Automated accessibility regression          | Browser + axe                       | WCAG A, AA, 2.1 AA, and 2.2 AA tags.                                                                                        |
-| Mobile overflow or column collision         | Browser layout regression           | 390-pixel viewport width and card geometry assertions.                                                                      |
-| Repository base breaks links                | Generated-output validator          | Every base-prefixed `href` and `src` resolves in `dist`.                                                                    |
-| Oversized client assets                     | Generated-output validator          | Compressed JS/CSS and HTML/index budgets.                                                                                   |
-| Slow search at larger scale                 | Benchmark                           | 10,000 projects and 500 deterministic queries.                                                                              |
-| Performance/accessibility drift             | Lighthouse                          | Three independent production-preview runs.                                                                                  |
-| Vulnerable dependency/change                | Audit, dependency review, CodeQL    | Push, PR, and scheduled analysis.                                                                                           |
-| Bad release replaces good site              | Deployment dependency graph         | Pages job requires all quality/browser/performance jobs.                                                                    |
+| Risk                                        | Test layer                          | Evidence                                                                                                            |
+| ------------------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Incorrect case-study frontmatter            | Astro content schema                | Build fails before route generation.                                                                                |
+| Missing/duplicate repository data           | Unit and build contract             | Cache and curation failure cases.                                                                                   |
+| Missing or contradictory portfolio ordering | Unit, route build, browser          | Exact 67-name coverage, all 14 space and seven drone projects, six broad featured mappings, and reset-order checks. |
+| Search returns wrong intersection           | Unit                                | Text AND behavior and four exact facets.                                                                            |
+| C++ or C# token is lost                     | Unit                                | Punctuation-preserving token case.                                                                                  |
+| JavaScript failure hides work               | Architecture and no-script contract | Cards are server-rendered; enhancement only sets `hidden`.                                                          |
+| Filter state cannot be shared               | Browser                             | Query and facet survive reload through URL parameters.                                                              |
+| Keyboard user cannot reach content          | Browser                             | Skip link focus and activation.                                                                                     |
+| Automated accessibility regression          | Browser + axe                       | WCAG A, AA, 2.1 AA, and 2.2 AA tags.                                                                                |
+| Mobile overflow or column collision         | Browser layout regression           | 390-pixel viewport width and card geometry assertions.                                                              |
+| Repository base breaks links                | Generated-output validator          | Every base-prefixed `href` and `src` resolves in `dist`.                                                            |
+| Oversized client assets                     | Generated-output validator          | Compressed JS/CSS and HTML/index budgets.                                                                           |
+| Slow search at larger scale                 | Benchmark                           | 10,000 projects and 500 deterministic queries.                                                                      |
+| Performance/accessibility drift             | Lighthouse                          | Three independent production-preview runs.                                                                          |
+| Vulnerable dependency/change                | Audit, dependency review, CodeQL    | Push, PR, and scheduled analysis.                                                                                   |
+| Bad release replaces good site              | Deployment dependency graph         | Pages job requires all quality/browser/performance jobs.                                                            |
 
 The Code Flow v0.3.0 content regression follows the real featured card → keyword
 search → case-study journey, checks immutable validation/acceptance and release

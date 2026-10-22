@@ -38,25 +38,25 @@
     "verify": "npm run format:check && npm run lint && npm run typecheck && npm run test:unit && npm run benchmark:check && npm run build && npm run dist:check && npm run repository:check && npm run summary:check && npm run code-index:check && npm run file-catalog:check"
   },
   "dependencies": {
-    "astro": "7.3.8"
+    "astro": "7.4.0"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
-    "@axe-core/playwright": "4.13.0",
+    "@axe-core/playwright": "4.14.0",
     "@eslint/js": "10.0.1",
-    "@playwright/test": "1.64.0",
+    "@playwright/test": "1.64.1",
     "@types/node": "26.6.5",
-    "@vitest/coverage-v8": "5.0.3",
+    "@vitest/coverage-v8": "5.0.5",
     "chrome-launcher": "1.2.2",
     "cross-env": "10.1.0",
-    "eslint": "10.12.0",
+    "eslint": "10.13.0",
     "eslint-plugin-astro": "3.2.1",
     "globals": "17.13.0",
     "lighthouse": "13.5.0",
     "prettier": "3.9.10",
     "prettier-plugin-astro": "1.1.1",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.71.1",
-    "vitest": "5.0.3"
+    "typescript-eslint": "8.71.2",
+    "vitest": "5.0.5"
   }
 }

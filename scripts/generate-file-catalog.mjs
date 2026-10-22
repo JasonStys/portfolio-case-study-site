@@ -26,7 +26,7 @@ const checkOnly = process.argv.includes("--check");
 const STATIC_DESCRIPTIONS = new Map([
   [
     "src/data/portfolio-priority.json",
-    "Canonical reviewed ordering of all 60 public portfolio repositories.",
+    "Canonical reviewed ordering of all 67 public portfolio repositories.",
   ],
   [".editorconfig", "Editor-neutral whitespace, encoding, and newline policy."],
   [".gitattributes", "Cross-platform line-ending and binary-file policy."],

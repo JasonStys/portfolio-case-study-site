@@ -17,7 +17,19 @@ The release gate covers catalog/cache contracts, search behavior, URL/XML helper
 | Lighthouse       | Accessibility 1.00; performance ≥0.92; best practices ≥0.95; SEO ≥0.95. |
 | Security         | Zero high/critical npm findings and zero unresolved CodeQL findings.    |
 
-## Current synchronization: 2026-10-21
+## Current synchronization: 2026-10-22
+
+The 67-project catalog adds all seven drone projects with exact membership,
+reviewed order and searchable evidence tests. Local verification passed all
+20 unit tests, strict lint/types, build/link checks, README and generated-index
+synchronization, unchanged asset budgets and the 10,000-project search budget.
+Coverage: 98.47% statements, 97.43% branches, 100% functions and 99.13% lines.
+The browser matrix now contains 11 scenarios per engine (33 executions), covering
+the drone collection, no-script access and restored filters in addition to the
+existing flows. Commit-bound browser, Lighthouse, security and deployment
+outcomes are recorded in this revision's Actions, not assumed from older results.
+
+## Previous synchronization: 2026-10-21
 
 The catalog contains 60 ordered projects, six broad featured cases and nine
 reference cases. All 14 Space & energy projects have exact subset/order tests;

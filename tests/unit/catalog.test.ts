@@ -16,6 +16,7 @@ import {
 import { projectCuration } from "@/data/project-curation";
 import portfolioPriority from "@/data/portfolio-priority.json";
 import { spaceSystemsCuration, spaceHighlightNames } from "@/data/space-systems";
+import { droneSystemsCuration, droneHighlightNames } from "@/data/drone-systems";
 import { buildSearchIndex, searchProjectIds } from "@/lib/search";
 import { catalogRevision } from "@/lib/catalog-revision";
 
@@ -55,12 +56,12 @@ describe("portfolio catalog", () => {
     }
   });
 
-  it("covers all 60 repositories in canonical priority order", () => {
-    expect(projects).toHaveLength(60);
-    expect(repositoryCache.repositories).toHaveLength(60);
+  it("covers all 67 repositories in canonical priority order", () => {
+    expect(projects).toHaveLength(67);
+    expect(repositoryCache.repositories).toHaveLength(67);
     expect(projects.map((project) => project.name)).toEqual(portfolioPriority);
     expect(projects.map((project) => project.portfolioOrder)).toEqual(
-      Array.from({ length: 60 }, (_, index) => index + 1),
+      Array.from({ length: 67 }, (_, index) => index + 1),
     );
     expect(featuredProjects.map((project) => project.name)).toEqual(portfolioPriority.slice(0, 6));
     expect(listFacetValues(projects, "roles")).toContain("Security engineer");
@@ -84,6 +85,22 @@ describe("portfolio catalog", () => {
       "spacecraft-flight-software-testbed",
     );
     expect(projects.filter((project) => project.caseStudySlug)).toHaveLength(15);
+  });
+
+  it("includes all seven drone projects in reviewed order with four independent-evidence highlights", () => {
+    const names = droneSystemsCuration.map((project) => project.name);
+    expect(names).toHaveLength(7);
+    expect(new Set(names).size).toBe(7);
+    expect(portfolioPriority.slice(20, 27)).toEqual(names);
+    expect(droneHighlightNames).toHaveLength(4);
+    for (const name of droneHighlightNames) expect(names).toContain(name);
+    const index = buildSearchIndex(projects, "drone-evidence");
+    expect(searchProjectIds(index, "", { domain: "Drone safety" })).toEqual(names);
+    expect(searchProjectIds(index, "PX4 simulator")).toContain("drone-operations-console");
+    expect(searchProjectIds(index, "privacy masks")).toContain("drone-video-privacy-studio");
+    expect(searchProjectIds(index, "serialized component")).toContain(
+      "drone-maintenance-readiness-studio",
+    );
   });
 
   it("rejects duplicate, omitted, unknown and contradictory editorial priorities", () => {

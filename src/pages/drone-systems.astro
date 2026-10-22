@@ -1,0 +1,101 @@
+---
+/**
+ * @file Jason Stys's drone-safety collection with evidence-led highlights and explicit limits.
+ * Functions: build-time selection only; no network, live aircraft access or visitor tracking.
+ * Variables: names, collection, highlights, project; reviewed order is retained throughout.
+ * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
+ */
+import BaseLayout from "@/components/BaseLayout.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import { projects } from "@/lib/catalog";
+import { droneHighlightNames, droneSystemsCuration } from "@/data/drone-systems";
+import { withBase } from "@/lib/url";
+
+const names = new Set<string>(droneSystemsCuration.map((project) => project.name));
+const collection = projects.filter((project) => names.has(project.name));
+const highlights = droneHighlightNames.map((name) => {
+  const project = collection.find((project) => project.name === name);
+  if (!project) throw new Error(`Missing drone highlight: ${name}`);
+  return project;
+});
+---
+
+<BaseLayout
+  title="Drone safety & assurance — Jason Stys"
+  description="Seven inspectable drone-safety projects: simulator integration, protocol fault injection, bounded coordination, privacy-preserving video, maintenance, airspace analysis and policy as code."
+  canonicalPath="drone-systems/"
+>
+  <header class="page-intro section-shell">
+    <p class="eyebrow">Drone safety &amp; assurance · 7 repositories</p>
+    <h1>
+      Reliable operations.
+      <br />
+      Inspectable boundaries.
+    </h1>
+    <p>
+      Built by Jason Stys to demonstrate simulator integration, independent validation, human review
+      and privacy engineering. Start with the integrated operations console, the native protocol
+      fault harness, verified video masking and evidence-bound maintenance.
+    </p>
+    <div class="button-row">
+      <a class="button button--primary" href="#drone-highlights">
+        Start with four highlights
+      </a>
+      <a class="button button--secondary" href="#drone-collection">
+        Explore all seven
+      </a>
+    </div>
+  </header>
+  <section
+    class="section-shell section-block"
+    id="drone-highlights"
+    aria-labelledby="drone-highlights-title"
+  >
+    <p class="eyebrow">Recommended reading path</p>
+    <h2 id="drone-highlights-title">Four projects. Evidence beyond the interface.</h2>
+    <p>
+      Inspect actual PX4/MAVSDK simulator acceptance, independent fault-recovery oracles, decoded
+      export-pixel checks and exactly-once component usage. Each repository includes its own test
+      evidence, source map and limitations; an attractive interface is not treated as proof of
+      operational readiness.
+    </p>
+    <div class="featured-grid space-highlights-grid">
+      {highlights.map((project) => (
+        <ProjectCard {project} compact />
+      ))}
+    </div>
+  </section>
+  <section class="proof-band">
+    <div class="section-shell">
+      <p class="eyebrow">Read the boundaries</p>
+      <h2>Simulation and review—not flight authorization.</h2>
+      <p>
+        These are educational portfolio applications, not real aircraft control, emergency dispatch,
+        live air-traffic surveillance, legal advice or regulatory certification. Scenarios and
+        operational thresholds are synthetic. Video masking is not automatic person recognition or a
+        guarantee of anonymity. Policy decisions do not grant airspace permission. No employer or
+        government endorsement is implied.
+      </p>
+    </div>
+  </section>
+  <section
+    class="section-shell section-block"
+    id="drone-collection"
+    aria-labelledby="drone-collection-title"
+  >
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Complete collection</p>
+        <h2 id="drone-collection-title">All seven, in reviewed order.</h2>
+      </div>
+      <a class="text-link" href={withBase("projects/?domain=Drone+safety")}>
+        Filter the full catalog →
+      </a>
+    </div>
+    <div class="project-grid" data-drone-collection>
+      {collection.map((project) => (
+        <ProjectCard {project} compact />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

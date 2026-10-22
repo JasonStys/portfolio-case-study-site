@@ -14,6 +14,13 @@ The canonical priority list must cover every curated repository exactly once. Re
 
 `src/data/space-systems.ts` defines the complete 14-project civilian space/energy collection and four specialist highlights. It is shared with main curation, the homepage and `/space-systems/`. Keep its reviewed order aligned with positions 7–20 of the canonical priority list; tests verify exact membership, order, case routes and domain-filter results. Broad featured cases remain six; specialist references do not imply new profile pins, military affiliation or operational experience.
 
+`src/data/drone-systems.ts` defines the seven drone-safety entries at positions
+21–27 and four evidence-led highlights shared with the homepage and
+`/drone-systems/`. Every entry must have an actual public metadata record and
+remain searchable through the Drone safety facet. Keep simulator/synthetic-data,
+privacy and flight-authorization limits explicit. Collection highlights link
+directly to source; they do not imply additional detailed case studies.
+
 After editing curation or ordering, run `npm run summary:sync`. The literal-AST generator changes only the README's canonical ordered table. `npm run summary:check` is a required verification gate and fails on drift. It never evaluates arbitrary curation code. For a newly approved repository, metadata refresh can fetch missing allowlisted entries; check-only mode still requires the exact complete public allowlist. Unreviewed extras and private/archived repositories remain rejected.
 
 New case measurements must point to a published source/release and identify them as historical results, not freshly executed certifications. Preserve synthetic/public-data distinctions. This update reruns portfolio checks, not 14 simulation suites or any real mission equipment.

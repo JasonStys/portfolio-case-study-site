@@ -19,7 +19,7 @@ Use this runbook to refresh repository facts, verify a release, deploy through G
 4. Review every changed description, language, topic, and timestamp.
 5. Run `npm run metadata:check` and `npm run verify`.
 
-The refresh script requests only the 60 approved public repositories and their
+The refresh script requests only the 67 approved public repositories and their
 language maps. It does not enumerate or record private repositories. New names
 must first be approved in the priority and curation files; refresh then fetches
 their real metadata. Run `npm run summary:sync` after changing reviewed ordering

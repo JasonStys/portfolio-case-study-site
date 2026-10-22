@@ -47,10 +47,14 @@ function evaluate(node, declarations, seen = new Set()) {
   throw new Error("Only reviewed literal curation expressions are supported");
 }
 
-/** Collect declarations from the two fixed authored data files, never discover arbitrary paths. */
+/** Collect declarations from fixed authored data files, never discover arbitrary paths. */
 async function loadCuration() {
   const declarations = new Map();
-  for (const name of ["src/data/space-systems.ts", "src/data/project-curation.ts"]) {
+  for (const name of [
+    "src/data/space-systems.ts",
+    "src/data/drone-systems.ts",
+    "src/data/project-curation.ts",
+  ]) {
     const source = ts.createSourceFile(
       name,
       await readFile(path.join(ROOT, name), "utf8"),

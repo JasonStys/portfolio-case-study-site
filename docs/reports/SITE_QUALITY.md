@@ -3,7 +3,8 @@
 ## Functional acceptance
 
 - Overview communicates engineering focus and exposes six featured cases.
-- Project index renders all 60 entries before JavaScript enhancement.
+- Project index renders all 67 entries before JavaScript enhancement.
+- Drone safety collection renders all seven entries, with four evidence-led highlights and explicit simulator/privacy/authorization limits.
 - Space & energy collection renders all 14 entries, with four evidence-linked specialist highlights alongside the existing six broad highlights.
 - Keyword and exact role/language/domain/maturity facets preserve catalog order.
 - Filter state is shareable and restorable through bounded URL parameters.
@@ -27,7 +28,15 @@
 - Open Graph and Twitter metadata.
 - RSS, sitemap, and permissive robots policy.
 
-## Current synchronization: 2026-10-21
+## Current acceptance scope: 2026-10-22
+
+The 67-project build has 21 HTML routes. Tests cover both complete collections,
+no-script rendering, exact reviewed order, restored URL filters, accessible
+content and mobile overflow. Twenty unit tests and all local static contracts
+passed; browser and Lighthouse results must be checked on the exact published
+revision in Actions. No threshold is relaxed to accommodate the larger catalog.
+
+## Previous synchronization: 2026-10-21
 
 - Production output includes 20 HTML routes and all 15 case studies in the sitemap.
 - All eight production-flow tests passed in each of Chromium, Firefox and WebKit (24 total locally).

@@ -20,11 +20,7 @@ const detailHref = project.caseStudySlug
   data-project-card
   data-project-id={project.name}
 >
-  {compact ? (
-    <p class="project-card__language">
-      {String(project.portfolioOrder).padStart(2, "0")} · {project.primaryLanguage}
-    </p>
-  ) : (
+  {!compact && (
     <div class="project-card__topline">
       <span class="project-card__language">
         {String(project.portfolioOrder).padStart(2, "0")} · {project.primaryLanguage}
@@ -42,6 +38,7 @@ const detailHref = project.caseStudySlug
   {!compact && <p class="project-card__description">{project.description}</p>}
   {compact ? (
     <p class="project-card__language">
+      {String(project.portfolioOrder).padStart(2, "0")} ·{" "}
       {project.languages.slice(0, 2).join(" · ")} · {project.maturity}
     </p>
   ) : (

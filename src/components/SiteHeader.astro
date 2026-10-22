@@ -12,6 +12,7 @@ const navigation = [
   { href: withBase(""), label: "Overview" },
   { href: withBase("projects/"), label: "Projects" },
   { href: withBase("space-systems/"), label: "Space & energy" },
+  { href: withBase("drone-systems/"), label: "Drone safety" },
   { href: withBase("about/"), label: "About" },
 ] as const;
 ---
@@ -20,7 +21,7 @@ const navigation = [
   Skip to main content
 </a>
 <header class="site-header" data-site-header>
-  <a class="identity" href={withBase("")} aria-label="Jason Stys engineering portfolio home">
+  <a class="identity" href={withBase("")}>
     <span class="identity-mark" aria-hidden="true">
       JS
     </span>

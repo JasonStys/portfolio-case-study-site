@@ -6,6 +6,7 @@
  */
 import type { ProjectCuration } from "@/lib/types";
 import { spaceSystemsCuration } from "@/data/space-systems";
+import { droneSystemsCuration } from "@/data/drone-systems";
 
 export const projectCuration = [
   {
@@ -69,6 +70,7 @@ export const projectCuration = [
     caseStudySlug: "applicant-evidence-studio",
   },
   ...spaceSystemsCuration,
+  ...droneSystemsCuration,
   {
     name: "cloud-job-orchestrator",
     roles: ["Cloud engineer", "Backend engineer", "DevOps engineer"],

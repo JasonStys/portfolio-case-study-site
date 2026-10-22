@@ -167,17 +167,17 @@
 | 16 | function | `evaluate` |
 | 51 | function | `loadCuration` |
 | 52 | variable | `declarations` |
-| 54 | variable | `source` |
-| 70 | function | `main` |
-| 71 | variable | `entries` |
-| 72 | variable | `priority` |
-| 75 | variable | `byName` |
-| 83 | variable | `rows` |
-| 87 | variable | `table` |
-| 92 | variable | `target` |
-| 93 | variable | `source` |
-| 94 | variable | `pattern` |
-| 96 | variable | `output` |
+| 58 | variable | `source` |
+| 74 | function | `main` |
+| 75 | variable | `entries` |
+| 76 | variable | `priority` |
+| 79 | variable | `byName` |
+| 87 | variable | `rows` |
+| 91 | variable | `table` |
+| 96 | variable | `target` |
+| 97 | variable | `source` |
+| 98 | variable | `pattern` |
+| 100 | variable | `output` |
 
 ## `scripts/validate-dist.mjs`
 
@@ -187,31 +187,31 @@
 | 13 | variable | `DIST` |
 | 14 | variable | `BASE` |
 | 15 | variable | `REQUIRED_OUTPUTS` |
-| 28 | variable | `BUDGETS` |
-| 35 | function | `collectFiles` |
-| 36 | variable | `entries` |
-| 37 | variable | `files` |
-| 39 | variable | `absolute` |
-| 46 | function | `targetForUrl` |
-| 47 | variable | `pathname` |
-| 49 | variable | `relative` |
-| 55 | function | `validateHtml` |
-| 56 | variable | `html` |
-| 66 | variable | `urls` |
-| 68 | variable | `target` |
-| 74 | variable | `inlineJavaScript` |
-| 80 | function | `validateBudgets` |
-| 81 | variable | `javascript` |
-| 82 | variable | `css` |
-| 83 | variable | `compressedSize` |
-| 89 | variable | `metrics` |
-| 97 | variable | `failures` |
-| 105 | function | `main` |
-| 107 | variable | `files` |
-| 108 | variable | `htmlFiles` |
-| 109 | variable | `htmlSizes` |
-| 110 | variable | `inlineJavaScript` |
-| 112 | variable | `result` |
+| 29 | variable | `BUDGETS` |
+| 36 | function | `collectFiles` |
+| 37 | variable | `entries` |
+| 38 | variable | `files` |
+| 40 | variable | `absolute` |
+| 47 | function | `targetForUrl` |
+| 48 | variable | `pathname` |
+| 50 | variable | `relative` |
+| 56 | function | `validateHtml` |
+| 57 | variable | `html` |
+| 67 | variable | `urls` |
+| 69 | variable | `target` |
+| 75 | variable | `inlineJavaScript` |
+| 81 | function | `validateBudgets` |
+| 82 | variable | `javascript` |
+| 83 | variable | `css` |
+| 84 | variable | `compressedSize` |
+| 90 | variable | `metrics` |
+| 98 | variable | `failures` |
+| 106 | function | `main` |
+| 108 | variable | `files` |
+| 109 | variable | `htmlFiles` |
+| 110 | variable | `htmlSizes` |
+| 111 | variable | `inlineJavaScript` |
+| 113 | variable | `result` |
 
 ## `scripts/validate-repository.mjs`
 
@@ -290,11 +290,18 @@
 | 11 | variable | `caseStudies` |
 | 24 | variable | `collections` |
 
+## `src/data/drone-systems.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 9 | variable | `droneSystemsCuration` |
+| 68 | variable | `droneHighlightNames` |
+
 ## `src/data/project-curation.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 10 | variable | `projectCuration` |
+| 11 | variable | `projectCuration` |
 
 ## `src/data/space-systems.ts`
 
@@ -411,6 +418,15 @@
 | 30 | variable | `project` |
 | 33 | variable | `schema` |
 
+## `src/pages/drone-systems.astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 14 | variable | `names` |
+| 15 | variable | `collection` |
+| 16 | variable | `highlights` |
+| 17 | variable | `project` |
+
 ## `src/pages/feed.xml.ts`
 
 | Line | Kind | Symbol |
@@ -426,10 +442,11 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 16 | variable | `languageCount` |
-| 17 | variable | `roleCount` |
-| 18 | variable | `spaceHighlights` |
-| 21 | variable | `profileSchema` |
+| 17 | variable | `languageCount` |
+| 18 | variable | `roleCount` |
+| 19 | variable | `spaceHighlights` |
+| 22 | variable | `droneHighlights` |
+| 25 | variable | `profileSchema` |
 
 ## `src/pages/projects/index.astro`
 
@@ -530,40 +547,42 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 35 | variable | `featured` |
-| 42 | variable | `result` |
-| 57 | variable | `links` |
-| 77 | variable | `workbench` |
-| 86 | variable | `catalogEntry` |
-| 128 | variable | `context` |
-| 133 | variable | `page` |
-| 137 | variable | `response` |
-| 152 | variable | `scan` |
-| 188 | variable | `skipLink` |
-| 198 | variable | `results` |
-| 209 | variable | `bodyWidth` |
-| 211 | variable | `cards` |
-| 212 | variable | `first` |
-| 213 | variable | `second` |
-| 232 | variable | `revision` |
-| 234 | variable | `search` |
-| 236 | variable | `index` |
+| 37 | variable | `featured` |
+| 44 | variable | `result` |
+| 59 | variable | `links` |
+| 79 | variable | `workbench` |
+| 88 | variable | `catalogEntry` |
+| 151 | variable | `context` |
+| 156 | variable | `page` |
+| 162 | variable | `response` |
+| 177 | variable | `scan` |
+| 213 | variable | `skipLink` |
+| 223 | variable | `results` |
+| 234 | variable | `bodyWidth` |
+| 236 | variable | `cards` |
+| 237 | variable | `first` |
+| 238 | variable | `second` |
+| 258 | variable | `revision` |
+| 260 | variable | `search` |
+| 262 | variable | `index` |
 
 ## `tests/unit/catalog.test.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 24 | variable | `revision` |
-| 27 | variable | `edited` |
-| 52 | variable | `index` |
-| 71 | variable | `names` |
-| 77 | variable | `project` |
-| 81 | variable | `index` |
-| 102 | variable | `references` |
-| 103 | variable | `reversed` |
-| 110 | variable | `languages` |
-| 142 | variable | `repository` |
-| 143 | variable | `envelope` |
+| 25 | variable | `revision` |
+| 28 | variable | `edited` |
+| 53 | variable | `index` |
+| 72 | variable | `names` |
+| 78 | variable | `project` |
+| 82 | variable | `index` |
+| 91 | variable | `names` |
+| 97 | variable | `index` |
+| 119 | variable | `references` |
+| 120 | variable | `reversed` |
+| 127 | variable | `languages` |
+| 159 | variable | `repository` |
+| 160 | variable | `envelope` |
 
 ## `tests/unit/search.test.ts`
 

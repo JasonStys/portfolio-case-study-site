@@ -15,6 +15,7 @@ const BASE = "/portfolio-case-study-site/";
 const REQUIRED_OUTPUTS = [
   "index.html",
   "projects/index.html",
+  "updates/index.html",
   "space-systems/index.html",
   "drone-systems/index.html",
   "about/index.html",
@@ -105,6 +106,38 @@ async function validateBudgets(files, htmlSizes, inlineJavaScript) {
 
 async function main() {
   for (const output of REQUIRED_OUTPUTS) await access(path.join(DIST, output));
+  const names = JSON.parse(
+    await readFile(path.join(ROOT, "src/data/portfolio-priority.json"), "utf8"),
+  );
+  const upgrades = JSON.parse(
+    await readFile(path.join(ROOT, "src/data/project-upgrades.json"), "utf8"),
+  );
+  const index = await readFile(path.join(DIST, "projects/index.html"), "utf8");
+  const renderedNames = [...index.matchAll(/data-project-id="([^"]+)"/gu)].map((match) => match[1]);
+  if (JSON.stringify(renderedNames) !== JSON.stringify(names))
+    throw new Error("All 67 projects must retain canonical static, no-JavaScript catalog order.");
+  const updates = await readFile(path.join(DIST, "updates/index.html"), "utf8");
+  const updateNames = [...updates.matchAll(/data-upgrade-project="([^"]+)"/gu)].map(
+    (match) => match[1],
+  );
+  if (JSON.stringify(updateNames) !== JSON.stringify(names))
+    throw new Error("Latest-work index must cover all 67 projects in canonical order.");
+  const sitemap = await readFile(path.join(DIST, "sitemap.xml"), "utf8");
+  for (const name of names) {
+    const detail = await readFile(path.join(DIST, "projects", name, "index.html"), "utf8");
+    if (!sitemap.includes(`/projects/${name}/`)) throw new Error(`Sitemap missing ${name}.`);
+    const upgrade = upgrades.repositories.find((entry) => entry.name === name);
+    if (
+      upgrade &&
+      (!detail.includes(upgrade.sourceCommit) || !detail.includes(upgrade.validationReportUrl))
+    )
+      throw new Error(`Generated source-bound evidence missing for ${name}.`);
+    if (
+      !upgrade &&
+      (name !== "portfolio-case-study-site" || !detail.includes("data-portfolio-hub"))
+    )
+      throw new Error(`Unexpected hub/evidence boundary for ${name}.`);
+  }
   const files = await collectFiles(DIST);
   const htmlFiles = files.filter((file) => file.endsWith(".html"));
   const htmlSizes = [];

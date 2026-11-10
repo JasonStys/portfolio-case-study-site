@@ -1,0 +1,1607 @@
+{
+  "schemaVersion": 1,
+  "collectedAt": "2026-11-10T01:08:29.742386+00:00",
+  "scope": "66 domain repositories created in this chat; portfolio site is validated separately",
+  "repositories": [
+    {
+      "name": "code-flow-studio",
+      "summary": "Filter diagnostics, unused-code candidates and missed coverage; inspect hash-verified source and navigate safely to unchanged drafts. Fixed rapid typing, worker compatibility and native launch preparation.",
+      "rationale": "Turns report findings into a reproducible developer triage workflow while preserving source identity and isolated execution.",
+      "sourceCommit": "08e4194707fb0ab20b469e335ef9e081a34200d3",
+      "sourceUrl": "https://github.com/JasonStys/code-flow-studio/tree/08e4194707fb0ab20b469e335ef9e081a34200d3",
+      "reviewUrl": "https://github.com/JasonStys/code-flow-studio/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/code-flow-studio/blob/08e4194707fb0ab20b469e335ef9e081a34200d3/docs/reports/practical-workflows-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Desktop packages",
+          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42726748708"
+        },
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42726748363"
+        }
+      ],
+      "limitations": [
+        "Twelve bounded flat CLI adapters do not cover every framework, dependency or architecture; coverage and unused-code candidates are not correctness or dead-code proof.",
+        "Execution needs a separately built local Docker worker with no host fallback. Shared worker identity and containers are not a certified public hostile-code sandbox.",
+        "Hashes bind retained bytes and locations, not trusted attestation by a malicious target. UI-only report fixtures are separate from native collector evidence.",
+        "Local accounts trust the OS and unlocked service. Downloads are unsigned development builds; no native mobile installer or clean-machine installer lifecycle certification is claimed."
+      ]
+    },
+    {
+      "name": "business-knowledge-workbench",
+      "summary": "Search standardized numeric table values with unit-aware ranges and same-cell correlation; download authorized bounded document bundles with checksummed manifests and saved standards. Fixed scientific notation normalization.",
+      "rationale": "Makes standardized business records easier to investigate and hand off without mixing units or bypassing document access.",
+      "sourceCommit": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+      "sourceUrl": "https://github.com/JasonStys/business-knowledge-workbench/tree/a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+      "reviewUrl": "https://github.com/JasonStys/business-knowledge-workbench/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/business-knowledge-workbench/blob/a25887ac0e54f2afbe0e21e597c67b606890e8ad/docs/reports/practical-workflows-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate workbench",
+          "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42704664864"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42704664406"
+        },
+        {
+          "name": "Desktop packages",
+          "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42704664364"
+        }
+      ],
+      "limitations": [
+        "Local owner-account edition; no shared hosted-business identity, invitations or managed tenant deployment is supplied.",
+        "Numeric range search covers standardized cells, not OCR or arbitrary source-blob search; unit conversion uses canonical six-place precision.",
+        "Export ZIPs are plaintext integrity records, not encrypted or digitally signed; they omit originals and account secrets.",
+        "Import and conversion support is adapter-specific; no universal file-format, image/equation understanding or AI-provider compatibility is promised."
+      ]
+    },
+    {
+      "name": "personal-image-model-studio",
+      "summary": "Review authorized datasets for caption, provenance, split and integrity evidence; inspect bounded cross-split similarity candidates with private thumbnails and export exact reports before training.",
+      "rationale": "Helps users investigate training inputs without treating similarity, declared rights or sample counts as proof of data or model quality.",
+      "sourceCommit": "3e02b1f34b7c4b968491952fdc2bbd7a93849b7f",
+      "sourceUrl": "https://github.com/JasonStys/personal-image-model-studio/tree/3e02b1f34b7c4b968491952fdc2bbd7a93849b7f",
+      "reviewUrl": "https://github.com/JasonStys/personal-image-model-studio/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/personal-image-model-studio/blob/3e02b1f34b7c4b968491952fdc2bbd7a93849b7f/docs/reports/practical-workflows-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/personal-image-model-studio/actions/runs/42729063623"
+        }
+      ],
+      "limitations": [
+        "Integrity and similarity inspect at most 64 eligible images, 32 MiB encoded bytes and 16,777,216 decoded pixels; only 32 candidate pairs are shown, with omissions explicit.",
+        "Grayscale hash matches are candidates, not proof of leakage, semantic quality or AI origin. Rights and provenance labels are operator declarations, not legal verification.",
+        "The compact native model is not a general photorealistic generator. CPU downloads support native models only; compatible Stable Diffusion/LoRA imports need the explicitly configured full source/runtime.",
+        "One unlocked local engine trusts the OS and active service. CPU downloads are unsigned portable applications, not a public hosted service or native mobile installation."
+      ]
+    },
+    {
+      "name": "forge2d-engine",
+      "summary": "Add bidirectional collision category/mask filters, versioned scene migration, deterministic state hashes and initial/final overlap CSV inspection.",
+      "rationale": "Supports practical game-world collision layers and reproducible debugging against independent geometry oracles.",
+      "sourceCommit": "43fd93f79043231230a4c19346bdb8a4c356d9ce",
+      "sourceUrl": "https://github.com/JasonStys/forge2d-engine/tree/43fd93f79043231230a4c19346bdb8a4c356d9ce",
+      "reviewUrl": "https://github.com/JasonStys/forge2d-engine/pull/15",
+      "validationReportUrl": "https://github.com/JasonStys/forge2d-engine/blob/43fd93f79043231230a4c19346bdb8a4c356d9ce/docs/reports/practical-workflows-20261109.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/forge2d-engine/actions/runs/42714064217"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/forge2d-engine/actions/runs/42714064589"
+        }
+      ],
+      "limitations": [
+        "Category/mask filtering selects AABB query candidates; it does not add physical collision response, enter/exit callbacks or navigation changes.",
+        "Filter words change numeric state fingerprints even for legacy default filters; replay input grammar remains version 1.",
+        "Raw queries cannot establish current entity-generation validity; World owns lifetime checks. This is a fictional integer 2D game engine."
+      ]
+    },
+    {
+      "name": "secure-delivery-pipeline-lab",
+      "summary": "Compare authenticated active and candidate trust, record bounded deployment receipts and exercise independently authenticated rollback.",
+      "rationale": "Shows why a proposed release is eligible and preserves the evidence needed to recover safely.",
+      "sourceCommit": "9dd48002acfd8c277b5903cd4849c295bf551d81",
+      "sourceUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/tree/9dd48002acfd8c277b5903cd4849c295bf551d81",
+      "reviewUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/blob/9dd48002acfd8c277b5903cd4849c295bf551d81/docs/reports/operations-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42699848767"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42699848608"
+        }
+      ],
+      "limitations": [
+        "Hash differences identify changed bytes, not release compatibility or a complete security assessment.",
+        "Deployment receipts are local operator assertions, not signed or tamper-proof evidence that production deployment occurred.",
+        "Authenticated lab trust checks do not certify a production delivery environment or replace deployment-specific policy and operational review."
+      ]
+    },
+    {
+      "name": "applicant-evidence-studio",
+      "summary": "Capture two authorized applicant records against one rubric with reviewed citations, unknowns, clarification prompts, transient observations and exact private JSON export.",
+      "rationale": "Supports factual human comparison while keeping encrypted-account review in the browser and avoiding invented degrees, experience or hiring decisions.",
+      "sourceCommit": "71d51b1fcd228f89d3ff81ee166bee2ce37d7a60",
+      "sourceUrl": "https://github.com/JasonStys/applicant-evidence-studio/tree/71d51b1fcd228f89d3ff81ee166bee2ce37d7a60",
+      "reviewUrl": "https://github.com/JasonStys/applicant-evidence-studio/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/applicant-evidence-studio/blob/71d51b1fcd228f89d3ff81ee166bee2ce37d7a60/docs/reports/practical-workflows-20261109.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42727340441"
+        }
+      ],
+      "limitations": [
+        "Two-record advisory comparison preserves selection order; it does not choose a winner, verify claims, infer protected traits/degrees/paid years or make hire/reject decisions.",
+        "Private comparison is assembled in the unlocked browser. Host aliases and operational metadata remain visible; the device and delivered frontend must be trusted. No new reviewer/admin sharing roles are added.",
+        "Exports are unencrypted identifying private information, not anonymous or signed evidence. Historical downloads cannot be revoked.",
+        "Observations are transient: opening original records, changing context, mutations or locking clears them; download a capture before leaving."
+      ]
+    },
+    {
+      "name": "spacecraft-flight-software-testbed",
+      "summary": "Compare onboard mode, boot and counter changes with downlinked witnesses, including missed transitions and reset windows.",
+      "rationale": "Separates what happened onboard from what a delayed telemetry stream actually observed.",
+      "sourceCommit": "9f5b99802e6f3f3f0bfa50357c203635923cf159",
+      "sourceUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/tree/9f5b99802e6f3f3f0bfa50357c203635923cf159",
+      "reviewUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/blob/9f5b99802e6f3f3f0bfa50357c203635923cf159/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42704308513"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42704308230"
+        }
+      ],
+      "limitations": [
+        "Synthetic software-only logical-tick executive; no real flight controller, hardware, guidance or targeting integration.",
+        "Downlink witnesses can miss onboard transitions. A counter receipt establishes at least a value, not the exact increment time; absence of a witness is not proof of no occurrence.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "spacecraft-telemetry-anomaly-studio",
+      "summary": "Group channel/context alerts into run-bound episodes with observed recovery, gaps and window-censored states; add human review and export.",
+      "rationale": "Makes anomaly investigation manageable without inventing recovery across missing telemetry.",
+      "sourceCommit": "0f63e1332b00d30fc682589bfd0fdad637845ce3",
+      "sourceUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/tree/0f63e1332b00d30fc682589bfd0fdad637845ce3",
+      "reviewUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/blob/0f63e1332b00d30fc682589bfd0fdad637845ce3/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42697036082"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42697036475"
+        }
+      ],
+      "limitations": [
+        "Educational single-analyst telemetry review, not real flight operations or a verified diagnosis of hardware failure.",
+        "Gaps and window boundaries can leave recovery unknown; an alert episode does not establish a physical cause.",
+        "Human notes are tab-local, reset on analysis and require explicit export; no authenticated reviewer or review import is supplied.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "mission-contact-resource-scheduler",
+      "summary": "Reoptimize a bounded contact plan under complete single-station loss and show retained, added and removed allocations.",
+      "rationale": "Provides a concrete contingency-planning workflow with independently verified feasibility and resource budgets.",
+      "sourceCommit": "7658aa60ce9f953ad2f62a1c08d798942c46b5b1",
+      "sourceUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/tree/7658aa60ce9f953ad2f62a1c08d798942c46b5b1",
+      "reviewUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/blob/7658aa60ce9f953ad2f62a1c08d798942c46b5b1/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42698411010"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42698411022"
+        }
+      ],
+      "limitations": [
+        "Bounded educational candidate allocation, not live mission dispatch or operational scheduling assurance.",
+        "Contingencies are separate full-window single-station failures, not arbitrary, sequential or partial-window outages.",
+        "Reoptimization uses the existing objective; it does not guarantee locked contacts or minimum schedule changes.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "spacecraft-power-thermal-lab",
+      "summary": "Show requested, served and unserved energy per load, interruption episodes and censored recovery, separating intentional shedding.",
+      "rationale": "Explains operational tradeoffs behind aggregate power and temperature traces.",
+      "sourceCommit": "a613a0d8a3d1f16023e26bb9b55fae8de9d41d0f",
+      "sourceUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/tree/a613a0d8a3d1f16023e26bb9b55fae8de9d41d0f",
+      "reviewUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/blob/a613a0d8a3d1f16023e26bb9b55fae8de9d41d0f/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/42700300982"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/42700300730"
+        }
+      ],
+      "limitations": [
+        "Fictional bounded load profiles; no real spacecraft control or operational assurance.",
+        "Service evidence uses interval averages, not continuous thermal-limit assessment or hardware reliability predictions.",
+        "Episode materiality uses a 1e-8 W threshold; smaller residuals can remain in integrated energy totals.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "mission-verification-evidence-kit",
+      "summary": "Build a metadata-bound revalidation and freshness queue with exact requirement/component scope and source work references.",
+      "rationale": "Helps reviewers identify stale or missing verification without weakening release gates.",
+      "sourceCommit": "048dd33a041fa53d7ecfc8cdab369137812a47ed",
+      "sourceUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/tree/048dd33a041fa53d7ecfc8cdab369137812a47ed",
+      "reviewUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/blob/048dd33a041fa53d7ecfc8cdab369137812a47ed/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42702154070"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42702154127"
+        }
+      ],
+      "limitations": [
+        "Declared-evidence human checklist, not authenticated proof, an approved waiver or an automatic test rerun.",
+        "Freshness uses the supplied fixed as-of time; no live reminders or automatic evidence collection is added.",
+        "No flight qualification, operational authorization or safety certification is provided.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "orbital-safety-workbench",
+      "summary": "Inspect illustrative threshold windows, tangencies and sample/window censoring around civilian close approaches.",
+      "rationale": "Makes screening results interpretable while keeping sampled geometry separate from collision probability or guidance.",
+      "sourceCommit": "56e685e1d9fb27c3bdf24d9f9e5217d85e7210d6",
+      "sourceUrl": "https://github.com/JasonStys/orbital-safety-workbench/tree/56e685e1d9fb27c3bdf24d9f9e5217d85e7210d6",
+      "reviewUrl": "https://github.com/JasonStys/orbital-safety-workbench/pull/16",
+      "validationReportUrl": "https://github.com/JasonStys/orbital-safety-workbench/blob/56e685e1d9fb27c3bdf24d9f9e5217d85e7210d6/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/orbital-safety-workbench/actions/runs/42702121542"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/orbital-safety-workbench/actions/runs/42702121138"
+        }
+      ],
+      "limitations": [
+        "Illustrative thresholds are not certified safety radii or collision probabilities.",
+        "Window analysis uses sampled piecewise-linear histories and floating-point precision; covariance, object size and operational risk are not established.",
+        "Civilian educational screening only; no targeting, interception, maneuver advice or flight authorization.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "ccsds-telemetry-integrity-lab",
+      "summary": "Add a per-APID provisional gap and recovery ledger with compressed ranges and explicit ambiguous or censored sequence history.",
+      "rationale": "Explains packet continuity without turning reordering or incomplete captures into unsupported loss claims.",
+      "sourceCommit": "8643a490871e225a91fc040c836ea07607e4a52f",
+      "sourceUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/tree/8643a490871e225a91fc040c836ea07607e4a52f",
+      "reviewUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/blob/8643a490871e225a91fc040c836ea07607e4a52f/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/runs/42698098725"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/runs/42698098485"
+        }
+      ],
+      "limitations": [
+        "Restricted educational packet profile, not a complete operational flight or ground-system implementation.",
+        "Counter continuity/recovery does not verify equivalent payloads, sender identity or physical sender sessions.",
+        "Ambiguous observations censor reconciliation; unresolved gaps are uncertain, not automatically proven loss or recovery.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "delay-tolerant-mission-network-lab",
+      "summary": "Inspect per-message queue, hop, in-flight, expiry and bottleneck waterfalls tied to recorded replay evidence.",
+      "rationale": "Connects end-to-end delivery outcomes to the actual delays and contact constraints that produced them.",
+      "sourceCommit": "4df5db2092226c2b1093413215b06d6d76c2b362",
+      "sourceUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/tree/4df5db2092226c2b1093413215b06d6d76c2b362",
+      "reviewUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/blob/4df5db2092226c2b1093413215b06d6d76c2b362/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/actions/runs/42698427650"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/actions/runs/42698427757"
+        }
+      ],
+      "limitations": [
+        "Fixed synthetic two-hop topology; no live traffic or operational mission network.",
+        "Post-tick spans and whole-message hop ticks are not physical radio bandwidth or network diagnosis.",
+        "The full-run waterfall includes outcomes that are future relative to an earlier replay position and is labelled separately.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "earth-observation-change-studio",
+      "summary": "Add region fringe, crop-edge, excluded and unknown context to change-region GeoJSON review after quality gating.",
+      "rationale": "Helps analysts distinguish plausible mapped changes from missing context and image-boundary artifacts.",
+      "sourceCommit": "fa160d2ddf0a94561bf71cdc8783b1c961ab4e29",
+      "sourceUrl": "https://github.com/JasonStys/earth-observation-change-studio/tree/fa160d2ddf0a94561bf71cdc8783b1c961ab4e29",
+      "reviewUrl": "https://github.com/JasonStys/earth-observation-change-studio/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/earth-observation-change-studio/blob/fa160d2ddf0a94561bf71cdc8783b1c961ab4e29/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/earth-observation-change-studio/actions/runs/42704324351"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/earth-observation-change-studio/actions/runs/42704324690"
+        }
+      ],
+      "limitations": [
+        "Region context describes immediate availability, not environmental cause, statistical confidence or image-registration assurance.",
+        "Per-region context rings can overlap and must not be summed as disjoint scene totals.",
+        "No identity surveillance or targeting is supplied; controlled-file parsing is not an OS sandbox.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "mission-clock-integrity-lab",
+      "summary": "Build interval partial-order frontiers and minimal precedence edges, preserving touching/ambiguous and unqualified observations.",
+      "rationale": "Shows which event orderings are supported by clock uncertainty instead of forcing a false total timeline.",
+      "sourceCommit": "70163855ccac7454cef7800d2e59d00b71da9d3f",
+      "sourceUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/tree/70163855ccac7454cef7800d2e59d00b71da9d3f",
+      "reviewUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/blob/70163855ccac7454cef7800d2e59d00b71da9d3f/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/mission-clock-integrity-lab/actions/runs/42700313948"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/mission-clock-integrity-lab/actions/runs/42700314644"
+        }
+      ],
+      "limitations": [
+        "Timestamp precedence is not causality; partial-order frontiers are not total-order ranks.",
+        "Unqualified intervals are excluded. Known synthetic truth is not proof of real fault detection or operational timing assurance.",
+        "No host clock changes or live time-server control is supplied. Previously published native downloads can lag the source/CI-verified upgrade."
+      ]
+    },
+    {
+      "name": "resilient-energy-microgrid-lab",
+      "summary": "Compare full-window feeder-loss contingencies under both policies with exact replay inputs and critical/flexible unmet-demand deltas.",
+      "rationale": "Supports transparent resilience planning with independently checked energy accounting.",
+      "sourceCommit": "f8df6fcf5b61fa5989469ab14cedf231536ead6b",
+      "sourceUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/tree/f8df6fcf5b61fa5989469ab14cedf231536ead6b",
+      "reviewUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/blob/f8df6fcf5b61fa5989469ab14cedf231536ead6b/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/resilient-energy-microgrid-lab/actions/runs/42702137027"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/resilient-energy-microgrid-lab/actions/runs/42702137161"
+        }
+      ],
+      "limitations": [
+        "Fictional hourly adequacy stress scenarios, not forecasts or guaranteed critical-load survival.",
+        "No electrical power-flow, protection, switching-transient model or real infrastructure control is supplied.",
+        "Policy tradeoffs are profile-dependent, not a universal optimum or safety certification.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "scientific-sensor-calibration-lab",
+      "summary": "Explain response-versus-fit covariance contributions, signed cross terms and explicitly withheld uncertainty components.",
+      "rationale": "Makes calibration uncertainty traceable rather than presenting one unexplained error bar.",
+      "sourceCommit": "86a8d89c2e4b48f0208dbd1270e0ac444a644a5c",
+      "sourceUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/tree/86a8d89c2e4b48f0208dbd1270e0ac444a644a5c",
+      "reviewUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/blob/86a8d89c2e4b48f0208dbd1270e0ac444a644a5c/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/scientific-sensor-calibration-lab/actions/runs/42700330312"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/scientific-sensor-calibration-lab/actions/runs/42700330579"
+        }
+      ],
+      "limitations": [
+        "First-order modeled standard uncertainty does not include every physical error or establish certified coverage.",
+        "The signed cross term is already included in the fit contribution and must not be added a second time.",
+        "Fictional instrument data provides no physical calibration traceability, hardware connection or fault diagnosis.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "space-weather-impact-observatory",
+      "summary": "Compare eligible lead-cutoff and half-window evidence with coverage and unknown issuance states retained.",
+      "rationale": "Helps analysts review time alignment without mistaking overlapping descriptive samples for independent forecast skill.",
+      "sourceCommit": "93d307f057c996988e98db5f994138e1db546f39",
+      "sourceUrl": "https://github.com/JasonStys/space-weather-impact-observatory/tree/93d307f057c996988e98db5f994138e1db546f39",
+      "reviewUrl": "https://github.com/JasonStys/space-weather-impact-observatory/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/space-weather-impact-observatory/blob/93d307f057c996988e98db5f994138e1db546f39/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/space-weather-impact-observatory/actions/runs/42698453953"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/space-weather-impact-observatory/actions/runs/42698453895"
+        }
+      ],
+      "limitations": [
+        "Lead-cutoff rows overlap and must not be pooled as independent samples.",
+        "Whole/earlier/later windows are descriptive comparisons, not significance tests or generalized forecast-skill estimates.",
+        "Frozen forecasts with unknown issuance do not establish historical skill, current conditions, causal impact or mission guidance.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "reactor-systems-simulator",
+      "summary": "Compare matched dimensionless thermal lessons with forcing controls, sampled peaks and scenario differences.",
+      "rationale": "Improves educational cause-and-effect review within the documented non-operational model.",
+      "sourceCommit": "976df5453827fd6775822091d3a6f264ca1fc0fa",
+      "sourceUrl": "https://github.com/JasonStys/reactor-systems-simulator/tree/976df5453827fd6775822091d3a6f264ca1fc0fa",
+      "reviewUrl": "https://github.com/JasonStys/reactor-systems-simulator/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/reactor-systems-simulator/blob/976df5453827fd6775822091d3a6f264ca1fc0fa/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/reactor-systems-simulator/actions/runs/42704296114"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/reactor-systems-simulator/actions/runs/42704296168"
+        }
+      ],
+      "limitations": [
+        "Fictional dimensionless two-node thermal analogy, not reactor physics or an operational nuclear-reactor model.",
+        "No fuel/rod optimization, kinetics, criticality, radiation, real-reactor monitoring or operating/safety recommendations are supplied.",
+        "Sampled extrema and numerical tolerances are not physical measurements or certified safety thresholds.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "drone-operations-console",
+      "summary": "Import, edit, save and replay bounded friendly-route scenes with obstacle validation, paused scrubbing and safe asynchronous replacement.",
+      "rationale": "Makes civilian simulation demonstrations repeatable and prevents unsafe starting scenes or stale imports from replacing current work.",
+      "sourceCommit": "176209ed96178351a3265676ae8d50396503b9ca",
+      "sourceUrl": "https://github.com/JasonStys/drone-operations-console/tree/176209ed96178351a3265676ae8d50396503b9ca",
+      "reviewUrl": "https://github.com/JasonStys/drone-operations-console/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/drone-operations-console/blob/176209ed96178351a3265676ae8d50396503b9ca/docs/reports/practical-workflows-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/drone-operations-console/actions/runs/42709703725"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/drone-operations-console/actions/runs/42709703822"
+        }
+      ],
+      "limitations": [
+        "Civilian cooperative 2D simulations only; no pursuit, evasion, targeting or real-aircraft commands.",
+        "Point-centerline grid paths and global holds do not model swept aircraft bodies or certified flight dynamics.",
+        "Scenes require explicit save/export; no account sync or automatic browser persistence is supplied.",
+        "The application is an unsigned simulation package, not operational flight-control software or flight authorization."
+      ]
+    },
+    {
+      "name": "mavlink-sitl-assurance-lab",
+      "summary": "Review relay-local delay, drop, unobserved and ambiguous packet correlation with exact evidence boundaries.",
+      "rationale": "Helps diagnose simulated transport faults without claiming receiver acknowledgement or loss from incomplete observations.",
+      "sourceCommit": "9705148c159ca546a85c2f9bc174a881b6556bc3",
+      "sourceUrl": "https://github.com/JasonStys/mavlink-sitl-assurance-lab/tree/9705148c159ca546a85c2f9bc174a881b6556bc3",
+      "reviewUrl": "https://github.com/JasonStys/mavlink-sitl-assurance-lab/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/mavlink-sitl-assurance-lab/blob/9705148c159ca546a85c2f9bc174a881b6556bc3/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/mavlink-sitl-assurance-lab/actions/runs/42707717919"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/mavlink-sitl-assurance-lab/actions/runs/42707717942"
+        }
+      ],
+      "limitations": [
+        "A relay send is not receiver acknowledgement or end-to-end delivery proof.",
+        "Missing correlation metadata does not prove loss; imported retention and identity declarations remain self-reported.",
+        "The ledger does not verify CRC, signature, payload authenticity or operational aircraft safety.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "first-response-drone-coordinator",
+      "summary": "Run hash-bound aircraft/operator-loss planning comparisons with planner/reviewer roles and stale-input protection.",
+      "rationale": "Adds a practical civilian contingency review while preserving the saved plan and explicit resource constraints.",
+      "sourceCommit": "26aa28b2fe772506d1dfcc0a388a1bea94802897",
+      "sourceUrl": "https://github.com/JasonStys/first-response-drone-coordinator/tree/26aa28b2fe772506d1dfcc0a388a1bea94802897",
+      "reviewUrl": "https://github.com/JasonStys/first-response-drone-coordinator/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/first-response-drone-coordinator/blob/26aa28b2fe772506d1dfcc0a388a1bea94802897/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/first-response-drone-coordinator/actions/runs/42709719964"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/first-response-drone-coordinator/actions/runs/42709719857"
+        }
+      ],
+      "limitations": [
+        "Synthetic abstract cells, slots and resources; no actual emergency response or aircraft dispatch.",
+        "Comparisons preserve the original objective rather than guaranteeing minimum changes to the saved plan.",
+        "Truncated comparisons do not prove an optimum or guaranteed loss bound.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "drone-video-privacy-studio",
+      "summary": "Review two manually authored keyframes using conservative privacy envelopes with private revision and export checks.",
+      "rationale": "Makes redaction planning reproducible and keeps manual assumptions visible rather than claiming automatic recognition or tracking.",
+      "sourceCommit": "e61722c7780f3114a873ce8187b48104affeca7d",
+      "sourceUrl": "https://github.com/JasonStys/drone-video-privacy-studio/tree/e61722c7780f3114a873ce8187b48104affeca7d",
+      "reviewUrl": "https://github.com/JasonStys/drone-video-privacy-studio/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/drone-video-privacy-studio/blob/e61722c7780f3114a873ce8187b48104affeca7d/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/drone-video-privacy-studio/actions/runs/42710693114"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/drone-video-privacy-studio/actions/runs/42710693128"
+        }
+      ],
+      "limitations": [
+        "Two manually authored rectangle keyframes and linear assumptions, not automatic detection, recognition or identity tracking.",
+        "Nonlinear movement or contextual identifiers require every-frame human review; envelopes can over-mask and do not certify anonymity.",
+        "Workspace protection trusts the local OS owner; no real sensitive footage or operational surveillance validation is claimed.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "drone-maintenance-readiness-studio",
+      "summary": "Compare unpublished maintenance standards against the same ledger, time and workload, exposing component findings and deadline deltas.",
+      "rationale": "Lets authorized reviewers assess standards changes before altering maintenance records or policy.",
+      "sourceCommit": "50109b28e90285a63bbb07ad7a0d146bc6b404c9",
+      "sourceUrl": "https://github.com/JasonStys/drone-maintenance-readiness-studio/tree/50109b28e90285a63bbb07ad7a0d146bc6b404c9",
+      "reviewUrl": "https://github.com/JasonStys/drone-maintenance-readiness-studio/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/drone-maintenance-readiness-studio/blob/50109b28e90285a63bbb07ad7a0d146bc6b404c9/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/drone-maintenance-readiness-studio/actions/runs/42710676956"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/drone-maintenance-readiness-studio/actions/runs/42710677128"
+        }
+      ],
+      "limitations": [
+        "Hypothetical configured thresholds and constant workloads, not manufacturer approval or probabilistic component-life predictions.",
+        "Draft comparisons do not publish a maintenance standard, alter the ledger or authorize service/flight.",
+        "No live fleet/hardware integration is supplied; local data is unencrypted and trusts the OS owner.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "drone-airspace-awareness-lab",
+      "summary": "Show pair/zone coverage ledgers with stale tracks, datum mismatch, unknown intervals and exclusion reasons.",
+      "rationale": "Explains what an awareness result actually covers instead of implying empty or incomplete data means clear airspace.",
+      "sourceCommit": "bff39487f0f1c018f52e12eca9eeacc3d07643d1",
+      "sourceUrl": "https://github.com/JasonStys/drone-airspace-awareness-lab/tree/bff39487f0f1c018f52e12eca9eeacc3d07643d1",
+      "reviewUrl": "https://github.com/JasonStys/drone-airspace-awareness-lab/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/drone-airspace-awareness-lab/blob/bff39487f0f1c018f52e12eca9eeacc3d07643d1/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/drone-airspace-awareness-lab/actions/runs/42706963544"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/drone-airspace-awareness-lab/actions/runs/42706963354"
+        }
+      ],
+      "limitations": [
+        "Fictional local-coordinate constant-velocity awareness, not flight permission, collision probability or avoidance control.",
+        "Freshness is evaluated at the supplied snapshot, not continuously across the projection.",
+        "No declared pairs or modeled overlap does not prove clear airspace; undeclared objects and incompatible altitude references remain unknown.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "drone-flight-policy-workbench",
+      "summary": "Compare active and draft policies using the same evidence and time, with exact native OPA inputs and failure states.",
+      "rationale": "Supports controlled policy review without publishing a draft or treating a comparison as flight authorization.",
+      "sourceCommit": "60a40fc4cbfe11cf0237dd7146e0b35cd660c32d",
+      "sourceUrl": "https://github.com/JasonStys/drone-flight-policy-workbench/tree/60a40fc4cbfe11cf0237dd7146e0b35cd660c32d",
+      "reviewUrl": "https://github.com/JasonStys/drone-flight-policy-workbench/pull/1",
+      "validationReportUrl": "https://github.com/JasonStys/drone-flight-policy-workbench/blob/60a40fc4cbfe11cf0237dd7146e0b35cd660c32d/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/drone-flight-policy-workbench/actions/runs/42710476393"
+        },
+        {
+          "name": "Validation",
+          "url": "https://github.com/JasonStys/drone-flight-policy-workbench/actions/runs/42710476404"
+        }
+      ],
+      "limitations": [
+        "Bounded organizational checklist using fictional self-reported evidence, not complete/current law or verified approval.",
+        "An unpublished comparison is not persisted human review and grants no flight or legal authorization.",
+        "No real aircraft, surveillance or external authorization service is controlled. Previously published native downloads can lag the source/CI-verified upgrade."
+      ]
+    },
+    {
+      "name": "cloud-job-orchestrator",
+      "summary": "Preview validated DAG structure, inspect coherent job/event snapshots and review bounded unmet-parent, retry and lease evidence. Added real PostgreSQL API/worker execution and static-site delivery checks.",
+      "rationale": "Turns workflow state into actionable diagnosis while keeping planning read-only. Inspection reports omit payloads, results and lease tokens; deployment still supplies a trusted identity/network/TLS boundary.",
+      "sourceCommit": "c93ca92be7ffa6bdd4e44f0773cae5146a57ecf4",
+      "sourceUrl": "https://github.com/JasonStys/cloud-job-orchestrator/tree/c93ca92be7ffa6bdd4e44f0773cae5146a57ecf4",
+      "reviewUrl": "https://github.com/JasonStys/cloud-job-orchestrator/pull/27",
+      "validationReportUrl": "https://github.com/JasonStys/cloud-job-orchestrator/blob/c93ca92be7ffa6bdd4e44f0773cae5146a57ecf4/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/cloud-job-orchestrator/actions/runs/42718227263"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/cloud-job-orchestrator/actions/runs/42718227181"
+        }
+      ],
+      "limitations": [
+        "Trusted reference control plane; authentication, authorization, tenant separation and TLS are deployment responsibilities, not provided hosted services.",
+        "Workers execute only bounded delay, SHA-256 checksum and uppercase operations; this is not a general remote command runner.",
+        "Dependency waves are structural, not duration, concurrency or fairness forecasts. Captured countdowns are not live and do not reap leases.",
+        "Inspection omits payloads, results and lease tokens, but other existing endpoints expose job results; inspection redaction is not access control."
+      ]
+    },
+    {
+      "name": "integration-operations-console",
+      "summary": "Search all jobs by account/state, page captured audit history and download exact reviews. Fixed request-key intent, real-client binding, timestamp precision, null wire fields and mobile overflow.",
+      "rationale": "Makes integration support usable beyond the recent-activity feed and catches defects through real API/browser workflows.",
+      "sourceCommit": "2563b4154d2e7755516d12911d68c4a32d654905",
+      "sourceUrl": "https://github.com/JasonStys/integration-operations-console/tree/2563b4154d2e7755516d12911d68c4a32d654905",
+      "reviewUrl": "https://github.com/JasonStys/integration-operations-console/pull/61",
+      "validationReportUrl": "https://github.com/JasonStys/integration-operations-console/blob/2563b4154d2e7755516d12911d68c4a32d654905/docs/reports/connector-order-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/integration-operations-console/actions/runs/42731432193"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/integration-operations-console/actions/runs/42731432433"
+        }
+      ],
+      "limitations": [
+        "Fictional-provider single-instance lab; its demo identity header is not production authentication.",
+        "Keyset pages are live and later audit requests capture new state, not an immutable historical reconstruction.",
+        "Legacy account/audit APIs remain unbounded for compatibility.",
+        "Discovery order is case-sensitive connector-ID order, not display-name order or scheduling priority; registry metadata is captured at construction."
+      ]
+    },
+    {
+      "name": "ml-model-lifecycle-observatory",
+      "summary": "Build authenticated read-only release dossiers with verified bundle/registry agreement, recorded quality gates, bounded history and matching drift context. Fixed SQLite handle leaks.",
+      "rationale": "Gives model reviewers explicit evidence and uncertainty before an independent promotion or rollback decision.",
+      "sourceCommit": "e3f47233539d2af763b5c30a2575e6544a0ba5d7",
+      "sourceUrl": "https://github.com/JasonStys/ml-model-lifecycle-observatory/tree/e3f47233539d2af763b5c30a2575e6544a0ba5d7",
+      "reviewUrl": "https://github.com/JasonStys/ml-model-lifecycle-observatory/pull/27",
+      "validationReportUrl": "https://github.com/JasonStys/ml-model-lifecycle-observatory/blob/e3f47233539d2af763b5c30a2575e6544a0ba5d7/docs/reports/practical-workflows-20261109.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/ml-model-lifecycle-observatory/actions/runs/42720622275"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/ml-model-lifecycle-observatory/actions/runs/42720621967"
+        }
+      ],
+      "limitations": [
+        "Synthetic controlled operator-token lab, not multi-user production model-release authority.",
+        "Dossiers verify bundle/registry metadata; they do not reread all raw dataset bytes or independently rerun recorded evaluations.",
+        "No promotion/rollback occurs; history is capped at 100 entries with truncation explicit, and previous rollback candidates remain unverified.",
+        "The 100-sample drift heuristic is not statistical confidence and the captured snapshot can become stale."
+      ]
+    },
+    {
+      "name": "player-telemetry-analytics-platform",
+      "summary": "Review acquisition cohorts with receipt-time cutoffs, cross-platform later activity and mature versus censored D0/D1/D7 denominators.",
+      "rationale": "Prevents late-arrival hindsight and immature cohorts from producing misleading retention comparisons.",
+      "sourceCommit": "f83161e7ce500027fe5313bb08e36e9716a94be2",
+      "sourceUrl": "https://github.com/JasonStys/player-telemetry-analytics-platform/tree/f83161e7ce500027fe5313bb08e36e9716a94be2",
+      "reviewUrl": "https://github.com/JasonStys/player-telemetry-analytics-platform/pull/65",
+      "validationReportUrl": "https://github.com/JasonStys/player-telemetry-analytics-platform/blob/f83161e7ce500027fe5313bb08e36e9716a94be2/docs/reports/practical-workflows-20261109.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/player-telemetry-analytics-platform/actions/runs/42720166549"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/player-telemetry-analytics-platform/actions/runs/42720166520"
+        }
+      ],
+      "limitations": [
+        "Synthetic local controlled lab without authentication or support for real private player data.",
+        "Cohort filters apply to the dedicated review; other existing warehouse panels remain global.",
+        "A receipt watermark does not prove data completeness, statistical certainty or a historical database revision archive."
+      ]
+    },
+    {
+      "name": "industrial-edge-digital-twin",
+      "summary": "Capture and replay synchronized signals, requested/actual outputs, quality, faults and alarms; import/export bounded traces and scrub time-aligned trends with commands blocked in review.",
+      "rationale": "Creates a practical simulated-process investigation workflow with recorded and live state clearly distinguished.",
+      "sourceCommit": "825d6e09c2552e3f995d3c9053b76f5c2cf3c341",
+      "sourceUrl": "https://github.com/JasonStys/industrial-edge-digital-twin/tree/825d6e09c2552e3f995d3c9053b76f5c2cf3c341",
+      "reviewUrl": "https://github.com/JasonStys/industrial-edge-digital-twin/pull/19",
+      "validationReportUrl": "https://github.com/JasonStys/industrial-edge-digital-twin/blob/825d6e09c2552e3f995d3c9053b76f5c2cf3c341/docs/reports/practical-workflows-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/industrial-edge-digital-twin/actions/runs/42720610119"
+        }
+      ],
+      "limitations": [
+        "Local simulated plant, not physical control or a certified process model.",
+        "Trace capture is bounded page memory with explicit export, not a durable authenticated historian.",
+        "Imported schema-valid traces do not establish provenance or physical consistency; review mode blocks commands rather than controlling equipment."
+      ]
+    },
+    {
+      "name": "accessible-design-system-lab",
+      "summary": "Add stable explicit-key sorting, null-last semantics, pagination, focus preservation and loading/error/empty announcements to the live table catalog.",
+      "rationale": "Makes reusable data tables work for keyboard and assistive-technology users in realistic application states.",
+      "sourceCommit": "56c6869b4a2d0accc11c5700968594cef3c12074",
+      "sourceUrl": "https://github.com/JasonStys/accessible-design-system-lab/tree/56c6869b4a2d0accc11c5700968594cef3c12074",
+      "reviewUrl": "https://github.com/JasonStys/accessible-design-system-lab/pull/17",
+      "validationReportUrl": "https://github.com/JasonStys/accessible-design-system-lab/blob/56c6869b4a2d0accc11c5700968594cef3c12074/docs/reports/practical-workflows-20261109.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/accessible-design-system-lab/actions/runs/42712082599"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/accessible-design-system-lab/actions/runs/42712082126"
+        }
+      ],
+      "limitations": [
+        "Automated Axe/keyboard/browser results are not WCAG conformance or manual NVDA, JAWS or VoiceOver evidence.",
+        "Sorting uses explicit keys and deterministic code-unit order, not locale-aware collation; consumers own domain-specific sort keys.",
+        "Sorting is in memory with paginated rendering, not server pagination, virtualization, authentication or fetch/retry handling."
+      ]
+    },
+    {
+      "name": "edge-vision-deployment-benchmark",
+      "summary": "Compare verified runtimes across shared held-out clean, noise, occlusion and dim conditions with per-class recall, calibration and explicit configurable failure gates.",
+      "rationale": "Supports deployment tradeoffs using the same evidence rather than incompatible aggregate timing or accuracy claims.",
+      "sourceCommit": "a506fe82222da8a8e7e566404dddd88b4f002fd3",
+      "sourceUrl": "https://github.com/JasonStys/edge-vision-deployment-benchmark/tree/a506fe82222da8a8e7e566404dddd88b4f002fd3",
+      "reviewUrl": "https://github.com/JasonStys/edge-vision-deployment-benchmark/pull/31",
+      "validationReportUrl": "https://github.com/JasonStys/edge-vision-deployment-benchmark/blob/a506fe82222da8a8e7e566404dddd88b4f002fd3/docs/reports/practical-workflows-20261109.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/edge-vision-deployment-benchmark/actions/runs/42720032306"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/edge-vision-deployment-benchmark/actions/runs/42720032113"
+        }
+      ],
+      "limitations": [
+        "Synthetic 8x8 shapes only; no camera, people or safety-critical deployment qualification.",
+        "Timing is host-specific, memory tracing is Python-only and energy uses an assumed-wattage proxy rather than measured power.",
+        "Quality gates use controlled held-out conditions; they are not certification of arbitrary model/runtime combinations."
+      ]
+    },
+    {
+      "name": "secure-service-desk",
+      "summary": "Assign and unassign tenant agents with shared version checks, atomic audit/outbox writes and bounded ticket history; filter owner/SLA queues and recheck stale authorization and SLA candidates.",
+      "rationale": "Turns a ticket list into an auditable support workflow that resists lost updates, partial commits and cross-tenant mistakes.",
+      "sourceCommit": "561f1a428594d3a12fd71c9c969e8e6f6da4efe3",
+      "sourceUrl": "https://github.com/JasonStys/secure-service-desk/tree/561f1a428594d3a12fd71c9c969e8e6f6da4efe3",
+      "reviewUrl": "https://github.com/JasonStys/secure-service-desk/pull/19",
+      "validationReportUrl": "https://github.com/JasonStys/secure-service-desk/blob/561f1a428594d3a12fd71c9c969e8e6f6da4efe3/docs/reports/practical-workflows-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/secure-service-desk/actions/runs/42727354111"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/secure-service-desk/actions/runs/42727354124"
+        }
+      ],
+      "limitations": [
+        "Synthetic local demo; the identity adapter is not production authentication and notifications use a log adapter.",
+        "Bounded offset history can shift under concurrent inserts; it is not a signed snapshot or enterprise scaling claim.",
+        "Browser checks cover desktop/mobile Chromium-family and no-JavaScript paths, not every device or assistive technology."
+      ]
+    },
+    {
+      "name": "offline-first-field-app",
+      "summary": "Resolve base/local/server conflicts using explicit choices for divergent fields, stale-version checks and atomic replacement of queued writes.",
+      "rationale": "Makes offline editing recoverable without silently overwriting another person's changes or fabricating a missing base.",
+      "sourceCommit": "c5471bc43c1a6296c785aeab40310ae227b2d295",
+      "sourceUrl": "https://github.com/JasonStys/offline-first-field-app/tree/c5471bc43c1a6296c785aeab40310ae227b2d295",
+      "reviewUrl": "https://github.com/JasonStys/offline-first-field-app/pull/19",
+      "validationReportUrl": "https://github.com/JasonStys/offline-first-field-app/blob/c5471bc43c1a6296c785aeab40310ae227b2d295/docs/reports/practical-workflows-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/offline-first-field-app/actions/runs/42698069942"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/offline-first-field-app/actions/runs/42698069971"
+        }
+      ],
+      "limitations": [
+        "Isolated synthetic development API with no authentication or tenant separation; not a hosted multi-user field service.",
+        "Local SQLite is unencrypted. Older drafts may lack a base revision, which the resolver does not fabricate.",
+        "Conflict review shows at most 100 entries from a 200-item bounded store API.",
+        "MAUI compilation and portable view-model journeys are not real-device GUI validation; no updated native release accompanies this upgrade."
+      ]
+    },
+    {
+      "name": "mips-pipeline-workbench",
+      "summary": "Import bounded traces, preserve valid state on failed import and navigate cycles/hazards with a bounded visible window. Fixed cycle/CPI counts when trace capture is capped.",
+      "rationale": "Improves processor-debugging usability and keeps performance measurements independent of display limits.",
+      "sourceCommit": "39e2997102cf0d40068c3d88b58178966fb52c1c",
+      "sourceUrl": "https://github.com/JasonStys/mips-pipeline-workbench/tree/39e2997102cf0d40068c3d88b58178966fb52c1c",
+      "reviewUrl": "https://github.com/JasonStys/mips-pipeline-workbench/pull/11",
+      "validationReportUrl": "https://github.com/JasonStys/mips-pipeline-workbench/blob/39e2997102cf0d40068c3d88b58178966fb52c1c/docs/reports/practical-workflows-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/mips-pipeline-workbench/actions/runs/42701673397"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/mips-pipeline-workbench/actions/runs/42701673466"
+        }
+      ],
+      "limitations": [
+        "Imported trace schema validity is not execution proof; the viewer does not rerun imported programs.",
+        "Displayed final registers are end-state values, not selected-cycle register snapshots.",
+        "Full-run cycle/CPI metrics do not imply every cycle was retained in a capped trace.",
+        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+      ]
+    },
+    {
+      "name": "firmware-release-recovery-lab",
+      "summary": "Rehearse bounded fleet cohorts with package/state fingerprints, compatibility and trial outcomes; fix unconfirmed-stage overwrite, attempt-budget reset and rollback-version checks.",
+      "rationale": "Shows rollout readiness and recovery consequences before touching devices, while enforcing the underlying lifecycle invariants.",
+      "sourceCommit": "813ff0dbee896a08fc202d20a36196cf8fa2e939",
+      "sourceUrl": "https://github.com/JasonStys/firmware-release-recovery-lab/tree/813ff0dbee896a08fc202d20a36196cf8fa2e939",
+      "reviewUrl": "https://github.com/JasonStys/firmware-release-recovery-lab/pull/12",
+      "validationReportUrl": "https://github.com/JasonStys/firmware-release-recovery-lab/blob/813ff0dbee896a08fc202d20a36196cf8fa2e939/docs/reports/practical-workflows-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/firmware-release-recovery-lab/actions/runs/42712069471"
+        },
+        {
+          "name": "Dependency security",
+          "url": "https://github.com/JasonStys/firmware-release-recovery-lab/actions/runs/42712069050"
+        }
+      ],
+      "limitations": [
+        "Directory-only simulation with a public demo key, not real hardware secure boot or an operational rollout.",
+        "Trial outcomes are supplied assumptions, not measured or predicted device health.",
+        "The OS/operator is trusted; external concurrent writers are not locked by the rehearsal workflow."
+      ]
+    },
+    {
+      "name": "ot-security-monitor-lab",
+      "summary": "Report expected-peer successful-read address coverage with separate function codes, interval unions, absent assets and capture gaps.",
+      "rationale": "Makes passive monitoring coverage auditable without contacting devices or treating unobserved activity as safe.",
+      "sourceCommit": "88a34d59e7433aeba3e47066840274666fa7f8c3",
+      "sourceUrl": "https://github.com/JasonStys/ot-security-monitor-lab/tree/88a34d59e7433aeba3e47066840274666fa7f8c3",
+      "reviewUrl": "https://github.com/JasonStys/ot-security-monitor-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/ot-security-monitor-lab/blob/88a34d59e7433aeba3e47066840274666fa7f8c3/docs/reports/read-coverage-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/42714050574"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/42714050852"
+        }
+      ],
+      "limitations": [
+        "Passive capture review only; no new wire-function support, active polling or device access is supplied.",
+        "Generic existing baselines are shown independently per address space; no polling expectation is invented.",
+        "Unobserved addresses are capture gaps, not failed devices, security passes or safety proof. IP labels do not establish device identity."
+      ]
+    },
+    {
+      "name": "industrial-memory-protocol-workbench",
+      "summary": "Reassemble fragmented/coalesced frames in a bounded ring with corruption, discarded-byte and EOF offsets plus read-only JSON inspection.",
+      "rationale": "Models realistic stream transport boundaries instead of assuming one read equals one complete message.",
+      "sourceCommit": "d4a8492365890c588b846b092d8dd6a691212118",
+      "sourceUrl": "https://github.com/JasonStys/industrial-memory-protocol-workbench/tree/d4a8492365890c588b846b092d8dd6a691212118",
+      "reviewUrl": "https://github.com/JasonStys/industrial-memory-protocol-workbench/pull/14",
+      "validationReportUrl": "https://github.com/JasonStys/industrial-memory-protocol-workbench/blob/d4a8492365890c588b846b092d8dd6a691212118/docs/reports/stream-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/industrial-memory-protocol-workbench/actions/runs/42718242191"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/industrial-memory-protocol-workbench/actions/runs/42718242194"
+        }
+      ],
+      "limitations": [
+        "Synthetic diagnostic stream inspection, not physical or network device transport.",
+        "CRC and recovered frame boundaries are not authentication. Plausible incomplete candidates can remain pending until EOF reports truncation.",
+        "Existing client/server and write opt-in boundaries remain; recovery does not authorize writes to a device."
+      ]
+    },
+    {
+      "name": "detection-engineering-lab",
+      "summary": "Add hash-bound analyst dispositions and same-event rule/label comparisons with immutable alert evidence and inert HTML review.",
+      "rationale": "Connects rule changes to reviewable outcomes without rewriting original detections or hiding uncertainty.",
+      "sourceCommit": "7629605841823ebc7a56317ec2addac6d5ab3e38",
+      "sourceUrl": "https://github.com/JasonStys/detection-engineering-lab/tree/7629605841823ebc7a56317ec2addac6d5ab3e38",
+      "reviewUrl": "https://github.com/JasonStys/detection-engineering-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/detection-engineering-lab/blob/7629605841823ebc7a56317ec2addac6d5ab3e38/docs/reports/workflows-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/detection-engineering-lab/actions/runs/42697020943"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/detection-engineering-lab/actions/runs/42697020979"
+        }
+      ],
+      "limitations": [
+        "Analyst names and dispositions are local assertions, not authenticated reviewers or incident verdicts.",
+        "Supplied local event/rule/label snapshots are not authenticated acquisition or publisher attestation.",
+        "Comparisons preserve original detections; they do not prove that an undetected event is benign."
+      ]
+    },
+    {
+      "name": "sre-observability-workbench",
+      "summary": "Compare owner/service/journey SLO bundles over identical windows, with quality, burn and weakened-objective review queues.",
+      "rationale": "Prevents pooled availability and changed denominators from hiding a failing user journey.",
+      "sourceCommit": "8027d600ca0f1cb0575e8a23ff0147d3376046cb",
+      "sourceUrl": "https://github.com/JasonStys/sre-observability-workbench/tree/8027d600ca0f1cb0575e8a23ff0147d3376046cb",
+      "reviewUrl": "https://github.com/JasonStys/sre-observability-workbench/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/sre-observability-workbench/blob/8027d600ca0f1cb0575e8a23ff0147d3376046cb/docs/reports/journeys-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/sre-observability-workbench/actions/runs/42698083646"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/sre-observability-workbench/actions/runs/42698083697"
+        }
+      ],
+      "limitations": [
+        "Synthetic local streams; completeness, ownership and disjointness declarations remain operator assertions.",
+        "Matched-window review does not pool unlike journeys or automatically approve weakened objectives.",
+        "No automatic PromQL/dashboard rewriting or production SLO-policy enforcement is supplied."
+      ]
+    },
+    {
+      "name": "gitops-platform-lab",
+      "summary": "Review desired, source and applied generations, dependency readiness and freshness against chronological evidence.",
+      "rationale": "Separates healthy old workloads from actual convergence on the intended Git revision.",
+      "sourceCommit": "37432ccaecceb7a569b23e5280c678d81f101de9",
+      "sourceUrl": "https://github.com/JasonStys/gitops-platform-lab/tree/37432ccaecceb7a569b23e5280c678d81f101de9",
+      "reviewUrl": "https://github.com/JasonStys/gitops-platform-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/gitops-platform-lab/blob/37432ccaecceb7a569b23e5280c678d81f101de9/docs/reports/reconciliation-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/gitops-platform-lab/actions/runs/42700789577"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/gitops-platform-lab/actions/runs/42700789258"
+        }
+      ],
+      "limitations": [
+        "Supplied observations and proof references are not authenticated collection or verified network verdicts.",
+        "A healthy old workload does not prove convergence on the desired source revision.",
+        "Cluster examples are isolated lab validation, not automatic production rollout or workstation enforcement."
+      ]
+    },
+    {
+      "name": "container-runtime-security-lab",
+      "summary": "Group coverage-aware runtime alert episodes and retain exact reasoned human dispositions without changing original alert priorities.",
+      "rationale": "Makes alert triage practical while preserving evidence gaps and detection provenance.",
+      "sourceCommit": "437ef271990ab763f3d988d7618a0c67346e72c0",
+      "sourceUrl": "https://github.com/JasonStys/container-runtime-security-lab/tree/437ef271990ab763f3d988d7618a0c67346e72c0",
+      "reviewUrl": "https://github.com/JasonStys/container-runtime-security-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/container-runtime-security-lab/blob/437ef271990ab763f3d988d7618a0c67346e72c0/docs/reports/episodes-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/container-runtime-security-lab/actions/runs/42715629709"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/container-runtime-security-lab/actions/runs/42715630195"
+        }
+      ],
+      "limitations": [
+        "Source-health declarations and analyst dispositions are assertions, not attested incidents or proof of safety.",
+        "Capture gaps lack exact timestamps, so source alerts are conservatively kept separate rather than merged across uncertain gaps.",
+        "Pseudonyms and episode IDs apply to one exact saved review; no persistent key management or cross-review identity linkage is supplied."
+      ]
+    },
+    {
+      "name": "zero-trust-segmentation-lab",
+      "summary": "Evaluate owner-authored continuity requirements at policy and exception boundaries with a hash-bound review queue.",
+      "rationale": "Shows upcoming access changes without granting access, renewing exceptions or assuming transitive trust.",
+      "sourceCommit": "a685d91f52f89d4d5c5707ec32039b0585ac8fa5",
+      "sourceUrl": "https://github.com/JasonStys/zero-trust-segmentation-lab/tree/a685d91f52f89d4d5c5707ec32039b0585ac8fa5",
+      "reviewUrl": "https://github.com/JasonStys/zero-trust-segmentation-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/zero-trust-segmentation-lab/blob/a685d91f52f89d4d5c5707ec32039b0585ac8fa5/docs/reports/continuity-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/zero-trust-segmentation-lab/actions/runs/42712910395"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/zero-trust-segmentation-lab/actions/runs/42712910519"
+        }
+      ],
+      "limitations": [
+        "The review previews declared transport access; it does not establish live identity/posture, sessions or service health.",
+        "Continuity requirements are assertions, not policy grants or automatic exception renewal.",
+        "Native enforcement examples operate in isolated lab namespaces, not an automatically deployed production firewall, cloud or device boundary."
+      ]
+    },
+    {
+      "name": "application-security-regression-lab",
+      "summary": "Compare exact saved HTTP regression evidence across union cases, including missing execution and changed assertions.",
+      "rationale": "Prevents an absent or weakened test from being reported as an application-security recovery.",
+      "sourceCommit": "4466fed1ebed0c538cc2ea35d96c92c6299b96bf",
+      "sourceUrl": "https://github.com/JasonStys/application-security-regression-lab/tree/4466fed1ebed0c538cc2ea35d96c92c6299b96bf",
+      "reviewUrl": "https://github.com/JasonStys/application-security-regression-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/application-security-regression-lab/blob/4466fed1ebed0c538cc2ea35d96c92c6299b96bf/docs/reports/regression-review-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/application-security-regression-lab/actions/runs/42710447325"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/application-security-regression-lab/actions/runs/42710447276"
+        }
+      ],
+      "limitations": [
+        "Comparison covers saved HTTP evidence; matching labels do not prove that test implementations or assertions are equivalent.",
+        "Missing execution and changed assertions remain distinct from verified application-security recovery.",
+        "It is not a chronology guarantee, latency benchmark or universal application-security assessment."
+      ]
+    },
+    {
+      "name": "cloud-identity-access-lab",
+      "summary": "Compare signed native OPA policy decisions across MFA, expiry and registry-bound contexts.",
+      "rationale": "Explains gained and lost access using authenticated synthetic evidence without changing cloud permissions.",
+      "sourceCommit": "2ffe676fb9ba49ced2902398062cef1ae8f7a5ae",
+      "sourceUrl": "https://github.com/JasonStys/cloud-identity-access-lab/tree/2ffe676fb9ba49ced2902398062cef1ae8f7a5ae",
+      "reviewUrl": "https://github.com/JasonStys/cloud-identity-access-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/cloud-identity-access-lab/blob/2ffe676fb9ba49ced2902398062cef1ae8f7a5ae/docs/reports/recertification-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/cloud-identity-access-lab/actions/runs/42701689564"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/cloud-identity-access-lab/actions/runs/42701689455"
+        }
+      ],
+      "limitations": [
+        "Permissions reflect a fixed synthetic Rego model, not real cloud login or effective provider authorization.",
+        "MFA contexts are signed assertions, not proof that an actual challenge was completed.",
+        "Registry/context signature checks do not change real cloud permissions or establish every deployed identity control."
+      ]
+    },
+    {
+      "name": "ai-security-evaluation-lab",
+      "summary": "Replay paired reviewed cases against current broker policy and separate unsafe allowance, benign availability, completion and oracle coverage.",
+      "rationale": "Avoids conflating unavailable or unreviewed model behavior with a successful safety result.",
+      "sourceCommit": "8eaed87a77b787e95a54451c1529a9a184914d6e",
+      "sourceUrl": "https://github.com/JasonStys/ai-security-evaluation-lab/tree/8eaed87a77b787e95a54451c1529a9a184914d6e",
+      "reviewUrl": "https://github.com/JasonStys/ai-security-evaluation-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/ai-security-evaluation-lab/blob/8eaed87a77b787e95a54451c1529a9a184914d6e/docs/reports/paired-review-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/ai-security-evaluation-lab/actions/runs/42711583356"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/ai-security-evaluation-lab/actions/runs/42711583765"
+        }
+      ],
+      "limitations": [
+        "Evaluation replays authored/imported snapshots; it does not run an inference provider or real downstream tool actions.",
+        "Model labels are supplied assertions rather than authenticated model identities; there is no aggregate model ranking.",
+        "Accepted-text semantics can remain ungraded, and a finite reviewed corpus does not prove universal model security."
+      ]
+    },
+    {
+      "name": "infrastructure-policy-lab",
+      "summary": "Build resource drift/replacement worklists and semantic-plan-bound reasoned review receipts.",
+      "rationale": "Makes proposed infrastructure changes easier to assess without letting review annotations override policy gates.",
+      "sourceCommit": "5db2c9db4fd02cdff61eb4c98ea489ae2d9b48e6",
+      "sourceUrl": "https://github.com/JasonStys/infrastructure-policy-lab/tree/5db2c9db4fd02cdff61eb4c98ea489ae2d9b48e6",
+      "reviewUrl": "https://github.com/JasonStys/infrastructure-policy-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/infrastructure-policy-lab/blob/5db2c9db4fd02cdff61eb4c98ea489ae2d9b48e6/docs/reports/change-review-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/infrastructure-policy-lab/actions/runs/42699831352"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/infrastructure-policy-lab/actions/runs/42699831409"
+        }
+      ],
+      "limitations": [
+        "Reviewer/ticket context is asserted rather than authenticated.",
+        "Review receipts cannot authorize deployment or override fail, unknown or review-needed policy states.",
+        "Plan-bound review is not automatic infrastructure provisioning or a complete security/compliance certification."
+      ]
+    },
+    {
+      "name": "disaster-recovery-drill-lab",
+      "summary": "Compare captured recovery candidates by provenance, RPO/RTO and loss; add non-deleting retention review and patch actual restored-container vulnerabilities.",
+      "rationale": "Connects recovery selection to measured evidence while keeping untested candidates explicitly unknown.",
+      "sourceCommit": "ceb77d8f0d0aafb647c6873adf94c730d6eca168",
+      "sourceUrl": "https://github.com/JasonStys/disaster-recovery-drill-lab/tree/ceb77d8f0d0aafb647c6873adf94c730d6eca168",
+      "reviewUrl": "https://github.com/JasonStys/disaster-recovery-drill-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/disaster-recovery-drill-lab/blob/ceb77d8f0d0aafb647c6873adf94c730d6eca168/docs/reports/planning-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/disaster-recovery-drill-lab/actions/runs/42706535971"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/disaster-recovery-drill-lab/actions/runs/42706535987"
+        }
+      ],
+      "limitations": [
+        "Captured provenance and timings are assertions, not authenticated backup acquisition.",
+        "Manual retention review never authorizes or performs deletion.",
+        "Lab RPO/RTO objectives do not authorize production recovery or imply zero loss for untested candidates."
+      ]
+    },
+    {
+      "name": "disconnected-release-kit",
+      "summary": "Review authenticated candidate/active installed bytes and SPDX inventory under owned locking with state/trust/policy-bound non-executing receipts.",
+      "rationale": "Supports offline release review without mistaking filenames or transfer completion for authenticity.",
+      "sourceCommit": "fc7251517c832ca6938ebf70b40a8ca13c593edf",
+      "sourceUrl": "https://github.com/JasonStys/disconnected-release-kit/tree/fc7251517c832ca6938ebf70b40a8ca13c593edf",
+      "reviewUrl": "https://github.com/JasonStys/disconnected-release-kit/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/disconnected-release-kit/blob/fc7251517c832ca6938ebf70b40a8ca13c593edf/docs/reports/candidate-review-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/disconnected-release-kit/actions/runs/42714319175"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/disconnected-release-kit/actions/runs/42714318986"
+        }
+      ],
+      "limitations": [
+        "Operator/media aliases are assertions, not identity, physical-transfer proof or signatures.",
+        "Review does not execute payloads or grant activation permission.",
+        "Owned locks coordinate cooperating operations on a trusted filesystem, not a hostile administrator or arbitrary external writer."
+      ]
+    },
+    {
+      "name": "incident-response-evidence-kit",
+      "summary": "Create exact-digest/line analyst bookmarks and minimized handoffs from one verified SQLite evidence snapshot.",
+      "rationale": "Lets analysts share necessary findings while retaining chain/checkpoint bindings and excluding raw originals and notes.",
+      "sourceCommit": "dbf51a335ec512ad4f1f1485e434c5207eaf62cf",
+      "sourceUrl": "https://github.com/JasonStys/incident-response-evidence-kit/tree/dbf51a335ec512ad4f1f1485e434c5207eaf62cf",
+      "reviewUrl": "https://github.com/JasonStys/incident-response-evidence-kit/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/incident-response-evidence-kit/blob/dbf51a335ec512ad4f1f1485e434c5207eaf62cf/docs/reports/bookmarks-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/incident-response-evidence-kit/actions/runs/42702526878"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/incident-response-evidence-kit/actions/runs/42702526914"
+        }
+      ],
+      "limitations": [
+        "Analyst notes and tags are private assertions, not incident attribution.",
+        "A matching checkpoint does not prove that a copy is independently stored.",
+        "Minimized pseudonymized handoffs are not anonymous; review identifying evidence before sharing."
+      ]
+    },
+    {
+      "name": "secret-rotation-reliability-lab",
+      "summary": "Bind consumer acknowledgements to secret generations and inspect drain/expiry/replay queues; patch the actual OpenBao build and fail closed for its unused incompatible Okta integration.",
+      "rationale": "Makes rotation completion evidence explicit and removes known dependency risks without pretending unsupported authentication still works.",
+      "sourceCommit": "5a604a11555b38a61c4b7379729ac187ba5e86d2",
+      "sourceUrl": "https://github.com/JasonStys/secret-rotation-reliability-lab/tree/5a604a11555b38a61c4b7379729ac187ba5e86d2",
+      "reviewUrl": "https://github.com/JasonStys/secret-rotation-reliability-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/secret-rotation-reliability-lab/blob/5a604a11555b38a61c4b7379729ac187ba5e86d2/docs/reports/handoff-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/secret-rotation-reliability-lab/actions/runs/42714306370"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/secret-rotation-reliability-lab/actions/runs/42714306442"
+        }
+      ],
+      "limitations": [
+        "Pool-drain acknowledgements and consumer codes are in-process assertions, not authentication or proof of server acceptance.",
+        "Local overlap is a lease-time calculation, not a zero-downtime guarantee.",
+        "The unused incompatible Okta integration fails closed; this project does not claim working Okta authentication."
+      ]
+    },
+    {
+      "name": "vulnerability-prioritization-console",
+      "summary": "Compare same-clock/source-bound vulnerability evidence and preserve owner queues, deadlines, identity changes and unverified absence.",
+      "rationale": "Supports remediation decisions without turning missing scanner evidence into proof that a vulnerability is fixed.",
+      "sourceCommit": "0e96e97353c99d73432d5cbce1ad8bc77c4603ec",
+      "sourceUrl": "https://github.com/JasonStys/vulnerability-prioritization-console/tree/0e96e97353c99d73432d5cbce1ad8bc77c4603ec",
+      "reviewUrl": "https://github.com/JasonStys/vulnerability-prioritization-console/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/vulnerability-prioritization-console/blob/0e96e97353c99d73432d5cbce1ad8bc77c4603ec/docs/reports/snapshot-review-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/vulnerability-prioritization-console/actions/runs/42706517489"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/vulnerability-prioritization-console/actions/runs/42706517709"
+        }
+      ],
+      "limitations": [
+        "Saved comparisons use current stored workflow state, not immutable historical UI reconstruction.",
+        "Fix/reopen labels remain assertions or reconfirmation needs, not independent proof that remediation occurred.",
+        "New review uses CLI, inert reports and protected API; missing scanner evidence is not proof of a fixed vulnerability."
+      ]
+    },
+    {
+      "name": "windows-identity-audit-lab",
+      "summary": "Review nested protected-identity exposure, representative paths, source completeness and owner recertification/expiry queues.",
+      "rationale": "Keeps complete exposure separate from newly observed drift and avoids false removal claims from partial snapshots.",
+      "sourceCommit": "b82073c8ae41450b917ec7b3dde9eca40d7d30ea",
+      "sourceUrl": "https://github.com/JasonStys/windows-identity-audit-lab/tree/b82073c8ae41450b917ec7b3dde9eca40d7d30ea",
+      "reviewUrl": "https://github.com/JasonStys/windows-identity-audit-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/windows-identity-audit-lab/blob/b82073c8ae41450b917ec7b3dde9eca40d7d30ea/docs/reports/recertification-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/42714809490"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/42714809439"
+        }
+      ],
+      "limitations": [
+        "SID evidence can be identifying private plaintext; it does not prove effective access or successful revocation.",
+        "Exposure reports show one shortest representative path, not every possible nested path.",
+        "Absence in partial, unresolved or cyclic evidence is unverified; recertification is not automatically renewed."
+      ]
+    },
+    {
+      "name": "network-defense-analysis-lab",
+      "summary": "Filter captured events by exact UTC/protocol/rule/severity with snapshot/query-bound pagination and persistent visibility of capture gaps.",
+      "rationale": "Makes defensive investigation manageable without presenting filtered or incomplete captures as clean traffic.",
+      "sourceCommit": "6f474420416bd319f2384737c8764adf115c2861",
+      "sourceUrl": "https://github.com/JasonStys/network-defense-analysis-lab/tree/6f474420416bd319f2384737c8764adf115c2861",
+      "reviewUrl": "https://github.com/JasonStys/network-defense-analysis-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/network-defense-analysis-lab/blob/6f474420416bd319f2384737c8764adf115c2861/docs/reports/query-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/network-defense-analysis-lab/actions/runs/42710460907"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/network-defense-analysis-lab/actions/runs/42710461021"
+        }
+      ],
+      "limitations": [
+        "The original 100-item detector evidence cap remains; a filtered event page does not include every related packet.",
+        "Capture-quality issues lack reliable timestamps and remain visible outside event time filters.",
+        "No live capture, blocking or attribution is supplied; no findings is not proof of safe traffic."
+      ]
+    },
+    {
+      "name": "memory-safety-analysis-lab",
+      "summary": "Deduplicate private corpus inputs and reduce twice-confirmed owned-parser disagreements under shared time/attempt budgets.",
+      "rationale": "Produces reproducible smaller debugging cases while preserving unstable and inconclusive outcomes.",
+      "sourceCommit": "dc68386d9cd6ec62a9ce9d02723f37bb43ad2935",
+      "sourceUrl": "https://github.com/JasonStys/memory-safety-analysis-lab/tree/dc68386d9cd6ec62a9ce9d02723f37bb43ad2935",
+      "reviewUrl": "https://github.com/JasonStys/memory-safety-analysis-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/memory-safety-analysis-lab/blob/dc68386d9cd6ec62a9ce9d02723f37bb43ad2935/docs/reports/corpus-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/memory-safety-analysis-lab/actions/runs/42711566151"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/memory-safety-analysis-lab/actions/runs/42711566499"
+        }
+      ],
+      "limitations": [
+        "Reduction preserves a twice-confirmed agreement/disagreement partition, not necessarily the same root cause or a globally minimal input.",
+        "Unstable and inconclusive executions remain distinct from reproducible findings under shared attempt/time budgets.",
+        "Exported reduction reports contain hashes and lengths rather than source paths or payload bytes; the library can return bytes to its caller."
+      ]
+    },
+    {
+      "name": "unity-tactical-ai-sandbox",
+      "summary": "Inspect hash-validated game replays with timeline scrubbing, terrain/line-of-sight state and independent default-bot diagnostics in bounded offline HTML.",
+      "rationale": "Makes game behavior review portable while distinguishing recorded hindsight from independent replay decisions.",
+      "sourceCommit": "ea8c250a5112912d67461237788a9657e7eb705d",
+      "sourceUrl": "https://github.com/JasonStys/unity-tactical-ai-sandbox/tree/ea8c250a5112912d67461237788a9657e7eb705d",
+      "reviewUrl": "https://github.com/JasonStys/unity-tactical-ai-sandbox/pull/11",
+      "validationReportUrl": "https://github.com/JasonStys/unity-tactical-ai-sandbox/blob/ea8c250a5112912d67461237788a9657e7eb705d/docs/reports/practical-workflows-20261109.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/unity-tactical-ai-sandbox/actions/runs/42719076622"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/unity-tactical-ai-sandbox/actions/runs/42719076793"
+        }
+      ],
+      "limitations": [
+        "Fictional turn-based game only; no real-world tracking, targeting or live control.",
+        "Default-bot diagnostics do not reconstruct the recording policy; the viewer does not rerun the engine or authenticate mutable files.",
+        "Inputs are bounded to 128 commands, 16 avatars, 32x32 static cells, 1 MiB import and 8 MiB JSON.",
+        "Unity stub compilation is not Unity Editor/PlayMode validation; the upgraded source is not a newly published native game build."
+      ]
+    },
+    {
+      "name": "mqtt-lifecycle-reliability-lab",
+      "summary": "Persist and restore identity-bound bounded recovery outboxes with original times, TTL/capacity losses and publish-failure retention.",
+      "rationale": "Turns reconnect demonstrations into reproducible cold-recovery workflows with explicit at-least-once limits.",
+      "sourceCommit": "e5c92255e978f36eee169390add6fdff5291fe2f",
+      "sourceUrl": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab/tree/e5c92255e978f36eee169390add6fdff5291fe2f",
+      "reviewUrl": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab/pull/30",
+      "validationReportUrl": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab/blob/e5c92255e978f36eee169390add6fdff5291fe2f/docs/reports/recovery-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab/actions/runs/42720043409"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab/actions/runs/42720043365"
+        }
+      ],
+      "limitations": [
+        "Trusted cleartext checkpoints use explicit persistence; no fsync/crash-atomic, distributed exactly-once or fencing guarantee is made.",
+        "Copying a snapshot into separate fresh processes can replay messages more than once; callers must stop old publishers and use unique message IDs.",
+        "Count-bounded batches can exceed the checkpoint byte cap; export fails instead of silently truncating."
+      ]
+    },
+    {
+      "name": "offline-incident-timeline-pwa",
+      "summary": "Combine exact UTC filters, safe URL state, no-result/export handling and offline restoration; fix owned Lighthouse startup parsing.",
+      "rationale": "Supports reliable field investigation and honest validation without adopting another local server.",
+      "sourceCommit": "b14606df53ff13e21473ad8c3357050bbbc40abc",
+      "sourceUrl": "https://github.com/JasonStys/offline-incident-timeline-pwa/tree/b14606df53ff13e21473ad8c3357050bbbc40abc",
+      "reviewUrl": "https://github.com/JasonStys/offline-incident-timeline-pwa/pull/30",
+      "validationReportUrl": "https://github.com/JasonStys/offline-incident-timeline-pwa/blob/b14606df53ff13e21473ad8c3357050bbbc40abc/docs/reports/PRACTICAL_WORKFLOWS_2026-11-09.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/offline-incident-timeline-pwa/actions/runs/42704678454"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/offline-incident-timeline-pwa/actions/runs/42704678410"
+        }
+      ],
+      "limitations": [
+        "Local approved evidence only; no account service, encryption or server upload boundary is added.",
+        "Allowlisted URL filters can reveal investigation terms when shared; they are not confidential storage.",
+        "Offline/cancel emulation cases run only in Chromium; automated Axe/Lighthouse results do not certify screen-reader comprehension."
+      ]
+    },
+    {
+      "name": "documentation-quality-gate",
+      "summary": "Review new, persistent, not-reproduced and unexamined debt with exact locations; refresh atomically without losing debt from partial scans or hiding operational errors.",
+      "rationale": "Makes accepted documentation debt maintainable rather than silently clearing it during repeat baseline refreshes.",
+      "sourceCommit": "0757e5a18da5e0e8baf98a527d4fb6c54c752420",
+      "sourceUrl": "https://github.com/JasonStys/documentation-quality-gate/tree/0757e5a18da5e0e8baf98a527d4fb6c54c752420",
+      "reviewUrl": "https://github.com/JasonStys/documentation-quality-gate/pull/18",
+      "validationReportUrl": "https://github.com/JasonStys/documentation-quality-gate/blob/0757e5a18da5e0e8baf98a527d4fb6c54c752420/docs/reports/practical-workflows-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/documentation-quality-gate/actions/runs/42723193924"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/documentation-quality-gate/actions/runs/42723193966"
+        },
+        {
+          "name": "Documentation quality",
+          "url": "https://github.com/JasonStys/documentation-quality-gate/actions/runs/42723193587"
+        }
+      ],
+      "limitations": [
+        "Not-reproduced means absent under the current configuration, not proven fixed. Fingerprints remain line-sensitive with no guessed move matching.",
+        "Deleted, excluded and unreadable files remain unexamined until human reconciliation.",
+        "The adjacent lease coordinates cooperative CLI writers, not arbitrary external software; use a trusted checkout."
+      ]
+    },
+    {
+      "name": "versioned-product-knowledge-portal",
+      "summary": "Add shareable side-by-side edition comparisons with canonical sources, structured warnings, lifecycle/missing counterparts and an allowlisted no-JavaScript-friendly chooser.",
+      "rationale": "Helps readers compare applicable instructions without merging incompatible procedures or assuming an absent warning means safety.",
+      "sourceCommit": "6ce9fb792fa4ff9f97db03a787c9e65d83b94c10",
+      "sourceUrl": "https://github.com/JasonStys/versioned-product-knowledge-portal/tree/6ce9fb792fa4ff9f97db03a787c9e65d83b94c10",
+      "reviewUrl": "https://github.com/JasonStys/versioned-product-knowledge-portal/pull/11",
+      "validationReportUrl": "https://github.com/JasonStys/versioned-product-knowledge-portal/blob/6ce9fb792fa4ff9f97db03a787c9e65d83b94c10/docs/reports/comparison-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/versioned-product-knowledge-portal/actions/runs/42721473975"
+        }
+      ],
+      "limitations": [
+        "Public synthetic static corpus; no private accounts, content scraping or real-equipment guidance.",
+        "Edition comparison matches editorial identities, not semantic equivalence; missing text or warnings do not prove feature/hazard removal.",
+        "Extractive search/citation limits and abstention remain; automated checks do not establish exhaustive accessibility conformance."
+      ]
+    },
+    {
+      "name": "engineering-documentation-foundry",
+      "summary": "Compare canonical corpus revisions by stable identity, highlighting source-cited content and safety-warning changes in HTML/JSON.",
+      "rationale": "Gives publication reviewers a precise change review before shipping revised documentation.",
+      "sourceCommit": "e615450f16f742f5dfe73a21cfabb4976495d46b",
+      "sourceUrl": "https://github.com/JasonStys/engineering-documentation-foundry/tree/e615450f16f742f5dfe73a21cfabb4976495d46b",
+      "reviewUrl": "https://github.com/JasonStys/engineering-documentation-foundry/pull/11",
+      "validationReportUrl": "https://github.com/JasonStys/engineering-documentation-foundry/blob/e615450f16f742f5dfe73a21cfabb4976495d46b/docs/reports/practical-workflows-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/engineering-documentation-foundry/actions/runs/42711599871"
+        }
+      ],
+      "limitations": [
+        "Comparison matches stable identities without inferring semantic renames or equivalent safety meaning.",
+        "Operational write failures can leave a partial review directory; source documents and published output are not changed by comparison.",
+        "Source citations and warning diffs support human review, not a certification that a revised procedure is safe."
+      ]
+    },
+    {
+      "name": "node-red-resilient-metadata",
+      "summary": "Handle bounded Retry-After seconds/dates, rate-limit spacing and cancellation of delayed requests while releasing unused error response bodies.",
+      "rationale": "Makes integration recovery behave predictably under real HTTP throttling and user cancellation.",
+      "sourceCommit": "51a91f9aff20ea8854f1d2693d3071d35f06689b",
+      "sourceUrl": "https://github.com/JasonStys/node-red-resilient-metadata/tree/51a91f9aff20ea8854f1d2693d3071d35f06689b",
+      "reviewUrl": "https://github.com/JasonStys/node-red-resilient-metadata/pull/24",
+      "validationReportUrl": "https://github.com/JasonStys/node-red-resilient-metadata/blob/51a91f9aff20ea8854f1d2693d3071d35f06689b/docs/reports/practical-workflows-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "CI",
+          "url": "https://github.com/JasonStys/node-red-resilient-metadata/actions/runs/42695814855"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/node-red-resilient-metadata/actions/runs/42695816642"
+        }
+      ],
+      "limitations": [
+        "HTTP dates accept IMF-fixdate; obsolete or malformed forms fall back to configured spacing.",
+        "Server cooldowns over 30 seconds fail for operator recovery rather than retrying early; later retries need caller scheduling.",
+        "Unused error response bodies are released, not retained or exposed as diagnostic content."
+      ]
+    },
+    {
+      "name": "host-hardening-assurance-lab",
+      "summary": "Review expected host inventory, unknown missing evidence, policy/platform counts and owner refresh/deviation queues.",
+      "rationale": "Prevents absent hosts or stale observations from inflating assurance results.",
+      "sourceCommit": "53068a5cdc70f733211910afd199bb1fd4fac85e",
+      "sourceUrl": "https://github.com/JasonStys/host-hardening-assurance-lab/tree/53068a5cdc70f733211910afd199bb1fd4fac85e",
+      "reviewUrl": "https://github.com/JasonStys/host-hardening-assurance-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/host-hardening-assurance-lab/blob/53068a5cdc70f733211910afd199bb1fd4fac85e/docs/reports/fleet-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/host-hardening-assurance-lab/actions/runs/42697099400"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/host-hardening-assurance-lab/actions/runs/42697099410"
+        }
+      ],
+      "limitations": [
+        "Completeness of the declared host inventory is the operator's responsibility.",
+        "Each run uses one exact baseline; unlike platform counts remain separate rather than a pooled assurance score.",
+        "Owner/reviewer labels are local assertions, not authenticated approvals or a compliance certification."
+      ]
+    },
+    {
+      "name": "rmf-evidence-workbench",
+      "summary": "Build owner monitoring calendars and exact component-scoped freshness, integrity, risk and milestone work queues.",
+      "rationale": "Helps maintain evidence continuously without claiming that a dashboard grants authorization.",
+      "sourceCommit": "07b1b4973921b831d6eba4a9c7e375d8977863f4",
+      "sourceUrl": "https://github.com/JasonStys/rmf-evidence-workbench/tree/07b1b4973921b831d6eba4a9c7e375d8977863f4",
+      "reviewUrl": "https://github.com/JasonStys/rmf-evidence-workbench/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/rmf-evidence-workbench/blob/07b1b4973921b831d6eba4a9c7e375d8977863f4/docs/reports/calendar-2026-11-09.md",
+      "workflows": [
+        {
+          "name": "Validate",
+          "url": "https://github.com/JasonStys/rmf-evidence-workbench/actions/runs/42709733900"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/rmf-evidence-workbench/actions/runs/42709733879"
+        }
+      ],
+      "limitations": [
+        "Synthetic selected six-control scope, not certification, authorization to operate or risk acceptance.",
+        "Owner calendars and queues do not collect real evidence or send live notifications.",
+        "Freshness/integrity review supports human monitoring; it does not grant an authorization or waive missing evidence."
+      ]
+    }
+  ]
+}

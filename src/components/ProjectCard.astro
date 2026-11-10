@@ -10,9 +10,7 @@ import type { Project } from "@/lib/types";
 
 type Props = { project: Project; compact?: boolean };
 const { project, compact = false } = Astro.props;
-const detailHref = project.caseStudySlug
-  ? withBase(`case-studies/${project.caseStudySlug}/`)
-  : project.url;
+const detailHref = withBase(`projects/${project.name}/`);
 ---
 
 <article
@@ -38,8 +36,7 @@ const detailHref = project.caseStudySlug
   {!compact && <p class="project-card__description">{project.description}</p>}
   {compact ? (
     <p class="project-card__language">
-      {String(project.portfolioOrder).padStart(2, "0")} ·{" "}
-      {project.languages.slice(0, 2).join(" · ")} · {project.maturity}
+      {String(project.portfolioOrder).padStart(2, "0")} · {project.primaryLanguage}
     </p>
   ) : (
     <ul class="tag-list" aria-label={`Technologies in ${project.name}`}>
@@ -51,7 +48,7 @@ const detailHref = project.caseStudySlug
   {(project.caseStudySlug || !compact) && (
     <div class="project-card__actions">
       {project.caseStudySlug && (
-        <a class="text-link" href={detailHref}>
+        <a class="text-link" href={withBase(`case-studies/${project.caseStudySlug}/`)}>
           Read case study <span aria-hidden="true">→</span>
         </a>
       )}

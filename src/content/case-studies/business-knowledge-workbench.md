@@ -1,50 +1,49 @@
 ---
 title: "Governed standards for business documents and data"
 repository: "https://github.com/JasonStys/business-knowledge-workbench"
-summary: "A private local application that standardizes supported business files into common units, field schemas, document layouts, and export types through owner-controlled, versioned HTML-first workflows."
+summary: "Owner-governed document and data standardization with consistent units, editable schemas and layouts, quantitative library search and authorized evidence packs."
 role: "Full-stack, document, and data engineering"
 languages: ["Python", "TypeScript", "SQL"]
 evidence:
   [
-    "Owner-controlled output standards",
-    "Schema and unit normalization",
-    "Versioned HTML-first provenance",
-    "Three-OS packaged-app checks",
+    "Owner-controlled standards",
+    "Unit-aware numeric search",
+    "Authorized document bundles",
+    "Installed desktop workflow",
   ]
 featuredOrder: 2
 ---
 
 ## Problem
 
-Business information arrives with inconsistent field names, units, document structures, and file types. The primary purpose is to standardize that information into an inspectable business-defined format—not simply display a catalog or dashboard. Search, product views, and reporting make the standardized records useful.
-
-For example, an owner can map supplier fields `length` and `Width` to a canonical `width` field, choose millimeters, and publish a consistent document layout and PDF delivery policy. Supported tables then share field order and units: `4.25 in → 107.95 mm` and `8.2 cm → 82 mm`.
+Business files arrive with inconsistent names, measurements, layouts and formats. The purpose is to standardize their contents into an inspectable business-defined structure, then make those records searchable and reusable. For example, supplier measurements of 4.25 inches and 8.2 centimeters become 107.95 and 82 millimeters under the same selected standard.
 
 ## Constraints
 
-Only an authorized owner/admin may publish standards; a client role label must not grant authority. Conversions must preserve originals, extraction warnings, and settings evidence. Bare measurement values require an explicit source-unit declaration rather than guessing. Extra fields are preserved with a warning or rejected, never silently discarded. Financial values use exact arithmetic; private data must not leave the app by default.
+Only the authorized owner may publish standards. Bare quantities need declared source units; unknown fields must be preserved with warnings or rejected. Search must compare one compatible cell, and exports must authorize every selection before generating plaintext output.
 
 ## Design
 
-- **Safe, data-only standards:** named settings define target units, canonical table keys/aliases/order, required or optional fields, section order/headings, fonts, paper/orientation, and preferred or optionally restricted HTML/JSON/Markdown/CSV/DOCX/PDF exports. HTML is always generated first; fonts and page layout do not apply to JSON/CSV.
-- **Governed revisions:** a non-persistent CSV draft preview precedes publication. SQLite immediate transactions, optimistic revision checks, immutable history, and restore-as-new-revision prevent silent overwrites. Server-side checks protect these operations.
-- **Preserved evidence:** each conversion retains source bytes, pre-normalization blocks, warnings, the settings snapshot, revision, and digest. Current-standard copies and mixed-revision compilations apply one selected standard without rewriting originals, chaining rounding, or replaying sales.
-- **Private delivery:** Python converters, the TypeScript editor, SQL persistence, and an Electron shell share a locally encrypted workspace. Report exports follow the active standard. Optional AI remains read-only and requires explicit source consent.
+An authorized owner controls canonical field names, aliases, order, units, required fields, section headings, fonts, page layout and supported export policy. A draft preview precedes publication. Revision checks, immutable settings history and restore-as-new-revision prevent silent replacement. HTML is generated first; originals, warnings and the exact settings snapshot remain available.
 
-See the [version 1.2 standards guide](https://github.com/JasonStys/business-knowledge-workbench/blob/v1.2.0/docs/standards.md) and [original-purpose review](https://github.com/JasonStys/business-knowledge-workbench/blob/v1.2.0/docs/requirements-review-v1.2.md) for exact contracts and deliberately unsupported capabilities.
+The latest workflow searches standardized table values using inclusive numeric ranges with compatible units. Text and range conditions must match the same cell in the chosen column; missing, malformed or incompatible values do not become zero. Scientific notation is normalized as a complete number: 5e-3 V equals 0.005 V and 5 mV.
+
+A user can publish a manufacturing standard, import supplier files, search millimeter values using centimeter bounds and select permitted documents for a ZIP. Each file follows its saved output policy. A manifest records order, byte counts and hashes; hidden selections fail authorization before generation. Searching and exporting do not rewrite originals or replay sales.
 
 ## Verification
 
-Regression tests cover equivalent CSV/TSV/JSON/DOCX/XLSX/HTML tables, actual PDF/DOCX page dimensions, invalid units and schemas, HTML escaping, immutable originals, stale/concurrent publication, history restoration, cross-account isolation, export restrictions, and sales idempotency. Same bytes with different input formats cannot reuse the wrong parser result; text-only CSV export fails explicitly.
-
-The actual owner journey previews, publishes, imports, exports, changes units, creates a copy, verifies the original, and restores history. Browser checks cover Chromium, Firefox, WebKit, accessibility, and mobile layout. Frozen services and actual packaged apps are exercised on Windows x64, macOS arm64, and Linux x64. See [version 1.2 validation](https://github.com/JasonStys/business-knowledge-workbench/blob/v1.2.0/docs/validation-v1.2.md) and the [published v1.2.0 release](https://github.com/JasonStys/business-knowledge-workbench/releases/tag/v1.2.0).
+Independent conversion examples check equivalent units, offsets, scientific notation, saved revisions and original preservation. Real owner journeys publish standards, import files, search ranges, inspect ZIP contents and lock/reopen the workspace; negative tests cover hidden selections, stale revisions and output budgets.
 
 ## Measured result
 
-Recorded v1.2.0 Windows validation passed **150 Python tests at 88.82% statement coverage**, **36 browser cases**, and an actual packaged-app journey. The synthetic 500-row/189-document benchmark measured **42.079 ms import p95** and **8.438 ms search p95** on its recorded machine—not a hosted SLA or a cross-version speed comparison.
+The change report records **228 Python tests at 89.87% statement coverage**, **10 private browser journeys** and **18 legacy/mobile journeys**. Independent cases cover manufacturing, renewable energy and calibration; mixed units, temperature offsets, exact decimals, schema revisions, malicious titles, stale publication and cross-account access.
 
-Validation, CodeQL, three-OS packaging, and release workflows passed for source commit `ae04e12`. The [release workflow](https://github.com/JasonStys/business-knowledge-workbench/actions/runs/39654875902) gates publication on tested packages. These are inspected source-release results; updating this portfolio does not claim to rerun the workbench's entire suite or certify every possible input.
+Local Firefox startup failures were recorded as environment failures, not passes; the mandatory hosted browser lane subsequently passed. Exact-main validation, CodeQL and package workflows passed. The installed Windows application was exercised with a disposable account, including conversions, standards, filters, native ZIP download and encrypted lock/reopen.
+
+Accepted source: [`a25887ac0e54f2afbe0e21e597c67b606890e8ad`](https://github.com/JasonStys/business-knowledge-workbench/tree/a25887ac0e54f2afbe0e21e597c67b606890e8ad). The [change report](https://github.com/JasonStys/business-knowledge-workbench/blob/a25887ac0e54f2afbe0e21e597c67b606890e8ad/docs/reports/practical-workflows-2026-11-09.md) records the executed scope and results. Exact-main workflow records passed: [Validate workbench](https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42704664864), [Desktop packages](https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42704664364), [CodeQL](https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42704664406).
+
+[Version 1.4.0 downloads](https://github.com/JasonStys/business-knowledge-workbench/releases/tag/v1.4.0) include this update; its [release workflow](https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42705706255) passed three-OS package checks.
 
 ## Limitations
 
-Supported extraction is bounded to 15 extensions, 4 MiB inputs, and 200 documents per business profile—not universal file understanding or OCR. Graph/equation meaning and complex layouts still require source review. The private edition's authority is its own unlocked account owner; role previews are not shared-business membership or delegated coworker permissions. Hosted team accounts and native mobile installers are not supplied. Forecasts are baselines, not causal business predictions. Desktop packages are unsigned/not notarized; unlocked plaintext trusts the local OS. A settings digest proves identity, not approval or authenticity.
+This is a local owner-account application, not shared business hosting or delegated team membership. Extraction is bounded to supported formats; OCR, image/equation understanding and arbitrary layouts are not universal. Range search inspects standardized cells with six-decimal canonical precision. Bundles contain 1–12 files within a 32 MiB content budget and remain plaintext, unsigned exports. A hash identifies content, not approval. Desktop packages are unsigned/not notarized.

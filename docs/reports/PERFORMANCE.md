@@ -8,21 +8,32 @@
 
 ## Budgets
 
-| Metric                     |    Budget |
-| -------------------------- | --------: |
-| Search index build         | ≤1,500 ms |
-| Search query p95           |    ≤12 ms |
-| Synthetic serialized index |   ≤12 MiB |
-| Production JavaScript gzip |   ≤32 KiB |
-| Production CSS gzip        |   ≤24 KiB |
-| Largest HTML route         |   ≤55 KiB |
-| Production search index    |  ≤100 KiB |
-| Lighthouse FCP worst run   | ≤1,800 ms |
-| Lighthouse LCP worst run   | ≤2,500 ms |
-| Lighthouse TBT worst run   |   ≤200 ms |
-| Lighthouse CLS worst run   |     ≤0.05 |
+| Metric                     |     Budget |
+| -------------------------- | ---------: |
+| Search index build         |  ≤1,500 ms |
+| Search query p95           |     ≤12 ms |
+| Synthetic serialized index |    ≤12 MiB |
+| Production JavaScript gzip |  ≤32,000 B |
+| Production CSS gzip        |  ≤24,000 B |
+| Largest HTML route         |  ≤55,000 B |
+| Production search index    | ≤100,000 B |
+| Lighthouse FCP worst run   |  ≤1,800 ms |
+| Lighthouse LCP worst run   |  ≤2,500 ms |
+| Lighthouse TBT worst run   |    ≤200 ms |
+| Lighthouse CLS worst run   |      ≤0.05 |
 
-## Current synchronization: 2026-10-21
+## Current synchronization: 2026-11-09
+
+Windows x64 / Node 24.18.1: 89 HTML routes, largest 52,288 B, JavaScript
+1,329 B gzip, CSS 4,611 B gzip, search index 28,588 B. The 10,000-project,
+500-query benchmark recorded a 116.778 ms build and 2.751 ms query p95.
+All original limits passed. Three actual Lighthouse sessions recorded median
+performance 0.97 and minimum accessibility/best-practices/SEO 1.00; worst FCP
+1,006.31 ms, LCP 1,056.61 ms, TBT 0 and CLS 0. These are observed samples.
+The new detail/evidence data remains build-only, outside the browser search
+payload. See [the validation report](practical-workflows-2026-11-09.md).
+
+## Previous synchronization: 2026-10-21
 
 Measured locally on Windows x64 / Node 24.18.1: all original budgets passed.
 The 10,000-project search benchmark built in 114.037 ms with query p95

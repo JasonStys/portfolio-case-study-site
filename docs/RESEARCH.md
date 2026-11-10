@@ -31,6 +31,18 @@ These sources led to page-specific titles/descriptions, canonical URLs, crawlabl
 
 These sources led to three-run Lighthouse budgets, explicit asset and layout-shift limits, no remote fonts, and a version-pinned approval for the esbuild installer.
 
+## November 2026 dependency review
+
+The full dependency audit found vulnerable validation-tool transitive packages.
+The reviewed [minimatch advisory](https://github.com/advisories/GHSA-g3hv-75wg-m249)
+identifies 11.0.1 as patched; a scoped override replaces affected 7–10 releases.
+The [fast-uri advisory](https://github.com/advisories/GHSA-w74x-v6f9-j3xg)
+identifies 3.1.9 for the existing 3.x line. Lighthouse's compatible Puppeteer
+dependency is refreshed to a version using the patched Zod 4 family described in
+the [Zod collection-validation advisory](https://github.com/advisories/GHSA-mrhx-c7xc-m3w5).
+The exact lock, lint/type checks, build, three-engine browser tests and actual
+Lighthouse runs validate compatibility; no advisory is suppressed.
+
 ## Research limitations
 
 Automated standards and documentation cannot establish usability by themselves. Recruiter comprehension and assistive-technology usability should be evaluated with people before adding more visual or interactive complexity.

@@ -1,38 +1,46 @@
 ---
 title: "A passing test is not enough evidence"
 repository: "https://github.com/JasonStys/mission-verification-evidence-kit"
-summary: "A revision-aware traceability kit rejects stale and cherry-picked evidence, independently checks every requirement verdict in SQL and separates content identity from authenticity."
+summary: "Revision-aware requirement traceability with independent SQL verdicts and a prioritized revalidation queue for stale, missing or mismatched evidence."
 role: "Verification evidence and developer tooling"
 languages: ["Python", "TypeScript", "SQL"]
 evidence:
   [
     "Independent Python/SQL verdicts",
-    "Latest-attempt and revision rules",
-    "Actual fixed-suite JUnit adapter",
-    "Explicit provenance boundaries",
+    "Latest-attempt revision rules",
+    "Revalidation work queue",
+    "Explicit provenance limits",
   ]
 ---
 
 ## Problem
 
-An old green result can survive a changed requirement or hide a newer failed attempt. A summary badge cannot show missing fault coverage, mismatched source revisions or what release metadata the evidence actually describes.
+An old green result can survive a changed requirement or hide a newer failure. A badge also cannot tell a reviewer which evidence to refresh, which fault links are missing or which source revision the next test must describe.
 
 ## Constraints
 
-Require explicit requirement/test/fault links, bounded data and exact revisions. Never choose an older pass when the newest attempt fails or skips. Declare what a content hash proves and what it does not. Supplied evidence must never become a command to execute arbitrary code.
+Require explicit bounded links and exact revisions. The newest attempt governs even when an older one passed. Supplied evidence must not execute arbitrary commands, and an action queue must not override the gate or present declared metadata as authenticated mission truth.
 
 ## Design
 
-Python validates the complete graph and evaluates latest attempts, freshness, chronology and revision bindings. Independently formulated SQL checks every requirement verdict; disagreement suppresses the report. Every linked test and each declared requirement/fault obligation must be covered. A fixed-suite adapter maps actual authored JUnit into declared inputs. A separately scoped reused delivery verifier authenticates an existing signed demo release without executing its payload; it does not authenticate fictional mission results.
+Python validates bounded requirement/test/fault links, latest attempts, chronology, freshness and revision bindings. Independently formulated SQL checks each requirement verdict; disagreement suppresses the report. Older passes cannot override a newer failure or skip. A fixed-suite JUnit adapter imports reviewed test results without executing arbitrary supplied code.
+
+The new revalidation queue turns these findings into concrete human work. It prioritizes blocked critical requirements and supplies expected source, definition and component revisions, procedure references and inclusive freshness deadlines. Missing procedures or fault links, chronology investigations and release-source reconciliation remain distinct actions.
+
+A reviewer can open a deliberate gap fixture, inspect the required evidence and export the same checklist through the UI, JSON, HTML or CLI. The queue does not weaken or replace the independent gate. It helps plan the next review without fabricating a rerun or granting a waiver.
 
 ## Verification
 
-Six deliberate gap/regression fixtures, randomized age/status mutations, record-order properties, hostile input/ZIP/identity cases, inert exports and immutable local-history tests cover different failure paths. Real recorder tests are captured, imported and gated in CI. The downloaded Windows app was tested again across three browser engines. See the [schema](https://github.com/JasonStys/mission-verification-evidence-kit/blob/main/docs/SCHEMA.md), [provenance distinction](https://github.com/JasonStys/mission-verification-evidence-kit/blob/main/docs/PROVENANCE.md) and [published exact-source evidence](https://github.com/JasonStys/mission-verification-evidence-kit/releases/tag/v1.0.0).
+Independent SQL evaluates requirement verdicts separately from Python. Boundary and mutation fixtures check freshness, revisions, latest attempts and work priority; actual UI/export journeys exercise the resulting checklist, structural gaps and stale/error states.
 
 ## Measured result
 
-Release v1.0.0 records 174 Python tests at 97.98% branch-inclusive coverage, four TypeScript tests and 36 three-engine browser checks, repeated against the downloaded Windows app. Eight Validation jobs, both CodeQL analyses and all four release jobs passed at `40e2b8b10f985113ae915ba2e4e663f06fccfa95`. The separately scoped live delivery integration authenticated four existing demo assets. These historical results demonstrate the declared software contract—not flight qualification.
+The report records **177 Python tests at 98.05% combined statement/branch coverage**, **four TypeScript tests** and **39 Chromium/Firefox/WebKit browser journeys**. Independent cases check the exact valid-age boundary and next invalid second, required revisions, critical priority, configured/unconfigured fault links and separation of chronology from release-source work.
+
+Browser journeys inspect queue priority and structural work, actual downloads, stale/error handling and mobile accessibility. Six existing gate summaries remain unchanged. Accepted-source CI also retains SQL, actual fixed-suite recording, security and portable-build checks.
+
+Accepted source: [`048dd33a041fa53d7ecfc8cdab369137812a47ed`](https://github.com/JasonStys/mission-verification-evidence-kit/tree/048dd33a041fa53d7ecfc8cdab369137812a47ed). The [change report](https://github.com/JasonStys/mission-verification-evidence-kit/blob/048dd33a041fa53d7ecfc8cdab369137812a47ed/docs/reports/PRACTICAL_WORKFLOWS_20261109.md) records the executed scope and results. Exact-main workflow records passed: [CodeQL](https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42702154070), [Validation](https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42702154127).
 
 ## Limitations
 
-Traceability cannot discover omitted requirements, fabricated outcomes or inadequate assertions. SQL agreement is not independent truth about the input. Declared artifact digests are metadata unless bytes/authenticity are separately verified. Hashes are not signatures. The JUnit adapter accepts one reviewed suite, not every dialect. No mission authorization, compliance certification, hardware control or flight assurance is supplied.
+The queue uses a supplied fixed observation time; it is not a live reminder or automatic rerun system. Traceability cannot discover omitted requirements, fabricated results or weak assertions. SQL agreement is not external truth; hashes are not signatures. Separately verifying a signed demo delivery does not authenticate fictional mission results. No mission authorization, compliance certification or flight assurance is supplied. Older downloads predate this queue; use the accepted source.

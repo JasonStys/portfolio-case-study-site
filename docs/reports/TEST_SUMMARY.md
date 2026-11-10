@@ -13,11 +13,21 @@ The release gate covers catalog/cache contracts, search behavior, URL/XML helper
 | Browser          | Chromium, Firefox, and WebKit production flows pass.                    |
 | Accessibility    | No detectable WCAG A/AA violations in tested states.                    |
 | Search benchmark | 10,000-project build ≤1,500 ms; p95 query ≤12 ms; artifact ≤12 MiB.     |
-| Static assets    | JS ≤32 KiB gzip; CSS ≤24 KiB gzip; search index ≤100 KiB.               |
+| Static assets    | JS ≤32,000 B gzip; CSS ≤24,000 B gzip; search index ≤100,000 B.         |
 | Lighthouse       | Accessibility 1.00; performance ≥0.92; best practices ≥0.95; SEO ≥0.95. |
 | Security         | Zero high/critical npm findings and zero unresolved CodeQL findings.    |
 
-## Current synchronization: 2026-10-22
+## Current synchronization: 2026-11-09
+
+All 84 unit tests passed, with 99.47% lines, 98.63% branches and 100% functions.
+All 45 browser executions passed across Chromium, Firefox and WebKit with zero
+retries. The 67 project detail routes and updates index retain no-script access,
+exact source/report/workflow links and explicit limits. New cases cover malformed
+evidence, mobile navigation visibility, sentence-final search and cache identity,
+unknown routes, stale context and owned preview isolation. Existing thresholds
+were retained. See [the current report](practical-workflows-2026-11-09.md).
+
+## Previous synchronization: 2026-10-22
 
 The 67-project catalog adds all seven drone projects with exact membership,
 reviewed order and searchable evidence tests. Local verification passed all

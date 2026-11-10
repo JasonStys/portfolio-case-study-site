@@ -24,14 +24,15 @@ At 67 real projects, clarity remains important. Schema 2 uses one dictionary of 
 
 ## Build and network bounds
 
-- Six broad featured cases, nine reference cases, a complete 14-project space/energy collection and a seven-project drone collection; 21 HTML routes in the current build.
-- Metadata cache must contain at least one project and no duplicate names.
+- Six broad featured cases, nine reference cases, a complete 14-project space/energy collection, seven-project drone collection, 67 static project details and one updates index.
+- Metadata and editorial scope must cover exactly the same 67 approved project names, with no duplicates or extras.
+- Source-bound domain updates contain exactly 66 records, 1–4 limitations of at most 400 characters each, and 1–8 repository-bound workflow links. Build validation is linear in the bounded content size; detail lookup uses a build-only map.
 - Cache age is bounded to 90 days in CI.
-- The build-only search revision hashes the serialized reviewed catalog in `O(metadata bytes)` time and space; it does not add browser cryptography or runtime network calls.
+- The build-only search revision hashes the serialized reviewed catalog, metadata time and tokenizer semantic revision in `O(metadata bytes)` time and space; it does not add browser cryptography or runtime network calls.
 - Browser filter debounce is 120 ms; no repeating timer or background poll exists.
-- Search index is capped at 100 KiB in production output.
-- Total compressed JavaScript is capped at 32 KiB and CSS at 24 KiB.
-- Largest generated HTML file is capped at 55 KiB.
+- Search index is capped at 100,000 bytes in production output.
+- Total compressed JavaScript is capped at 32,000 bytes and CSS at 24,000 bytes.
+- Largest generated HTML file is capped at 55,000 bytes.
 - Lighthouse uses three runs: median performance, worst other category score, and worst timing measurement.
 
 ## When to change the algorithm

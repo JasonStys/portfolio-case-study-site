@@ -2,7 +2,30 @@
 
 All notable changes use a simplified Keep a Changelog structure. Version numbers follow semantic versioning for the repository's public behavior and content contracts.
 
-## [Unreleased] - 2026-10-21
+## [Unreleased] - 2026-11-09
+
+### Added
+
+- Static detail pages for every approved portfolio project, with practical changes,
+  rationale, explicit limits and immutable source/review/validation links.
+- A complete workflow-upgrade index and a strict public evidence contract covering
+  66 reviewed domain repositories; the portfolio hub's own publication is separate.
+- Negative evidence-schema tests, no-script navigation, mobile/keyboard journeys,
+  and ownership checks for production-preview test servers.
+
+### Improved
+
+- All 67 catalog/README outcomes and all 15 detailed case studies reflect the
+  practical workflow upgrades, preserving the original project order and six highlights.
+- Current Code Flow 0.4, Workbench 1.4, Applicant Evidence 0.3, Image Model 0.3 and
+  Drone Operations 0.3 release evidence is distinct from older source-only downloads.
+- Patched validation-tool dependencies without suppressing security advisories or
+  increasing the existing asset, accessibility, performance or coverage budgets.
+- Sentence-final words are searchable without a trailing dot while `.NET`,
+  `C++`, `C#` and internal version dots remain meaningful. Tokenizer semantics
+  now participate in cache identity so older indexes cannot mask the correction.
+
+## Portfolio collection and source-location updates - 2026-10-21
 
 ### Added
 

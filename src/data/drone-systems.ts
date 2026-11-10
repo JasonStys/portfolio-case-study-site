@@ -13,7 +13,7 @@ export const droneSystemsCuration = [
     domains: ["Drone safety", "Simulation", "Operations"],
     maturity: "validated",
     outcome:
-      "Binds operator approvals to mission revisions, prevents command replay, and validates a typed console against actual PX4 SIH and native MAVSDK simulation.",
+      "Edit and replay civilian drone scenes with obstacle checks, saved routes and timeline scrubbing.",
   },
   {
     name: "mavlink-sitl-assurance-lab",
@@ -21,7 +21,7 @@ export const droneSystemsCuration = [
     domains: ["Drone safety", "Protocol assurance", "Fault injection"],
     maturity: "validated",
     outcome:
-      "Checks two pinned PX4 versions through a bounded C++ fault relay with blackout, delay, reorder, duplication and lost acknowledgements, using independent recovery oracles.",
+      "Test simulated MAVLink faults and inspect delay, drop and ambiguous packet-correlation evidence.",
   },
   {
     name: "first-response-drone-coordinator",
@@ -29,7 +29,7 @@ export const droneSystemsCuration = [
     domains: ["Drone safety", "Resource allocation", "Human review"],
     maturity: "validated",
     outcome:
-      "Independently validates synthetic aircraft, operator, time-slot and battery constraints, with revision-bound review and explicit stop gates rather than live dispatch.",
+      "Compare civilian response plans under aircraft or operator loss with revision-bound human review.",
   },
   {
     name: "drone-video-privacy-studio",
@@ -37,7 +37,7 @@ export const droneSystemsCuration = [
     domains: ["Drone safety", "Privacy", "Media processing"],
     maturity: "validated",
     outcome:
-      "Re-encodes every video frame with solid privacy masks, verifies the exported pixels, strips audio and telemetry, and requires independent current-revision approval.",
+      "Redact video and review manual keyframes with conservative privacy envelopes and controlled exports.",
   },
   {
     name: "drone-maintenance-readiness-studio",
@@ -45,7 +45,7 @@ export const droneSystemsCuration = [
     domains: ["Drone safety", "Reliability", "Evidence review"],
     maturity: "validated",
     outcome:
-      "Tracks serialized component life across swaps, records usage exactly once, and binds readiness assessments to fresh inspections and independently verified maintenance evidence.",
+      "Track component life and compare draft maintenance standards before changing approved records.",
   },
   {
     name: "drone-airspace-awareness-lab",
@@ -53,7 +53,7 @@ export const droneSystemsCuration = [
     domains: ["Drone safety", "Scientific computing", "Uncertainty"],
     maturity: "validated",
     outcome:
-      "Cross-checks Rust analytic overlap windows against an independent numerical oracle, preserving freshness, uncertainty and altitude-reference limits for synthetic traffic.",
+      "Inspect synthetic traffic overlaps with track freshness, altitude-reference limits and coverage gaps.",
   },
   {
     name: "drone-flight-policy-workbench",
@@ -61,7 +61,7 @@ export const droneSystemsCuration = [
     domains: ["Drone safety", "Policy as code", "Governance"],
     maturity: "validated",
     outcome:
-      "Compares actual OPA/Rego decisions with an independent Python oracle, holds stale or unknown policy evidence, and preserves immutable reviewed SQL snapshots.",
+      "Compare active and draft drone policies against identical evidence without authorizing flight.",
   },
 ] as const satisfies readonly ProjectCuration[];
 

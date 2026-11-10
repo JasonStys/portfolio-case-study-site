@@ -1,14 +1,14 @@
 ---
 title: "Delivery gates that verify identity and recovery"
 repository: "https://github.com/JasonStys/secure-delivery-pipeline-lab"
-summary: "A defensive supply-chain lab connecting reproducible bundles, SBOMs, independent build-identity verification, staged promotion, and authenticated rollback under tampering."
+summary: "A defensive delivery lab with authenticated release comparison, atomic deployment receipts and independently verified rollback trust."
 role: "DevSecOps and software supply-chain engineering"
 languages: ["Python", "Bash", "Dockerfile"]
 evidence:
   [
-    "Independent attestation checks",
-    "Tamper-negative scenarios",
-    "Staged promotion",
+    "Independent trust checks",
+    "Non-executing impact review",
+    "Atomic transition receipts",
     "Authenticated rollback",
   ]
 featuredOrder: 5
@@ -16,24 +16,34 @@ featuredOrder: 5
 
 ## Problem
 
-Successful builds do not establish that a deployed artifact came from the intended source and workflow. Recovery can also become a trust bypass if a previous artifact is accepted merely because it was once present.
+A green build does not prove the identity of deployed bytes. Recovery can become a trust bypass when an older artifact is accepted merely because it was present before. Operators also need to understand a candidate's changes without executing it.
 
 ## Constraints
 
-Verification must bind exact repository, commit/tag, workflow, identity, and bytes. Failure must preserve the active release. Recovery must reauthenticate the previous artifact. The example must not execute unknown payloads.
+Bind trust to the intended repository, source, workflow and exact bytes. Active and candidate releases require independently selected trust, including during rollback. Failed review or transition writes must preserve active state, and impact inspection must never execute a candidate.
 
 ## Design
 
-A dependency-free Python inventory example produces deterministic bundles and an SBOM. Least-privilege, pinned delivery gates apply scanners, non-root execution, and keyless GitHub attestations. An independent verifier validates identity and manifest bindings before fixed health probes, atomic promotion, or explicitly authenticated rollback.
+A dependency-free Python inventory example produces deterministic bundles and an SBOM. Pinned delivery gates, independent identity verification, fixed health probes and staged promotion preserve the boundary between trusted source and active bytes. Rollback reauthenticates the previous artifact under explicitly chosen trust.
+
+The new impact review authenticates both active and candidate snapshots before comparing manifests, members and assets. It writes a new report without executing either candidate or changing the active pointer. Byte differences are evidence for review, not a compatibility or security verdict.
+
+Promotion and rollback now persist the active pointer and successful transition receipt atomically. Receipts retain asserted operator/change context and the newest 20 transitions. Legacy pointers migrate without invented history; repeated successful requests do not duplicate receipts. An operator can inspect impact, perform a separately authorized transition and review its retained evidence.
 
 ## Verification
 
-Four OS/Python lanes exercise the source while independent Linux/Windows scenarios test cryptography, identity, tampering, promotion, and recovery. Scanning results retain their exact scope. See [validation 1.0.1](https://github.com/JasonStys/secure-delivery-pipeline-lab/blob/main/docs/reports/validation-1.0.1.md).
+Independent fixtures test authentication boundaries and inject atomic-write failures. Actual fixed-example staging and rollback use owned temporary roots; mocked external verifier replies remain explicitly separate from genuine hosted attestation checks.
 
 ## Measured result
 
-The recorded suite passed 95 tests with 91.58% combined statement/branch coverage, plus nine live cryptographic scenarios on Linux and Windows. Invalid identity or modified bundles are expected-negative checks, not waived failures.
+The report records **114 tests with no skips**, **93.05% combined statement/branch coverage** and complete coverage of the receipt module. Independent cases verify unchanged state during impact review, every required staged authentication, wrong identities, modified candidates, verifier outages and output collisions.
+
+Actual authored zipapp staging, fixed health probes, promotion and rollback run in temporary lab roots. Tests inject final-write failure, verify atomic preservation, exercise idempotent retries and legacy migration, and check bounded history after 25 transitions. External attestation responses in local unit fixtures are mocked and are not claimed as live cryptographic evidence.
+
+The unchanged 10,000-row inventory benchmark measured a 23.914 ms p95 over 30 runs on its recorded machine. This excludes signature-service latency and does not measure deployment capacity.
+
+Accepted source: [`9dd48002acfd8c277b5903cd4849c295bf551d81`](https://github.com/JasonStys/secure-delivery-pipeline-lab/tree/9dd48002acfd8c277b5903cd4849c295bf551d81). The [change report](https://github.com/JasonStys/secure-delivery-pipeline-lab/blob/9dd48002acfd8c277b5903cd4849c295bf551d81/docs/reports/operations-2026-11-09.md) records the executed scope and results. Exact-main workflow records passed: [CodeQL](https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42699848608), [Validate](https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42699848767).
 
 ## Limitations
 
-This is a disposable teaching pipeline, not a SLSA certification, production malware sandbox, or assurance that every dependency is safe. Only the fixed example is executed. A genuine deployment still needs its own environment, signing trust, approvals, and incident procedures.
+This is a disposable teaching pipeline, not SLSA certification, malware analysis or production deployment authority. Only the fixed example is executed. Receipts contain local assertions rather than signed, tamper-proof audit evidence; impact review does not authorize deployment. A real environment needs independently chosen trust and operating procedures. Earlier release downloads have not been rebuilt for this source update.

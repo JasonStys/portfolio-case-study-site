@@ -70,6 +70,9 @@ const schema = {
           <a class="button button--primary" href={project.url}>
             Inspect repository <span aria-hidden="true">↗</span>
           </a>
+          <a class="button button--secondary" href={withBase(`projects/${project.name}/`)}>
+            Latest workflow and source evidence →
+          </a>
           <a class="button button--secondary" href={withBase("projects/")}>
             Back to index
           </a>

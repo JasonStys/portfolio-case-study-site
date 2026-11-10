@@ -27,6 +27,10 @@ New case measurements must point to a published source/release and identify them
 
 ## Refresh GitHub facts
 
+For the current per-project improvement record and evidence contract, see
+[Project upgrades](PROJECT_UPGRADES.md). Keep its longer descriptions on static
+detail pages; the short literal curation outcome drives the README and catalog.
+
 ```bash
 GITHUB_TOKEN=... npm run metadata:refresh
 npm run metadata:check

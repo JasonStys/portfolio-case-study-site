@@ -25,6 +25,7 @@
 | `docs/FILE_CATALOG.md`                                            | Project documentation described by its title and sections.                                                   |
 | `docs/LIMITATIONS.md`                                             | Project documentation described by its title and sections.                                                   |
 | `docs/OPERATIONS.md`                                              | Project documentation described by its title and sections.                                                   |
+| `docs/PROJECT_UPGRADES.md`                                        | Project documentation described by its title and sections.                                                   |
 | `docs/reports/ACTIONS_REVIEW_2026-10-14.md`                       | Project documentation described by its title and sections.                                                   |
 | `docs/reports/business-standards-sync-2026-10-21.md`              | Project documentation described by its title and sections.                                                   |
 | `docs/reports/code-flow-sync-2026-10-21.md`                       | Project documentation described by its title and sections.                                                   |
@@ -33,6 +34,7 @@
 | `docs/reports/portfolio-sync-2026-10-14.md`                       | Project documentation described by its title and sections.                                                   |
 | `docs/reports/portfolio-sync-2026-10-21.md`                       | Project documentation described by its title and sections.                                                   |
 | `docs/reports/portfolio-sync-2026-10-22.md`                       | docs/reports/portfolio-sync-2026-10-22.md; Purpose: reviewed integration and validation trail by Jason Stys. |
+| `docs/reports/practical-workflows-2026-11-09.md`                  | Project documentation described by its title and sections.                                                   |
 | `docs/reports/SITE_QUALITY.md`                                    | Project documentation described by its title and sections.                                                   |
 | `docs/reports/TEST_SUMMARY.md`                                    | Project documentation described by its title and sections.                                                   |
 | `docs/RESEARCH.md`                                                | Project documentation described by its title and sections.                                                   |
@@ -48,9 +50,11 @@
 | `public/manifest.webmanifest`                                     | Browser metadata and repository-scoped launch URL.                                                           |
 | `README.md`                                                       | Project overview, quick start, features, evidence, and repository map.                                       |
 | `scripts/benchmark-search.ts`                                     | Benchmarks inverted-index construction and intersections over deterministic synthetic projects.              |
+| `scripts/check-owned-preview.mjs`                                 | Independently checks static-preview isolation, literal paths, HTTP semantics and port refusal.               |
 | `scripts/generate-code-index.mjs`                                 | Generates exact declaration locations for authored TypeScript, JavaScript, Astro, and CSS.                   |
 | `scripts/generate-file-catalog.mjs`                               | Generates a complete repository file catalog from source headers and curated fallbacks.                      |
 | `scripts/lighthouse.mjs`                                          | Runs three production Lighthouse audits and enforces category, paint, blocking, and layout budgets.          |
+| `scripts/owned-preview.mjs`                                       | Serves only an owned loopback production-dist socket for browser and Lighthouse acceptance.                  |
 | `scripts/refresh-github-metadata.mjs`                             | Refreshes selected public GitHub facts while keeping reviewed technology annotations reproducible.           |
 | `scripts/sync-readme.mjs`                                         | Jason Stys: keeps the README portfolio summary aligned with reviewed site curation.                          |
 | `scripts/validate-dist.mjs`                                       | Validates generated routes, repository-base links, metadata, and compressed asset budgets.                   |
@@ -82,11 +86,13 @@
 | `src/data/github-repositories.json`                               | Reviewed GitHub repository metadata cache used by offline builds.                                            |
 | `src/data/portfolio-priority.json`                                | Canonical reviewed ordering of all 67 public portfolio repositories.                                         |
 | `src/data/project-curation.ts`                                    | Curates reviewed roles, domains, outcomes, maturity, and six featured cases.                                 |
+| `src/data/project-upgrades.json`                                  | Repository support file.                                                                                     |
 | `src/data/space-systems.ts`                                       | Jason Stys's reviewed civilian space/energy portfolio collection and highlight rationale.                    |
 | `src/lib/catalog-revision.ts`                                     | Derives build-only search cache identities from the complete reviewed catalog and metadata timestamp.        |
 | `src/lib/catalog.ts`                                              | Validates cached GitHub metadata, merges curation, and derives deterministic facets.                         |
 | `src/lib/search.ts`                                               | Builds and queries a deterministic inverted index for project text and exact facets.                         |
 | `src/lib/types.ts`                                                | Defines the validated repository, curation, search, and evidence domain types.                               |
+| `src/lib/upgrades.ts`                                             | Validates public source-bound upgrade evidence against the exact reviewed domain catalog.                    |
 | `src/lib/url.ts`                                                  | Builds repository-base-aware internal URLs and absolute canonical URLs.                                      |
 | `src/lib/xml.ts`                                                  | Escapes authored text for XML feeds and sitemap documents.                                                   |
 | `src/pages/404.astro`                                             | Provides a useful static not-found page for GitHub Pages fallback routing.                                   |
@@ -95,16 +101,20 @@
 | `src/pages/drone-systems.astro`                                   | Jason Stys's drone-safety collection with evidence-led highlights and explicit limits.                       |
 | `src/pages/feed.xml.ts`                                           | Generates an RSS feed of featured case studies without runtime network access.                               |
 | `src/pages/index.astro`                                           | Renders the employer-facing portfolio overview and six featured engineering cases.                           |
+| `src/pages/projects/[name].astro`                                 | Pre-renders all 67 project purposes, latest workflows, exact-source evidence and limits.                     |
 | `src/pages/projects/index.astro`                                  | Renders the progressively enhanced catalog with query and exact-facet controls.                              |
 | `src/pages/robots.txt.ts`                                         | Publishes crawler policy and the absolute sitemap location.                                                  |
 | `src/pages/search-index.json.ts`                                  | Pre-renders the versioned project text and facet index consumed by catalog enhancement.                      |
 | `src/pages/sitemap.xml.ts`                                        | Generates a deterministic sitemap for static pages and every featured case study.                            |
 | `src/pages/space-systems.astro`                                   | Jason Stys's complete civilian space/energy project collection and employer reading path.                    |
+| `src/pages/updates/index.astro`                                   | Provides a compact no-script reading path through all project improvements and evidence pages.               |
 | `src/scripts/project-filter.ts`                                   | Enhances the project catalog with debounced text search, exact facets, URL state, and announcements.         |
 | `src/styles/global.css`                                           | Defines the evidence-first visual system, responsive layouts, focus states, and motion policy.               |
 | `tests/e2e/portfolio.spec.ts`                                     | Exercises navigation, progressive catalog filtering, URL state, case studies, and accessibility.             |
+| `tests/e2e/upgrades.spec.ts`                                      | Exercises static upgrade discovery, exact-source links, no-JavaScript browsing and hub limits.               |
 | `tests/unit/catalog.test.ts`                                      | Verifies cache validation, deterministic catalog merging, featured order, and facets.                        |
 | `tests/unit/search.test.ts`                                       | Verifies Unicode tokenization, deterministic postings, intersections, facets, and empty results.             |
+| `tests/unit/upgrades.test.ts`                                     | Tests exact catalog coverage, immutable source identity and public-only evidence schema.                     |
 | `tests/unit/utilities.test.ts`                                    | Verifies repository-base URL construction and XML escaping boundaries.                                       |
 | `tsconfig.json`                                                   | Strictest Astro and TypeScript compiler policy.                                                              |
 | `vitest.config.ts`                                                | Configures deterministic unit coverage for search, catalog, and content helpers.                             |

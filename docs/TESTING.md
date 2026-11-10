@@ -33,10 +33,34 @@ The site must remain understandable without JavaScript, navigable by keyboard, c
 | Vulnerable dependency/change                | Audit, dependency review, CodeQL    | Push, PR, and scheduled analysis.                                                                                   |
 | Bad release replaces good site              | Deployment dependency graph         | Pages job requires all quality/browser/performance jobs.                                                            |
 
-The Code Flow v0.4.0 content regression follows the real featured card → keyword
+## Reviewed documentation editions
+
+The documentation catalog has a closed public schema and requires the exact 67-project
+order, 91 Word editions and 24 workbooks. Negative cases reject private extra fields,
+foreign projects, mutable revisions, malformed dates/digests, duplicate or traversing
+filenames, invalid byte/page counts and invented workbook pagination. Links are built
+from the fixed owner, project, immutable commit and three permitted filenames.
+
+The production-output check independently inspects all 67 rendered project pages for
+their actual documentation section, exact Office links, SHA-256 values and documented
+source revision. Browser journeys exercise the real navigation path, full and Word-only
+editions, mobile wrapping, axe accessibility and JavaScript-disabled use. They do not
+execute Office files, infer compiler results from workbook inventories, or treat a
+checksum as a publisher signature.
+
+The Office files themselves have separate all-page/all-tab visual review receipts and
+byte identities in each repository's publication manifest. Word editions cite their
+documented source and dated observations; a later documentation integration, security
+fix or released application has a separate revision. Tests keep these boundaries
+explicit instead of relabeling an older observation as a new execution result.
+
+The Code Flow v0.4.2 content regression follows the real featured card → keyword
 search → case-study journey, checks immutable validation/acceptance and release
 links, verifies the coverage denominator and measurement caveats, and scans the
 full case for accessibility and mobile overflow in all three browser engines.
+It preserves the explicitly historical 0.4.0 measurements while requiring the
+separate accepted runtime-fix counts, 18 private journeys, native drain evidence
+and the limit that five seconds is not a universal process-exit guarantee.
 Unit checks retain its first-place priority and searchable source-evidence terms.
 The README synchronization gate checks the same outcome text. These portfolio
 checks validate presentation; Code Flow's compiler results remain separately

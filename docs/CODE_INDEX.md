@@ -106,23 +106,23 @@
 | 15 | variable | `EXCLUDED_DIRECTORIES` |
 | 25 | variable | `checkOnly` |
 | 26 | variable | `STATIC_DESCRIPTIONS` |
-| 62 | function | `collectFiles` |
-| 63 | variable | `entries` |
-| 64 | variable | `results` |
-| 67 | variable | `absolute` |
-| 74 | function | `extractDescription` |
-| 75 | variable | `fileTag` |
-| 77 | variable | `fileLine` |
-| 79 | variable | `withoutEnd` |
-| 87 | function | `describeFile` |
-| 88 | variable | `staticDescription` |
-| 90 | variable | `extracted` |
-| 104 | function | `renderCatalog` |
-| 105 | variable | `lines` |
-| 118 | function | `main` |
-| 119 | variable | `files` |
-| 120 | variable | `records` |
-| 126 | variable | `rendered` |
+| 66 | function | `collectFiles` |
+| 67 | variable | `entries` |
+| 68 | variable | `results` |
+| 71 | variable | `absolute` |
+| 78 | function | `extractDescription` |
+| 79 | variable | `fileTag` |
+| 81 | variable | `fileLine` |
+| 83 | variable | `withoutEnd` |
+| 91 | function | `describeFile` |
+| 92 | variable | `staticDescription` |
+| 94 | variable | `extracted` |
+| 108 | function | `renderCatalog` |
+| 109 | variable | `lines` |
+| 122 | function | `main` |
+| 123 | variable | `files` |
+| 124 | variable | `records` |
+| 130 | variable | `rendered` |
 
 ## `scripts/lighthouse.mjs`
 
@@ -270,40 +270,46 @@
 | 13 | variable | `DIST` |
 | 14 | variable | `BASE` |
 | 15 | variable | `REQUIRED_OUTPUTS` |
-| 32 | variable | `BUDGETS` |
-| 39 | function | `collectFiles` |
-| 40 | variable | `entries` |
-| 41 | variable | `files` |
-| 43 | variable | `absolute` |
-| 50 | function | `targetForUrl` |
-| 51 | variable | `pathname` |
-| 53 | variable | `relative` |
-| 59 | function | `validateHtml` |
-| 60 | variable | `html` |
-| 70 | variable | `urls` |
-| 72 | variable | `target` |
-| 78 | variable | `inlineJavaScript` |
-| 84 | function | `validateBudgets` |
-| 85 | variable | `javascript` |
-| 86 | variable | `css` |
-| 87 | variable | `compressedSize` |
-| 93 | variable | `metrics` |
-| 101 | variable | `failures` |
-| 109 | function | `main` |
-| 111 | variable | `names` |
-| 114 | variable | `upgrades` |
-| 117 | variable | `index` |
-| 118 | variable | `renderedNames` |
-| 121 | variable | `updates` |
-| 122 | variable | `updateNames` |
-| 127 | variable | `sitemap` |
-| 129 | variable | `detail` |
-| 131 | variable | `upgrade` |
-| 143 | variable | `files` |
-| 144 | variable | `htmlFiles` |
-| 145 | variable | `htmlSizes` |
-| 146 | variable | `inlineJavaScript` |
-| 148 | variable | `result` |
+| 33 | variable | `BUDGETS` |
+| 40 | function | `collectFiles` |
+| 41 | variable | `entries` |
+| 42 | variable | `files` |
+| 44 | variable | `absolute` |
+| 51 | function | `targetForUrl` |
+| 52 | variable | `pathname` |
+| 54 | variable | `relative` |
+| 60 | function | `validateHtml` |
+| 61 | variable | `html` |
+| 71 | variable | `urls` |
+| 73 | variable | `target` |
+| 79 | variable | `inlineJavaScript` |
+| 85 | function | `validateBudgets` |
+| 86 | variable | `javascript` |
+| 87 | variable | `css` |
+| 88 | variable | `compressedSize` |
+| 94 | variable | `metrics` |
+| 102 | variable | `failures` |
+| 110 | function | `main` |
+| 112 | variable | `names` |
+| 115 | variable | `upgrades` |
+| 118 | variable | `publications` |
+| 121 | variable | `documentation` |
+| 122 | variable | `documentedNames` |
+| 127 | variable | `index` |
+| 128 | variable | `renderedNames` |
+| 131 | variable | `updates` |
+| 132 | variable | `updateNames` |
+| 137 | variable | `sitemap` |
+| 139 | variable | `detail` |
+| 141 | variable | `upgrade` |
+| 152 | variable | `publication` |
+| 155 | variable | `base` |
+| 157 | variable | `url` |
+| 166 | variable | `files` |
+| 167 | variable | `htmlFiles` |
+| 168 | variable | `htmlSizes` |
+| 169 | variable | `inlineJavaScript` |
+| 171 | variable | `result` |
 
 ## `scripts/validate-repository.mjs`
 
@@ -361,6 +367,14 @@
 | Line | Kind | Symbol |
 | ---: | --- | --- |
 | 13 | variable | `detailHref` |
+
+## `src/components/PublicationDownloads.astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 10 | variable | `publication` |
+| 11 | variable | `links` |
+| 12 | variable | `labels` |
 
 ## `src/components/SiteFooter.astro`
 
@@ -514,6 +528,36 @@
 | 461 | variable | `first` |
 | 462 | variable | `second` |
 
+## `src/lib/publications.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 11 | variable | `COMPLEX` |
+| 18 | variable | `FILENAMES` |
+| 43 | function | `object` |
+| 46 | variable | `row` |
+| 56 | function | `text` |
+| 63 | function | `validatePublications` |
+| 64 | variable | `envelope` |
+| 66 | variable | `collectedAt` |
+| 77 | variable | `repositories` |
+| 78 | variable | `row` |
+| 81 | variable | `name` |
+| 82 | variable | `publishedCommit` |
+| 83 | variable | `sourceBaseline` |
+| 84 | variable | `expected` |
+| 87 | variable | `seen` |
+| 88 | variable | `documents` |
+| 89 | variable | `file` |
+| 90 | variable | `filename` |
+| 94 | variable | `sha256` |
+| 132 | variable | `publicationManifest` |
+| 133 | variable | `byName` |
+| 136 | function | `publicationFor` |
+| 137 | variable | `row` |
+| 143 | function | `publicationLinks` |
+| 144 | variable | `base` |
+
 ## `src/lib/search.ts`
 
 | Line | Kind | Symbol |
@@ -614,12 +658,22 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 13 | function | `getStaticPaths` |
-| 14 | variable | `entries` |
-| 15 | variable | `slugs` |
-| 20 | variable | `project` |
-| 30 | variable | `project` |
-| 33 | variable | `schema` |
+| 14 | function | `getStaticPaths` |
+| 15 | variable | `entries` |
+| 16 | variable | `slugs` |
+| 21 | variable | `project` |
+| 31 | variable | `project` |
+| 34 | variable | `schema` |
+
+## `src/pages/documentation/index.astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 13 | variable | `newlyAnalyzed` |
+| 22 | variable | `files` |
+| 23 | variable | `wordCount` |
+| 24 | variable | `workbookCount` |
+| 90 | variable | `row` |
 
 ## `src/pages/downloads/index.astro`
 
@@ -669,11 +723,11 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 15 | function | `getStaticPaths` |
-| 24 | variable | `upgrade` |
-| 25 | variable | `isHub` |
-| 26 | variable | `hasDownload` |
-| 28 | variable | `observedAt` |
+| 16 | function | `getStaticPaths` |
+| 25 | variable | `upgrade` |
+| 26 | variable | `isHub` |
+| 27 | variable | `hasDownload` |
+| 29 | variable | `observedAt` |
 
 ## `src/pages/projects/index.astro`
 
@@ -708,7 +762,7 @@
 | 15 | variable | `caseStudyPaths` |
 | 22 | variable | `projectPaths` |
 | 23 | variable | `paths` |
-| 34 | variable | `urls` |
+| 35 | variable | `urls` |
 
 ## `src/pages/space-systems.astro`
 
@@ -775,7 +829,7 @@
 | 64 | custom property | `--radius` |
 | 65 | custom property | `--radius-lg` |
 | 66 | custom property | `--shell` |
-| 1070 | custom property | `--shell` |
+| 1074 | custom property | `--shell` |
 
 ## `tests/e2e/downloads.spec.ts`
 
@@ -802,29 +856,36 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 37 | variable | `featured` |
-| 48 | variable | `result` |
-| 70 | variable | `links` |
-| 90 | variable | `workbench` |
-| 99 | variable | `catalogEntry` |
-| 160 | variable | `context` |
-| 165 | variable | `page` |
-| 171 | variable | `response` |
-| 186 | variable | `scan` |
-| 222 | variable | `skipLink` |
-| 232 | variable | `results` |
-| 243 | variable | `bodyWidth` |
-| 245 | variable | `cards` |
-| 246 | variable | `first` |
-| 247 | variable | `second` |
-| 251 | variable | `navigation` |
-| 252 | variable | `links` |
-| 256 | variable | `rows` |
-| 259 | variable | `box` |
-| 275 | variable | `about` |
-| 295 | variable | `revision` |
-| 297 | variable | `search` |
-| 299 | variable | `index` |
+| 38 | variable | `section` |
+| 61 | variable | `context` |
+| 66 | variable | `page` |
+| 72 | variable | `publication` |
+| 74 | variable | `response` |
+| 76 | variable | `section` |
+| 119 | variable | `featured` |
+| 130 | variable | `result` |
+| 157 | variable | `links` |
+| 179 | variable | `workbench` |
+| 188 | variable | `catalogEntry` |
+| 249 | variable | `context` |
+| 254 | variable | `page` |
+| 260 | variable | `response` |
+| 275 | variable | `scan` |
+| 311 | variable | `skipLink` |
+| 321 | variable | `results` |
+| 332 | variable | `bodyWidth` |
+| 334 | variable | `cards` |
+| 335 | variable | `first` |
+| 336 | variable | `second` |
+| 340 | variable | `navigation` |
+| 341 | variable | `links` |
+| 342 | variable | `expectedNavigation` |
+| 354 | variable | `rows` |
+| 357 | variable | `box` |
+| 374 | variable | `about` |
+| 394 | variable | `revision` |
+| 396 | variable | `search` |
+| 398 | variable | `index` |
 
 ## `tests/e2e/upgrades.spec.ts`
 
@@ -964,6 +1025,22 @@
 | 413 | variable | `result` |
 | 432 | variable | `results` |
 | 446 | variable | `summary` |
+
+## `tests/unit/publications.test.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 19 | function | `rows` |
+| 22 | function | `documents` |
+| 25 | function | `changed` |
+| 26 | variable | `copy` |
+| 27 | variable | `first` |
+| 29 | variable | `file` |
+| 37 | variable | `files` |
+| 44 | variable | `links` |
+| 45 | variable | `base` |
+| 58 | variable | `invalid` |
+| 200 | variable | `workbook` |
 
 ## `tests/unit/search.test.ts`
 

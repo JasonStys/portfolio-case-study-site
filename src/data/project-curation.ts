@@ -15,7 +15,7 @@ export const projectCuration = [
     domains: ["AI developer tools", "Testing", "Security"],
     maturity: "validated",
     outcome:
-      "Inspect source-bound diagnostics, coverage and unused-code candidates; navigate only to matching drafts.",
+      "Inspect source-bound diagnostics, coverage and unused-code candidates; navigate only to matching drafts with cancellation-safe native shutdown.",
     featuredOrder: 1,
     caseStudySlug: "code-flow-studio",
   },

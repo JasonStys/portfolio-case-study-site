@@ -1003,6 +1003,10 @@
     display: grid;
     gap: 0.4rem;
   }
+  .publication-downloads {
+    margin-block: 2rem;
+    overflow-wrap: anywhere;
+  }
   .source-identity dt {
     font-weight: 700;
   }
@@ -1088,7 +1092,7 @@
     }
     .site-header nav a {
       white-space: nowrap;
-      padding-inline: 0.6rem;
+      padding-inline: 0.45rem;
     }
     .header-cta {
       display: none;

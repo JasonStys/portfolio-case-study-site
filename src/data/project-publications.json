@@ -1,0 +1,1165 @@
+{
+  "schemaVersion": 1,
+  "collectedAt": "2026-11-10T14:58:53.219795+00:00",
+  "repositories": [
+    {
+      "name": "code-flow-studio",
+      "publishedCommit": "eb9b1cd0c3e3fd1e70e397edeffb059073464f74",
+      "sourceBaseline": "7d2158a57bb49e8f837fffbfe23b301902465412",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "4d0a998f70fb0d798a6a76e3739af62f54c73c4d147bc9ddbdf1f5f3bac0d039",
+          "bytes": 46007,
+          "pages": 6
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "0a9b5f1e6239dcb400bf195887461fcc967eec545633d1ebf3280d3353356c71",
+          "bytes": 7760,
+          "pages": null
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "3e472c90824be2501e0acdc7aff2ea6750ca9f4f0109804d0ff97e74020ee973",
+          "bytes": 47230,
+          "pages": 6
+        }
+      ]
+    },
+    {
+      "name": "business-knowledge-workbench",
+      "publishedCommit": "45e1fc057308b37578715e7c7c070cdd3a531371",
+      "sourceBaseline": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "6666cdd2bef1cb4097133eba9b5c2adb8ef6ff2fc59527b331b11d32f6d6c5c7",
+          "bytes": 154583,
+          "pages": 7
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "73370ebad9ee232de7fe6697510f724e5d8f674a8ab858f6ae62fc669c74e764",
+          "bytes": 42385,
+          "pages": 3
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "6f1f03ff509e2a23861e4a23c251b61f6067c7692afe7c6df6cfaee657bdf64d",
+          "bytes": 7466,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "personal-image-model-studio",
+      "publishedCommit": "4b2e14404bb9f57c038f63c21b952bf8c4f7b6af",
+      "sourceBaseline": "0d9aa0a6733198325593ffc30cef8358125063d7",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "bf4ef35277c63bd29f8ff8204421a8cd5a487948486705ea029c706188cd30ad",
+          "bytes": 230003,
+          "pages": 5
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "ec85862c9bd441205872d7cc4ae06dfe2917c5b71d14109a6ce5aec59c429c7f",
+          "bytes": 46835,
+          "pages": 7
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "d1d4d9195d4e6071ca90c2b0ffd3989a9d9adeb9c4317823c26960d81212831e",
+          "bytes": 7415,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "forge2d-engine",
+      "publishedCommit": "218da99eeac8b38859f0b5ac538644d465c22b88",
+      "sourceBaseline": "43fd93f79043231230a4c19346bdb8a4c356d9ce",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "f8b0f4ed73dd19cd3d58991091df0519c93916d864c10f4b392ecbfd1f3372c1",
+          "bytes": 45218,
+          "pages": 5
+        }
+      ]
+    },
+    {
+      "name": "secure-delivery-pipeline-lab",
+      "publishedCommit": "7150fe61eaba75f0efa37d82a847f65f49b503ab",
+      "sourceBaseline": "e37b189fa604bb0d6951e4a926d20ed9606298a1",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "66032e1438ae4e3fc92d3001d21aca2d4eba11b40a62820b0a6fef14c9a8d160",
+          "bytes": 44463,
+          "pages": 5
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "4e32b72e73ecf2724ba462b6ffb70544349065d02de0e9dae1b52f3d17fe9c9b",
+          "bytes": 44289,
+          "pages": 5
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "59cad1ccb78cd07be2a4c2857bf4d8ef451eaf6920d8048aa4241c90c5223cd6",
+          "bytes": 7266,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "applicant-evidence-studio",
+      "publishedCommit": "f75bee5572afe65baebe26c00d0e86e2983d1527",
+      "sourceBaseline": "2742474af85014e849fe38796be1cdb8215e140e",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "c50699ff90bb425b89b53f8647ead97dff779d6d5f03935cc623de2f4d04cb5f",
+          "bytes": 154843,
+          "pages": 7
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "6059864d06a4c95eec4f3394637317a385c0e361225dae8f6413d09c7484eb5e",
+          "bytes": 46802,
+          "pages": 6
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "3329055813782726342abc966c077dbae42071a83f31c7a4197959a6436d9693",
+          "bytes": 7523,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "spacecraft-flight-software-testbed",
+      "publishedCommit": "2eb4f80334fc94ed1314a7c0c294001ca2dfc754",
+      "sourceBaseline": "5f9dc95ad5df564373d1304b13e4bb2464d13842",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "f02a3966fdd2a1342211fefe8be310ee19f0f9f924ae5691c50cd6fcc10255c9",
+          "bytes": 90755,
+          "pages": 5
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "b0d8f6411d24d71f7a92a1161964f94dbb4552abe08fd6e64ba610273c7cf270",
+          "bytes": 42146,
+          "pages": 3
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "68f990ad988d3e9d859d50207771594b6be0459899b733b5fc32df600f48aa7d",
+          "bytes": 7390,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "spacecraft-telemetry-anomaly-studio",
+      "publishedCommit": "b223360087209d3fd89026cb1a5895f9d5535871",
+      "sourceBaseline": "616b8cc92be09622443e103cdc201ce1d0c16a55",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "3cb445410a6035b564385cd49a4e2bebc5bf2897658cabb5f2680d8fdffe9d7e",
+          "bytes": 105884,
+          "pages": 4
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "6ef9f87f4d56b52801951c2f23c1d2f19ac2404b1192b82487d76bdb5d3545cb",
+          "bytes": 41850,
+          "pages": 3
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "71df134b061db10702612ad0207c2696621a66afd694308f3ad80423a2902908",
+          "bytes": 7404,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "mission-contact-resource-scheduler",
+      "publishedCommit": "b683d5978694817c0cbfe8924c0bc7636f52faf8",
+      "sourceBaseline": "4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "c15c49dfbd42904296ce1d8db7ec231c71d1e941fc7028f23fd4a24085530610",
+          "bytes": 75458,
+          "pages": 4
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "24d72d6f5a06d5d64167e820d7b188ad1db1b0fecced179158ffcdd540d7d377",
+          "bytes": 41883,
+          "pages": 3
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "e5cd3929e049074c361261063425dd34523020dd83d25d9f55a8b66fd9c0ba6a",
+          "bytes": 7380,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "spacecraft-power-thermal-lab",
+      "publishedCommit": "0efbd8ef95f5d36e700c320276c641cca7d342d4",
+      "sourceBaseline": "5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "362bc893cb3dd0f503c5c5d7c799e962200d0489f87e7940e2d1d9bc6c22f059",
+          "bytes": 72652,
+          "pages": 5
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "5c531f1d73cf21c572bf4f47a1fcb98391c673263ab12ba83e1c50ebbcbf10c5",
+          "bytes": 42062,
+          "pages": 3
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "38af8d179e953d9a3aafab890230a6178ed6b247667ecb9cc91705317a076c5c",
+          "bytes": 7396,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "mission-verification-evidence-kit",
+      "publishedCommit": "9bf556a473e078fa61b79aff3db8381d7c714f36",
+      "sourceBaseline": "2743307a90da1621392fcafa138b6e103db751d5",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "65699c69e4e0ec36ab5d8a05949be4c145d02cb17ecb0b27171f7397328cb4dc",
+          "bytes": 43160,
+          "pages": 4
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "d493b5e2078d2113db685c545486a657621c9dd3d5637e9c538b0f97474e72c2",
+          "bytes": 41986,
+          "pages": 3
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "5acef53e65fea7bae3d870d1858aee02319e3aa9c501950904fad0282b8da028",
+          "bytes": 7465,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "orbital-safety-workbench",
+      "publishedCommit": "33e521441cf3ada728d6b907fe2954b7d572b39e",
+      "sourceBaseline": "89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "32d4c77b2bfa550fa56cf667f0dbb9315d7bee1e3880bc5fd19117bdd38f363d",
+          "bytes": 86702,
+          "pages": 4
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "5f9947a140161a248192484e2310d97e0e4ad909071052614d1a7e38eafbffa0",
+          "bytes": 43782,
+          "pages": 4
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "7cc31b5ecf47e1492203689aca3425f9488d1ddf0507e221deb556c961a434b7",
+          "bytes": 7352,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "ccsds-telemetry-integrity-lab",
+      "publishedCommit": "a169137404c7f51f88d044153af3f648aeaa4eda",
+      "sourceBaseline": "97f729a525aab8c9388c24db26748c475c88d82d",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "39a508a6eb32aa2965b95a5d91c8e96d53ca1d8bc44d0f82df93d5f9ab9276c1",
+          "bytes": 84254,
+          "pages": 5
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "3fdbd3d23ce788a48e182226aa8f26ec2a05bedefc729541130419bfb7a30b6d",
+          "bytes": 42092,
+          "pages": 3
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "a772669cc9b93ed7198535253eb6c6137cf5465aae7938c0ff4a074c6d3887f0",
+          "bytes": 7357,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "delay-tolerant-mission-network-lab",
+      "publishedCommit": "a6c20ce62777729c95efd41367100e706ce507b6",
+      "sourceBaseline": "df32f632dc89a329cfdd4eaf9c9f7b7248f8f5ac",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "549e724615e395421f8ef32cf14aa7582d81f53c0db52cced4566bfa7e70bef1",
+          "bytes": 75574,
+          "pages": 5
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "08acc6ff81578a1ed0c74550c0e90f00e5a00a563506d4330e2332ed821cfca2",
+          "bytes": 43747,
+          "pages": 4
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "ad0404f7926bc193373af618d0255822c786942fd50771cf17709550b906cd74",
+          "bytes": 7385,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "earth-observation-change-studio",
+      "publishedCommit": "99c072b8e6f4e5271234425f212cf37308a1c7bb",
+      "sourceBaseline": "e63d4d111512a36d1ffb19a04059b4d8965ac5d2",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "b793919ec1d957cb35cdfdd13f36b3f41cc0005a25b1e2ef287d5f6b238c32bf",
+          "bytes": 86907,
+          "pages": 5
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "6f9e10dd31cbb98efd6c5b9dfbcac0541a4ca18683446e75edee22120cc20d3f",
+          "bytes": 43556,
+          "pages": 4
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "fe458d035e54d1d34b750db92d276ff2a9b148e9d5800a251b273dfbfc8ceac8",
+          "bytes": 7366,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "mission-clock-integrity-lab",
+      "publishedCommit": "143c822001b3094b5acee2b12145bed2fa4d1d56",
+      "sourceBaseline": "1af9738149716f944cc74a3c577746bea35194db",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "2c60fe37e41f5e599bbdba808c336a78c5515787b680b4430eb4d905f048ee67",
+          "bytes": 83165,
+          "pages": 4
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "cb813cb825f475a032b8d63b42bd23213fdef724e931ac37b0c8fee187fa45de",
+          "bytes": 43709,
+          "pages": 4
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "83e68fa588e7624e5329cd799e2e69025578da2b1aa5dcf9dd318bf8e2bc9b16",
+          "bytes": 7377,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "resilient-energy-microgrid-lab",
+      "publishedCommit": "495d1c2100536cd3461394d84d4ec64ee337542e",
+      "sourceBaseline": "39a16658fbb68bc2558aea4bf60ab74253ef2aba",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "d86f2b5904aa5fb7dfa49230b2c75a66694cc733b4a4a76d898614d8a7e0717c",
+          "bytes": 88521,
+          "pages": 3
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "6c50f4de1f8e087bd6c49d54f866a48971b7c27b0a2df7ae43c9fd7969ff43df",
+          "bytes": 43628,
+          "pages": 4
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "afe1e0f4fd809739089cdf77b3216755a799ec77d8484753d0e4c0477832b4b3",
+          "bytes": 7431,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "scientific-sensor-calibration-lab",
+      "publishedCommit": "381d4c11d3f3b3aca8afbb2e02d0bafdf49afe4a",
+      "sourceBaseline": "1bdb2244451af67d90600e60c566435b66ea2bd0",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "846ae95c7f14e24eb6bbf10fd18daecd0a6dbb4a8d027cd1e758f23526263afe",
+          "bytes": 82738,
+          "pages": 4
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "d2ff152182347f251f1c310c16edd8972d60d6451b61c91b05d9edd3ad4d28c2",
+          "bytes": 43612,
+          "pages": 4
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "bccd626774400ff04028b48fcb3d6c0f977c2e85d9c0178660bd37d325d7a243",
+          "bytes": 7425,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "space-weather-impact-observatory",
+      "publishedCommit": "d8885775ab5ba8812b528ac6a77f27c30d4adbd4",
+      "sourceBaseline": "5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "e0c377863d636891e73c67d4d0dd5d266f5199de4fe1406c33dbbfcf2c1878c8",
+          "bytes": 79437,
+          "pages": 4
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "9e79997a55775aeec5c29a38aecbd2d9ac4b3e9bcd81a1781e013c97e6abfde4",
+          "bytes": 43606,
+          "pages": 4
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "e0fdad9dda982002f800f3eb79454feae59cacc5681f990d2abb00c86e4c2549",
+          "bytes": 7379,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "reactor-systems-simulator",
+      "publishedCommit": "110631d9e93c24eea9166efe49247ed131452d93",
+      "sourceBaseline": "a6d4fc55f12681c5b5bdec1dcd09ddb801d94683",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "b9db0394d443879568faff22db39a321db087a7f96ffa500fe20a397b6736a04",
+          "bytes": 90303,
+          "pages": 4
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "df8cc7bb8302e529fdf6301c1ae6bbb5709f5f7a0067e11bcc650591fc34aaa2",
+          "bytes": 43667,
+          "pages": 4
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "6a668366b06626ad045462f2010ffb2cd0aa37c397b7b07def018e4ba059b168",
+          "bytes": 7388,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "drone-operations-console",
+      "publishedCommit": "237a26243f625f6d3e832bcff78fd894ae7a5c4a",
+      "sourceBaseline": "176209ed96178351a3265676ae8d50396503b9ca",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "c74ebdfe430779c3670b1d53bfe00dc1dac7943cb71df9a424ef9b80ce765221",
+          "bytes": 44532,
+          "pages": 5
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "c69a6bb35dd2e52033200a5f5cde4f5461d91f9034625020309f137cbbc76d43",
+          "bytes": 44248,
+          "pages": 4
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "6519757c3f996c95ccea56a7af4e2e675f2035db28b225560bffe9d134d51b8e",
+          "bytes": 7434,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "mavlink-sitl-assurance-lab",
+      "publishedCommit": "ee8cbc8d69594b4dbddbb70aac2fd94568c96787",
+      "sourceBaseline": "9705148c159ca546a85c2f9bc174a881b6556bc3",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "ae751f52206826baa797edf1c4be7bf1353caa45d2c134ec9a53b2491fe21533",
+          "bytes": 47213,
+          "pages": 7
+        }
+      ]
+    },
+    {
+      "name": "first-response-drone-coordinator",
+      "publishedCommit": "76179271c372adf6a6c4e14bb4af0754f2eb96e3",
+      "sourceBaseline": "26aa28b2fe772506d1dfcc0a388a1bea94802897",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "f1dc800b8d1270c31aa326911882d67d9d347de1348eb5d38e1ba4c38233d084",
+          "bytes": 46744,
+          "pages": 6
+        }
+      ]
+    },
+    {
+      "name": "drone-video-privacy-studio",
+      "publishedCommit": "2ffeb1287cc75bd1c973d3888bcb98d171a86826",
+      "sourceBaseline": "e61722c7780f3114a873ce8187b48104affeca7d",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "afca511bf0bd7412fc92a89dc8543a857c3b9d0a61a50b75c60cd699034b4a1c",
+          "bytes": 46857,
+          "pages": 6
+        }
+      ]
+    },
+    {
+      "name": "drone-maintenance-readiness-studio",
+      "publishedCommit": "1b4b4ae05d3cca157f984fc4df5cdfbe7a0bc1fb",
+      "sourceBaseline": "50109b28e90285a63bbb07ad7a0d146bc6b404c9",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "84d7960e7c1fc0ccbebfdc685c4d7d6912d57d7e8a9910de2f0628ea86f79020",
+          "bytes": 45944,
+          "pages": 6
+        }
+      ]
+    },
+    {
+      "name": "drone-airspace-awareness-lab",
+      "publishedCommit": "8f5809c7f011802f477dbb3a8453e5a604676fd4",
+      "sourceBaseline": "bff39487f0f1c018f52e12eca9eeacc3d07643d1",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "c38ea3c4e242a2486b6796f5f31e9fc10b1b7a290fcafbe1e07dba2e91255681",
+          "bytes": 44870,
+          "pages": 5
+        }
+      ]
+    },
+    {
+      "name": "drone-flight-policy-workbench",
+      "publishedCommit": "ff6ec54e998d93e036c2ecf8777ed44ffab66c7c",
+      "sourceBaseline": "60a40fc4cbfe11cf0237dd7146e0b35cd660c32d",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "81533085816e0ed6a7ce249df2f580c09161118bb4e2008ce143220163052c0a",
+          "bytes": 45748,
+          "pages": 6
+        }
+      ]
+    },
+    {
+      "name": "cloud-job-orchestrator",
+      "publishedCommit": "66953562e528dd2e88397029a5092a57ac9bcda6",
+      "sourceBaseline": "c93ca92be7ffa6bdd4e44f0773cae5146a57ecf4",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "11fa5c52e49a28ab23ff95bc052ecddbf0e26696c840156488418c2f95acd499",
+          "bytes": 46002,
+          "pages": 6
+        }
+      ]
+    },
+    {
+      "name": "integration-operations-console",
+      "publishedCommit": "7789dd296b75f5a711f872c752dfc686ec15e2de",
+      "sourceBaseline": "2563b4154d2e7755516d12911d68c4a32d654905",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "bdfcf6e8253974674753a896b10bb198c0c55c1054de014c95835ee9441fe435",
+          "bytes": 46229,
+          "pages": 6
+        }
+      ]
+    },
+    {
+      "name": "ml-model-lifecycle-observatory",
+      "publishedCommit": "913571b4b02c3b3084294151bc9275f222e525b4",
+      "sourceBaseline": "e3f47233539d2af763b5c30a2575e6544a0ba5d7",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "5d95645c7968979de5403eb0b1abd588036ca6aa1c69c71f31ae5acbbb36cf76",
+          "bytes": 44821,
+          "pages": 5
+        }
+      ]
+    },
+    {
+      "name": "player-telemetry-analytics-platform",
+      "publishedCommit": "278e565c0682c977c6aa2f914b162b7c734228d4",
+      "sourceBaseline": "f83161e7ce500027fe5313bb08e36e9716a94be2",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "cef3f31c966914fd054e7b15acce1b11d504a98b116c2a9ae850e8f94d37f58c",
+          "bytes": 47037,
+          "pages": 7
+        }
+      ]
+    },
+    {
+      "name": "industrial-edge-digital-twin",
+      "publishedCommit": "555db0f4d156aba45684e63694123a5088e84872",
+      "sourceBaseline": "b1562a941fd809b9dd58fcee1fec55081e327f9d",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "284e7aabcd81ce5ee1d48f06857b74871bb6ea4fb8f4bfa448529dd601c356f9",
+          "bytes": 44842,
+          "pages": 6
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "eae23ec567cc13039b3acbe54c7fa61e7bb93ca6b94d2a37bc8ea6ddfe1b4842",
+          "bytes": 45828,
+          "pages": 6
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "4b0adcd8daf0874ccce286de0fe3008bec7b3047a5bda428a2f56056911aa646",
+          "bytes": 7422,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "accessible-design-system-lab",
+      "publishedCommit": "085fdf911ab18aec3ad5701f83485dcdd9653cff",
+      "sourceBaseline": "bd689a5a8b119ed629905f65d90d097ae16acd0e",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "c2c3dfc033caf96971d9a189daa179266447a1929af4ec530e6df436f501a388",
+          "bytes": 45574,
+          "pages": 6
+        }
+      ]
+    },
+    {
+      "name": "edge-vision-deployment-benchmark",
+      "publishedCommit": "e127330a714aafd6ba875e45c82850b386384b80",
+      "sourceBaseline": "a506fe82222da8a8e7e566404dddd88b4f002fd3",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "809a66cd5b5210f72c12fe263a9477b3347179aa62a7e2425628b8f7a775f8ce",
+          "bytes": 45375,
+          "pages": 6
+        }
+      ]
+    },
+    {
+      "name": "secure-service-desk",
+      "publishedCommit": "e315a79d779480e633345bff9197ed936485971a",
+      "sourceBaseline": "561f1a428594d3a12fd71c9c969e8e6f6da4efe3",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "b6296772253f1560b2ed5c9576d69ceb77787f30d063df689c0a2235e26c7ab5",
+          "bytes": 47324,
+          "pages": 8
+        }
+      ]
+    },
+    {
+      "name": "offline-first-field-app",
+      "publishedCommit": "82b08143d14cc2851ed1709010788284371c8a01",
+      "sourceBaseline": "c5471bc43c1a6296c785aeab40310ae227b2d295",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "3dbdb58599c5b63377fbf9cf3c3ebd041660d94ae5f6bb22e8c590e82daba8f1",
+          "bytes": 45215,
+          "pages": 6
+        }
+      ]
+    },
+    {
+      "name": "mips-pipeline-workbench",
+      "publishedCommit": "1ee2cd90c122bda532a66f122b19894621541052",
+      "sourceBaseline": "39e2997102cf0d40068c3d88b58178966fb52c1c",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "7fca662fd2082fe85519037b3e7a226d4fe0984264bce6d25185f7d4e7f9c41b",
+          "bytes": 46304,
+          "pages": 7
+        }
+      ]
+    },
+    {
+      "name": "firmware-release-recovery-lab",
+      "publishedCommit": "af1100df703b549a41cb983246eacf60ee1e503f",
+      "sourceBaseline": "8a89d6fc27a9f283bc26395a91691975daf92c95",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "6a65c614f7c8b5478f7789689ba69f4eb5923d4dc7ab9d75c340e63896b11f04",
+          "bytes": 43667,
+          "pages": 5
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "e8629f39875b97f81ccdaa2b487903f85b9c49596d30b7bfaa084d84fba0a0f3",
+          "bytes": 43572,
+          "pages": 4
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "b2cc7299ae0f5c440566c0c9a48db75f561da7ce9a6b2e369d2ce6f25169de31",
+          "bytes": 7273,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "ot-security-monitor-lab",
+      "publishedCommit": "71cf4b4b43109cb617b9b9c02f9add14848384cd",
+      "sourceBaseline": "88a34d59e7433aeba3e47066840274666fa7f8c3",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "9ceb3bd067625db4895ef49012bb766899ec0dbe2943ffba81e74ba7f6324b3b",
+          "bytes": 43843,
+          "pages": 4
+        }
+      ]
+    },
+    {
+      "name": "industrial-memory-protocol-workbench",
+      "publishedCommit": "44db94432ce0da3ea96623b6785eef2e82698f55",
+      "sourceBaseline": "d4a8492365890c588b846b092d8dd6a691212118",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "62d2f72d30388538d6f0f61dff7f3ab1dcaca5fa5df48eac82db0ae06bf7e751",
+          "bytes": 45289,
+          "pages": 6
+        }
+      ]
+    },
+    {
+      "name": "detection-engineering-lab",
+      "publishedCommit": "278650b7baae614f9b178477852595e812a91b41",
+      "sourceBaseline": "7629605841823ebc7a56317ec2addac6d5ab3e38",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "1760967b99174030f528021f72db7c8b60952096ec96e6d5a9d70755fecce112",
+          "bytes": 44363,
+          "pages": 5
+        }
+      ]
+    },
+    {
+      "name": "sre-observability-workbench",
+      "publishedCommit": "9cd400eb8dee1bb65da45ee2b8ba79a6278dc061",
+      "sourceBaseline": "8027d600ca0f1cb0575e8a23ff0147d3376046cb",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "b63077903a07ba0ff4767c873e16ed3e711e8dfd00e4f49faa75516398035332",
+          "bytes": 44686,
+          "pages": 5
+        }
+      ]
+    },
+    {
+      "name": "gitops-platform-lab",
+      "publishedCommit": "19ad3b17a9ad47ba5f283179524217f46438d68a",
+      "sourceBaseline": "37432ccaecceb7a569b23e5280c678d81f101de9",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "64e579ba9afc0eb1f93fe7e48c4018a47019c625b7d2bc4376fad082a94a959e",
+          "bytes": 44544,
+          "pages": 5
+        }
+      ]
+    },
+    {
+      "name": "container-runtime-security-lab",
+      "publishedCommit": "69a1f10917602b511685154785d76cfb1d1f7d3b",
+      "sourceBaseline": "437ef271990ab763f3d988d7618a0c67346e72c0",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "69be602fb716d7ee7689a7356d95ce68ddaf180e5b974c6f2c70c575cdac35c5",
+          "bytes": 44701,
+          "pages": 5
+        }
+      ]
+    },
+    {
+      "name": "zero-trust-segmentation-lab",
+      "publishedCommit": "7b8e84a0d2eaad3e6fb1bfed9fd18c3bf22334d4",
+      "sourceBaseline": "a685d91f52f89d4d5c5707ec32039b0585ac8fa5",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "1925caade91f46c301b5f233f8922ff579120d71fc5d05803e6a04e127990bdd",
+          "bytes": 43281,
+          "pages": 4
+        }
+      ]
+    },
+    {
+      "name": "application-security-regression-lab",
+      "publishedCommit": "742da63a82d81f5ae5ba3afebbb2204bfa5d4d2b",
+      "sourceBaseline": "4466fed1ebed0c538cc2ea35d96c92c6299b96bf",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "6034cfb6e90bd833c37e60d03af08902ca692dc3612541d1e037083ef2eac9d5",
+          "bytes": 43847,
+          "pages": 4
+        }
+      ]
+    },
+    {
+      "name": "cloud-identity-access-lab",
+      "publishedCommit": "20660be976b9926b8406cf82014dceb6927b2520",
+      "sourceBaseline": "2ffe676fb9ba49ced2902398062cef1ae8f7a5ae",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "4e55460967656009c358e965766c446f5d8cf9f3b694ba79a29cab1518a1fec2",
+          "bytes": 44434,
+          "pages": 4
+        }
+      ]
+    },
+    {
+      "name": "ai-security-evaluation-lab",
+      "publishedCommit": "6ea1b158bccc68764154282da10a7fb1f13f5ff0",
+      "sourceBaseline": "8eaed87a77b787e95a54451c1529a9a184914d6e",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "e61719ee4790d408fea493ca99918f6f64a7cf77e2766d553e62d8eb2a3c1979",
+          "bytes": 43211,
+          "pages": 4
+        }
+      ]
+    },
+    {
+      "name": "infrastructure-policy-lab",
+      "publishedCommit": "8d0effdd46f8e3f0e8f555bf9ca10b18389aba2d",
+      "sourceBaseline": "5db2c9db4fd02cdff61eb4c98ea489ae2d9b48e6",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "c57afa12b4174453f9fa3eb15b37e985e1a392904ddb77dcea2469dd800c4f58",
+          "bytes": 44548,
+          "pages": 5
+        }
+      ]
+    },
+    {
+      "name": "disaster-recovery-drill-lab",
+      "publishedCommit": "566e43b0aa9c5ab4098a0301b26c4f50750cf5ec",
+      "sourceBaseline": "ceb77d8f0d0aafb647c6873adf94c730d6eca168",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "abea4ad7d6bcd6efccfdecf9ec71d0a75a4b50159e3dc14797bbce4d60194575",
+          "bytes": 44894,
+          "pages": 5
+        }
+      ]
+    },
+    {
+      "name": "disconnected-release-kit",
+      "publishedCommit": "a141a50942bcaa8fd230890d8c8a07c6fdf668c1",
+      "sourceBaseline": "fc7251517c832ca6938ebf70b40a8ca13c593edf",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "ebd7184359865a805b335b1f14b64958214ea9046e7e063e093df80aca86539b",
+          "bytes": 43294,
+          "pages": 4
+        }
+      ]
+    },
+    {
+      "name": "incident-response-evidence-kit",
+      "publishedCommit": "2dc1d938f48f019831d2cb9161c56c98baa7bac1",
+      "sourceBaseline": "dbf51a335ec512ad4f1f1485e434c5207eaf62cf",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "71574832a55128345b7288055639039681ff54928530961f50a9222cc233f818",
+          "bytes": 44731,
+          "pages": 5
+        }
+      ]
+    },
+    {
+      "name": "secret-rotation-reliability-lab",
+      "publishedCommit": "c6a0eead7681d9f9f2abd64bbbbdaf7edaa8d1d9",
+      "sourceBaseline": "5a604a11555b38a61c4b7379729ac187ba5e86d2",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "db855b8154a7251a13fbe617ffc34a66441e2d61fda858e960b8314af902bee5",
+          "bytes": 45628,
+          "pages": 6
+        }
+      ]
+    },
+    {
+      "name": "vulnerability-prioritization-console",
+      "publishedCommit": "4b2114d5258bf9de8b8a6ebdec647c7b6b1286a0",
+      "sourceBaseline": "0e96e97353c99d73432d5cbce1ad8bc77c4603ec",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "b55d096ad39f43b5daefa9fa7a65d8eae238b50393c51c1875bad6e040f5b4b9",
+          "bytes": 43331,
+          "pages": 4
+        }
+      ]
+    },
+    {
+      "name": "windows-identity-audit-lab",
+      "publishedCommit": "bb138bdcb5523cad2cf5882279eb534a8e82415d",
+      "sourceBaseline": "b82073c8ae41450b917ec7b3dde9eca40d7d30ea",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "e684f73dc7638fbf1f7641800b8c02abdf7af348def6ab1de3abf328d55ebfe3",
+          "bytes": 44306,
+          "pages": 5
+        }
+      ]
+    },
+    {
+      "name": "network-defense-analysis-lab",
+      "publishedCommit": "303a9ccc6919a3ed0854b4c39d71f5ded5817933",
+      "sourceBaseline": "6f474420416bd319f2384737c8764adf115c2861",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "00be58c2bd939f099a27e81db4f5a849dacb420ed692c22745625cafc34e65d9",
+          "bytes": 43838,
+          "pages": 4
+        }
+      ]
+    },
+    {
+      "name": "memory-safety-analysis-lab",
+      "publishedCommit": "0b24af7591a957afee4ae596a62e974116f99370",
+      "sourceBaseline": "dc68386d9cd6ec62a9ce9d02723f37bb43ad2935",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "56265b1ddf004f211add36f144e819c9d4dd10de91a6eb2ba211c200dd0f3b37",
+          "bytes": 43878,
+          "pages": 4
+        }
+      ]
+    },
+    {
+      "name": "unity-tactical-ai-sandbox",
+      "publishedCommit": "cc4c4353e6f8f76d7c52cfff6938b825debdfcf3",
+      "sourceBaseline": "ea8c250a5112912d67461237788a9657e7eb705d",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "27f72a5a33fc32d8b32c33c729d77ca03346fb4d53b32a536b7268fc7470ec9b",
+          "bytes": 46726,
+          "pages": 7
+        }
+      ]
+    },
+    {
+      "name": "mqtt-lifecycle-reliability-lab",
+      "publishedCommit": "9394847b1ff7ecf0f0006a54e6908804c6fd5b82",
+      "sourceBaseline": "e5c92255e978f36eee169390add6fdff5291fe2f",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "72bfd4f0a3dec22ecb251dd7bde3d2d124076258b2a24352aaaa3618ddecd2b1",
+          "bytes": 45884,
+          "pages": 6
+        }
+      ]
+    },
+    {
+      "name": "offline-incident-timeline-pwa",
+      "publishedCommit": "3ca733428b219010efd4aad36e98814408ba3ba0",
+      "sourceBaseline": "b14606df53ff13e21473ad8c3357050bbbc40abc",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "a8b42591c0284e9d3cb5cc3cd69b77d00170494432cb4a5b4555e86ab43bbb98",
+          "bytes": 46824,
+          "pages": 7
+        }
+      ]
+    },
+    {
+      "name": "documentation-quality-gate",
+      "publishedCommit": "f094066e972ec57318ce2ad6161c66c651f8af3c",
+      "sourceBaseline": "0757e5a18da5e0e8baf98a527d4fb6c54c752420",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "203c4105070e3b2be1c05b3463f4b90a386f93a20414f056de6f269095737ef3",
+          "bytes": 47478,
+          "pages": 8
+        }
+      ]
+    },
+    {
+      "name": "versioned-product-knowledge-portal",
+      "publishedCommit": "e1a025a636874cc954870a74116402dbe60db519",
+      "sourceBaseline": "b3f1942c3b18c7283068192caec764c5bb386a32",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "7d13cf219335b0436002eea6f1b19c1a419abcc935aff21fbff1d82265f8424e",
+          "bytes": 44044,
+          "pages": 5
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "a11f10fbb40bba93f2decb5dfde2e1aa0a892ffcfe16edb6ba454b08530381bd",
+          "bytes": 42452,
+          "pages": 3
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "1cd240266b7a15d48b36045c3c7c536a16d8c5345a6efe64755b62745280a286",
+          "bytes": 7316,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "engineering-documentation-foundry",
+      "publishedCommit": "e1b3a61fd6240e2100c8b16f654aa454515a00af",
+      "sourceBaseline": "dd47b617bca4ffa678b076b4963029b67faa50a5",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "3973681d562ee8c793c93e2775009d530f41b4f83fcb54256eecc064106fffb7",
+          "bytes": 43598,
+          "pages": 5
+        },
+        {
+          "filename": "validation-review.docx",
+          "sha256": "16b553791e93dc3529a7f22e31db307d2768ee3748470f8721cfda59995bffdd",
+          "bytes": 41882,
+          "pages": 3
+        },
+        {
+          "filename": "validation-evidence.xlsx",
+          "sha256": "fa6b016b4d6c9ffeae972dba49c7ab0cc31b35eba260979238b21eec23dee034",
+          "bytes": 7365,
+          "pages": null
+        }
+      ]
+    },
+    {
+      "name": "node-red-resilient-metadata",
+      "publishedCommit": "bb4007f3ee0a9e0aa00178e0580f67d55c41017f",
+      "sourceBaseline": "db08d20afb9088310b76d090c5c12e8964f4676d",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "4ef2613ecda886384eedc503140cc202a143b16480045d0538bb1207eec64400",
+          "bytes": 47261,
+          "pages": 8
+        }
+      ]
+    },
+    {
+      "name": "host-hardening-assurance-lab",
+      "publishedCommit": "385197171bae0f9c985352021fffd4589948ce76",
+      "sourceBaseline": "53068a5cdc70f733211910afd199bb1fd4fac85e",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "f4079ac6521d39f8175d72810c97fd9f93d16bd8a491909fdaefac9f851b9cb1",
+          "bytes": 44224,
+          "pages": 5
+        }
+      ]
+    },
+    {
+      "name": "rmf-evidence-workbench",
+      "publishedCommit": "88d56a07adb9e246a49455eaa1bc9337face9953",
+      "sourceBaseline": "07b1b4973921b831d6eba4a9c7e375d8977863f4",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "70ec04cc80c70c95324ccf9ef8beaa4d6dd1203f06344a6ba183fac16838503f",
+          "bytes": 45097,
+          "pages": 5
+        }
+      ]
+    },
+    {
+      "name": "portfolio-case-study-site",
+      "publishedCommit": "b85b5aff3aef3da7b468482c7780060a50cf4000",
+      "sourceBaseline": "25b7f796b0ca267d4338fefca070dc07642d071d",
+      "documents": [
+        {
+          "filename": "project-guide.docx",
+          "sha256": "10cceb2bb70c6fa10b2b5184b65ad7948e0add8197f07e8e5d4d7c0444264705",
+          "bytes": 50117,
+          "pages": 10
+        }
+      ]
+    }
+  ]
+}

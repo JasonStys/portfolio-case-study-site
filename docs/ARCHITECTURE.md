@@ -34,7 +34,24 @@ The portfolio must help an employer move from a role requirement to inspectable 
 
 ### Content collection
 
-Six Markdown files share one schema. The build rejects missing evidence, invalid repository URLs, out-of-range featured order, and underspecified summaries. Markdown remains readable outside the site.
+Fifteen Markdown files share one schema: six broad featured cases and nine
+reference cases. The build rejects missing evidence, invalid repository URLs,
+out-of-range featured order, and underspecified summaries. Markdown remains
+readable outside the site.
+
+### Source-bound project updates
+
+The 66 domain improvement records are build-only inputs, separately validated
+against the complete approved catalog. Every record binds its source and report
+to the same immutable commit and keeps review/workflow links in that repository's
+GitHub namespace. Public plain text has bounded lengths; unexpected fields,
+unknown or duplicate projects, and missing limitations fail the build. All 67
+project routes render statically. The hub has a separate current-CI explanation
+without manufacturing self-verification for an unpublished commit.
+
+Long descriptions and evidence are not imported by the client search module.
+Search retains its compact catalog/index contract. See
+[Project upgrades](PROJECT_UPGRADES.md) for collection and maintenance boundaries.
 
 ### Repository cache and curation
 

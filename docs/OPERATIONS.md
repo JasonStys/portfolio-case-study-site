@@ -35,16 +35,18 @@ or outcomes, and review its generated README table before committing.
 6. Open the environment URL from the deployment job.
 7. Smoke-test overview → project filter → case study → repository.
 8. Confirm `sitemap.xml`, `feed.xml`, and `search-index.json` return successfully.
-9. Set `PORTFOLIO_BASE_URL=https://jasonstys.github.io/portfolio-case-study-site/`
-   in the process environment and run `npm run test:e2e` for the full deployed-site
-   acceptance suite. Remove the variable afterward to restore local preview mode.
+9. Verify the official public Pages URL with a separate read-only smoke journey.
+   `npm run test:e2e` always starts its own exact production-build preview; it
+   cannot adopt an existing local listener or a caller-supplied external URL.
 
 The search index uses schema 2 with a revisioned request URL. Its build-time
-SHA-256 identity includes the reviewed catalog and metadata timestamp, so an
+SHA-256 identity includes the reviewed catalog, metadata timestamp and tokenizer
+semantic revision, so an
 editorial-only description or ordering change invalidates the URL even without
 a full GitHub metadata refresh. The index's `generatedFrom` value matches that
 revision; browser tests check the binding. This is a cache identity, not an
-approval signature. Node crypto stays in build-only code. This is a public static portfolio; there
+approval signature. Bump `SEARCH_TOKENIZATION_REVISION` when tokenization rules
+change, even if the index's wire schema stays the same. Node crypto stays in build-only code. This is a public static portfolio; there
 are no visitor accounts, private project data, remote AI calls or analytics.
 Check Actions storage before remote validation; do not delete runs, artifacts or
 caches, or alter retention policy, without fresh authorization.

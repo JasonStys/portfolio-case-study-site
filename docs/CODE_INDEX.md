@@ -18,8 +18,7 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 9 | variable | `external` |
-| 10 | variable | `baseURL` |
+| 9 | variable | `baseURL` |
 
 ## `scripts/benchmark-search.ts`
 
@@ -46,6 +45,32 @@
 | 65 | variable | `metrics` |
 | 71 | variable | `report` |
 | 82 | variable | `failures` |
+
+## `scripts/check-owned-preview.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 18 | function | `request` |
+| 20 | variable | `timer` |
+| 21 | variable | `failed` |
+| 25 | variable | `outgoing` |
+| 28 | variable | `body` |
+| 49 | function | `main` |
+| 52 | variable | `temporary` |
+| 53 | variable | `directory` |
+| 60 | variable | `count` |
+| 61 | variable | `stall` |
+| 62 | variable | `sentinel` |
+| 66 | variable | `preview` |
+| 72 | variable | `port` |
+| 95 | variable | `base` |
+| 96 | variable | `home` |
+| 100 | variable | `head` |
+| 106 | variable | `missing` |
+| 117 | variable | `result` |
+| 124 | variable | `symlinkTest` |
+| 127 | variable | `escaped` |
+| 144 | variable | `target` |
 
 ## `scripts/generate-code-index.mjs`
 
@@ -109,28 +134,49 @@
 | 19 | variable | `RUN_COUNT` |
 | 20 | variable | `CATEGORY_BUDGETS` |
 | 21 | variable | `AUDIT_BUDGETS` |
-| 28 | function | `waitForServer` |
-| 31 | variable | `response` |
-| 41 | function | `launchPreview` |
-| 42 | variable | `astroExecutable` |
-| 55 | function | `isWindowsCleanupError` |
-| 56 | variable | `code` |
-| 60 | function | `stopChrome` |
-| 69 | function | `runAudit` |
-| 70 | variable | `chrome` |
-| 76 | variable | `result` |
-| 98 | function | `median` |
-| 101 | variable | `sorted` |
-| 105 | function | `summarize` |
-| 106 | variable | `categories` |
-| 108 | variable | `scores` |
-| 112 | variable | `audits` |
-| 123 | function | `enforceBudgets` |
-| 124 | variable | `failures` |
-| 132 | function | `main` |
-| 134 | variable | `preview` |
-| 137 | variable | `results` |
-| 140 | variable | `summary` |
+| 28 | function | `isWindowsCleanupError` |
+| 29 | variable | `code` |
+| 33 | function | `stopChrome` |
+| 42 | function | `runAudit` |
+| 43 | variable | `chrome` |
+| 49 | variable | `result` |
+| 71 | function | `median` |
+| 74 | variable | `sorted` |
+| 78 | function | `summarize` |
+| 79 | variable | `categories` |
+| 81 | variable | `scores` |
+| 85 | variable | `audits` |
+| 96 | function | `enforceBudgets` |
+| 97 | variable | `failures` |
+| 105 | function | `main` |
+| 107 | variable | `preview` |
+| 109 | variable | `results` |
+| 112 | variable | `summary` |
+
+## `scripts/owned-preview.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 12 | variable | `ROOT` |
+| 13 | variable | `DIST` |
+| 14 | variable | `BASE` |
+| 15 | variable | `MIME` |
+| 31 | function | `checkedPort` |
+| 32 | variable | `port` |
+| 44 | function | `startOwnedPreview` |
+| 46 | variable | `root` |
+| 48 | variable | `server` |
+| 56 | function | `serve` |
+| 69 | variable | `raw` |
+| 70 | variable | `pathname` |
+| 87 | variable | `relative` |
+| 88 | variable | `candidate` |
+| 94 | variable | `status` |
+| 105 | variable | `body` |
+| 129 | function | `main` |
+| 130 | variable | `args` |
+| 133 | variable | `preview` |
+| 134 | variable | `stop` |
 
 ## `scripts/refresh-github-metadata.mjs`
 
@@ -187,31 +233,40 @@
 | 13 | variable | `DIST` |
 | 14 | variable | `BASE` |
 | 15 | variable | `REQUIRED_OUTPUTS` |
-| 29 | variable | `BUDGETS` |
-| 36 | function | `collectFiles` |
-| 37 | variable | `entries` |
-| 38 | variable | `files` |
-| 40 | variable | `absolute` |
-| 47 | function | `targetForUrl` |
-| 48 | variable | `pathname` |
-| 50 | variable | `relative` |
-| 56 | function | `validateHtml` |
-| 57 | variable | `html` |
-| 67 | variable | `urls` |
-| 69 | variable | `target` |
-| 75 | variable | `inlineJavaScript` |
-| 81 | function | `validateBudgets` |
-| 82 | variable | `javascript` |
-| 83 | variable | `css` |
-| 84 | variable | `compressedSize` |
-| 90 | variable | `metrics` |
-| 98 | variable | `failures` |
-| 106 | function | `main` |
-| 108 | variable | `files` |
-| 109 | variable | `htmlFiles` |
-| 110 | variable | `htmlSizes` |
-| 111 | variable | `inlineJavaScript` |
-| 113 | variable | `result` |
+| 30 | variable | `BUDGETS` |
+| 37 | function | `collectFiles` |
+| 38 | variable | `entries` |
+| 39 | variable | `files` |
+| 41 | variable | `absolute` |
+| 48 | function | `targetForUrl` |
+| 49 | variable | `pathname` |
+| 51 | variable | `relative` |
+| 57 | function | `validateHtml` |
+| 58 | variable | `html` |
+| 68 | variable | `urls` |
+| 70 | variable | `target` |
+| 76 | variable | `inlineJavaScript` |
+| 82 | function | `validateBudgets` |
+| 83 | variable | `javascript` |
+| 84 | variable | `css` |
+| 85 | variable | `compressedSize` |
+| 91 | variable | `metrics` |
+| 99 | variable | `failures` |
+| 107 | function | `main` |
+| 109 | variable | `names` |
+| 112 | variable | `upgrades` |
+| 115 | variable | `index` |
+| 116 | variable | `renderedNames` |
+| 119 | variable | `updates` |
+| 120 | variable | `updateNames` |
+| 125 | variable | `sitemap` |
+| 127 | variable | `detail` |
+| 129 | variable | `upgrade` |
+| 141 | variable | `files` |
+| 142 | variable | `htmlFiles` |
+| 143 | variable | `htmlSizes` |
+| 144 | variable | `inlineJavaScript` |
+| 146 | variable | `result` |
 
 ## `scripts/validate-repository.mjs`
 
@@ -314,7 +369,7 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 11 | function | `catalogRevision` |
+| 12 | function | `catalogRevision` |
 
 ## `src/lib/catalog.ts`
 
@@ -353,31 +408,68 @@
 | Line | Kind | Symbol |
 | ---: | --- | --- |
 | 9 | variable | `TOKEN_PATTERN` |
-| 10 | variable | `facetKeys` |
-| 17 | function | `tokenize` |
-| 18 | variable | `normalized` |
-| 22 | function | `addPosting` |
-| 23 | variable | `postings` |
-| 28 | function | `serializeMap` |
-| 38 | function | `buildSearchIndex` |
-| 42 | variable | `terms` |
-| 43 | variable | `facets` |
-| 48 | variable | `searchable` |
-| 60 | variable | `values` |
-| 77 | function | `intersectOrdered` |
-| 84 | function | `searchProjectIds` |
-| 89 | variable | `matches` |
-| 91 | variable | `postings` |
-| 95 | variable | `selections` |
-| 103 | variable | `key` |
-| 104 | variable | `allowed` |
-| 108 | variable | `name` |
+| 10 | variable | `SEARCH_TOKENIZATION_REVISION` |
+| 11 | variable | `facetKeys` |
+| 19 | function | `tokenize` |
+| 20 | variable | `normalized` |
+| 21 | variable | `tokens` |
+| 27 | function | `addPosting` |
+| 28 | variable | `postings` |
+| 33 | function | `serializeMap` |
+| 43 | function | `buildSearchIndex` |
+| 47 | variable | `terms` |
+| 48 | variable | `facets` |
+| 53 | variable | `searchable` |
+| 65 | variable | `values` |
+| 82 | function | `intersectOrdered` |
+| 89 | function | `searchProjectIds` |
+| 94 | variable | `matches` |
+| 96 | variable | `postings` |
+| 100 | variable | `selections` |
+| 108 | variable | `key` |
+| 109 | variable | `allowed` |
+| 113 | variable | `name` |
 
 ## `src/lib/types.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
 | — | file | No declarations indexed |
+
+## `src/lib/upgrades.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 10 | variable | `UPGRADE_SCOPE` |
+| 12 | variable | `DOMAIN_NAMES` |
+| 15 | variable | `SHA` |
+| 37 | function | `requireObject` |
+| 40 | variable | `record` |
+| 50 | function | `requireText` |
+| 66 | function | `exactUrl` |
+| 72 | function | `validateUpgrades` |
+| 73 | variable | `envelope` |
+| 79 | variable | `collectedAt` |
+| 89 | variable | `names` |
+| 90 | variable | `repositories` |
+| 91 | variable | `item` |
+| 106 | variable | `name` |
+| 110 | variable | `sourceCommit` |
+| 112 | variable | `base` |
+| 113 | variable | `sourceUrl` |
+| 114 | variable | `reviewUrl` |
+| 115 | variable | `reviewPrefix` |
+| 121 | variable | `validationReportUrl` |
+| 126 | variable | `reportPrefix` |
+| 127 | variable | `reportPath` |
+| 141 | variable | `limitations` |
+| 148 | variable | `workflows` |
+| 149 | variable | `workflow` |
+| 150 | variable | `url` |
+| 151 | variable | `runPrefix` |
+| 181 | variable | `upgradeManifest` |
+| 182 | variable | `upgradesByName` |
+| 185 | function | `projectUpgrade` |
 
 ## `src/lib/url.ts`
 
@@ -448,6 +540,15 @@
 | 22 | variable | `droneHighlights` |
 | 25 | variable | `profileSchema` |
 
+## `src/pages/projects/[name].astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 14 | function | `getStaticPaths` |
+| 23 | variable | `upgrade` |
+| 24 | variable | `isHub` |
+| 26 | variable | `observedAt` |
+
 ## `src/pages/projects/index.astro`
 
 | Line | Kind | Symbol |
@@ -479,8 +580,9 @@
 | 12 | variable | `prerender` |
 | 14 | variable | `GET` |
 | 15 | variable | `caseStudyPaths` |
-| 22 | variable | `paths` |
-| 23 | variable | `urls` |
+| 22 | variable | `projectPaths` |
+| 23 | variable | `paths` |
+| 33 | variable | `urls` |
 
 ## `src/pages/space-systems.astro`
 
@@ -490,6 +592,12 @@
 | 15 | variable | `collection` |
 | 16 | variable | `highlights` |
 | 17 | variable | `project` |
+
+## `src/pages/updates/index.astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| — | file | No declarations indexed |
 
 ## `src/scripts/project-filter.ts`
 
@@ -541,30 +649,55 @@
 | 64 | custom property | `--radius` |
 | 65 | custom property | `--radius-lg` |
 | 66 | custom property | `--shell` |
-| 994 | custom property | `--shell` |
+| 1068 | custom property | `--shell` |
 
 ## `tests/e2e/portfolio.spec.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
 | 37 | variable | `featured` |
-| 44 | variable | `result` |
-| 59 | variable | `links` |
-| 79 | variable | `workbench` |
-| 88 | variable | `catalogEntry` |
-| 151 | variable | `context` |
-| 156 | variable | `page` |
-| 162 | variable | `response` |
-| 177 | variable | `scan` |
-| 213 | variable | `skipLink` |
-| 223 | variable | `results` |
-| 234 | variable | `bodyWidth` |
-| 236 | variable | `cards` |
-| 237 | variable | `first` |
-| 238 | variable | `second` |
-| 258 | variable | `revision` |
-| 260 | variable | `search` |
-| 262 | variable | `index` |
+| 48 | variable | `result` |
+| 70 | variable | `links` |
+| 90 | variable | `workbench` |
+| 99 | variable | `catalogEntry` |
+| 160 | variable | `context` |
+| 165 | variable | `page` |
+| 171 | variable | `response` |
+| 186 | variable | `scan` |
+| 222 | variable | `skipLink` |
+| 232 | variable | `results` |
+| 243 | variable | `bodyWidth` |
+| 245 | variable | `cards` |
+| 246 | variable | `first` |
+| 247 | variable | `second` |
+| 251 | variable | `navigation` |
+| 252 | variable | `links` |
+| 256 | variable | `rows` |
+| 259 | variable | `box` |
+| 275 | variable | `about` |
+| 295 | variable | `revision` |
+| 297 | variable | `search` |
+| 299 | variable | `index` |
+
+## `tests/e2e/upgrades.spec.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 16 | variable | `context` |
+| 21 | variable | `page` |
+| 28 | variable | `longest` |
+| 30 | variable | `card` |
+| 37 | variable | `record` |
+| 47 | variable | `response` |
+| 49 | variable | `html` |
+| 51 | variable | `evidence` |
+| 68 | variable | `external` |
+| 69 | variable | `origin` |
+| 81 | variable | `record` |
+| 114 | variable | `longest` |
+| 166 | variable | `unknown` |
+| 169 | variable | `sitemap` |
+| 170 | variable | `urls` |
 
 ## `tests/unit/catalog.test.ts`
 
@@ -572,24 +705,39 @@
 | ---: | --- | --- |
 | 25 | variable | `revision` |
 | 28 | variable | `edited` |
-| 53 | variable | `index` |
-| 72 | variable | `names` |
-| 78 | variable | `project` |
-| 82 | variable | `index` |
-| 91 | variable | `names` |
-| 97 | variable | `index` |
-| 119 | variable | `references` |
-| 120 | variable | `reversed` |
-| 127 | variable | `languages` |
-| 159 | variable | `repository` |
-| 160 | variable | `envelope` |
+| 40 | variable | `oldCatalogOnlyRevision` |
+| 60 | variable | `index` |
+| 79 | variable | `names` |
+| 85 | variable | `project` |
+| 89 | variable | `index` |
+| 98 | variable | `names` |
+| 104 | variable | `index` |
+| 126 | variable | `references` |
+| 127 | variable | `reversed` |
+| 134 | variable | `languages` |
+| 166 | variable | `repository` |
+| 167 | variable | `envelope` |
 
 ## `tests/unit/search.test.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
 | 11 | variable | `index` |
-| 57 | variable | `bytes` |
+| 30 | variable | `first` |
+| 32 | variable | `fixture` |
+| 43 | variable | `isolated` |
+| 88 | variable | `bytes` |
+
+## `tests/unit/upgrades.test.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 13 | function | `changed` |
+| 14 | variable | `copy` |
+| 15 | variable | `first` |
+| 21 | variable | `invalid` |
+| 311 | variable | `url` |
+| 321 | variable | `base` |
 
 ## `tests/unit/utilities.test.ts`
 

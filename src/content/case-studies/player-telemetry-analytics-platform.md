@@ -1,43 +1,48 @@
 ---
 title: "Player telemetry that can be trusted"
 repository: "https://github.com/JasonStys/player-telemetry-analytics-platform"
-summary: "A privacy-aware analytics system that turns synthetic gameplay events into validated timelines, funnels, cohorts, and anomaly reviews."
+summary: "Synthetic player analytics with receipt-time acquisition cohorts, consistent cross-platform follow-up and explicit mature versus incomplete retention windows."
 role: "Data engineering and product analytics"
 languages: ["Python", "SQL", "TypeScript"]
 evidence:
   [
-    "SQL-first transformations",
-    "Data-quality contracts",
-    "Cohort and funnel tests",
-    "Accessible analytics UI",
+    "SQL quality contracts",
+    "Receipt-time cohort review",
+    "Independent retention oracle",
+    "Actual analyst browser journey",
   ]
 ---
 
 ## Problem
 
-Gameplay dashboards are only useful when event identity, ordering, session boundaries, and late data are handled consistently. A visually convincing chart can still be wrong if the underlying transformation silently duplicates players or shifts funnel denominators.
+A retention chart can mislead when late-arriving events change what was known at an earlier time or when recent players are counted as failures before their follow-up window matures. Acquisition filters must also remain consistent with later activity across platforms.
 
 ## Constraints
 
-- Fixtures must be synthetic and contain no real player or employer data.
-- Local development should remain lightweight while preserving production-shaped SQL.
-- Every metric needs a traceable definition and a reproducible fixture.
-- The interface must communicate uncertainty and data-quality failures.
+Use synthetic records and explicit UTC receipt cutoffs. Acquisition filters must not exclude later cross-platform follow-up. Only mature members belong in a retention denominator; missing follow-up opportunity is not a measured zero or proof of churn.
 
 ## Design
 
-Python validates ingestion envelopes and writes columnar fixtures. SQL transformations build canonical events, sessions, funnel stages, retention cohorts, and anomaly candidates in DuckDB locally, with PostgreSQL integration coverage for portability. A TypeScript dashboard exposes metric definitions beside the visual result.
+Python ingestion validation and SQL transformations produce canonical events, timelines, funnels and analytics from synthetic fixtures. DuckDB keeps local review lightweight; a separate PostgreSQL integration path checks supported portability.
 
-Stable event keys and explicit time windows make reruns idempotent. Quality checks reject missing identifiers, impossible timestamps, duplicate events, and schema drift before analytical tables are published.
+A dedicated analyst panel now defines acquisition membership using the first visible event under a UTC receipt cutoff. Date, platform and version filters describe that acquisition event; later cross-platform activity still counts. One read transaction keeps membership, totals and exact-day D0/D1/D7 rates coherent.
+
+An analyst can compare what was known at two cutoffs, inspect mature, retained and censored counts, and distinguish a measured zero from an unknown rate. Fully immature windows remain null. Empty filters, future dates and request failures are explicit rather than leaving an old chart visible. Other dashboard panels remain labeled as global.
 
 ## Verification
 
-Unit and property tests cover event normalization. Golden SQL fixtures assert exact funnel and cohort outputs. Integration tests compare supported database behavior, while browser and accessibility tests validate filtering, detail views, keyboard use, and chart alternatives.
+A hand-calculated event oracle checks late arrival, cutoff membership, maturity and exact retention. Timezone mutation tests preserve UTC results. Actual isolated API/browser journeys compare table contents with responses and exercise null, empty, invalid-date and stale-result states.
 
 ## Measured result
 
-The project produces repeatable player timelines and funnels from the same source fixture and makes rejected rows visible rather than hiding them. Query plans and benchmark evidence document the indexes and transformations that matter.
+The report records **32 non-PostgreSQL tests at 97.60% branch-inclusive coverage**. A hand-calculated event fixture checks cutoff membership, cross-platform follow-up, later-arriving data, a D7 rate of 0.5, censored windows and exact filters. Changing the database session timezone leaves UTC results unchanged.
+
+**10 frontend tests** cover null versus zero, no matches, failures and stale results; line, statement and function coverage is 100%, with 89.83% branches. **Three actual Chromium/API journeys** use fresh disposable data and test the populated cohort table, request reconciliation, Axe, narrow-screen focus and existing drilldown navigation. No mocked HTTP response substitutes for the backend.
+
+Accepted source: [`f83161e7ce500027fe5313bb08e36e9716a94be2`](https://github.com/JasonStys/player-telemetry-analytics-platform/tree/f83161e7ce500027fe5313bb08e36e9716a94be2). The [change report](https://github.com/JasonStys/player-telemetry-analytics-platform/blob/f83161e7ce500027fe5313bb08e36e9716a94be2/docs/reports/practical-workflows-20261109.md) records the executed scope and results. Exact-main workflow records passed: [CI](https://github.com/JasonStys/player-telemetry-analytics-platform/actions/runs/42720166549), [CodeQL](https://github.com/JasonStys/player-telemetry-analytics-platform/actions/runs/42720166520).
+
+The accepted CI also passed its mandatory PostgreSQL and container checks; those are distinct from the local test counts above.
 
 ## Limitations
 
-The workload is synthetic and intentionally bounded. It does not claim the throughput of a managed warehouse, and the anomaly review is a decision aid rather than an automated player classification system.
+Only synthetic local data is supported here; the application has no authentication for real player records. Receipt cutoffs do not establish completeness, causality or statistical confidence. Review uses retained accepted data, not a historical database-revision archive. Earlier downloads have not been rebuilt for this update; use the accepted source.

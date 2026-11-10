@@ -35,7 +35,9 @@
 - [ ] Check mobile width, keyboard focus, social metadata source, feed, sitemap, robots, and 404.
 - [ ] Confirm repository homepage points to the deployed URL.
 - [ ] Confirm no release-blocking changes, security alerts, task-created temporary branches or local edits remain; leave unrelated proposals and intentional branches unchanged.
-- [ ] Run the full deployed-site browser suite using `PORTFOLIO_BASE_URL`.
+- [ ] Run a separate read-only smoke journey against the official Pages URL and
+      compare deployed project evidence to the approved source. The full browser
+      suite always owns its production-build preview; it cannot adopt another server.
 - [ ] Record final run links and measurements in the handoff.
 
 ## Rollback triggers

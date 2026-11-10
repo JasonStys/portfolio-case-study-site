@@ -1,38 +1,46 @@
 ---
 title: "Accessibility as a component contract"
 repository: "https://github.com/JasonStys/accessible-design-system-lab"
-summary: "A native-first React component package where keyboard behavior, focus, reduced motion, RTL layout, packaging, and bundle size are tested API guarantees."
+summary: "Native-first React components with sortable, paginated tables, explicit data states, keyboard focus contracts and tested package boundaries."
 role: "Frontend and design-system engineering"
 languages: ["TypeScript", "JavaScript", "HTML", "CSS"]
 evidence:
-  ["WCAG-focused interactions", "Storybook documentation", "Package smoke tests", "Bundle budgets"]
+  [
+    "Stable sorting and pagination",
+    "Keyboard and RTL journeys",
+    "Consumer package smoke",
+    "Measured bundle budgets",
+  ]
 ---
 
 ## Problem
 
-Reusable UI components can spread inaccessible behavior faster than application-specific code. A polished screenshot does not prove keyboard navigation, focus restoration, right-to-left layout, reduced-motion behavior, or compatibility for package consumers.
+A reusable table needs more than attractive rows. Sorting formatted text can put numeric values in the wrong order, paging can strand keyboard focus, and a changed dataset can leave users on an empty page. These defects spread into every application that adopts the component.
 
 ## Constraints
 
-- Native HTML behavior should be preserved whenever possible.
-- Components must remain usable with keyboards, zoom, and reduced motion.
-- The distributed package must work outside its own repository.
-- Documentation and examples must stay synchronized with the public API.
+Native HTML, controlled state, keyboard access and existing static callers must remain compatible. Sort keys must be explicit rather than inferred from formatted cells. Missing values, invalid bounds and dataset/schema changes must not create misleading order or inaccessible pages.
 
 ## Design
 
-React and TypeScript expose a small set of composable components backed by design tokens and semantic HTML. State ownership remains explicit; focus movement occurs only where the interaction pattern requires it. CSS logical properties support bidirectional layouts, and animation tokens collapse under reduced-motion preferences.
+The React library preserves native HTML semantics and explicit state ownership. DataTable now accepts primitive sort keys separately from displayed content, retains stable ties and places missing or nonfinite values last. Header buttons expose the current sort direction through accessible names and aria-sort.
 
-Storybook explains behavior, states, and usage, while the library build publishes declarations and a framework-independent stylesheet.
+A consumer can sort service latency, move through pages and distinguish loading, failure, empty data and no matching results. Sorting retains header focus and resets the page; paging focuses the caption. Shrinking data or changing columns cannot leave an invisible sort choice or phantom page. The catalog and Storybook demonstrate these states, including RTL layout.
+
+This keeps domain formatting outside the ordering algorithm and gives application developers a reusable interaction contract. Existing static tables and the package's other components remain supported.
 
 ## Verification
 
-Component tests cover behavior and controlled state. Playwright and axe exercise keyboard flows, focus, RTL, motion preferences, and desktop/mobile layouts. A clean consumer installs the packed artifact, and deterministic budgets reject unexpectedly large bundles.
+Hand-written order oracles cover mixed primitive values, missing keys and stable ties. Component and actual browser checks exercise focus, announcements, schema changes, RTL and mobile interaction; a clean consumer validates the packed public exports.
 
 ## Measured result
 
-The release produces a consumable package, typed declarations, Storybook documentation, browser evidence, and machine-readable bundle measurements from the same source commit.
+The change report records **23 TypeScript tests**, **99.28% line coverage**, **96.79% statement coverage** and **94.58% branch coverage**. Independent expected orders cover numbers, strings, mixed keys, ties, missing values and immutable inputs. Component tests exercise schema changes, invalid bounds, keyboard behavior and data-state announcements.
+
+**10 desktop/mobile Chromium journeys** cover sorting, paging, caption focus, RTL and Axe. The packed-consumer smoke verifies seven exports. Library gzip measurements are **3,638 bytes JavaScript** against 36,000 and **2,020 bytes CSS** against 16,000; these are library measurements, not Storybook's vendor bundle. Full dependency audit, types, lint, builds and package checks passed.
+
+Accepted source: [`56c6869b4a2d0accc11c5700968594cef3c12074`](https://github.com/JasonStys/accessible-design-system-lab/tree/56c6869b4a2d0accc11c5700968594cef3c12074). The [change report](https://github.com/JasonStys/accessible-design-system-lab/blob/56c6869b4a2d0accc11c5700968594cef3c12074/docs/reports/practical-workflows-20261109.md) records the executed scope and results. Exact-main workflow records passed: [CI](https://github.com/JasonStys/accessible-design-system-lab/actions/runs/42712082599), [CodeQL](https://github.com/JasonStys/accessible-design-system-lab/actions/runs/42712082126).
 
 ## Limitations
 
-Automated accessibility checks cannot replace testing with assistive-technology users. The component set is intentionally small and does not claim to cover every product interaction or design language.
+Automated Axe and keyboard checks do not establish WCAG conformance or replace testing with assistive-technology users. Ordering is deterministic code-unit/numeric ordering, not locale collation. Tables sort in memory; consumers own fetching, authorization, retries and large-data strategies. Earlier release downloads have not been rebuilt for this update; use the accepted source above.

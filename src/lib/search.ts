@@ -1,12 +1,13 @@
 /**
  * @file Builds and queries a deterministic inverted index for project text and exact facets.
  * Functions: tokenize, buildSearchIndex, searchProjectIds, intersectOrdered, addPosting.
- * Variables: TOKEN_PATTERN and facetKeys.
+ * Variables: TOKEN_PATTERN, SEARCH_TOKENIZATION_REVISION and facetKeys.
  * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
  */
 import type { Project, ProjectFilters, SearchFacet, SerializedSearchIndex } from "@/lib/types";
 
 const TOKEN_PATTERN = /[\p{L}\p{N}+#.]+/gu;
+export const SEARCH_TOKENIZATION_REVISION = 2;
 const facetKeys = [
   "roles",
   "languages",
@@ -14,9 +15,13 @@ const facetKeys = [
   "maturity",
 ] as const satisfies readonly SearchFacet[];
 
+/** Normalize sentence punctuation without losing C++, C#, .NET or internal version dots. */
 export function tokenize(value: string): readonly string[] {
   const normalized = value.normalize("NFKC").toLocaleLowerCase("en-US");
-  return [...new Set(normalized.match(TOKEN_PATTERN) ?? [])];
+  const tokens = (normalized.match(TOKEN_PATTERN) ?? [])
+    .map((token) => token.replace(/\.+$/u, ""))
+    .filter((token) => token.length > 0);
+  return [...new Set(tokens)];
 }
 
 function addPosting(index: Map<string, Set<number>>, key: string, projectId: number): void {

@@ -962,6 +962,80 @@
 }
 
 @layer responsive {
+  /* Static project evidence stays readable at narrow widths, including full immutable SHAs. */
+  .project-detail {
+    padding-block: 2rem 5rem;
+    overflow-wrap: anywhere;
+  }
+  .project-detail__hero {
+    display: grid;
+    gap: 1.5rem;
+    padding-block: 2rem 3rem;
+  }
+  .project-detail h1 {
+    max-width: 24ch;
+    font-size: clamp(2.4rem, 5.5vw, 5rem);
+  }
+  .project-detail h2 {
+    font-size: clamp(1.9rem, 3vw, 2.7rem);
+  }
+  .project-detail h3 {
+    font-size: 1.3rem;
+  }
+  .project-detail__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  .project-detail__section {
+    min-width: 0;
+    display: grid;
+    align-content: start;
+    gap: 1rem;
+    padding: clamp(1rem, 3vw, 2rem);
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .source-identity {
+    display: grid;
+    gap: 0.4rem;
+  }
+  .source-identity dt {
+    font-weight: 700;
+  }
+  .source-identity dd + dt {
+    margin-top: 0.6rem;
+  }
+  .project-detail__links,
+  .project-detail__limits {
+    display: grid;
+    gap: 0.75rem;
+    padding-left: 1.2rem;
+  }
+  .project-detail__neighbors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+  }
+  .upgrade-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 3rem;
+    padding-left: 1.75rem;
+  }
+  .upgrade-list li {
+    min-width: 0;
+    padding: 0.5rem;
+    overflow-wrap: anywhere;
+  }
+  .upgrade-list h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
   @media (max-width: 1000px) {
     .hero,
     .case-hero,
@@ -1004,7 +1078,15 @@
       grid-column: 1 / -1;
       grid-row: 2;
       padding-bottom: 0.75rem;
-      overflow-x: auto;
+      min-width: 0;
+      overflow: visible;
+    }
+    .site-header nav ul {
+      flex-wrap: wrap;
+    }
+    .site-header nav a {
+      white-space: nowrap;
+      padding-inline: 0.6rem;
     }
     .header-cta {
       display: none;
@@ -1056,6 +1138,12 @@
       grid-column: auto;
     }
     .case-layout {
+      grid-template-columns: 1fr;
+    }
+    .project-detail__grid {
+      grid-template-columns: 1fr;
+    }
+    .upgrade-list {
       grid-template-columns: 1fr;
     }
     .case-sidebar {

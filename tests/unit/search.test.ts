@@ -15,8 +15,39 @@ describe("project search", () => {
     expect(tokenize("C++ C# Résumé résumé")).toEqual(["c++", "c#", "résumé"]);
   });
 
+  it("ignores terminal sentence dots while retaining language and version identities", () => {
+    expect(tokenize("drafts. drafts... .NET .NET. v0.4.0 v0.4.0. C++. C#. . .. ...")).toEqual([
+      "drafts",
+      ".net",
+      "v0.4.0",
+      "c++",
+      "c#",
+    ]);
+    expect(tokenize("Ｎｏｄｅ.js. Café. café")).toEqual(["node.js", "café"]);
+  });
+
+  it("retrieves an isolated sentence-final word with or without query punctuation", () => {
+    const first = projects[0];
+    if (!first) throw new Error("The reviewed catalog must contain a fixture source shape.");
+    const fixture = {
+      ...first,
+      name: "punctuation-fixture",
+      description: "Independent example",
+      outcome: "Inspect cached drafts.",
+      primaryLanguage: "TypeScript",
+      languages: ["TypeScript"],
+      topics: ["fixture"],
+      roles: ["Reviewer"],
+      domains: ["Tools"],
+    };
+    const isolated = buildSearchIndex([fixture], "punctuation-contract");
+    expect(searchProjectIds(isolated, "cached drafts")).toEqual(["punctuation-fixture"]);
+    expect(searchProjectIds(isolated, "cached drafts.")).toEqual(["punctuation-fixture"]);
+    expect(searchProjectIds(index, "matching drafts")).toContain("code-flow-studio");
+  });
+
   it("finds text terms with AND semantics in catalog order", () => {
-    expect(searchProjectIds(index, "deterministic replays")).toContain("forge2d-engine");
+    expect(searchProjectIds(index, "deterministic collision")).toContain("forge2d-engine");
     expect(searchProjectIds(index, "definitely-not-present")).toEqual([]);
   });
 

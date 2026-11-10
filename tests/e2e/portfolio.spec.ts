@@ -21,7 +21,7 @@ test("guides a recruiter from overview to implementation evidence", async ({ pag
     .first()
     .click();
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "Polyglot AI development with verifiable revisions",
+    "From a located finding to a verified source revision",
   );
   await expect(page.getByRole("heading", { name: "Verification" })).toBeVisible();
   await expect(page.getByRole("link", { name: /Inspect repository/ })).toHaveAttribute(
@@ -35,32 +35,43 @@ test("highlights Code Flow native evidence with verified results and measurement
 }) => {
   await page.goto("./");
   const featured = page.locator('#featured-projects [data-project-id="code-flow-studio"]');
-  await expect(featured).toContainText("file/line diagnostics");
-  await expect(featured).toContainText("review-only unused-code candidates");
+  await expect(featured).toContainText("source-bound diagnostics");
+  await expect(featured).toContainText("unused-code candidates");
   await page.goto("./projects/");
   await expect(page.locator("[data-project-filter]")).toHaveAttribute("data-enhanced", "true");
+  await page.getByLabel("Keywords").fill("matching drafts");
+  await expect(page).toHaveURL(/q=matching\+drafts(?:&|$)/u);
+  await expect(page.locator('[data-project-id="code-flow-studio"]')).toBeVisible();
+  await expect(page.locator("[data-project-card]:not([hidden])")).toHaveCount(1);
   await page.getByLabel("Keywords").fill("coverage unused");
   await expect(page).toHaveURL(/q=coverage\+unused(?:&|$)/u);
   const result = page.locator('[data-project-id="code-flow-studio"]');
   await expect(result).toBeVisible();
   await result.getByRole("link", { name: /Read case study/ }).click();
-  await expect(page.locator(".case-summary")).toContainText("v0.3.0");
+  await expect(page.locator(".case-summary")).toContainText("0.4.0");
   for (const text of [
-    "148 unit tests",
-    "40 isolated-worker scenarios",
-    "24 browser/account checks",
+    "48 three-engine web checks",
+    "12 private account journeys",
+    "Actual packaged Windows journey",
   ])
-    await expect(page.getByText(text, { exact: true })).toBeVisible();
-  await expect(page.getByText(/controller\/training.dataset statement coverage/)).toBeVisible();
-  await expect(
-    page.getByText(/SQLite measures completed top-level statement-start lines/),
-  ).toBeVisible();
-  await expect(page.getByText(/not trusted attestation against malicious targets/)).toBeVisible();
+    await expect(
+      page
+        .getByRole("complementary", { name: "Evidence at a glance" })
+        .getByRole("listitem")
+        .filter({ hasText: text }),
+    ).toHaveText(`✓ ${text}`);
+  await expect(page.getByText("155 local controller tests", { exact: true })).toBeVisible();
+  await expect(page.locator(".prose")).toContainText(
+    "84.48% controller/training-dataset line coverage",
+  );
+  await expect(page.locator(".prose")).toContainText(
+    "not trusted attestation against a malicious target",
+  );
   const links = {
-    "verified v0.3.0 validation report":
-      "blob/2d837e558420e4d7a775affdecd3dfd401eb7e7b/docs/validation-polyglot.md",
-    "native acceptance records": "blob/v0.3.0/docs/evidence/polyglot-locations.json",
-    "published v0.3.0 release": "releases/tag/v0.3.0",
+    "source validation report":
+      "blob/08e4194707fb0ab20b469e335ef9e081a34200d3/docs/reports/practical-workflows-2026-11-09.md",
+    "real isolated-worker acceptance": "actions/runs/42726748363/job/129534214045",
+    "new 0.4.0 downloads and checksums": "releases/tag/v0.4.0",
   };
   for (const [name, suffix] of Object.entries(links))
     await expect(page.getByRole("link", { name, exact: true })).toHaveAttribute(
@@ -79,33 +90,31 @@ test("explains governed business standards and links versioned source evidence",
   const workbench = page.locator(
     '#featured-projects [data-project-id="business-knowledge-workbench"]',
   );
-  await expect(workbench).toContainText("owner-controlled units");
+  await expect(workbench).toContainText("search numeric ranges");
   await page.goto("./projects/");
   await expect(page.locator("[data-project-filter]")).toHaveAttribute("data-enhanced", "true");
-  await page.getByLabel("Keywords").fill("schemas");
+  await page.getByLabel("Keywords").fill("numeric ranges");
   // Wait for the actual debounced result before following its moving card link.
-  await expect(page).toHaveURL(/q=schemas(?:&|$)/u);
+  await expect(page).toHaveURL(/q=numeric\+ranges(?:&|$)/u);
   const catalogEntry = page.locator('[data-project-id="business-knowledge-workbench"]');
   await expect(catalogEntry).toBeVisible();
   await catalogEntry.getByRole("link", { name: /Read case study/ }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Governed standards for business documents and data",
   );
-  await expect(page.getByText(/4\.25 in → 107\.95 mm/)).toBeVisible();
-  await expect(
-    page.getByRole("link", { name: "version 1.2 validation", exact: true }),
-  ).toHaveAttribute(
+  await expect(page.getByText(/supplier measurements of 4\.25 inches/)).toBeVisible();
+  await expect(page.getByRole("link", { name: "change report", exact: true })).toHaveAttribute(
     "href",
-    "https://github.com/JasonStys/business-knowledge-workbench/blob/v1.2.0/docs/validation-v1.2.md",
+    "https://github.com/JasonStys/business-knowledge-workbench/blob/a25887ac0e54f2afbe0e21e597c67b606890e8ad/docs/reports/practical-workflows-2026-11-09.md",
   );
   await expect(
-    page.getByRole("link", { name: "published v1.2.0 release", exact: true }),
+    page.getByRole("link", { name: "Version 1.4.0 downloads", exact: true }),
   ).toHaveAttribute(
     "href",
-    "https://github.com/JasonStys/business-knowledge-workbench/releases/tag/v1.2.0",
+    "https://github.com/JasonStys/business-knowledge-workbench/releases/tag/v1.4.0",
   );
   await expect(
-    page.getByText(/not shared-business membership or delegated coworker permissions/),
+    page.getByText(/not shared business hosting or delegated team membership/),
   ).toBeVisible();
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
 });
@@ -186,15 +195,15 @@ test("filters projects with text, exact facets, reset, and restorable URL state"
   page,
 }) => {
   await page.goto("./projects/");
-  await page.getByLabel("Keywords").fill("dag leases");
+  await page.getByLabel("Keywords").fill("dag lease");
   await expect(page.locator("[data-project-card]:not([hidden])")).toHaveCount(1);
   await expect(page.locator("[data-project-card]:not([hidden])")).toContainText(
     "cloud-job-orchestrator",
   );
   await page.getByLabel("Language").selectOption("Rust");
-  await expect(page).toHaveURL(/q=dag\+leases.*language=Rust|language=Rust.*q=dag\+leases/);
+  await expect(page).toHaveURL(/q=dag\+lease.*language=Rust|language=Rust.*q=dag\+lease/);
   await page.reload();
-  await expect(page.getByLabel("Keywords")).toHaveValue("dag leases");
+  await expect(page.getByLabel("Keywords")).toHaveValue("dag lease");
   await page.getByRole("button", { name: "Reset filters" }).click();
   await expect(page.locator("[data-project-card]:not([hidden])")).toHaveCount(
     portfolioPriority.length,
@@ -228,7 +237,7 @@ test("supports keyboard navigation and has no detectable WCAG A or AA violations
 
 test("preserves a single-column mobile reading order without horizontal overflow", async ({
   page,
-}) => {
+}, info) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("./projects/");
   const bodyWidth = await page.locator("body").evaluate((body) => body.scrollWidth);
@@ -239,6 +248,34 @@ test("preserves a single-column mobile reading order without horizontal overflow
   expect(first).not.toBeNull();
   expect(second).not.toBeNull();
   expect((second?.y ?? 0) > (first?.y ?? 0) + (first?.height ?? 0) - 2).toBe(true);
+  const navigation = page.getByRole("navigation", { name: "Primary navigation" });
+  const links = navigation.getByRole("link");
+  await expect(links).toHaveCount(6);
+  for (const width of [320, 390]) {
+    await page.setViewportSize({ width, height: 844 });
+    const rows = new Set<number>();
+    for (const link of await links.all()) {
+      await expect(link).toBeVisible();
+      const box = await link.boundingBox();
+      if (!box) throw new Error("A primary navigation link has no rendered bounds.");
+      expect(box.x).toBeGreaterThanOrEqual(0);
+      expect(box.x + box.width).toBeLessThanOrEqual(width);
+      expect(box.y + box.height).toBeLessThanOrEqual(844);
+      rows.add(Math.round(box.y));
+    }
+    expect(rows.size).toBeLessThanOrEqual(2);
+  }
+  if (info.project.name === "webkit") {
+    // Native WebKit follows the host's link-tab preference; explicitly focus before activation.
+    await navigation.getByRole("link", { name: "About", exact: true }).focus();
+  } else {
+    await links.first().focus();
+    for (let index = 1; index < 6; index++) await page.keyboard.press("Tab");
+  }
+  const about = navigation.getByRole("link", { name: "About", exact: true });
+  await expect(about).toBeFocused();
+  await about.press("Enter");
+  await expect(page).toHaveURL(/\/about\/$/u);
 });
 
 test("publishes valid discovery and search artifacts", async ({ request }) => {

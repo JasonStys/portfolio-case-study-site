@@ -19,7 +19,17 @@ export const GET: APIRoute = () => {
         throw new Error(`Featured project ${project.name} has no case study.`);
       return `case-studies/${project.caseStudySlug}/`;
     });
-  const paths = ["", "projects/", "space-systems/", "drone-systems/", "about/", ...caseStudyPaths];
+  const projectPaths = projects.map((project) => `projects/${project.name}/`);
+  const paths = [
+    "",
+    "projects/",
+    "updates/",
+    "space-systems/",
+    "drone-systems/",
+    "about/",
+    ...caseStudyPaths,
+    ...projectPaths,
+  ];
   const urls = paths
     .map((path) => `<url><loc>${escapeXml(absoluteUrl(path))}</loc></url>`)
     .join("");

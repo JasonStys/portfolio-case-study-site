@@ -1,38 +1,46 @@
 ---
 title: "A finite optimum, independently checked"
 repository: "https://github.com/JasonStys/mission-contact-resource-scheduler"
-summary: "An exact contact-allocation optimizer makes resource tradeoffs visible through a greedy comparison, constraint ledgers and an independent exhaustive oracle."
+summary: "An exact bounded contact optimizer with independently checked station-loss replanning, resource ledgers and explicit allocation changes."
 role: "Optimization and resource-constrained software"
 languages: ["Python", "TypeScript", "SQL"]
 evidence:
   [
-    "432 finite control combinations",
+    "Exact finite optimization",
+    "Station-loss replanning",
     "Independent exhaustive oracle",
-    "Explicit deterministic tie breakers",
-    "542 Python tests",
+    "Resource and request deltas",
   ]
 ---
 
 ## Problem
 
-Choosing a locally attractive contact can prevent a better overall plan when stations, spacecraft and limited budgets compete. A reviewer should see why a plan is feasible, what alternatives lost and what the word optimal actually covers.
+A locally attractive contact can prevent a better overall plan when stations, spacecraft and budgets compete. A station outage creates a further question: which requests can still be served under the same constraints, and which assignments must change?
 
 ## Constraints
 
-Only fixed, invented contact candidates are considered. The model enforces station/spacecraft reservations, guard time, blackouts, deadlines, band compatibility, full-delivery capacity and separate time/energy budgets. Relative ticks and invented units are not physical contact predictions. Tie breakers must be deterministic.
+Consider only bounded invented candidates under the original reservations, guard times, blackouts, deadlines, band rules and budgets. Tie breakers must be deterministic. A contingency is one full-window station loss; it cannot silently add contacts or relax feasibility constraints.
 
 ## Design
 
-A Python branch-and-bound search optimizes the documented finite objective, while a greedy policy provides a comparison—not an oracle. Independent exhaustive enumeration checks small candidate sets. A TypeScript station timeline, decision inspector and resource ledger expose the accepted and rejected requests. Strict JSON input, reproducible exports and optional immutable SQL history carry the complete context.
+Python branch-and-bound optimizes a documented finite objective. A greedy policy provides a comparison, while independent exhaustive enumeration checks small cases. The model enforces station/spacecraft reservations, guard time, blackouts, deadlines, band compatibility, complete-delivery capacity and separate time/energy budgets.
+
+The new contingency workflow removes one station for the full planning window and reoptimizes the original objective. Each station's loss is a separate alternative. The inspector lists retained, removed and added contacts, request assignments before/after, utility/service/energy differences and direct outage exclusions.
+
+A planner can review a nominal or maintenance case, inspect a failed station's alternative and compare unscheduled requests without replacing the original timeline. JSON, HTML, CLI and local history retain the exact scenario and run identity. This makes the effect of scarce resources inspectable rather than promising that an old plan can always be preserved.
 
 ## Verification
 
-All 432 finite controls, generated cases, analytic interval boundaries and independent exhaustive results are checked. Every selected plan is audited separately for violations. Three real browser engines exercise timeline/filter/ledger behavior, downloads, retries, keyboard use and accessibility. See the [model](https://github.com/JasonStys/mission-contact-resource-scheduler/blob/main/docs/MODEL.md), [validation](https://github.com/JasonStys/mission-contact-resource-scheduler/blob/main/docs/VALIDATION.md) and [exact-source release](https://github.com/JasonStys/mission-contact-resource-scheduler/releases/tag/v1.0.0).
+Independent exhaustive subset enumeration checks the exact solver across nominal, greedy-trap, maintenance and unreachable cases. Browser journeys inspect allocation differences, preserve the original plan and verify exports, empty networks and error handling.
 
 ## Measured result
 
-The release records 542 Python tests at 99.32% branch-inclusive core coverage, 12 TypeScript tests and 24 three-engine browser checks. The independent oracle includes 100 generated cases. All eight Validation jobs, both CodeQL analyses and the three OS portable builds passed at source `f1a45fe6412bfb2d219a76ab7535b2ae34771014`. These are historical release results; this portfolio update does not rerun or newly certify the scheduler.
+The report records **556 Python tests at 99.34% combined statement/branch coverage**, **12 TypeScript tests** and **27 Chromium/Firefox/WebKit browser journeys**. A separate exhaustive subset oracle covers nominal, maintenance, greedy-trap and unreachable cases, objective ties, guards, empty choices and existing blackout limits.
+
+Real browser tests inspect removed allocations, verify that the original case remains intact, exercise a completely unavailable network and check downloads, failed requests, accessibility and restrictive headers. Sixteen existing exact/greedy summaries, solver counts and utility differences remained unchanged before refreshing expanded evidence hashes.
+
+Accepted source: [`7658aa60ce9f953ad2f62a1c08d798942c46b5b1`](https://github.com/JasonStys/mission-contact-resource-scheduler/tree/7658aa60ce9f953ad2f62a1c08d798942c46b5b1). The [change report](https://github.com/JasonStys/mission-contact-resource-scheduler/blob/7658aa60ce9f953ad2f62a1c08d798942c46b5b1/docs/reports/PRACTICAL_WORKFLOWS_20261109.md) records the executed scope and results. Exact-main workflow records passed: [CodeQL](https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42698411010), [Validation](https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42698411022).
 
 ## Limitations
 
-Optimal only over the supplied finite candidates, constraints and objective—not every possible contact or real mission need. Worst-case exact search remains exponential. There is no orbital propagation, live station/radio connection, hardware command, targeting output or physical energy model. A real scheduler would require qualified inputs, operational procedures and its own validation.
+The optimizer considers bounded invented candidates, not physical visibility predictions or live ground-network dispatch. Station losses are separate full-window alternatives, not arbitrary timed or sequential outages. Reoptimization does not guarantee locked contacts or minimum changes. A finite optimum says nothing about omitted candidates or operational suitability. Earlier published downloads predate this workflow; use the accepted source.

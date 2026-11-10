@@ -35,6 +35,13 @@ describe("portfolio catalog", () => {
     expect(catalogRevision(projects, "2026-10-20T00:00:00.000Z")).not.toBe(revision);
   });
 
+  it("invalidates the catalog-only cache identity when tokenizer semantics change", () => {
+    // SHA-256 of the pre-fix schema-2 JSON for this empty fixed-time catalog.
+    const oldCatalogOnlyRevision =
+      "417262d6d20fa298355f5b1cd66a252a44bfaa43acf8a5434f86ceb8ea0f945a";
+    expect(catalogRevision([], "2026-01-01T00:00:00Z")).not.toBe(oldCatalogOnlyRevision);
+  });
+
   it("merges every curated project with a unique cached repository", () => {
     expect(projects).toHaveLength(projectCuration.length);
     expect(new Set(projects.map((project) => project.name)).size).toBe(projects.length);
@@ -48,11 +55,11 @@ describe("portfolio catalog", () => {
 
   it("keeps Code Flow first and makes its reviewed source evidence searchable", () => {
     expect(projects[0]?.name).toBe("code-flow-studio");
-    expect(projects[0]?.outcome).toContain("12 isolated CLI adapters");
-    expect(projects[0]?.outcome).toContain("review-only unused-code candidates");
+    expect(projects[0]?.outcome).toContain("source-bound diagnostics");
+    expect(projects[0]?.outcome).toContain("unused-code candidates");
     const index = buildSearchIndex(projects, "code-flow-evidence");
-    for (const query of ["source-bound diagnostics", "coverage unused", "private revision"]) {
-      expect(searchProjectIds(index, query)).toContain("code-flow-studio");
+    for (const query of ["source-bound diagnostics", "coverage unused", "matching drafts"]) {
+      expect(searchProjectIds(index, query), query).toContain("code-flow-studio");
     }
   });
 
@@ -81,7 +88,7 @@ describe("portfolio catalog", () => {
     }
     const index = buildSearchIndex(projects, "reviewed-test");
     expect(searchProjectIds(index, "", { domain: "Space systems" })).toEqual(names);
-    expect(searchProjectIds(index, "watchdog", { domain: "Space systems" })).toContain(
+    expect(searchProjectIds(index, "onboard transitions", { domain: "Space systems" })).toContain(
       "spacecraft-flight-software-testbed",
     );
     expect(projects.filter((project) => project.caseStudySlug)).toHaveLength(15);
@@ -96,9 +103,9 @@ describe("portfolio catalog", () => {
     for (const name of droneHighlightNames) expect(names).toContain(name);
     const index = buildSearchIndex(projects, "drone-evidence");
     expect(searchProjectIds(index, "", { domain: "Drone safety" })).toEqual(names);
-    expect(searchProjectIds(index, "PX4 simulator")).toContain("drone-operations-console");
-    expect(searchProjectIds(index, "privacy masks")).toContain("drone-video-privacy-studio");
-    expect(searchProjectIds(index, "serialized component")).toContain(
+    expect(searchProjectIds(index, "civilian drone scenes")).toContain("drone-operations-console");
+    expect(searchProjectIds(index, "privacy envelopes")).toContain("drone-video-privacy-studio");
+    expect(searchProjectIds(index, "component maintenance")).toContain(
       "drone-maintenance-readiness-studio",
     );
   });

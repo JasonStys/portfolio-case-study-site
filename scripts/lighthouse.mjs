@@ -1,10 +1,9 @@
 /**
  * @file Runs three production Lighthouse audits and enforces category, paint, blocking, and layout budgets.
- * Functions: waitForServer, launchPreview, stopChrome, runAudit, median, summarize, enforceBudgets, main.
+ * Functions: stopChrome, runAudit, median, summarize, enforceBudgets, main; shared owned static preview.
  * Variables: ROOT, OUTPUT_DIRECTORY, TARGET_URL, RUN_COUNT, CATEGORY_BUDGETS, AUDIT_BUDGETS.
  * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
  */
-import { spawn } from "node:child_process";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
@@ -12,6 +11,7 @@ import { fileURLToPath } from "node:url";
 import { launch } from "chrome-launcher";
 import lighthouse from "lighthouse";
 import { chromium } from "playwright";
+import { startOwnedPreview } from "./owned-preview.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUTPUT_DIRECTORY = path.join(ROOT, ".runtime", "lighthouse");
@@ -24,33 +24,6 @@ const AUDIT_BUDGETS = {
   "total-blocking-time": 200,
   "cumulative-layout-shift": 0.05,
 };
-
-async function waitForServer(attempts = 60) {
-  for (let attempt = 0; attempt < attempts; attempt += 1) {
-    try {
-      const response = await fetch(TARGET_URL);
-      if (response.ok) return;
-    } catch {
-      // Preview may still be binding the local port.
-    }
-    await new Promise((resolve) => setTimeout(resolve, 250));
-  }
-  throw new Error("Production preview did not become ready.");
-}
-
-function launchPreview() {
-  const astroExecutable = path.join(ROOT, "node_modules", "astro", "bin", "astro.mjs");
-  return spawn(
-    process.execPath,
-    [astroExecutable, "preview", "--host", "127.0.0.1", "--port", "4175"],
-    {
-      cwd: ROOT,
-      stdio: "ignore",
-      windowsHide: true,
-      env: { ...process.env, ASTRO_TELEMETRY_DISABLED: "1" },
-    },
-  );
-}
 
 function isWindowsCleanupError(error) {
   const code = /** @type {NodeJS.ErrnoException} */ (error)?.code;
@@ -131,9 +104,8 @@ function enforceBudgets(summary) {
 
 async function main() {
   await mkdir(OUTPUT_DIRECTORY, { recursive: true });
-  const preview = launchPreview();
+  const preview = await startOwnedPreview({ port: 4175 });
   try {
-    await waitForServer();
     const results = [];
     for (let runNumber = 1; runNumber <= RUN_COUNT; runNumber += 1)
       results.push(await runAudit(runNumber));
@@ -146,7 +118,7 @@ async function main() {
     console.log(JSON.stringify(summary, null, 2));
     enforceBudgets(summary);
   } finally {
-    preview.kill();
+    await preview.stop();
   }
 }
 

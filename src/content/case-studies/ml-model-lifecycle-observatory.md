@@ -1,37 +1,48 @@
 ---
 title: "A model lifecycle beyond the notebook"
 repository: "https://github.com/JasonStys/ml-model-lifecycle-observatory"
-summary: "A reproducible ML service that treats calibration, promotion, drift, canary routing, artifact safety, and rollback as first-class engineering work."
+summary: "Reproducible model lifecycle engineering with read-only release dossiers, verified artifact metadata, explicit quality gates, bounded history and drift context."
 role: "Machine-learning engineering and MLOps"
 languages: ["Python", "SQL", "Bash"]
-evidence: ["Reproducible training", "Promotion gates", "Drift monitoring", "Canary rollback"]
+evidence:
+  [
+    "Artifact and registry agreement",
+    "Recorded quality-gate reasons",
+    "Read-only release dossiers",
+    "Drift and rollback boundaries",
+  ]
 ---
 
 ## Problem
 
-A trained model is not a production system. Teams also need reproducible data splits, safe artifacts, evaluation thresholds, traceable promotion, monitored predictions, and a way to recover when live behavior diverges from validation results.
+A model notebook does not explain whether a particular artifact belongs to the intended dataset and registry entry, why its recorded quality gates pass, or which drift evidence applies. Reviewers need that context before making a separate promotion or rollback decision.
 
 ## Constraints
 
-- Training and evaluation must run on deterministic synthetic data.
-- Serialized artifacts must not rely on unsafe arbitrary-code loading.
-- A candidate cannot become active without explicit quality gates.
-- Monitoring must avoid storing sensitive raw features.
+Use deterministic synthetic data and bounded, safely parsed artifacts. Administrative review requires the existing token and must not promote or roll back a model. Recorded evaluation and dataset metadata must remain distinct from independently rerunning metrics or verifying raw dataset bytes.
 
 ## Design
 
-The Python pipeline creates deterministic datasets, trains calibrated candidates, records immutable metadata, and verifies checksums before serving. Promotion compares quality and calibration metrics against policy. Canary routing sends a bounded share of synthetic traffic to a candidate while drift and service-health signals remain observable.
+The existing Python pipeline trains calibrated models on deterministic synthetic data, checks artifacts before serving, records lifecycle transitions in SQL and supports controlled canary routing and rollback.
 
-The registry records lineage and state transitions in SQL. Rollback is an explicit operation that selects a previously verified artifact rather than rebuilding during an incident.
+The new local CLI and authenticated administrator endpoint produce a read-only release dossier. They verify bounded bundle bytes, manifests and schema against registry metadata, then explain recorded gate outcomes, split declarations, calibration and abstention. A coherent role/history snapshot retains at most 100 entries with an explicit truncation flag.
+
+An operator can inspect a candidate, attach matching drift context and export a new report without promoting, rolling back or overwriting an existing export. Missing context, small samples and unverified prior rollback candidates remain visible. Artifact/registry agreement does not rerun evaluation or authenticate the raw dataset.
 
 ## Verification
 
-Tests cover data validation, reproducibility, artifact integrity, promotion policy, drift math, concurrent routing, and rollback. API contracts and end-to-end scenarios exercise the path from training through canary failure and restoration.
+Independent gate-boundary fixtures and actual trained artifacts check registry agreement, tampering, authorization, history bounds and no-write behavior. Resource-warning failures catch leaked SQLite connections; separate hosted database and container gates complement local tests.
 
 ## Measured result
 
-The demonstration can train two candidates, reject one on a policy gate, promote the other, inject distribution shift, and roll back without losing lineage. Reports distinguish model metrics from service-level behavior.
+The report records **59 non-PostgreSQL tests at 97.16% branch-inclusive coverage**, with the new review module fully covered. Independent gate-boundary cases and actual trained-artifact journeys cover unauthorized requests, tampering, metadata disagreement, invalid values, size limits, history truncation, absent registries and no lifecycle writes.
+
+Testing also exposed SQLite handles that survived completed transactions. Read/schema paths now close connections explicitly, and resource/unraisable warnings fail tests. The final suite passes those guards and confirms that reviewing an absent registry does not create it.
+
+Strict types, source checks, Kubernetes object validation and dependency audits passed. The accepted CI includes the separate PostgreSQL and container checks; they are not counted as locally executed database tests.
+
+Accepted source: [`e3f47233539d2af763b5c30a2575e6544a0ba5d7`](https://github.com/JasonStys/ml-model-lifecycle-observatory/tree/e3f47233539d2af763b5c30a2575e6544a0ba5d7). The [change report](https://github.com/JasonStys/ml-model-lifecycle-observatory/blob/e3f47233539d2af763b5c30a2575e6544a0ba5d7/docs/reports/practical-workflows-20261109.md) records the executed scope and results. Exact-main workflow records passed: [CodeQL](https://github.com/JasonStys/ml-model-lifecycle-observatory/actions/runs/42720621967), [CI](https://github.com/JasonStys/ml-model-lifecycle-observatory/actions/runs/42720622275).
 
 ## Limitations
 
-The model and data are intentionally small. Drift signals indicate change, not cause, and cannot by themselves establish harm or justify automated decisions. The project is an engineering reference, not a regulated production deployment.
+This is a synthetic operator-token lab, not general user accounts or production release authority. Recorded metrics and dataset fingerprints are declarations matched to the artifact, not independently repeated evaluation. The 100-sample drift heuristic is not statistical confidence or causal diagnosis. Snapshots may become stale. Earlier downloads have not been rebuilt for this update; use the accepted source.

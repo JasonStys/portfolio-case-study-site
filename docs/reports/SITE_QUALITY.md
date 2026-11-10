@@ -28,7 +28,17 @@
 - Open Graph and Twitter metadata.
 - RSS, sitemap, and permissive robots policy.
 
-## Current acceptance scope: 2026-10-22
+## Current acceptance scope: 2026-11-09
+
+All 67 projects have static details with purpose, rationale and limits. The 66
+domain records bind source, report, review and successful workflows; the hub has
+separate site checks. Mobile navigation now exposes every link at 320/390px,
+including keyboard access to About. Exact search handles sentence-final words
+and preserves language/version punctuation. The complete browser matrix passed
+without retries, alongside unchanged accessibility, asset and Lighthouse budgets.
+See [current evidence](practical-workflows-2026-11-09.md).
+
+## Previous acceptance scope: 2026-10-22
 
 The 67-project build has 21 HTML routes. Tests cover both complete collections,
 no-script rendering, exact reviewed order, restored URL filters, accessible

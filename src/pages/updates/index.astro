@@ -1,0 +1,47 @@
+---
+/**
+ * @file Provides a compact no-script reading path through all project improvements and evidence pages.
+ * Functions: static ordered project rendering; domain evidence and portfolio-hub scope stay distinct.
+ * Variables: projects and upgradeManifest observation time; no browser network data collection.
+ * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
+ */
+import BaseLayout from "@/components/BaseLayout.astro";
+import { projects } from "@/lib/catalog";
+import { upgradeManifest } from "@/lib/upgrades";
+import { withBase } from "@/lib/url";
+---
+
+<BaseLayout
+  title="Practical project improvements — Jason Stys"
+  description="Explore the latest practical workflows, design rationale and source-bound validation evidence across Jason Stys's portfolio."
+  canonicalPath="updates/"
+>
+  <header class="page-intro section-shell">
+    <p class="eyebrow">Latest practical improvements</p>
+    <h1>Useful workflows, inspectable results.</h1>
+    <p>
+      Open any project for its purpose, improvements, rationale, validation report and limits. The
+      66 domain projects link to successful main-branch workflow results for their exact reviewed
+      source commits. The portfolio hub has separate current site checks.
+    </p>
+    <p>
+      Evidence observed{" "}
+      <time datetime={upgradeManifest.collectedAt}>
+        {new Date(upgradeManifest.collectedAt).toISOString()}
+      </time>
+      . These are source-level results, not a claim that every older release includes the changes.
+    </p>
+  </header>
+  <section class="section-shell section-block" aria-label="Projects in portfolio order">
+    <ol class="upgrade-list" data-upgrade-list>
+      {projects.map((project) => (
+        <li data-upgrade-project={project.name}>
+          <h2>
+            <a href={withBase(`projects/${project.name}/`)}>{project.name}</a>
+          </h2>
+          <p>{project.outcome}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+</BaseLayout>

@@ -11,6 +11,12 @@
 - Social artwork is SVG; some social crawlers prefer PNG or JPEG.
 - The site does not expose private contact data or a downloadable résumé PDF.
 - Project results are portfolio-scale evidence and do not claim commercial production usage.
+- The project upgrade snapshot records reviewed commits. It does not continuously
+  query GitHub, attest future changes or certify every possible input or use case.
+- New source improvements do not automatically rebuild old downloadable releases.
+  Each project distinguishes current source, current packages and historical evidence.
+- The portfolio presents project evidence; it does not host the applications'
+  private services, user accounts, documents, applicant records or model datasets.
 
 ## Explicit non-goals for version one
 

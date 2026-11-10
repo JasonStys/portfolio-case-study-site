@@ -176,3 +176,79 @@ line coverage, 97.30% branch coverage and 100% function coverage of the configur
 library scope. Scoped ESLint and Astro type checking passed with zero diagnostics.
 This does not expand that coverage claim to the raw-trace code or prove the
 cause of the original 511.5 ms performance observation.
+
+## Exact audited-page lifecycle readiness
+
+The later [three-run capture, run 42791095286](https://github.com/JasonStys/portfolio-case-study-site/actions/runs/42791095286)
+completed diagnostic capture and correctly failed the unchanged TBT gate with
+`[827.5, 0, 0]` ms. All six raw Trace/DevTools files matched their recorded byte
+counts and SHA-256 values. In the first owned-page renderer, nonoverlapping
+`RunTask` events accumulated 548.721 ms wall time and 51.998 ms thread CPU time;
+the later runs were 56.961/39.927 and 58.550/40.514 ms respectively. The first
+layout slice was 148.796 ms wall time and 16.590 ms thread CPU time. Thus most
+of the excess elapsed time was not charged to that thread's CPU. The trace does
+not distinguish blocking I/O, descheduling or VM behavior, identify a responsible
+outside process, or establish a specific source-code performance defect.
+
+The launcher and Lighthouse APIs explain a concrete readiness gap without
+requiring that uncertainty to be relabeled as a confirmed runner fault.
+`chrome-launcher` 1.2.2 initially checks that its owned debugging TCP port accepts
+a connection. Lighthouse 13.5.0 then normally creates a different new page and
+navigates it to a blank document, waiting for frame navigation before collecting
+its benchmark. A readiness check on the launcher's original tab would not check
+the exact target used by the audit.
+
+The updated harness creates the actual audited Puppeteer page itself on the
+fresh launcher-owned Chrome instance. Under one 5000 ms readiness deadline it
+requires `about:blank`, a completed document and two actual, distinct animation
+frame callbacks. HTTP request events and resource entries must both be zero.
+That same page object is passed through Lighthouse's documented fourth argument.
+No site URL, site script, font, page content or test audit is preloaded. All three
+runs still use new browser profiles and one cold site navigation each. The direct
+`puppeteer-core` dependency is pinned to the already installed, Lighthouse-compatible
+25.16.0; only the root dependency declaration was added to the lock, with no
+transitive version, integrity or browser-flag change.
+
+This is an explicit measurement-method boundary: the browser/blank renderer
+must now demonstrate lifecycle readiness before the cold **page** load begins.
+It does not promise an idle OS or warm the website. Readiness failure stops the
+run rather than selecting another sample. All old failures remain recorded, and
+all numerical/category gates, throttling, storage reset, three-run sampling and
+maximum-of-three metric aggregation remain unchanged. No site audit is discarded.
+
+The installed Puppeteer 25.16.0 CDP `Browser.disconnect()` synchronously disposes
+its target manager/connection and returns an already resolved promise; it does
+not await a remote close acknowledgement beyond the readiness deadline. A
+separate negative case preserves the original readiness failure if disconnect
+itself throws. The caller's `finally` always retains launcher-owned Chrome cleanup,
+including if connection cleanup fails; it never attaches to a user browser profile.
+
+Local validation passed **39 focused tests**, including both original
+`[511.5, 0, 0]` and latest `[827.5, 0, 0]` strict-budget failures, wrong/nonblank
+pages, invalid document/frame/resource proof, independent observed HTTP requests,
+deadline refusal, late connection disposal and disconnect-error handling. The
+full unit suite passed **172 tests**, with 97.68% library line coverage, 97.30%
+branch coverage and 100% function coverage. Scoped lint and Astro checking passed;
+the isolated baseline's 90-route build also passed. Generated indexes and final
+integrated-site checks are recorded separately by the publication owner.
+
+Three actual Windows Chrome 157 fresh-profile prototype runs recorded two distinct
+blank-page animation timestamps and zero pre-audit HTTP requests/resources in
+each run. Readiness took 109.2498, 43.8556 and 51.8201 ms. The same unchanged
+90-route page assets produced TBT `[0, 0, 0]` ms, maximum FCP 1008.455092 ms,
+maximum LCP 1054.910184 ms, CLS 0 and category scores 1 / 1 / 0.97 / 1. The six
+raw artifact hashes were independently verified. This is local evidence for the
+new protocol, **not** proof that Linux scheduling variance is fixed or that the
+separate, then-unbuilt documentation-hub feature passed. A fresh hosted check of
+the final integrated source remains required.
+
+Additional primary references:
+
+- [Lighthouse with Puppeteer](https://github.com/GoogleChrome/lighthouse/blob/main/docs/puppeteer.md)
+  documents supplying the audited Page directly.
+- [Chrome launcher implementation](https://github.com/GoogleChrome/chrome-launcher/blob/main/src/chrome-launcher.ts)
+  shows its debugging-port readiness check.
+- [Puppeteer disconnect](https://pptr.dev/api/puppeteer.browser.disconnect)
+  distinguishes disconnecting the client from closing its browser process.
+- [Chromium trace interpretation](https://new.chromium.org/developers/how-tos/trace-event-profiling-tool/trace-event-reading/)
+  distinguishes wall duration from thread CPU duration.

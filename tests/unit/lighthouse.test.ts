@@ -9,8 +9,14 @@ import { createHash } from "node:crypto";
 import { mkdtemp, readFile, readdir, rm } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { afterEach, describe, expect, it } from "vitest";
-import { enforceBudgets, saveRunDiagnostics, summarize } from "../../scripts/lighthouse.mjs";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import type { Browser, Page } from "puppeteer-core";
+import {
+  enforceBudgets,
+  prepareAuditedPage,
+  saveRunDiagnostics,
+  summarize,
+} from "../../scripts/lighthouse.mjs";
 
 const target = "http://127.0.0.1:4175/portfolio-case-study-site/";
 const directories: string[] = [];
@@ -56,6 +62,7 @@ async function directory() {
 }
 
 afterEach(async () => {
+  vi.useRealTimers();
   await Promise.all(
     directories.splice(0).map((name) => {
       if (
@@ -67,6 +74,153 @@ afterEach(async () => {
       return rm(name, { recursive: true, force: true });
     }),
   );
+});
+
+function readyFixture() {
+  let observe: ((request: { url: () => string }) => void) | undefined;
+  const proof = {
+    url: "about:blank",
+    readyState: "complete",
+    frameTimestamps: [16, 32],
+    httpResources: 0,
+  };
+  const page = {
+    url: vi.fn(() => "about:blank"),
+    bringToFront: vi.fn(() => Promise.resolve(undefined)),
+    waitForFunction: vi.fn(() => Promise.resolve(undefined)),
+    evaluate: vi.fn(() => Promise.resolve(proof)),
+    on: vi.fn((_event: string, handler: (request: { url: () => string }) => void) => {
+      observe = handler;
+    }),
+    off: vi.fn(),
+  };
+  const browser = {
+    newPage: vi.fn(() => Promise.resolve(page as unknown as Page)),
+    disconnect: vi.fn(() => Promise.resolve(undefined)),
+  };
+  return {
+    page,
+    browser,
+    proof,
+    connect: vi.fn(() => Promise.resolve(browser as unknown as Browser)),
+    request: (url: string) => observe?.({ url: () => url }),
+  };
+}
+
+describe("exact audited-page lifecycle readiness", () => {
+  it("returns the same new blank Page with two distinct callbacks and zero HTTP before the audit", async () => {
+    const context = readyFixture();
+    const ready = await prepareAuditedPage(18999, { connect: context.connect });
+    expect(ready.page).toBe(context.page);
+    expect(ready.browser).toBe(context.browser);
+    expect(ready.proof.frameTimestamps).toEqual([16, 32]);
+    expect(ready.proof.httpRequests).toBe(0);
+    expect(ready.proof.httpResources).toBe(0);
+    expect(context.connect).toHaveBeenCalledExactlyOnceWith({
+      browserURL: "http://127.0.0.1:18999",
+      defaultViewport: null,
+    });
+    expect(context.browser.newPage).toHaveBeenCalledTimes(1);
+    expect(context.page.off).toHaveBeenCalledWith("request", expect.any(Function));
+    expect(context.browser.disconnect).not.toHaveBeenCalled();
+  });
+
+  it("refuses an already navigated target without adopting it or loading a site", async () => {
+    const context = readyFixture();
+    context.page.url.mockReturnValue(target);
+    await expect(prepareAuditedPage(18999, { connect: context.connect })).rejects.toThrow(
+      /new blank page/,
+    );
+    expect(context.page.evaluate).not.toHaveBeenCalled();
+    expect(context.browser.disconnect).toHaveBeenCalledTimes(1);
+  });
+
+  it.each(["document", "frames", "resources"])(
+    "refuses invalid %s proof and disconnects",
+    async (invalid) => {
+      const context = readyFixture();
+      if (invalid === "document") context.proof.readyState = "loading";
+      if (invalid === "frames") context.proof.frameTimestamps = [16, 16];
+      if (invalid === "resources") context.proof.httpResources = 1;
+      await expect(prepareAuditedPage(18999, { connect: context.connect })).rejects.toThrow(
+        /readiness proof/,
+      );
+      expect(context.browser.disconnect).toHaveBeenCalledTimes(1);
+    },
+  );
+
+  it("refuses an observed HTTP request even when the returned resource list is empty", async () => {
+    const context = readyFixture();
+    context.page.waitForFunction.mockImplementation(() => {
+      context.request(target);
+      return Promise.resolve(undefined);
+    });
+    await expect(prepareAuditedPage(18999, { connect: context.connect })).rejects.toThrow(
+      /readiness proof/,
+    );
+    expect(context.browser.disconnect).toHaveBeenCalledTimes(1);
+  });
+
+  it("fails the single readiness deadline rather than retrying a hung renderer", async () => {
+    vi.useFakeTimers();
+    const context = readyFixture();
+    context.page.waitForFunction.mockImplementation(() => new Promise(() => undefined));
+    const pending = prepareAuditedPage(18999, { connect: context.connect, timeoutMs: 20 });
+    const failed = expect(pending).rejects.toThrow(/readiness deadline/);
+    await vi.advanceTimersByTimeAsync(20);
+    await failed;
+    expect(context.connect).toHaveBeenCalledTimes(1);
+    expect(context.page.evaluate).not.toHaveBeenCalled();
+    expect(context.browser.disconnect).toHaveBeenCalledTimes(1);
+  });
+
+  it("disconnects a connection that arrives after the deadline without creating another target", async () => {
+    vi.useFakeTimers();
+    const context = readyFixture();
+    let deliver: ((browser: Browser) => void) | undefined;
+    const connect = vi.fn(
+      () =>
+        new Promise<Browser>((resolve) => {
+          deliver = resolve;
+        }),
+    );
+    const pending = prepareAuditedPage(18999, { connect, timeoutMs: 20 });
+    const failed = expect(pending).rejects.toThrow(/readiness deadline/);
+    await vi.advanceTimersByTimeAsync(20);
+    await failed;
+    assert(deliver);
+    deliver(context.browser as unknown as Browser);
+    await Promise.resolve();
+    await Promise.resolve();
+    expect(context.browser.disconnect).toHaveBeenCalledTimes(1);
+    expect(context.browser.newPage).not.toHaveBeenCalled();
+  });
+
+  it("refuses invalid ports and an extended deadline before connecting", async () => {
+    const context = readyFixture();
+    await expect(prepareAuditedPage(80, { connect: context.connect })).rejects.toThrow(/bounds/);
+    await expect(
+      prepareAuditedPage(18999, { connect: context.connect, timeoutMs: 5001 }),
+    ).rejects.toThrow(/bounds/);
+    expect(context.connect).not.toHaveBeenCalled();
+  });
+
+  it("preserves the readiness cause when disconnect also fails", async () => {
+    const context = readyFixture();
+    context.page.url.mockReturnValue(target);
+    context.browser.disconnect.mockRejectedValue(new Error("synthetic disconnect failure"));
+    const warning = vi.spyOn(console, "warn").mockImplementation(() => undefined);
+    try {
+      await expect(prepareAuditedPage(18999, { connect: context.connect })).rejects.toThrow(
+        /new blank page/,
+      );
+      expect(warning).toHaveBeenCalledExactlyOnceWith(
+        "Owned-browser disconnect failed; launcher cleanup remains required.",
+      );
+    } finally {
+      warning.mockRestore();
+    }
+  });
 });
 
 describe("bounded Lighthouse diagnostic evidence", () => {
@@ -272,23 +426,26 @@ describe("bounded Lighthouse diagnostic evidence", () => {
     expect(await readdir(output)).toEqual([]);
   });
 
-  it("keeps a single slow run above200ms fatal even when the other two are zero", () => {
-    const results = [511.5, 0, 0].map((blocking) => ({
-      categories: Object.fromEntries(
-        ["accessibility", "best-practices", "performance", "seo"].map((name) => [
-          name,
-          { score: 1 },
-        ]),
-      ),
-      audits: {
-        "first-contentful-paint": { numericValue: 1000 },
-        "largest-contentful-paint": { numericValue: 1300 },
-        "total-blocking-time": { numericValue: blocking },
-        "cumulative-layout-shift": { numericValue: 0 },
-      },
-    }));
-    const summary = summarize(results);
-    expect(summary.audits["total-blocking-time"]).toBe(511.5);
-    expect(() => enforceBudgets(summary)).toThrow(/total-blocking-time/);
-  });
+  it.each([511.5, 827.5])(
+    "keeps one slow run of %sms fatal even when the other two are zero",
+    (slow) => {
+      const results = [slow, 0, 0].map((blocking) => ({
+        categories: Object.fromEntries(
+          ["accessibility", "best-practices", "performance", "seo"].map((name) => [
+            name,
+            { score: 1 },
+          ]),
+        ),
+        audits: {
+          "first-contentful-paint": { numericValue: 1000 },
+          "largest-contentful-paint": { numericValue: 1300 },
+          "total-blocking-time": { numericValue: blocking },
+          "cumulative-layout-shift": { numericValue: 0 },
+        },
+      }));
+      const summary = summarize(results);
+      expect(summary.audits["total-blocking-time"]).toBe(slow);
+      expect(() => enforceBudgets(summary)).toThrow(/total-blocking-time/);
+    },
+  );
 });

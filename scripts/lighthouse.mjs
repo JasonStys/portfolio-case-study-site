@@ -12,6 +12,7 @@ import process from "node:process";
 import { fileURLToPath } from "node:url";
 import { launch } from "chrome-launcher";
 import lighthouse from "lighthouse";
+import puppeteer from "puppeteer-core";
 import { chromium } from "playwright";
 import { startOwnedPreview } from "./owned-preview.mjs";
 
@@ -31,6 +32,122 @@ const DEVTOOLS_BYTES = 2 * 1024 * 1024;
 const METADATA_BYTES = 256 * 1024;
 const MAX_TRACE_EVENTS = 100_000;
 const MAX_DEVTOOLS_ENTRIES = 10_000;
+const READINESS_MS = 5_000;
+
+/** Prepare only a new blank target on the launcher-owned browser, under one fail-closed deadline. */
+export async function prepareAuditedPage(
+  port,
+  { connect = puppeteer.connect, timeoutMs = READINESS_MS } = {},
+) {
+  if (
+    !Number.isInteger(port) ||
+    port < 1024 ||
+    port > 65535 ||
+    !Number.isInteger(timeoutMs) ||
+    timeoutMs < 1 ||
+    timeoutMs > READINESS_MS
+  )
+    throw new Error("Invalid owned-browser readiness bounds.");
+  const started = performance.now();
+  let browser;
+  let expired = false;
+  let timer;
+  const preparation = (async () => {
+    const connection = await connect({
+      browserURL: `http://127.0.0.1:${port}`,
+      defaultViewport: null,
+    });
+    if (expired) {
+      await connection.disconnect();
+      throw new Error("Owned-browser readiness expired before connection.");
+    }
+    browser = connection;
+    const page = await browser.newPage();
+    let httpRequests = 0;
+    const observeRequest = (request) => {
+      if (/^https?:/iu.test(request.url())) httpRequests += 1;
+    };
+    page.on("request", observeRequest);
+    try {
+      if (expired || page.url() !== "about:blank")
+        throw new Error("Readiness requires a new blank page.");
+      await page.bringToFront();
+      await page.waitForFunction(
+        () =>
+          globalThis.location.href === "about:blank" &&
+          globalThis.document.readyState === "complete",
+        { polling: "raf", timeout: timeoutMs },
+      );
+      const proof = await page.evaluate(async () => {
+        const frameTimestamps = [];
+        await new Promise((resolve) =>
+          globalThis.requestAnimationFrame((first) => {
+            frameTimestamps.push(first);
+            globalThis.requestAnimationFrame((second) => {
+              frameTimestamps.push(second);
+              resolve();
+            });
+          }),
+        );
+        return {
+          url: globalThis.location.href,
+          readyState: globalThis.document.readyState,
+          frameTimestamps,
+          httpResources: globalThis.performance
+            .getEntriesByType("resource")
+            .filter((entry) => /^https?:/iu.test(entry.name)).length,
+        };
+      });
+      if (
+        expired ||
+        page.url() !== "about:blank" ||
+        proof.url !== "about:blank" ||
+        proof.readyState !== "complete" ||
+        httpRequests !== 0 ||
+        proof.httpResources !== 0 ||
+        proof.frameTimestamps.length !== 2 ||
+        !proof.frameTimestamps.every(Number.isFinite) ||
+        proof.frameTimestamps[1] <= proof.frameTimestamps[0]
+      )
+        throw new Error("Blank-page lifecycle or cold-page readiness proof failed.");
+      return {
+        browser,
+        page,
+        proof: {
+          ...proof,
+          httpRequests,
+          durationMs: performance.now() - started,
+          samePageContract:
+            "This exact blank Puppeteer.Page is passed to Lighthouse's fourth argument.",
+        },
+      };
+    } finally {
+      page.off("request", observeRequest);
+    }
+  })();
+  try {
+    return await Promise.race([
+      preparation,
+      new Promise((_, reject) => {
+        timer = setTimeout(() => {
+          expired = true;
+          reject(new Error("Owned-browser readiness deadline exceeded."));
+        }, timeoutMs);
+      }),
+    ]);
+  } catch (error) {
+    expired = true;
+    try {
+      await browser?.disconnect();
+    } catch {
+      // Preserve the readiness failure; runAudit's finally still stops the launcher-owned process.
+      console.warn("Owned-browser disconnect failed; launcher cleanup remains required.");
+    }
+    throw error;
+  } finally {
+    clearTimeout(timer);
+  }
+}
 
 /** Accept diagnostic URLs only from this owned static listener; never record private user URLs. */
 function checkDiagnosticUrl(raw, mainDocument = false, browserTrace = false) {
@@ -130,7 +247,13 @@ function boundedJson(value, maximum) {
 }
 
 /** Save only the public Trace/DevtoolsLog artifacts, exact resolved profile and measured timings. */
-export async function saveRunDiagnostics(result, runNumber, timings, directory = OUTPUT_DIRECTORY) {
+export async function saveRunDiagnostics(
+  result,
+  runNumber,
+  timings,
+  directory = OUTPUT_DIRECTORY,
+  readiness,
+) {
   if (!Number.isInteger(runNumber) || runNumber < 1 || runNumber > RUN_COUNT)
     throw new Error("Invalid Lighthouse diagnostic run number.");
   const { Trace, DevtoolsLog } = result.artifacts;
@@ -173,6 +296,7 @@ export async function saveRunDiagnostics(result, runNumber, timings, directory =
     environment: result.lhr.environment,
     lighthouseTiming: result.lhr.timing,
     timingsMs: { ...timings },
+    ...(readiness ? { readiness } : {}),
     caps: {
       traceBytes: TRACE_BYTES,
       devtoolsBytes: DEVTOOLS_BYTES,
@@ -221,29 +345,46 @@ async function runAudit(runNumber) {
     logLevel: "error",
   });
   const browserStartup = performance.now() - startupStarted;
+  let ready;
   try {
+    ready = await prepareAuditedPage(chrome.port);
     const auditStarted = performance.now();
-    const result = await lighthouse(TARGET_URL, {
-      port: chrome.port,
-      output: "json",
-      logLevel: "error",
-      onlyCategories: Object.keys(CATEGORY_BUDGETS),
-      formFactor: "desktop",
-      screenEmulation: {
-        mobile: false,
-        width: 1350,
-        height: 940,
-        deviceScaleFactor: 1,
-        disabled: false,
+    const result = await lighthouse(
+      TARGET_URL,
+      {
+        port: chrome.port,
+        output: "json",
+        logLevel: "error",
+        onlyCategories: Object.keys(CATEGORY_BUDGETS),
+        formFactor: "desktop",
+        screenEmulation: {
+          mobile: false,
+          width: 1350,
+          height: 940,
+          deviceScaleFactor: 1,
+          disabled: false,
+        },
       },
-    });
+      undefined,
+      ready.page,
+    );
     if (!result) throw new Error(`Lighthouse run ${runNumber} returned no result.`);
     const audit = performance.now() - auditStarted;
     await writeFile(path.join(OUTPUT_DIRECTORY, `run-${runNumber}.json`), result.report, "utf8");
-    await saveRunDiagnostics(result, runNumber, { browserStartup, audit });
+    await saveRunDiagnostics(
+      result,
+      runNumber,
+      { browserStartup, browserReadiness: ready.proof.durationMs, audit },
+      OUTPUT_DIRECTORY,
+      ready.proof,
+    );
     return result.lhr;
   } finally {
-    await stopChrome(chrome);
+    try {
+      await ready?.browser.disconnect();
+    } finally {
+      await stopChrome(chrome);
+    }
   }
 }
 

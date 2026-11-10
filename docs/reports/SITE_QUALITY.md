@@ -28,7 +28,24 @@
 - Open Graph and Twitter metadata.
 - RSS, sitemap, and permissive robots policy.
 
-## Current acceptance scope: 2026-11-09
+## Current download acceptance: 2026-11-09
+
+The static catalog retains all 67 projects, canonical order, six main navigation
+links and source-bound purpose/rationale pages. A separate download page exposes
+20 existing releases and 62 real payloads, with human-readable platform/package
+labels, full hashes in JSON, exact application source and separately identified
+acceptance tooling. Source-first projects have no invented native releases.
+
+All 133 unit tests and 51 browser executions passed. The complete no-script
+20/62 link inventory is checked separately from the normal JavaScript axe scan.
+Desktop/mobile navigation, 320-pixel reflow, keyboard activation, outside-resource
+blocking and earlier recruiter flows remain covered. The page uses uniquely
+named static CSS selectors and routes detailed reports through project pages,
+keeping the original 55,000-byte HTML limit at 53,866 bytes. Browser execution
+has no test retries; coverage and all performance/security budgets are unchanged.
+See [the download evidence report](download-refresh-2026-11-09.md).
+
+## Previous workflow acceptance: 2026-11-09
 
 All 67 projects have static details with purpose, rationale and limits. The 66
 domain records bind source, report, review and successful workflows; the hub has

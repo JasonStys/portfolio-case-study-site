@@ -233,40 +233,40 @@
 | 13 | variable | `DIST` |
 | 14 | variable | `BASE` |
 | 15 | variable | `REQUIRED_OUTPUTS` |
-| 30 | variable | `BUDGETS` |
-| 37 | function | `collectFiles` |
-| 38 | variable | `entries` |
-| 39 | variable | `files` |
-| 41 | variable | `absolute` |
-| 48 | function | `targetForUrl` |
-| 49 | variable | `pathname` |
-| 51 | variable | `relative` |
-| 57 | function | `validateHtml` |
-| 58 | variable | `html` |
-| 68 | variable | `urls` |
-| 70 | variable | `target` |
-| 76 | variable | `inlineJavaScript` |
-| 82 | function | `validateBudgets` |
-| 83 | variable | `javascript` |
-| 84 | variable | `css` |
-| 85 | variable | `compressedSize` |
-| 91 | variable | `metrics` |
-| 99 | variable | `failures` |
-| 107 | function | `main` |
-| 109 | variable | `names` |
-| 112 | variable | `upgrades` |
-| 115 | variable | `index` |
-| 116 | variable | `renderedNames` |
-| 119 | variable | `updates` |
-| 120 | variable | `updateNames` |
-| 125 | variable | `sitemap` |
-| 127 | variable | `detail` |
-| 129 | variable | `upgrade` |
-| 141 | variable | `files` |
-| 142 | variable | `htmlFiles` |
-| 143 | variable | `htmlSizes` |
-| 144 | variable | `inlineJavaScript` |
-| 146 | variable | `result` |
+| 32 | variable | `BUDGETS` |
+| 39 | function | `collectFiles` |
+| 40 | variable | `entries` |
+| 41 | variable | `files` |
+| 43 | variable | `absolute` |
+| 50 | function | `targetForUrl` |
+| 51 | variable | `pathname` |
+| 53 | variable | `relative` |
+| 59 | function | `validateHtml` |
+| 60 | variable | `html` |
+| 70 | variable | `urls` |
+| 72 | variable | `target` |
+| 78 | variable | `inlineJavaScript` |
+| 84 | function | `validateBudgets` |
+| 85 | variable | `javascript` |
+| 86 | variable | `css` |
+| 87 | variable | `compressedSize` |
+| 93 | variable | `metrics` |
+| 101 | variable | `failures` |
+| 109 | function | `main` |
+| 111 | variable | `names` |
+| 114 | variable | `upgrades` |
+| 117 | variable | `index` |
+| 118 | variable | `renderedNames` |
+| 121 | variable | `updates` |
+| 122 | variable | `updateNames` |
+| 127 | variable | `sitemap` |
+| 129 | variable | `detail` |
+| 131 | variable | `upgrade` |
+| 143 | variable | `files` |
+| 144 | variable | `htmlFiles` |
+| 145 | variable | `htmlSizes` |
+| 146 | variable | `inlineJavaScript` |
+| 148 | variable | `result` |
 
 ## `scripts/validate-repository.mjs`
 
@@ -403,6 +403,80 @@
 | 135 | variable | `projects` |
 | 136 | variable | `featuredProjects` |
 
+## `src/lib/download-catalog.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 9 | variable | `downloadManifest` |
+
+## `src/lib/downloads.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 7 | variable | `DOWNLOAD_NAMES` |
+| 30 | variable | `DESKTOP` |
+| 37 | variable | `NATIVE` |
+| 40 | variable | `OWNER` |
+| 41 | variable | `SHA` |
+| 42 | variable | `DIGEST` |
+| 92 | function | `object` |
+| 95 | variable | `item` |
+| 105 | function | `text` |
+| 121 | function | `exact` |
+| 127 | function | `date` |
+| 128 | variable | `result` |
+| 139 | function | `verifiedRun` |
+| 140 | variable | `row` |
+| 141 | variable | `title` |
+| 144 | variable | `url` |
+| 155 | function | `archiveKind` |
+| 162 | function | `validateDownloads` |
+| 163 | variable | `envelope` |
+| 169 | variable | `collectedAt` |
+| 175 | variable | `seen` |
+| 176 | variable | `projects` |
+| 177 | variable | `row` |
+| 197 | variable | `name` |
+| 201 | variable | `version` |
+| 204 | variable | `source` |
+| 206 | variable | `repository` |
+| 207 | variable | `releaseUrl` |
+| 212 | variable | `sourceUrl` |
+| 213 | variable | `report` |
+| 214 | variable | `reportPrefix` |
+| 215 | variable | `reportPath` |
+| 222 | variable | `publishedAt` |
+| 225 | variable | `expected` |
+| 238 | variable | `sourceChecks` |
+| 241 | variable | `releaseCheck` |
+| 242 | variable | `acceptanceCheck` |
+| 244 | variable | `acceptance` |
+| 256 | variable | `verifier` |
+| 261 | variable | `proof` |
+| 290 | variable | `files` |
+| 291 | variable | `assetKeys` |
+| 292 | variable | `assets` |
+| 293 | variable | `asset` |
+| 309 | variable | `filename` |
+| 310 | variable | `checksum` |
+| 319 | variable | `base` |
+| 320 | variable | `assetUrl` |
+| 321 | variable | `checksumUrl` |
+| 326 | variable | `digest` |
+| 335 | variable | `format` |
+| 336 | variable | `suffix` |
+| 339 | variable | `platform` |
+| 342 | variable | `architecture` |
+| 344 | variable | `kind` |
+| 347 | variable | `key` |
+| 400 | variable | `requiredPlatforms` |
+| 410 | variable | `primaryAsset` |
+| 436 | variable | `requirements` |
+| 441 | variable | `limitations` |
+| 459 | variable | `order` |
+| 461 | variable | `first` |
+| 462 | variable | `second` |
+
 ## `src/lib/search.ts`
 
 | Line | Kind | Symbol |
@@ -510,6 +584,20 @@
 | 30 | variable | `project` |
 | 33 | variable | `schema` |
 
+## `src/pages/downloads/index.astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 11 | variable | `platforms` |
+| 17 | variable | `formats` |
+
+## `src/pages/downloads/index.json.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 8 | variable | `prerender` |
+| 9 | function | `GET` |
+
 ## `src/pages/drone-systems.astro`
 
 | Line | Kind | Symbol |
@@ -544,10 +632,11 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 14 | function | `getStaticPaths` |
-| 23 | variable | `upgrade` |
-| 24 | variable | `isHub` |
-| 26 | variable | `observedAt` |
+| 15 | function | `getStaticPaths` |
+| 24 | variable | `upgrade` |
+| 25 | variable | `isHub` |
+| 26 | variable | `hasDownload` |
+| 28 | variable | `observedAt` |
 
 ## `src/pages/projects/index.astro`
 
@@ -582,7 +671,7 @@
 | 15 | variable | `caseStudyPaths` |
 | 22 | variable | `projectPaths` |
 | 23 | variable | `paths` |
-| 33 | variable | `urls` |
+| 34 | variable | `urls` |
 
 ## `src/pages/space-systems.astro`
 
@@ -651,6 +740,27 @@
 | 66 | custom property | `--shell` |
 | 1068 | custom property | `--shell` |
 
+## `tests/e2e/downloads.spec.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 11 | variable | `manifest` |
+| 17 | variable | `origin` |
+| 18 | variable | `context` |
+| 23 | variable | `external` |
+| 32 | variable | `page` |
+| 41 | variable | `card` |
+| 53 | variable | `row` |
+| 61 | variable | `drone` |
+| 71 | variable | `aes` |
+| 81 | variable | `index` |
+| 89 | variable | `project` |
+| 90 | variable | `headingLink` |
+| 91 | variable | `projectName` |
+| 98 | variable | `first` |
+| 116 | variable | `origin` |
+| 117 | variable | `external` |
+
 ## `tests/e2e/portfolio.spec.ts`
 
 | Line | Kind | Symbol |
@@ -717,6 +827,38 @@
 | 134 | variable | `languages` |
 | 166 | variable | `repository` |
 | 167 | variable | `envelope` |
+
+## `tests/unit/downloads.test.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 9 | function | `required` |
+| 15 | variable | `NAMES` |
+| 37 | variable | `SOURCE` |
+| 38 | variable | `VERIFIER` |
+| 39 | variable | `DESKTOP` |
+| 47 | function | `payload` |
+| 48 | variable | `suffix` |
+| 49 | variable | `assetName` |
+| 50 | variable | `checksumAssetName` |
+| 52 | variable | `base` |
+| 67 | function | `project` |
+| 68 | variable | `repository` |
+| 69 | variable | `native` |
+| 70 | variable | `zipapp` |
+| 71 | variable | `assets` |
+| 86 | variable | `run` |
+| 122 | function | `fixture` |
+| 131 | variable | `invalid` |
+| 358 | variable | `p` |
+| 373 | variable | `p` |
+| 424 | variable | `value` |
+| 426 | variable | `parsed` |
+| 442 | variable | `aes` |
+| 451 | variable | `raw` |
+| 452 | variable | `result` |
+| 459 | variable | `value` |
+| 464 | variable | `raw` |
 
 ## `tests/unit/search.test.ts`
 

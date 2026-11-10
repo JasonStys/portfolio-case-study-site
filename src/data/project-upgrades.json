@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "collectedAt": "2026-11-10T01:08:29.742386+00:00",
+  "collectedAt": "2026-11-10T04:22:43.804127+00:00",
   "scope": "66 domain repositories created in this chat; portfolio site is validated separately",
   "repositories": [
     {
@@ -104,395 +104,388 @@
     },
     {
       "name": "secure-delivery-pipeline-lab",
-      "summary": "Compare authenticated active and candidate trust, record bounded deployment receipts and exercise independently authenticated rollback.",
-      "rationale": "Shows why a proposed release is eligible and preserves the evidence needed to recover safely.",
-      "sourceCommit": "9dd48002acfd8c277b5903cd4849c295bf551d81",
-      "sourceUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/tree/9dd48002acfd8c277b5903cd4849c295bf551d81",
-      "reviewUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/blob/9dd48002acfd8c277b5903cd4849c295bf551d81/docs/reports/operations-2026-11-09.md",
+      "summary": "Review authenticated candidate/active changes and retain atomic deployment receipts. The 1.1.0 signed inventory-probe example adds exact-source release gates and a real 19-case verification, promotion, invalid-input and separately trusted rollback journey.",
+      "rationale": "Connects cryptographic provenance to an exercised change-and-recovery workflow while keeping the small downloadable example distinct from its trusted source-side manager.",
+      "sourceCommit": "e37b189fa604bb0d6951e4a926d20ed9606298a1",
+      "sourceUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/tree/e37b189fa604bb0d6951e4a926d20ed9606298a1",
+      "reviewUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/blob/e37b189fa604bb0d6951e4a926d20ed9606298a1/docs/reports/release-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42699848767"
+          "url": "https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42746536402"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42699848608"
+          "url": "https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42746536395"
         }
       ],
       "limitations": [
-        "Hash differences identify changed bytes, not release compatibility or a complete security assessment.",
-        "Deployment receipts are local operator assertions, not signed or tamper-proof evidence that production deployment occurred.",
-        "Authenticated lab trust checks do not certify a production delivery environment or replace deployment-specific policy and operational review."
+        "The dependency-free inventory probe is a bounded Python zip application; the reviewed verification and promotion manager is separate source, not a desktop installer or production deployment service.",
+        "Impact hashes establish changed bytes, not compatibility or a complete security review. Local receipt aliases are operator assertions, not authenticated human identity or signed audit records.",
+        "Verification requires the official GitHub CLI, independently selected source/version and actual attestation checks; checksum or preflight success alone is insufficient.",
+        "The synthetic release exercise does not establish production readiness, operational availability or operating-system code signing."
       ]
     },
     {
       "name": "applicant-evidence-studio",
-      "summary": "Capture two authorized applicant records against one rubric with reviewed citations, unknowns, clarification prompts, transient observations and exact private JSON export.",
-      "rationale": "Supports factual human comparison while keeping encrypted-account review in the browser and avoiding invented degrees, experience or hiring decisions.",
-      "sourceCommit": "71d51b1fcd228f89d3ff81ee166bee2ce37d7a60",
-      "sourceUrl": "https://github.com/JasonStys/applicant-evidence-studio/tree/71d51b1fcd228f89d3ff81ee166bee2ce37d7a60",
-      "reviewUrl": "https://github.com/JasonStys/applicant-evidence-studio/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/applicant-evidence-studio/blob/71d51b1fcd228f89d3ff81ee166bee2ce37d7a60/docs/reports/practical-workflows-20261109.md",
+      "summary": "Compare authorized evidence against one rubric with exact citations, unknowns and private exports. Actual published 0.3.0 archives now undergo encrypted UI, record-hash, assessment-parity, locking and access-isolation acceptance on three operating systems.",
+      "rationale": "Checks the downloadable application's real privacy and review workflow, rather than inferring its behavior from source tests or bundled text.",
+      "sourceCommit": "f10b42ce29d665c89556b83ce9b36094bba672a1",
+      "sourceUrl": "https://github.com/JasonStys/applicant-evidence-studio/tree/f10b42ce29d665c89556b83ce9b36094bba672a1",
+      "reviewUrl": "https://github.com/JasonStys/applicant-evidence-studio/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/applicant-evidence-studio/blob/f10b42ce29d665c89556b83ce9b36094bba672a1/docs/reports/portable-acceptance-2026-11-09.md",
       "workflows": [
         {
+          "name": "Published portable acceptance",
+          "url": "https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42749422809"
+        },
+        {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42727340441"
+          "url": "https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42749422853"
         }
       ],
       "limitations": [
-        "Two-record advisory comparison preserves selection order; it does not choose a winner, verify claims, infer protected traits/degrees/paid years or make hire/reject decisions.",
-        "Private comparison is assembled in the unlocked browser. Host aliases and operational metadata remain visible; the device and delivered frontend must be trusted. No new reviewer/admin sharing roles are added.",
-        "Exports are unencrypted identifying private information, not anonymous or signed evidence. Historical downloads cannot be revoked.",
-        "Observations are transient: opening original records, changing context, mutations or locking clears them; download a capture before leaving."
+        "Evidence coverage is advisory, not applicant suitability, a hiring decision, fairness certification or legal-compliance assurance; original applications require human review.",
+        "Comparison captures are unencrypted identifying files. Observations are transient and prior downloads cannot be revoked.",
+        "The accepted public application remains 0.3.0 at its original release source; newer source adds acceptance and release guards without replacing those bytes.",
+        "Unsigned portable applications trust the local OS and retained recovery material; extraction/UI tests do not certify signed installation, a clean-machine lifecycle or public hosting."
       ]
     },
     {
       "name": "spacecraft-flight-software-testbed",
-      "summary": "Compare onboard mode, boot and counter changes with downlinked witnesses, including missed transitions and reset windows.",
-      "rationale": "Separates what happened onboard from what a delayed telemetry stream actually observed.",
-      "sourceCommit": "9f5b99802e6f3f3f0bfa50357c203635923cf159",
-      "sourceUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/tree/9f5b99802e6f3f3f0bfa50357c203635923cf159",
-      "reviewUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/blob/9f5b99802e6f3f3f0bfa50357c203635923cf159/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "The released 1.1.0 portable app brings the recovery-observability review into a source-bound downloadable bundle: compare onboard transitions with received confirmation, then export the same evidence shown in the UI.",
+      "rationale": "The original deterministic C++ executive and Python replay oracle remain intact. Versioned archives, native-safe POSIX packaging and an extracted-executable Chromium journey make the new received-witness feature reviewable beyond a source checkout. An independent boot/reset oracle and downloaded JSON comparison prevent a static page or source-service fallback from passing acceptance.",
+      "sourceCommit": "5f9dc95ad5df564373d1304b13e4bb2464d13842",
+      "sourceUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/tree/5f9dc95ad5df564373d1304b13e4bb2464d13842",
+      "reviewUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/blob/5f9dc95ad5df564373d1304b13e4bb2464d13842/docs/reports/PORTABLE_REFRESH_20261109.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42704308513"
+          "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752160159"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42704308230"
+          "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752160117"
         }
       ],
       "limitations": [
-        "Synthetic software-only logical-tick executive; no real flight controller, hardware, guidance or targeting integration.",
-        "Downlink witnesses can miss onboard transitions. A counter receipt establishes at least a value, not the exact increment time; absence of a witness is not proof of no occurrence.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Educational software-only executive; no flight hardware, operational SAFE assertion or mission qualification.",
+        "Unsigned portable folder, not an installer or clean-machine installation proof. Exact-source three-OS builds and asset digests require publication review.",
+        "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
       ]
     },
     {
       "name": "spacecraft-telemetry-anomaly-studio",
-      "summary": "Group channel/context alerts into run-bound episodes with observed recovery, gaps and window-censored states; add human review and export.",
-      "rationale": "Makes anomaly investigation manageable without inventing recovery across missing telemetry.",
-      "sourceCommit": "0f63e1332b00d30fc682589bfd0fdad637845ce3",
-      "sourceUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/tree/0f63e1332b00d30fc682589bfd0fdad637845ce3",
-      "reviewUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/blob/0f63e1332b00d30fc682589bfd0fdad637845ce3/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "The released 1.1.0 portable app includes run-bound anomaly triage: inspect channel episodes with explicit recovery, gap, context and censored boundaries, add human notes, and download the review tied to its originating run.",
+      "rationale": "The original label-isolated detector and metrics remain unchanged. An actual extracted-app analyst journey verifies a known spike, annotation export and note reset between analyses; independently restoring the previous version field reproduced every old benchmark hash before version-only IDs were refreshed. This makes the downloadable workflow match the practical source feature without claiming operational anomaly assurance.",
+      "sourceCommit": "616b8cc92be09622443e103cdc201ce1d0c16a55",
+      "sourceUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/tree/616b8cc92be09622443e103cdc201ce1d0c16a55",
+      "reviewUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/blob/616b8cc92be09622443e103cdc201ce1d0c16a55/docs/reports/PORTABLE_REFRESH_20261109.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42697036082"
+          "url": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42752178787"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42697036475"
+          "url": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42752178601"
         }
       ],
       "limitations": [
-        "Educational single-analyst telemetry review, not real flight operations or a verified diagnosis of hardware failure.",
-        "Gaps and window boundaries can leave recovery unknown; an alert episode does not establish a physical cause.",
-        "Human notes are tab-local, reset on analysis and require explicit export; no authenticated reviewer or review import is supplied.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Synthetic telemetry and bounded rule-based detector evidence; no live spacecraft or hardware validation.",
+        "Human notes are detached local downloads rather than server-persisted multi-user reviews.",
+        "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
       ]
     },
     {
       "name": "mission-contact-resource-scheduler",
-      "summary": "Reoptimize a bounded contact plan under complete single-station loss and show retained, added and removed allocations.",
-      "rationale": "Provides a concrete contingency-planning workflow with independently verified feasibility and resource budgets.",
-      "sourceCommit": "7658aa60ce9f953ad2f62a1c08d798942c46b5b1",
-      "sourceUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/tree/7658aa60ce9f953ad2f62a1c08d798942c46b5b1",
-      "reviewUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/blob/7658aa60ce9f953ad2f62a1c08d798942c46b5b1/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "The released 1.1.0 portable scheduler includes station-loss contingency comparisons: inspect retained, removed and replacement contacts, per-request service changes and utility loss, then download complete planning evidence.",
+      "rationale": "The existing exact finite-candidate solver and independent exhaustive oracle are preserved. The extracted application proves the hand-checkable 60 + 60 versus 100 greedy trap, a fully lost station and feasible empty service before comparing the actual UI download with its API result. Source-bound native packaging carries the practical replanning workflow into downloads.",
+      "sourceCommit": "4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3",
+      "sourceUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/tree/4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3",
+      "reviewUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/blob/4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3/docs/reports/PORTABLE_REFRESH_20261109.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42698411010"
+          "url": "https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42752427629"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42698411022"
+          "url": "https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42752427785"
         }
       ],
       "limitations": [
-        "Bounded educational candidate allocation, not live mission dispatch or operational scheduling assurance.",
-        "Contingencies are separate full-window single-station failures, not arbitrary, sequential or partial-window outages.",
-        "Reoptimization uses the existing objective; it does not guarantee locked contacts or minimum schedule changes.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Invented finite candidates and units; no real radio, ground-station dispatch or operational availability guarantee.",
+        "Replanning optimizes the existing objective; it does not guarantee minimum changes to a previous plan.",
+        "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
       ]
     },
     {
       "name": "spacecraft-power-thermal-lab",
-      "summary": "Show requested, served and unserved energy per load, interruption episodes and censored recovery, separating intentional shedding.",
-      "rationale": "Explains operational tradeoffs behind aggregate power and temperature traces.",
-      "sourceCommit": "a613a0d8a3d1f16023e26bb9b55fae8de9d41d0f",
-      "sourceUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/tree/a613a0d8a3d1f16023e26bb9b55fae8de9d41d0f",
-      "reviewUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/blob/a613a0d8a3d1f16023e26bb9b55fae8de9d41d0f/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "The released 1.1.0 HELIO portable app includes per-load service review: inspect requested and delivered energy, grouped shortfalls with censored boundaries, and deliberately shed science demand separately.",
+      "rationale": "The C++ numerical model and independent Python energy/reference checks remain intact. The actual extracted UI is tested against an independent 6 W minus 3.2 W over 600 seconds energy calculation, component-to-total reconciliation and an exact JSON download. Product-version identity and preserved native notices make the practical analysis available in a reviewable portable bundle.",
+      "sourceCommit": "5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+      "sourceUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/tree/5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+      "reviewUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/blob/5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96/docs/reports/PORTABLE_REFRESH_20261109.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/42700300982"
+          "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/42752167983"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/42700300730"
+          "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/42752168111"
         }
       ],
       "limitations": [
-        "Fictional bounded load profiles; no real spacecraft control or operational assurance.",
-        "Service evidence uses interval averages, not continuous thermal-limit assessment or hardware reliability predictions.",
-        "Episode materiality uses a 1e-8 W threshold; smaller residuals can remain in integrated energy totals.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Fictional single-body/battery model; numerical agreement and balanced energy do not validate real batteries or establish spacecraft safety.",
+        "No live hardware, power control or operational thermal assurance.",
+        "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
       ]
     },
     {
       "name": "mission-verification-evidence-kit",
-      "summary": "Build a metadata-bound revalidation and freshness queue with exact requirement/component scope and source work references.",
-      "rationale": "Helps reviewers identify stale or missing verification without weakening release gates.",
-      "sourceCommit": "048dd33a041fa53d7ecfc8cdab369137812a47ed",
-      "sourceUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/tree/048dd33a041fa53d7ecfc8cdab369137812a47ed",
-      "reviewUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/blob/048dd33a041fa53d7ecfc8cdab369137812a47ed/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "The released 1.1.0 portable evidence kit includes metadata-bound revalidation queues: prioritize blocked critical tests, see exact freshness deadlines, identify missing procedures and preserve the source and baseline revisions needed for review.",
+      "rationale": "The original requirement/test/fault traceability, SQL cross-check, export formats and immutable local history are retained. The extracted app verifies a failed critical test, an independently calculated first-invalid timestamp, missing-procedure guidance and an exact JSON download. It turns declared evidence gaps into a practical human review queue without waiving gates or pretending to execute tests.",
+      "sourceCommit": "2743307a90da1621392fcafa138b6e103db751d5",
+      "sourceUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/tree/2743307a90da1621392fcafa138b6e103db751d5",
+      "reviewUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/blob/2743307a90da1621392fcafa138b6e103db751d5/docs/reports/PORTABLE_REFRESH_20261109.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42702154070"
+          "url": "https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42752190053"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42702154127"
+          "url": "https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42752189945"
         }
       ],
       "limitations": [
-        "Declared-evidence human checklist, not authenticated proof, an approved waiver or an automatic test rerun.",
-        "Freshness uses the supplied fixed as-of time; no live reminders or automatic evidence collection is added.",
-        "No flight qualification, operational authorization or safety certification is provided.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Declared synthetic evidence consistency only; SQL agreement does not authenticate provenance or reveal omitted requirements.",
+        "The queue plans human review; it does not execute tests, waive release gates or establish flight qualification.",
+        "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
       ]
     },
     {
       "name": "orbital-safety-workbench",
-      "summary": "Inspect illustrative threshold windows, tangencies and sample/window censoring around civilian close approaches.",
-      "rationale": "Makes screening results interpretable while keeping sampled geometry separate from collision probability or guidance.",
-      "sourceCommit": "56e685e1d9fb27c3bdf24d9f9e5217d85e7210d6",
-      "sourceUrl": "https://github.com/JasonStys/orbital-safety-workbench/tree/56e685e1d9fb27c3bdf24d9f9e5217d85e7210d6",
-      "reviewUrl": "https://github.com/JasonStys/orbital-safety-workbench/pull/16",
-      "validationReportUrl": "https://github.com/JasonStys/orbital-safety-workbench/blob/56e685e1d9fb27c3bdf24d9f9e5217d85e7210d6/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "The released 1.1.0 portable workbench includes illustrative distance-window review: inspect exact sampled-history interval bounds, boundary censoring and replay positions while retaining archived ISS/SGP4 evidence and downloadable reports.",
+      "rationale": "The existing civilian historical replay and fictional multi-object tracks remain the purpose. The actual extracted UI is checked against an analytic relative-distance oracle and exact JSON export, with collision probabilities explicitly absent. POSIX-safe archives and newly complete CPython/PyInstaller notices improve distribution without adding operational prediction or guidance.",
+      "sourceCommit": "89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+      "sourceUrl": "https://github.com/JasonStys/orbital-safety-workbench/tree/89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+      "reviewUrl": "https://github.com/JasonStys/orbital-safety-workbench/pull/18",
+      "validationReportUrl": "https://github.com/JasonStys/orbital-safety-workbench/blob/89278b3a1997c3b4ab3f4b7acc81672a87a5f22e/docs/reports/PORTABLE_REFRESH_20261109.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/orbital-safety-workbench/actions/runs/42702121542"
+          "url": "https://github.com/JasonStys/orbital-safety-workbench/actions/runs/42752800435"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/orbital-safety-workbench/actions/runs/42702121138"
+          "url": "https://github.com/JasonStys/orbital-safety-workbench/actions/runs/42752800426"
         }
       ],
       "limitations": [
-        "Illustrative thresholds are not certified safety radii or collision probabilities.",
-        "Window analysis uses sampled piecewise-linear histories and floating-point precision; covariance, object size and operational risk are not established.",
-        "Civilian educational screening only; no targeting, interception, maneuver advice or flight authorization.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Historical ISS data and fictional sampled tracks; no live catalog, covariance, collision probability, targeting or maneuver guidance.",
+        "Distances are illustrative display thresholds rather than operational safety radii.",
+        "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
       ]
     },
     {
       "name": "ccsds-telemetry-integrity-lab",
-      "summary": "Add a per-APID provisional gap and recovery ledger with compressed ranges and explicit ambiguous or censored sequence history.",
-      "rationale": "Explains packet continuity without turning reordering or incomplete captures into unsupported loss claims.",
-      "sourceCommit": "8643a490871e225a91fc040c836ea07607e4a52f",
-      "sourceUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/tree/8643a490871e225a91fc040c836ea07607e4a52f",
-      "reviewUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/blob/8643a490871e225a91fc040c836ea07607e4a52f/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "The released 1.1.0 portable integrity lab includes per-APID continuity timelines: inspect provisional gaps and late recovery, follow ambiguity boundaries and retain every original parser decision in the downloaded evidence.",
+      "rationale": "The safe Rust parser, independent Python reference and seeded fuzz checks remain unchanged. An extracted-app journey independently checks counters 50, 52, 51 and 53, a recovered provisional gap and unchanged late-or-reset review totals, then compares the real downloaded report with the API result. Coherent Cargo/Python/npm versions and runtime notices keep the new portable release aligned with its source.",
+      "sourceCommit": "97f729a525aab8c9388c24db26748c475c88d82d",
+      "sourceUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/tree/97f729a525aab8c9388c24db26748c475c88d82d",
+      "reviewUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/blob/97f729a525aab8c9388c24db26748c475c88d82d/docs/reports/PORTABLE_REFRESH_20261109.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/runs/42698098725"
+          "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/runs/42752438406"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/runs/42698098485"
+          "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/runs/42752438449"
         }
       ],
       "limitations": [
-        "Restricted educational packet profile, not a complete operational flight or ground-system implementation.",
-        "Counter continuity/recovery does not verify equivalent payloads, sender identity or physical sender sessions.",
-        "Ambiguous observations censor reconciliation; unresolved gaps are uncertain, not automatically proven loss or recovery.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Restricted record-delimited educational CCSDS profile; no live radio/spacecraft integration, raw byte-stream resynchronization or payload authentication.",
+        "Timeline segments are review boundaries, not proof of true sender sessions; provisional recovery does not establish permanent packet loss.",
+        "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
       ]
     },
     {
       "name": "delay-tolerant-mission-network-lab",
-      "summary": "Inspect per-message queue, hop, in-flight, expiry and bottleneck waterfalls tied to recorded replay evidence.",
-      "rationale": "Connects end-to-end delivery outcomes to the actual delays and contact constraints that produced them.",
-      "sourceCommit": "4df5db2092226c2b1093413215b06d6d76c2b362",
-      "sourceUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/tree/4df5db2092226c2b1093413215b06d6d76c2b362",
-      "reviewUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/blob/4df5db2092226c2b1093413215b06d6d76c2b362/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "Replay delayed message delivery, inspect queue and hop waterfalls, and export evidence through versioned 1.1 portable applications.",
+      "rationale": "Makes simulated recovery and latency investigation available without a developer setup, while checked extraction and release identity connect the download to reviewed source.",
+      "sourceCommit": "df32f632dc89a329cfdd4eaf9c9f7b7248f8f5ac",
+      "sourceUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/tree/df32f632dc89a329cfdd4eaf9c9f7b7248f8f5ac",
+      "reviewUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/blob/df32f632dc89a329cfdd4eaf9c9f7b7248f8f5ac/docs/reports/PORTABLE_RELEASE_20261109.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/actions/runs/42698427650"
+          "url": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/actions/runs/42752661003"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/actions/runs/42698427757"
+          "url": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/actions/runs/42752660975"
         }
       ],
       "limitations": [
-        "Fixed synthetic two-hop topology; no live traffic or operational mission network.",
-        "Post-tick spans and whole-message hop ticks are not physical radio bandwidth or network diagnosis.",
-        "The full-run waterfall includes outcomes that are future relative to an earlier replay position and is labelled separately.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Invented bounded topology and logical ticks; no real radios, BPv7/BPSec interoperability or exactly-once networking.",
+        "Waterfalls explain a complete simulated experiment; causal replay separately hides future outcomes. Neither diagnoses actual radio faults.",
+        "Unsigned portable files for documented desktop OS/CPU targets; no system installer, native mobile app, production host or operational assurance."
       ]
     },
     {
       "name": "earth-observation-change-studio",
-      "summary": "Add region fringe, crop-edge, excluded and unknown context to change-region GeoJSON review after quality gating.",
-      "rationale": "Helps analysts distinguish plausible mapped changes from missing context and image-boundary artifacts.",
-      "sourceCommit": "fa160d2ddf0a94561bf71cdc8783b1c961ab4e29",
-      "sourceUrl": "https://github.com/JasonStys/earth-observation-change-studio/tree/fa160d2ddf0a94561bf71cdc8783b1c961ab4e29",
-      "reviewUrl": "https://github.com/JasonStys/earth-observation-change-studio/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/earth-observation-change-studio/blob/fa160d2ddf0a94561bf71cdc8783b1c961ab4e29/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "Inspect environmental change candidates, review immediate neighboring context and export GeoJSON in the 1.1 portable workflow.",
+      "rationale": "Carries the frozen geospatial runtime and source identity with the reviewer, so region context and actual exports remain inspectable after downloading and extracting the app.",
+      "sourceCommit": "e63d4d111512a36d1ffb19a04059b4d8965ac5d2",
+      "sourceUrl": "https://github.com/JasonStys/earth-observation-change-studio/tree/e63d4d111512a36d1ffb19a04059b4d8965ac5d2",
+      "reviewUrl": "https://github.com/JasonStys/earth-observation-change-studio/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/earth-observation-change-studio/blob/e63d4d111512a36d1ffb19a04059b4d8965ac5d2/docs/reports/PORTABLE_RELEASE_20261109.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/earth-observation-change-studio/actions/runs/42704324351"
+          "url": "https://github.com/JasonStys/earth-observation-change-studio/actions/runs/42752679175"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/earth-observation-change-studio/actions/runs/42704324690"
+          "url": "https://github.com/JasonStys/earth-observation-change-studio/actions/runs/42752679131"
         }
       ],
       "limitations": [
-        "Region context describes immediate availability, not environmental cause, statistical confidence or image-registration assurance.",
-        "Per-region context rings can overlap and must not be summed as disjoint scene totals.",
-        "No identity surveillance or targeting is supplied; controlled-file parsing is not an OS sandbox.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Four-neighbor availability describes local raster context, not environmental cause, registration accuracy or verified ground truth.",
+        "Uses bounded synthetic/frozen public environmental imagery; no identifying surveillance or targeting capability.",
+        "Unsigned portable desktop packages; no signed installer, public accounts, native mobile installation or environmental certification."
       ]
     },
     {
       "name": "mission-clock-integrity-lab",
-      "summary": "Build interval partial-order frontiers and minimal precedence edges, preserving touching/ambiguous and unqualified observations.",
-      "rationale": "Shows which event orderings are supported by clock uncertainty instead of forcing a false total timeline.",
-      "sourceCommit": "70163855ccac7454cef7800d2e59d00b71da9d3f",
-      "sourceUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/tree/70163855ccac7454cef7800d2e59d00b71da9d3f",
-      "reviewUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/blob/70163855ccac7454cef7800d2e59d00b71da9d3f/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "Compare synthetic clock histories and qualified timestamp order, inspect uncertainty frontiers and export evidence from 1.1 portable apps.",
+      "rationale": "Packages the native model, independent auditor and review interface together while keeping application/native product versions coherent and checking actual extracted execution.",
+      "sourceCommit": "1af9738149716f944cc74a3c577746bea35194db",
+      "sourceUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/tree/1af9738149716f944cc74a3c577746bea35194db",
+      "reviewUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/blob/1af9738149716f944cc74a3c577746bea35194db/docs/reports/PORTABLE_RELEASE_20261109.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/mission-clock-integrity-lab/actions/runs/42700313948"
+          "url": "https://github.com/JasonStys/mission-clock-integrity-lab/actions/runs/42752687471"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/mission-clock-integrity-lab/actions/runs/42700314644"
+          "url": "https://github.com/JasonStys/mission-clock-integrity-lab/actions/runs/42752687809"
         }
       ],
       "limitations": [
-        "Timestamp precedence is not causality; partial-order frontiers are not total-order ranks.",
-        "Unqualified intervals are excluded. Known synthetic truth is not proof of real fault detection or operational timing assurance.",
-        "No host clock changes or live time-server control is supplied. Previously published native downloads can lag the source/CI-verified upgrade."
+        "Synthetic integer intervals and logical time do not establish real UTC accuracy, timing certification or host-clock control.",
+        "Readiness frontiers are not total-order ranks; timestamp separation is not causality, and unqualified intervals remain unknown.",
+        "Unsigned desktop portable files for specific OS/CPU targets; no system installer, public hosting or physical timing integration."
       ]
     },
     {
       "name": "resilient-energy-microgrid-lab",
-      "summary": "Compare full-window feeder-loss contingencies under both policies with exact replay inputs and critical/flexible unmet-demand deltas.",
-      "rationale": "Supports transparent resilience planning with independently checked energy accounting.",
-      "sourceCommit": "f8df6fcf5b61fa5989469ab14cedf231536ead6b",
-      "sourceUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/tree/f8df6fcf5b61fa5989469ab14cedf231536ead6b",
-      "reviewUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/blob/f8df6fcf5b61fa5989469ab14cedf231536ead6b/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "Rehearse full-window feeder loss, compare two dispatch policies and download the derived replay input through 1.1 portable apps.",
+      "rationale": "Lets a reviewer investigate service/storage tradeoffs with the same original assumptions and independently checked energy accounting, using an extracted package rather than a development environment.",
+      "sourceCommit": "39a16658fbb68bc2558aea4bf60ab74253ef2aba",
+      "sourceUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/tree/39a16658fbb68bc2558aea4bf60ab74253ef2aba",
+      "reviewUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/blob/39a16658fbb68bc2558aea4bf60ab74253ef2aba/docs/reports/PORTABLE_RELEASE_20261109.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/resilient-energy-microgrid-lab/actions/runs/42702137027"
+          "url": "https://github.com/JasonStys/resilient-energy-microgrid-lab/actions/runs/42753293752"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/resilient-energy-microgrid-lab/actions/runs/42702137161"
+          "url": "https://github.com/JasonStys/resilient-energy-microgrid-lab/actions/runs/42753293735"
         }
       ],
       "limitations": [
-        "Fictional hourly adequacy stress scenarios, not forecasts or guaranteed critical-load survival.",
-        "No electrical power-flow, protection, switching-transient model or real infrastructure control is supplied.",
-        "Policy tradeoffs are profile-dependent, not a universal optimum or safety certification.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Synthetic hourly adequacy is not power flow, protection/transient behavior, a forecast or electrical safety.",
+        "Stress removes supplied feeder availability across the whole window; it does not guarantee outage survival or optimize a real facility.",
+        "Unsigned local portable desktop packages; no system installer, native mobile application or real infrastructure controls."
       ]
     },
     {
       "name": "scientific-sensor-calibration-lab",
-      "summary": "Explain response-versus-fit covariance contributions, signed cross terms and explicitly withheld uncertainty components.",
-      "rationale": "Makes calibration uncertainty traceable rather than presenting one unexplained error bar.",
-      "sourceCommit": "86a8d89c2e4b48f0208dbd1270e0ac444a644a5c",
-      "sourceUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/tree/86a8d89c2e4b48f0208dbd1270e0ac444a644a5c",
-      "reviewUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/blob/86a8d89c2e4b48f0208dbd1270e0ac444a644a5c/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "Review per-estimate variance budgets, missing samples and expired-calibration withholding in the 1.1 portable calibration workflow.",
+      "rationale": "Bundles the native fit/runtime with a practical uncertainty review and export path, tested against actual compiled execution and independent arithmetic after extraction.",
+      "sourceCommit": "1bdb2244451af67d90600e60c566435b66ea2bd0",
+      "sourceUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/tree/1bdb2244451af67d90600e60c566435b66ea2bd0",
+      "reviewUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/blob/1bdb2244451af67d90600e60c566435b66ea2bd0/docs/reports/PORTABLE_RELEASE_20261109.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/scientific-sensor-calibration-lab/actions/runs/42700330312"
+          "url": "https://github.com/JasonStys/scientific-sensor-calibration-lab/actions/runs/42752670682"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/scientific-sensor-calibration-lab/actions/runs/42700330579"
+          "url": "https://github.com/JasonStys/scientific-sensor-calibration-lab/actions/runs/42752670659"
         }
       ],
       "limitations": [
-        "First-order modeled standard uncertainty does not include every physical error or establish certified coverage.",
-        "The signed cross term is already included in the fit contribution and must not be added a second time.",
-        "Fictional instrument data provides no physical calibration traceability, hardware connection or fault diagnosis.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Modeled standard uncertainty excludes physical reference uncertainty, unmodeled correlations and certification.",
+        "The signed covariance cross term is already inside fit variance; withheld estimates have no invented uncertainty budget.",
+        "Synthetic local instrument examples and unsigned desktop portable packages; no system installer, real instrument connection or certified measurement service."
       ]
     },
     {
       "name": "space-weather-impact-observatory",
-      "summary": "Compare eligible lead-cutoff and half-window evidence with coverage and unknown issuance states retained.",
-      "rationale": "Helps analysts review time alignment without mistaking overlapping descriptive samples for independent forecast skill.",
-      "sourceCommit": "93d307f057c996988e98db5f994138e1db546f39",
-      "sourceUrl": "https://github.com/JasonStys/space-weather-impact-observatory/tree/93d307f057c996988e98db5f994138e1db546f39",
-      "reviewUrl": "https://github.com/JasonStys/space-weather-impact-observatory/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/space-weather-impact-observatory/blob/93d307f057c996988e98db5f994138e1db546f39/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "Inspect frozen observations and forecast revisions, compare lead/window coverage and export reviews with 1.1 portable applications.",
+      "rationale": "Makes a complete offline review of sparse evidence practical while preserving missingness, issuance eligibility and the identity of the downloaded source/runtime.",
+      "sourceCommit": "5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+      "sourceUrl": "https://github.com/JasonStys/space-weather-impact-observatory/tree/5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+      "reviewUrl": "https://github.com/JasonStys/space-weather-impact-observatory/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/space-weather-impact-observatory/blob/5f2363643ca7fe7ce624550dcd45e0ae4cb0185a/docs/reports/PORTABLE_RELEASE_20261109.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/space-weather-impact-observatory/actions/runs/42698453953"
+          "url": "https://github.com/JasonStys/space-weather-impact-observatory/actions/runs/42753130598"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/space-weather-impact-observatory/actions/runs/42698453895"
+          "url": "https://github.com/JasonStys/space-weather-impact-observatory/actions/runs/42753130588"
         }
       ],
       "limitations": [
-        "Lead-cutoff rows overlap and must not be pooled as independent samples.",
-        "Whole/earlier/later windows are descriptive comparisons, not significance tests or generalized forecast-skill estimates.",
-        "Frozen forecasts with unknown issuance do not establish historical skill, current conditions, causal impact or mission guidance.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Frozen public and synthetic snapshots do not provide current conditions, causal mission-impact prediction or operational guidance.",
+        "Lead cutoffs overlap and fixed-half comparisons are descriptive; they are not independent samples or statistical significance tests.",
+        "Unsigned desktop portable packages; no system installer, hosted account service or native mobile installation."
       ]
     },
     {
       "name": "reactor-systems-simulator",
-      "summary": "Compare matched dimensionless thermal lessons with forcing controls, sampled peaks and scenario differences.",
-      "rationale": "Improves educational cause-and-effect review within the documented non-operational model.",
-      "sourceCommit": "976df5453827fd6775822091d3a6f264ca1fc0fa",
-      "sourceUrl": "https://github.com/JasonStys/reactor-systems-simulator/tree/976df5453827fd6775822091d3a6f264ca1fc0fa",
-      "reviewUrl": "https://github.com/JasonStys/reactor-systems-simulator/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/reactor-systems-simulator/blob/976df5453827fd6775822091d3a6f264ca1fc0fa/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "Explore fictional dimensionless thermal lessons, compare forcing with matched baselines and export sampled differences through 1.1 portable apps.",
+      "rationale": "Packages the numerical kernel and explanatory interface so a reviewer can distinguish changed forcing from changed assumptions and inspect the same evidence after extraction.",
+      "sourceCommit": "a6d4fc55f12681c5b5bdec1dcd09ddb801d94683",
+      "sourceUrl": "https://github.com/JasonStys/reactor-systems-simulator/tree/a6d4fc55f12681c5b5bdec1dcd09ddb801d94683",
+      "reviewUrl": "https://github.com/JasonStys/reactor-systems-simulator/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/reactor-systems-simulator/blob/a6d4fc55f12681c5b5bdec1dcd09ddb801d94683/docs/reports/PORTABLE_RELEASE_20261109.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/reactor-systems-simulator/actions/runs/42704296114"
+          "url": "https://github.com/JasonStys/reactor-systems-simulator/actions/runs/42752810305"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/reactor-systems-simulator/actions/runs/42704296168"
+          "url": "https://github.com/JasonStys/reactor-systems-simulator/actions/runs/42752810464"
         }
       ],
       "limitations": [
-        "Fictional dimensionless two-node thermal analogy, not reactor physics or an operational nuclear-reactor model.",
-        "No fuel/rod optimization, kinetics, criticality, radiation, real-reactor monitoring or operating/safety recommendations are supplied.",
-        "Sampled extrema and numerical tolerances are not physical measurements or certified safety thresholds.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "A fictional thermal analogy, with no nuclear physics, fuel, neutron, criticality, radiation or real-plant monitoring/control.",
+        "Sampled extrema and numerical tolerances are not physical measurements, safety limits or operating recommendations.",
+        "Unsigned educational desktop portable packages; no system installer, native mobile app, plant connection or safety certification."
       ]
     },
     {
@@ -542,7 +535,7 @@
         "A relay send is not receiver acknowledgement or end-to-end delivery proof.",
         "Missing correlation metadata does not prove loss; imported retention and identity declarations remain self-reported.",
         "The ledger does not verify CRC, signature, payload authenticity or operational aircraft safety.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Source-first project with current package/service validation; no public native desktop application release is supplied."
       ]
     },
     {
@@ -567,7 +560,7 @@
         "Synthetic abstract cells, slots and resources; no actual emergency response or aircraft dispatch.",
         "Comparisons preserve the original objective rather than guaranteeing minimum changes to the saved plan.",
         "Truncated comparisons do not prove an optimum or guaranteed loss bound.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Source-first project with current package/service validation; no public native desktop application release is supplied."
       ]
     },
     {
@@ -592,7 +585,7 @@
         "Two manually authored rectangle keyframes and linear assumptions, not automatic detection, recognition or identity tracking.",
         "Nonlinear movement or contextual identifiers require every-frame human review; envelopes can over-mask and do not certify anonymity.",
         "Workspace protection trusts the local OS owner; no real sensitive footage or operational surveillance validation is claimed.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Source-first project with current package/service validation; no public native desktop application release is supplied."
       ]
     },
     {
@@ -617,7 +610,7 @@
         "Hypothetical configured thresholds and constant workloads, not manufacturer approval or probabilistic component-life predictions.",
         "Draft comparisons do not publish a maintenance standard, alter the ledger or authorize service/flight.",
         "No live fleet/hardware integration is supplied; local data is unencrypted and trusts the OS owner.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Source-first project with current package/service validation; no public native desktop application release is supplied."
       ]
     },
     {
@@ -642,7 +635,7 @@
         "Fictional local-coordinate constant-velocity awareness, not flight permission, collision probability or avoidance control.",
         "Freshness is evaluated at the supplied snapshot, not continuously across the projection.",
         "No declared pairs or modeled overlap does not prove clear airspace; undeclared objects and incompatible altitude references remain unknown.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Source-first project with current package/service validation; no public native desktop application release is supplied."
       ]
     },
     {
@@ -666,7 +659,7 @@
       "limitations": [
         "Bounded organizational checklist using fictional self-reported evidence, not complete/current law or verified approval.",
         "An unpublished comparison is not persisted human review and grants no flight or legal authorization.",
-        "No real aircraft, surveillance or external authorization service is controlled. Previously published native downloads can lag the source/CI-verified upgrade."
+        "No real aircraft, surveillance or external authorization service is controlled. Source/package validation does not supply a public native desktop release."
       ]
     },
     {
@@ -790,26 +783,26 @@
     },
     {
       "name": "accessible-design-system-lab",
-      "summary": "Add stable explicit-key sorting, null-last semantics, pagination, focus preservation and loading/error/empty announcements to the live table catalog.",
-      "rationale": "Makes reusable data tables work for keyboard and assistive-technology users in realistic application states.",
-      "sourceCommit": "56c6869b4a2d0accc11c5700968594cef3c12074",
-      "sourceUrl": "https://github.com/JasonStys/accessible-design-system-lab/tree/56c6869b4a2d0accc11c5700968594cef3c12074",
-      "reviewUrl": "https://github.com/JasonStys/accessible-design-system-lab/pull/17",
-      "validationReportUrl": "https://github.com/JasonStys/accessible-design-system-lab/blob/56c6869b4a2d0accc11c5700968594cef3c12074/docs/reports/practical-workflows-20261109.md",
+      "summary": "Use accessible table sorting, paging, stable missing-value ordering and focus handling. Final TGZ acceptance now installs the actual public package into an external React/Vite consumer and exercises shipped behavior, CSS and accessibility in Chromium.",
+      "rationale": "Proves that the packaged public exports work in a genuine separate consumer instead of passing because export names appear in JavaScript text.",
+      "sourceCommit": "bd689a5a8b119ed629905f65d90d097ae16acd0e",
+      "sourceUrl": "https://github.com/JasonStys/accessible-design-system-lab/tree/bd689a5a8b119ed629905f65d90d097ae16acd0e",
+      "reviewUrl": "https://github.com/JasonStys/accessible-design-system-lab/pull/18",
+      "validationReportUrl": "https://github.com/JasonStys/accessible-design-system-lab/blob/bd689a5a8b119ed629905f65d90d097ae16acd0e/docs/reports/installed-consumer-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/accessible-design-system-lab/actions/runs/42712082599"
+          "url": "https://github.com/JasonStys/accessible-design-system-lab/actions/runs/42749658831"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/accessible-design-system-lab/actions/runs/42712082126"
+          "url": "https://github.com/JasonStys/accessible-design-system-lab/actions/runs/42749658810"
         }
       ],
       "limitations": [
-        "Automated Axe/keyboard/browser results are not WCAG conformance or manual NVDA, JAWS or VoiceOver evidence.",
-        "Sorting uses explicit keys and deterministic code-unit order, not locale-aware collation; consumers own domain-specific sort keys.",
-        "Sorting is in memory with paginated rendering, not server pagination, virtualization, authentication or fetch/retry handling."
+        "An installable component library and catalog, without automatic npm publication or a native desktop installer.",
+        "Synthetic component/browser checks and zero automated axe findings do not certify accessibility or replace manual assistive-technology testing.",
+        "Archive integrity and locked peers identify tested bytes, not independently authenticated publishers or OS code signatures."
       ]
     },
     {
@@ -907,7 +900,7 @@
         "Imported trace schema validity is not execution proof; the viewer does not rerun imported programs.",
         "Displayed final registers are end-state values, not selected-cycle register snapshots.",
         "Full-run cycle/CPI metrics do not imply every cycle was retained in a capped trace.",
-        "The upgraded workflow is source/CI verified; previously published native downloads can lag these changes."
+        "Source-first project with current package/service validation; no public native desktop application release is supplied."
       ]
     },
     {
@@ -1533,26 +1526,26 @@
     },
     {
       "name": "node-red-resilient-metadata",
-      "summary": "Handle bounded Retry-After seconds/dates, rate-limit spacing and cancellation of delayed requests while releasing unused error response bodies.",
-      "rationale": "Makes integration recovery behave predictably under real HTTP throttling and user cancellation.",
-      "sourceCommit": "51a91f9aff20ea8854f1d2693d3071d35f06689b",
-      "sourceUrl": "https://github.com/JasonStys/node-red-resilient-metadata/tree/51a91f9aff20ea8854f1d2693d3071d35f06689b",
-      "reviewUrl": "https://github.com/JasonStys/node-red-resilient-metadata/pull/24",
-      "validationReportUrl": "https://github.com/JasonStys/node-red-resilient-metadata/blob/51a91f9aff20ea8854f1d2693d3071d35f06689b/docs/reports/practical-workflows-2026-11-09.md",
+      "summary": "Install bounded, credential-aware Node-RED metadata nodes. Final TGZ tests now use a real separate Node-RED runtime and HTTP provider to verify success, routing, retry, cooldown and cancellation; compatible tooling fixes and full-graph auditing address the exposed dependency findings.",
+      "rationale": "Tests the distributed package at its actual message and network boundary and closes the security gap left by a partial dependency audit.",
+      "sourceCommit": "db08d20afb9088310b76d090c5c12e8964f4676d",
+      "sourceUrl": "https://github.com/JasonStys/node-red-resilient-metadata/tree/db08d20afb9088310b76d090c5c12e8964f4676d",
+      "reviewUrl": "https://github.com/JasonStys/node-red-resilient-metadata/pull/25",
+      "validationReportUrl": "https://github.com/JasonStys/node-red-resilient-metadata/blob/db08d20afb9088310b76d090c5c12e8964f4676d/docs/reports/installed-consumer-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/node-red-resilient-metadata/actions/runs/42695814855"
+          "url": "https://github.com/JasonStys/node-red-resilient-metadata/actions/runs/42749651255"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/node-red-resilient-metadata/actions/runs/42695816642"
+          "url": "https://github.com/JasonStys/node-red-resilient-metadata/actions/runs/42749651088"
         }
       ],
       "limitations": [
-        "HTTP dates accept IMF-fixdate; obsolete or malformed forms fall back to configured spacing.",
-        "Server cooldowns over 30 seconds fail for operator recovery rather than retrying early; later retries need caller scheduling.",
-        "Unused error response bodies are released, not retained or exposed as diagnostic content."
+        "Synthetic local providers and in-memory fixture storage exercise the installed node lifecycle, not a production editor deployment, external provider availability or persistent flow configuration.",
+        "The Node-RED host remains a separate installation responsibility. No new public npm publication or native desktop installer is supplied.",
+        "Known-advisory audit results are time-specific and do not prove absence of vulnerabilities; checksum evidence does not establish publisher authentication."
       ]
     },
     {

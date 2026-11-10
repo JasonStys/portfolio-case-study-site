@@ -1,7 +1,7 @@
 ---
 title: "A passing test is not enough evidence"
 repository: "https://github.com/JasonStys/mission-verification-evidence-kit"
-summary: "Revision-aware requirement traceability with independent SQL verdicts and a prioritized revalidation queue for stale, missing or mismatched evidence."
+summary: "Requirements, test and fault traceability with metadata-bound revalidation queues and source-bound portable evidence review."
 role: "Verification evidence and developer tooling"
 languages: ["Python", "TypeScript", "SQL"]
 evidence:
@@ -15,32 +15,28 @@ evidence:
 
 ## Problem
 
-An old green result can survive a changed requirement or hide a newer failure. A badge also cannot tell a reviewer which evidence to refresh, which fault links are missing or which source revision the next test must describe.
+A declaration that evidence is complete does not identify which test must be rerun, which source and baseline revisions it must match, when accepted evidence first becomes stale or which requirement lacks a procedure.
 
 ## Constraints
 
-Require explicit bounded links and exact revisions. The newest attempt governs even when an older one passed. Supplied evidence must not execute arbitrary commands, and an action queue must not override the gate or present declared metadata as authenticated mission truth.
+Declared synthetic evidence only. SQL agreement checks consistency, not authenticity, completeness of omitted requirements or flight qualification. The queue plans human review rather than running tests or waiving a release gate.
 
 ## Design
 
-Python validates bounded requirement/test/fault links, latest attempts, chronology, freshness and revision bindings. Independently formulated SQL checks each requirement verdict; disagreement suppresses the report. Older passes cannot override a newer failure or skip. A fixed-suite JUnit adapter imports reviewed test results without executing arbitrary supplied code.
-
-The new revalidation queue turns these findings into concrete human work. It prioritizes blocked critical requirements and supplies expected source, definition and component revisions, procedure references and inclusive freshness deadlines. Missing procedures or fault links, chronology investigations and release-source reconciliation remain distinct actions.
-
-A reviewer can open a deliberate gap fixture, inspect the required evidence and export the same checklist through the UI, JSON, HTML or CLI. The queue does not weaken or replace the independent gate. It helps plan the next review without fabricating a rerun or granting a waiver.
+Preserve the original requirement/test/fault model, independent SQL cross-check, export formats and immutable local history. Prioritize blocked critical tests, retain expected source/definition/baseline metadata, calculate the first-invalid integer second and identify structural procedure/fault-link gaps. The released 1.1.0 portable app brings that queue into an extracted, source-bound native UI with actual export acceptance.
 
 ## Verification
 
-Independent SQL evaluates requirement verdicts separately from Python. Boundary and mutation fixtures check freshness, revisions, latest attempts and work priority; actual UI/export journeys exercise the resulting checklist, structural gaps and stale/error states.
+The real extracted UI identifies TEST-STORE as blocked critical evidence, preserves its expected source/revision metadata and independently verifies the 1800084601 freshness boundary for accepted tests. A missing-procedure scenario remains distinct from a failing test. Downloaded JSON must equal the API report. Previous four-format export, replay, local SQL history and runtime notice checks remain active.
 
 ## Measured result
 
-The report records **177 Python tests at 98.05% combined statement/branch coverage**, **four TypeScript tests** and **39 Chromium/Firefox/WebKit browser journeys**. Independent cases check the exact valid-age boundary and next invalid second, required revisions, critical priority, configured/unconfigured fault links and separation of chronology from release-source work.
+Recorded locally: 266 Python tests passed with 98.13% combined coverage against the unchanged 90% requirement; 4 TypeScript tests,39 real Chromium/Firefox/WebKit source journeys and6 original evidence-summary benchmarks passed. The actual extracted Windows revalidation UI/export passed. Nineteen independent authenticated draft-API regressions preserve fail-closed source and release identity checks.
 
-Browser journeys inspect queue priority and structural work, actual downloads, stale/error handling and mobile accessibility. Six existing gate summaries remain unchanged. Accepted-source CI also retains SQL, actual fixed-suite recording, security and portable-build checks.
+Accepted source: [`2743307a90da1621392fcafa138b6e103db751d5`](https://github.com/JasonStys/mission-verification-evidence-kit/tree/2743307a90da1621392fcafa138b6e103db751d5). The [validation report](https://github.com/JasonStys/mission-verification-evidence-kit/blob/2743307a90da1621392fcafa138b6e103db751d5/docs/reports/PORTABLE_REFRESH_20261109.md) records executed scope and conditions. Exact-source main checks passed: [CodeQL](https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42752190053), [Validation](https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42752189945).
 
-Accepted source: [`048dd33a041fa53d7ecfc8cdab369137812a47ed`](https://github.com/JasonStys/mission-verification-evidence-kit/tree/048dd33a041fa53d7ecfc8cdab369137812a47ed). The [change report](https://github.com/JasonStys/mission-verification-evidence-kit/blob/048dd33a041fa53d7ecfc8cdab369137812a47ed/docs/reports/PRACTICAL_WORKFLOWS_20261109.md) records the executed scope and results. Exact-main workflow records passed: [CodeQL](https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42702154070), [Validation](https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42702154127).
+[Version 1.1.0 downloads](https://github.com/JasonStys/mission-verification-evidence-kit/releases/tag/v1.1.0) contain application source [`2743307a90da1621392fcafa138b6e103db751d5`](https://github.com/JasonStys/mission-verification-evidence-kit/tree/2743307a90da1621392fcafa138b6e103db751d5). The [release workflow](https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42753754176) passed its documented native gates. See the [download index](/portfolio-case-study-site/downloads/) for actual platforms, file types, full checksums and runtime requirements. All three release jobs exercised their own freshly extracted application and real UI/export. The Windows download was independently checked and exercised again before publication; this does not certify an installer lifecycle or default OS browser opening.
 
 ## Limitations
 
-The queue uses a supplied fixed observation time; it is not a live reminder or automatic rerun system. Traceability cannot discover omitted requirements, fabricated results or weak assertions. SQL agreement is not external truth; hashes are not signatures. Separately verifying a signed demo delivery does not authenticate fictional mission results. No mission authorization, compliance certification or flight assurance is supplied. Older downloads predate this queue; use the accepted source.
+A passing declaration can still be false or incomplete. The review queue cannot establish evidence provenance or repair chronology by itself. Unsigned portable folders are not installers; local Windows and --no-browser acceptance do not prove every OS opener or clean-machine installation.

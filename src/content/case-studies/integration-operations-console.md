@@ -45,4 +45,4 @@ Accepted source: [`2563b4154d2e7755516d12911d68c4a32d654905`](https://github.com
 
 ## Limitations
 
-Providers and accounts are fictional; demo role headers are not authentication. The scheduler is single-instance. Keyset pages are live, older review requests capture new current state, and legacy account/audit routes remain unbounded. No exactly-once or commercial-provider compatibility claim is made. Earlier downloads have not been rebuilt for this update; use the accepted source.
+Providers and accounts are fictional; demo role headers are not authentication. The scheduler is single-instance. Keyset pages are live, older review requests capture new current state, and legacy account/audit routes remain unbounded. No exactly-once or commercial-provider compatibility claim is made. This source-first project is built and exercised through its documented package/service gates; no native desktop release is supplied.

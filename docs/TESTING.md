@@ -88,6 +88,28 @@ npm run audit
 - `CodeQL` runs on changes and a weekly schedule.
 - `dependency-review` rejects risky pull-request dependency changes.
 
+Browser setup keeps the existing 20-minute job deadline and zero test retries.
+The disposable Ubuntu 24.04 x64 runner uses the two official HTTPS Ubuntu mirrors
+with one APT acquire retry and 15-second HTTP/HTTPS transport waits. Its suites,
+components, archive keyring and signature checks stay unchanged. OS dependencies
+and locked browser binaries have separate 10- and 5-minute setup deadlines; a
+setup failure cannot count as an application-test pass. The first download-refresh
+PR attempt timed out in APT before Firefox/WebKit tests started; completed logs
+identified the stalled Azure HTTP mirror and package-index acquisition.
+[GitHub's runner configuration](https://github.com/actions/runner-images/blob/main/images/ubuntu/scripts/build/configure-apt.sh)
+explains the acquire-key names and configuration precedence; its
+[mirror source](https://github.com/actions/runner-images/blob/main/images/ubuntu/scripts/build/configure-apt-sources.sh)
+defines the official archive endpoints. These CI-only changes do not edit a
+developer's OS or relax application, accessibility or performance checks.
+
+## Published downloads
+
+The download validator has independent fixtures for the fixed 20-project/62-payload inventory, source/verifier separation, real platform requirements, checksum URL boundaries, unknown/private fields, wrong versions and incomplete package sets. Two production-page journeys run under all three existing browser engines. The no-script case checks actual metadata, all payload/checksum links, Windows-only Drone Operations, Secure Delivery's signed manifest, keyboard focus and 320-pixel reflow. A separate normal JavaScript context runs the asynchronous axe scanner. Both block outside resources; no-script browsing is not confused with a disabled scanner runtime.
+
+Chromium/Firefox exercise Tab traversal between package and checksum links. WebKit follows the host's native link-tab preference, so its case explicitly focuses and activates the local project-detail link by keyboard, consistent with the existing navigation tests. [Apple documents the distinction between Tab and Option-Tab](https://support.apple.com/guide/safari/keyboard-shortcuts-and-gestures-cpsh003/mac); these headless tests do not establish a user's particular Safari preference.
+
+The portfolio does not execute downloaded binaries in browser tests. Each project's source-bound release workflow and the separate native acceptance records establish that scope. Passing native extraction/UI checks does not establish signed installation, a clean-machine lifecycle or default OS browser opening. Source quality, coverage, asset, performance and accessibility thresholds remain unchanged.
+
 ## Manual checks before release
 
 - Read every changed case study for unsupported claims and confidential details.

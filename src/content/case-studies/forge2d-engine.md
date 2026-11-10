@@ -44,4 +44,4 @@ Accepted source: [`43fd93f79043231230a4c19346bdb8a4c356d9ce`](https://github.com
 
 ## Limitations
 
-Filters select AABB query pairs. They do not stop bodies passing through one another, apply forces, create enter/exit callbacks or change navigation. Consumers own gameplay reactions and valid handles. This is a fictional 2D engine lab, not a complete commercial editor or real-world tracking/control system. Earlier downloads have not been rebuilt for this update; use the accepted source.
+Filters select AABB query pairs. They do not stop bodies passing through one another, apply forces, create enter/exit callbacks or change navigation. Consumers own gameplay reactions and valid handles. This is a fictional 2D engine lab, not a complete commercial editor or real-world tracking/control system. This source-first project is built and exercised through its documented package/service gates; no native desktop release is supplied.

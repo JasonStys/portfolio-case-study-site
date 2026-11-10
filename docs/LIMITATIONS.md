@@ -27,6 +27,12 @@
 - Private repository discovery or employment/interview tracking.
 - A claim that one portfolio can substitute for technical interviews or reference checks.
 
+## Download boundaries
+
+The release index describes the twenty existing downloadable projects rather than promising a native application for every catalog entry. Drone Operations currently ships only its Windows installer. Fourteen space/energy projects supply unsigned Windows ZIP and Linux/macOS tar.gz portable folders; Secure Delivery supplies a bounded Python zipapp with separately installed trusted manager source. Other projects retain their documented library, service, source or PWA distribution.
+
+Application source and acceptance-tool source can differ without changing the published bytes; Applicant Evidence Studio shows both explicitly. Checksums identify bytes, not trusted publishers. The signed delivery example additionally authenticates keyless provenance. Native automated journeys are narrower than OS signing/notarization, clean-machine installer lifecycles, manual assistive-technology review, production readiness, native mobile support or real hardware safety. Check each project's own limits before use.
+
 ## Future work requires evidence
 
 Add a feature only when a real evaluator need outweighs the new complexity. Candidate work includes a reviewed raster social card, custom domain security headers, recruiter usability testing, assistive-technology testing, and an optional printable résumé page after personal-information review.

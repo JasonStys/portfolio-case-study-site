@@ -29,6 +29,7 @@
 | `docs/reports/ACTIONS_REVIEW_2026-10-14.md`                       | Project documentation described by its title and sections.                                                   |
 | `docs/reports/business-standards-sync-2026-10-21.md`              | Project documentation described by its title and sections.                                                   |
 | `docs/reports/code-flow-sync-2026-10-21.md`                       | Project documentation described by its title and sections.                                                   |
+| `docs/reports/download-refresh-2026-11-09.md`                     | Project documentation described by its title and sections.                                                   |
 | `docs/reports/generated/search-benchmark.json`                    | Repository support file.                                                                                     |
 | `docs/reports/PERFORMANCE.md`                                     | Project documentation described by its title and sections.                                                   |
 | `docs/reports/portfolio-sync-2026-10-14.md`                       | Project documentation described by its title and sections.                                                   |
@@ -86,10 +87,13 @@
 | `src/data/github-repositories.json`                               | Reviewed GitHub repository metadata cache used by offline builds.                                            |
 | `src/data/portfolio-priority.json`                                | Canonical reviewed ordering of all 67 public portfolio repositories.                                         |
 | `src/data/project-curation.ts`                                    | Curates reviewed roles, domains, outcomes, maturity, and six featured cases.                                 |
+| `src/data/project-downloads.json`                                 | Repository support file.                                                                                     |
 | `src/data/project-upgrades.json`                                  | Repository support file.                                                                                     |
 | `src/data/space-systems.ts`                                       | Jason Stys's reviewed civilian space/energy portfolio collection and highlight rationale.                    |
 | `src/lib/catalog-revision.ts`                                     | Derives build-only search cache identities from the complete reviewed catalog and metadata timestamp.        |
 | `src/lib/catalog.ts`                                              | Validates cached GitHub metadata, merges curation, and derives deterministic facets.                         |
+| `src/lib/download-catalog.ts`                                     | Loads only the coordinator's final public download index after all release checks pass.                      |
+| `src/lib/downloads.ts`                                            | Validates a source-bound public index of the 20 projects with existing downloadable releases.                |
 | `src/lib/search.ts`                                               | Builds and queries a deterministic inverted index for project text and exact facets.                         |
 | `src/lib/types.ts`                                                | Defines the validated repository, curation, search, and evidence domain types.                               |
 | `src/lib/upgrades.ts`                                             | Validates public source-bound upgrade evidence against the exact reviewed domain catalog.                    |
@@ -98,6 +102,8 @@
 | `src/pages/404.astro`                                             | Provides a useful static not-found page for GitHub Pages fallback routing.                                   |
 | `src/pages/about.astro`                                           | Presents the portfolio owner's engineering focus, working principles, and role alignment.                    |
 | `src/pages/case-studies/[slug].astro`                             | Pre-renders each schema-validated case study with repository and evidence context.                           |
+| `src/pages/downloads/index.astro`                                 | Presents the 20 existing downloadable releases with explicit package, runtime and proof boundaries.          |
+| `src/pages/downloads/index.json.ts`                               | Emits the complete public download evidence without repeating large digests in HTML.                         |
 | `src/pages/drone-systems.astro`                                   | Jason Stys's drone-safety collection with evidence-led highlights and explicit limits.                       |
 | `src/pages/feed.xml.ts`                                           | Generates an RSS feed of featured case studies without runtime network access.                               |
 | `src/pages/index.astro`                                           | Renders the employer-facing portfolio overview and six featured engineering cases.                           |
@@ -110,9 +116,11 @@
 | `src/pages/updates/index.astro`                                   | Provides a compact no-script reading path through all project improvements and evidence pages.               |
 | `src/scripts/project-filter.ts`                                   | Enhances the project catalog with debounced text search, exact facets, URL state, and announcements.         |
 | `src/styles/global.css`                                           | Defines the evidence-first visual system, responsive layouts, focus states, and motion policy.               |
+| `tests/e2e/downloads.spec.ts`                                     | Tests actual20-project62-payload static download discovery without fetching external binaries.               |
 | `tests/e2e/portfolio.spec.ts`                                     | Exercises navigation, progressive catalog filtering, URL state, case studies, and accessibility.             |
 | `tests/e2e/upgrades.spec.ts`                                      | Exercises static upgrade discovery, exact-source links, no-JavaScript browsing and hub limits.               |
 | `tests/unit/catalog.test.ts`                                      | Verifies cache validation, deterministic catalog merging, featured order, and facets.                        |
+| `tests/unit/downloads.test.ts`                                    | Checks the independent20-project62-payload download fixture and hostile public metadata boundaries.          |
 | `tests/unit/search.test.ts`                                       | Verifies Unicode tokenization, deterministic postings, intersections, facets, and empty results.             |
 | `tests/unit/upgrades.test.ts`                                     | Tests exact catalog coverage, immutable source identity and public-only evidence schema.                     |
 | `tests/unit/utilities.test.ts`                                    | Verifies repository-base URL construction and XML escaping boundaries.                                       |

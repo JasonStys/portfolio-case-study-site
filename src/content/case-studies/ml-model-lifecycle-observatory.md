@@ -45,4 +45,4 @@ Accepted source: [`e3f47233539d2af763b5c30a2575e6544a0ba5d7`](https://github.com
 
 ## Limitations
 
-This is a synthetic operator-token lab, not general user accounts or production release authority. Recorded metrics and dataset fingerprints are declarations matched to the artifact, not independently repeated evaluation. The 100-sample drift heuristic is not statistical confidence or causal diagnosis. Snapshots may become stale. Earlier downloads have not been rebuilt for this update; use the accepted source.
+This is a synthetic operator-token lab, not general user accounts or production release authority. Recorded metrics and dataset fingerprints are declarations matched to the artifact, not independently repeated evaluation. The 100-sample drift heuristic is not statistical confidence or causal diagnosis. Snapshots may become stale. This source-first project is built and exercised through its documented package/service gates; no native desktop release is supplied.

@@ -17,7 +17,25 @@ The release gate covers catalog/cache contracts, search behavior, URL/XML helper
 | Lighthouse       | Accessibility 1.00; performance ≥0.92; best practices ≥0.95; SEO ≥0.95. |
 | Security         | Zero high/critical npm findings and zero unresolved CodeQL findings.    |
 
-## Current synchronization: 2026-11-09
+## Current download synchronization: 2026-11-09
+
+All **133 unit tests** passed: 97.34% statements, 97.30% branches, 100% functions
+and 97.68% lines, with the original coverage gates unchanged. All **51 browser
+executions** passed across Chromium, Firefox and WebKit with zero retries. The
+new 49-case public download contract and two three-engine journeys cover the
+actual 20-release/62-payload inventory, exact source/verifier identity, complete
+hashes, supported platforms, no-script navigation, keyboard activation, 320-pixel
+layout and axe WCAG checks. The asynchronous scanner runs in a separate normal
+JavaScript context; no-script browsing remains independently tested.
+
+Full formatting, strict lint/types, metadata freshness, source/file indexes,
+README synchronization, production build, 10,000-project search benchmark and
+unchanged static budgets passed. The complete production/development dependency
+audit reported zero known findings. Three Lighthouse runs passed: performance
+0.97; accessibility, best practices and SEO 1.00. See the
+[download review](download-refresh-2026-11-09.md) for release proof and limits.
+
+## Previous workflow synchronization: 2026-11-09
 
 All 84 unit tests passed, with 99.47% lines, 98.63% branches and 100% functions.
 All 45 browser executions passed across Chromium, Firefox and WebKit with zero

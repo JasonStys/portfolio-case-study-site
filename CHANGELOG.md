@@ -6,6 +6,9 @@ All notable changes use a simplified Keep a Changelog structure. Version numbers
 
 ### Added
 
+- A source-bound download index for 20 existing release projects and 62 actual payloads, with explicit platform/package/runtime requirements, complete hashes and application/verifier evidence.
+- Negative download-contract cases and a three-engine no-script, keyboard, mobile and accessibility journey through the actual published-release catalog.
+
 - Static detail pages for every approved portfolio project, with practical changes,
   rationale, explicit limits and immutable source/review/validation links.
 - A complete workflow-upgrade index and a strict public evidence contract covering
@@ -15,6 +18,7 @@ All notable changes use a simplified Keep a Changelog structure. Version numbers
 
 ### Improved
 
+- Updated case studies and all project evidence after the fourteen portable 1.1.0 refreshes, authenticated delivery 1.1.0, unchanged-byte Applicant Evidence acceptance and installed-consumer library checks. Existing source-first distributions remain explicit.
 - All 67 catalog/README outcomes and all 15 detailed case studies reflect the
   practical workflow upgrades, preserving the original project order and six highlights.
 - Current Code Flow 0.4, Workbench 1.4, Applicant Evidence 0.3, Image Model 0.3 and

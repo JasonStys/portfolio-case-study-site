@@ -24,6 +24,7 @@ export const GET: APIRoute = () => {
     "",
     "projects/",
     "updates/",
+    "downloads/",
     "space-systems/",
     "drone-systems/",
     "about/",

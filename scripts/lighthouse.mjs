@@ -36,18 +36,23 @@ const MAX_DEVTOOLS_ENTRIES = 10_000;
 function checkDiagnosticUrl(raw, mainDocument = false, browserTrace = false) {
   if (!mainDocument && (raw === "" || raw === "about:blank")) return;
   // V8/sourceURL labels in Trace are plain strings, not navigable network destinations.
-  if (browserTrace && typeof raw === "string" && !/^[A-Za-z][A-Za-z0-9+.-]*:/u.test(raw)) return;
+  if (browserTrace && typeof raw === "string" && !/^[A-Za-z][A-Za-z0-9+.-]*:/u.test(raw)) {
+    if (/^[\\/]/u.test(raw))
+      throw new Error("Lighthouse diagnostics refused an absolute filesystem source label.");
+    return;
+  }
   let url;
   try {
     url = new URL(raw);
   } catch {
     throw new Error("Lighthouse diagnostics refused a malformed static-target URL.");
   }
-  // Chrome's public empty-profile startup resources are not page requests; history/settings stay forbidden.
+  // Internal Chrome source labels vary by platform/version; they are not page network destinations.
   if (
     browserTrace &&
     ["chrome:", "chrome-untrusted:"].includes(url.protocol) &&
-    ["newtab", "new-tab-page", "resources"].includes(url.hostname) &&
+    url.hostname &&
+    !url.port &&
     !url.username &&
     !url.password &&
     !url.search &&

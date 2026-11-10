@@ -130,27 +130,55 @@ describe("bounded Lighthouse diagnostic evidence", () => {
     expect(await readdir(output)).toEqual([]);
   });
 
-  it("retains only explicit empty-profile startup frame URLs in Trace, never as network destinations", async () => {
+  it.each(["chrome:", "chrome-untrusted:"])(
+    "retains %s source labels only in raw Trace, never as network destinations",
+    async (scheme) => {
+      const output = await directory();
+      const result = fixture();
+      const source = scheme + "//browser-internal/component/source.js";
+      first(result.artifacts.Trace.traceEvents).args.data.url = source;
+      await saveRunDiagnostics(result, 1, { audit: 1 }, output);
+      const trace = JSON.parse(await readFile(path.join(output, "run-1.trace.json"), "utf8"));
+      expect(trace.traceEvents[0].args.data.url).toBe(source);
+      first(result.artifacts.Trace.traceEvents).args.data.url = "_lighthouse-eval.js";
+      await saveRunDiagnostics(result, 2, { audit: 1 }, output);
+      first(result.artifacts.DevtoolsLog).params.request.url = source;
+      await expect(saveRunDiagnostics(result, 3, { audit: 1 }, output)).rejects.toThrow(
+        /owned static target/,
+      );
+      expect(await readdir(output)).not.toContain("run-3.trace.json");
+    },
+  );
+
+  it.each([
+    "chrome://user:password@browser-internal/component",
+    "chrome://browser-internal/component?private=value",
+    "chrome://browser-internal/component#private",
+    "chrome-untrusted://user:password@browser-internal/component",
+    "chrome-untrusted://browser-internal/component?private=value",
+    "chrome-untrusted://browser-internal/component#private",
+  ])("refuses credentials/query/fragments in browser-internal Trace labels", async (source) => {
     const output = await directory();
     const result = fixture();
-    first(result.artifacts.Trace.traceEvents).args.data.url = "chrome://new-tab-page/";
-    await saveRunDiagnostics(result, 1, { audit: 1 }, output);
-    const trace = JSON.parse(await readFile(path.join(output, "run-1.trace.json"), "utf8"));
-    expect(trace.traceEvents[0].args.data.url).toBe("chrome://new-tab-page/");
-    first(result.artifacts.Trace.traceEvents).args.data.url =
-      "chrome://resources/js/load_time_data.js";
-    await saveRunDiagnostics(result, 2, { audit: 1 }, output);
-    first(result.artifacts.Trace.traceEvents).args.data.url = "_lighthouse-eval.js";
-    await saveRunDiagnostics(result, 3, { audit: 1 }, output);
-    first(result.artifacts.DevtoolsLog).params.request.url = "chrome://new-tab-page/";
-    await expect(saveRunDiagnostics(result, 2, { audit: 1 }, output)).rejects.toThrow(
+    first(result.artifacts.Trace.traceEvents).args.data.url = source;
+    await expect(saveRunDiagnostics(result, 1, { audit: 1 }, output)).rejects.toThrow(
       /owned static target/,
     );
-    first(result.artifacts.DevtoolsLog).params.request.url = target;
-    first(result.artifacts.Trace.traceEvents).args.data.url = "chrome://history/";
-    await expect(saveRunDiagnostics(result, 2, { audit: 1 }, output)).rejects.toThrow(
+    expect(await readdir(output)).toEqual([]);
+  });
+
+  it("refuses absolute filesystem labels even when they are not file URLs", async () => {
+    const output = await directory();
+    const result = fixture();
+    first(result.artifacts.Trace.traceEvents).args.data.url = "/private/source.js";
+    await expect(saveRunDiagnostics(result, 1, { audit: 1 }, output)).rejects.toThrow(
+      /absolute filesystem/,
+    );
+    first(result.artifacts.Trace.traceEvents).args.data.url = "C:/private/source.js";
+    await expect(saveRunDiagnostics(result, 1, { audit: 1 }, output)).rejects.toThrow(
       /owned static target/,
     );
+    expect(await readdir(output)).toEqual([]);
   });
 
   it.each(["Authorization", "Cookie", "Set-Cookie", "Proxy-Authorization"])(

@@ -57,8 +57,8 @@ checks require the requested and final main document to equal the fixed owned
 loopback target. Actual DevTools network URL fields must stay within that site's origin and
 base path; credential-bearing URLs, query strings, fragments, authorization/cookie
 headers, request bodies and cookie records are refused before diagnostic writes.
-Raw Trace also retains public Chrome startup-resource labels from the explicit
-new-tab/resources internal hosts, and bounded nonnavigable V8 source labels;
+Raw Trace also retains browser-internal `chrome:` / `chrome-untrusted:` source labels from the
+fresh owned profile, and bounded nonnavigable V8 source labels;
 these are not accepted as network destinations. Secret-like values are refused.
 This validates captured evidence; it is not a network sandbox or an interception
 mechanism. No user browser session or profile is attached.
@@ -147,3 +147,32 @@ same-environment baseline before changing page code.
   documents programmatic audit results. The locked installed 13.5.0
   `types/artifacts.d.ts` declares `Trace` and `DevtoolsLog` as public gatherer
   artifacts, and `core/runner.js` returns them alongside the report.
+
+## Hosted instrumentation correction
+
+The [next hosted validation, run 42789393013](https://github.com/JasonStys/portfolio-case-study-site/actions/runs/42789393013)
+tested `22e481a` and stopped during diagnostic capture. Its preserved first LHR
+reported FCP 906.7652 ms, LCP 1056.7652 ms, TBT 0 ms and CLS 0. This was an
+instrumentation failure, not a failed performance metric: a browser-internal
+`chrome:` source label in raw Trace was incorrectly rejected by a platform-specific
+startup-host allowlist. The artifact contains the LHR only; no raw trace was
+written, so the exact internal label and any underlying browser scheduling cause
+cannot be recovered from that artifact. No full three-run hosted pass is claimed.
+
+Trace source labels and actual network destinations now have separate validation
+semantics. In Trace only, `chrome:` and `chrome-untrusted:` resource labels with a
+host and without credentials, port, query or fragment are retained as raw browser
+content. Their host names are not treated as a cross-platform startup inventory.
+Bounded nonnavigable V8 labels are also retained, while absolute filesystem labels
+and file URLs remain refused. These allowances never apply to DevTools network
+records or the requested/final main document. Their exact owned-target scope,
+foreign-HTTP rejection and credential/body/secret checks are unchanged.
+
+Twenty-eight focused tests now exercise both accepted browser-internal schemes
+in Trace and refusal of the same schemes as network destinations, separate
+credential/query/fragment negatives, absolute-path negatives and the original
+strict-performance regression. The full unit suite passed 161 tests with 97.68%
+line coverage, 97.30% branch coverage and 100% function coverage of the configured
+library scope. Scoped ESLint and Astro type checking passed with zero diagnostics.
+This does not expand that coverage claim to the raw-trace code or prove the
+cause of the original 511.5 ms performance observation.

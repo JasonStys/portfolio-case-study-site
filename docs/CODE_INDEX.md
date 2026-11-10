@@ -738,7 +738,7 @@
 | 64 | custom property | `--radius` |
 | 65 | custom property | `--radius-lg` |
 | 66 | custom property | `--shell` |
-| 1068 | custom property | `--shell` |
+| 1070 | custom property | `--shell` |
 
 ## `tests/e2e/downloads.spec.ts`
 

@@ -41,3 +41,7 @@ claim that a later documentation hub or future portfolio update already exists.
 No linked application, account store, installed software or release bytes change.
 Later PR/main browser, Lighthouse, deployment and security checks remain separate
 requirements.
+
+## Hosted WebKit contrast follow-up
+
+The first documentation PR exposed an unchanged-rule Axe color-contrast failure in the business case study: the hosted WebKit scan reported black inherited list and language-label text on the dark evidence card. The Windows WebKit baseline did not reproduce that observation. The card now declares its foreground color explicitly on those text elements; no accessibility rule, browser, threshold or timeout is removed. The reported real navigation journey then passed locally in Chromium, Firefox and WebKit. The precise platform-dependent inheritance/timing cause remains unproven; fresh hosted browser checks must accept the corrected source before merge.

@@ -35,6 +35,10 @@ At 67 real projects, clarity remains important. Schema 2 uses one dictionary of 
 - Largest generated HTML file is capped at 55,000 bytes.
 - Lighthouse uses three runs: median performance, worst other category score, and worst timing measurement.
 
+## Download catalog
+
+Let `r` be release records, `a` their application assets and `w` workflow records. Strict field, source and namespace validation uses `O(r + a + w)` work, plus the small canonical-order sort; the bounds are 20 existing releases and 62 actual payloads. Storage is `O(r + a + w)`. Static rendering and JSON serialization are linear in output size. Download metadata creates no repeating timer, hydration bundle or automatic binary fetch. Existing HTML, search and compressed-asset limits remain unchanged.
+
 ## When to change the algorithm
 
 Consider sorted posting-list intersection, bitsets, or a dedicated static search library only when measured `p95` query latency exceeds the budget or the search artifact exceeds its size budget. A larger dependency is not justified by hypothetical scale.

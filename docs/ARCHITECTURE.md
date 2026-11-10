@@ -100,6 +100,12 @@ The current catalog has 67 entries, including all 14 civilian space/energy proje
 
 Compact catalog cards preserve all initial HTML links/outcomes and no-script access without relaxing the 55 KB HTML budget. Search schema 2 stores numeric project-dictionary positions instead of repeating long repository names in every posting. Lookup checks use own properties so inherited JavaScript names cannot act like posting lists. The build-generated schema/cache revision in the index request URL prevents a new page from reusing a stale schema-1 cache response. Older pages retain readable unfiltered HTML if their enhancement becomes unavailable. The 100 KB index budget remains unchanged. A benchmark uses 10,000 deterministic synthetic projects to expose accidental algorithmic regressions. Static hosting removes server capacity planning; content review remains the main scaling constraint.
 
+## Download evidence
+
+The build validates a separate public index for the 20 projects with existing releases and their 62 application payloads. It binds each application to a full source commit, successful source/release workflows, explicit OS/CPU targets, package kinds and complete checksum metadata. Applicant Evidence Studio separately identifies the newer verifier revision that tests unchanged published bytes. A portable folder, Windows installer and Python zipapp retain distinct runtime requirements.
+
+The download page is static HTML with short digest prefixes. Its explicit JSON link supplies full hashes and workflow records without adding browser API requests or downloading binaries in the background. Source-first libraries, services and PWAs remain in the broader 67-project catalog without invented native installers. The refreshed release processes exercise extracted packages on their actual native operating systems before publication.
+
 ## Tradeoffs
 
 - A checked-in cache can become stale, but builds remain reproducible and do not fail on API rate limits.

@@ -31,19 +31,14 @@ evidence rather than replacing it with reassuring defaults.
 
 Each domain detail page links its reviewed pull request, immutable merged source,
 committed validation report, and successful push workflows at that exact source.
-All **129 required domain push workflows** were checked after the changes merged.
+All **130 required domain push workflows** were checked after the changes merged.
 These are historical commit-specific results, not continuous certification or a
 promise that every future input or external dependency will succeed. The hub's
 own CI and Pages deployment are checked separately.
 
-New desktop releases are available for [Business Knowledge Workbench 1.4.0](https://github.com/JasonStys/business-knowledge-workbench/releases/tag/v1.4.0),
-[Drone Operations Console 0.3.0](https://github.com/JasonStys/drone-operations-console/releases/tag/v0.3.0),
-[Code Flow Studio 0.4.0](https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.0),
-[Applicant Evidence Studio 0.3.0](https://github.com/JasonStys/applicant-evidence-studio/releases/tag/v0.3.0),
-and [Personal Image Model Studio 0.3.0](https://github.com/JasonStys/personal-image-model-studio/releases/tag/v0.3.0).
-Package checksums bind bytes, not publisher identity. Downloads remain unsigned;
-follow each project's platform, privacy, and execution limits. Other older release
-assets are not represented as containing these new source changes.
+The [download index](https://jasonstys.github.io/portfolio-case-study-site/downloads/) now identifies all **20 existing downloadable projects** and their **62 actual payloads**, with full SHA-256 values, exact application source, runtime requirements and successful native release checks. All **14 space/energy apps** now have refreshed **1.1.0** portable releases; the separately authenticated delivery example is **1.1.0**. The five previously refreshed applications retain their reviewed public bytes. Applicant Evidence Studio additionally verifies its existing download through the real encrypted UI on three operating systems, with verifier source shown separately from application source.
+
+Windows ZIP and POSIX tar.gz bundles preserve the native runtime layout; these are portable applications rather than newly invented installers. Drone Operations supplies a Windows installer only. Secure Delivery supplies a Python zipapp and separate trusted manager source. Other projects retain their documented source, service, library or PWA distribution. Existing source quality and coverage gates remain intact. See the [release review](docs/reports/download-refresh-2026-11-09.md) for changes, rationale, limits and per-project evidence.
 
 ## Code Flow Studio: inspect the source behind a finding
 

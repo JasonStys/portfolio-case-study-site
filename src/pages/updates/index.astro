@@ -29,7 +29,15 @@ import { withBase } from "@/lib/url";
       <time datetime={upgradeManifest.collectedAt}>
         {new Date(upgradeManifest.collectedAt).toISOString()}
       </time>
-      . These are source-level results, not a claim that every older release includes the changes.
+      . Source results describe their exact commits; the download index separately identifies the
+      released application bytes and their acceptance tooling.
+    </p>
+    <p>
+      <a class="text-link" href={withBase("downloads/")}>
+        Download released applications
+      </a>{" "}
+      — platform-specific packages, checksums, runtime requirements and release evidence for the 20
+      existing downloadable projects.
     </p>
   </header>
   <section class="section-shell section-block" aria-label="Projects in portfolio order">

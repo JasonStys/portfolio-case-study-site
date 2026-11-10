@@ -1,7 +1,7 @@
 ---
 title: "Telemetry flags with reasons, missing data and held-out evidence"
 repository: "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio"
-summary: "Frozen telemetry baselines and causal alerts with run-specific triage episodes, explicit gaps, boundary uncertainty and exportable human review."
+summary: "An explainable synthetic telemetry detector with run-bound analyst triage, explicit censored boundaries and portable-app review exports."
 role: "Statistical software and telemetry evaluation"
 languages: ["Python", "TypeScript", "SQL"]
 evidence:
@@ -15,32 +15,28 @@ evidence:
 
 ## Problem
 
-A detector can look effective by fitting future data or treating missing observations as healthy. Even honest point-level alerts become difficult to investigate when reviewers cannot tell whether a condition recovered, crossed a mode boundary or simply disappeared into a data gap.
+A list of flagged samples is difficult to review as an incident. Analysts need channel-local episodes, an honest explanation of missing/context/window boundaries and a way to attach human notes without mixing them into another run.
 
 ## Constraints
 
-Train only on the fixed prefix, keep labels outside scoring and evaluate later observations causally. Missing observations must not count as healthy detections. Episodes and notes must belong to one analysis rather than carrying decisions across changed evidence.
+Invented telemetry and bounded rule-based decisions; no live spacecraft data or operational anomaly assurance. Human annotations are detached local downloads, not a persisted multi-user review service. Portable bundles remain unsigned and platform/ABI-specific.
 
 ## Design
 
-Python learns channel/context median–MAD limits on a fixed training prefix, then applies point checks, causal EWMA drift and repeat-value rules. The same held-out data compares context-aware and pooled strategies. Labels evaluate decisions without influencing scoring.
-
-The new triage groups alerts by channel and context within one identified run. Episodes explicitly distinguish observed recovery, mode/gap boundaries and conditions already active at the start or unconfirmed at the end. Missing data never supplies an invented recovery.
-
-A reviewer can inspect an episode, add a bounded note and review state, and download a JSON review linked to the exact analysis hash. CLI, HTML and saved-history outputs carry the same episode ledger. Notes remain separate human commentary; starting another analysis clears them rather than silently applying them to different evidence.
+Preserve frozen training and held-out evaluation. Group existing decisions into episodes with observed onset, recovery, gap, mode-change and window-censoring boundaries. Export human status and plain-text notes bound to the original run hash, then clear them when another run is analyzed. The released 1.1.0 native bundle includes this workflow with source/version identity, safe native archive formats and post-extraction Chromium acceptance.
 
 ## Verification
 
-Hand-written decision rows, future-mutation tests and label-isolation checks probe different failure modes. Real browser journeys inspect and export episodes, invalidate stale notes, expose missing metrics and exercise API/security boundaries.
+A known spike must produce one episode from tick 120 to tick 120 with observed recovery. The actual extracted UI records a human review, downloads its run-bound JSON and proves notes reset across nominal and spike analyses. Existing missing-data, undefined-metric, inert-export, failure-recovery and accessibility journeys remain. Version-bound golden IDs were refreshed only after independently restoring the prior version field reproduced all old hashes and preserved every numerical metric/comparison.
 
 ## Measured result
 
-The report records **90 Python tests at 99.34% combined statement/branch coverage**, **13 TypeScript tests** and **24 Chromium/Firefox/WebKit browser journeys**. Independent decision rows exercise channel isolation, gaps, mode changes, normal recovery, empty input and both window boundaries.
+Recorded locally: 179 Python tests passed with 99.38% combined coverage against the unchanged 90% requirement; 13 TypeScript tests,24 real Chromium/Firefox/WebKit source journeys and24 deterministic detector benchmark fixtures passed. Actual extracted Windows analyst UI and exact review export passed. Nineteen independent authenticated draft-API tests supplement the original source/archive guards.
 
-Browser checks follow actual run-specific review/export, note reset, failed requests, mobile accessibility and existing security boundaries. Twenty-four metric/comparison fixtures were independently checked against their previous values before refreshing hashes to include the episode ledger. Detector scoring and frozen-training semantics remain unchanged.
+Accepted source: [`616b8cc92be09622443e103cdc201ce1d0c16a55`](https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/tree/616b8cc92be09622443e103cdc201ce1d0c16a55). The [validation report](https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/blob/616b8cc92be09622443e103cdc201ce1d0c16a55/docs/reports/PORTABLE_REFRESH_20261109.md) records executed scope and conditions. Exact-source main checks passed: [CodeQL](https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42752178787), [Validation](https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42752178601).
 
-Accepted source: [`0f63e1332b00d30fc682589bfd0fdad637845ce3`](https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/tree/0f63e1332b00d30fc682589bfd0fdad637845ce3). The [change report](https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/blob/0f63e1332b00d30fc682589bfd0fdad637845ce3/docs/reports/PRACTICAL_WORKFLOWS_20261109.md) records the executed scope and results. Exact-main workflow records passed: [Validation](https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42697036475), [CodeQL](https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42697036082).
+[Version 1.1.0 downloads](https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/releases/tag/v1.1.0) contain application source [`616b8cc92be09622443e103cdc201ce1d0c16a55`](https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/tree/616b8cc92be09622443e103cdc201ce1d0c16a55). The [release workflow](https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42752936951) passed its documented native gates. See the [download index](/portfolio-case-study-site/downloads/) for actual platforms, file types, full checksums and runtime requirements. All three release jobs exercised their own freshly extracted application and real UI/export. The Windows download was independently checked and exercised again before publication; this does not certify an installer lifecycle or default OS browser opening.
 
 ## Limitations
 
-Three synthetic channels and logical ticks do not establish physical spacecraft accuracy. This combines statistical learning and heuristics, not a neural model, root-cause diagnosis or live monitor. Notes are tab-local and must be exported; no authenticated reviewer identity or review import is supplied. Hashes identify content rather than its truth or authorship. Earlier release downloads have not been rebuilt for this update; use the accepted source.
+An episode is a grouping of existing detector decisions, not a diagnosis. Gap and context boundaries censor continuity; notes do not authenticate telemetry or persist on the server. Windows local launch proof does not establish Linux/macOS release behavior, default OS opener success or clean-machine installation.

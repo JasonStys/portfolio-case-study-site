@@ -1,7 +1,7 @@
 ---
 title: "A finite optimum, independently checked"
 repository: "https://github.com/JasonStys/mission-contact-resource-scheduler"
-summary: "An exact bounded contact optimizer with independently checked station-loss replanning, resource ledgers and explicit allocation changes."
+summary: "A bounded exact contact scheduler with independently checked station-loss comparisons and practical portable-app planning evidence."
 role: "Optimization and resource-constrained software"
 languages: ["Python", "TypeScript", "SQL"]
 evidence:
@@ -15,32 +15,28 @@ evidence:
 
 ## Problem
 
-A locally attractive contact can prevent a better overall plan when stations, spacecraft and budgets compete. A station outage creates a further question: which requests can still be served under the same constraints, and which assignments must change?
+A good baseline allocation can become unusable when a station is lost. Reviewers need to see which requests lose service, what alternative contacts replace them and whether a feasible empty plan is a legitimate result.
 
 ## Constraints
 
-Consider only bounded invented candidates under the original reservations, guard times, blackouts, deadlines, band rules and budgets. Tie breakers must be deterministic. A contingency is one full-window station loss; it cannot silently add contacts or relax feasibility constraints.
+Finite invented candidate windows, station names and resource units; no real radio scheduling or mission dispatch. Station-loss replanning optimizes the existing objective and does not claim minimum changes to an earlier plan.
 
 ## Design
 
-Python branch-and-bound optimizes a documented finite objective. A greedy policy provides a comparison, while independent exhaustive enumeration checks small cases. The model enforces station/spacecraft reservations, guard time, blackouts, deadlines, band compatibility, complete-delivery capacity and separate time/energy budgets.
-
-The new contingency workflow removes one station for the full planning window and reoptimizes the original objective. Each station's loss is a separate alternative. The inspector lists retained, removed and added contacts, request assignments before/after, utility/service/energy differences and direct outage exclusions.
-
-A planner can review a nominal or maintenance case, inspect a failed station's alternative and compare unscheduled requests without replacing the original timeline. JSON, HTML, CLI and local history retain the exact scenario and run identity. This makes the effect of scarce resources inspectable rather than promising that an old plan can always be preserved.
+Retain the exact bounded solver and independent exhaustive oracle. Replan each full-horizon station loss while preserving the original case, budgets and other blackouts. Compare retained, removed and added contacts, per-request changes and utility/resource deltas without replacing the baseline timeline. The released 1.1.0 portable release includes the real comparison workflow, source-bound version identity and actual extracted-executable UI/export acceptance.
 
 ## Verification
 
-Independent exhaustive subset enumeration checks the exact solver across nominal, greedy-trap, maintenance and unreachable cases. Browser journeys inspect allocation differences, preserve the original plan and verify exports, empty networks and error handling.
+The extracted app is checked against the hand-computable 60 + 60 versus 100 greedy trap. Losing ALPHA removes B1 and C1, gives zero utility with no selected contacts and preserves the 120-utility baseline. The UI download must equal the frozen API result; unreachable service remains an explicit feasible empty case. All 16 old exact/greedy/delta outputs were preserved, with only version-bound hashes refreshed after independent old-version restoration.
 
 ## Measured result
 
-The report records **556 Python tests at 99.34% combined statement/branch coverage**, **12 TypeScript tests** and **27 Chromium/Firefox/WebKit browser journeys**. A separate exhaustive subset oracle covers nominal, maintenance, greedy-trap and unreachable cases, objective ties, guards, empty choices and existing blackout limits.
+Recorded locally: 645 Python tests passed with 99.37% combined coverage against the unchanged 90% requirement; 12 TypeScript tests,27 real Chromium/Firefox/WebKit source journeys and16 deterministic scheduling contracts passed. Actual extracted Windows station-loss UI and exact JSON export passed, with 19 additional authenticated draft-API regression tests in the full suite.
 
-Real browser tests inspect removed allocations, verify that the original case remains intact, exercise a completely unavailable network and check downloads, failed requests, accessibility and restrictive headers. Sixteen existing exact/greedy summaries, solver counts and utility differences remained unchanged before refreshing expanded evidence hashes.
+Accepted source: [`4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3`](https://github.com/JasonStys/mission-contact-resource-scheduler/tree/4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3). The [validation report](https://github.com/JasonStys/mission-contact-resource-scheduler/blob/4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3/docs/reports/PORTABLE_REFRESH_20261109.md) records executed scope and conditions. Exact-source main checks passed: [CodeQL](https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42752427629), [Validation](https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42752427785).
 
-Accepted source: [`7658aa60ce9f953ad2f62a1c08d798942c46b5b1`](https://github.com/JasonStys/mission-contact-resource-scheduler/tree/7658aa60ce9f953ad2f62a1c08d798942c46b5b1). The [change report](https://github.com/JasonStys/mission-contact-resource-scheduler/blob/7658aa60ce9f953ad2f62a1c08d798942c46b5b1/docs/reports/PRACTICAL_WORKFLOWS_20261109.md) records the executed scope and results. Exact-main workflow records passed: [CodeQL](https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42698411010), [Validation](https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42698411022).
+[Version 1.1.0 downloads](https://github.com/JasonStys/mission-contact-resource-scheduler/releases/tag/v1.1.0) contain application source [`4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3`](https://github.com/JasonStys/mission-contact-resource-scheduler/tree/4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3). The [release workflow](https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42753749258) passed its documented native gates. See the [download index](/portfolio-case-study-site/downloads/) for actual platforms, file types, full checksums and runtime requirements. All three release jobs exercised their own freshly extracted application and real UI/export. The Windows download was independently checked and exercised again before publication; this does not certify an installer lifecycle or default OS browser opening.
 
 ## Limitations
 
-The optimizer considers bounded invented candidates, not physical visibility predictions or live ground-network dispatch. Station losses are separate full-window alternatives, not arbitrary timed or sequential outages. Reoptimization does not guarantee locked contacts or minimum changes. A finite optimum says nothing about omitted candidates or operational suitability. Earlier published downloads predate this workflow; use the accepted source.
+The solver proves its declared finite optimization problem, not the adequacy of omitted contact options or real station availability. Reoptimization can change contacts away from the failed station. Unsigned portable archive acceptance is not installer or clean-machine proof; default desktop opener behavior remains manual.

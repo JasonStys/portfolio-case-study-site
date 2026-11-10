@@ -1,0 +1,1537 @@
+{
+  "schemaVersion": 1,
+  "collectedAt": "2026-11-10T04:23:42.043661+00:00",
+  "repositories": [
+    {
+      "name": "code-flow-studio",
+      "version": "0.4.0",
+      "distribution": "desktop-app",
+      "releaseUrl": "https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.0",
+      "publishedAt": "2026-11-10T00:26:34Z",
+      "sourceCommit": "08e4194707fb0ab20b469e335ef9e081a34200d3",
+      "sourceUrl": "https://github.com/JasonStys/code-flow-studio/tree/08e4194707fb0ab20b469e335ef9e081a34200d3",
+      "validationReportUrl": "https://github.com/JasonStys/code-flow-studio/blob/08e4194707fb0ab20b469e335ef9e081a34200d3/docs/reports/practical-workflows-2026-11-09.md",
+      "sourceChecks": [
+        {
+          "name": "Desktop packages",
+          "sourceCommit": "08e4194707fb0ab20b469e335ef9e081a34200d3",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42726748708"
+        },
+        {
+          "name": "Validate",
+          "sourceCommit": "08e4194707fb0ab20b469e335ef9e081a34200d3",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42726748363"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Release private-account applications",
+        "sourceCommit": "08e4194707fb0ab20b469e335ef9e081a34200d3",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42727706376"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "Code.Flow.Studio-0.4.0-arm64.dmg",
+          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.0/Code.Flow.Studio-0.4.0-arm64.dmg",
+          "checksumAssetName": "Code.Flow.Studio-0.4.0-arm64.dmg.sha256",
+          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.0/Code.Flow.Studio-0.4.0-arm64.dmg.sha256",
+          "sha256": "e104edad7ae70fd30cfbcfd63aa3dc809eb0a5ce5876689255d779c4bb44d28f",
+          "byteSize": 177331503,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "dmg",
+          "kind": "installer"
+        },
+        {
+          "assetName": "Code.Flow.Studio-0.4.0.AppImage",
+          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.0/Code.Flow.Studio-0.4.0.AppImage",
+          "checksumAssetName": "Code.Flow.Studio-0.4.0.AppImage.sha256",
+          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.0/Code.Flow.Studio-0.4.0.AppImage.sha256",
+          "sha256": "b1690d3d165c9163bcb34214a5255f318cde9deb31c23bc392635e3ef061e340",
+          "byteSize": 191939573,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "appimage",
+          "kind": "portable"
+        },
+        {
+          "assetName": "Code.Flow.Studio.Setup.0.4.0.exe",
+          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.0/Code.Flow.Studio.Setup.0.4.0.exe",
+          "checksumAssetName": "Code.Flow.Studio.Setup.0.4.0.exe.sha256",
+          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.0/Code.Flow.Studio.Setup.0.4.0.exe.sha256",
+          "sha256": "bb90309f0a7176f1d0731465db45c6c3d7e976f379290c6bfeddf5ee18d3388d",
+          "byteSize": 155390298,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "exe",
+          "kind": "installer"
+        },
+        {
+          "assetName": "CodeFlowStudio-0.4.0-linux-x64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.0/CodeFlowStudio-0.4.0-linux-x64.tar.gz",
+          "checksumAssetName": "CodeFlowStudio-0.4.0-linux-x64.tar.gz.sha256",
+          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.0/CodeFlowStudio-0.4.0-linux-x64.tar.gz.sha256",
+          "sha256": "22bc2494a17e01edcf81301a9f9f5eff02dd475b54e1afbf8e6ba28f8a022121",
+          "byteSize": 188592844,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "CodeFlowStudio-0.4.0-macos-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.0/CodeFlowStudio-0.4.0-macos-arm64.tar.gz",
+          "checksumAssetName": "CodeFlowStudio-0.4.0-macos-arm64.tar.gz.sha256",
+          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.0/CodeFlowStudio-0.4.0-macos-arm64.tar.gz.sha256",
+          "sha256": "9119a38e458f8a5d44653b7c1f8b44fbb9fbf618233779f12e885a6afd9c137f",
+          "byteSize": 176757948,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "CodeFlowStudio-0.4.0-windows-x64.zip",
+          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.0/CodeFlowStudio-0.4.0-windows-x64.zip",
+          "checksumAssetName": "CodeFlowStudio-0.4.0-windows-x64.zip.sha256",
+          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.0/CodeFlowStudio-0.4.0-windows-x64.zip.sha256",
+          "sha256": "7aa48e7c3fdf852106650d8b48f484ab32a527d452e01f9d341f4a7129fbc8cb",
+          "byteSize": 208869065,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Documented desktop OS/CPU; actual code execution additionally requires the separately built restricted Docker worker. No host fallback.",
+      "limitations": [
+        "Twelve bounded flat CLI adapters do not cover every framework, dependency or architecture; coverage and unused-code candidates are not correctness or dead-code proof.",
+        "Execution needs a separately built local Docker worker with no host fallback. Shared worker identity and containers are not a certified public hostile-code sandbox.",
+        "Hashes bind retained bytes and locations, not trusted attestation by a malicious target. UI-only report fixtures are separate from native collector evidence.",
+        "Local accounts trust the OS and unlocked service. Downloads are unsigned development builds; no native mobile installer or clean-machine installer lifecycle certification is claimed."
+      ]
+    },
+    {
+      "name": "business-knowledge-workbench",
+      "version": "1.4.0",
+      "distribution": "desktop-app",
+      "releaseUrl": "https://github.com/JasonStys/business-knowledge-workbench/releases/tag/v1.4.0",
+      "publishedAt": "2026-11-09T21:51:29Z",
+      "sourceCommit": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+      "sourceUrl": "https://github.com/JasonStys/business-knowledge-workbench/tree/a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+      "validationReportUrl": "https://github.com/JasonStys/business-knowledge-workbench/blob/a25887ac0e54f2afbe0e21e597c67b606890e8ad/docs/reports/practical-workflows-2026-11-09.md",
+      "sourceChecks": [
+        {
+          "name": "Validate workbench",
+          "sourceCommit": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42704664864"
+        },
+        {
+          "name": "CodeQL",
+          "sourceCommit": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42704664406"
+        },
+        {
+          "name": "Desktop packages",
+          "sourceCommit": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42704664364"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Release private-account applications",
+        "sourceCommit": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42705706255"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "Business.Knowledge.Workbench-1.4.0-arm64.dmg",
+          "assetUrl": "https://github.com/JasonStys/business-knowledge-workbench/releases/download/v1.4.0/Business.Knowledge.Workbench-1.4.0-arm64.dmg",
+          "checksumAssetName": "Business.Knowledge.Workbench-1.4.0-arm64.dmg.sha256",
+          "checksumUrl": "https://github.com/JasonStys/business-knowledge-workbench/releases/download/v1.4.0/Business.Knowledge.Workbench-1.4.0-arm64.dmg.sha256",
+          "sha256": "008445c36f97b489572659e2c6cd6c40803b35b3504499322707471dba0b0e75",
+          "byteSize": 174967274,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "dmg",
+          "kind": "installer"
+        },
+        {
+          "assetName": "Business.Knowledge.Workbench-1.4.0.AppImage",
+          "assetUrl": "https://github.com/JasonStys/business-knowledge-workbench/releases/download/v1.4.0/Business.Knowledge.Workbench-1.4.0.AppImage",
+          "checksumAssetName": "Business.Knowledge.Workbench-1.4.0.AppImage.sha256",
+          "checksumUrl": "https://github.com/JasonStys/business-knowledge-workbench/releases/download/v1.4.0/Business.Knowledge.Workbench-1.4.0.AppImage.sha256",
+          "sha256": "126195a68fd2dfe7eed2610e46eedcd1153406eecc8bb29a53e9a88d1801c8e6",
+          "byteSize": 191162808,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "appimage",
+          "kind": "portable"
+        },
+        {
+          "assetName": "Business.Knowledge.Workbench.Setup.1.4.0.exe",
+          "assetUrl": "https://github.com/JasonStys/business-knowledge-workbench/releases/download/v1.4.0/Business.Knowledge.Workbench.Setup.1.4.0.exe",
+          "checksumAssetName": "Business.Knowledge.Workbench.Setup.1.4.0.exe.sha256",
+          "checksumUrl": "https://github.com/JasonStys/business-knowledge-workbench/releases/download/v1.4.0/Business.Knowledge.Workbench.Setup.1.4.0.exe.sha256",
+          "sha256": "6ae957e495f66fb7a39eaa8598ebabee1923eb8e2a226bbfa79f137ef59d33be",
+          "byteSize": 167747760,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "exe",
+          "kind": "installer"
+        },
+        {
+          "assetName": "BusinessKnowledgeWorkbench-1.4.0-linux-x64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/business-knowledge-workbench/releases/download/v1.4.0/BusinessKnowledgeWorkbench-1.4.0-linux-x64.tar.gz",
+          "checksumAssetName": "BusinessKnowledgeWorkbench-1.4.0-linux-x64.tar.gz.sha256",
+          "checksumUrl": "https://github.com/JasonStys/business-knowledge-workbench/releases/download/v1.4.0/BusinessKnowledgeWorkbench-1.4.0-linux-x64.tar.gz.sha256",
+          "sha256": "1708f9b9d556d15fff88d84920309e9c9f9c3fc55598ce3ce3f941a825aa30a1",
+          "byteSize": 188569147,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "BusinessKnowledgeWorkbench-1.4.0-macos-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/business-knowledge-workbench/releases/download/v1.4.0/BusinessKnowledgeWorkbench-1.4.0-macos-arm64.tar.gz",
+          "checksumAssetName": "BusinessKnowledgeWorkbench-1.4.0-macos-arm64.tar.gz.sha256",
+          "checksumUrl": "https://github.com/JasonStys/business-knowledge-workbench/releases/download/v1.4.0/BusinessKnowledgeWorkbench-1.4.0-macos-arm64.tar.gz.sha256",
+          "sha256": "e349bf62b14ec4c4c7aa9c7b8bef0482871f2a2f1ef1f0abd42eeab57e72bc63",
+          "byteSize": 174399605,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "BusinessKnowledgeWorkbench-1.4.0-windows-x64.zip",
+          "assetUrl": "https://github.com/JasonStys/business-knowledge-workbench/releases/download/v1.4.0/BusinessKnowledgeWorkbench-1.4.0-windows-x64.zip",
+          "checksumAssetName": "BusinessKnowledgeWorkbench-1.4.0-windows-x64.zip.sha256",
+          "checksumUrl": "https://github.com/JasonStys/business-knowledge-workbench/releases/download/v1.4.0/BusinessKnowledgeWorkbench-1.4.0-windows-x64.zip.sha256",
+          "sha256": "1f596cf51060d6e66ae3e072f015447c771778658efb1e2389eead4fcaf575c0",
+          "byteSize": 206154745,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Local owner-account edition; no shared hosted-business identity, invitations or managed tenant deployment is supplied.",
+        "Numeric range search covers standardized cells, not OCR or arbitrary source-blob search; unit conversion uses canonical six-place precision.",
+        "Export ZIPs are plaintext integrity records, not encrypted or digitally signed; they omit originals and account secrets.",
+        "Import and conversion support is adapter-specific; no universal file-format, image/equation understanding or AI-provider compatibility is promised."
+      ]
+    },
+    {
+      "name": "personal-image-model-studio",
+      "version": "0.3.0",
+      "distribution": "desktop-app",
+      "releaseUrl": "https://github.com/JasonStys/personal-image-model-studio/releases/tag/v0.3.0",
+      "publishedAt": "2026-11-10T00:48:41Z",
+      "sourceCommit": "3e02b1f34b7c4b968491952fdc2bbd7a93849b7f",
+      "sourceUrl": "https://github.com/JasonStys/personal-image-model-studio/tree/3e02b1f34b7c4b968491952fdc2bbd7a93849b7f",
+      "validationReportUrl": "https://github.com/JasonStys/personal-image-model-studio/blob/3e02b1f34b7c4b968491952fdc2bbd7a93849b7f/docs/reports/practical-workflows-2026-11-09.md",
+      "sourceChecks": [
+        {
+          "name": "Validate",
+          "sourceCommit": "3e02b1f34b7c4b968491952fdc2bbd7a93849b7f",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/personal-image-model-studio/actions/runs/42729063623"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Release native CPU applications",
+        "sourceCommit": "3e02b1f34b7c4b968491952fdc2bbd7a93849b7f",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/personal-image-model-studio/actions/runs/42730050386"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "PersonalImageModelStudio-0.3.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/personal-image-model-studio/releases/download/v0.3.0/PersonalImageModelStudio-0.3.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "PersonalImageModelStudio-0.3.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/personal-image-model-studio/releases/download/v0.3.0/PersonalImageModelStudio-0.3.0-darwin-arm64.sha256",
+          "sha256": "3a50fb00a1d906d2fcdea8f3df4f56bff0be44eaf06db117d38ac3264d9e0df5",
+          "byteSize": 203127916,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "PersonalImageModelStudio-0.3.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/personal-image-model-studio/releases/download/v0.3.0/PersonalImageModelStudio-0.3.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "PersonalImageModelStudio-0.3.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/personal-image-model-studio/releases/download/v0.3.0/PersonalImageModelStudio-0.3.0-linux-x86_64.sha256",
+          "sha256": "24cd7543a08eefdac6e8c5aa7b670312213bc67f2ad2ee07bada17f38974d900",
+          "byteSize": 304276257,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "PersonalImageModelStudio-0.3.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/personal-image-model-studio/releases/download/v0.3.0/PersonalImageModelStudio-0.3.0-windows-amd64.zip",
+          "checksumAssetName": "PersonalImageModelStudio-0.3.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/personal-image-model-studio/releases/download/v0.3.0/PersonalImageModelStudio-0.3.0-windows-amd64.sha256",
+          "sha256": "172b4951826ac0aa18863fd2c08aa345d5e9adc75d66629e37a3f0f6b566946c",
+          "byteSize": 211033805,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Integrity and similarity inspect at most 64 eligible images, 32 MiB encoded bytes and 16,777,216 decoded pixels; only 32 candidate pairs are shown, with omissions explicit.",
+        "Grayscale hash matches are candidates, not proof of leakage, semantic quality or AI origin. Rights and provenance labels are operator declarations, not legal verification.",
+        "The compact native model is not a general photorealistic generator. CPU downloads support native models only; compatible Stable Diffusion/LoRA imports need the explicitly configured full source/runtime.",
+        "One unlocked local engine trusts the OS and active service. CPU downloads are unsigned portable applications, not a public hosted service or native mobile installation."
+      ]
+    },
+    {
+      "name": "secure-delivery-pipeline-lab",
+      "version": "1.1.0",
+      "distribution": "cli-zipapp",
+      "releaseUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/releases/tag/v1.1.0",
+      "publishedAt": "2026-11-10T03:15:39Z",
+      "sourceCommit": "e37b189fa604bb0d6951e4a926d20ed9606298a1",
+      "sourceUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/tree/e37b189fa604bb0d6951e4a926d20ed9606298a1",
+      "validationReportUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/blob/e37b189fa604bb0d6951e4a926d20ed9606298a1/docs/reports/release-refresh-2026-11-09.md",
+      "sourceChecks": [
+        {
+          "name": "Validate",
+          "sourceCommit": "e37b189fa604bb0d6951e4a926d20ed9606298a1",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42746536402"
+        },
+        {
+          "name": "CodeQL",
+          "sourceCommit": "e37b189fa604bb0d6951e4a926d20ed9606298a1",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42746536395"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Verified release",
+        "sourceCommit": "e37b189fa604bb0d6951e4a926d20ed9606298a1",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42747854973"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "release-probe-1.1.0.pyz",
+          "assetUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/releases/download/v1.1.0/release-probe-1.1.0.pyz",
+          "checksumAssetName": "release.json",
+          "checksumUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/releases/download/v1.1.0/release.json",
+          "sha256": "1edbf26e078fdea24d4a1ab50b0ea74de806d772fb5c1791349e2121dec86d75",
+          "byteSize": 9660,
+          "platform": "cross-platform",
+          "architecture": "any",
+          "format": "pyz",
+          "kind": "zipapp"
+        }
+      ],
+      "requirements": "Python 3.12+ and official GitHub CLI; authenticate the full four-member bundle before execution. Trusted manager source is installed separately.",
+      "limitations": [
+        "The dependency-free inventory probe is a bounded Python zip application; the reviewed verification and promotion manager is separate source, not a desktop installer or production deployment service.",
+        "Impact hashes establish changed bytes, not compatibility or a complete security review. Local receipt aliases are operator assertions, not authenticated human identity or signed audit records.",
+        "Verification requires the official GitHub CLI, independently selected source/version and actual attestation checks; checksum or preflight success alone is insufficient.",
+        "The synthetic release exercise does not establish production readiness, operational availability or operating-system code signing."
+      ]
+    },
+    {
+      "name": "applicant-evidence-studio",
+      "version": "0.3.0",
+      "distribution": "desktop-app",
+      "releaseUrl": "https://github.com/JasonStys/applicant-evidence-studio/releases/tag/v0.3.0",
+      "publishedAt": "2026-11-10T00:28:40Z",
+      "sourceCommit": "71d51b1fcd228f89d3ff81ee166bee2ce37d7a60",
+      "sourceUrl": "https://github.com/JasonStys/applicant-evidence-studio/tree/71d51b1fcd228f89d3ff81ee166bee2ce37d7a60",
+      "validationReportUrl": "https://github.com/JasonStys/applicant-evidence-studio/blob/71d51b1fcd228f89d3ff81ee166bee2ce37d7a60/docs/reports/practical-workflows-20261109.md",
+      "sourceChecks": [
+        {
+          "name": "Validate",
+          "sourceCommit": "71d51b1fcd228f89d3ff81ee166bee2ce37d7a60",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42727340441"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Desktop release",
+        "sourceCommit": "71d51b1fcd228f89d3ff81ee166bee2ce37d7a60",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42728346654"
+      },
+      "acceptanceCheck": {
+        "name": "Published portable acceptance",
+        "verifierSourceCommit": "f10b42ce29d665c89556b83ce9b36094bba672a1",
+        "verifierSourceUrl": "https://github.com/JasonStys/applicant-evidence-studio/tree/f10b42ce29d665c89556b83ce9b36094bba672a1",
+        "appSourceCommit": "71d51b1fcd228f89d3ff81ee166bee2ce37d7a60",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42749422809"
+      },
+      "assets": [
+        {
+          "assetName": "ApplicantEvidenceStudio-0.3.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/applicant-evidence-studio/releases/download/v0.3.0/ApplicantEvidenceStudio-0.3.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "ApplicantEvidenceStudio-0.3.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/applicant-evidence-studio/releases/download/v0.3.0/ApplicantEvidenceStudio-0.3.0-darwin-arm64.sha256",
+          "sha256": "3628caf115ecd710c38618f7026c3206e08dc6a3a445ceeb7d5092452de141ae",
+          "byteSize": 18198097,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "ApplicantEvidenceStudio-0.3.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/applicant-evidence-studio/releases/download/v0.3.0/ApplicantEvidenceStudio-0.3.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "ApplicantEvidenceStudio-0.3.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/applicant-evidence-studio/releases/download/v0.3.0/ApplicantEvidenceStudio-0.3.0-linux-x86_64.sha256",
+          "sha256": "b0bf8f6fa4fc26bcaeaef0960ada1275e9d88ad3febc20ffb39fb6400c997287",
+          "byteSize": 32844757,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "ApplicantEvidenceStudio-0.3.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/applicant-evidence-studio/releases/download/v0.3.0/ApplicantEvidenceStudio-0.3.0-windows-amd64.zip",
+          "checksumAssetName": "ApplicantEvidenceStudio-0.3.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/applicant-evidence-studio/releases/download/v0.3.0/ApplicantEvidenceStudio-0.3.0-windows-amd64.sha256",
+          "sha256": "434065a4e285d2595ec82d6fa6c67894db20c285cf13378c9515a6dbd7102e79",
+          "byteSize": 19555411,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Evidence coverage is advisory, not applicant suitability, a hiring decision, fairness certification or legal-compliance assurance; original applications require human review.",
+        "Comparison captures are unencrypted identifying files. Observations are transient and prior downloads cannot be revoked.",
+        "The accepted public application remains 0.3.0 at its original release source; newer source adds acceptance and release guards without replacing those bytes.",
+        "Unsigned portable applications trust the local OS and retained recovery material; extraction/UI tests do not certify signed installation, a clean-machine lifecycle or public hosting."
+      ]
+    },
+    {
+      "name": "spacecraft-flight-software-testbed",
+      "version": "1.1.0",
+      "distribution": "portable-gui",
+      "releaseUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/releases/tag/v1.1.0",
+      "publishedAt": "2026-11-10T04:08:42Z",
+      "sourceCommit": "5f9dc95ad5df564373d1304b13e4bb2464d13842",
+      "sourceUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/tree/5f9dc95ad5df564373d1304b13e4bb2464d13842",
+      "validationReportUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/blob/5f9dc95ad5df564373d1304b13e4bb2464d13842/docs/reports/PORTABLE_REFRESH_20261109.md",
+      "sourceChecks": [
+        {
+          "name": "CodeQL",
+          "sourceCommit": "5f9dc95ad5df564373d1304b13e4bb2464d13842",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752160159"
+        },
+        {
+          "name": "Validation",
+          "sourceCommit": "5f9dc95ad5df564373d1304b13e4bb2464d13842",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752160117"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Portable release",
+        "sourceCommit": "5f9dc95ad5df564373d1304b13e4bb2464d13842",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752925223"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "spacecraft-flight-software-testbed-v1.1.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/releases/download/v1.1.0/spacecraft-flight-software-testbed-v1.1.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "spacecraft-flight-software-testbed-v1.1.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/releases/download/v1.1.0/spacecraft-flight-software-testbed-v1.1.0-darwin-arm64.sha256",
+          "sha256": "4b34ba58a2665a68315255ca1151c986b1d9a2048cd6e9e8ed773d531a119e6f",
+          "byteSize": 10460916,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "spacecraft-flight-software-testbed-v1.1.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/releases/download/v1.1.0/spacecraft-flight-software-testbed-v1.1.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "spacecraft-flight-software-testbed-v1.1.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/releases/download/v1.1.0/spacecraft-flight-software-testbed-v1.1.0-linux-x86_64.sha256",
+          "sha256": "a71ba2f3c62a95f8d35cfee160bb5b53c6c560b60e80d1eab6f088b650a26edd",
+          "byteSize": 28185021,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "spacecraft-flight-software-testbed-v1.1.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/releases/download/v1.1.0/spacecraft-flight-software-testbed-v1.1.0-windows-amd64.zip",
+          "checksumAssetName": "spacecraft-flight-software-testbed-v1.1.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/releases/download/v1.1.0/spacecraft-flight-software-testbed-v1.1.0-windows-amd64.sha256",
+          "sha256": "67b1dc7051e6ef510ca65a7e04883e99df40a5d2327bc72a8b53f3227950b106",
+          "byteSize": 11467100,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Educational software-only executive; no flight hardware, operational SAFE assertion or mission qualification.",
+        "Unsigned portable folder, not an installer or clean-machine installation proof. Exact-source three-OS builds and asset digests require publication review.",
+        "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
+      ]
+    },
+    {
+      "name": "spacecraft-telemetry-anomaly-studio",
+      "version": "1.1.0",
+      "distribution": "portable-gui",
+      "releaseUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/releases/tag/v1.1.0",
+      "publishedAt": "2026-11-10T04:08:58Z",
+      "sourceCommit": "616b8cc92be09622443e103cdc201ce1d0c16a55",
+      "sourceUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/tree/616b8cc92be09622443e103cdc201ce1d0c16a55",
+      "validationReportUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/blob/616b8cc92be09622443e103cdc201ce1d0c16a55/docs/reports/PORTABLE_REFRESH_20261109.md",
+      "sourceChecks": [
+        {
+          "name": "CodeQL",
+          "sourceCommit": "616b8cc92be09622443e103cdc201ce1d0c16a55",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42752178787"
+        },
+        {
+          "name": "Validation",
+          "sourceCommit": "616b8cc92be09622443e103cdc201ce1d0c16a55",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42752178601"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Portable release",
+        "sourceCommit": "616b8cc92be09622443e103cdc201ce1d0c16a55",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42752936951"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "spacecraft-telemetry-anomaly-studio-v1.1.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/releases/download/v1.1.0/spacecraft-telemetry-anomaly-studio-v1.1.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "spacecraft-telemetry-anomaly-studio-v1.1.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/releases/download/v1.1.0/spacecraft-telemetry-anomaly-studio-v1.1.0-darwin-arm64.sha256",
+          "sha256": "3b65844055cbb56c43b7fbbe8cea6940048132f89a0f3e6c9a1500852a3c9602",
+          "byteSize": 10460070,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "spacecraft-telemetry-anomaly-studio-v1.1.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/releases/download/v1.1.0/spacecraft-telemetry-anomaly-studio-v1.1.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "spacecraft-telemetry-anomaly-studio-v1.1.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/releases/download/v1.1.0/spacecraft-telemetry-anomaly-studio-v1.1.0-linux-x86_64.sha256",
+          "sha256": "8f3f4c868e8e9a35d8d0215968f3515e910322c00059e00dd06c024c474bec20",
+          "byteSize": 27130901,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "spacecraft-telemetry-anomaly-studio-v1.1.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/releases/download/v1.1.0/spacecraft-telemetry-anomaly-studio-v1.1.0-windows-amd64.zip",
+          "checksumAssetName": "spacecraft-telemetry-anomaly-studio-v1.1.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/releases/download/v1.1.0/spacecraft-telemetry-anomaly-studio-v1.1.0-windows-amd64.sha256",
+          "sha256": "c72c71071b1625e7b07c7b91ff45c9a3060ee631329daae9abfd03ba8a94042a",
+          "byteSize": 11335396,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Synthetic telemetry and bounded rule-based detector evidence; no live spacecraft or hardware validation.",
+        "Human notes are detached local downloads rather than server-persisted multi-user reviews.",
+        "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
+      ]
+    },
+    {
+      "name": "mission-contact-resource-scheduler",
+      "version": "1.1.0",
+      "distribution": "portable-gui",
+      "releaseUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/releases/tag/v1.1.0",
+      "publishedAt": "2026-11-10T04:13:14Z",
+      "sourceCommit": "4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3",
+      "sourceUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/tree/4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3",
+      "validationReportUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/blob/4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3/docs/reports/PORTABLE_REFRESH_20261109.md",
+      "sourceChecks": [
+        {
+          "name": "CodeQL",
+          "sourceCommit": "4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42752427629"
+        },
+        {
+          "name": "Validation",
+          "sourceCommit": "4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42752427785"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Portable release",
+        "sourceCommit": "4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42753749258"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "mission-contact-resource-scheduler-v1.1.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/releases/download/v1.1.0/mission-contact-resource-scheduler-v1.1.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "mission-contact-resource-scheduler-v1.1.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/releases/download/v1.1.0/mission-contact-resource-scheduler-v1.1.0-darwin-arm64.sha256",
+          "sha256": "4570d059fd3a090d1199a6e5dde201905fcae69fe54560d4f9d36694e776765d",
+          "byteSize": 10467318,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "mission-contact-resource-scheduler-v1.1.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/releases/download/v1.1.0/mission-contact-resource-scheduler-v1.1.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "mission-contact-resource-scheduler-v1.1.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/releases/download/v1.1.0/mission-contact-resource-scheduler-v1.1.0-linux-x86_64.sha256",
+          "sha256": "454bb81adc0ebb39c942fdc3f8191ff93bb541c44aa971347cd229678ef0a518",
+          "byteSize": 27139126,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "mission-contact-resource-scheduler-v1.1.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/releases/download/v1.1.0/mission-contact-resource-scheduler-v1.1.0-windows-amd64.zip",
+          "checksumAssetName": "mission-contact-resource-scheduler-v1.1.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/releases/download/v1.1.0/mission-contact-resource-scheduler-v1.1.0-windows-amd64.sha256",
+          "sha256": "d6e76e7734c4be78a4c9f1be6f993e12cbf00f54245d70a3c86f68c2b29cd84a",
+          "byteSize": 11344586,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Invented finite candidates and units; no real radio, ground-station dispatch or operational availability guarantee.",
+        "Replanning optimizes the existing objective; it does not guarantee minimum changes to a previous plan.",
+        "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
+      ]
+    },
+    {
+      "name": "spacecraft-power-thermal-lab",
+      "version": "1.1.0",
+      "distribution": "portable-gui",
+      "releaseUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/releases/tag/v1.1.0",
+      "publishedAt": "2026-11-10T04:09:15Z",
+      "sourceCommit": "5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+      "sourceUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/tree/5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+      "validationReportUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/blob/5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96/docs/reports/PORTABLE_REFRESH_20261109.md",
+      "sourceChecks": [
+        {
+          "name": "CodeQL",
+          "sourceCommit": "5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/42752167983"
+        },
+        {
+          "name": "Validation",
+          "sourceCommit": "5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/42752168111"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Portable release",
+        "sourceCommit": "5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/42752930728"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "spacecraft-power-thermal-lab-v1.1.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/releases/download/v1.1.0/spacecraft-power-thermal-lab-v1.1.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "spacecraft-power-thermal-lab-v1.1.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/releases/download/v1.1.0/spacecraft-power-thermal-lab-v1.1.0-darwin-arm64.sha256",
+          "sha256": "bb625a31b06ee599b3ca785a582c79745a2b554490b6681c2f40f352f5a210ab",
+          "byteSize": 10487249,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "spacecraft-power-thermal-lab-v1.1.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/releases/download/v1.1.0/spacecraft-power-thermal-lab-v1.1.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "spacecraft-power-thermal-lab-v1.1.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/releases/download/v1.1.0/spacecraft-power-thermal-lab-v1.1.0-linux-x86_64.sha256",
+          "sha256": "3816a212405a2181686d4d00e5c1897b8938e084a613a5c5f8b8888876eed935",
+          "byteSize": 28246997,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "spacecraft-power-thermal-lab-v1.1.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/releases/download/v1.1.0/spacecraft-power-thermal-lab-v1.1.0-windows-amd64.zip",
+          "checksumAssetName": "spacecraft-power-thermal-lab-v1.1.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/releases/download/v1.1.0/spacecraft-power-thermal-lab-v1.1.0-windows-amd64.sha256",
+          "sha256": "9dffe7628115bece7a4406579b04ce3659527ad2794332bb67180706c243509f",
+          "byteSize": 11506324,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Fictional single-body/battery model; numerical agreement and balanced energy do not validate real batteries or establish spacecraft safety.",
+        "No live hardware, power control or operational thermal assurance.",
+        "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
+      ]
+    },
+    {
+      "name": "mission-verification-evidence-kit",
+      "version": "1.1.0",
+      "distribution": "portable-gui",
+      "releaseUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/releases/tag/v1.1.0",
+      "publishedAt": "2026-11-10T04:13:33Z",
+      "sourceCommit": "2743307a90da1621392fcafa138b6e103db751d5",
+      "sourceUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/tree/2743307a90da1621392fcafa138b6e103db751d5",
+      "validationReportUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/blob/2743307a90da1621392fcafa138b6e103db751d5/docs/reports/PORTABLE_REFRESH_20261109.md",
+      "sourceChecks": [
+        {
+          "name": "CodeQL",
+          "sourceCommit": "2743307a90da1621392fcafa138b6e103db751d5",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42752190053"
+        },
+        {
+          "name": "Validation",
+          "sourceCommit": "2743307a90da1621392fcafa138b6e103db751d5",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42752189945"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Portable release",
+        "sourceCommit": "2743307a90da1621392fcafa138b6e103db751d5",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42753754176"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "mission-verification-evidence-kit-v1.1.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/releases/download/v1.1.0/mission-verification-evidence-kit-v1.1.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "mission-verification-evidence-kit-v1.1.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/releases/download/v1.1.0/mission-verification-evidence-kit-v1.1.0-darwin-arm64.sha256",
+          "sha256": "a20d819fa4b5fa4f82798df2bd7a67b3d7640dafbd41466fd4596ecd23b616b9",
+          "byteSize": 10474624,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "mission-verification-evidence-kit-v1.1.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/releases/download/v1.1.0/mission-verification-evidence-kit-v1.1.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "mission-verification-evidence-kit-v1.1.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/releases/download/v1.1.0/mission-verification-evidence-kit-v1.1.0-linux-x86_64.sha256",
+          "sha256": "83133bf9a427d8056265e3bd8c9e3b23fed477a47607405d2f1d2041be7c3247",
+          "byteSize": 27185858,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "mission-verification-evidence-kit-v1.1.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/releases/download/v1.1.0/mission-verification-evidence-kit-v1.1.0-windows-amd64.zip",
+          "checksumAssetName": "mission-verification-evidence-kit-v1.1.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/releases/download/v1.1.0/mission-verification-evidence-kit-v1.1.0-windows-amd64.sha256",
+          "sha256": "c812f2fd40c06251cf9439af0c24f55701c0d32b03560063279a64a87a638a12",
+          "byteSize": 11353450,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Declared synthetic evidence consistency only; SQL agreement does not authenticate provenance or reveal omitted requirements.",
+        "The queue plans human review; it does not execute tests, waive release gates or establish flight qualification.",
+        "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
+      ]
+    },
+    {
+      "name": "orbital-safety-workbench",
+      "version": "1.1.0",
+      "distribution": "portable-gui",
+      "releaseUrl": "https://github.com/JasonStys/orbital-safety-workbench/releases/tag/v1.1.0",
+      "publishedAt": "2026-11-10T04:10:07Z",
+      "sourceCommit": "89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+      "sourceUrl": "https://github.com/JasonStys/orbital-safety-workbench/tree/89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+      "validationReportUrl": "https://github.com/JasonStys/orbital-safety-workbench/blob/89278b3a1997c3b4ab3f4b7acc81672a87a5f22e/docs/reports/PORTABLE_REFRESH_20261109.md",
+      "sourceChecks": [
+        {
+          "name": "CodeQL",
+          "sourceCommit": "89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/orbital-safety-workbench/actions/runs/42752800435"
+        },
+        {
+          "name": "Validation",
+          "sourceCommit": "89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/orbital-safety-workbench/actions/runs/42752800426"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Portable release",
+        "sourceCommit": "89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/orbital-safety-workbench/actions/runs/42753530576"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "orbital-safety-workbench-v1.1.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/orbital-safety-workbench/releases/download/v1.1.0/orbital-safety-workbench-v1.1.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "orbital-safety-workbench-v1.1.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/orbital-safety-workbench/releases/download/v1.1.0/orbital-safety-workbench-v1.1.0-darwin-arm64.sha256",
+          "sha256": "e8b74cfed396c0d00cb7440f51838148922879a217f73105ac5a48a2b5c2f07f",
+          "byteSize": 10882971,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "orbital-safety-workbench-v1.1.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/orbital-safety-workbench/releases/download/v1.1.0/orbital-safety-workbench-v1.1.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "orbital-safety-workbench-v1.1.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/orbital-safety-workbench/releases/download/v1.1.0/orbital-safety-workbench-v1.1.0-linux-x86_64.sha256",
+          "sha256": "ee9ff4f1a99ff5359a950877ad02cafdc0792cd2ce8b79f4cb739824e37e7a1e",
+          "byteSize": 29179506,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "orbital-safety-workbench-v1.1.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/orbital-safety-workbench/releases/download/v1.1.0/orbital-safety-workbench-v1.1.0-windows-amd64.zip",
+          "checksumAssetName": "orbital-safety-workbench-v1.1.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/orbital-safety-workbench/releases/download/v1.1.0/orbital-safety-workbench-v1.1.0-windows-amd64.sha256",
+          "sha256": "5dcd8bcd8345ee09b3b8608d97829cb384793511a8e28deeedd0cfcef93b6eca",
+          "byteSize": 11827404,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Historical ISS data and fictional sampled tracks; no live catalog, covariance, collision probability, targeting or maneuver guidance.",
+        "Distances are illustrative display thresholds rather than operational safety radii.",
+        "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
+      ]
+    },
+    {
+      "name": "ccsds-telemetry-integrity-lab",
+      "version": "1.1.0",
+      "distribution": "portable-gui",
+      "releaseUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/releases/tag/v1.1.0",
+      "publishedAt": "2026-11-10T04:16:17Z",
+      "sourceCommit": "97f729a525aab8c9388c24db26748c475c88d82d",
+      "sourceUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/tree/97f729a525aab8c9388c24db26748c475c88d82d",
+      "validationReportUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/blob/97f729a525aab8c9388c24db26748c475c88d82d/docs/reports/PORTABLE_REFRESH_20261109.md",
+      "sourceChecks": [
+        {
+          "name": "CodeQL",
+          "sourceCommit": "97f729a525aab8c9388c24db26748c475c88d82d",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/runs/42752438406"
+        },
+        {
+          "name": "Validation",
+          "sourceCommit": "97f729a525aab8c9388c24db26748c475c88d82d",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/runs/42752438449"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Portable release",
+        "sourceCommit": "97f729a525aab8c9388c24db26748c475c88d82d",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/runs/42753917630"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "ccsds-telemetry-integrity-lab-v1.1.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/releases/download/v1.1.0/ccsds-telemetry-integrity-lab-v1.1.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "ccsds-telemetry-integrity-lab-v1.1.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/releases/download/v1.1.0/ccsds-telemetry-integrity-lab-v1.1.0-darwin-arm64.sha256",
+          "sha256": "6c79724ddd53161a1de0d0e2c612cc45c6906b158c0b2087d58b76c8062293a2",
+          "byteSize": 10709448,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "ccsds-telemetry-integrity-lab-v1.1.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/releases/download/v1.1.0/ccsds-telemetry-integrity-lab-v1.1.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "ccsds-telemetry-integrity-lab-v1.1.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/releases/download/v1.1.0/ccsds-telemetry-integrity-lab-v1.1.0-linux-x86_64.sha256",
+          "sha256": "b37ba1a6452cfbc1dbeb3ab32ab53680296efc91f108fbf74ec0dbe5022bae8c",
+          "byteSize": 27486445,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "ccsds-telemetry-integrity-lab-v1.1.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/releases/download/v1.1.0/ccsds-telemetry-integrity-lab-v1.1.0-windows-amd64.zip",
+          "checksumAssetName": "ccsds-telemetry-integrity-lab-v1.1.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/releases/download/v1.1.0/ccsds-telemetry-integrity-lab-v1.1.0-windows-amd64.sha256",
+          "sha256": "96e7f81be177f5fce9d1cce0a0769e890582ee8a932fe2b07569bf9ae881d274",
+          "byteSize": 11554310,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Restricted record-delimited educational CCSDS profile; no live radio/spacecraft integration, raw byte-stream resynchronization or payload authentication.",
+        "Timeline segments are review boundaries, not proof of true sender sessions; provisional recovery does not establish permanent packet loss.",
+        "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
+      ]
+    },
+    {
+      "name": "delay-tolerant-mission-network-lab",
+      "version": "1.1.0",
+      "distribution": "portable-gui",
+      "releaseUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/releases/tag/v1.1.0",
+      "publishedAt": "2026-11-10T04:11:59Z",
+      "sourceCommit": "df32f632dc89a329cfdd4eaf9c9f7b7248f8f5ac",
+      "sourceUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/tree/df32f632dc89a329cfdd4eaf9c9f7b7248f8f5ac",
+      "validationReportUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/blob/df32f632dc89a329cfdd4eaf9c9f7b7248f8f5ac/docs/reports/PORTABLE_RELEASE_20261109.md",
+      "sourceChecks": [
+        {
+          "name": "CodeQL",
+          "sourceCommit": "df32f632dc89a329cfdd4eaf9c9f7b7248f8f5ac",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/actions/runs/42752661003"
+        },
+        {
+          "name": "Validation",
+          "sourceCommit": "df32f632dc89a329cfdd4eaf9c9f7b7248f8f5ac",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/actions/runs/42752660975"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Portable release",
+        "sourceCommit": "df32f632dc89a329cfdd4eaf9c9f7b7248f8f5ac",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/actions/runs/42753516416"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "delay-tolerant-mission-network-lab-v1.1.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/releases/download/v1.1.0/delay-tolerant-mission-network-lab-v1.1.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "delay-tolerant-mission-network-lab-v1.1.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/releases/download/v1.1.0/delay-tolerant-mission-network-lab-v1.1.0-darwin-arm64.sha256",
+          "sha256": "e47d144b9caffdd00be2a57a5eb463636c2dbd883caa10fc5f519341abee6525",
+          "byteSize": 10752172,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "delay-tolerant-mission-network-lab-v1.1.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/releases/download/v1.1.0/delay-tolerant-mission-network-lab-v1.1.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "delay-tolerant-mission-network-lab-v1.1.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/releases/download/v1.1.0/delay-tolerant-mission-network-lab-v1.1.0-linux-x86_64.sha256",
+          "sha256": "a706e8839f83dfd8eb543771943dad155716a5023bb5a6fc519b903c03ff8d6b",
+          "byteSize": 27536220,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "delay-tolerant-mission-network-lab-v1.1.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/releases/download/v1.1.0/delay-tolerant-mission-network-lab-v1.1.0-windows-amd64.zip",
+          "checksumAssetName": "delay-tolerant-mission-network-lab-v1.1.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/releases/download/v1.1.0/delay-tolerant-mission-network-lab-v1.1.0-windows-amd64.sha256",
+          "sha256": "e39de4dbcc9fe9a792b6fd95c7ce3ddc806a26273b4e49d8d12d0fb0c0b18153",
+          "byteSize": 11601755,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Invented bounded topology and logical ticks; no real radios, BPv7/BPSec interoperability or exactly-once networking.",
+        "Waterfalls explain a complete simulated experiment; causal replay separately hides future outcomes. Neither diagnoses actual radio faults.",
+        "Unsigned portable files for documented desktop OS/CPU targets; no system installer, native mobile app, production host or operational assurance."
+      ]
+    },
+    {
+      "name": "earth-observation-change-studio",
+      "version": "1.1.0",
+      "distribution": "portable-gui",
+      "releaseUrl": "https://github.com/JasonStys/earth-observation-change-studio/releases/tag/v1.1.0",
+      "publishedAt": "2026-11-10T04:10:30Z",
+      "sourceCommit": "e63d4d111512a36d1ffb19a04059b4d8965ac5d2",
+      "sourceUrl": "https://github.com/JasonStys/earth-observation-change-studio/tree/e63d4d111512a36d1ffb19a04059b4d8965ac5d2",
+      "validationReportUrl": "https://github.com/JasonStys/earth-observation-change-studio/blob/e63d4d111512a36d1ffb19a04059b4d8965ac5d2/docs/reports/PORTABLE_RELEASE_20261109.md",
+      "sourceChecks": [
+        {
+          "name": "CodeQL",
+          "sourceCommit": "e63d4d111512a36d1ffb19a04059b4d8965ac5d2",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/earth-observation-change-studio/actions/runs/42752679175"
+        },
+        {
+          "name": "Validation",
+          "sourceCommit": "e63d4d111512a36d1ffb19a04059b4d8965ac5d2",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/earth-observation-change-studio/actions/runs/42752679131"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Portable release",
+        "sourceCommit": "e63d4d111512a36d1ffb19a04059b4d8965ac5d2",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/earth-observation-change-studio/actions/runs/42753277644"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "earth-observation-change-studio-v1.1.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/earth-observation-change-studio/releases/download/v1.1.0/earth-observation-change-studio-v1.1.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "earth-observation-change-studio-v1.1.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/earth-observation-change-studio/releases/download/v1.1.0/earth-observation-change-studio-v1.1.0-darwin-arm64.sha256",
+          "sha256": "a37a649478d56216857b4ccb1207f4d9202977edd4d698af06c5d5f7fe9e1f23",
+          "byteSize": 38128434,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "earth-observation-change-studio-v1.1.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/earth-observation-change-studio/releases/download/v1.1.0/earth-observation-change-studio-v1.1.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "earth-observation-change-studio-v1.1.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/earth-observation-change-studio/releases/download/v1.1.0/earth-observation-change-studio-v1.1.0-linux-x86_64.sha256",
+          "sha256": "6a5289a4d76224fb01ed0e01d50b57f1f24a81acbc5e8a4b4ba7fbe58ab59cd2",
+          "byteSize": 86480596,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "earth-observation-change-studio-v1.1.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/earth-observation-change-studio/releases/download/v1.1.0/earth-observation-change-studio-v1.1.0-windows-amd64.zip",
+          "checksumAssetName": "earth-observation-change-studio-v1.1.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/earth-observation-change-studio/releases/download/v1.1.0/earth-observation-change-studio-v1.1.0-windows-amd64.sha256",
+          "sha256": "de219cd2d8e6c3e117cf55c552af4d19e8d385df4811b080aff7f2c54a21848a",
+          "byteSize": 57888247,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Four-neighbor availability describes local raster context, not environmental cause, registration accuracy or verified ground truth.",
+        "Uses bounded synthetic/frozen public environmental imagery; no identifying surveillance or targeting capability.",
+        "Unsigned portable desktop packages; no signed installer, public accounts, native mobile installation or environmental certification."
+      ]
+    },
+    {
+      "name": "mission-clock-integrity-lab",
+      "version": "1.1.0",
+      "distribution": "portable-gui",
+      "releaseUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/releases/tag/v1.1.0",
+      "publishedAt": "2026-11-10T04:12:15Z",
+      "sourceCommit": "1af9738149716f944cc74a3c577746bea35194db",
+      "sourceUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/tree/1af9738149716f944cc74a3c577746bea35194db",
+      "validationReportUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/blob/1af9738149716f944cc74a3c577746bea35194db/docs/reports/PORTABLE_RELEASE_20261109.md",
+      "sourceChecks": [
+        {
+          "name": "CodeQL",
+          "sourceCommit": "1af9738149716f944cc74a3c577746bea35194db",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/mission-clock-integrity-lab/actions/runs/42752687471"
+        },
+        {
+          "name": "Validation",
+          "sourceCommit": "1af9738149716f944cc74a3c577746bea35194db",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/mission-clock-integrity-lab/actions/runs/42752687809"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Portable release",
+        "sourceCommit": "1af9738149716f944cc74a3c577746bea35194db",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/mission-clock-integrity-lab/actions/runs/42753523098"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "mission-clock-integrity-lab-v1.1.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/releases/download/v1.1.0/mission-clock-integrity-lab-v1.1.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "mission-clock-integrity-lab-v1.1.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/releases/download/v1.1.0/mission-clock-integrity-lab-v1.1.0-darwin-arm64.sha256",
+          "sha256": "821e40e7ba9a1d51f234ec39c46962c8fc5df9f276c51b300f91f1fa36c242b6",
+          "byteSize": 10662208,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "mission-clock-integrity-lab-v1.1.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/releases/download/v1.1.0/mission-clock-integrity-lab-v1.1.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "mission-clock-integrity-lab-v1.1.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/releases/download/v1.1.0/mission-clock-integrity-lab-v1.1.0-linux-x86_64.sha256",
+          "sha256": "847a9064fd0e38ee69322a7f71ff620585cf31d78068ba3e407e619eae514585",
+          "byteSize": 28440643,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "mission-clock-integrity-lab-v1.1.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/releases/download/v1.1.0/mission-clock-integrity-lab-v1.1.0-windows-amd64.zip",
+          "checksumAssetName": "mission-clock-integrity-lab-v1.1.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/releases/download/v1.1.0/mission-clock-integrity-lab-v1.1.0-windows-amd64.sha256",
+          "sha256": "e351fdbeb00fb60211907cd5adb6498749de5d238144e642185585d16cba97f8",
+          "byteSize": 11575361,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Synthetic integer intervals and logical time do not establish real UTC accuracy, timing certification or host-clock control.",
+        "Readiness frontiers are not total-order ranks; timestamp separation is not causality, and unqualified intervals remain unknown.",
+        "Unsigned desktop portable files for specific OS/CPU targets; no system installer, public hosting or physical timing integration."
+      ]
+    },
+    {
+      "name": "resilient-energy-microgrid-lab",
+      "version": "1.1.0",
+      "distribution": "portable-gui",
+      "releaseUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/releases/tag/v1.1.0",
+      "publishedAt": "2026-11-10T04:22:07Z",
+      "sourceCommit": "39a16658fbb68bc2558aea4bf60ab74253ef2aba",
+      "sourceUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/tree/39a16658fbb68bc2558aea4bf60ab74253ef2aba",
+      "validationReportUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/blob/39a16658fbb68bc2558aea4bf60ab74253ef2aba/docs/reports/PORTABLE_RELEASE_20261109.md",
+      "sourceChecks": [
+        {
+          "name": "CodeQL",
+          "sourceCommit": "39a16658fbb68bc2558aea4bf60ab74253ef2aba",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/resilient-energy-microgrid-lab/actions/runs/42753293752"
+        },
+        {
+          "name": "Validation",
+          "sourceCommit": "39a16658fbb68bc2558aea4bf60ab74253ef2aba",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/resilient-energy-microgrid-lab/actions/runs/42753293735"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Portable release",
+        "sourceCommit": "39a16658fbb68bc2558aea4bf60ab74253ef2aba",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/resilient-energy-microgrid-lab/actions/runs/42754891928"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "resilient-energy-microgrid-lab-v1.1.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/releases/download/v1.1.0/resilient-energy-microgrid-lab-v1.1.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "resilient-energy-microgrid-lab-v1.1.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/releases/download/v1.1.0/resilient-energy-microgrid-lab-v1.1.0-darwin-arm64.sha256",
+          "sha256": "a4aa407e963bb88cbe39e6433ab420caa74e8c8d55db758b9d84c6ef90418dfa",
+          "byteSize": 10467888,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "resilient-energy-microgrid-lab-v1.1.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/releases/download/v1.1.0/resilient-energy-microgrid-lab-v1.1.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "resilient-energy-microgrid-lab-v1.1.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/releases/download/v1.1.0/resilient-energy-microgrid-lab-v1.1.0-linux-x86_64.sha256",
+          "sha256": "d10ccedbe50c380919bfe63ee16a01e99d9a5fa9628a1a98bc52031c4797cc60",
+          "byteSize": 27180062,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "resilient-energy-microgrid-lab-v1.1.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/releases/download/v1.1.0/resilient-energy-microgrid-lab-v1.1.0-windows-amd64.zip",
+          "checksumAssetName": "resilient-energy-microgrid-lab-v1.1.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/releases/download/v1.1.0/resilient-energy-microgrid-lab-v1.1.0-windows-amd64.sha256",
+          "sha256": "4af8db35cdae62b450698e6ff62e32598f63049fb598b55893cd83f7be11fca4",
+          "byteSize": 11348736,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Synthetic hourly adequacy is not power flow, protection/transient behavior, a forecast or electrical safety.",
+        "Stress removes supplied feeder availability across the whole window; it does not guarantee outage survival or optimize a real facility.",
+        "Unsigned local portable desktop packages; no system installer, native mobile application or real infrastructure controls."
+      ]
+    },
+    {
+      "name": "scientific-sensor-calibration-lab",
+      "version": "1.1.0",
+      "distribution": "portable-gui",
+      "releaseUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/releases/tag/v1.1.0",
+      "publishedAt": "2026-11-10T04:10:52Z",
+      "sourceCommit": "1bdb2244451af67d90600e60c566435b66ea2bd0",
+      "sourceUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/tree/1bdb2244451af67d90600e60c566435b66ea2bd0",
+      "validationReportUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/blob/1bdb2244451af67d90600e60c566435b66ea2bd0/docs/reports/PORTABLE_RELEASE_20261109.md",
+      "sourceChecks": [
+        {
+          "name": "CodeQL",
+          "sourceCommit": "1bdb2244451af67d90600e60c566435b66ea2bd0",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/scientific-sensor-calibration-lab/actions/runs/42752670682"
+        },
+        {
+          "name": "Validation",
+          "sourceCommit": "1bdb2244451af67d90600e60c566435b66ea2bd0",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/scientific-sensor-calibration-lab/actions/runs/42752670659"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Portable release",
+        "sourceCommit": "1bdb2244451af67d90600e60c566435b66ea2bd0",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/scientific-sensor-calibration-lab/actions/runs/42753283075"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "scientific-sensor-calibration-lab-v1.1.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/releases/download/v1.1.0/scientific-sensor-calibration-lab-v1.1.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "scientific-sensor-calibration-lab-v1.1.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/releases/download/v1.1.0/scientific-sensor-calibration-lab-v1.1.0-darwin-arm64.sha256",
+          "sha256": "5ef1a0fed62343365a2558e9aa9e5bb019f15fe2aacb77ee521f9690616efab4",
+          "byteSize": 43506928,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "scientific-sensor-calibration-lab-v1.1.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/releases/download/v1.1.0/scientific-sensor-calibration-lab-v1.1.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "scientific-sensor-calibration-lab-v1.1.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/releases/download/v1.1.0/scientific-sensor-calibration-lab-v1.1.0-linux-x86_64.sha256",
+          "sha256": "daea41b7d0cf77cdfbd44f888e519cd1534f1aa9dfc45a3f64faf92745f8a4f7",
+          "byteSize": 64515786,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "scientific-sensor-calibration-lab-v1.1.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/releases/download/v1.1.0/scientific-sensor-calibration-lab-v1.1.0-windows-amd64.zip",
+          "checksumAssetName": "scientific-sensor-calibration-lab-v1.1.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/releases/download/v1.1.0/scientific-sensor-calibration-lab-v1.1.0-windows-amd64.sha256",
+          "sha256": "a87d4ae71589534e1eeadbb9194f4dcfa947d2a933c9482a8ad14aa840b6df7d",
+          "byteSize": 48332640,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Modeled standard uncertainty excludes physical reference uncertainty, unmodeled correlations and certification.",
+        "The signed covariance cross term is already inside fit variance; withheld estimates have no invented uncertainty budget.",
+        "Synthetic local instrument examples and unsigned desktop portable packages; no system installer, real instrument connection or certified measurement service."
+      ]
+    },
+    {
+      "name": "space-weather-impact-observatory",
+      "version": "1.1.0",
+      "distribution": "portable-gui",
+      "releaseUrl": "https://github.com/JasonStys/space-weather-impact-observatory/releases/tag/v1.1.0",
+      "publishedAt": "2026-11-10T04:13:49Z",
+      "sourceCommit": "5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+      "sourceUrl": "https://github.com/JasonStys/space-weather-impact-observatory/tree/5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+      "validationReportUrl": "https://github.com/JasonStys/space-weather-impact-observatory/blob/5f2363643ca7fe7ce624550dcd45e0ae4cb0185a/docs/reports/PORTABLE_RELEASE_20261109.md",
+      "sourceChecks": [
+        {
+          "name": "CodeQL",
+          "sourceCommit": "5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/space-weather-impact-observatory/actions/runs/42753130598"
+        },
+        {
+          "name": "Validation",
+          "sourceCommit": "5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/space-weather-impact-observatory/actions/runs/42753130588"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Portable release",
+        "sourceCommit": "5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/space-weather-impact-observatory/actions/runs/42753759022"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "space-weather-impact-observatory-v1.1.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/space-weather-impact-observatory/releases/download/v1.1.0/space-weather-impact-observatory-v1.1.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "space-weather-impact-observatory-v1.1.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/space-weather-impact-observatory/releases/download/v1.1.0/space-weather-impact-observatory-v1.1.0-darwin-arm64.sha256",
+          "sha256": "d6a8ce5cf83601a03d677a2e9abad179f5fec544efc7248e4457ceec8767a025",
+          "byteSize": 10460840,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "space-weather-impact-observatory-v1.1.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/space-weather-impact-observatory/releases/download/v1.1.0/space-weather-impact-observatory-v1.1.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "space-weather-impact-observatory-v1.1.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/space-weather-impact-observatory/releases/download/v1.1.0/space-weather-impact-observatory-v1.1.0-linux-x86_64.sha256",
+          "sha256": "756ba7740eadce2d738a5953641b6dffeb0c6887ac4d65e6f8e1e2d5ba670eb5",
+          "byteSize": 27132288,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "space-weather-impact-observatory-v1.1.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/space-weather-impact-observatory/releases/download/v1.1.0/space-weather-impact-observatory-v1.1.0-windows-amd64.zip",
+          "checksumAssetName": "space-weather-impact-observatory-v1.1.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/space-weather-impact-observatory/releases/download/v1.1.0/space-weather-impact-observatory-v1.1.0-windows-amd64.sha256",
+          "sha256": "3e0107f95bd0c34eed2df14b086c5e8043a1458e85114f973887d9a95fe8fdc5",
+          "byteSize": 11337251,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "Frozen public and synthetic snapshots do not provide current conditions, causal mission-impact prediction or operational guidance.",
+        "Lead cutoffs overlap and fixed-half comparisons are descriptive; they are not independent samples or statistical significance tests.",
+        "Unsigned desktop portable packages; no system installer, hosted account service or native mobile installation."
+      ]
+    },
+    {
+      "name": "reactor-systems-simulator",
+      "version": "1.1.0",
+      "distribution": "portable-gui",
+      "releaseUrl": "https://github.com/JasonStys/reactor-systems-simulator/releases/tag/v1.1.0",
+      "publishedAt": "2026-11-10T04:21:09Z",
+      "sourceCommit": "a6d4fc55f12681c5b5bdec1dcd09ddb801d94683",
+      "sourceUrl": "https://github.com/JasonStys/reactor-systems-simulator/tree/a6d4fc55f12681c5b5bdec1dcd09ddb801d94683",
+      "validationReportUrl": "https://github.com/JasonStys/reactor-systems-simulator/blob/a6d4fc55f12681c5b5bdec1dcd09ddb801d94683/docs/reports/PORTABLE_RELEASE_20261109.md",
+      "sourceChecks": [
+        {
+          "name": "CodeQL",
+          "sourceCommit": "a6d4fc55f12681c5b5bdec1dcd09ddb801d94683",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/reactor-systems-simulator/actions/runs/42752810305"
+        },
+        {
+          "name": "Validation",
+          "sourceCommit": "a6d4fc55f12681c5b5bdec1dcd09ddb801d94683",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/reactor-systems-simulator/actions/runs/42752810464"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Portable release",
+        "sourceCommit": "a6d4fc55f12681c5b5bdec1dcd09ddb801d94683",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/reactor-systems-simulator/actions/runs/42754641321"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "reactor-systems-simulator-v1.1.0-darwin-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/reactor-systems-simulator/releases/download/v1.1.0/reactor-systems-simulator-v1.1.0-darwin-arm64.tar.gz",
+          "checksumAssetName": "reactor-systems-simulator-v1.1.0-darwin-arm64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/reactor-systems-simulator/releases/download/v1.1.0/reactor-systems-simulator-v1.1.0-darwin-arm64.sha256",
+          "sha256": "4c954295ecf4655c1157ddc24cd4bf4ab0e7f67c8eed95f6a84908151bc5b03b",
+          "byteSize": 10459442,
+          "platform": "macos",
+          "architecture": "arm64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "reactor-systems-simulator-v1.1.0-linux-x86_64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/reactor-systems-simulator/releases/download/v1.1.0/reactor-systems-simulator-v1.1.0-linux-x86_64.tar.gz",
+          "checksumAssetName": "reactor-systems-simulator-v1.1.0-linux-x86_64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/reactor-systems-simulator/releases/download/v1.1.0/reactor-systems-simulator-v1.1.0-linux-x86_64.sha256",
+          "sha256": "bb0874a248213bbd5bffdaafde46f7f275e9fa3b121035a76eb067d66bd6bf4a",
+          "byteSize": 28175932,
+          "platform": "linux",
+          "architecture": "x64",
+          "format": "tar.gz",
+          "kind": "portable"
+        },
+        {
+          "assetName": "reactor-systems-simulator-v1.1.0-windows-amd64.zip",
+          "assetUrl": "https://github.com/JasonStys/reactor-systems-simulator/releases/download/v1.1.0/reactor-systems-simulator-v1.1.0-windows-amd64.zip",
+          "checksumAssetName": "reactor-systems-simulator-v1.1.0-windows-amd64.sha256",
+          "checksumUrl": "https://github.com/JasonStys/reactor-systems-simulator/releases/download/v1.1.0/reactor-systems-simulator-v1.1.0-windows-amd64.sha256",
+          "sha256": "ebd6d92c2813e0854a6bdde46d26ab11aa7a78fcb13c9697f7fc3790dac751de",
+          "byteSize": 11470011,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "zip",
+          "kind": "portable"
+        }
+      ],
+      "requirements": "Use the documented desktop OS and CPU package. Browser-based portable apps print a local URL; extract the complete folder before launch.",
+      "limitations": [
+        "A fictional thermal analogy, with no nuclear physics, fuel, neutron, criticality, radiation or real-plant monitoring/control.",
+        "Sampled extrema and numerical tolerances are not physical measurements, safety limits or operating recommendations.",
+        "Unsigned educational desktop portable packages; no system installer, native mobile app, plant connection or safety certification."
+      ]
+    },
+    {
+      "name": "drone-operations-console",
+      "version": "0.3.0",
+      "distribution": "desktop-app",
+      "releaseUrl": "https://github.com/JasonStys/drone-operations-console/releases/tag/v0.3.0",
+      "publishedAt": "2026-11-09T22:23:22Z",
+      "sourceCommit": "176209ed96178351a3265676ae8d50396503b9ca",
+      "sourceUrl": "https://github.com/JasonStys/drone-operations-console/tree/176209ed96178351a3265676ae8d50396503b9ca",
+      "validationReportUrl": "https://github.com/JasonStys/drone-operations-console/blob/176209ed96178351a3265676ae8d50396503b9ca/docs/reports/practical-workflows-2026-11-09.md",
+      "sourceChecks": [
+        {
+          "name": "CodeQL",
+          "sourceCommit": "176209ed96178351a3265676ae8d50396503b9ca",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/drone-operations-console/actions/runs/42709703725"
+        },
+        {
+          "name": "Validation",
+          "sourceCommit": "176209ed96178351a3265676ae8d50396503b9ca",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/drone-operations-console/actions/runs/42709703822"
+        }
+      ],
+      "releaseCheck": {
+        "name": "Windows release",
+        "sourceCommit": "176209ed96178351a3265676ae8d50396503b9ca",
+        "conclusion": "success",
+        "url": "https://github.com/JasonStys/drone-operations-console/actions/runs/42710910458"
+      },
+      "acceptanceCheck": null,
+      "assets": [
+        {
+          "assetName": "Drone.Operations.Console.Setup.0.3.0.exe",
+          "assetUrl": "https://github.com/JasonStys/drone-operations-console/releases/download/v0.3.0/Drone.Operations.Console.Setup.0.3.0.exe",
+          "checksumAssetName": "SHA256SUMS.txt",
+          "checksumUrl": "https://github.com/JasonStys/drone-operations-console/releases/download/v0.3.0/SHA256SUMS.txt",
+          "sha256": "828c8536f2bb8e9aa0f8cf6191a9da0f906b2817a7016cc702a24fd7e6704e44",
+          "byteSize": 144397699,
+          "platform": "windows",
+          "architecture": "x64",
+          "format": "exe",
+          "kind": "installer"
+        }
+      ],
+      "requirements": "Windows x64. The published 0.3.0 installer is Windows-only; other platforms use the documented source setup.",
+      "limitations": [
+        "Civilian cooperative 2D simulations only; no pursuit, evasion, targeting or real-aircraft commands.",
+        "Point-centerline grid paths and global holds do not model swept aircraft bodies or certified flight dynamics.",
+        "Scenes require explicit save/export; no account sync or automatic browser persistence is supplied.",
+        "The application is an unsigned simulation package, not operational flight-control software or flight authorization."
+      ]
+    }
+  ]
+}

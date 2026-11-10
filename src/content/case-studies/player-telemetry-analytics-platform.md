@@ -45,4 +45,4 @@ The accepted CI also passed its mandatory PostgreSQL and container checks; those
 
 ## Limitations
 
-Only synthetic local data is supported here; the application has no authentication for real player records. Receipt cutoffs do not establish completeness, causality or statistical confidence. Review uses retained accepted data, not a historical database-revision archive. Earlier downloads have not been rebuilt for this update; use the accepted source.
+Only synthetic local data is supported here; the application has no authentication for real player records. Receipt cutoffs do not establish completeness, causality or statistical confidence. Review uses retained accepted data, not a historical database-revision archive. This source-first project is built and exercised through its documented package/service gates; no native desktop release is supplied.

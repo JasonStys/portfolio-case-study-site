@@ -7,6 +7,7 @@
  */
 import BaseLayout from "@/components/BaseLayout.astro";
 import { projects } from "@/lib/catalog";
+import { DOWNLOAD_NAMES } from "@/lib/downloads";
 import { projectUpgrade, upgradeManifest } from "@/lib/upgrades";
 import type { Project } from "@/lib/types";
 import { withBase } from "@/lib/url";
@@ -22,6 +23,7 @@ type Props = { project: Project; previous?: Project; next?: Project };
 const { project, previous, next } = Astro.props;
 const upgrade = projectUpgrade(project.name);
 const isHub = project.name === "portfolio-case-study-site";
+const hasDownload = (DOWNLOAD_NAMES as readonly string[]).includes(project.name);
 if (!upgrade && !isHub) throw new Error(`Missing source evidence for ${project.name}.`);
 const observedAt = new Date(upgradeManifest.collectedAt).toISOString();
 ---
@@ -49,6 +51,11 @@ const observedAt = new Date(upgradeManifest.collectedAt).toISOString();
         <a class="button button--primary" href={project.url}>
           Inspect repository ↗
         </a>
+        {hasDownload && (
+          <a class="button button--secondary" href={withBase(`downloads/#${project.name}`)}>
+            Inspect released downloads →
+          </a>
+        )}
         {project.caseStudySlug && (
           <a
             class="button button--secondary"

@@ -16,6 +16,8 @@ const REQUIRED_OUTPUTS = [
   "index.html",
   "projects/index.html",
   "updates/index.html",
+  "downloads/index.html",
+  "downloads/index.json",
   "space-systems/index.html",
   "drone-systems/index.html",
   "about/index.html",

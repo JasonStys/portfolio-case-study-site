@@ -1,7 +1,7 @@
 ---
 title: "Software recovery you can replay and inspect"
 repository: "https://github.com/JasonStys/spacecraft-flight-software-testbed"
-summary: "A software-only C++ executive with deterministic fault recovery and a review of onboard state changes versus actual downlink witnesses."
+summary: "A deterministic C++ recovery executive with received-witness review and source-bound portable downloads exercised after extraction."
 role: "Flight-software concepts and systems verification"
 languages: ["C++", "Python", "TypeScript", "SQL"]
 evidence:
@@ -15,32 +15,28 @@ evidence:
 
 ## Problem
 
-A mode label cannot explain whether a short-lived fault state reached the ground. A delayed downlink can miss a transition entirely or reveal only a later cumulative counter. Reviewers need to distinguish simulated onboard events from what the received stream actually supports.
+A simulated onboard transition can be missed by downlink or confirmed only by a later cumulative counter. Reviewers need to distinguish the software truth from what the received stream actually supports, and downloadable builds should expose the same practical review as current source.
 
 ## Constraints
 
-Keep the executive deterministic and software-only, with bounded checkpoints and validated commands. Logical ticks and invented indices are not physical telemetry. Missing downlinks must remain missing, and full-run synthetic truth must not be presented as a causal ground observation.
+Software-only synthetic scenarios and logical ticks; no flight hardware, guidance, operational SAFE assertion or mission qualification. Portable builds remain unsigned extracted folders rather than installers. Native automation drives an owned loopback URL with --no-browser; default desktop browser opening remains a manual OS check.
 
 ## Design
 
-The deterministic C++20 executive models boot, standby, science and latched SAFE states with logical ticks, a watchdog and bounded checkpoints. A fixed native worker supplies a Python evidence service and TypeScript inspector. A nominal run provides a comparison under identical settings.
-
-The new review compares mode, boot and diagnostic-counter changes with their first actual received witnesses. It exposes unseen short states, preceding received bounds, confirmation delays and boot/window censoring. Full-run synthetic truth is shown separately from the causal ground perspective.
-
-A reviewer can inject a watchdog/reset or downlink-loss scenario, inspect what changed onboard, follow received frames and export the same run-identified JSON/HTML ledger. No witness is labeled as proof that nothing happened; later counter receipt does not reveal an exact increment time.
+Keep the original C++ executive and Python recovery oracles. Review full-run onboard changes, separate actual received witnesses and export complete replay evidence. The released 1.1.0 distribution binds Python/npm/CMake/runtime/UI/health identity to an exact source manifest, preserves native POSIX links in tar.gz and accepts only the actual extracted app. Release lookup uses a complete bounded authenticated list and numeric-ID reread; a published-only tag endpoint cannot stand in for a draft.
 
 ## Verification
 
-Native command/codec contracts and independent Python traces check watchdog/reset behavior and received witnesses. Browser journeys separate onboard truth from ground evidence and verify exports, missing observations, errors and accessibility.
+The original recovery, native sanitizer, coverage and source browser gates remain intact. Local extracted-Windows acceptance checks a hand-expected watchdog reset, onboard-to-received witness ordering, compiled assets and an actual Chromium JSON download equal to the frozen API response. Independent metadata/archive/API fixtures reject failed or ambiguous checks, changed source/version, draft collisions, tampered archives, path/link escape and list/detail identity swaps. Public release and workflow evidence below bind to the reviewed source.
 
 ## Measured result
 
-The report records **81 Python tests at 99.48% combined statement/branch coverage**, three rebuilt native contracts, **12 TypeScript tests** and **24 Chromium/Firefox/WebKit browser journeys**. Hand-authored traces cover hidden states, reset boundaries, missing prior frames, empty/no-change cases and unconfirmed changes at the window end.
+Recorded locally: 171 Python tests passed with 99.53% combined statement/branch coverage against the unchanged 90% requirement; 12 TypeScript tests,24 real Chromium/Firefox/WebKit source journeys,3 native build contracts and7 original deterministic replay contracts passed. The actual extracted Windows feature/export journey passed. These local results do not substitute for the final clean-source three-OS release jobs.
 
-Native scenarios independently verify delivered frames and time order. Browser journeys check actual witness inspection, ground/truth separation, exports, failures and mobile accessibility. All seven existing replay fingerprints and summaries remain unchanged. Accepted CI retains cross-platform, sanitizer, native coverage and portable-build checks.
+Accepted source: [`5f9dc95ad5df564373d1304b13e4bb2464d13842`](https://github.com/JasonStys/spacecraft-flight-software-testbed/tree/5f9dc95ad5df564373d1304b13e4bb2464d13842). The [validation report](https://github.com/JasonStys/spacecraft-flight-software-testbed/blob/5f9dc95ad5df564373d1304b13e4bb2464d13842/docs/reports/PORTABLE_REFRESH_20261109.md) records executed scope and conditions. Exact-source main checks passed: [CodeQL](https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752160159), [Validation](https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752160117).
 
-Accepted source: [`9f5b99802e6f3f3f0bfa50357c203635923cf159`](https://github.com/JasonStys/spacecraft-flight-software-testbed/tree/9f5b99802e6f3f3f0bfa50357c203635923cf159). The [change report](https://github.com/JasonStys/spacecraft-flight-software-testbed/blob/9f5b99802e6f3f3f0bfa50357c203635923cf159/docs/reports/PRACTICAL_WORKFLOWS_20261109.md) records the executed scope and results. Exact-main workflow records passed: [CodeQL](https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42704308513), [Validation](https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42704308230).
+[Version 1.1.0 downloads](https://github.com/JasonStys/spacecraft-flight-software-testbed/releases/tag/v1.1.0) contain application source [`5f9dc95ad5df564373d1304b13e4bb2464d13842`](https://github.com/JasonStys/spacecraft-flight-software-testbed/tree/5f9dc95ad5df564373d1304b13e4bb2464d13842). The [release workflow](https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752925223) passed its documented native gates. See the [download index](/portfolio-case-study-site/downloads/) for actual platforms, file types, full checksums and runtime requirements. All three release jobs exercised their own freshly extracted application and real UI/export. The Windows download was independently checked and exercised again before publication; this does not certify an installer lifecycle or default OS browser opening.
 
 ## Limitations
 
-This is not an RTOS, hardware controller, timing guarantee or flight-qualified component. Logical ticks and invented indices are not physical measurements, and SAFE is only a simulated state. CRC checks detect corruption rather than authenticated authorship. No guidance, targeting or real mission operation is supplied. Previously published downloads predate this review workflow; use the accepted source for the new features.
+Received counter confirmation is not the exact event timestamp; an absent witness does not prove no event. Numerical replay and native launch checks are educational validation, not flight assurance. Default OS opener behavior and clean-machine installation are not established by the --no-browser portable acceptance.

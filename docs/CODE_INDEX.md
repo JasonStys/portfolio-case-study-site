@@ -106,52 +106,89 @@
 | 15 | variable | `EXCLUDED_DIRECTORIES` |
 | 25 | variable | `checkOnly` |
 | 26 | variable | `STATIC_DESCRIPTIONS` |
-| 49 | function | `collectFiles` |
-| 50 | variable | `entries` |
-| 51 | variable | `results` |
-| 54 | variable | `absolute` |
-| 61 | function | `extractDescription` |
-| 62 | variable | `fileTag` |
-| 64 | variable | `fileLine` |
-| 66 | variable | `withoutEnd` |
-| 74 | function | `describeFile` |
-| 75 | variable | `staticDescription` |
-| 77 | variable | `extracted` |
-| 91 | function | `renderCatalog` |
-| 92 | variable | `lines` |
-| 105 | function | `main` |
-| 106 | variable | `files` |
-| 107 | variable | `records` |
-| 113 | variable | `rendered` |
+| 62 | function | `collectFiles` |
+| 63 | variable | `entries` |
+| 64 | variable | `results` |
+| 67 | variable | `absolute` |
+| 74 | function | `extractDescription` |
+| 75 | variable | `fileTag` |
+| 77 | variable | `fileLine` |
+| 79 | variable | `withoutEnd` |
+| 87 | function | `describeFile` |
+| 88 | variable | `staticDescription` |
+| 90 | variable | `extracted` |
+| 104 | function | `renderCatalog` |
+| 105 | variable | `lines` |
+| 118 | function | `main` |
+| 119 | variable | `files` |
+| 120 | variable | `records` |
+| 126 | variable | `rendered` |
 
 ## `scripts/lighthouse.mjs`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 16 | variable | `ROOT` |
-| 17 | variable | `OUTPUT_DIRECTORY` |
-| 18 | variable | `TARGET_URL` |
-| 19 | variable | `RUN_COUNT` |
-| 20 | variable | `CATEGORY_BUDGETS` |
-| 21 | variable | `AUDIT_BUDGETS` |
-| 28 | function | `isWindowsCleanupError` |
-| 29 | variable | `code` |
-| 33 | function | `stopChrome` |
-| 42 | function | `runAudit` |
-| 43 | variable | `chrome` |
-| 49 | variable | `result` |
-| 71 | function | `median` |
-| 74 | variable | `sorted` |
-| 78 | function | `summarize` |
-| 79 | variable | `categories` |
-| 81 | variable | `scores` |
-| 85 | variable | `audits` |
-| 96 | function | `enforceBudgets` |
-| 97 | variable | `failures` |
-| 105 | function | `main` |
-| 107 | variable | `preview` |
-| 109 | variable | `results` |
-| 112 | variable | `summary` |
+| 19 | variable | `ROOT` |
+| 20 | variable | `OUTPUT_DIRECTORY` |
+| 21 | variable | `TARGET_URL` |
+| 22 | variable | `RUN_COUNT` |
+| 23 | variable | `CATEGORY_BUDGETS` |
+| 24 | variable | `AUDIT_BUDGETS` |
+| 30 | variable | `TRACE_BYTES` |
+| 31 | variable | `DEVTOOLS_BYTES` |
+| 32 | variable | `METADATA_BYTES` |
+| 33 | variable | `MAX_TRACE_EVENTS` |
+| 34 | variable | `MAX_DEVTOOLS_ENTRIES` |
+| 35 | variable | `READINESS_MS` |
+| 38 | function | `prepareAuditedPage` |
+| 51 | variable | `started` |
+| 52 | variable | `browser` |
+| 53 | variable | `expired` |
+| 54 | variable | `timer` |
+| 55 | variable | `preparation` |
+| 56 | variable | `connection` |
+| 65 | variable | `page` |
+| 66 | variable | `httpRequests` |
+| 67 | variable | `observeRequest` |
+| 81 | variable | `proof` |
+| 82 | variable | `frameTimestamps` |
+| 153 | function | `checkDiagnosticUrl` |
+| 161 | variable | `url` |
+| 194 | function | `validateDiagnosticScope` |
+| 204 | variable | `visited` |
+| 205 | function | `visit` |
+| 242 | function | `boundedJson` |
+| 243 | variable | `json` |
+| 250 | function | `saveRunDiagnostics` |
+| 274 | variable | `trace` |
+| 275 | variable | `devtools` |
+| 276 | variable | `artifactStarted` |
+| 277 | variable | `files` |
+| 281 | variable | `settings` |
+| 282 | variable | `metadata` |
+| 326 | function | `isWindowsCleanupError` |
+| 327 | variable | `code` |
+| 331 | function | `stopChrome` |
+| 340 | function | `runAudit` |
+| 341 | variable | `startupStarted` |
+| 342 | variable | `chrome` |
+| 347 | variable | `browserStartup` |
+| 348 | variable | `ready` |
+| 351 | variable | `auditStarted` |
+| 352 | variable | `result` |
+| 372 | variable | `audit` |
+| 391 | function | `median` |
+| 394 | variable | `sorted` |
+| 398 | function | `summarize` |
+| 399 | variable | `categories` |
+| 401 | variable | `scores` |
+| 405 | variable | `audits` |
+| 416 | function | `enforceBudgets` |
+| 417 | variable | `failures` |
+| 425 | function | `main` |
+| 427 | variable | `preview` |
+| 429 | variable | `results` |
+| 432 | variable | `summary` |
 
 ## `scripts/owned-preview.mjs`
 
@@ -738,7 +775,7 @@
 | 64 | custom property | `--radius` |
 | 65 | custom property | `--radius-lg` |
 | 66 | custom property | `--shell` |
-| 1068 | custom property | `--shell` |
+| 1070 | custom property | `--shell` |
 
 ## `tests/e2e/downloads.spec.ts`
 
@@ -859,6 +896,74 @@
 | 452 | variable | `result` |
 | 459 | variable | `value` |
 | 464 | variable | `raw` |
+
+## `tests/unit/lighthouse.test.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 21 | variable | `target` |
+| 22 | variable | `directories` |
+| 24 | function | `first` |
+| 25 | variable | `item` |
+| 30 | function | `fixture` |
+| 58 | function | `directory` |
+| 59 | variable | `name` |
+| 79 | function | `readyFixture` |
+| 80 | variable | `observe` |
+| 81 | variable | `proof` |
+| 87 | variable | `page` |
+| 97 | variable | `browser` |
+| 112 | variable | `context` |
+| 113 | variable | `ready` |
+| 129 | variable | `context` |
+| 141 | variable | `context` |
+| 153 | variable | `context` |
+| 166 | variable | `context` |
+| 168 | variable | `pending` |
+| 169 | variable | `failed` |
+| 179 | variable | `context` |
+| 180 | variable | `deliver` |
+| 181 | variable | `connect` |
+| 187 | variable | `pending` |
+| 188 | variable | `failed` |
+| 200 | variable | `context` |
+| 209 | variable | `context` |
+| 212 | variable | `warning` |
+| 228 | variable | `output` |
+| 229 | variable | `result` |
+| 231 | variable | `trace` |
+| 232 | variable | `network` |
+| 235 | variable | `metadata` |
+| 263 | variable | `output` |
+| 264 | variable | `result` |
+| 273 | variable | `output` |
+| 274 | variable | `redirect` |
+| 279 | variable | `trace` |
+| 290 | variable | `output` |
+| 291 | variable | `result` |
+| 292 | variable | `source` |
+| 295 | variable | `trace` |
+| 315 | variable | `output` |
+| 316 | variable | `result` |
+| 325 | variable | `output` |
+| 326 | variable | `result` |
+| 341 | variable | `output` |
+| 342 | variable | `result` |
+| 354 | variable | `output` |
+| 355 | variable | `result` |
+| 364 | variable | `output` |
+| 365 | variable | `bytes` |
+| 368 | variable | `count` |
+| 381 | variable | `output` |
+| 382 | variable | `result` |
+| 392 | variable | `output` |
+| 393 | variable | `result` |
+| 402 | variable | `output` |
+| 403 | variable | `result` |
+| 412 | variable | `output` |
+| 413 | variable | `result` |
+| 432 | variable | `results` |
+| 446 | variable | `summary` |
 
 ## `tests/unit/search.test.ts`
 

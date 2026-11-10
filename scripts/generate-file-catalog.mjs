@@ -24,6 +24,19 @@ const EXCLUDED_DIRECTORIES = new Set([
 ]);
 const checkOnly = process.argv.includes("--check");
 const STATIC_DESCRIPTIONS = new Map([
+  ["docs/handbook.md", "Organized user/developer navigation for the cited portfolio baseline."],
+  [
+    "docs/reports/project-guide.docx",
+    "Individually reviewed Word edition of the cited public source and dated workflow scope.",
+  ],
+  [
+    "docs/reports/publications.json",
+    "Exact Office bytes, source/workflow identities and page-review receipts.",
+  ],
+  [
+    "docs/reports/documentation-refresh-2026-11-09.md",
+    "Completed documentation validation and explicit historical-evidence boundaries.",
+  ],
   [
     "src/data/portfolio-priority.json",
     "Canonical reviewed ordering of all 67 public portfolio repositories.",

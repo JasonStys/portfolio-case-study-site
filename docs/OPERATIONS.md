@@ -67,7 +67,13 @@ Download the browser evidence artifact. Reproduce with `npx playwright test --pr
 
 ### Lighthouse failure
 
-Download all three reports. Compare the median performance score and worst deterministic/timing values. Do not raise a budget without a documented user-facing reason.
+Download all five reports and their raw diagnostics. Compare the median timing
+values and performance score, worst layout shift, minimum non-performance scores,
+and every observed maximum/exceedance. A historical three-run failure cannot be
+padded or reclassified as a new five-run pass. Missing or invalid samples fail.
+The [sampling policy](reports/lighthouse-sampling-2026-11-10.md) explains why the
+representative gate is not a worst-case or percentile guarantee. Do not raise a
+budget without a documented user-facing reason.
 
 Astro permits one preview process per checkout. Stop only a preview you own
 before running Lighthouse (which starts its own preview), and run browser and

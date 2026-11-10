@@ -29,7 +29,7 @@ The site must remain understandable without JavaScript, navigable by keyboard, c
 | Repository base breaks links                | Generated-output validator          | Every base-prefixed `href` and `src` resolves in `dist`.                                                            |
 | Oversized client assets                     | Generated-output validator          | Compressed JS/CSS and HTML/index budgets.                                                                           |
 | Slow search at larger scale                 | Benchmark                           | 10,000 projects and 500 deterministic queries.                                                                      |
-| Performance/accessibility drift             | Lighthouse                          | Three independent production-preview runs.                                                                          |
+| Performance/accessibility drift             | Lighthouse                          | Five fixed fresh-browser runs; timing medians and worst layout/accessibility results.                               |
 | Vulnerable dependency/change                | Audit, dependency review, CodeQL    | Push, PR, and scheduled analysis.                                                                                   |
 | Bad release replaces good site              | Deployment dependency graph         | Pages job requires all quality/browser/performance jobs.                                                            |
 
@@ -107,10 +107,20 @@ npm run audit
 
 - `quality` runs deterministic checks, build validation, metadata freshness, and audit.
 - `browser` runs the same production flows independently in Chromium, Firefox, and WebKit.
-- `lighthouse` identifies the runner's installed Google Chrome and evaluates three fresh sandboxed sessions, recording the browser version in its job log.
+- `lighthouse` identifies the runner's installed Google Chrome and evaluates exactly five fresh sandboxed sessions, recording the browser version in its job log.
 - `deploy` runs only for a green push to `main` and rebuilds the exact artifact.
 - `CodeQL` runs on changes and a weekly schedule.
 - `dependency-review` rejects risky pull-request dependency changes.
+
+The [sampling policy](reports/lighthouse-sampling-2026-11-10.md) is prospective:
+FCP, LCP and blocking time use the median of all five complete reports at the
+unchanged 1,800/2,500/200 ms limits. Layout shift keeps its 0.05 maximum; accessibility,
+best-practices and SEO keep minimum-score checks across every report. Performance
+score uses the median. Every sample, maximum and exceedance is retained. Missing,
+sparse, nonfinite or malformed data fails instead of disappearing into aggregation.
+There is no adaptive run count, site preloading, sample replacement or retry.
+The three historical slow-first series remain failed observations under their
+original maximum-of-three policy, not retrospective five-run successes.
 
 Browser setup keeps the existing 20-minute job deadline and zero test retries.
 The disposable Ubuntu 24.04 x64 runner uses the two official HTTPS Ubuntu mirrors

@@ -33,6 +33,7 @@
 | `docs/reports/documentation-refresh-2026-11-09.md`                | Completed documentation validation and explicit historical-evidence boundaries.                              |
 | `docs/reports/download-refresh-2026-11-09.md`                     | Project documentation described by its title and sections.                                                   |
 | `docs/reports/generated/search-benchmark.json`                    | Repository support file.                                                                                     |
+| `docs/reports/lighthouse-sampling-2026-11-10.md`                  | Project documentation described by its title and sections.                                                   |
 | `docs/reports/lighthouse-variance-2026-11-10.md`                  | Project documentation described by its title and sections.                                                   |
 | `docs/reports/PERFORMANCE.md`                                     | Project documentation described by its title and sections.                                                   |
 | `docs/reports/portfolio-sync-2026-10-14.md`                       | Project documentation described by its title and sections.                                                   |
@@ -60,7 +61,7 @@
 | `scripts/check-owned-preview.mjs`                                 | Independently checks static-preview isolation, literal paths, HTTP semantics and port refusal.               |
 | `scripts/generate-code-index.mjs`                                 | Generates exact declaration locations for authored TypeScript, JavaScript, Astro, and CSS.                   |
 | `scripts/generate-file-catalog.mjs`                               | Generates a complete repository file catalog from source headers and curated fallbacks.                      |
-| `scripts/lighthouse.mjs`                                          | Runs three production Lighthouse audits and enforces category, paint, blocking, and layout budgets.          |
+| `scripts/lighthouse.mjs`                                          | Runs five cold-page Lighthouse audits with representative timing and strict layout/category budgets.         |
 | `scripts/owned-preview.mjs`                                       | Serves only an owned loopback production-dist socket for browser and Lighthouse acceptance.                  |
 | `scripts/refresh-github-metadata.mjs`                             | Refreshes selected public GitHub facts while keeping reviewed technology annotations reproducible.           |
 | `scripts/sync-readme.mjs`                                         | Jason Stys: keeps the README portfolio summary aligned with reviewed site curation.                          |
@@ -131,7 +132,7 @@
 | `tests/e2e/upgrades.spec.ts`                                      | Exercises static upgrade discovery, exact-source links, no-JavaScript browsing and hub limits.               |
 | `tests/unit/catalog.test.ts`                                      | Verifies cache validation, deterministic catalog merging, featured order, and facets.                        |
 | `tests/unit/downloads.test.ts`                                    | Checks the independent20-project62-payload download fixture and hostile public metadata boundaries.          |
-| `tests/unit/lighthouse.test.ts`                                   | Exercises complete bounded Lighthouse diagnostic capture and unchanged strict sampling gates.                |
+| `tests/unit/lighthouse.test.ts`                                   | Tests bounded diagnostics, historical failures and the prospective fixed-five sampling contract.             |
 | `tests/unit/publications.test.ts`                                 | Tests complete publication scope, immutable file identities and hostile metadata rejection.                  |
 | `tests/unit/search.test.ts`                                       | Verifies Unicode tokenization, deterministic postings, intersections, facets, and empty results.             |
 | `tests/unit/upgrades.test.ts`                                     | Tests exact catalog coverage, immutable source identity and public-only evidence schema.                     |

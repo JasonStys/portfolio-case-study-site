@@ -44,6 +44,13 @@ respectively, with their trust-boundary reasoning preserved. A scan complements
 runtime, privacy, dependency, compiler and native-package acceptance. Office
 editions, later integration commits and released app bytes retain separate identities.
 
+The [Lighthouse sampling policy](docs/reports/lighthouse-sampling-2026-11-10.md)
+uses five fixed fresh-browser runs and median timing values at the existing
+thresholds, retaining every sample, observed maximum and exceedance. Accessibility,
+best-practices and SEO scores use the minimum; layout shift uses the maximum.
+This represents a typical measured load, rather than a worst-case or percentile
+guarantee. Earlier three-run results retain their original interpretation.
+
 ## Practical workflow upgrades — 2026-11-09
 
 This review improved all **66 domain repositories** in the catalog, then updated
@@ -285,16 +292,16 @@ The catalog is intentionally small, so predictable code is more valuable than co
 
 ## Testing and validation
 
-| Layer            | Evidence                                                                        |
-| ---------------- | ------------------------------------------------------------------------------- |
-| Content contract | Astro/Zod collection schema and catalog/cache validation                        |
-| Unit             | Tokenization, postings, intersections, facets, URLs, XML, cache failure cases   |
-| Browser          | Recruiter journey, filtering, URL restoration, keyboard flow, mobile layout     |
-| Accessibility    | axe WCAG A/AA rules plus manual-contract assertions                             |
-| Performance      | 10,000-project search benchmark, compressed asset budgets, three-run Lighthouse |
-| Build            | Required routes, base-path links, discovery artifacts, metadata, static output  |
-| Security         | npm audit, dependency review, CodeQL, header/action/secret/content validators   |
-| Deployment       | Pages artifact is published only after all required CI jobs succeed             |
+| Layer            | Evidence                                                                           |
+| ---------------- | ---------------------------------------------------------------------------------- |
+| Content contract | Astro/Zod collection schema and catalog/cache validation                           |
+| Unit             | Tokenization, postings, intersections, facets, URLs, XML, cache failure cases      |
+| Browser          | Recruiter journey, filtering, URL restoration, keyboard flow, mobile layout        |
+| Accessibility    | axe WCAG A/AA rules plus manual-contract assertions                                |
+| Performance      | 10,000-project search benchmark, asset budgets, five-run Lighthouse timing medians |
+| Build            | Required routes, base-path links, discovery artifacts, metadata, static output     |
+| Security         | npm audit, dependency review, CodeQL, header/action/secret/content validators      |
+| Deployment       | Pages artifact is published only after all required CI jobs succeed                |
 
 Coverage thresholds are enforced at 92% statements, functions, and lines and 88% branches for the core TypeScript library. Exact release results live in [Test summary](docs/reports/TEST_SUMMARY.md) and [Site quality](docs/reports/SITE_QUALITY.md).
 

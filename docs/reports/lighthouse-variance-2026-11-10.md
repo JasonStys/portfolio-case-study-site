@@ -252,3 +252,24 @@ Additional primary references:
   distinguishes disconnecting the client from closing its browser process.
 - [Chromium trace interpretation](https://new.chromium.org/developers/how-tos/trace-event-profiling-tool/trace-event-reading/)
   distinguishes wall duration from thread CPU duration.
+
+## Later integration and prospective measurement policy
+
+The later main integration `777bce758050aee13ed6779f70c5f8ace2c55e7e`
+retained the same audited-page readiness protocol. Its actual three-run blocking
+times were `[320, 0, 0]` ms, so it failed the then-current 200 ms maximum budget.
+Quality and all three browser jobs passed; deployment remained blocked. The raw
+reports and traces are preserved. Blank-page readiness did not prove consistent
+CPU scheduling or eliminate all browser-initialization variance.
+
+The slow first run's target layout used 71.050 ms wall time and 14.056 ms thread
+CPU; the two later layouts used 22.994/11.978 and 22.242/11.514 ms respectively.
+Chrome startup/readiness also varied substantially. This does not identify a
+particular host scheduling fault or prove that source code regressed. Simulated
+blocking-time audit rows are distinct from actual traced renderer tasks.
+
+The [subsequent sampling policy](lighthouse-sampling-2026-11-10.md) adopts a fixed
+five-report median timing gate prospectively at the same numerical thresholds,
+retaining every report, maximum and exceedance and the strict quality/layout
+checks. This changes the acceptance statistic; it does not turn any historical
+three-run failure into a pass or establish a worst-case/percentile guarantee.

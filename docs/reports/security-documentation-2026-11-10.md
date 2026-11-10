@@ -104,9 +104,20 @@ The portfolio's Lighthouse investigation retained all three runs and its origina
 budgets. Chrome's open debugging port did not establish that the page to be audited
 had begun processing frames. The corrected harness checks readiness on that exact
 blank page and passes the same page to Lighthouse; it neither preloads the site
-nor discards slow runs. Both historical strict-failure samples remain test fixtures.
+nor discards slow runs. Historical strict-failure series remain recorded fixtures.
 The [dated investigation](lighthouse-variance-2026-11-10.md) distinguishes measured
-wall-clock/CPU behavior from an unproven shared-runner root cause.
+wall-clock/CPU behavior from an unproven runner or browser-initialization cause.
+
+A later main integration recorded blocking times of 320/0/0 ms and failed its
+then-current maximum-of-three gate. It was not relabeled a pass. The subsequent
+[sampling policy](lighthouse-sampling-2026-11-10.md) changes the acceptance statistic
+prospectively: five fixed fresh-browser reports, median FCP/LCP/blocking time at the
+same numerical limits, all reports/maxima/exceedances retained. Layout shift and
+non-performance category checks remain strict across every report. Nonfinite,
+incomplete or malformed reports and summaries fail. This measures a representative
+load rather than a worst-case or percentile guarantee; it does not prove an
+infrastructure cause or a source optimization. Fresh hosted validation of this
+integration is separate from the earlier accepted-source inventory below.
 
 ## Office review and presentation
 

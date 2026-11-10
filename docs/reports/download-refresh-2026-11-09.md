@@ -60,3 +60,12 @@ application/verifier revisions. Eight anonymous public release/tag samples and
 small checksum/manifest downloads confirmed availability and byte bindings.
 Hosted CI, CodeQL and Pages must independently validate this portfolio revision;
 these local observations are not a claim about an unrun deployment.
+
+The first hosted PR attempt passed quality, CodeQL, dependency review, Chromium
+and Lighthouse. Firefox and WebKit reached the existing 20-minute job deadline
+while APT was acquiring Ubuntu package indexes; their application flows never
+started. Completed logs established a runner dependency-setup fault. The workflow
+now uses official HTTPS Ubuntu mirrors with bounded APT waits and separates OS
+dependency setup from exact locked browser installation. Archive signature checks,
+the total job deadline, all browser assertions and zero retries remain intact.
+The superseded cancelled run remains available as historical evidence.

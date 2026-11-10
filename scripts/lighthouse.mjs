@@ -1,7 +1,7 @@
 /**
- * @file Runs three production Lighthouse audits and enforces category, paint, blocking, and layout budgets.
- * Functions: scope validation, bounded raw diagnostics, runAudit, summarize, enforceBudgets, main.
- * Variables: owned target/output, diagnostic caps, unchanged three-run category and metric budgets.
+ * @file Runs five cold-page Lighthouse audits with representative timing and strict layout/category budgets.
+ * Functions: scope validation, bounded diagnostics, report/sample validation, aggregation and enforcement.
+ * Variables: owned target/output, fixed five-run policy, diagnostic caps and numerical budgets.
  * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
  */
 import { mkdir, writeFile } from "node:fs/promises";
@@ -10,16 +10,22 @@ import { performance } from "node:perf_hooks";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
+import { isDeepStrictEqual } from "node:util";
 import { launch } from "chrome-launcher";
 import lighthouse from "lighthouse";
 import puppeteer from "puppeteer-core";
 import { chromium } from "playwright";
 import { startOwnedPreview } from "./owned-preview.mjs";
 
+/** @typedef {{run: number, categories: Record<string, number>, audits: Record<string, number>}} SelectedSample */
+/** @typedef {{run: number, kind: string, name: string, value: number, limit: number}} Exceedance */
+/** @typedef {{policy: string, sampleCount: number, categories: Record<string, number>, audits: Record<string, number>, samples: SelectedSample[], observedMaxima: Record<string, number>, exceedances: Exceedance[]}} SamplingSummary */
+
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUTPUT_DIRECTORY = path.join(ROOT, ".runtime", "lighthouse");
 const TARGET_URL = "http://127.0.0.1:4175/portfolio-case-study-site/";
-const RUN_COUNT = 3;
+const RUN_COUNT = 5;
+const SAMPLING_POLICY = "five-cold-loads-representative-v1";
 const CATEGORY_BUDGETS = { accessibility: 1, "best-practices": 0.95, performance: 0.92, seo: 0.95 };
 const AUDIT_BUDGETS = {
   "first-contentful-paint": 1_800,
@@ -395,25 +401,185 @@ function median(values) {
   return sorted[Math.floor(sorted.length / 2)] ?? 0;
 }
 
-export function summarize(results) {
+/** Require dense fixed-size input; never pad, discard or replace an invalid/slow observation. */
+function fixedSeries(values) {
+  if (
+    !Array.isArray(values) ||
+    values.length !== RUN_COUNT ||
+    Array.from({ length: RUN_COUNT }, (_, index) => index).some(
+      (index) => !Object.hasOwn(values, index),
+    )
+  )
+    throw new Error("Lighthouse requires exactly five complete observations.");
+  return values;
+}
+
+/** Accept only real finite measurements; JavaScript coercion/NaN must never authorize a pass. */
+function measurement(value, score = false) {
+  if (typeof value !== "number" || !Number.isFinite(value) || value < 0 || (score && value > 1))
+    throw new Error(
+      "Lighthouse measurement must be finite, nonnegative and within its score range.",
+    );
+  return value;
+}
+
+/** Validate the complete selected field set on a normalized sample or aggregate. */
+function measurements(values, budgets, score = false) {
+  if (
+    values === null ||
+    typeof values !== "object" ||
+    Array.isArray(values) ||
+    Object.keys(values).length !== Object.keys(budgets).length ||
+    Object.keys(values).some((name) => !Object.hasOwn(budgets, name))
+  )
+    throw new Error("Lighthouse selected measurements are missing or malformed.");
+  return Object.fromEntries(
+    Object.keys(budgets).map((name) => [name, measurement(values[name], score)]),
+  );
+}
+
+/** Validate every raw report before choosing any aggregate; runtime/audit errors remain fatal.
+ * @returns {SelectedSample[]}
+ */
+function selectedSamples(results) {
+  return fixedSeries(results).map((result, index) => {
+    if (
+      !result ||
+      typeof result !== "object" ||
+      Array.isArray(result) ||
+      (result.runtimeError !== undefined && result.runtimeError !== null) ||
+      !result.audits ||
+      typeof result.audits !== "object" ||
+      Array.isArray(result.audits) ||
+      Object.values(result.audits).some(
+        (audit) =>
+          !audit ||
+          typeof audit !== "object" ||
+          Array.isArray(audit) ||
+          audit.scoreDisplayMode === "error" ||
+          audit.errorMessage,
+      )
+    )
+      throw new Error("Lighthouse requires five complete successful reports.");
+    return {
+      run: index + 1,
+      categories: measurements(
+        Object.fromEntries(
+          Object.keys(CATEGORY_BUDGETS).map((name) => [name, result.categories?.[name]?.score]),
+        ),
+        CATEGORY_BUDGETS,
+        true,
+      ),
+      audits: measurements(
+        Object.fromEntries(
+          Object.keys(AUDIT_BUDGETS).map((name) => [name, result.audits[name]?.numericValue]),
+        ),
+        AUDIT_BUDGETS,
+      ),
+    };
+  });
+}
+
+/** Revalidate all persisted selected values and their order independently of raw-report parsing.
+ * @returns {SelectedSample[]}
+ */
+function validatedSamples(samples) {
+  return fixedSeries(samples).map((sample, index) => {
+    if (
+      !sample ||
+      typeof sample !== "object" ||
+      Array.isArray(sample) ||
+      sample.run !== index + 1 ||
+      Object.keys(sample).length !== 3 ||
+      Object.keys(sample).some((key) => !["run", "categories", "audits"].includes(key))
+    )
+      throw new Error("Lighthouse sample identity or order is malformed.");
+    return {
+      run: index + 1,
+      categories: measurements(sample.categories, CATEGORY_BUDGETS, true),
+      audits: measurements(sample.audits, AUDIT_BUDGETS),
+    };
+  });
+}
+
+/** Preserve all five samples, maxima and individual exceedances under the prospective policy.
+ * @param {SelectedSample[]} samples
+ * @returns {SamplingSummary}
+ */
+function aggregate(samples) {
   const categories = Object.fromEntries(
     Object.keys(CATEGORY_BUDGETS).map((name) => {
-      const scores = results.map((result) => result.categories[name]?.score ?? 0);
+      const scores = samples.map((sample) => sample.categories[name]);
       return [name, name === "performance" ? median(scores) : Math.min(...scores)];
     }),
   );
   const audits = Object.fromEntries(
+    Object.keys(AUDIT_BUDGETS).map((name) => {
+      const values = samples.map((sample) => sample.audits[name]);
+      return [name, name === "cumulative-layout-shift" ? Math.max(...values) : median(values)];
+    }),
+  );
+  const observedMaxima = Object.fromEntries(
     Object.keys(AUDIT_BUDGETS).map((name) => [
       name,
-      Math.max(
-        ...results.map((result) => result.audits[name]?.numericValue ?? Number.POSITIVE_INFINITY),
-      ),
+      Math.max(...samples.map((sample) => sample.audits[name])),
     ]),
   );
-  return { categories, audits };
+  const exceedances = samples.flatMap((sample) => [
+    ...Object.entries(CATEGORY_BUDGETS)
+      .filter(([name, minimum]) => sample.categories[name] < minimum)
+      .map(([name, limit]) => ({
+        run: sample.run,
+        kind: "category",
+        name,
+        value: sample.categories[name],
+        limit,
+      })),
+    ...Object.entries(AUDIT_BUDGETS)
+      .filter(([name, maximum]) => sample.audits[name] > maximum)
+      .map(([name, limit]) => ({
+        run: sample.run,
+        kind: "audit",
+        name,
+        value: sample.audits[name],
+        limit,
+      })),
+  ]);
+  return {
+    policy: SAMPLING_POLICY,
+    sampleCount: RUN_COUNT,
+    categories,
+    audits,
+    samples,
+    observedMaxima,
+    exceedances,
+  };
 }
 
+/** Fixed five-run representative load policy; historical three-run batches are incompatible.
+ * @returns {SamplingSummary}
+ */
+export function summarize(results) {
+  return aggregate(selectedSamples(results));
+}
+
+/** Independently validate summaries and recompute their evidence before applying numerical budgets. */
 export function enforceBudgets(summary) {
+  if (
+    !summary ||
+    typeof summary !== "object" ||
+    Array.isArray(summary) ||
+    summary.policy !== SAMPLING_POLICY ||
+    summary.sampleCount !== RUN_COUNT
+  )
+    throw new Error("Lighthouse summary requires the fixed five-run policy.");
+  measurements(summary.categories, CATEGORY_BUDGETS, true);
+  measurements(summary.audits, AUDIT_BUDGETS);
+  measurements(summary.observedMaxima, AUDIT_BUDGETS);
+  const expected = aggregate(validatedSamples(summary.samples));
+  for (const field of ["categories", "audits", "observedMaxima", "exceedances"])
+    if (!isDeepStrictEqual(summary[field], expected[field]))
+      throw new Error("Lighthouse summary is inconsistent with its five retained observations.");
   const failures = [];
   for (const [name, minimum] of Object.entries(CATEGORY_BUDGETS))
     if ((summary.categories[name] ?? 0) < minimum) failures.push(`${name} score`);

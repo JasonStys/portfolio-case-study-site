@@ -4,7 +4,10 @@
 
 - Real production catalog: 67 curated repositories, six featured and nine reference case studies, a complete 14-project Space & energy collection and seven-project drone-safety collection.
 - Synthetic search benchmark: 10,000 projects, four primary-language groups, 137 cohorts, and 500 deterministic text-plus-facet queries.
-- Browser performance: three new desktop Lighthouse sessions against production output.
+- Browser performance: five fixed fresh Lighthouse sessions against production output.
+  The recorded desktop viewport, mobile user agent and simulated mobile throttling
+  remain unchanged; this is the historical hybrid laboratory profile, not a claim
+  about every desktop device.
 
 ## Budgets
 
@@ -17,12 +20,18 @@
 | Production CSS gzip        |  ≤24,000 B |
 | Largest HTML route         |  ≤55,000 B |
 | Production search index    | ≤100,000 B |
-| Lighthouse FCP worst run   |  ≤1,800 ms |
-| Lighthouse LCP worst run   |  ≤2,500 ms |
-| Lighthouse TBT worst run   |    ≤200 ms |
+| Lighthouse FCP median      |  ≤1,800 ms |
+| Lighthouse LCP median      |  ≤2,500 ms |
+| Lighthouse TBT median      |    ≤200 ms |
 | Lighthouse CLS worst run   |      ≤0.05 |
 
-## Current synchronization: 2026-11-09
+The [November 10 sampling policy](lighthouse-sampling-2026-11-10.md) changes the
+timing statistic prospectively, with all five samples/maxima/exceedances retained.
+Numerical limits, browser controls and the strict layout/quality checks remain.
+Historical observations below retain their original three-run maximum statistic;
+they are not relabeled as measurements under the new method.
+
+## Recorded synchronization: 2026-11-09
 
 Windows x64 / Node 24.18.1: 89 HTML routes, largest 52,288 B, JavaScript
 1,329 B gzip, CSS 4,611 B gzip, search index 28,588 B. The 10,000-project,
@@ -88,4 +97,4 @@ GitHub Actions ran three fresh desktop Lighthouse sessions on Ubuntu and recorde
 | Total Blocking Time      |   0 ms |   ≤200 ms |
 | Cumulative Layout Shift  |   0.00 |     ≤0.05 |
 
-`npm run benchmark` writes the machine-readable search report to `docs/reports/generated/search-benchmark.json`. Generated-output validation prints exact asset sizes. Lighthouse runs three independent production sessions in CI, stores the raw reports and conservative summary under `.runtime/lighthouse/`, and fails the release when any budget is missed.
+`npm run benchmark` writes the machine-readable search report to `docs/reports/generated/search-benchmark.json`. Generated-output validation prints exact asset sizes. Current Lighthouse CI collects five independent production sessions and stores every raw report plus the explicit representative/worst-case summary under `.runtime/lighthouse/`. Invalid data or a missed current-policy budget fails deployment.

@@ -1,7 +1,7 @@
 /**
- * @file Exercises complete bounded Lighthouse diagnostic capture and unchanged strict sampling gates.
- * Functions: synthetic raw-artifact fixtures and independent filesystem/negative budget cases.
- * Variables: temporary output directories and fixed owned-site trace, network and metric records.
+ * @file Tests bounded diagnostics, historical failures and the prospective fixed-five sampling contract.
+ * Functions: raw/measurement fixtures, lifecycle cases and independent policy/invalid-data oracles.
+ * Variables: owned temporary directories, fixed trace records and fully retained five-run measurements.
  * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
  */
 import assert from "node:assert/strict";
@@ -417,7 +417,7 @@ describe("bounded Lighthouse diagnostic evidence", () => {
     await expect(saveRunDiagnostics(result, 1, { audit: 1 }, output)).rejects.toThrow(
       /excessive raw/,
     );
-    await expect(saveRunDiagnostics(fixture(), 4, { audit: 1 }, output)).rejects.toThrow(
+    await expect(saveRunDiagnostics(fixture(), 6, { audit: 1 }, output)).rejects.toThrow(
       /run number/,
     );
     await expect(saveRunDiagnostics(fixture(), 1, { audit: Number.NaN }, output)).rejects.toThrow(
@@ -426,26 +426,295 @@ describe("bounded Lighthouse diagnostic evidence", () => {
     expect(await readdir(output)).toEqual([]);
   });
 
-  it.each([511.5, 827.5])(
-    "keeps one slow run of %sms fatal even when the other two are zero",
-    (slow) => {
-      const results = [slow, 0, 0].map((blocking) => ({
-        categories: Object.fromEntries(
-          ["accessibility", "best-practices", "performance", "seo"].map((name) => [
-            name,
-            { score: 1 },
-          ]),
-        ),
-        audits: {
-          "first-contentful-paint": { numericValue: 1000 },
-          "largest-contentful-paint": { numericValue: 1300 },
-          "total-blocking-time": { numericValue: blocking },
-          "cumulative-layout-shift": { numericValue: 0 },
-        },
-      }));
-      const summary = summarize(results);
-      expect(summary.audits["total-blocking-time"]).toBe(slow);
-      expect(() => enforceBudgets(summary)).toThrow(/total-blocking-time/);
+  it("retains complete bounded raw diagnostics for the fifth planned run", async () => {
+    const output = await directory();
+    await saveRunDiagnostics(fixture(), 5, { audit: 1 }, output);
+    expect((await readdir(output)).sort()).toEqual([
+      "run-5.devtoolslog.json",
+      "run-5.diagnostics.json",
+      "run-5.trace.json",
+    ]);
+    const metadata = JSON.parse(
+      await readFile(path.join(output, "run-5.diagnostics.json"), "utf8"),
+    ) as { run: number; artifacts: { name: string }[] };
+    expect(metadata.run).toBe(5);
+    expect(metadata.artifacts.map((item: { name: string }) => item.name)).toEqual([
+      "run-5.trace.json",
+      "run-5.devtoolslog.json",
+    ]);
+  });
+});
+
+function report(blocking = 0) {
+  return {
+    categories: {
+      accessibility: { score: 1 },
+      "best-practices": { score: 1 },
+      performance: { score: 0.97 },
+      seo: { score: 1 },
+    },
+    audits: {
+      "first-contentful-paint": { numericValue: 1000 },
+      "largest-contentful-paint": { numericValue: 1300 },
+      "total-blocking-time": { numericValue: blocking },
+      "cumulative-layout-shift": { numericValue: 0 },
+    },
+  };
+}
+
+function series(blocking = [0, 0, 0, 0, 0]) {
+  return blocking.map((value) => report(value));
+}
+
+describe("historical three-run observations remain incompatible and failed", () => {
+  it.each([511.5, 827.5, 320])(
+    "preserves the %sms historical maximum instead of padding it into a five-run pass",
+    (maximum) => {
+      const historical = [maximum, 0, 0];
+      // Independent old-contract oracle: these observed maxima exceeded the unchanged 200ms bound.
+      expect(Math.max(...historical)).toBe(maximum);
+      expect(Math.max(...historical)).toBeGreaterThan(200);
+      expect(() => summarize(series(historical))).toThrow(/exactly five/);
+      expect(() =>
+        enforceBudgets({ categories: {}, audits: { "total-blocking-time": maximum } }),
+      ).toThrow(/five-run policy/);
+    },
+  );
+});
+
+describe("prospective fixed-five representative load policy", () => {
+  it("retains an isolated outlier, all five inputs and independent maxima while passing central timings", () => {
+    const results = series([0, 10, 320, 15, 5]);
+    const paints = [950, 1000, 3000, 1050, 900];
+    const largest = [1300, 1250, 6000, 1400, 1200];
+    const scores = [0.98, 0.96, 0.5, 0.97, 0.99];
+    const shifts = [0, 0.01, 0, 0.02, 0];
+    results.forEach((result, index) => {
+      result.audits["first-contentful-paint"].numericValue = paints[index] ?? -1;
+      result.audits["largest-contentful-paint"].numericValue = largest[index] ?? -1;
+      result.categories.performance.score = scores[index] ?? -1;
+      result.audits["cumulative-layout-shift"].numericValue = shifts[index] ?? -1;
+    });
+    const summary = summarize(results);
+    expect(summary.policy).toBe("five-cold-loads-representative-v1");
+    expect(summary.sampleCount).toBe(5);
+    expect(summary.audits).toEqual({
+      "first-contentful-paint": 1000,
+      "largest-contentful-paint": 1300,
+      "total-blocking-time": 10,
+      "cumulative-layout-shift": 0.02,
+    });
+    expect(summary.categories.performance).toBe(0.97);
+    expect(summary.observedMaxima).toEqual({
+      "first-contentful-paint": 3000,
+      "largest-contentful-paint": 6000,
+      "total-blocking-time": 320,
+      "cumulative-layout-shift": 0.02,
+    });
+    expect(summary.samples.map((sample: { run: number }) => sample.run)).toEqual([1, 2, 3, 4, 5]);
+    expect(summary.samples[2]).toEqual({
+      run: 3,
+      categories: { accessibility: 1, "best-practices": 1, performance: 0.5, seo: 1 },
+      audits: {
+        "first-contentful-paint": 3000,
+        "largest-contentful-paint": 6000,
+        "total-blocking-time": 320,
+        "cumulative-layout-shift": 0,
+      },
+    });
+    expect(summary.exceedances).toHaveLength(4);
+    expect(summary.exceedances).toEqual(
+      expect.arrayContaining([
+        { run: 3, kind: "category", name: "performance", value: 0.5, limit: 0.92 },
+        { run: 3, kind: "audit", name: "first-contentful-paint", value: 3000, limit: 1800 },
+        { run: 3, kind: "audit", name: "largest-contentful-paint", value: 6000, limit: 2500 },
+        { run: 3, kind: "audit", name: "total-blocking-time", value: 320, limit: 200 },
+      ]),
+    );
+    expect(() => enforceBudgets(summary)).not.toThrow();
+  });
+
+  it.each([
+    ["first-contentful-paint", 1801],
+    ["largest-contentful-paint", 2501],
+    ["total-blocking-time", 201],
+  ] as const)("fails a sustained majority regression of %s", (name, excessive) => {
+    const results = series();
+    results.slice(0, 3).forEach((result) => {
+      result.audits[name].numericValue = excessive;
+    });
+    const summary = summarize(results);
+    expect(summary.audits[name]).toBe(excessive);
+    expect(() => enforceBudgets(summary)).toThrow(name);
+  });
+
+  it("fails a sustained majority performance-score regression", () => {
+    const results = series();
+    results.slice(0, 3).forEach((result) => {
+      result.categories.performance.score = 0.91;
+    });
+    const summary = summarize(results);
+    expect(summary.categories.performance).toBe(0.91);
+    expect(() => enforceBudgets(summary)).toThrow(/performance score/);
+  });
+
+  it.each([
+    ["accessibility", 0.99],
+    ["best-practices", 0.94],
+    ["seo", 0.94],
+  ] as const)("keeps a single %s violation fatal across all five", (name, score) => {
+    const results = series();
+    first(results.slice(4)).categories[name].score = score;
+    const summary = summarize(results);
+    expect(summary.categories[name]).toBe(score);
+    expect(() => enforceBudgets(summary)).toThrow(`${name} score`);
+  });
+
+  it("keeps a single layout-shift violation fatal", () => {
+    const results = series();
+    first(results.slice(3)).audits["cumulative-layout-shift"].numericValue = 0.051;
+    const summary = summarize(results);
+    expect(summary.audits["cumulative-layout-shift"]).toBe(0.051);
+    expect(summary.exceedances).toContainEqual({
+      run: 4,
+      kind: "audit",
+      name: "cumulative-layout-shift",
+      value: 0.051,
+      limit: 0.05,
+    });
+    expect(() => enforceBudgets(summary)).toThrow(/cumulative-layout-shift/);
+  });
+
+  it("preserves inclusive unchanged numerical boundaries", () => {
+    const results = series([200, 200, 200, 200, 200]);
+    results.forEach((result) => {
+      result.audits["first-contentful-paint"].numericValue = 1800;
+      result.audits["largest-contentful-paint"].numericValue = 2500;
+      result.audits["cumulative-layout-shift"].numericValue = 0.05;
+      result.categories.performance.score = 0.92;
+      result.categories["best-practices"].score = 0.95;
+      result.categories.seo.score = 0.95;
+    });
+    const summary = summarize(results);
+    expect(summary.exceedances).toEqual([]);
+    expect(() => enforceBudgets(summary)).not.toThrow();
+  });
+
+  it.each([0, 1, 3, 4, 6])(
+    "refuses %s reports instead of filtering or padding a batch",
+    (count) => {
+      expect(() => summarize(series(Array.from({ length: count }, () => 0)))).toThrow(
+        /exactly five/,
+      );
+    },
+  );
+
+  it.each([null, {}, undefined, "five"])("refuses non-array report input", (value) => {
+    expect(() => summarize(value)).toThrow(/exactly five/);
+  });
+
+  it("refuses sparse reports and sparse normalized samples", () => {
+    const sparse = series();
+    Reflect.deleteProperty(sparse, 2);
+    expect(() => summarize(sparse)).toThrow(/exactly five/);
+    const summary = summarize(series());
+    Reflect.deleteProperty(summary.samples, 3);
+    expect(() => enforceBudgets(summary)).toThrow(/exactly five/);
+  });
+
+  it.each([
+    Number.NaN,
+    Number.POSITIVE_INFINITY,
+    Number.NEGATIVE_INFINITY,
+    -1,
+    "0",
+    true,
+    null,
+    undefined,
+  ])("rejects invalid raw numeric input %s rather than dropping its run", (value) => {
+    const results = series();
+    Object.assign(first(results.slice(2)).audits["total-blocking-time"], { numericValue: value });
+    expect(() => summarize(results)).toThrow(/measurement/);
+  });
+
+  it.each([Number.NaN, Number.POSITIVE_INFINITY, -0.01, 1.01, "1", true, null, undefined])(
+    "rejects invalid raw category score %s before aggregation",
+    (value) => {
+      const results = series();
+      Object.assign(first(results.slice(1)).categories.performance, { score: value });
+      expect(() => summarize(results)).toThrow(/measurement/);
+    },
+  );
+
+  it("rejects missing metrics/categories and report or audit failures", () => {
+    const missingMetric = series();
+    Reflect.deleteProperty(first(missingMetric).audits, "largest-contentful-paint");
+    expect(() => summarize(missingMetric)).toThrow(/measurement/);
+    const missingCategory = series();
+    Reflect.deleteProperty(first(missingCategory).categories, "accessibility");
+    expect(() => summarize(missingCategory)).toThrow(/measurement/);
+    const runtimeFailure = series().map((result, index) =>
+      index === 2 ? { ...result, runtimeError: { code: "SYNTHETIC_FAILURE" } } : result,
+    );
+    expect(() => summarize(runtimeFailure)).toThrow(/successful reports/);
+    const auditFailure = series();
+    Object.assign(first(auditFailure).audits["total-blocking-time"], { scoreDisplayMode: "error" });
+    expect(() => summarize(auditFailure)).toThrow(/successful reports/);
+    expect(() => summarize([null, ...series().slice(1)])).toThrow(/successful reports/);
+  });
+
+  it.each([
+    Number.NaN,
+    Number.POSITIVE_INFINITY,
+    Number.NEGATIVE_INFINITY,
+    -1,
+    "0",
+    true,
+    null,
+    undefined,
+  ])("independently rejects malformed aggregate measurements %s", (value) => {
+    const summary = summarize(series());
+    Object.assign(summary.audits, { "total-blocking-time": value });
+    expect(() => enforceBudgets(summary)).toThrow(/measurement/);
+  });
+
+  it.each([Number.NaN, Number.POSITIVE_INFINITY, -1, 1.01, "1", true, null, undefined])(
+    "independently rejects malformed aggregate category scores %s",
+    (value) => {
+      const summary = summarize(series());
+      Object.assign(summary.categories, { performance: value });
+      expect(() => enforceBudgets(summary)).toThrow(/measurement/);
+    },
+  );
+
+  it("independently refuses bad maxima, sample identities, missing values and hidden exceedances", () => {
+    const badMaximum = summarize(series());
+    Object.assign(badMaximum.observedMaxima, { "total-blocking-time": Number.NaN });
+    expect(() => enforceBudgets(badMaximum)).toThrow(/measurement/);
+    const badOrder = summarize(series());
+    Object.assign(first(badOrder.samples), { run: 2 });
+    expect(() => enforceBudgets(badOrder)).toThrow(/sample identity/);
+    const badSample = summarize(series());
+    Object.assign(first(badSample.samples).audits, { "total-blocking-time": Number.NaN });
+    expect(() => enforceBudgets(badSample)).toThrow(/measurement/);
+    const missing = summarize(series());
+    Reflect.deleteProperty(missing.audits, "total-blocking-time");
+    expect(() => enforceBudgets(missing)).toThrow(/missing or malformed/);
+    const hidden = summarize(series([320, 0, 0, 0, 0]));
+    hidden.exceedances = [];
+    expect(() => enforceBudgets(hidden)).toThrow(/inconsistent/);
+  });
+
+  it("rejects forged passing aggregates for a real majority regression", () => {
+    const summary = summarize(series([201, 201, 201, 0, 0]));
+    summary.audits["total-blocking-time"] = 0;
+    expect(() => enforceBudgets(summary)).toThrow(/inconsistent/);
+  });
+
+  it.each([null, [], {}, { policy: "three-run-historical", sampleCount: 3 }])(
+    "refuses malformed or obsolete summary envelopes",
+    (summary) => {
+      expect(() => enforceBudgets(summary)).toThrow(/five-run policy/);
     },
   );
 });

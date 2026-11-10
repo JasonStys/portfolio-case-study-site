@@ -136,7 +136,7 @@ jobs:
           /opt/google/chrome/chrome --version
       - name: Build production site
         run: npm run build
-      - name: Enforce three-run Lighthouse budgets
+      - name: Enforce five-run representative Lighthouse budgets
         env:
           CHROME_PATH: /opt/google/chrome/chrome
         run: npm run lighthouse

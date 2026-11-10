@@ -1,0 +1,106 @@
+---
+/**
+ * @file Provides a static reading path to reviewed Word guides, Excel evidence and security reviews.
+ * Functions: ordered project rendering; no browser fetches or Office execution.
+ * Variables: projects, publicationManifest and seven newly analyzed repositories.
+ * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
+ */
+import BaseLayout from "@/components/BaseLayout.astro";
+import { projects } from "@/lib/catalog";
+import { publicationFor, publicationManifest } from "@/lib/publications";
+import { withBase } from "@/lib/url";
+
+const newlyAnalyzed = [
+  "code-flow-studio",
+  "applicant-evidence-studio",
+  "personal-image-model-studio",
+  "industrial-edge-digital-twin",
+  "firmware-release-recovery-lab",
+  "versioned-product-knowledge-portal",
+  "engineering-documentation-foundry",
+];
+const files = publicationManifest.repositories.flatMap((row) => row.documents);
+const wordCount = files.filter((file) => file.filename.endsWith(".docx")).length;
+const workbookCount = files.length - wordCount;
+---
+
+<BaseLayout
+  title="Project documentation and security evidence — Jason Stys"
+  description="Reviewed project guides, validation reports, filterable Excel evidence and source security reviews across Jason Stys's 67-project portfolio."
+  canonicalPath="documentation/"
+>
+  <header class="page-intro section-shell">
+    <p class="eyebrow">Read the engineering evidence</p>
+    <h1>Project guides and validation evidence.</h1>
+    <p>
+      All {projects.length} projects have an organized handbook and reviewed Word guide. Larger
+      projects also provide a separate validation review and filterable Excel workflow and
+      test-source inventories: {wordCount} Word documents and {workbookCount} workbooks in total.
+    </p>
+    <p>
+      Each project page links the exact published files, SHA-256 values, documented source revision
+      and dated validation scope. A documentation edition and its later integration commit are
+      distinct; source results and released application bytes retain their own identities.
+    </p>
+    <p>
+      Catalog observed{" "}
+      <time datetime={publicationManifest.collectedAt}>
+        {new Date(publicationManifest.collectedAt).toISOString()}
+      </time>
+      . Workbooks contain source inventories and recorded workflow observations, rather than
+      substituting file counts for executed tests.
+    </p>
+  </header>
+  <section class="section-shell section-block" aria-labelledby="security-review-title">
+    <p class="eyebrow">Expanded source security analysis</p>
+    <h2 id="security-review-title">Seven additional CodeQL configurations.</h2>
+    <p>
+      Security-extended scans now cover the supported languages in these seven projects. Genuine
+      filesystem read races, ambiguous regular-expression handling and release workflow trust issues
+      received focused corrections and regressions. Full-main analysis, actual extracted source and
+      individual findings were reviewed separately from PR checks.
+    </p>
+    <p>
+      Applicant Evidence Studio and Image Studio retain two and 29 raw findings respectively with
+      individual false-positive rationales for their reviewed trust boundaries. Zero open alerts is
+      different from zero raw findings. Analysis supplements runtime, privacy, dependency and native
+      application checks.
+    </p>
+    <p>
+      The{" "}
+      <a href="https://github.com/JasonStys/portfolio-case-study-site/blob/main/docs/reports/security-documentation-2026-11-10.md">
+        dated security and documentation review
+      </a>{" "}
+      records the portfolio-wide validation inventory, corrections and remaining limits.
+    </p>
+    <ul class="project-detail__links">
+      {newlyAnalyzed.map((name) => (
+        <li>
+          <a href={withBase(`projects/${name}/#documentation-title`)}>
+            {name} — guide and finding review
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+  <section class="section-shell section-block" aria-labelledby="documentation-projects-title">
+    <h2 id="documentation-projects-title">All projects in portfolio order</h2>
+    <ol class="upgrade-list" data-documentation-list>
+      {projects.map((project) => {
+        const row = publicationFor(project.name);
+        return (
+          <li data-documentation-project={project.name}>
+            <h3>
+              <a href={withBase(`projects/${project.name}/#documentation-title`)}>{project.name}</a>
+            </h3>
+            <p>
+              {row.documents.length === 3
+                ? "Project guide, separate validation review and Excel evidence workbook."
+                : "Project guide with validation scope and organized handbook."}
+            </p>
+          </li>
+        );
+      })}
+    </ol>
+  </section>
+</BaseLayout>

@@ -1,13 +1,13 @@
 ---
 title: "From a located finding to a verified source revision"
 repository: "https://github.com/JasonStys/code-flow-studio"
-summary: "Code Flow Studio 0.4.0 connects polyglot diagnostics and missed coverage to verified source snapshots, guarded draft navigation, private revision evidence and isolated compiler workers."
+summary: "Code Flow Studio 0.4.2 combines source-bound polyglot findings with bounded report readers, cancellation-safe private workspace transitions and verified native shutdown."
 role: "AI developer tools and full-stack engineering"
 languages: ["Python", "TypeScript", "SQL", "Dockerfile"]
 evidence:
   - "Content-bound source navigation"
   - "48 three-engine web checks"
-  - "12 private account journeys"
+  - "18 private account journeys"
   - "Actual packaged Windows journey"
 featuredOrder: 1
 ---
@@ -38,7 +38,27 @@ The actual Windows packaged app and bundled frozen service exercise real registr
 
 Accepted-source evidence: [source validation report](https://github.com/JasonStys/code-flow-studio/blob/08e4194707fb0ab20b469e335ef9e081a34200d3/docs/reports/practical-workflows-2026-11-09.md), [hosted validation](https://github.com/JasonStys/code-flow-studio/actions/runs/42726748363), [real isolated-worker acceptance](https://github.com/JasonStys/code-flow-studio/actions/runs/42726748363/job/129534214045), [verified native release build](https://github.com/JasonStys/code-flow-studio/actions/runs/42727706376).
 
+## Security review and native shutdown
+
+The subsequent review added Python, JavaScript/TypeScript and Actions CodeQL analysis. Actual full-main scans exposed an ambiguous demo-contract regex and unbounded worker-report reads; subsequent PR analysis found Actions checkout-reference mistakes. The corrected regex uses disjoint alternatives; worker reports use one regular-file descriptor and an eight-MiB actual-read limit. The distributed worker and native package carry matching version metadata, with exact source and worker hashes checked before release uploads.
+
+A later real Windows native check reached the shutdown response but left its Python service running. Investigation reproduced Uvicorn's unlimited pre-lifespan wait with both a held handler and a partial request body. The fix gives HTTP work a five-second drain budget, then cancels and joins the owned HTTP tasks before normal lifespan cleanup. Real local file, vault and provider-state transitions retain ownership until their underlying work completes, even if their HTTP task receives repeated cancellation. Existing workspace locks remain held through those transitions. This protects sealing and state consistency; a critical local operation can outlive the HTTP budget, so five seconds is not a universal process-exit guarantee.
+
+The [native drain investigation and validation](https://github.com/JasonStys/code-flow-studio/blob/7d2158a57bb49e8f837fffbfe23b301902465412/docs/reports/native-http-drain-2026-11-10.md) records the reproduced mechanism and the remaining limit: the particular held connection from the original failed hosted run was not identified. The unchanged 60-second native journey now requires actual HTTP-drain, workspace-sealing and service/thread/main milestones, plus disappearance of the owned service processes. It does not accept an Electron window closing as proof that the backend exited.
+
 ## Measured result
+
+Current runtime-fix evidence is recorded separately from the earlier 0.4.0 baseline:
+
+- **265 Python tests and 28 subtests** passed at the [runtime-fix source](https://github.com/JasonStys/code-flow-studio/tree/7d2158a57bb49e8f837fffbfe23b301902465412), with **85.12%** measured coverage and the unchanged 80% minimum. The later documentation integration adds separate Office-publication checks.
+- **48 web checks and 18 private account journeys** passed across Chromium, Firefox and WebKit. Pure source-binding checks remain separate from actual compiler acceptance.
+- [Source validation](https://github.com/JasonStys/code-flow-studio/actions/runs/42823802584), [three-platform SDK and compiled native acceptance](https://github.com/JasonStys/code-flow-studio/actions/runs/42823802633) and [full-main CodeQL](https://github.com/JasonStys/code-flow-studio/actions/runs/42823802503) passed at that same runtime source. The three processed CodeQL categories reported zero findings and no analysis errors; positive rule counts and actual extraction were inspected separately from the green workflow result.
+
+The subsequent 0.4.1 candidate passed all three compiled platform builds, then stopped at the final draft-metadata lookup. That verifier had content-read permission, which does not provide GitHub's required push access for draft visibility. The [release visibility correction](https://github.com/JasonStys/code-flow-studio/blob/eb9b1cd0c3e3fd1e70e397edeffb059073464f74/docs/reports/draft-release-visibility-2026-11-10.md) gives only that main-only manual job the needed permission, preserves the verifier's read-only operations, and tests actual workflow scope, comment and duplicate-block mutations. The original command wrapper did not retain an HTTP status, so none is inferred. Version 0.4.2 uses fresh source-bound builds; the unpublished candidate's assets remain unchanged. The report records the separate 286-test local source gate and its limits.
+
+## Earlier 0.4.0 measurements
+
+These measurements describe the linked earlier source and release, rather than the later runtime or documentation integration:
 
 - **155 local controller tests** passed, with **84.48%** controller/training-dataset line coverage and the existing 80% minimum retained. This denominator does not include native worker integration.
 - **48 web checks** passed across Chromium, Firefox and WebKit: 30 actual browser journeys and 18 repeated pure source-binding checks. The latter are not compiler acceptance results.
@@ -46,7 +66,7 @@ Accepted-source evidence: [source validation report](https://github.com/JasonSty
 - The actual existing **Windows 0.4.0 packaged executable** passed the full native journey in **7.8 seconds**; its observed unlock HTTP/session proof took **171 ms**. This is one local observation, not a latency guarantee or reproduction of the earlier hosted delay.
 - TypeScript/Vite, 70 exact source maps and release contracts passed locally. Separate locked desktop and worker JavaScript dependency graphs were audited; the separate hosted worker/compiler and three-platform native gates also passed at this accepted source, as linked above.
 
-Published downloads: [new 0.4.0 downloads and checksums](https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.0). Older published releases remain available. All three native package builds passed before this release was published; package hashes were checked against GitHub's asset digests.
+Published downloads: [0.4.2 downloads and checksums](https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.2). The [earlier 0.4.0 release](https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.0) retains its original assets. The download catalog binds each current payload to its exact release source, passing source checks, release build and checksum; historical results above retain their own revision.
 
 ## Limitations
 

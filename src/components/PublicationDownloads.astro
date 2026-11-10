@@ -1,0 +1,49 @@
+---
+/**
+ * @file Presents reviewed, commit-bound Office downloads and their public integrity metadata.
+ * Functions: static document rendering; no remote fetch, account state or Office execution.
+ * Variables: name prop, validated publication and derived repository-confined links.
+ * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
+ */
+import { publicationFor, publicationLinks } from "@/lib/publications";
+type Props = { name: string };
+const publication = publicationFor(Astro.props.name);
+const links = publicationLinks(publication);
+const labels = {
+  "project-guide.docx": "Project guide — Word",
+  "validation-review.docx": "Validation review — Word",
+  "validation-evidence.xlsx": "Workflow and test-source evidence — Excel",
+};
+---
+
+<section
+  class="project-detail__section publication-downloads"
+  aria-labelledby="documentation-title"
+  data-project-publications={publication.name}
+>
+  <p class="eyebrow">Reviewed documentation</p>
+  <h2 id="documentation-title">Guides, reports and evidence files</h2>
+  <p>
+    Read the <a href={links.handbook}>organized handbook</a> for usage, architecture, security and
+    verification. These files document source <code>{publication.sourceBaseline}</code>; their dated
+    test observations and later documentation integration are separate.
+  </p>
+  <ul class="project-detail__links">
+    {links.files.map((file) => (
+      <li>
+        <a href={file.url}>{labels[file.filename]}</a>
+        <p>
+          {file.pages === null
+            ? "Two filterable evidence tables with recalculated outcome formulas."
+            : `${file.pages} reviewed pages.`}{" "}
+          {file.bytes.toLocaleString("en-US")} bytes. SHA-256: <code>{file.sha256}</code>
+        </p>
+      </li>
+    ))}
+  </ul>
+  <p>
+    <a href={links.report}>Read the documentation validation report</a> ·{" "}
+    <a href={links.manifest}>Inspect file identities and review receipts</a>. Hashes identify bytes;
+    they are not publisher signatures or proof of defect-free software.
+  </p>
+</section>

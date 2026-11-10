@@ -16,6 +16,7 @@ const REQUIRED_OUTPUTS = [
   "index.html",
   "projects/index.html",
   "updates/index.html",
+  "documentation/index.html",
   "downloads/index.html",
   "downloads/index.json",
   "space-systems/index.html",
@@ -114,6 +115,15 @@ async function main() {
   const upgrades = JSON.parse(
     await readFile(path.join(ROOT, "src/data/project-upgrades.json"), "utf8"),
   );
+  const publications = JSON.parse(
+    await readFile(path.join(ROOT, "src/data/project-publications.json"), "utf8"),
+  );
+  const documentation = await readFile(path.join(DIST, "documentation/index.html"), "utf8");
+  const documentedNames = [...documentation.matchAll(/data-documentation-project="([^"]+)"/gu)].map(
+    (match) => match[1],
+  );
+  if (JSON.stringify(documentedNames) !== JSON.stringify(names))
+    throw new Error("Documentation index must retain all 67 projects in canonical order.");
   const index = await readFile(path.join(DIST, "projects/index.html"), "utf8");
   const renderedNames = [...index.matchAll(/data-project-id="([^"]+)"/gu)].map((match) => match[1]);
   if (JSON.stringify(renderedNames) !== JSON.stringify(names))
@@ -139,6 +149,19 @@ async function main() {
       (name !== "portfolio-case-study-site" || !detail.includes("data-portfolio-hub"))
     )
       throw new Error(`Unexpected hub/evidence boundary for ${name}.`);
+    const publication = publications.repositories.find((entry) => entry.name === name);
+    if (!publication || !detail.includes(`data-project-publications="${name}"`))
+      throw new Error(`Reviewed documentation section missing for ${name}.`);
+    const base = `https://github.com/JasonStys/${name}`;
+    for (const file of publication.documents) {
+      const url = `${base}/raw/${publication.publishedCommit}/docs/reports/${file.filename}`;
+      if (!detail.includes(`href="${url}"`) || !detail.includes(file.sha256))
+        throw new Error(
+          `Immutable publication link or digest missing for ${name}/${file.filename}.`,
+        );
+    }
+    if (!detail.includes(publication.sourceBaseline))
+      throw new Error(`Documented source baseline missing for ${name}.`);
   }
   const files = await collectFiles(DIST);
   const htmlFiles = files.filter((file) => file.endsWith(".html"));

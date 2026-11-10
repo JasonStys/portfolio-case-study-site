@@ -7,8 +7,90 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 import portfolioPriority from "../../src/data/portfolio-priority.json" with { type: "json" };
+import publicationSnapshot from "../../src/data/project-publications.json" with { type: "json" };
 import { spaceHighlightNames, spaceSystemsCuration } from "../../src/data/space-systems";
 import { droneSystemsCuration } from "../../src/data/drone-systems";
+
+test("documentation reading path preserves all projects and exposes reviewed files on mobile", async ({
+  page,
+}) => {
+  await page.goto("./");
+  await page
+    .getByRole("navigation", { name: "Primary navigation" })
+    .getByRole("link", { name: "Documentation", exact: true })
+    .click();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "Project guides and validation evidence.",
+  );
+  await expect(page.locator("[data-documentation-project]")).toHaveCount(67);
+  expect(
+    await page
+      .locator("[data-documentation-project]")
+      .evaluateAll((entries) =>
+        entries.map((entry) => entry.getAttribute("data-documentation-project")),
+      ),
+  ).toEqual(portfolioPriority);
+  await expect(page.getByText(/91 Word documents and 24 workbooks/)).toBeVisible();
+  await expect(
+    page.getByRole("region", { name: "Seven additional CodeQL configurations.", exact: true }),
+  ).toContainText("Zero open alerts is different from zero raw findings.");
+  await page.locator('[data-documentation-project="code-flow-studio"]').getByRole("link").click();
+  const section = page.locator('[data-project-publications="code-flow-studio"]');
+  await expect(
+    section.getByRole("heading", { name: "Guides, reports and evidence files" }),
+  ).toBeVisible();
+  await expect(
+    section.getByRole("link", { name: "Project guide — Word", exact: true }),
+  ).toBeVisible();
+  await expect(
+    section.getByRole("link", { name: "Validation review — Word", exact: true }),
+  ).toBeVisible();
+  await expect(
+    section.getByRole("link", { name: "Workflow and test-source evidence — Excel", exact: true }),
+  ).toBeVisible();
+  await expect(section).toContainText("not publisher signatures");
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(await page.locator("body").evaluate((body) => body.scrollWidth)).toBeLessThanOrEqual(390);
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+});
+
+test("Word-only and full evidence editions remain usable without client JavaScript", async ({
+  browser,
+}) => {
+  const context = await browser.newContext({
+    javaScriptEnabled: false,
+    baseURL: String(test.info().project.use.baseURL),
+  });
+  try {
+    const page = await context.newPage();
+    for (const name of [
+      "code-flow-studio",
+      "engineering-documentation-foundry",
+      "portfolio-case-study-site",
+    ]) {
+      const publication = publicationSnapshot.repositories.find((entry) => entry.name === name);
+      if (!publication) throw new Error("Required independent documentation archetype is missing.");
+      const response = await page.goto(`./projects/${name}/`);
+      expect(response?.ok()).toBe(true);
+      const section = page.locator(`[data-project-publications="${name}"]`);
+      await expect(section.locator("li")).toHaveCount(name === "portfolio-case-study-site" ? 1 : 3);
+      for (const file of publication.documents) {
+        await expect(
+          section.locator(
+            `a[href="https://github.com/JasonStys/${name}/raw/${publication.publishedCommit}/docs/reports/${file.filename}"]`,
+          ),
+        ).toHaveCount(1);
+        await expect(section).toContainText(file.sha256);
+      }
+      await expect(section).toContainText(publication.sourceBaseline);
+    }
+    await page.goto("./case-studies/code-flow-studio/");
+    await expect(page.locator('[data-project-publications="code-flow-studio"]')).toBeVisible();
+  } finally {
+    await context.close();
+  }
+});
 
 test("guides a recruiter from overview to implementation evidence", async ({ page }) => {
   await page.goto("./");
@@ -48,10 +130,10 @@ test("highlights Code Flow native evidence with verified results and measurement
   const result = page.locator('[data-project-id="code-flow-studio"]');
   await expect(result).toBeVisible();
   await result.getByRole("link", { name: /Read case study/ }).click();
-  await expect(page.locator(".case-summary")).toContainText("0.4.0");
+  await expect(page.locator(".case-summary")).toContainText("0.4.2");
   for (const text of [
     "48 three-engine web checks",
-    "12 private account journeys",
+    "18 private account journeys",
     "Actual packaged Windows journey",
   ])
     await expect(
@@ -61,6 +143,11 @@ test("highlights Code Flow native evidence with verified results and measurement
         .filter({ hasText: text }),
     ).toHaveText(`✓ ${text}`);
   await expect(page.getByText("155 local controller tests", { exact: true })).toBeVisible();
+  await expect(page.getByText("265 Python tests and 28 subtests", { exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Earlier 0.4.0 measurements" })).toBeVisible();
+  await expect(page.locator(".prose")).toContainText(
+    "five seconds is not a universal process-exit guarantee",
+  );
   await expect(page.locator(".prose")).toContainText(
     "84.48% controller/training-dataset line coverage",
   );
@@ -71,7 +158,9 @@ test("highlights Code Flow native evidence with verified results and measurement
     "source validation report":
       "blob/08e4194707fb0ab20b469e335ef9e081a34200d3/docs/reports/practical-workflows-2026-11-09.md",
     "real isolated-worker acceptance": "actions/runs/42726748363/job/129534214045",
-    "new 0.4.0 downloads and checksums": "releases/tag/v0.4.0",
+    "0.4.2 downloads and checksums": "releases/tag/v0.4.2",
+    "native drain investigation and validation":
+      "blob/7d2158a57bb49e8f837fffbfe23b301902465412/docs/reports/native-http-drain-2026-11-10.md",
   };
   for (const [name, suffix] of Object.entries(links))
     await expect(page.getByRole("link", { name, exact: true })).toHaveAttribute(
@@ -250,7 +339,16 @@ test("preserves a single-column mobile reading order without horizontal overflow
   expect((second?.y ?? 0) > (first?.y ?? 0) + (first?.height ?? 0) - 2).toBe(true);
   const navigation = page.getByRole("navigation", { name: "Primary navigation" });
   const links = navigation.getByRole("link");
-  await expect(links).toHaveCount(6);
+  const expectedNavigation = [
+    "Overview",
+    "Projects",
+    "Latest work",
+    "Documentation",
+    "Space & energy",
+    "Drone safety",
+    "About",
+  ];
+  await expect(links).toHaveText(expectedNavigation);
   for (const width of [320, 390]) {
     await page.setViewportSize({ width, height: 844 });
     const rows = new Set<number>();
@@ -263,14 +361,15 @@ test("preserves a single-column mobile reading order without horizontal overflow
       expect(box.y + box.height).toBeLessThanOrEqual(844);
       rows.add(Math.round(box.y));
     }
-    expect(rows.size).toBeLessThanOrEqual(2);
+    expect(rows.size).toBeLessThanOrEqual(width === 320 ? 3 : 2);
   }
   if (info.project.name === "webkit") {
     // Native WebKit follows the host's link-tab preference; explicitly focus before activation.
     await navigation.getByRole("link", { name: "About", exact: true }).focus();
   } else {
     await links.first().focus();
-    for (let index = 1; index < 6; index++) await page.keyboard.press("Tab");
+    for (let index = 1; index < expectedNavigation.length; index++)
+      await page.keyboard.press("Tab");
   }
   const about = navigation.getByRole("link", { name: "About", exact: true });
   await expect(about).toBeFocused();

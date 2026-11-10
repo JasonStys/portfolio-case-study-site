@@ -1,53 +1,57 @@
 {
   "schemaVersion": 1,
-  "collectedAt": "2026-11-10T04:22:43.804127+00:00",
+  "collectedAt": "2026-11-10T14:58:53.219795+00:00",
   "scope": "66 domain repositories created in this chat; portfolio site is validated separately",
   "repositories": [
     {
       "name": "code-flow-studio",
-      "summary": "Filter diagnostics, unused-code candidates and missed coverage; inspect hash-verified source and navigate safely to unchanged drafts. Fixed rapid typing, worker compatibility and native launch preparation.",
-      "rationale": "Turns report findings into a reproducible developer triage workflow while preserving source identity and isolated execution.",
-      "sourceCommit": "08e4194707fb0ab20b469e335ef9e081a34200d3",
-      "sourceUrl": "https://github.com/JasonStys/code-flow-studio/tree/08e4194707fb0ab20b469e335ef9e081a34200d3",
-      "reviewUrl": "https://github.com/JasonStys/code-flow-studio/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/code-flow-studio/blob/08e4194707fb0ab20b469e335ef9e081a34200d3/docs/reports/practical-workflows-2026-11-09.md",
+      "summary": "Inspect source-bound diagnostics, missed coverage and unused-code candidates. Bound hostile-input parsing and worker reads, drain native HTTP work without abandoning local vault transitions, and gate source-bound releases with CodeQL and three-platform acceptance. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook.",
+      "rationale": "Makes developer triage and native shutdown evidence reviewable, protecting real local transitions during cancellation while preserving the limits of private accounts, untrusted execution and finite HTTP drain budgets.",
+      "sourceCommit": "eb9b1cd0c3e3fd1e70e397edeffb059073464f74",
+      "sourceUrl": "https://github.com/JasonStys/code-flow-studio/tree/eb9b1cd0c3e3fd1e70e397edeffb059073464f74",
+      "reviewUrl": "https://github.com/JasonStys/code-flow-studio/pull/8",
+      "validationReportUrl": "https://github.com/JasonStys/code-flow-studio/blob/eb9b1cd0c3e3fd1e70e397edeffb059073464f74/docs/reports/draft-release-visibility-2026-11-10.md",
       "workflows": [
         {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42838291353"
+        },
+        {
           "name": "Desktop packages",
-          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42726748708"
+          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42838291731"
         },
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42726748363"
+          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42838291624"
         }
       ],
       "limitations": [
         "Twelve bounded flat CLI adapters do not cover every framework, dependency or architecture; coverage and unused-code candidates are not correctness or dead-code proof.",
         "Execution needs a separately built local Docker worker with no host fallback. Shared worker identity and containers are not a certified public hostile-code sandbox.",
         "Hashes bind retained bytes and locations, not trusted attestation by a malicious target. UI-only report fixtures are separate from native collector evidence.",
-        "Local accounts trust the OS and unlocked service. Downloads are unsigned development builds; no native mobile installer or clean-machine installer lifecycle certification is claimed."
+        "Local accounts trust the OS and unlocked service. Unsigned desktop builds, no native mobile installer or clean-machine lifecycle certification. The five-second HTTP drain does not bound critical local work or total process-exit time."
       ]
     },
     {
       "name": "business-knowledge-workbench",
-      "summary": "Search standardized numeric table values with unit-aware ranges and same-cell correlation; download authorized bounded document bundles with checksummed manifests and saved standards. Fixed scientific notation normalization.",
+      "summary": "Search standardized numeric table values with unit-aware ranges and same-cell correlation; download authorized bounded document bundles with checksummed manifests and saved standards. Fixed scientific notation normalization. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook.",
       "rationale": "Makes standardized business records easier to investigate and hand off without mixing units or bypassing document access.",
-      "sourceCommit": "a25887ac0e54f2afbe0e21e597c67b606890e8ad",
-      "sourceUrl": "https://github.com/JasonStys/business-knowledge-workbench/tree/a25887ac0e54f2afbe0e21e597c67b606890e8ad",
-      "reviewUrl": "https://github.com/JasonStys/business-knowledge-workbench/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/business-knowledge-workbench/blob/a25887ac0e54f2afbe0e21e597c67b606890e8ad/docs/reports/practical-workflows-2026-11-09.md",
+      "sourceCommit": "45e1fc057308b37578715e7c7c070cdd3a531371",
+      "sourceUrl": "https://github.com/JasonStys/business-knowledge-workbench/tree/45e1fc057308b37578715e7c7c070cdd3a531371",
+      "reviewUrl": "https://github.com/JasonStys/business-knowledge-workbench/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/business-knowledge-workbench/blob/45e1fc057308b37578715e7c7c070cdd3a531371/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate workbench",
-          "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42704664864"
+          "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42778489398"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42704664406"
+          "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42778489442"
         },
         {
           "name": "Desktop packages",
-          "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42704664364"
+          "url": "https://github.com/JasonStys/business-knowledge-workbench/actions/runs/42778489716"
         }
       ],
       "limitations": [
@@ -59,16 +63,20 @@
     },
     {
       "name": "personal-image-model-studio",
-      "summary": "Review authorized datasets for caption, provenance, split and integrity evidence; inspect bounded cross-split similarity candidates with private thumbnails and export exact reports before training.",
-      "rationale": "Helps users investigate training inputs without treating similarity, declared rights or sample counts as proof of data or model quality.",
-      "sourceCommit": "3e02b1f34b7c4b968491952fdc2bbd7a93849b7f",
-      "sourceUrl": "https://github.com/JasonStys/personal-image-model-studio/tree/3e02b1f34b7c4b968491952fdc2bbd7a93849b7f",
-      "reviewUrl": "https://github.com/JasonStys/personal-image-model-studio/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/personal-image-model-studio/blob/3e02b1f34b7c4b968491952fdc2bbd7a93849b7f/docs/reports/practical-workflows-2026-11-09.md",
+      "summary": "Review authorized dataset integrity and split-similarity candidates before training. Read metadata once, validate configuration confinement, and document each CodeQL path-flow disposition against the actual local-account threat model. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook.",
+      "rationale": "Connects useful training-input review with inspectable security evidence, without confusing declared rights, similarity candidates or static-analysis dispositions with proof of dataset quality or public-hosting isolation.",
+      "sourceCommit": "4b2e14404bb9f57c038f63c21b952bf8c4f7b6af",
+      "sourceUrl": "https://github.com/JasonStys/personal-image-model-studio/tree/4b2e14404bb9f57c038f63c21b952bf8c4f7b6af",
+      "reviewUrl": "https://github.com/JasonStys/personal-image-model-studio/pull/4",
+      "validationReportUrl": "https://github.com/JasonStys/personal-image-model-studio/blob/4b2e14404bb9f57c038f63c21b952bf8c4f7b6af/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/personal-image-model-studio/actions/runs/42786891298"
+        },
+        {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/personal-image-model-studio/actions/runs/42729063623"
+          "url": "https://github.com/JasonStys/personal-image-model-studio/actions/runs/42786891387"
         }
       ],
       "limitations": [
@@ -80,20 +88,20 @@
     },
     {
       "name": "forge2d-engine",
-      "summary": "Add bidirectional collision category/mask filters, versioned scene migration, deterministic state hashes and initial/final overlap CSV inspection.",
+      "summary": "Add bidirectional collision category/mask filters, versioned scene migration, deterministic state hashes and initial/final overlap CSV inspection. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Supports practical game-world collision layers and reproducible debugging against independent geometry oracles.",
-      "sourceCommit": "43fd93f79043231230a4c19346bdb8a4c356d9ce",
-      "sourceUrl": "https://github.com/JasonStys/forge2d-engine/tree/43fd93f79043231230a4c19346bdb8a4c356d9ce",
-      "reviewUrl": "https://github.com/JasonStys/forge2d-engine/pull/15",
-      "validationReportUrl": "https://github.com/JasonStys/forge2d-engine/blob/43fd93f79043231230a4c19346bdb8a4c356d9ce/docs/reports/practical-workflows-20261109.md",
+      "sourceCommit": "218da99eeac8b38859f0b5ac538644d465c22b88",
+      "sourceUrl": "https://github.com/JasonStys/forge2d-engine/tree/218da99eeac8b38859f0b5ac538644d465c22b88",
+      "reviewUrl": "https://github.com/JasonStys/forge2d-engine/pull/16",
+      "validationReportUrl": "https://github.com/JasonStys/forge2d-engine/blob/218da99eeac8b38859f0b5ac538644d465c22b88/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/forge2d-engine/actions/runs/42714064217"
+          "url": "https://github.com/JasonStys/forge2d-engine/actions/runs/42782078616"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/forge2d-engine/actions/runs/42714064589"
+          "url": "https://github.com/JasonStys/forge2d-engine/actions/runs/42782078324"
         }
       ],
       "limitations": [
@@ -104,20 +112,20 @@
     },
     {
       "name": "secure-delivery-pipeline-lab",
-      "summary": "Review authenticated candidate/active changes and retain atomic deployment receipts. The 1.1.0 signed inventory-probe example adds exact-source release gates and a real 19-case verification, promotion, invalid-input and separately trusted rollback journey.",
+      "summary": "Review authenticated candidate/active changes and retain atomic deployment receipts. The 1.1.0 signed inventory-probe example adds exact-source release gates and a real 19-case verification, promotion, invalid-input and separately trusted rollback journey. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook.",
       "rationale": "Connects cryptographic provenance to an exercised change-and-recovery workflow while keeping the small downloadable example distinct from its trusted source-side manager.",
-      "sourceCommit": "e37b189fa604bb0d6951e4a926d20ed9606298a1",
-      "sourceUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/tree/e37b189fa604bb0d6951e4a926d20ed9606298a1",
-      "reviewUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/pull/3",
-      "validationReportUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/blob/e37b189fa604bb0d6951e4a926d20ed9606298a1/docs/reports/release-refresh-2026-11-09.md",
+      "sourceCommit": "7150fe61eaba75f0efa37d82a847f65f49b503ab",
+      "sourceUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/tree/7150fe61eaba75f0efa37d82a847f65f49b503ab",
+      "reviewUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/pull/4",
+      "validationReportUrl": "https://github.com/JasonStys/secure-delivery-pipeline-lab/blob/7150fe61eaba75f0efa37d82a847f65f49b503ab/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42746536402"
+          "url": "https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42777294623"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42746536395"
+          "url": "https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42777294744"
         }
       ],
       "limitations": [
@@ -129,20 +137,24 @@
     },
     {
       "name": "applicant-evidence-studio",
-      "summary": "Compare authorized evidence against one rubric with exact citations, unknowns and private exports. Actual published 0.3.0 archives now undergo encrypted UI, record-hash, assessment-parity, locking and access-isolation acceptance on three operating systems.",
-      "rationale": "Checks the downloadable application's real privacy and review workflow, rather than inferring its behavior from source tests or bundled text.",
-      "sourceCommit": "f10b42ce29d665c89556b83ce9b36094bba672a1",
-      "sourceUrl": "https://github.com/JasonStys/applicant-evidence-studio/tree/f10b42ce29d665c89556b83ce9b36094bba672a1",
-      "reviewUrl": "https://github.com/JasonStys/applicant-evidence-studio/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/applicant-evidence-studio/blob/f10b42ce29d665c89556b83ce9b36094bba672a1/docs/reports/portable-acceptance-2026-11-09.md",
+      "summary": "Compare authorized applicant evidence by criterion with citations, unknowns and private exports. Harden source-index reads, exercise fixed-authority GitHub requests and dedicated-worker channels, and verify the existing encrypted download on three operating systems. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook.",
+      "rationale": "Supports human evidence review with bounded inputs and auditable provider/channel boundaries, preserving unknowns and the distinction between raw scanner results and reviewed false positives.",
+      "sourceCommit": "f75bee5572afe65baebe26c00d0e86e2983d1527",
+      "sourceUrl": "https://github.com/JasonStys/applicant-evidence-studio/tree/f75bee5572afe65baebe26c00d0e86e2983d1527",
+      "reviewUrl": "https://github.com/JasonStys/applicant-evidence-studio/pull/5",
+      "validationReportUrl": "https://github.com/JasonStys/applicant-evidence-studio/blob/f75bee5572afe65baebe26c00d0e86e2983d1527/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42786903438"
+        },
+        {
           "name": "Published portable acceptance",
-          "url": "https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42749422809"
+          "url": "https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42786903650"
         },
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42749422853"
+          "url": "https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42786903204"
         }
       ],
       "limitations": [
@@ -154,20 +166,20 @@
     },
     {
       "name": "spacecraft-flight-software-testbed",
-      "summary": "The released 1.1.0 portable app brings the recovery-observability review into a source-bound downloadable bundle: compare onboard transitions with received confirmation, then export the same evidence shown in the UI.",
-      "rationale": "The original deterministic C++ executive and Python replay oracle remain intact. Versioned archives, native-safe POSIX packaging and an extracted-executable Chromium journey make the new received-witness feature reviewable beyond a source checkout. An independent boot/reset oracle and downloaded JSON comparison prevent a static page or source-service fallback from passing acceptance.",
-      "sourceCommit": "5f9dc95ad5df564373d1304b13e4bb2464d13842",
-      "sourceUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/tree/5f9dc95ad5df564373d1304b13e4bb2464d13842",
-      "reviewUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/pull/3",
-      "validationReportUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/blob/5f9dc95ad5df564373d1304b13e4bb2464d13842/docs/reports/PORTABLE_REFRESH_20261109.md",
+      "summary": "The released 1.1.0 portable app brings the recovery-observability review into a source-bound downloadable bundle: compare onboard transitions with received confirmation, then export the same evidence shown in the UI. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook. Documentation privacy checks also reject embedded package parts through actual ZIP regressions.",
+      "rationale": "The original deterministic C++ executive and Python replay oracle remain intact. Versioned archives, native-safe POSIX packaging and an extracted-executable Chromium journey make the new received-witness feature reviewable beyond a source checkout. An independent boot/reset oracle and downloaded JSON comparison prevent a static page or source-service fallback from passing acceptance. This also keeps embedded binary parts from silently bypassing the XML-only documentation inspection boundary.",
+      "sourceCommit": "2eb4f80334fc94ed1314a7c0c294001ca2dfc754",
+      "sourceUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/tree/2eb4f80334fc94ed1314a7c0c294001ca2dfc754",
+      "reviewUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/pull/5",
+      "validationReportUrl": "https://github.com/JasonStys/spacecraft-flight-software-testbed/blob/2eb4f80334fc94ed1314a7c0c294001ca2dfc754/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752160159"
+          "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42794139060"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752160117"
+          "url": "https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42794138983"
         }
       ],
       "limitations": [
@@ -178,20 +190,20 @@
     },
     {
       "name": "spacecraft-telemetry-anomaly-studio",
-      "summary": "The released 1.1.0 portable app includes run-bound anomaly triage: inspect channel episodes with explicit recovery, gap, context and censored boundaries, add human notes, and download the review tied to its originating run.",
+      "summary": "The released 1.1.0 portable app includes run-bound anomaly triage: inspect channel episodes with explicit recovery, gap, context and censored boundaries, add human notes, and download the review tied to its originating run. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook.",
       "rationale": "The original label-isolated detector and metrics remain unchanged. An actual extracted-app analyst journey verifies a known spike, annotation export and note reset between analyses; independently restoring the previous version field reproduced every old benchmark hash before version-only IDs were refreshed. This makes the downloadable workflow match the practical source feature without claiming operational anomaly assurance.",
-      "sourceCommit": "616b8cc92be09622443e103cdc201ce1d0c16a55",
-      "sourceUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/tree/616b8cc92be09622443e103cdc201ce1d0c16a55",
-      "reviewUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/pull/3",
-      "validationReportUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/blob/616b8cc92be09622443e103cdc201ce1d0c16a55/docs/reports/PORTABLE_REFRESH_20261109.md",
+      "sourceCommit": "b223360087209d3fd89026cb1a5895f9d5535871",
+      "sourceUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/tree/b223360087209d3fd89026cb1a5895f9d5535871",
+      "reviewUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/pull/4",
+      "validationReportUrl": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/blob/b223360087209d3fd89026cb1a5895f9d5535871/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42752178787"
+          "url": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42778502405"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42752178601"
+          "url": "https://github.com/JasonStys/spacecraft-telemetry-anomaly-studio/actions/runs/42778502115"
         }
       ],
       "limitations": [
@@ -202,20 +214,20 @@
     },
     {
       "name": "mission-contact-resource-scheduler",
-      "summary": "The released 1.1.0 portable scheduler includes station-loss contingency comparisons: inspect retained, removed and replacement contacts, per-request service changes and utility loss, then download complete planning evidence.",
-      "rationale": "The existing exact finite-candidate solver and independent exhaustive oracle are preserved. The extracted application proves the hand-checkable 60 + 60 versus 100 greedy trap, a fully lost station and feasible empty service before comparing the actual UI download with its API result. Source-bound native packaging carries the practical replanning workflow into downloads.",
-      "sourceCommit": "4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3",
-      "sourceUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/tree/4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3",
-      "reviewUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/pull/3",
-      "validationReportUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/blob/4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3/docs/reports/PORTABLE_REFRESH_20261109.md",
+      "summary": "The released 1.1.0 portable scheduler includes station-loss contingency comparisons: inspect retained, removed and replacement contacts, per-request service changes and utility loss, then download complete planning evidence. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook. Documentation privacy checks also reject embedded package parts through actual ZIP regressions.",
+      "rationale": "The existing exact finite-candidate solver and independent exhaustive oracle are preserved. The extracted application proves the hand-checkable 60 + 60 versus 100 greedy trap, a fully lost station and feasible empty service before comparing the actual UI download with its API result. Source-bound native packaging carries the practical replanning workflow into downloads. This also keeps embedded binary parts from silently bypassing the XML-only documentation inspection boundary.",
+      "sourceCommit": "b683d5978694817c0cbfe8924c0bc7636f52faf8",
+      "sourceUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/tree/b683d5978694817c0cbfe8924c0bc7636f52faf8",
+      "reviewUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/pull/5",
+      "validationReportUrl": "https://github.com/JasonStys/mission-contact-resource-scheduler/blob/b683d5978694817c0cbfe8924c0bc7636f52faf8/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42752427629"
+          "url": "https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42793166153"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42752427785"
+          "url": "https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42793166629"
         }
       ],
       "limitations": [
@@ -226,20 +238,20 @@
     },
     {
       "name": "spacecraft-power-thermal-lab",
-      "summary": "The released 1.1.0 HELIO portable app includes per-load service review: inspect requested and delivered energy, grouped shortfalls with censored boundaries, and deliberately shed science demand separately.",
-      "rationale": "The C++ numerical model and independent Python energy/reference checks remain intact. The actual extracted UI is tested against an independent 6 W minus 3.2 W over 600 seconds energy calculation, component-to-total reconciliation and an exact JSON download. Product-version identity and preserved native notices make the practical analysis available in a reviewable portable bundle.",
-      "sourceCommit": "5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
-      "sourceUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/tree/5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96",
-      "reviewUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/pull/3",
-      "validationReportUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/blob/5f4f3ae0c6cf5e3f04bb0c3fc4ee5bbc94266d96/docs/reports/PORTABLE_REFRESH_20261109.md",
+      "summary": "The released 1.1.0 HELIO portable app includes per-load service review: inspect requested and delivered energy, grouped shortfalls with censored boundaries, and deliberately shed science demand separately. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook. Documentation privacy checks also reject embedded package parts through actual ZIP regressions.",
+      "rationale": "The C++ numerical model and independent Python energy/reference checks remain intact. The actual extracted UI is tested against an independent 6 W minus 3.2 W over 600 seconds energy calculation, component-to-total reconciliation and an exact JSON download. Product-version identity and preserved native notices make the practical analysis available in a reviewable portable bundle. This also keeps embedded binary parts from silently bypassing the XML-only documentation inspection boundary.",
+      "sourceCommit": "0efbd8ef95f5d36e700c320276c641cca7d342d4",
+      "sourceUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/tree/0efbd8ef95f5d36e700c320276c641cca7d342d4",
+      "reviewUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/pull/5",
+      "validationReportUrl": "https://github.com/JasonStys/spacecraft-power-thermal-lab/blob/0efbd8ef95f5d36e700c320276c641cca7d342d4/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/42752167983"
+          "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/42794150632"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/42752168111"
+          "url": "https://github.com/JasonStys/spacecraft-power-thermal-lab/actions/runs/42794150520"
         }
       ],
       "limitations": [
@@ -250,20 +262,20 @@
     },
     {
       "name": "mission-verification-evidence-kit",
-      "summary": "The released 1.1.0 portable evidence kit includes metadata-bound revalidation queues: prioritize blocked critical tests, see exact freshness deadlines, identify missing procedures and preserve the source and baseline revisions needed for review.",
+      "summary": "The released 1.1.0 portable evidence kit includes metadata-bound revalidation queues: prioritize blocked critical tests, see exact freshness deadlines, identify missing procedures and preserve the source and baseline revisions needed for review. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook.",
       "rationale": "The original requirement/test/fault traceability, SQL cross-check, export formats and immutable local history are retained. The extracted app verifies a failed critical test, an independently calculated first-invalid timestamp, missing-procedure guidance and an exact JSON download. It turns declared evidence gaps into a practical human review queue without waiving gates or pretending to execute tests.",
-      "sourceCommit": "2743307a90da1621392fcafa138b6e103db751d5",
-      "sourceUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/tree/2743307a90da1621392fcafa138b6e103db751d5",
-      "reviewUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/pull/3",
-      "validationReportUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/blob/2743307a90da1621392fcafa138b6e103db751d5/docs/reports/PORTABLE_REFRESH_20261109.md",
+      "sourceCommit": "9bf556a473e078fa61b79aff3db8381d7c714f36",
+      "sourceUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/tree/9bf556a473e078fa61b79aff3db8381d7c714f36",
+      "reviewUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/pull/4",
+      "validationReportUrl": "https://github.com/JasonStys/mission-verification-evidence-kit/blob/9bf556a473e078fa61b79aff3db8381d7c714f36/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42752190053"
+          "url": "https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42779117830"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42752189945"
+          "url": "https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42779117464"
         }
       ],
       "limitations": [
@@ -274,20 +286,20 @@
     },
     {
       "name": "orbital-safety-workbench",
-      "summary": "The released 1.1.0 portable workbench includes illustrative distance-window review: inspect exact sampled-history interval bounds, boundary censoring and replay positions while retaining archived ISS/SGP4 evidence and downloadable reports.",
-      "rationale": "The existing civilian historical replay and fictional multi-object tracks remain the purpose. The actual extracted UI is checked against an analytic relative-distance oracle and exact JSON export, with collision probabilities explicitly absent. POSIX-safe archives and newly complete CPython/PyInstaller notices improve distribution without adding operational prediction or guidance.",
-      "sourceCommit": "89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
-      "sourceUrl": "https://github.com/JasonStys/orbital-safety-workbench/tree/89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
-      "reviewUrl": "https://github.com/JasonStys/orbital-safety-workbench/pull/18",
-      "validationReportUrl": "https://github.com/JasonStys/orbital-safety-workbench/blob/89278b3a1997c3b4ab3f4b7acc81672a87a5f22e/docs/reports/PORTABLE_REFRESH_20261109.md",
+      "summary": "The released 1.1.0 portable workbench includes illustrative distance-window review: inspect exact sampled-history interval bounds, boundary censoring and replay positions while retaining archived ISS/SGP4 evidence and downloadable reports. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook. Documentation privacy checks also reject embedded package parts through actual ZIP regressions.",
+      "rationale": "The existing civilian historical replay and fictional multi-object tracks remain the purpose. The actual extracted UI is checked against an analytic relative-distance oracle and exact JSON export, with collision probabilities explicitly absent. POSIX-safe archives and newly complete CPython/PyInstaller notices improve distribution without adding operational prediction or guidance. This also keeps embedded binary parts from silently bypassing the XML-only documentation inspection boundary.",
+      "sourceCommit": "33e521441cf3ada728d6b907fe2954b7d572b39e",
+      "sourceUrl": "https://github.com/JasonStys/orbital-safety-workbench/tree/33e521441cf3ada728d6b907fe2954b7d572b39e",
+      "reviewUrl": "https://github.com/JasonStys/orbital-safety-workbench/pull/20",
+      "validationReportUrl": "https://github.com/JasonStys/orbital-safety-workbench/blob/33e521441cf3ada728d6b907fe2954b7d572b39e/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/orbital-safety-workbench/actions/runs/42752800435"
+          "url": "https://github.com/JasonStys/orbital-safety-workbench/actions/runs/42793193172"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/orbital-safety-workbench/actions/runs/42752800426"
+          "url": "https://github.com/JasonStys/orbital-safety-workbench/actions/runs/42793193652"
         }
       ],
       "limitations": [
@@ -298,20 +310,20 @@
     },
     {
       "name": "ccsds-telemetry-integrity-lab",
-      "summary": "The released 1.1.0 portable integrity lab includes per-APID continuity timelines: inspect provisional gaps and late recovery, follow ambiguity boundaries and retain every original parser decision in the downloaded evidence.",
-      "rationale": "The safe Rust parser, independent Python reference and seeded fuzz checks remain unchanged. An extracted-app journey independently checks counters 50, 52, 51 and 53, a recovered provisional gap and unchanged late-or-reset review totals, then compares the real downloaded report with the API result. Coherent Cargo/Python/npm versions and runtime notices keep the new portable release aligned with its source.",
-      "sourceCommit": "97f729a525aab8c9388c24db26748c475c88d82d",
-      "sourceUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/tree/97f729a525aab8c9388c24db26748c475c88d82d",
-      "reviewUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/blob/97f729a525aab8c9388c24db26748c475c88d82d/docs/reports/PORTABLE_REFRESH_20261109.md",
+      "summary": "The released 1.1.0 portable integrity lab includes per-APID continuity timelines: inspect provisional gaps and late recovery, follow ambiguity boundaries and retain every original parser decision in the downloaded evidence. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook. Documentation privacy checks also reject embedded package parts through actual ZIP regressions.",
+      "rationale": "The safe Rust parser, independent Python reference and seeded fuzz checks remain unchanged. An extracted-app journey independently checks counters 50, 52, 51 and 53, a recovered provisional gap and unchanged late-or-reset review totals, then compares the real downloaded report with the API result. Coherent Cargo/Python/npm versions and runtime notices keep the new portable release aligned with its source. This also keeps embedded binary parts from silently bypassing the XML-only documentation inspection boundary.",
+      "sourceCommit": "a169137404c7f51f88d044153af3f648aeaa4eda",
+      "sourceUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/tree/a169137404c7f51f88d044153af3f648aeaa4eda",
+      "reviewUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/pull/4",
+      "validationReportUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/blob/a169137404c7f51f88d044153af3f648aeaa4eda/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/runs/42752438406"
+          "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/runs/42794162640"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/runs/42752438449"
+          "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/runs/42794162524"
         }
       ],
       "limitations": [
@@ -322,20 +334,20 @@
     },
     {
       "name": "delay-tolerant-mission-network-lab",
-      "summary": "Replay delayed message delivery, inspect queue and hop waterfalls, and export evidence through versioned 1.1 portable applications.",
+      "summary": "Replay delayed message delivery, inspect queue and hop waterfalls, and export evidence through versioned 1.1 portable applications. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook.",
       "rationale": "Makes simulated recovery and latency investigation available without a developer setup, while checked extraction and release identity connect the download to reviewed source.",
-      "sourceCommit": "df32f632dc89a329cfdd4eaf9c9f7b7248f8f5ac",
-      "sourceUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/tree/df32f632dc89a329cfdd4eaf9c9f7b7248f8f5ac",
-      "reviewUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/blob/df32f632dc89a329cfdd4eaf9c9f7b7248f8f5ac/docs/reports/PORTABLE_RELEASE_20261109.md",
+      "sourceCommit": "a6c20ce62777729c95efd41367100e706ce507b6",
+      "sourceUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/tree/a6c20ce62777729c95efd41367100e706ce507b6",
+      "reviewUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/blob/a6c20ce62777729c95efd41367100e706ce507b6/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/actions/runs/42752661003"
+          "url": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/actions/runs/42779127930"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/actions/runs/42752660975"
+          "url": "https://github.com/JasonStys/delay-tolerant-mission-network-lab/actions/runs/42779127878"
         }
       ],
       "limitations": [
@@ -346,20 +358,20 @@
     },
     {
       "name": "earth-observation-change-studio",
-      "summary": "Inspect environmental change candidates, review immediate neighboring context and export GeoJSON in the 1.1 portable workflow.",
-      "rationale": "Carries the frozen geospatial runtime and source identity with the reviewer, so region context and actual exports remain inspectable after downloading and extracting the app.",
-      "sourceCommit": "e63d4d111512a36d1ffb19a04059b4d8965ac5d2",
-      "sourceUrl": "https://github.com/JasonStys/earth-observation-change-studio/tree/e63d4d111512a36d1ffb19a04059b4d8965ac5d2",
-      "reviewUrl": "https://github.com/JasonStys/earth-observation-change-studio/pull/3",
-      "validationReportUrl": "https://github.com/JasonStys/earth-observation-change-studio/blob/e63d4d111512a36d1ffb19a04059b4d8965ac5d2/docs/reports/PORTABLE_RELEASE_20261109.md",
+      "summary": "Inspect environmental change candidates, review immediate neighboring context and export GeoJSON in the 1.1 portable workflow. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook. Documentation privacy checks also reject embedded package parts through actual ZIP regressions.",
+      "rationale": "Carries the frozen geospatial runtime and source identity with the reviewer, so region context and actual exports remain inspectable after downloading and extracting the app. This also keeps embedded binary parts from silently bypassing the XML-only documentation inspection boundary.",
+      "sourceCommit": "99c072b8e6f4e5271234425f212cf37308a1c7bb",
+      "sourceUrl": "https://github.com/JasonStys/earth-observation-change-studio/tree/99c072b8e6f4e5271234425f212cf37308a1c7bb",
+      "reviewUrl": "https://github.com/JasonStys/earth-observation-change-studio/pull/5",
+      "validationReportUrl": "https://github.com/JasonStys/earth-observation-change-studio/blob/99c072b8e6f4e5271234425f212cf37308a1c7bb/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/earth-observation-change-studio/actions/runs/42752679175"
+          "url": "https://github.com/JasonStys/earth-observation-change-studio/actions/runs/42793179972"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/earth-observation-change-studio/actions/runs/42752679131"
+          "url": "https://github.com/JasonStys/earth-observation-change-studio/actions/runs/42793179879"
         }
       ],
       "limitations": [
@@ -370,20 +382,20 @@
     },
     {
       "name": "mission-clock-integrity-lab",
-      "summary": "Compare synthetic clock histories and qualified timestamp order, inspect uncertainty frontiers and export evidence from 1.1 portable apps.",
-      "rationale": "Packages the native model, independent auditor and review interface together while keeping application/native product versions coherent and checking actual extracted execution.",
-      "sourceCommit": "1af9738149716f944cc74a3c577746bea35194db",
-      "sourceUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/tree/1af9738149716f944cc74a3c577746bea35194db",
-      "reviewUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/pull/3",
-      "validationReportUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/blob/1af9738149716f944cc74a3c577746bea35194db/docs/reports/PORTABLE_RELEASE_20261109.md",
+      "summary": "Compare synthetic clock histories and qualified timestamp order, inspect uncertainty frontiers and export evidence from 1.1 portable apps. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook. Documentation privacy checks also reject embedded package parts through actual ZIP regressions.",
+      "rationale": "Packages the native model, independent auditor and review interface together while keeping application/native product versions coherent and checking actual extracted execution. This also keeps embedded binary parts from silently bypassing the XML-only documentation inspection boundary.",
+      "sourceCommit": "143c822001b3094b5acee2b12145bed2fa4d1d56",
+      "sourceUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/tree/143c822001b3094b5acee2b12145bed2fa4d1d56",
+      "reviewUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/pull/5",
+      "validationReportUrl": "https://github.com/JasonStys/mission-clock-integrity-lab/blob/143c822001b3094b5acee2b12145bed2fa4d1d56/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/mission-clock-integrity-lab/actions/runs/42752687471"
+          "url": "https://github.com/JasonStys/mission-clock-integrity-lab/actions/runs/42794817250"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/mission-clock-integrity-lab/actions/runs/42752687809"
+          "url": "https://github.com/JasonStys/mission-clock-integrity-lab/actions/runs/42794817330"
         }
       ],
       "limitations": [
@@ -394,20 +406,20 @@
     },
     {
       "name": "resilient-energy-microgrid-lab",
-      "summary": "Rehearse full-window feeder loss, compare two dispatch policies and download the derived replay input through 1.1 portable apps.",
+      "summary": "Rehearse full-window feeder loss, compare two dispatch policies and download the derived replay input through 1.1 portable apps. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook.",
       "rationale": "Lets a reviewer investigate service/storage tradeoffs with the same original assumptions and independently checked energy accounting, using an extracted package rather than a development environment.",
-      "sourceCommit": "39a16658fbb68bc2558aea4bf60ab74253ef2aba",
-      "sourceUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/tree/39a16658fbb68bc2558aea4bf60ab74253ef2aba",
-      "reviewUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/pull/3",
-      "validationReportUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/blob/39a16658fbb68bc2558aea4bf60ab74253ef2aba/docs/reports/PORTABLE_RELEASE_20261109.md",
+      "sourceCommit": "495d1c2100536cd3461394d84d4ec64ee337542e",
+      "sourceUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/tree/495d1c2100536cd3461394d84d4ec64ee337542e",
+      "reviewUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/pull/4",
+      "validationReportUrl": "https://github.com/JasonStys/resilient-energy-microgrid-lab/blob/495d1c2100536cd3461394d84d4ec64ee337542e/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/resilient-energy-microgrid-lab/actions/runs/42753293752"
+          "url": "https://github.com/JasonStys/resilient-energy-microgrid-lab/actions/runs/42779138069"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/resilient-energy-microgrid-lab/actions/runs/42753293735"
+          "url": "https://github.com/JasonStys/resilient-energy-microgrid-lab/actions/runs/42779138224"
         }
       ],
       "limitations": [
@@ -418,20 +430,20 @@
     },
     {
       "name": "scientific-sensor-calibration-lab",
-      "summary": "Review per-estimate variance budgets, missing samples and expired-calibration withholding in the 1.1 portable calibration workflow.",
-      "rationale": "Bundles the native fit/runtime with a practical uncertainty review and export path, tested against actual compiled execution and independent arithmetic after extraction.",
-      "sourceCommit": "1bdb2244451af67d90600e60c566435b66ea2bd0",
-      "sourceUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/tree/1bdb2244451af67d90600e60c566435b66ea2bd0",
-      "reviewUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/pull/3",
-      "validationReportUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/blob/1bdb2244451af67d90600e60c566435b66ea2bd0/docs/reports/PORTABLE_RELEASE_20261109.md",
+      "summary": "Review per-estimate variance budgets, missing samples and expired-calibration withholding in the 1.1 portable calibration workflow. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook. Documentation privacy checks also reject embedded package parts through actual ZIP regressions.",
+      "rationale": "Bundles the native fit/runtime with a practical uncertainty review and export path, tested against actual compiled execution and independent arithmetic after extraction. This also keeps embedded binary parts from silently bypassing the XML-only documentation inspection boundary.",
+      "sourceCommit": "381d4c11d3f3b3aca8afbb2e02d0bafdf49afe4a",
+      "sourceUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/tree/381d4c11d3f3b3aca8afbb2e02d0bafdf49afe4a",
+      "reviewUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/pull/5",
+      "validationReportUrl": "https://github.com/JasonStys/scientific-sensor-calibration-lab/blob/381d4c11d3f3b3aca8afbb2e02d0bafdf49afe4a/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/scientific-sensor-calibration-lab/actions/runs/42752670682"
+          "url": "https://github.com/JasonStys/scientific-sensor-calibration-lab/actions/runs/42793507840"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/scientific-sensor-calibration-lab/actions/runs/42752670659"
+          "url": "https://github.com/JasonStys/scientific-sensor-calibration-lab/actions/runs/42793507554"
         }
       ],
       "limitations": [
@@ -442,20 +454,20 @@
     },
     {
       "name": "space-weather-impact-observatory",
-      "summary": "Inspect frozen observations and forecast revisions, compare lead/window coverage and export reviews with 1.1 portable applications.",
-      "rationale": "Makes a complete offline review of sparse evidence practical while preserving missingness, issuance eligibility and the identity of the downloaded source/runtime.",
-      "sourceCommit": "5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
-      "sourceUrl": "https://github.com/JasonStys/space-weather-impact-observatory/tree/5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
-      "reviewUrl": "https://github.com/JasonStys/space-weather-impact-observatory/pull/3",
-      "validationReportUrl": "https://github.com/JasonStys/space-weather-impact-observatory/blob/5f2363643ca7fe7ce624550dcd45e0ae4cb0185a/docs/reports/PORTABLE_RELEASE_20261109.md",
+      "summary": "Inspect frozen observations and forecast revisions, compare lead/window coverage and export reviews with 1.1 portable applications. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook. Documentation privacy checks also reject embedded package parts through actual ZIP regressions.",
+      "rationale": "Makes a complete offline review of sparse evidence practical while preserving missingness, issuance eligibility and the identity of the downloaded source/runtime. This also keeps embedded binary parts from silently bypassing the XML-only documentation inspection boundary.",
+      "sourceCommit": "d8885775ab5ba8812b528ac6a77f27c30d4adbd4",
+      "sourceUrl": "https://github.com/JasonStys/space-weather-impact-observatory/tree/d8885775ab5ba8812b528ac6a77f27c30d4adbd4",
+      "reviewUrl": "https://github.com/JasonStys/space-weather-impact-observatory/pull/5",
+      "validationReportUrl": "https://github.com/JasonStys/space-weather-impact-observatory/blob/d8885775ab5ba8812b528ac6a77f27c30d4adbd4/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/space-weather-impact-observatory/actions/runs/42753130598"
+          "url": "https://github.com/JasonStys/space-weather-impact-observatory/actions/runs/42794394855"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/space-weather-impact-observatory/actions/runs/42753130588"
+          "url": "https://github.com/JasonStys/space-weather-impact-observatory/actions/runs/42794394982"
         }
       ],
       "limitations": [
@@ -466,20 +478,20 @@
     },
     {
       "name": "reactor-systems-simulator",
-      "summary": "Explore fictional dimensionless thermal lessons, compare forcing with matched baselines and export sampled differences through 1.1 portable apps.",
+      "summary": "Explore fictional dimensionless thermal lessons, compare forcing with matched baselines and export sampled differences through 1.1 portable apps. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook.",
       "rationale": "Packages the numerical kernel and explanatory interface so a reviewer can distinguish changed forcing from changed assumptions and inspect the same evidence after extraction.",
-      "sourceCommit": "a6d4fc55f12681c5b5bdec1dcd09ddb801d94683",
-      "sourceUrl": "https://github.com/JasonStys/reactor-systems-simulator/tree/a6d4fc55f12681c5b5bdec1dcd09ddb801d94683",
-      "reviewUrl": "https://github.com/JasonStys/reactor-systems-simulator/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/reactor-systems-simulator/blob/a6d4fc55f12681c5b5bdec1dcd09ddb801d94683/docs/reports/PORTABLE_RELEASE_20261109.md",
+      "sourceCommit": "110631d9e93c24eea9166efe49247ed131452d93",
+      "sourceUrl": "https://github.com/JasonStys/reactor-systems-simulator/tree/110631d9e93c24eea9166efe49247ed131452d93",
+      "reviewUrl": "https://github.com/JasonStys/reactor-systems-simulator/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/reactor-systems-simulator/blob/110631d9e93c24eea9166efe49247ed131452d93/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/reactor-systems-simulator/actions/runs/42752810305"
+          "url": "https://github.com/JasonStys/reactor-systems-simulator/actions/runs/42782041993"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/reactor-systems-simulator/actions/runs/42752810464"
+          "url": "https://github.com/JasonStys/reactor-systems-simulator/actions/runs/42782042057"
         }
       ],
       "limitations": [
@@ -490,20 +502,20 @@
     },
     {
       "name": "drone-operations-console",
-      "summary": "Import, edit, save and replay bounded friendly-route scenes with obstacle validation, paused scrubbing and safe asynchronous replacement.",
-      "rationale": "Makes civilian simulation demonstrations repeatable and prevents unsafe starting scenes or stale imports from replacing current work.",
-      "sourceCommit": "176209ed96178351a3265676ae8d50396503b9ca",
-      "sourceUrl": "https://github.com/JasonStys/drone-operations-console/tree/176209ed96178351a3265676ae8d50396503b9ca",
-      "reviewUrl": "https://github.com/JasonStys/drone-operations-console/pull/3",
-      "validationReportUrl": "https://github.com/JasonStys/drone-operations-console/blob/176209ed96178351a3265676ae8d50396503b9ca/docs/reports/practical-workflows-2026-11-09.md",
+      "summary": "Import, edit, save and replay bounded friendly-route scenes with obstacle validation, paused scrubbing and safe asynchronous replacement. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook. Documentation privacy checks also reject embedded package parts through actual ZIP regressions.",
+      "rationale": "Makes civilian simulation demonstrations repeatable and prevents unsafe starting scenes or stale imports from replacing current work. This also keeps embedded binary parts from silently bypassing the XML-only documentation inspection boundary.",
+      "sourceCommit": "237a26243f625f6d3e832bcff78fd894ae7a5c4a",
+      "sourceUrl": "https://github.com/JasonStys/drone-operations-console/tree/237a26243f625f6d3e832bcff78fd894ae7a5c4a",
+      "reviewUrl": "https://github.com/JasonStys/drone-operations-console/pull/5",
+      "validationReportUrl": "https://github.com/JasonStys/drone-operations-console/blob/237a26243f625f6d3e832bcff78fd894ae7a5c4a/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/drone-operations-console/actions/runs/42709703725"
+          "url": "https://github.com/JasonStys/drone-operations-console/actions/runs/42794598113"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/drone-operations-console/actions/runs/42709703822"
+          "url": "https://github.com/JasonStys/drone-operations-console/actions/runs/42794598271"
         }
       ],
       "limitations": [
@@ -515,20 +527,20 @@
     },
     {
       "name": "mavlink-sitl-assurance-lab",
-      "summary": "Review relay-local delay, drop, unobserved and ambiguous packet correlation with exact evidence boundaries.",
-      "rationale": "Helps diagnose simulated transport faults without claiming receiver acknowledgement or loss from incomplete observations.",
-      "sourceCommit": "9705148c159ca546a85c2f9bc174a881b6556bc3",
-      "sourceUrl": "https://github.com/JasonStys/mavlink-sitl-assurance-lab/tree/9705148c159ca546a85c2f9bc174a881b6556bc3",
-      "reviewUrl": "https://github.com/JasonStys/mavlink-sitl-assurance-lab/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/mavlink-sitl-assurance-lab/blob/9705148c159ca546a85c2f9bc174a881b6556bc3/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "Review relay-local delay, drop, unobserved and ambiguous packet correlation with exact evidence boundaries. Documentation adds a reviewed Word guide with validation observations. Documentation privacy checks also reject embedded package parts through actual ZIP regressions.",
+      "rationale": "Helps diagnose simulated transport faults without claiming receiver acknowledgement or loss from incomplete observations. This also keeps embedded binary parts from silently bypassing the XML-only documentation inspection boundary.",
+      "sourceCommit": "ee8cbc8d69594b4dbddbb70aac2fd94568c96787",
+      "sourceUrl": "https://github.com/JasonStys/mavlink-sitl-assurance-lab/tree/ee8cbc8d69594b4dbddbb70aac2fd94568c96787",
+      "reviewUrl": "https://github.com/JasonStys/mavlink-sitl-assurance-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/mavlink-sitl-assurance-lab/blob/ee8cbc8d69594b4dbddbb70aac2fd94568c96787/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/mavlink-sitl-assurance-lab/actions/runs/42707717919"
+          "url": "https://github.com/JasonStys/mavlink-sitl-assurance-lab/actions/runs/42794612283"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/mavlink-sitl-assurance-lab/actions/runs/42707717942"
+          "url": "https://github.com/JasonStys/mavlink-sitl-assurance-lab/actions/runs/42794612317"
         }
       ],
       "limitations": [
@@ -540,20 +552,20 @@
     },
     {
       "name": "first-response-drone-coordinator",
-      "summary": "Run hash-bound aircraft/operator-loss planning comparisons with planner/reviewer roles and stale-input protection.",
+      "summary": "Run hash-bound aircraft/operator-loss planning comparisons with planner/reviewer roles and stale-input protection. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Adds a practical civilian contingency review while preserving the saved plan and explicit resource constraints.",
-      "sourceCommit": "26aa28b2fe772506d1dfcc0a388a1bea94802897",
-      "sourceUrl": "https://github.com/JasonStys/first-response-drone-coordinator/tree/26aa28b2fe772506d1dfcc0a388a1bea94802897",
-      "reviewUrl": "https://github.com/JasonStys/first-response-drone-coordinator/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/first-response-drone-coordinator/blob/26aa28b2fe772506d1dfcc0a388a1bea94802897/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "sourceCommit": "76179271c372adf6a6c4e14bb4af0754f2eb96e3",
+      "sourceUrl": "https://github.com/JasonStys/first-response-drone-coordinator/tree/76179271c372adf6a6c4e14bb4af0754f2eb96e3",
+      "reviewUrl": "https://github.com/JasonStys/first-response-drone-coordinator/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/first-response-drone-coordinator/blob/76179271c372adf6a6c4e14bb4af0754f2eb96e3/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/first-response-drone-coordinator/actions/runs/42709719964"
+          "url": "https://github.com/JasonStys/first-response-drone-coordinator/actions/runs/42783443309"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/first-response-drone-coordinator/actions/runs/42709719857"
+          "url": "https://github.com/JasonStys/first-response-drone-coordinator/actions/runs/42783443306"
         }
       ],
       "limitations": [
@@ -565,20 +577,20 @@
     },
     {
       "name": "drone-video-privacy-studio",
-      "summary": "Review two manually authored keyframes using conservative privacy envelopes with private revision and export checks.",
+      "summary": "Review two manually authored keyframes using conservative privacy envelopes with private revision and export checks. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Makes redaction planning reproducible and keeps manual assumptions visible rather than claiming automatic recognition or tracking.",
-      "sourceCommit": "e61722c7780f3114a873ce8187b48104affeca7d",
-      "sourceUrl": "https://github.com/JasonStys/drone-video-privacy-studio/tree/e61722c7780f3114a873ce8187b48104affeca7d",
-      "reviewUrl": "https://github.com/JasonStys/drone-video-privacy-studio/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/drone-video-privacy-studio/blob/e61722c7780f3114a873ce8187b48104affeca7d/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "sourceCommit": "2ffeb1287cc75bd1c973d3888bcb98d171a86826",
+      "sourceUrl": "https://github.com/JasonStys/drone-video-privacy-studio/tree/2ffeb1287cc75bd1c973d3888bcb98d171a86826",
+      "reviewUrl": "https://github.com/JasonStys/drone-video-privacy-studio/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/drone-video-privacy-studio/blob/2ffeb1287cc75bd1c973d3888bcb98d171a86826/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/drone-video-privacy-studio/actions/runs/42710693114"
+          "url": "https://github.com/JasonStys/drone-video-privacy-studio/actions/runs/42790542773"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/drone-video-privacy-studio/actions/runs/42710693128"
+          "url": "https://github.com/JasonStys/drone-video-privacy-studio/actions/runs/42790542399"
         }
       ],
       "limitations": [
@@ -590,20 +602,20 @@
     },
     {
       "name": "drone-maintenance-readiness-studio",
-      "summary": "Compare unpublished maintenance standards against the same ledger, time and workload, exposing component findings and deadline deltas.",
-      "rationale": "Lets authorized reviewers assess standards changes before altering maintenance records or policy.",
-      "sourceCommit": "50109b28e90285a63bbb07ad7a0d146bc6b404c9",
-      "sourceUrl": "https://github.com/JasonStys/drone-maintenance-readiness-studio/tree/50109b28e90285a63bbb07ad7a0d146bc6b404c9",
-      "reviewUrl": "https://github.com/JasonStys/drone-maintenance-readiness-studio/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/drone-maintenance-readiness-studio/blob/50109b28e90285a63bbb07ad7a0d146bc6b404c9/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "summary": "Compare unpublished maintenance standards against the same ledger, time and workload, exposing component findings and deadline deltas. Documentation adds a reviewed Word guide with validation observations. Documentation privacy checks also reject embedded package parts through actual ZIP regressions.",
+      "rationale": "Lets authorized reviewers assess standards changes before altering maintenance records or policy. This also keeps embedded binary parts from silently bypassing the XML-only documentation inspection boundary.",
+      "sourceCommit": "1b4b4ae05d3cca157f984fc4df5cdfbe7a0bc1fb",
+      "sourceUrl": "https://github.com/JasonStys/drone-maintenance-readiness-studio/tree/1b4b4ae05d3cca157f984fc4df5cdfbe7a0bc1fb",
+      "reviewUrl": "https://github.com/JasonStys/drone-maintenance-readiness-studio/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/drone-maintenance-readiness-studio/blob/1b4b4ae05d3cca157f984fc4df5cdfbe7a0bc1fb/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/drone-maintenance-readiness-studio/actions/runs/42710676956"
+          "url": "https://github.com/JasonStys/drone-maintenance-readiness-studio/actions/runs/42794407525"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/drone-maintenance-readiness-studio/actions/runs/42710677128"
+          "url": "https://github.com/JasonStys/drone-maintenance-readiness-studio/actions/runs/42794407202"
         }
       ],
       "limitations": [
@@ -615,20 +627,20 @@
     },
     {
       "name": "drone-airspace-awareness-lab",
-      "summary": "Show pair/zone coverage ledgers with stale tracks, datum mismatch, unknown intervals and exclusion reasons.",
+      "summary": "Show pair/zone coverage ledgers with stale tracks, datum mismatch, unknown intervals and exclusion reasons. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Explains what an awareness result actually covers instead of implying empty or incomplete data means clear airspace.",
-      "sourceCommit": "bff39487f0f1c018f52e12eca9eeacc3d07643d1",
-      "sourceUrl": "https://github.com/JasonStys/drone-airspace-awareness-lab/tree/bff39487f0f1c018f52e12eca9eeacc3d07643d1",
-      "reviewUrl": "https://github.com/JasonStys/drone-airspace-awareness-lab/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/drone-airspace-awareness-lab/blob/bff39487f0f1c018f52e12eca9eeacc3d07643d1/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "sourceCommit": "8f5809c7f011802f477dbb3a8453e5a604676fd4",
+      "sourceUrl": "https://github.com/JasonStys/drone-airspace-awareness-lab/tree/8f5809c7f011802f477dbb3a8453e5a604676fd4",
+      "reviewUrl": "https://github.com/JasonStys/drone-airspace-awareness-lab/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/drone-airspace-awareness-lab/blob/8f5809c7f011802f477dbb3a8453e5a604676fd4/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/drone-airspace-awareness-lab/actions/runs/42706963544"
+          "url": "https://github.com/JasonStys/drone-airspace-awareness-lab/actions/runs/42783454324"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/drone-airspace-awareness-lab/actions/runs/42706963354"
+          "url": "https://github.com/JasonStys/drone-airspace-awareness-lab/actions/runs/42783454748"
         }
       ],
       "limitations": [
@@ -640,20 +652,20 @@
     },
     {
       "name": "drone-flight-policy-workbench",
-      "summary": "Compare active and draft policies using the same evidence and time, with exact native OPA inputs and failure states.",
+      "summary": "Compare active and draft policies using the same evidence and time, with exact native OPA inputs and failure states. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Supports controlled policy review without publishing a draft or treating a comparison as flight authorization.",
-      "sourceCommit": "60a40fc4cbfe11cf0237dd7146e0b35cd660c32d",
-      "sourceUrl": "https://github.com/JasonStys/drone-flight-policy-workbench/tree/60a40fc4cbfe11cf0237dd7146e0b35cd660c32d",
-      "reviewUrl": "https://github.com/JasonStys/drone-flight-policy-workbench/pull/1",
-      "validationReportUrl": "https://github.com/JasonStys/drone-flight-policy-workbench/blob/60a40fc4cbfe11cf0237dd7146e0b35cd660c32d/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "sourceCommit": "ff6ec54e998d93e036c2ecf8777ed44ffab66c7c",
+      "sourceUrl": "https://github.com/JasonStys/drone-flight-policy-workbench/tree/ff6ec54e998d93e036c2ecf8777ed44ffab66c7c",
+      "reviewUrl": "https://github.com/JasonStys/drone-flight-policy-workbench/pull/2",
+      "validationReportUrl": "https://github.com/JasonStys/drone-flight-policy-workbench/blob/ff6ec54e998d93e036c2ecf8777ed44ffab66c7c/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/drone-flight-policy-workbench/actions/runs/42710476393"
+          "url": "https://github.com/JasonStys/drone-flight-policy-workbench/actions/runs/42790555150"
         },
         {
           "name": "Validation",
-          "url": "https://github.com/JasonStys/drone-flight-policy-workbench/actions/runs/42710476404"
+          "url": "https://github.com/JasonStys/drone-flight-policy-workbench/actions/runs/42790555525"
         }
       ],
       "limitations": [
@@ -664,20 +676,20 @@
     },
     {
       "name": "cloud-job-orchestrator",
-      "summary": "Preview validated DAG structure, inspect coherent job/event snapshots and review bounded unmet-parent, retry and lease evidence. Added real PostgreSQL API/worker execution and static-site delivery checks.",
+      "summary": "Preview validated DAG structure, inspect coherent job/event snapshots and review bounded unmet-parent, retry and lease evidence. Added real PostgreSQL API/worker execution and static-site delivery checks. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Turns workflow state into actionable diagnosis while keeping planning read-only. Inspection reports omit payloads, results and lease tokens; deployment still supplies a trusted identity/network/TLS boundary.",
-      "sourceCommit": "c93ca92be7ffa6bdd4e44f0773cae5146a57ecf4",
-      "sourceUrl": "https://github.com/JasonStys/cloud-job-orchestrator/tree/c93ca92be7ffa6bdd4e44f0773cae5146a57ecf4",
-      "reviewUrl": "https://github.com/JasonStys/cloud-job-orchestrator/pull/27",
-      "validationReportUrl": "https://github.com/JasonStys/cloud-job-orchestrator/blob/c93ca92be7ffa6bdd4e44f0773cae5146a57ecf4/docs/reports/PRACTICAL_WORKFLOWS_20261109.md",
+      "sourceCommit": "66953562e528dd2e88397029a5092a57ac9bcda6",
+      "sourceUrl": "https://github.com/JasonStys/cloud-job-orchestrator/tree/66953562e528dd2e88397029a5092a57ac9bcda6",
+      "reviewUrl": "https://github.com/JasonStys/cloud-job-orchestrator/pull/29",
+      "validationReportUrl": "https://github.com/JasonStys/cloud-job-orchestrator/blob/66953562e528dd2e88397029a5092a57ac9bcda6/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/cloud-job-orchestrator/actions/runs/42718227263"
+          "url": "https://github.com/JasonStys/cloud-job-orchestrator/actions/runs/42780908098"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/cloud-job-orchestrator/actions/runs/42718227181"
+          "url": "https://github.com/JasonStys/cloud-job-orchestrator/actions/runs/42780908270"
         }
       ],
       "limitations": [
@@ -689,20 +701,20 @@
     },
     {
       "name": "integration-operations-console",
-      "summary": "Search all jobs by account/state, page captured audit history and download exact reviews. Fixed request-key intent, real-client binding, timestamp precision, null wire fields and mobile overflow.",
+      "summary": "Search all jobs by account/state, page captured audit history and download exact reviews. Fixed request-key intent, real-client binding, timestamp precision, null wire fields and mobile overflow. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Makes integration support usable beyond the recent-activity feed and catches defects through real API/browser workflows.",
-      "sourceCommit": "2563b4154d2e7755516d12911d68c4a32d654905",
-      "sourceUrl": "https://github.com/JasonStys/integration-operations-console/tree/2563b4154d2e7755516d12911d68c4a32d654905",
-      "reviewUrl": "https://github.com/JasonStys/integration-operations-console/pull/61",
-      "validationReportUrl": "https://github.com/JasonStys/integration-operations-console/blob/2563b4154d2e7755516d12911d68c4a32d654905/docs/reports/connector-order-2026-11-09.md",
+      "sourceCommit": "7789dd296b75f5a711f872c752dfc686ec15e2de",
+      "sourceUrl": "https://github.com/JasonStys/integration-operations-console/tree/7789dd296b75f5a711f872c752dfc686ec15e2de",
+      "reviewUrl": "https://github.com/JasonStys/integration-operations-console/pull/62",
+      "validationReportUrl": "https://github.com/JasonStys/integration-operations-console/blob/7789dd296b75f5a711f872c752dfc686ec15e2de/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/integration-operations-console/actions/runs/42731432193"
+          "url": "https://github.com/JasonStys/integration-operations-console/actions/runs/42782067248"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/integration-operations-console/actions/runs/42731432433"
+          "url": "https://github.com/JasonStys/integration-operations-console/actions/runs/42782067215"
         }
       ],
       "limitations": [
@@ -714,20 +726,20 @@
     },
     {
       "name": "ml-model-lifecycle-observatory",
-      "summary": "Build authenticated read-only release dossiers with verified bundle/registry agreement, recorded quality gates, bounded history and matching drift context. Fixed SQLite handle leaks.",
+      "summary": "Build authenticated read-only release dossiers with verified bundle/registry agreement, recorded quality gates, bounded history and matching drift context. Fixed SQLite handle leaks. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Gives model reviewers explicit evidence and uncertainty before an independent promotion or rollback decision.",
-      "sourceCommit": "e3f47233539d2af763b5c30a2575e6544a0ba5d7",
-      "sourceUrl": "https://github.com/JasonStys/ml-model-lifecycle-observatory/tree/e3f47233539d2af763b5c30a2575e6544a0ba5d7",
-      "reviewUrl": "https://github.com/JasonStys/ml-model-lifecycle-observatory/pull/27",
-      "validationReportUrl": "https://github.com/JasonStys/ml-model-lifecycle-observatory/blob/e3f47233539d2af763b5c30a2575e6544a0ba5d7/docs/reports/practical-workflows-20261109.md",
+      "sourceCommit": "913571b4b02c3b3084294151bc9275f222e525b4",
+      "sourceUrl": "https://github.com/JasonStys/ml-model-lifecycle-observatory/tree/913571b4b02c3b3084294151bc9275f222e525b4",
+      "reviewUrl": "https://github.com/JasonStys/ml-model-lifecycle-observatory/pull/28",
+      "validationReportUrl": "https://github.com/JasonStys/ml-model-lifecycle-observatory/blob/913571b4b02c3b3084294151bc9275f222e525b4/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/ml-model-lifecycle-observatory/actions/runs/42720622275"
+          "url": "https://github.com/JasonStys/ml-model-lifecycle-observatory/actions/runs/42790315377"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/ml-model-lifecycle-observatory/actions/runs/42720621967"
+          "url": "https://github.com/JasonStys/ml-model-lifecycle-observatory/actions/runs/42790315443"
         }
       ],
       "limitations": [
@@ -739,20 +751,20 @@
     },
     {
       "name": "player-telemetry-analytics-platform",
-      "summary": "Review acquisition cohorts with receipt-time cutoffs, cross-platform later activity and mature versus censored D0/D1/D7 denominators.",
+      "summary": "Review acquisition cohorts with receipt-time cutoffs, cross-platform later activity and mature versus censored D0/D1/D7 denominators. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Prevents late-arrival hindsight and immature cohorts from producing misleading retention comparisons.",
-      "sourceCommit": "f83161e7ce500027fe5313bb08e36e9716a94be2",
-      "sourceUrl": "https://github.com/JasonStys/player-telemetry-analytics-platform/tree/f83161e7ce500027fe5313bb08e36e9716a94be2",
-      "reviewUrl": "https://github.com/JasonStys/player-telemetry-analytics-platform/pull/65",
-      "validationReportUrl": "https://github.com/JasonStys/player-telemetry-analytics-platform/blob/f83161e7ce500027fe5313bb08e36e9716a94be2/docs/reports/practical-workflows-20261109.md",
+      "sourceCommit": "278e565c0682c977c6aa2f914b162b7c734228d4",
+      "sourceUrl": "https://github.com/JasonStys/player-telemetry-analytics-platform/tree/278e565c0682c977c6aa2f914b162b7c734228d4",
+      "reviewUrl": "https://github.com/JasonStys/player-telemetry-analytics-platform/pull/66",
+      "validationReportUrl": "https://github.com/JasonStys/player-telemetry-analytics-platform/blob/278e565c0682c977c6aa2f914b162b7c734228d4/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/player-telemetry-analytics-platform/actions/runs/42720166549"
+          "url": "https://github.com/JasonStys/player-telemetry-analytics-platform/actions/runs/42781710980"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/player-telemetry-analytics-platform/actions/runs/42720166520"
+          "url": "https://github.com/JasonStys/player-telemetry-analytics-platform/actions/runs/42781710623"
         }
       ],
       "limitations": [
@@ -763,16 +775,20 @@
     },
     {
       "name": "industrial-edge-digital-twin",
-      "summary": "Capture and replay synchronized signals, requested/actual outputs, quality, faults and alarms; import/export bounded traces and scrub time-aligned trends with commands blocked in review.",
-      "rationale": "Creates a practical simulated-process investigation workflow with recorded and live state clearly distinguished.",
-      "sourceCommit": "825d6e09c2552e3f995d3c9053b76f5c2cf3c341",
-      "sourceUrl": "https://github.com/JasonStys/industrial-edge-digital-twin/tree/825d6e09c2552e3f995d3c9053b76f5c2cf3c341",
-      "reviewUrl": "https://github.com/JasonStys/industrial-edge-digital-twin/pull/19",
-      "validationReportUrl": "https://github.com/JasonStys/industrial-edge-digital-twin/blob/825d6e09c2552e3f995d3c9053b76f5c2cf3c341/docs/reports/practical-workflows-2026-11-09.md",
+      "summary": "Replay simulated industrial signals, faults and alarms with synchronized trends. Use one bounded regular-file descriptor for two-megabyte inputs and test real file replacement, growth and nonregular-input cases alongside native, web and CodeQL checks. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook.",
+      "rationale": "Combines practical read-only industrial review with explicit file-identity and resource limits that are verified against actual filesystem behavior.",
+      "sourceCommit": "555db0f4d156aba45684e63694123a5088e84872",
+      "sourceUrl": "https://github.com/JasonStys/industrial-edge-digital-twin/tree/555db0f4d156aba45684e63694123a5088e84872",
+      "reviewUrl": "https://github.com/JasonStys/industrial-edge-digital-twin/pull/22",
+      "validationReportUrl": "https://github.com/JasonStys/industrial-edge-digital-twin/blob/555db0f4d156aba45684e63694123a5088e84872/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/industrial-edge-digital-twin/actions/runs/42720610119"
+          "url": "https://github.com/JasonStys/industrial-edge-digital-twin/actions/runs/42781380859"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/industrial-edge-digital-twin/actions/runs/42781380876"
         }
       ],
       "limitations": [
@@ -783,20 +799,20 @@
     },
     {
       "name": "accessible-design-system-lab",
-      "summary": "Use accessible table sorting, paging, stable missing-value ordering and focus handling. Final TGZ acceptance now installs the actual public package into an external React/Vite consumer and exercises shipped behavior, CSS and accessibility in Chromium.",
+      "summary": "Use accessible table sorting, paging, stable missing-value ordering and focus handling. Final TGZ acceptance now installs the actual public package into an external React/Vite consumer and exercises shipped behavior, CSS and accessibility in Chromium. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Proves that the packaged public exports work in a genuine separate consumer instead of passing because export names appear in JavaScript text.",
-      "sourceCommit": "bd689a5a8b119ed629905f65d90d097ae16acd0e",
-      "sourceUrl": "https://github.com/JasonStys/accessible-design-system-lab/tree/bd689a5a8b119ed629905f65d90d097ae16acd0e",
-      "reviewUrl": "https://github.com/JasonStys/accessible-design-system-lab/pull/18",
-      "validationReportUrl": "https://github.com/JasonStys/accessible-design-system-lab/blob/bd689a5a8b119ed629905f65d90d097ae16acd0e/docs/reports/installed-consumer-2026-11-09.md",
+      "sourceCommit": "085fdf911ab18aec3ad5701f83485dcdd9653cff",
+      "sourceUrl": "https://github.com/JasonStys/accessible-design-system-lab/tree/085fdf911ab18aec3ad5701f83485dcdd9653cff",
+      "reviewUrl": "https://github.com/JasonStys/accessible-design-system-lab/pull/19",
+      "validationReportUrl": "https://github.com/JasonStys/accessible-design-system-lab/blob/085fdf911ab18aec3ad5701f83485dcdd9653cff/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/accessible-design-system-lab/actions/runs/42749658831"
+          "url": "https://github.com/JasonStys/accessible-design-system-lab/actions/runs/42791110984"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/accessible-design-system-lab/actions/runs/42749658810"
+          "url": "https://github.com/JasonStys/accessible-design-system-lab/actions/runs/42791111099"
         }
       ],
       "limitations": [
@@ -807,20 +823,20 @@
     },
     {
       "name": "edge-vision-deployment-benchmark",
-      "summary": "Compare verified runtimes across shared held-out clean, noise, occlusion and dim conditions with per-class recall, calibration and explicit configurable failure gates.",
+      "summary": "Compare verified runtimes across shared held-out clean, noise, occlusion and dim conditions with per-class recall, calibration and explicit configurable failure gates. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Supports deployment tradeoffs using the same evidence rather than incompatible aggregate timing or accuracy claims.",
-      "sourceCommit": "a506fe82222da8a8e7e566404dddd88b4f002fd3",
-      "sourceUrl": "https://github.com/JasonStys/edge-vision-deployment-benchmark/tree/a506fe82222da8a8e7e566404dddd88b4f002fd3",
-      "reviewUrl": "https://github.com/JasonStys/edge-vision-deployment-benchmark/pull/31",
-      "validationReportUrl": "https://github.com/JasonStys/edge-vision-deployment-benchmark/blob/a506fe82222da8a8e7e566404dddd88b4f002fd3/docs/reports/practical-workflows-20261109.md",
+      "sourceCommit": "e127330a714aafd6ba875e45c82850b386384b80",
+      "sourceUrl": "https://github.com/JasonStys/edge-vision-deployment-benchmark/tree/e127330a714aafd6ba875e45c82850b386384b80",
+      "reviewUrl": "https://github.com/JasonStys/edge-vision-deployment-benchmark/pull/32",
+      "validationReportUrl": "https://github.com/JasonStys/edge-vision-deployment-benchmark/blob/e127330a714aafd6ba875e45c82850b386384b80/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/edge-vision-deployment-benchmark/actions/runs/42720032306"
+          "url": "https://github.com/JasonStys/edge-vision-deployment-benchmark/actions/runs/42782018669"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/edge-vision-deployment-benchmark/actions/runs/42720032113"
+          "url": "https://github.com/JasonStys/edge-vision-deployment-benchmark/actions/runs/42782018748"
         }
       ],
       "limitations": [
@@ -831,20 +847,20 @@
     },
     {
       "name": "secure-service-desk",
-      "summary": "Assign and unassign tenant agents with shared version checks, atomic audit/outbox writes and bounded ticket history; filter owner/SLA queues and recheck stale authorization and SLA candidates.",
+      "summary": "Assign and unassign tenant agents with shared version checks, atomic audit/outbox writes and bounded ticket history; filter owner/SLA queues and recheck stale authorization and SLA candidates. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Turns a ticket list into an auditable support workflow that resists lost updates, partial commits and cross-tenant mistakes.",
-      "sourceCommit": "561f1a428594d3a12fd71c9c969e8e6f6da4efe3",
-      "sourceUrl": "https://github.com/JasonStys/secure-service-desk/tree/561f1a428594d3a12fd71c9c969e8e6f6da4efe3",
-      "reviewUrl": "https://github.com/JasonStys/secure-service-desk/pull/19",
-      "validationReportUrl": "https://github.com/JasonStys/secure-service-desk/blob/561f1a428594d3a12fd71c9c969e8e6f6da4efe3/docs/reports/practical-workflows-2026-11-09.md",
+      "sourceCommit": "e315a79d779480e633345bff9197ed936485971a",
+      "sourceUrl": "https://github.com/JasonStys/secure-service-desk/tree/e315a79d779480e633345bff9197ed936485971a",
+      "reviewUrl": "https://github.com/JasonStys/secure-service-desk/pull/21",
+      "validationReportUrl": "https://github.com/JasonStys/secure-service-desk/blob/e315a79d779480e633345bff9197ed936485971a/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/secure-service-desk/actions/runs/42727354111"
+          "url": "https://github.com/JasonStys/secure-service-desk/actions/runs/42781405956"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/secure-service-desk/actions/runs/42727354124"
+          "url": "https://github.com/JasonStys/secure-service-desk/actions/runs/42781405849"
         }
       ],
       "limitations": [
@@ -855,20 +871,20 @@
     },
     {
       "name": "offline-first-field-app",
-      "summary": "Resolve base/local/server conflicts using explicit choices for divergent fields, stale-version checks and atomic replacement of queued writes.",
+      "summary": "Resolve base/local/server conflicts using explicit choices for divergent fields, stale-version checks and atomic replacement of queued writes. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Makes offline editing recoverable without silently overwriting another person's changes or fabricating a missing base.",
-      "sourceCommit": "c5471bc43c1a6296c785aeab40310ae227b2d295",
-      "sourceUrl": "https://github.com/JasonStys/offline-first-field-app/tree/c5471bc43c1a6296c785aeab40310ae227b2d295",
-      "reviewUrl": "https://github.com/JasonStys/offline-first-field-app/pull/19",
-      "validationReportUrl": "https://github.com/JasonStys/offline-first-field-app/blob/c5471bc43c1a6296c785aeab40310ae227b2d295/docs/reports/practical-workflows-2026-11-09.md",
+      "sourceCommit": "82b08143d14cc2851ed1709010788284371c8a01",
+      "sourceUrl": "https://github.com/JasonStys/offline-first-field-app/tree/82b08143d14cc2851ed1709010788284371c8a01",
+      "reviewUrl": "https://github.com/JasonStys/offline-first-field-app/pull/20",
+      "validationReportUrl": "https://github.com/JasonStys/offline-first-field-app/blob/82b08143d14cc2851ed1709010788284371c8a01/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/offline-first-field-app/actions/runs/42698069942"
+          "url": "https://github.com/JasonStys/offline-first-field-app/actions/runs/42790326577"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/offline-first-field-app/actions/runs/42698069971"
+          "url": "https://github.com/JasonStys/offline-first-field-app/actions/runs/42790326659"
         }
       ],
       "limitations": [
@@ -880,20 +896,20 @@
     },
     {
       "name": "mips-pipeline-workbench",
-      "summary": "Import bounded traces, preserve valid state on failed import and navigate cycles/hazards with a bounded visible window. Fixed cycle/CPI counts when trace capture is capped.",
+      "summary": "Import bounded traces, preserve valid state on failed import and navigate cycles/hazards with a bounded visible window. Fixed cycle/CPI counts when trace capture is capped. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Improves processor-debugging usability and keeps performance measurements independent of display limits.",
-      "sourceCommit": "39e2997102cf0d40068c3d88b58178966fb52c1c",
-      "sourceUrl": "https://github.com/JasonStys/mips-pipeline-workbench/tree/39e2997102cf0d40068c3d88b58178966fb52c1c",
-      "reviewUrl": "https://github.com/JasonStys/mips-pipeline-workbench/pull/11",
-      "validationReportUrl": "https://github.com/JasonStys/mips-pipeline-workbench/blob/39e2997102cf0d40068c3d88b58178966fb52c1c/docs/reports/practical-workflows-2026-11-09.md",
+      "sourceCommit": "1ee2cd90c122bda532a66f122b19894621541052",
+      "sourceUrl": "https://github.com/JasonStys/mips-pipeline-workbench/tree/1ee2cd90c122bda532a66f122b19894621541052",
+      "reviewUrl": "https://github.com/JasonStys/mips-pipeline-workbench/pull/12",
+      "validationReportUrl": "https://github.com/JasonStys/mips-pipeline-workbench/blob/1ee2cd90c122bda532a66f122b19894621541052/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/mips-pipeline-workbench/actions/runs/42701673397"
+          "url": "https://github.com/JasonStys/mips-pipeline-workbench/actions/runs/42782030006"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/mips-pipeline-workbench/actions/runs/42701673466"
+          "url": "https://github.com/JasonStys/mips-pipeline-workbench/actions/runs/42782029886"
         }
       ],
       "limitations": [
@@ -905,20 +921,24 @@
     },
     {
       "name": "firmware-release-recovery-lab",
-      "summary": "Rehearse bounded fleet cohorts with package/state fingerprints, compatibility and trial outcomes; fix unconfirmed-stage overwrite, attempt-budget reset and rollback-version checks.",
-      "rationale": "Shows rollout readiness and recovery consequences before touching devices, while enforcing the underlying lifecycle invariants.",
-      "sourceCommit": "813ff0dbee896a08fc202d20a36196cf8fa2e939",
-      "sourceUrl": "https://github.com/JasonStys/firmware-release-recovery-lab/tree/813ff0dbee896a08fc202d20a36196cf8fa2e939",
-      "reviewUrl": "https://github.com/JasonStys/firmware-release-recovery-lab/pull/12",
-      "validationReportUrl": "https://github.com/JasonStys/firmware-release-recovery-lab/blob/813ff0dbee896a08fc202d20a36196cf8fa2e939/docs/reports/practical-workflows-2026-11-09.md",
+      "summary": "Rehearse simulated fleet updates with compatibility checks, trial outcomes and rollback safeguards. Add extracted Rust, Python and Actions CodeQL analysis with explicit compiler/language scope and source-bound validation documentation. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook.",
+      "rationale": "Makes recovery behavior and static-analysis coverage inspectable together without treating a green workflow or simulated update as deployed firmware assurance.",
+      "sourceCommit": "af1100df703b549a41cb983246eacf60ee1e503f",
+      "sourceUrl": "https://github.com/JasonStys/firmware-release-recovery-lab/tree/af1100df703b549a41cb983246eacf60ee1e503f",
+      "reviewUrl": "https://github.com/JasonStys/firmware-release-recovery-lab/pull/14",
+      "validationReportUrl": "https://github.com/JasonStys/firmware-release-recovery-lab/blob/af1100df703b549a41cb983246eacf60ee1e503f/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/firmware-release-recovery-lab/actions/runs/42712069471"
+          "url": "https://github.com/JasonStys/firmware-release-recovery-lab/actions/runs/42779591365"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/firmware-release-recovery-lab/actions/runs/42779591095"
         },
         {
           "name": "Dependency security",
-          "url": "https://github.com/JasonStys/firmware-release-recovery-lab/actions/runs/42712069050"
+          "url": "https://github.com/JasonStys/firmware-release-recovery-lab/actions/runs/42779591059"
         }
       ],
       "limitations": [
@@ -929,20 +949,20 @@
     },
     {
       "name": "ot-security-monitor-lab",
-      "summary": "Report expected-peer successful-read address coverage with separate function codes, interval unions, absent assets and capture gaps.",
+      "summary": "Report expected-peer successful-read address coverage with separate function codes, interval unions, absent assets and capture gaps. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Makes passive monitoring coverage auditable without contacting devices or treating unobserved activity as safe.",
-      "sourceCommit": "88a34d59e7433aeba3e47066840274666fa7f8c3",
-      "sourceUrl": "https://github.com/JasonStys/ot-security-monitor-lab/tree/88a34d59e7433aeba3e47066840274666fa7f8c3",
-      "reviewUrl": "https://github.com/JasonStys/ot-security-monitor-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/ot-security-monitor-lab/blob/88a34d59e7433aeba3e47066840274666fa7f8c3/docs/reports/read-coverage-2026-11-09.md",
+      "sourceCommit": "71cf4b4b43109cb617b9b9c02f9add14848384cd",
+      "sourceUrl": "https://github.com/JasonStys/ot-security-monitor-lab/tree/71cf4b4b43109cb617b9b9c02f9add14848384cd",
+      "reviewUrl": "https://github.com/JasonStys/ot-security-monitor-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/ot-security-monitor-lab/blob/71cf4b4b43109cb617b9b9c02f9add14848384cd/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/42714050574"
+          "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/42787559665"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/42714050852"
+          "url": "https://github.com/JasonStys/ot-security-monitor-lab/actions/runs/42787559251"
         }
       ],
       "limitations": [
@@ -953,20 +973,20 @@
     },
     {
       "name": "industrial-memory-protocol-workbench",
-      "summary": "Reassemble fragmented/coalesced frames in a bounded ring with corruption, discarded-byte and EOF offsets plus read-only JSON inspection.",
+      "summary": "Reassemble fragmented/coalesced frames in a bounded ring with corruption, discarded-byte and EOF offsets plus read-only JSON inspection. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Models realistic stream transport boundaries instead of assuming one read equals one complete message.",
-      "sourceCommit": "d4a8492365890c588b846b092d8dd6a691212118",
-      "sourceUrl": "https://github.com/JasonStys/industrial-memory-protocol-workbench/tree/d4a8492365890c588b846b092d8dd6a691212118",
-      "reviewUrl": "https://github.com/JasonStys/industrial-memory-protocol-workbench/pull/14",
-      "validationReportUrl": "https://github.com/JasonStys/industrial-memory-protocol-workbench/blob/d4a8492365890c588b846b092d8dd6a691212118/docs/reports/stream-2026-11-09.md",
+      "sourceCommit": "44db94432ce0da3ea96623b6785eef2e82698f55",
+      "sourceUrl": "https://github.com/JasonStys/industrial-memory-protocol-workbench/tree/44db94432ce0da3ea96623b6785eef2e82698f55",
+      "reviewUrl": "https://github.com/JasonStys/industrial-memory-protocol-workbench/pull/15",
+      "validationReportUrl": "https://github.com/JasonStys/industrial-memory-protocol-workbench/blob/44db94432ce0da3ea96623b6785eef2e82698f55/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/industrial-memory-protocol-workbench/actions/runs/42718242191"
+          "url": "https://github.com/JasonStys/industrial-memory-protocol-workbench/actions/runs/42781688391"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/industrial-memory-protocol-workbench/actions/runs/42718242194"
+          "url": "https://github.com/JasonStys/industrial-memory-protocol-workbench/actions/runs/42781688206"
         }
       ],
       "limitations": [
@@ -977,20 +997,20 @@
     },
     {
       "name": "detection-engineering-lab",
-      "summary": "Add hash-bound analyst dispositions and same-event rule/label comparisons with immutable alert evidence and inert HTML review.",
+      "summary": "Add hash-bound analyst dispositions and same-event rule/label comparisons with immutable alert evidence and inert HTML review. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Connects rule changes to reviewable outcomes without rewriting original detections or hiding uncertainty.",
-      "sourceCommit": "7629605841823ebc7a56317ec2addac6d5ab3e38",
-      "sourceUrl": "https://github.com/JasonStys/detection-engineering-lab/tree/7629605841823ebc7a56317ec2addac6d5ab3e38",
-      "reviewUrl": "https://github.com/JasonStys/detection-engineering-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/detection-engineering-lab/blob/7629605841823ebc7a56317ec2addac6d5ab3e38/docs/reports/workflows-2026-11-09.md",
+      "sourceCommit": "278650b7baae614f9b178477852595e812a91b41",
+      "sourceUrl": "https://github.com/JasonStys/detection-engineering-lab/tree/278650b7baae614f9b178477852595e812a91b41",
+      "reviewUrl": "https://github.com/JasonStys/detection-engineering-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/detection-engineering-lab/blob/278650b7baae614f9b178477852595e812a91b41/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/detection-engineering-lab/actions/runs/42697020943"
+          "url": "https://github.com/JasonStys/detection-engineering-lab/actions/runs/42780070563"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/detection-engineering-lab/actions/runs/42697020979"
+          "url": "https://github.com/JasonStys/detection-engineering-lab/actions/runs/42780071535"
         }
       ],
       "limitations": [
@@ -1001,20 +1021,20 @@
     },
     {
       "name": "sre-observability-workbench",
-      "summary": "Compare owner/service/journey SLO bundles over identical windows, with quality, burn and weakened-objective review queues.",
+      "summary": "Compare owner/service/journey SLO bundles over identical windows, with quality, burn and weakened-objective review queues. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Prevents pooled availability and changed denominators from hiding a failing user journey.",
-      "sourceCommit": "8027d600ca0f1cb0575e8a23ff0147d3376046cb",
-      "sourceUrl": "https://github.com/JasonStys/sre-observability-workbench/tree/8027d600ca0f1cb0575e8a23ff0147d3376046cb",
-      "reviewUrl": "https://github.com/JasonStys/sre-observability-workbench/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/sre-observability-workbench/blob/8027d600ca0f1cb0575e8a23ff0147d3376046cb/docs/reports/journeys-2026-11-09.md",
+      "sourceCommit": "9cd400eb8dee1bb65da45ee2b8ba79a6278dc061",
+      "sourceUrl": "https://github.com/JasonStys/sre-observability-workbench/tree/9cd400eb8dee1bb65da45ee2b8ba79a6278dc061",
+      "reviewUrl": "https://github.com/JasonStys/sre-observability-workbench/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/sre-observability-workbench/blob/9cd400eb8dee1bb65da45ee2b8ba79a6278dc061/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/sre-observability-workbench/actions/runs/42698083646"
+          "url": "https://github.com/JasonStys/sre-observability-workbench/actions/runs/42787544098"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/sre-observability-workbench/actions/runs/42698083697"
+          "url": "https://github.com/JasonStys/sre-observability-workbench/actions/runs/42787543284"
         }
       ],
       "limitations": [
@@ -1025,20 +1045,20 @@
     },
     {
       "name": "gitops-platform-lab",
-      "summary": "Review desired, source and applied generations, dependency readiness and freshness against chronological evidence.",
+      "summary": "Review desired, source and applied generations, dependency readiness and freshness against chronological evidence. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Separates healthy old workloads from actual convergence on the intended Git revision.",
-      "sourceCommit": "37432ccaecceb7a569b23e5280c678d81f101de9",
-      "sourceUrl": "https://github.com/JasonStys/gitops-platform-lab/tree/37432ccaecceb7a569b23e5280c678d81f101de9",
-      "reviewUrl": "https://github.com/JasonStys/gitops-platform-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/gitops-platform-lab/blob/37432ccaecceb7a569b23e5280c678d81f101de9/docs/reports/reconciliation-2026-11-09.md",
+      "sourceCommit": "19ad3b17a9ad47ba5f283179524217f46438d68a",
+      "sourceUrl": "https://github.com/JasonStys/gitops-platform-lab/tree/19ad3b17a9ad47ba5f283179524217f46438d68a",
+      "reviewUrl": "https://github.com/JasonStys/gitops-platform-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/gitops-platform-lab/blob/19ad3b17a9ad47ba5f283179524217f46438d68a/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/gitops-platform-lab/actions/runs/42700789577"
+          "url": "https://github.com/JasonStys/gitops-platform-lab/actions/runs/42780920683"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/gitops-platform-lab/actions/runs/42700789258"
+          "url": "https://github.com/JasonStys/gitops-platform-lab/actions/runs/42780920796"
         }
       ],
       "limitations": [
@@ -1049,20 +1069,20 @@
     },
     {
       "name": "container-runtime-security-lab",
-      "summary": "Group coverage-aware runtime alert episodes and retain exact reasoned human dispositions without changing original alert priorities.",
+      "summary": "Group coverage-aware runtime alert episodes and retain exact reasoned human dispositions without changing original alert priorities. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Makes alert triage practical while preserving evidence gaps and detection provenance.",
-      "sourceCommit": "437ef271990ab763f3d988d7618a0c67346e72c0",
-      "sourceUrl": "https://github.com/JasonStys/container-runtime-security-lab/tree/437ef271990ab763f3d988d7618a0c67346e72c0",
-      "reviewUrl": "https://github.com/JasonStys/container-runtime-security-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/container-runtime-security-lab/blob/437ef271990ab763f3d988d7618a0c67346e72c0/docs/reports/episodes-2026-11-09.md",
+      "sourceCommit": "69a1f10917602b511685154785d76cfb1d1f7d3b",
+      "sourceUrl": "https://github.com/JasonStys/container-runtime-security-lab/tree/69a1f10917602b511685154785d76cfb1d1f7d3b",
+      "reviewUrl": "https://github.com/JasonStys/container-runtime-security-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/container-runtime-security-lab/blob/69a1f10917602b511685154785d76cfb1d1f7d3b/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/container-runtime-security-lab/actions/runs/42715629709"
+          "url": "https://github.com/JasonStys/container-runtime-security-lab/actions/runs/42782509482"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/container-runtime-security-lab/actions/runs/42715630195"
+          "url": "https://github.com/JasonStys/container-runtime-security-lab/actions/runs/42782508972"
         }
       ],
       "limitations": [
@@ -1073,20 +1093,20 @@
     },
     {
       "name": "zero-trust-segmentation-lab",
-      "summary": "Evaluate owner-authored continuity requirements at policy and exception boundaries with a hash-bound review queue.",
+      "summary": "Evaluate owner-authored continuity requirements at policy and exception boundaries with a hash-bound review queue. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Shows upcoming access changes without granting access, renewing exceptions or assuming transitive trust.",
-      "sourceCommit": "a685d91f52f89d4d5c5707ec32039b0585ac8fa5",
-      "sourceUrl": "https://github.com/JasonStys/zero-trust-segmentation-lab/tree/a685d91f52f89d4d5c5707ec32039b0585ac8fa5",
-      "reviewUrl": "https://github.com/JasonStys/zero-trust-segmentation-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/zero-trust-segmentation-lab/blob/a685d91f52f89d4d5c5707ec32039b0585ac8fa5/docs/reports/continuity-2026-11-09.md",
+      "sourceCommit": "7b8e84a0d2eaad3e6fb1bfed9fd18c3bf22334d4",
+      "sourceUrl": "https://github.com/JasonStys/zero-trust-segmentation-lab/tree/7b8e84a0d2eaad3e6fb1bfed9fd18c3bf22334d4",
+      "reviewUrl": "https://github.com/JasonStys/zero-trust-segmentation-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/zero-trust-segmentation-lab/blob/7b8e84a0d2eaad3e6fb1bfed9fd18c3bf22334d4/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/zero-trust-segmentation-lab/actions/runs/42712910395"
+          "url": "https://github.com/JasonStys/zero-trust-segmentation-lab/actions/runs/42787574110"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/zero-trust-segmentation-lab/actions/runs/42712910519"
+          "url": "https://github.com/JasonStys/zero-trust-segmentation-lab/actions/runs/42787574281"
         }
       ],
       "limitations": [
@@ -1097,20 +1117,20 @@
     },
     {
       "name": "application-security-regression-lab",
-      "summary": "Compare exact saved HTTP regression evidence across union cases, including missing execution and changed assertions.",
-      "rationale": "Prevents an absent or weakened test from being reported as an application-security recovery.",
-      "sourceCommit": "4466fed1ebed0c538cc2ea35d96c92c6299b96bf",
-      "sourceUrl": "https://github.com/JasonStys/application-security-regression-lab/tree/4466fed1ebed0c538cc2ea35d96c92c6299b96bf",
-      "reviewUrl": "https://github.com/JasonStys/application-security-regression-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/application-security-regression-lab/blob/4466fed1ebed0c538cc2ea35d96c92c6299b96bf/docs/reports/regression-review-2026-11-09.md",
+      "summary": "Compare exact saved HTTP regression evidence across union cases, including missing execution and changed assertions. Documentation adds a reviewed Word guide with validation observations. Documentation privacy checks also reject embedded package parts through actual ZIP regressions.",
+      "rationale": "Prevents an absent or weakened test from being reported as an application-security recovery. This also keeps embedded binary parts from silently bypassing the XML-only documentation inspection boundary.",
+      "sourceCommit": "742da63a82d81f5ae5ba3afebbb2204bfa5d4d2b",
+      "sourceUrl": "https://github.com/JasonStys/application-security-regression-lab/tree/742da63a82d81f5ae5ba3afebbb2204bfa5d4d2b",
+      "reviewUrl": "https://github.com/JasonStys/application-security-regression-lab/pull/4",
+      "validationReportUrl": "https://github.com/JasonStys/application-security-regression-lab/blob/742da63a82d81f5ae5ba3afebbb2204bfa5d4d2b/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/application-security-regression-lab/actions/runs/42710447325"
+          "url": "https://github.com/JasonStys/application-security-regression-lab/actions/runs/42793491359"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/application-security-regression-lab/actions/runs/42710447276"
+          "url": "https://github.com/JasonStys/application-security-regression-lab/actions/runs/42793491535"
         }
       ],
       "limitations": [
@@ -1121,20 +1141,20 @@
     },
     {
       "name": "cloud-identity-access-lab",
-      "summary": "Compare signed native OPA policy decisions across MFA, expiry and registry-bound contexts.",
+      "summary": "Compare signed native OPA policy decisions across MFA, expiry and registry-bound contexts. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Explains gained and lost access using authenticated synthetic evidence without changing cloud permissions.",
-      "sourceCommit": "2ffe676fb9ba49ced2902398062cef1ae8f7a5ae",
-      "sourceUrl": "https://github.com/JasonStys/cloud-identity-access-lab/tree/2ffe676fb9ba49ced2902398062cef1ae8f7a5ae",
-      "reviewUrl": "https://github.com/JasonStys/cloud-identity-access-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/cloud-identity-access-lab/blob/2ffe676fb9ba49ced2902398062cef1ae8f7a5ae/docs/reports/recertification-2026-11-09.md",
+      "sourceCommit": "20660be976b9926b8406cf82014dceb6927b2520",
+      "sourceUrl": "https://github.com/JasonStys/cloud-identity-access-lab/tree/20660be976b9926b8406cf82014dceb6927b2520",
+      "reviewUrl": "https://github.com/JasonStys/cloud-identity-access-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/cloud-identity-access-lab/blob/20660be976b9926b8406cf82014dceb6927b2520/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/cloud-identity-access-lab/actions/runs/42701689564"
+          "url": "https://github.com/JasonStys/cloud-identity-access-lab/actions/runs/42784498290"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/cloud-identity-access-lab/actions/runs/42701689455"
+          "url": "https://github.com/JasonStys/cloud-identity-access-lab/actions/runs/42784498002"
         }
       ],
       "limitations": [
@@ -1145,20 +1165,20 @@
     },
     {
       "name": "ai-security-evaluation-lab",
-      "summary": "Replay paired reviewed cases against current broker policy and separate unsafe allowance, benign availability, completion and oracle coverage.",
+      "summary": "Replay paired reviewed cases against current broker policy and separate unsafe allowance, benign availability, completion and oracle coverage. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Avoids conflating unavailable or unreviewed model behavior with a successful safety result.",
-      "sourceCommit": "8eaed87a77b787e95a54451c1529a9a184914d6e",
-      "sourceUrl": "https://github.com/JasonStys/ai-security-evaluation-lab/tree/8eaed87a77b787e95a54451c1529a9a184914d6e",
-      "reviewUrl": "https://github.com/JasonStys/ai-security-evaluation-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/ai-security-evaluation-lab/blob/8eaed87a77b787e95a54451c1529a9a184914d6e/docs/reports/paired-review-2026-11-09.md",
+      "sourceCommit": "6ea1b158bccc68764154282da10a7fb1f13f5ff0",
+      "sourceUrl": "https://github.com/JasonStys/ai-security-evaluation-lab/tree/6ea1b158bccc68764154282da10a7fb1f13f5ff0",
+      "reviewUrl": "https://github.com/JasonStys/ai-security-evaluation-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/ai-security-evaluation-lab/blob/6ea1b158bccc68764154282da10a7fb1f13f5ff0/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/ai-security-evaluation-lab/actions/runs/42711583356"
+          "url": "https://github.com/JasonStys/ai-security-evaluation-lab/actions/runs/42787588004"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/ai-security-evaluation-lab/actions/runs/42711583765"
+          "url": "https://github.com/JasonStys/ai-security-evaluation-lab/actions/runs/42787588003"
         }
       ],
       "limitations": [
@@ -1169,20 +1189,20 @@
     },
     {
       "name": "infrastructure-policy-lab",
-      "summary": "Build resource drift/replacement worklists and semantic-plan-bound reasoned review receipts.",
+      "summary": "Build resource drift/replacement worklists and semantic-plan-bound reasoned review receipts. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Makes proposed infrastructure changes easier to assess without letting review annotations override policy gates.",
-      "sourceCommit": "5db2c9db4fd02cdff61eb4c98ea489ae2d9b48e6",
-      "sourceUrl": "https://github.com/JasonStys/infrastructure-policy-lab/tree/5db2c9db4fd02cdff61eb4c98ea489ae2d9b48e6",
-      "reviewUrl": "https://github.com/JasonStys/infrastructure-policy-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/infrastructure-policy-lab/blob/5db2c9db4fd02cdff61eb4c98ea489ae2d9b48e6/docs/reports/change-review-2026-11-09.md",
+      "sourceCommit": "8d0effdd46f8e3f0e8f555bf9ca10b18389aba2d",
+      "sourceUrl": "https://github.com/JasonStys/infrastructure-policy-lab/tree/8d0effdd46f8e3f0e8f555bf9ca10b18389aba2d",
+      "reviewUrl": "https://github.com/JasonStys/infrastructure-policy-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/infrastructure-policy-lab/blob/8d0effdd46f8e3f0e8f555bf9ca10b18389aba2d/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/infrastructure-policy-lab/actions/runs/42699831352"
+          "url": "https://github.com/JasonStys/infrastructure-policy-lab/actions/runs/42780932025"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/infrastructure-policy-lab/actions/runs/42699831409"
+          "url": "https://github.com/JasonStys/infrastructure-policy-lab/actions/runs/42780932058"
         }
       ],
       "limitations": [
@@ -1193,20 +1213,20 @@
     },
     {
       "name": "disaster-recovery-drill-lab",
-      "summary": "Compare captured recovery candidates by provenance, RPO/RTO and loss; add non-deleting retention review and patch actual restored-container vulnerabilities.",
+      "summary": "Compare captured recovery candidates by provenance, RPO/RTO and loss; add non-deleting retention review and patch actual restored-container vulnerabilities. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Connects recovery selection to measured evidence while keeping untested candidates explicitly unknown.",
-      "sourceCommit": "ceb77d8f0d0aafb647c6873adf94c730d6eca168",
-      "sourceUrl": "https://github.com/JasonStys/disaster-recovery-drill-lab/tree/ceb77d8f0d0aafb647c6873adf94c730d6eca168",
-      "reviewUrl": "https://github.com/JasonStys/disaster-recovery-drill-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/disaster-recovery-drill-lab/blob/ceb77d8f0d0aafb647c6873adf94c730d6eca168/docs/reports/planning-2026-11-09.md",
+      "sourceCommit": "566e43b0aa9c5ab4098a0301b26c4f50750cf5ec",
+      "sourceUrl": "https://github.com/JasonStys/disaster-recovery-drill-lab/tree/566e43b0aa9c5ab4098a0301b26c4f50750cf5ec",
+      "reviewUrl": "https://github.com/JasonStys/disaster-recovery-drill-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/disaster-recovery-drill-lab/blob/566e43b0aa9c5ab4098a0301b26c4f50750cf5ec/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/disaster-recovery-drill-lab/actions/runs/42706535971"
+          "url": "https://github.com/JasonStys/disaster-recovery-drill-lab/actions/runs/42781087022"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/disaster-recovery-drill-lab/actions/runs/42706535987"
+          "url": "https://github.com/JasonStys/disaster-recovery-drill-lab/actions/runs/42781086865"
         }
       ],
       "limitations": [
@@ -1217,20 +1237,20 @@
     },
     {
       "name": "disconnected-release-kit",
-      "summary": "Review authenticated candidate/active installed bytes and SPDX inventory under owned locking with state/trust/policy-bound non-executing receipts.",
+      "summary": "Review authenticated candidate/active installed bytes and SPDX inventory under owned locking with state/trust/policy-bound non-executing receipts. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Supports offline release review without mistaking filenames or transfer completion for authenticity.",
-      "sourceCommit": "fc7251517c832ca6938ebf70b40a8ca13c593edf",
-      "sourceUrl": "https://github.com/JasonStys/disconnected-release-kit/tree/fc7251517c832ca6938ebf70b40a8ca13c593edf",
-      "reviewUrl": "https://github.com/JasonStys/disconnected-release-kit/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/disconnected-release-kit/blob/fc7251517c832ca6938ebf70b40a8ca13c593edf/docs/reports/candidate-review-2026-11-09.md",
+      "sourceCommit": "a141a50942bcaa8fd230890d8c8a07c6fdf668c1",
+      "sourceUrl": "https://github.com/JasonStys/disconnected-release-kit/tree/a141a50942bcaa8fd230890d8c8a07c6fdf668c1",
+      "reviewUrl": "https://github.com/JasonStys/disconnected-release-kit/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/disconnected-release-kit/blob/a141a50942bcaa8fd230890d8c8a07c6fdf668c1/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/disconnected-release-kit/actions/runs/42714319175"
+          "url": "https://github.com/JasonStys/disconnected-release-kit/actions/runs/42790826560"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/disconnected-release-kit/actions/runs/42714318986"
+          "url": "https://github.com/JasonStys/disconnected-release-kit/actions/runs/42790826446"
         }
       ],
       "limitations": [
@@ -1241,20 +1261,20 @@
     },
     {
       "name": "incident-response-evidence-kit",
-      "summary": "Create exact-digest/line analyst bookmarks and minimized handoffs from one verified SQLite evidence snapshot.",
+      "summary": "Create exact-digest/line analyst bookmarks and minimized handoffs from one verified SQLite evidence snapshot. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Lets analysts share necessary findings while retaining chain/checkpoint bindings and excluding raw originals and notes.",
-      "sourceCommit": "dbf51a335ec512ad4f1f1485e434c5207eaf62cf",
-      "sourceUrl": "https://github.com/JasonStys/incident-response-evidence-kit/tree/dbf51a335ec512ad4f1f1485e434c5207eaf62cf",
-      "reviewUrl": "https://github.com/JasonStys/incident-response-evidence-kit/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/incident-response-evidence-kit/blob/dbf51a335ec512ad4f1f1485e434c5207eaf62cf/docs/reports/bookmarks-2026-11-09.md",
+      "sourceCommit": "2dc1d938f48f019831d2cb9161c56c98baa7bac1",
+      "sourceUrl": "https://github.com/JasonStys/incident-response-evidence-kit/tree/2dc1d938f48f019831d2cb9161c56c98baa7bac1",
+      "reviewUrl": "https://github.com/JasonStys/incident-response-evidence-kit/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/incident-response-evidence-kit/blob/2dc1d938f48f019831d2cb9161c56c98baa7bac1/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/incident-response-evidence-kit/actions/runs/42702526878"
+          "url": "https://github.com/JasonStys/incident-response-evidence-kit/actions/runs/42781698573"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/incident-response-evidence-kit/actions/runs/42702526914"
+          "url": "https://github.com/JasonStys/incident-response-evidence-kit/actions/runs/42781698670"
         }
       ],
       "limitations": [
@@ -1265,20 +1285,20 @@
     },
     {
       "name": "secret-rotation-reliability-lab",
-      "summary": "Bind consumer acknowledgements to secret generations and inspect drain/expiry/replay queues; patch the actual OpenBao build and fail closed for its unused incompatible Okta integration.",
+      "summary": "Bind consumer acknowledgements to secret generations and inspect drain/expiry/replay queues; patch the actual OpenBao build and fail closed for its unused incompatible Okta integration. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Makes rotation completion evidence explicit and removes known dependency risks without pretending unsupported authentication still works.",
-      "sourceCommit": "5a604a11555b38a61c4b7379729ac187ba5e86d2",
-      "sourceUrl": "https://github.com/JasonStys/secret-rotation-reliability-lab/tree/5a604a11555b38a61c4b7379729ac187ba5e86d2",
-      "reviewUrl": "https://github.com/JasonStys/secret-rotation-reliability-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/secret-rotation-reliability-lab/blob/5a604a11555b38a61c4b7379729ac187ba5e86d2/docs/reports/handoff-2026-11-09.md",
+      "sourceCommit": "c6a0eead7681d9f9f2abd64bbbbdaf7edaa8d1d9",
+      "sourceUrl": "https://github.com/JasonStys/secret-rotation-reliability-lab/tree/c6a0eead7681d9f9f2abd64bbbbdaf7edaa8d1d9",
+      "reviewUrl": "https://github.com/JasonStys/secret-rotation-reliability-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/secret-rotation-reliability-lab/blob/c6a0eead7681d9f9f2abd64bbbbdaf7edaa8d1d9/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/secret-rotation-reliability-lab/actions/runs/42714306370"
+          "url": "https://github.com/JasonStys/secret-rotation-reliability-lab/actions/runs/42781097853"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/secret-rotation-reliability-lab/actions/runs/42714306442"
+          "url": "https://github.com/JasonStys/secret-rotation-reliability-lab/actions/runs/42781097981"
         }
       ],
       "limitations": [
@@ -1289,20 +1309,20 @@
     },
     {
       "name": "vulnerability-prioritization-console",
-      "summary": "Compare same-clock/source-bound vulnerability evidence and preserve owner queues, deadlines, identity changes and unverified absence.",
+      "summary": "Compare same-clock/source-bound vulnerability evidence and preserve owner queues, deadlines, identity changes and unverified absence. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Supports remediation decisions without turning missing scanner evidence into proof that a vulnerability is fixed.",
-      "sourceCommit": "0e96e97353c99d73432d5cbce1ad8bc77c4603ec",
-      "sourceUrl": "https://github.com/JasonStys/vulnerability-prioritization-console/tree/0e96e97353c99d73432d5cbce1ad8bc77c4603ec",
-      "reviewUrl": "https://github.com/JasonStys/vulnerability-prioritization-console/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/vulnerability-prioritization-console/blob/0e96e97353c99d73432d5cbce1ad8bc77c4603ec/docs/reports/snapshot-review-2026-11-09.md",
+      "sourceCommit": "4b2114d5258bf9de8b8a6ebdec647c7b6b1286a0",
+      "sourceUrl": "https://github.com/JasonStys/vulnerability-prioritization-console/tree/4b2114d5258bf9de8b8a6ebdec647c7b6b1286a0",
+      "reviewUrl": "https://github.com/JasonStys/vulnerability-prioritization-console/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/vulnerability-prioritization-console/blob/4b2114d5258bf9de8b8a6ebdec647c7b6b1286a0/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/vulnerability-prioritization-console/actions/runs/42706517489"
+          "url": "https://github.com/JasonStys/vulnerability-prioritization-console/actions/runs/42790853590"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/vulnerability-prioritization-console/actions/runs/42706517709"
+          "url": "https://github.com/JasonStys/vulnerability-prioritization-console/actions/runs/42790853427"
         }
       ],
       "limitations": [
@@ -1313,20 +1333,20 @@
     },
     {
       "name": "windows-identity-audit-lab",
-      "summary": "Review nested protected-identity exposure, representative paths, source completeness and owner recertification/expiry queues.",
-      "rationale": "Keeps complete exposure separate from newly observed drift and avoids false removal claims from partial snapshots.",
-      "sourceCommit": "b82073c8ae41450b917ec7b3dde9eca40d7d30ea",
-      "sourceUrl": "https://github.com/JasonStys/windows-identity-audit-lab/tree/b82073c8ae41450b917ec7b3dde9eca40d7d30ea",
-      "reviewUrl": "https://github.com/JasonStys/windows-identity-audit-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/windows-identity-audit-lab/blob/b82073c8ae41450b917ec7b3dde9eca40d7d30ea/docs/reports/recertification-2026-11-09.md",
+      "summary": "Review nested protected-identity exposure, representative paths, source completeness and owner recertification/expiry queues. Documentation adds a reviewed Word guide with validation observations. Documentation privacy checks also reject embedded package parts through actual ZIP regressions.",
+      "rationale": "Keeps complete exposure separate from newly observed drift and avoids false removal claims from partial snapshots. This also keeps embedded binary parts from silently bypassing the XML-only documentation inspection boundary.",
+      "sourceCommit": "bb138bdcb5523cad2cf5882279eb534a8e82415d",
+      "sourceUrl": "https://github.com/JasonStys/windows-identity-audit-lab/tree/bb138bdcb5523cad2cf5882279eb534a8e82415d",
+      "reviewUrl": "https://github.com/JasonStys/windows-identity-audit-lab/pull/4",
+      "validationReportUrl": "https://github.com/JasonStys/windows-identity-audit-lab/blob/bb138bdcb5523cad2cf5882279eb534a8e82415d/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/42714809490"
+          "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/42793308694"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/42714809439"
+          "url": "https://github.com/JasonStys/windows-identity-audit-lab/actions/runs/42793308664"
         }
       ],
       "limitations": [
@@ -1337,20 +1357,20 @@
     },
     {
       "name": "network-defense-analysis-lab",
-      "summary": "Filter captured events by exact UTC/protocol/rule/severity with snapshot/query-bound pagination and persistent visibility of capture gaps.",
+      "summary": "Filter captured events by exact UTC/protocol/rule/severity with snapshot/query-bound pagination and persistent visibility of capture gaps. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Makes defensive investigation manageable without presenting filtered or incomplete captures as clean traffic.",
-      "sourceCommit": "6f474420416bd319f2384737c8764adf115c2861",
-      "sourceUrl": "https://github.com/JasonStys/network-defense-analysis-lab/tree/6f474420416bd319f2384737c8764adf115c2861",
-      "reviewUrl": "https://github.com/JasonStys/network-defense-analysis-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/network-defense-analysis-lab/blob/6f474420416bd319f2384737c8764adf115c2861/docs/reports/query-2026-11-09.md",
+      "sourceCommit": "303a9ccc6919a3ed0854b4c39d71f5ded5817933",
+      "sourceUrl": "https://github.com/JasonStys/network-defense-analysis-lab/tree/303a9ccc6919a3ed0854b4c39d71f5ded5817933",
+      "reviewUrl": "https://github.com/JasonStys/network-defense-analysis-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/network-defense-analysis-lab/blob/303a9ccc6919a3ed0854b4c39d71f5ded5817933/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/network-defense-analysis-lab/actions/runs/42710460907"
+          "url": "https://github.com/JasonStys/network-defense-analysis-lab/actions/runs/42782523258"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/network-defense-analysis-lab/actions/runs/42710461021"
+          "url": "https://github.com/JasonStys/network-defense-analysis-lab/actions/runs/42782523309"
         }
       ],
       "limitations": [
@@ -1361,20 +1381,20 @@
     },
     {
       "name": "memory-safety-analysis-lab",
-      "summary": "Deduplicate private corpus inputs and reduce twice-confirmed owned-parser disagreements under shared time/attempt budgets.",
+      "summary": "Deduplicate private corpus inputs and reduce twice-confirmed owned-parser disagreements under shared time/attempt budgets. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Produces reproducible smaller debugging cases while preserving unstable and inconclusive outcomes.",
-      "sourceCommit": "dc68386d9cd6ec62a9ce9d02723f37bb43ad2935",
-      "sourceUrl": "https://github.com/JasonStys/memory-safety-analysis-lab/tree/dc68386d9cd6ec62a9ce9d02723f37bb43ad2935",
-      "reviewUrl": "https://github.com/JasonStys/memory-safety-analysis-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/memory-safety-analysis-lab/blob/dc68386d9cd6ec62a9ce9d02723f37bb43ad2935/docs/reports/corpus-2026-11-09.md",
+      "sourceCommit": "0b24af7591a957afee4ae596a62e974116f99370",
+      "sourceUrl": "https://github.com/JasonStys/memory-safety-analysis-lab/tree/0b24af7591a957afee4ae596a62e974116f99370",
+      "reviewUrl": "https://github.com/JasonStys/memory-safety-analysis-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/memory-safety-analysis-lab/blob/0b24af7591a957afee4ae596a62e974116f99370/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/memory-safety-analysis-lab/actions/runs/42711566151"
+          "url": "https://github.com/JasonStys/memory-safety-analysis-lab/actions/runs/42790841233"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/memory-safety-analysis-lab/actions/runs/42711566499"
+          "url": "https://github.com/JasonStys/memory-safety-analysis-lab/actions/runs/42790841219"
         }
       ],
       "limitations": [
@@ -1385,20 +1405,20 @@
     },
     {
       "name": "unity-tactical-ai-sandbox",
-      "summary": "Inspect hash-validated game replays with timeline scrubbing, terrain/line-of-sight state and independent default-bot diagnostics in bounded offline HTML.",
+      "summary": "Inspect hash-validated game replays with timeline scrubbing, terrain/line-of-sight state and independent default-bot diagnostics in bounded offline HTML. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Makes game behavior review portable while distinguishing recorded hindsight from independent replay decisions.",
-      "sourceCommit": "ea8c250a5112912d67461237788a9657e7eb705d",
-      "sourceUrl": "https://github.com/JasonStys/unity-tactical-ai-sandbox/tree/ea8c250a5112912d67461237788a9657e7eb705d",
-      "reviewUrl": "https://github.com/JasonStys/unity-tactical-ai-sandbox/pull/11",
-      "validationReportUrl": "https://github.com/JasonStys/unity-tactical-ai-sandbox/blob/ea8c250a5112912d67461237788a9657e7eb705d/docs/reports/practical-workflows-20261109.md",
+      "sourceCommit": "cc4c4353e6f8f76d7c52cfff6938b825debdfcf3",
+      "sourceUrl": "https://github.com/JasonStys/unity-tactical-ai-sandbox/tree/cc4c4353e6f8f76d7c52cfff6938b825debdfcf3",
+      "reviewUrl": "https://github.com/JasonStys/unity-tactical-ai-sandbox/pull/12",
+      "validationReportUrl": "https://github.com/JasonStys/unity-tactical-ai-sandbox/blob/cc4c4353e6f8f76d7c52cfff6938b825debdfcf3/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/unity-tactical-ai-sandbox/actions/runs/42719076622"
+          "url": "https://github.com/JasonStys/unity-tactical-ai-sandbox/actions/runs/42783469964"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/unity-tactical-ai-sandbox/actions/runs/42719076793"
+          "url": "https://github.com/JasonStys/unity-tactical-ai-sandbox/actions/runs/42783470102"
         }
       ],
       "limitations": [
@@ -1410,20 +1430,20 @@
     },
     {
       "name": "mqtt-lifecycle-reliability-lab",
-      "summary": "Persist and restore identity-bound bounded recovery outboxes with original times, TTL/capacity losses and publish-failure retention.",
+      "summary": "Persist and restore identity-bound bounded recovery outboxes with original times, TTL/capacity losses and publish-failure retention. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Turns reconnect demonstrations into reproducible cold-recovery workflows with explicit at-least-once limits.",
-      "sourceCommit": "e5c92255e978f36eee169390add6fdff5291fe2f",
-      "sourceUrl": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab/tree/e5c92255e978f36eee169390add6fdff5291fe2f",
-      "reviewUrl": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab/pull/30",
-      "validationReportUrl": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab/blob/e5c92255e978f36eee169390add6fdff5291fe2f/docs/reports/recovery-2026-11-09.md",
+      "sourceCommit": "9394847b1ff7ecf0f0006a54e6908804c6fd5b82",
+      "sourceUrl": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab/tree/9394847b1ff7ecf0f0006a54e6908804c6fd5b82",
+      "reviewUrl": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab/pull/31",
+      "validationReportUrl": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab/blob/9394847b1ff7ecf0f0006a54e6908804c6fd5b82/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab/actions/runs/42720043409"
+          "url": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab/actions/runs/42779602924"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab/actions/runs/42720043365"
+          "url": "https://github.com/JasonStys/mqtt-lifecycle-reliability-lab/actions/runs/42779602970"
         }
       ],
       "limitations": [
@@ -1434,20 +1454,20 @@
     },
     {
       "name": "offline-incident-timeline-pwa",
-      "summary": "Combine exact UTC filters, safe URL state, no-result/export handling and offline restoration; fix owned Lighthouse startup parsing.",
+      "summary": "Combine exact UTC filters, safe URL state, no-result/export handling and offline restoration; fix owned Lighthouse startup parsing. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Supports reliable field investigation and honest validation without adopting another local server.",
-      "sourceCommit": "b14606df53ff13e21473ad8c3357050bbbc40abc",
-      "sourceUrl": "https://github.com/JasonStys/offline-incident-timeline-pwa/tree/b14606df53ff13e21473ad8c3357050bbbc40abc",
-      "reviewUrl": "https://github.com/JasonStys/offline-incident-timeline-pwa/pull/30",
-      "validationReportUrl": "https://github.com/JasonStys/offline-incident-timeline-pwa/blob/b14606df53ff13e21473ad8c3357050bbbc40abc/docs/reports/PRACTICAL_WORKFLOWS_2026-11-09.md",
+      "sourceCommit": "3ca733428b219010efd4aad36e98814408ba3ba0",
+      "sourceUrl": "https://github.com/JasonStys/offline-incident-timeline-pwa/tree/3ca733428b219010efd4aad36e98814408ba3ba0",
+      "reviewUrl": "https://github.com/JasonStys/offline-incident-timeline-pwa/pull/31",
+      "validationReportUrl": "https://github.com/JasonStys/offline-incident-timeline-pwa/blob/3ca733428b219010efd4aad36e98814408ba3ba0/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/offline-incident-timeline-pwa/actions/runs/42704678454"
+          "url": "https://github.com/JasonStys/offline-incident-timeline-pwa/actions/runs/42787990623"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/offline-incident-timeline-pwa/actions/runs/42704678410"
+          "url": "https://github.com/JasonStys/offline-incident-timeline-pwa/actions/runs/42787990974"
         }
       ],
       "limitations": [
@@ -1458,24 +1478,24 @@
     },
     {
       "name": "documentation-quality-gate",
-      "summary": "Review new, persistent, not-reproduced and unexamined debt with exact locations; refresh atomically without losing debt from partial scans or hiding operational errors.",
+      "summary": "Review new, persistent, not-reproduced and unexamined debt with exact locations; refresh atomically without losing debt from partial scans or hiding operational errors. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Makes accepted documentation debt maintainable rather than silently clearing it during repeat baseline refreshes.",
-      "sourceCommit": "0757e5a18da5e0e8baf98a527d4fb6c54c752420",
-      "sourceUrl": "https://github.com/JasonStys/documentation-quality-gate/tree/0757e5a18da5e0e8baf98a527d4fb6c54c752420",
-      "reviewUrl": "https://github.com/JasonStys/documentation-quality-gate/pull/18",
-      "validationReportUrl": "https://github.com/JasonStys/documentation-quality-gate/blob/0757e5a18da5e0e8baf98a527d4fb6c54c752420/docs/reports/practical-workflows-2026-11-09.md",
+      "sourceCommit": "f094066e972ec57318ce2ad6161c66c651f8af3c",
+      "sourceUrl": "https://github.com/JasonStys/documentation-quality-gate/tree/f094066e972ec57318ce2ad6161c66c651f8af3c",
+      "reviewUrl": "https://github.com/JasonStys/documentation-quality-gate/pull/19",
+      "validationReportUrl": "https://github.com/JasonStys/documentation-quality-gate/blob/f094066e972ec57318ce2ad6161c66c651f8af3c/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/documentation-quality-gate/actions/runs/42723193924"
+          "url": "https://github.com/JasonStys/documentation-quality-gate/actions/runs/42781156126"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/documentation-quality-gate/actions/runs/42723193966"
+          "url": "https://github.com/JasonStys/documentation-quality-gate/actions/runs/42781156393"
         },
         {
           "name": "Documentation quality",
-          "url": "https://github.com/JasonStys/documentation-quality-gate/actions/runs/42723193587"
+          "url": "https://github.com/JasonStys/documentation-quality-gate/actions/runs/42781156305"
         }
       ],
       "limitations": [
@@ -1486,16 +1506,20 @@
     },
     {
       "name": "versioned-product-knowledge-portal",
-      "summary": "Add shareable side-by-side edition comparisons with canonical sources, structured warnings, lifecycle/missing counterparts and an allowlisted no-JavaScript-friendly chooser.",
-      "rationale": "Helps readers compare applicable instructions without merging incompatible procedures or assuming an absent warning means safety.",
-      "sourceCommit": "6ce9fb792fa4ff9f97db03a787c9e65d83b94c10",
-      "sourceUrl": "https://github.com/JasonStys/versioned-product-knowledge-portal/tree/6ce9fb792fa4ff9f97db03a787c9e65d83b94c10",
-      "reviewUrl": "https://github.com/JasonStys/versioned-product-knowledge-portal/pull/11",
-      "validationReportUrl": "https://github.com/JasonStys/versioned-product-knowledge-portal/blob/6ce9fb792fa4ff9f97db03a787c9e65d83b94c10/docs/reports/comparison-2026-11-09.md",
+      "summary": "Compare documentation editions side by side with shareable version selections, lifecycle context, missing counterparts and warning review. Add extracted JavaScript/TypeScript and Actions CodeQL analysis alongside reproducible documentation, search and dependency gates. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook.",
+      "rationale": "Helps reviewers understand product-document changes and retained warnings, with source-bound comparisons and inspectable security analysis rather than a workflow badge alone.",
+      "sourceCommit": "e1a025a636874cc954870a74116402dbe60db519",
+      "sourceUrl": "https://github.com/JasonStys/versioned-product-knowledge-portal/tree/e1a025a636874cc954870a74116402dbe60db519",
+      "reviewUrl": "https://github.com/JasonStys/versioned-product-knowledge-portal/pull/13",
+      "validationReportUrl": "https://github.com/JasonStys/versioned-product-knowledge-portal/blob/e1a025a636874cc954870a74116402dbe60db519/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/versioned-product-knowledge-portal/actions/runs/42721473975"
+          "url": "https://github.com/JasonStys/versioned-product-knowledge-portal/actions/runs/42781392917"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/versioned-product-knowledge-portal/actions/runs/42781392738"
         }
       ],
       "limitations": [
@@ -1506,16 +1530,20 @@
     },
     {
       "name": "engineering-documentation-foundry",
-      "summary": "Compare canonical corpus revisions by stable identity, highlighting source-cited content and safety-warning changes in HTML/JSON.",
-      "rationale": "Gives publication reviewers a precise change review before shipping revised documentation.",
-      "sourceCommit": "e615450f16f742f5dfe73a21cfabb4976495d46b",
-      "sourceUrl": "https://github.com/JasonStys/engineering-documentation-foundry/tree/e615450f16f742f5dfe73a21cfabb4976495d46b",
-      "reviewUrl": "https://github.com/JasonStys/engineering-documentation-foundry/pull/11",
-      "validationReportUrl": "https://github.com/JasonStys/engineering-documentation-foundry/blob/e615450f16f742f5dfe73a21cfabb4976495d46b/docs/reports/practical-workflows-2026-11-09.md",
+      "summary": "Compare stable-identity canonical engineering corpora with source-cited safety-warning changes. Build consistent documentation with schemas and quality gates; add Python/Actions CodeQL and immutable nested-action reference validation against malformed-reference fixtures. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook.",
+      "rationale": "Preserves critical document context across revisions and reproducible builds while exposing precise comparison evidence and narrow supply-chain reference rules.",
+      "sourceCommit": "e1b3a61fd6240e2100c8b16f654aa454515a00af",
+      "sourceUrl": "https://github.com/JasonStys/engineering-documentation-foundry/tree/e1b3a61fd6240e2100c8b16f654aa454515a00af",
+      "reviewUrl": "https://github.com/JasonStys/engineering-documentation-foundry/pull/13",
+      "validationReportUrl": "https://github.com/JasonStys/engineering-documentation-foundry/blob/e1b3a61fd6240e2100c8b16f654aa454515a00af/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/engineering-documentation-foundry/actions/runs/42711599871"
+          "url": "https://github.com/JasonStys/engineering-documentation-foundry/actions/runs/42784823569"
+        },
+        {
+          "name": "CodeQL",
+          "url": "https://github.com/JasonStys/engineering-documentation-foundry/actions/runs/42784823613"
         }
       ],
       "limitations": [
@@ -1526,20 +1554,20 @@
     },
     {
       "name": "node-red-resilient-metadata",
-      "summary": "Install bounded, credential-aware Node-RED metadata nodes. Final TGZ tests now use a real separate Node-RED runtime and HTTP provider to verify success, routing, retry, cooldown and cancellation; compatible tooling fixes and full-graph auditing address the exposed dependency findings.",
+      "summary": "Install bounded, credential-aware Node-RED metadata nodes. Final TGZ tests now use a real separate Node-RED runtime and HTTP provider to verify success, routing, retry, cooldown and cancellation; compatible tooling fixes and full-graph auditing address the exposed dependency findings. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Tests the distributed package at its actual message and network boundary and closes the security gap left by a partial dependency audit.",
-      "sourceCommit": "db08d20afb9088310b76d090c5c12e8964f4676d",
-      "sourceUrl": "https://github.com/JasonStys/node-red-resilient-metadata/tree/db08d20afb9088310b76d090c5c12e8964f4676d",
-      "reviewUrl": "https://github.com/JasonStys/node-red-resilient-metadata/pull/25",
-      "validationReportUrl": "https://github.com/JasonStys/node-red-resilient-metadata/blob/db08d20afb9088310b76d090c5c12e8964f4676d/docs/reports/installed-consumer-2026-11-09.md",
+      "sourceCommit": "bb4007f3ee0a9e0aa00178e0580f67d55c41017f",
+      "sourceUrl": "https://github.com/JasonStys/node-red-resilient-metadata/tree/bb4007f3ee0a9e0aa00178e0580f67d55c41017f",
+      "reviewUrl": "https://github.com/JasonStys/node-red-resilient-metadata/pull/26",
+      "validationReportUrl": "https://github.com/JasonStys/node-red-resilient-metadata/blob/bb4007f3ee0a9e0aa00178e0580f67d55c41017f/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "CI",
-          "url": "https://github.com/JasonStys/node-red-resilient-metadata/actions/runs/42749651255"
+          "url": "https://github.com/JasonStys/node-red-resilient-metadata/actions/runs/42783481662"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/node-red-resilient-metadata/actions/runs/42749651088"
+          "url": "https://github.com/JasonStys/node-red-resilient-metadata/actions/runs/42783481648"
         }
       ],
       "limitations": [
@@ -1550,20 +1578,20 @@
     },
     {
       "name": "host-hardening-assurance-lab",
-      "summary": "Review expected host inventory, unknown missing evidence, policy/platform counts and owner refresh/deviation queues.",
+      "summary": "Review expected host inventory, unknown missing evidence, policy/platform counts and owner refresh/deviation queues. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Prevents absent hosts or stale observations from inflating assurance results.",
-      "sourceCommit": "53068a5cdc70f733211910afd199bb1fd4fac85e",
-      "sourceUrl": "https://github.com/JasonStys/host-hardening-assurance-lab/tree/53068a5cdc70f733211910afd199bb1fd4fac85e",
-      "reviewUrl": "https://github.com/JasonStys/host-hardening-assurance-lab/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/host-hardening-assurance-lab/blob/53068a5cdc70f733211910afd199bb1fd4fac85e/docs/reports/fleet-2026-11-09.md",
+      "sourceCommit": "385197171bae0f9c985352021fffd4589948ce76",
+      "sourceUrl": "https://github.com/JasonStys/host-hardening-assurance-lab/tree/385197171bae0f9c985352021fffd4589948ce76",
+      "reviewUrl": "https://github.com/JasonStys/host-hardening-assurance-lab/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/host-hardening-assurance-lab/blob/385197171bae0f9c985352021fffd4589948ce76/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/host-hardening-assurance-lab/actions/runs/42697099400"
+          "url": "https://github.com/JasonStys/host-hardening-assurance-lab/actions/runs/42782054682"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/host-hardening-assurance-lab/actions/runs/42697099410"
+          "url": "https://github.com/JasonStys/host-hardening-assurance-lab/actions/runs/42782054771"
         }
       ],
       "limitations": [
@@ -1574,20 +1602,20 @@
     },
     {
       "name": "rmf-evidence-workbench",
-      "summary": "Build owner monitoring calendars and exact component-scoped freshness, integrity, risk and milestone work queues.",
+      "summary": "Build owner monitoring calendars and exact component-scoped freshness, integrity, risk and milestone work queues. Documentation adds a reviewed Word guide with validation observations.",
       "rationale": "Helps maintain evidence continuously without claiming that a dashboard grants authorization.",
-      "sourceCommit": "07b1b4973921b831d6eba4a9c7e375d8977863f4",
-      "sourceUrl": "https://github.com/JasonStys/rmf-evidence-workbench/tree/07b1b4973921b831d6eba4a9c7e375d8977863f4",
-      "reviewUrl": "https://github.com/JasonStys/rmf-evidence-workbench/pull/2",
-      "validationReportUrl": "https://github.com/JasonStys/rmf-evidence-workbench/blob/07b1b4973921b831d6eba4a9c7e375d8977863f4/docs/reports/calendar-2026-11-09.md",
+      "sourceCommit": "88d56a07adb9e246a49455eaa1bc9337face9953",
+      "sourceUrl": "https://github.com/JasonStys/rmf-evidence-workbench/tree/88d56a07adb9e246a49455eaa1bc9337face9953",
+      "reviewUrl": "https://github.com/JasonStys/rmf-evidence-workbench/pull/3",
+      "validationReportUrl": "https://github.com/JasonStys/rmf-evidence-workbench/blob/88d56a07adb9e246a49455eaa1bc9337face9953/docs/reports/documentation-refresh-2026-11-09.md",
       "workflows": [
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/rmf-evidence-workbench/actions/runs/42709733900"
+          "url": "https://github.com/JasonStys/rmf-evidence-workbench/actions/runs/42790336852"
         },
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/rmf-evidence-workbench/actions/runs/42709733879"
+          "url": "https://github.com/JasonStys/rmf-evidence-workbench/actions/runs/42790336895"
         }
       ],
       "limitations": [

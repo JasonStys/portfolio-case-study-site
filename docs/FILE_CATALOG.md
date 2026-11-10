@@ -41,6 +41,7 @@
 | `docs/reports/practical-workflows-2026-11-09.md`                  | Project documentation described by its title and sections.                                                   |
 | `docs/reports/project-guide.docx`                                 | Individually reviewed Word edition of the cited public source and dated workflow scope.                      |
 | `docs/reports/publications.json`                                  | Exact Office bytes, source/workflow identities and page-review receipts.                                     |
+| `docs/reports/security-documentation-2026-11-10.md`               | Project documentation described by its title and sections.                                                   |
 | `docs/reports/SITE_QUALITY.md`                                    | Project documentation described by its title and sections.                                                   |
 | `docs/reports/TEST_SUMMARY.md`                                    | Project documentation described by its title and sections.                                                   |
 | `docs/RESEARCH.md`                                                | Project documentation described by its title and sections.                                                   |
@@ -70,6 +71,7 @@
 | `src/components/BaseLayout.astro`                                 | Provides shared metadata, structured data, global styles, header, main, and footer.                          |
 | `src/components/MetricRail.astro`                                 | Summarizes portfolio breadth with count-based evidence derived from the catalog.                             |
 | `src/components/ProjectCard.astro`                                | Presents one searchable project with outcome, evidence tags, and destination links.                          |
+| `src/components/PublicationDownloads.astro`                       | Presents reviewed, commit-bound Office downloads and their public integrity metadata.                        |
 | `src/components/SiteFooter.astro`                                 | Renders contact paths, provenance, and the current copyright year.                                           |
 | `src/components/SiteHeader.astro`                                 | Renders the skip link, portfolio identity, and primary navigation.                                           |
 | `src/content/case-studies/accessible-design-system-lab.md`        | Project documentation described by its title and sections.                                                   |
@@ -93,12 +95,14 @@
 | `src/data/portfolio-priority.json`                                | Canonical reviewed ordering of all 67 public portfolio repositories.                                         |
 | `src/data/project-curation.ts`                                    | Curates reviewed roles, domains, outcomes, maturity, and six featured cases.                                 |
 | `src/data/project-downloads.json`                                 | Repository support file.                                                                                     |
+| `src/data/project-publications.json`                              | Public, immutable Office file identities and documented source revisions for all 67 reviewed projects.       |
 | `src/data/project-upgrades.json`                                  | Repository support file.                                                                                     |
 | `src/data/space-systems.ts`                                       | Jason Stys's reviewed civilian space/energy portfolio collection and highlight rationale.                    |
 | `src/lib/catalog-revision.ts`                                     | Derives build-only search cache identities from the complete reviewed catalog and metadata timestamp.        |
 | `src/lib/catalog.ts`                                              | Validates cached GitHub metadata, merges curation, and derives deterministic facets.                         |
 | `src/lib/download-catalog.ts`                                     | Loads only the coordinator's final public download index after all release checks pass.                      |
 | `src/lib/downloads.ts`                                            | Validates a source-bound public index of the 20 projects with existing downloadable releases.                |
+| `src/lib/publications.ts`                                         | Validates the public, commit-bound documentation catalog for the 67 reviewed projects.                       |
 | `src/lib/search.ts`                                               | Builds and queries a deterministic inverted index for project text and exact facets.                         |
 | `src/lib/types.ts`                                                | Defines the validated repository, curation, search, and evidence domain types.                               |
 | `src/lib/upgrades.ts`                                             | Validates public source-bound upgrade evidence against the exact reviewed domain catalog.                    |
@@ -107,6 +111,7 @@
 | `src/pages/404.astro`                                             | Provides a useful static not-found page for GitHub Pages fallback routing.                                   |
 | `src/pages/about.astro`                                           | Presents the portfolio owner's engineering focus, working principles, and role alignment.                    |
 | `src/pages/case-studies/[slug].astro`                             | Pre-renders each schema-validated case study with repository and evidence context.                           |
+| `src/pages/documentation/index.astro`                             | Provides a static reading path to reviewed Word guides, Excel evidence and security reviews.                 |
 | `src/pages/downloads/index.astro`                                 | Presents the 20 existing downloadable releases with explicit package, runtime and proof boundaries.          |
 | `src/pages/downloads/index.json.ts`                               | Emits the complete public download evidence without repeating large digests in HTML.                         |
 | `src/pages/drone-systems.astro`                                   | Jason Stys's drone-safety collection with evidence-led highlights and explicit limits.                       |
@@ -127,6 +132,7 @@
 | `tests/unit/catalog.test.ts`                                      | Verifies cache validation, deterministic catalog merging, featured order, and facets.                        |
 | `tests/unit/downloads.test.ts`                                    | Checks the independent20-project62-payload download fixture and hostile public metadata boundaries.          |
 | `tests/unit/lighthouse.test.ts`                                   | Exercises complete bounded Lighthouse diagnostic capture and unchanged strict sampling gates.                |
+| `tests/unit/publications.test.ts`                                 | Tests complete publication scope, immutable file identities and hostile metadata rejection.                  |
 | `tests/unit/search.test.ts`                                       | Verifies Unicode tokenization, deterministic postings, intersections, facets, and empty results.             |
 | `tests/unit/upgrades.test.ts`                                     | Tests exact catalog coverage, immutable source identity and public-only evidence schema.                     |
 | `tests/unit/utilities.test.ts`                                    | Verifies repository-base URL construction and XML escaping boundaries.                                       |

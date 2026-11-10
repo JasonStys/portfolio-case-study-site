@@ -40,6 +40,15 @@ import { withBase } from "@/lib/url";
       existing downloadable projects.
     </p>
   </header>
+  <section class="section-shell section-block" aria-labelledby="reviewed-documentation-title">
+    <h2 id="reviewed-documentation-title">Reviewed documentation and expanded security analysis</h2>
+    <p>
+      The <a href={withBase("documentation/")}>documentation collection</a> adds Word guides to all
+      67 projects, separate validation reports and Excel evidence for 24 larger projects, and seven
+      additional CodeQL configurations. Each project’s documentation links identify the exact files
+      and source scope.
+    </p>
+  </section>
   <section class="section-shell section-block" aria-label="Projects in portfolio order">
     <ol class="upgrade-list" data-upgrade-list>
       {projects.map((project) => (

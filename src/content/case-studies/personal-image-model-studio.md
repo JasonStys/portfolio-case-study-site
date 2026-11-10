@@ -52,6 +52,24 @@ Existing reference evidence records a model trained for 6,000 CPU optimizer upda
 
 Published downloads: [new 0.3.0 CPU application and checksums](https://github.com/JasonStys/personal-image-model-studio/releases/tag/v0.3.0). Older 0.2.0 assets and notes remain unchanged.
 
+## Subsequent security review
+
+The full-main scan exposed a metadata-index CLI read race, corrected by reading
+once and treating only an actual missing-file error as a rebuild condition.
+Real CLI regressions cover a disappearing output, access denial and I/O failure.
+Valid-schema private API tests additionally verify account confinement and reject
+foreign paths, sibling-prefix lookalikes, traversal and another account's records
+before dataset/model readers are reached.
+
+The [full finding review](https://github.com/JasonStys/personal-image-model-studio/blob/4b2e14404bb9f57c038f63c21b952bf8c4f7b6af/docs/reports/codeql-main-triage-2026-11-09.md)
+records the actual source/sink flows and all original locations. The genuine CLI
+alert closed as fixed. Twenty-nine raw Python path-flow results retain individual
+false-positive dispositions against the documented trusted-operator and private
+account boundaries; zero open alerts does not mean zero raw results. The corrected
+local core/privacy lane passed 130 tests at 62.50% statement coverage, explicitly
+excluding heavy ML execution from that local observation. Hosted ML/native checks
+remain separate evidence, and the existing 0.3.0 download bytes remain unchanged.
+
 ## Limitations
 
 Grayscale similarity can collide on flat fields or colors and miss crops/semantic changes. Candidates are not proof of duplication/leakage, a semantic quality score, an AI-origin detector or legal rights verification. Only the displayed bounded sample receives integrity/similarity checks; no-candidate results do not certify an entire corpus. Origin/license metadata remains an operator declaration.

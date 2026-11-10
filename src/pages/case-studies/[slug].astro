@@ -6,6 +6,7 @@
  * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
  */
 import BaseLayout from "@/components/BaseLayout.astro";
+import PublicationDownloads from "@/components/PublicationDownloads.astro";
 import { projects } from "@/lib/catalog";
 import { absoluteUrl, withBase } from "@/lib/url";
 import { getCollection, render, type CollectionEntry } from "astro:content";
@@ -125,6 +126,7 @@ const schema = {
         <Content />
       </div>
     </div>
+    <PublicationDownloads name={project.name} />
     <footer class="case-footer">
       <div>
         <p class="eyebrow">Next step</p>

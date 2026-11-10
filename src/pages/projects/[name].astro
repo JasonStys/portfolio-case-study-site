@@ -6,6 +6,7 @@
  * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
  */
 import BaseLayout from "@/components/BaseLayout.astro";
+import PublicationDownloads from "@/components/PublicationDownloads.astro";
 import { projects } from "@/lib/catalog";
 import { DOWNLOAD_NAMES } from "@/lib/downloads";
 import { projectUpgrade, upgradeManifest } from "@/lib/upgrades";
@@ -160,6 +161,7 @@ const observedAt = new Date(upgradeManifest.collectedAt).toISOString();
         </section>
       )}
     </div>
+    <PublicationDownloads name={project.name} />
     <nav class="project-detail__neighbors" aria-label="Browse projects in portfolio order">
       {previous && <a href={withBase(`projects/${previous.name}/`)}>← Previous: {previous.name}</a>}
       {next && <a href={withBase(`projects/${next.name}/`)}>Next: {next.name} →</a>}

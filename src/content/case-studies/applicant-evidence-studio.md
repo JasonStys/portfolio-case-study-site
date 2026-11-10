@@ -36,13 +36,30 @@ Independent rubric calculations and concurrent SQLite fixtures retain the source
 
 ## Measured result
 
-The current source passed **129 Python tests at 88.70% combined statement/branch coverage**, retaining the original floor. Three independent compiled-domain oracles and the existing 36 legacy / 28 private-account browser journeys remain required. Fifty new metadata/archive/release cases reject altered public bytes, unsafe extraction, incomplete workflow identities and invalid draft publication.
+The earlier comparison/portable-acceptance source passed **129 Python tests at 88.70% combined statement/branch coverage**, retaining the original floor. Three independent compiled-domain oracles and the existing 36 legacy / 28 private-account browser journeys remain required. Fifty new metadata/archive/release cases reject altered public bytes, unsafe extraction, incomplete workflow identities and invalid draft publication.
 
 The actual published Windows 0.3.0 UI journey took 9.148 seconds before teardown under its recorded local conditions. Exact record hashes, Python assessment parity, ciphertext-only writes, unchanged capture revision, lock/reopen and a separate unauthenticated context passed, with zero outside requests and zero automated axe findings in the tested comparison card. This observation is not a general performance or accessibility guarantee.
 
 Accepted source: [`f10b42ce29d665c89556b83ce9b36094bba672a1`](https://github.com/JasonStys/applicant-evidence-studio/tree/f10b42ce29d665c89556b83ce9b36094bba672a1). The [validation report](https://github.com/JasonStys/applicant-evidence-studio/blob/f10b42ce29d665c89556b83ce9b36094bba672a1/docs/reports/portable-acceptance-2026-11-09.md) records executed scope and conditions. Exact-source main checks passed: [Published portable acceptance](https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42749422809), [Validate](https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42749422853).
 
 [Version 0.3.0 downloads](https://github.com/JasonStys/applicant-evidence-studio/releases/tag/v0.3.0) contain application source [`71d51b1fcd228f89d3ff81ee166bee2ce37d7a60`](https://github.com/JasonStys/applicant-evidence-studio/tree/71d51b1fcd228f89d3ff81ee166bee2ce37d7a60). The [release workflow](https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42728346654) passed its documented native gates. See the [download index](/portfolio-case-study-site/downloads/) for actual platforms, file types, full checksums and runtime requirements. The application release remains at its original source `71d51b1fcd228f89d3ff81ee166bee2ce37d7a60`. The newer [three-OS published-byte acceptance](https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42749422809) uses separately identified [verifier source](https://github.com/JasonStys/applicant-evidence-studio/tree/f10b42ce29d665c89556b83ce9b36094bba672a1); no public application assets were replaced.
+
+## Subsequent security review
+
+Full-main CodeQL found a genuine development-indexer read race and two findings
+requiring trust-boundary review. The indexer now reads one bounded descriptor,
+with real replacement, growth, partial-read, UTF-8 and error fixtures. Dedicated
+Worker messaging was checked in actual browsers; fixed-authority GitHub requests
+were exercised through the real HTTPX URL parser with hostile URL and redirect cases.
+The revised local gate passed 158 Python tests at 88.70% combined coverage, alongside
+the separate browser, native and published-byte acceptance lanes.
+
+The [finding review](https://github.com/JasonStys/applicant-evidence-studio/blob/f75bee5572afe65baebe26c00d0e86e2983d1527/docs/reports/codeql-findings-2026-11-10.md)
+retains the actual initial flows, corrective tests and individual false-positive
+dispositions. The genuine alert closed as fixed; two raw results remain documented
+with zero open default-branch alerts. This is a reviewed source-security update,
+not a replacement of the existing 0.3.0 application bytes or a fairness certificate.
+The documentation downloads below identify their own source and validation scope.
 
 ## Limitations
 

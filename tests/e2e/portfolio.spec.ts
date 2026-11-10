@@ -7,8 +7,54 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 import portfolioPriority from "../../src/data/portfolio-priority.json" with { type: "json" };
+import publicationSnapshot from "../../src/data/project-publications.json" with { type: "json" };
 import { spaceHighlightNames, spaceSystemsCuration } from "../../src/data/space-systems";
 import { droneSystemsCuration } from "../../src/data/drone-systems";
+
+test("documentation reading path preserves all projects and exposes reviewed files on mobile", async ({ page }) => {
+  await page.goto("./");
+  await page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "Documentation", exact: true }).click();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Project guides and validation evidence.");
+  await expect(page.locator("[data-documentation-project]")).toHaveCount(67);
+  expect(await page.locator("[data-documentation-project]").evaluateAll((entries) => entries.map((entry) => entry.getAttribute("data-documentation-project")))).toEqual(portfolioPriority);
+  await expect(page.getByText(/91 Word documents and 24 workbooks/)).toBeVisible();
+  await expect(page.getByText(/Zero open alerts is different from zero raw findings/)).toBeVisible();
+  await page.locator('[data-documentation-project="code-flow-studio"]').getByRole("link").click();
+  const section = page.locator('[data-project-publications="code-flow-studio"]');
+  await expect(section.getByRole("heading", { name: "Guides, reports and evidence files" })).toBeVisible();
+  await expect(section.getByRole("link", { name: "Project guide — Word", exact: true })).toBeVisible();
+  await expect(section.getByRole("link", { name: "Validation review — Word", exact: true })).toBeVisible();
+  await expect(section.getByRole("link", { name: "Workflow and test-source evidence — Excel", exact: true })).toBeVisible();
+  await expect(section).toContainText("not publisher signatures");
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(await page.locator("body").evaluate((body) => body.scrollWidth)).toBeLessThanOrEqual(390);
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+});
+
+test("Word-only and full evidence editions remain usable without client JavaScript", async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, baseURL: String(test.info().project.use.baseURL) });
+  try {
+    const page = await context.newPage();
+    for (const name of ["code-flow-studio", "engineering-documentation-foundry", "portfolio-case-study-site"]) {
+      const publication = publicationSnapshot.repositories.find((entry) => entry.name === name);
+      if (!publication) throw new Error("Required independent documentation archetype is missing.");
+      const response = await page.goto(`./projects/${name}/`);
+      expect(response?.ok()).toBe(true);
+      const section = page.locator(`[data-project-publications="${name}"]`);
+      await expect(section.locator("li")).toHaveCount(name === "portfolio-case-study-site" ? 1 : 3);
+      for (const file of publication.documents) {
+        await expect(section.locator(`a[href="https://github.com/JasonStys/${name}/raw/${publication.publishedCommit}/docs/reports/${file.filename}"]`)).toHaveCount(1);
+        await expect(section).toContainText(file.sha256);
+      }
+      await expect(section).toContainText(publication.sourceBaseline);
+    }
+    await page.goto("./case-studies/code-flow-studio/");
+    await expect(page.locator('[data-project-publications="code-flow-studio"]')).toBeVisible();
+  } finally {
+    await context.close();
+  }
+});
 
 test("guides a recruiter from overview to implementation evidence", async ({ page }) => {
   await page.goto("./");

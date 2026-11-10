@@ -41,6 +41,10 @@ const STATIC_DESCRIPTIONS = new Map([
     "src/data/portfolio-priority.json",
     "Canonical reviewed ordering of all 67 public portfolio repositories.",
   ],
+  [
+    "src/data/project-publications.json",
+    "Public, immutable Office file identities and documented source revisions for all 67 reviewed projects.",
+  ],
   [".editorconfig", "Editor-neutral whitespace, encoding, and newline policy."],
   [".gitattributes", "Cross-platform line-ending and binary-file policy."],
   [".gitignore", "Generated dependency, build, coverage, browser, and runtime exclusions."],

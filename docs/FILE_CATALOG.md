@@ -33,6 +33,7 @@
 | `docs/reports/documentation-refresh-2026-11-09.md`                | Completed documentation validation and explicit historical-evidence boundaries.                              |
 | `docs/reports/download-refresh-2026-11-09.md`                     | Project documentation described by its title and sections.                                                   |
 | `docs/reports/generated/search-benchmark.json`                    | Repository support file.                                                                                     |
+| `docs/reports/lighthouse-variance-2026-11-10.md`                  | Project documentation described by its title and sections.                                                   |
 | `docs/reports/PERFORMANCE.md`                                     | Project documentation described by its title and sections.                                                   |
 | `docs/reports/portfolio-sync-2026-10-14.md`                       | Project documentation described by its title and sections.                                                   |
 | `docs/reports/portfolio-sync-2026-10-21.md`                       | Project documentation described by its title and sections.                                                   |
@@ -125,6 +126,7 @@
 | `tests/e2e/upgrades.spec.ts`                                      | Exercises static upgrade discovery, exact-source links, no-JavaScript browsing and hub limits.               |
 | `tests/unit/catalog.test.ts`                                      | Verifies cache validation, deterministic catalog merging, featured order, and facets.                        |
 | `tests/unit/downloads.test.ts`                                    | Checks the independent20-project62-payload download fixture and hostile public metadata boundaries.          |
+| `tests/unit/lighthouse.test.ts`                                   | Exercises complete bounded Lighthouse diagnostic capture and unchanged strict sampling gates.                |
 | `tests/unit/search.test.ts`                                       | Verifies Unicode tokenization, deterministic postings, intersections, facets, and empty results.             |
 | `tests/unit/upgrades.test.ts`                                     | Tests exact catalog coverage, immutable source identity and public-only evidence schema.                     |
 | `tests/unit/utilities.test.ts`                                    | Verifies repository-base URL construction and XML escaping boundaries.                                       |

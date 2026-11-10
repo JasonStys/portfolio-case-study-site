@@ -103,7 +103,7 @@ test("guides a recruiter from overview to implementation evidence", async ({ pag
     .first()
     .click();
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "From a located finding to a verified source revision",
+    "Measured C# coverage without losing target exits",
   );
   await expect(page.getByRole("heading", { name: "Verification" })).toBeVisible();
   await expect(page.getByRole("link", { name: /Inspect repository/ })).toHaveAttribute(
@@ -112,7 +112,7 @@ test("guides a recruiter from overview to implementation evidence", async ({ pag
   );
 });
 
-test("highlights Code Flow native evidence with verified results and measurement limits", async ({
+test("distinguishes Code Flow target exits, collector faults and current downloads from historical evidence", async ({
   page,
 }) => {
   await page.goto("./");
@@ -121,27 +121,66 @@ test("highlights Code Flow native evidence with verified results and measurement
   await expect(featured).toContainText("unused-code candidates");
   await page.goto("./projects/");
   await expect(page.locator("[data-project-filter]")).toHaveAttribute("data-enhanced", "true");
-  await page.getByLabel("Keywords").fill("matching drafts");
-  await expect(page).toHaveURL(/q=matching\+drafts(?:&|$)/u);
-  await expect(page.locator('[data-project-id="code-flow-studio"]')).toBeVisible();
-  await expect(page.locator("[data-project-card]:not([hidden])")).toHaveCount(1);
-  await page.getByLabel("Keywords").fill("coverage unused");
-  await expect(page).toHaveURL(/q=coverage\+unused(?:&|$)/u);
+  for (const query of ["C# coverage", "Coverlet", "collector"]) {
+    await page.getByLabel("Keywords").fill(query);
+    await expect(page).toHaveURL(
+      new RegExp(`[?&]q=${encodeURIComponent(query).replaceAll("%20", "\\+")}(?:&|$)`, "u"),
+    );
+    await expect(page.locator('[data-project-id="code-flow-studio"]')).toBeVisible();
+  }
+  await page.getByLabel("Keywords").fill("C# collector");
+  await expect(page).toHaveURL(/q=C%23\+collector(?:&|$)/u);
   const result = page.locator('[data-project-id="code-flow-studio"]');
   await expect(result).toBeVisible();
+  await expect(page.locator("[data-project-card]:not([hidden])")).toHaveCount(1);
   await result.getByRole("link", { name: /Read case study/ }).click();
-  await expect(page.locator(".case-summary")).toContainText("0.4.2");
-  for (const text of [
-    "48 three-engine web checks",
-    "18 private account journeys",
-    "Actual packaged Windows journey",
-  ])
-    await expect(
-      page
-        .getByRole("complementary", { name: "Evidence at a glance" })
-        .getByRole("listitem")
-        .filter({ hasText: text }),
-    ).toHaveText(`✓ ${text}`);
+  await expect(page.locator(".case-summary")).toContainText("0.4.3");
+  const coverage = page.getByRole("heading", {
+    name: "C# coverage: measured approved nonzero exits",
+    exact: true,
+  });
+  await expect(coverage).toBeVisible();
+  await expect(page.locator(".prose").getByText("target_exit_code", { exact: true })).toBeVisible();
+  await expect(
+    page.locator(".prose").getByText("collector_exit_code", { exact: true }),
+  ).toBeVisible();
+  const exits = coverage.locator("xpath=following-sibling::table[1]");
+  await expect(exits.getByRole("columnheader")).toHaveText([
+    "Hosted case",
+    "Actual target exit",
+    "Collector exit",
+    "Coverage",
+  ]);
+  // Independent published oracles: approved nonzero target exits are not collector failures.
+  for (const cells of [
+    ["Approved success", "0", "0", "measured"],
+    ["Approved nonzero returns", "1, 2, 7, 255", "0 for each case", "measured"],
+    ["Approved malformed input", "2", "0", "measured"],
+    ["Target returns 7 when 2 was approved", "7", "0", "partial; case fails"],
+    ["Collector rejects an invalid option", "No valid target observation", "0", "blocked"],
+    ["Collector cannot write its report after target completion", "0", "101", "blocked"],
+    ["Collector deadline expires", "No valid target observation", "-9 / timeout", "blocked"],
+  ]) {
+    const label = cells[0];
+    if (label === undefined) throw new Error("Every independent exit oracle needs a named case.");
+    const row = exits
+      .getByRole("row")
+      .filter({ has: page.getByRole("cell", { name: label, exact: true }) });
+    await expect(row.getByRole("cell")).toHaveText(cells);
+  }
+  const release = page.getByRole("heading", { name: "0.4.3 validation and release", exact: true });
+  await expect(release).toBeVisible();
+  const measurements = release.locator("xpath=following-sibling::ul[1]");
+  await expect(measurements).toContainText("419 tests and 28 subtests");
+  await expect(measurements).toContainText("85.01% controller/training coverage");
+  await expect(measurements).toContainText("not worker-source coverage");
+  await expect(measurements).toContainText(/0\.4\.2.*historical C# partial state/u);
+  await expect(
+    page.getByRole("heading", { name: "Earlier 0.4.2 native reliability" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Earlier native reliability measurements" }),
+  ).toBeVisible();
   await expect(page.getByText("155 local controller tests", { exact: true })).toBeVisible();
   await expect(page.getByText("265 Python tests and 28 subtests", { exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Earlier 0.4.0 measurements" })).toBeVisible();
@@ -158,7 +197,12 @@ test("highlights Code Flow native evidence with verified results and measurement
     "source validation report":
       "blob/08e4194707fb0ab20b469e335ef9e081a34200d3/docs/reports/practical-workflows-2026-11-09.md",
     "real isolated-worker acceptance": "actions/runs/42726748363/job/129534214045",
+    "0.4.3 downloads and checksums": "releases/tag/v0.4.3",
     "0.4.2 downloads and checksums": "releases/tag/v0.4.2",
+    "C# coverage protocol": "blob/1d0b19ed589947ae45e93555d97331c95cad26cc/docs/csharp-coverage.md",
+    "coverage fix checkpoint":
+      "blob/1d0b19ed589947ae45e93555d97331c95cad26cc/docs/reports/csharp-coverage-2026-11-10.md",
+    "full source validation": "actions/runs/42891062261",
     "native drain investigation and validation":
       "blob/7d2158a57bb49e8f837fffbfe23b301902465412/docs/reports/native-http-drain-2026-11-10.md",
   };
@@ -168,8 +212,35 @@ test("highlights Code Flow native evidence with verified results and measurement
       `https://github.com/JasonStys/code-flow-studio/${suffix}`,
     );
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
-  await page.setViewportSize({ width: 390, height: 844 });
-  expect(await page.locator("body").evaluate((body) => body.scrollWidth)).toBeLessThanOrEqual(390);
+  for (const width of [390, 320]) {
+    await page.setViewportSize({ width, height: 844 });
+    expect(await page.locator("body").evaluate((body) => body.scrollWidth)).toBeLessThanOrEqual(
+      width,
+    );
+  }
+  await page.goto("./downloads/");
+  const downloads = page.locator('[data-download-project="code-flow-studio"]');
+  await expect(downloads.getByRole("heading")).toContainText("v0.4.3");
+  await expect(downloads.getByRole("link", { name: "Release", exact: true })).toHaveAttribute(
+    "href",
+    "https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.3",
+  );
+  await expect(downloads.getByRole("link", { name: /^App source /u })).toHaveAttribute(
+    "href",
+    "https://github.com/JasonStys/code-flow-studio/tree/1d0b19ed589947ae45e93555d97331c95cad26cc",
+  );
+  await expect(downloads.locator("[data-download-platform]")).toHaveCount(6);
+  for (const platform of ["windows", "linux", "macos"])
+    await expect(downloads.locator(`[data-download-platform="${platform}"]`)).toHaveCount(2);
+  for (const row of await downloads.locator("[data-download-platform]").all()) {
+    const payload = row.getByRole("link").first();
+    const url = await payload.getAttribute("href");
+    expect(url).toMatch(
+      /^https:\/\/github\.com\/JasonStys\/code-flow-studio\/releases\/download\/v0\.4\.3\/[^/]+$/u,
+    );
+    if (url === null) throw new Error("Every released package needs its actual download URL.");
+    await expect(row.getByRole("link").nth(1)).toHaveAttribute("href", `${url}.sha256`);
+  }
 });
 
 test("explains governed business standards and links versioned source evidence", async ({

@@ -53,12 +53,18 @@ describe("portfolio catalog", () => {
     expect(featuredProjects.every((project) => project.caseStudySlug)).toBe(true);
   });
 
-  it("keeps Code Flow first and makes its reviewed source evidence searchable", () => {
+  it("keeps Code Flow first and makes its source and corrected C# coverage evidence searchable", () => {
     expect(projects[0]?.name).toBe("code-flow-studio");
     expect(projects[0]?.outcome).toContain("source-bound diagnostics");
     expect(projects[0]?.outcome).toContain("unused-code candidates");
     const index = buildSearchIndex(projects, "code-flow-evidence");
-    for (const query of ["source-bound diagnostics", "coverage unused", "matching drafts"]) {
+    for (const query of [
+      "source-bound diagnostics",
+      "coverage unused",
+      "C# coverage",
+      "Coverlet",
+      "collector",
+    ]) {
       expect(searchProjectIds(index, query), query).toContain("code-flow-studio");
     }
   });

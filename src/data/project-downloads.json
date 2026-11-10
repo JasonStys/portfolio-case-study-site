@@ -1,123 +1,129 @@
 {
   "schemaVersion": 1,
-  "collectedAt": "2026-11-10T15:22:03.226502+00:00",
+  "collectedAt": "2026-11-10T20:27:34.671589+00:00",
   "repositories": [
     {
       "name": "code-flow-studio",
-      "version": "0.4.2",
+      "version": "0.4.3",
       "distribution": "desktop-app",
-      "releaseUrl": "https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.2",
-      "publishedAt": "2026-11-10T15:21:33Z",
-      "sourceCommit": "eb9b1cd0c3e3fd1e70e397edeffb059073464f74",
-      "sourceUrl": "https://github.com/JasonStys/code-flow-studio/tree/eb9b1cd0c3e3fd1e70e397edeffb059073464f74",
-      "validationReportUrl": "https://github.com/JasonStys/code-flow-studio/blob/eb9b1cd0c3e3fd1e70e397edeffb059073464f74/docs/reports/native-http-drain-2026-11-10.md",
+      "releaseUrl": "https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.3",
+      "publishedAt": "2026-11-10T20:18:58Z",
+      "sourceCommit": "1d0b19ed589947ae45e93555d97331c95cad26cc",
+      "sourceUrl": "https://github.com/JasonStys/code-flow-studio/tree/1d0b19ed589947ae45e93555d97331c95cad26cc",
+      "validationReportUrl": "https://github.com/JasonStys/code-flow-studio/blob/1d0b19ed589947ae45e93555d97331c95cad26cc/docs/reports/csharp-coverage-2026-11-10.md",
       "sourceChecks": [
         {
           "name": "CodeQL",
-          "sourceCommit": "eb9b1cd0c3e3fd1e70e397edeffb059073464f74",
+          "sourceCommit": "1d0b19ed589947ae45e93555d97331c95cad26cc",
           "conclusion": "success",
-          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42838291353"
+          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42891062291"
+        },
+        {
+          "name": "Compiler execution acceptance",
+          "sourceCommit": "1d0b19ed589947ae45e93555d97331c95cad26cc",
+          "conclusion": "success",
+          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42891062235"
         },
         {
           "name": "Desktop packages",
-          "sourceCommit": "eb9b1cd0c3e3fd1e70e397edeffb059073464f74",
+          "sourceCommit": "1d0b19ed589947ae45e93555d97331c95cad26cc",
           "conclusion": "success",
-          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42838291731"
+          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42891062323"
         },
         {
           "name": "Validate",
-          "sourceCommit": "eb9b1cd0c3e3fd1e70e397edeffb059073464f74",
+          "sourceCommit": "1d0b19ed589947ae45e93555d97331c95cad26cc",
           "conclusion": "success",
-          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42838291624"
+          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42891062261"
         }
       ],
       "releaseCheck": {
         "name": "Release private-account applications",
-        "sourceCommit": "eb9b1cd0c3e3fd1e70e397edeffb059073464f74",
+        "sourceCommit": "1d0b19ed589947ae45e93555d97331c95cad26cc",
         "conclusion": "success",
-        "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42839628990"
+        "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42892088142"
       },
       "acceptanceCheck": null,
       "assets": [
         {
-          "assetName": "Code.Flow.Studio-0.4.2-arm64.dmg",
-          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.2/Code.Flow.Studio-0.4.2-arm64.dmg",
-          "checksumAssetName": "Code.Flow.Studio-0.4.2-arm64.dmg.sha256",
-          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.2/Code.Flow.Studio-0.4.2-arm64.dmg.sha256",
-          "sha256": "8ed5dbee0a1947f13225072ad2bdf174b0dc253123a2d430e72dfd8767b650fc",
-          "byteSize": 177352193,
+          "assetName": "Code.Flow.Studio-0.4.3-arm64.dmg",
+          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.3/Code.Flow.Studio-0.4.3-arm64.dmg",
+          "checksumAssetName": "Code.Flow.Studio-0.4.3-arm64.dmg.sha256",
+          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.3/Code.Flow.Studio-0.4.3-arm64.dmg.sha256",
+          "sha256": "0ccb3b3c5204ca2076495ac9cdcf01333b11507db320f839be6433399849a961",
+          "byteSize": 177325228,
           "platform": "macos",
           "architecture": "arm64",
           "format": "dmg",
           "kind": "installer"
         },
         {
-          "assetName": "Code.Flow.Studio-0.4.2.AppImage",
-          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.2/Code.Flow.Studio-0.4.2.AppImage",
-          "checksumAssetName": "Code.Flow.Studio-0.4.2.AppImage.sha256",
-          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.2/Code.Flow.Studio-0.4.2.AppImage.sha256",
-          "sha256": "1ea04b983bc43d7a15fbc21086fc232d7df2f00a72072e43dcda0a0541278830",
-          "byteSize": 191947481,
+          "assetName": "Code.Flow.Studio-0.4.3.AppImage",
+          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.3/Code.Flow.Studio-0.4.3.AppImage",
+          "checksumAssetName": "Code.Flow.Studio-0.4.3.AppImage.sha256",
+          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.3/Code.Flow.Studio-0.4.3.AppImage.sha256",
+          "sha256": "fce8eea77757bcc606042539a0ba57879065a989c3c60da3054bc7b701ece763",
+          "byteSize": 191955830,
           "platform": "linux",
           "architecture": "x64",
           "format": "appimage",
           "kind": "portable"
         },
         {
-          "assetName": "Code.Flow.Studio.Setup.0.4.2.exe",
-          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.2/Code.Flow.Studio.Setup.0.4.2.exe",
-          "checksumAssetName": "Code.Flow.Studio.Setup.0.4.2.exe.sha256",
-          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.2/Code.Flow.Studio.Setup.0.4.2.exe.sha256",
-          "sha256": "ec5c1dfcea914cffb2b382464b8de34cab47b14c41645dc980808d7fa6759f52",
-          "byteSize": 155397801,
+          "assetName": "Code.Flow.Studio.Setup.0.4.3.exe",
+          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.3/Code.Flow.Studio.Setup.0.4.3.exe",
+          "checksumAssetName": "Code.Flow.Studio.Setup.0.4.3.exe.sha256",
+          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.3/Code.Flow.Studio.Setup.0.4.3.exe.sha256",
+          "sha256": "591a0e13fc43a66e3e502ea117d80e2d37cc1b729c3b85261ddda8c3571dd3c6",
+          "byteSize": 155405630,
           "platform": "windows",
           "architecture": "x64",
           "format": "exe",
           "kind": "installer"
         },
         {
-          "assetName": "CodeFlowStudio-0.4.2-linux-x64.tar.gz",
-          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.2/CodeFlowStudio-0.4.2-linux-x64.tar.gz",
-          "checksumAssetName": "CodeFlowStudio-0.4.2-linux-x64.tar.gz.sha256",
-          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.2/CodeFlowStudio-0.4.2-linux-x64.tar.gz.sha256",
-          "sha256": "1e75085bae4ab2611ead61a513b60f444941495608840cf33875d940cf963ebe",
-          "byteSize": 188603375,
+          "assetName": "CodeFlowStudio-0.4.3-linux-x64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.3/CodeFlowStudio-0.4.3-linux-x64.tar.gz",
+          "checksumAssetName": "CodeFlowStudio-0.4.3-linux-x64.tar.gz.sha256",
+          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.3/CodeFlowStudio-0.4.3-linux-x64.tar.gz.sha256",
+          "sha256": "1fbd475664eb9b99f55849c58e9821fcbf3fb880fe9f038aaf1df3de64a12a9e",
+          "byteSize": 188610438,
           "platform": "linux",
           "architecture": "x64",
           "format": "tar.gz",
           "kind": "portable"
         },
         {
-          "assetName": "CodeFlowStudio-0.4.2-macos-arm64.tar.gz",
-          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.2/CodeFlowStudio-0.4.2-macos-arm64.tar.gz",
-          "checksumAssetName": "CodeFlowStudio-0.4.2-macos-arm64.tar.gz.sha256",
-          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.2/CodeFlowStudio-0.4.2-macos-arm64.tar.gz.sha256",
-          "sha256": "c7fed33fcaf6bdb7c3e50aa16b7e403322f48f26c98d8cf146ee4a937337bd9e",
-          "byteSize": 176766520,
+          "assetName": "CodeFlowStudio-0.4.3-macos-arm64.tar.gz",
+          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.3/CodeFlowStudio-0.4.3-macos-arm64.tar.gz",
+          "checksumAssetName": "CodeFlowStudio-0.4.3-macos-arm64.tar.gz.sha256",
+          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.3/CodeFlowStudio-0.4.3-macos-arm64.tar.gz.sha256",
+          "sha256": "e89275febb314bdb2d0c3c47c6c1bf60b57ef5cb8c5c148fc596df5b060c58f0",
+          "byteSize": 176774984,
           "platform": "macos",
           "architecture": "arm64",
           "format": "tar.gz",
           "kind": "portable"
         },
         {
-          "assetName": "CodeFlowStudio-0.4.2-windows-x64.zip",
-          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.2/CodeFlowStudio-0.4.2-windows-x64.zip",
-          "checksumAssetName": "CodeFlowStudio-0.4.2-windows-x64.zip.sha256",
-          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.2/CodeFlowStudio-0.4.2-windows-x64.zip.sha256",
-          "sha256": "3d8098224345736e0ec334dcbc8696c934dfe1a4fdac352b7716c5c05c43e251",
-          "byteSize": 208877589,
+          "assetName": "CodeFlowStudio-0.4.3-windows-x64.zip",
+          "assetUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.3/CodeFlowStudio-0.4.3-windows-x64.zip",
+          "checksumAssetName": "CodeFlowStudio-0.4.3-windows-x64.zip.sha256",
+          "checksumUrl": "https://github.com/JasonStys/code-flow-studio/releases/download/v0.4.3/CodeFlowStudio-0.4.3-windows-x64.zip.sha256",
+          "sha256": "2e1824c965d2042b70999f23b56c014c208fc5a72ae7be75efddc2c6db18a141",
+          "byteSize": 208884825,
           "platform": "windows",
           "architecture": "x64",
           "format": "zip",
           "kind": "portable"
         }
       ],
-      "requirements": "Documented desktop OS/CPU; actual code execution additionally requires the separately built restricted Docker worker. No host fallback.",
+      "requirements": "Windows/Linux x64 or macOS arm64; compilation requires a separately prepared code-flow-worker:0.4.3 image and working local Docker. Editing and review remain available; no host execution fallback.",
       "limitations": [
-        "Twelve bounded flat CLI adapters do not cover every framework, dependency or architecture; coverage and unused-code candidates are not correctness or dead-code proof.",
+        "Twelve bounded flat CLI adapters do not cover every framework, dependency or architecture. Measured approved C# exits do not imply 100% line/branch coverage; unused candidates are not dead-code proof.",
         "Execution needs a separately built local Docker worker with no host fallback. Shared worker identity and containers are not a certified public hostile-code sandbox.",
         "Hashes bind retained bytes and locations, not trusted attestation by a malicious target. UI-only report fixtures are separate from native collector evidence.",
-        "Local accounts trust the OS and unlocked service. Unsigned builds; no mobile installer. Downloaded Windows portable and extracted installer payload exercised; installer registration, upgrade/uninstall and clean-machine lifecycle not certified. A five-second HTTP drain does not bound critical local work or total exit time."
+        "Unsigned builds; no mobile installer or notarization. Windows upgrade and disposable-profile installed-app checks passed. Populated pre-existing vault upgrades and real-credential replay were not exercised. Clean-machine installs, uninstall and non-Windows installation transactions were not tested. A five-second HTTP drain does not bound critical work or total exit."
       ]
     },
     {

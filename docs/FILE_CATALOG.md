@@ -29,6 +29,7 @@
 | `docs/PROJECT_UPGRADES.md`                                        | Project documentation described by its title and sections.                                                   |
 | `docs/reports/ACTIONS_REVIEW_2026-10-14.md`                       | Project documentation described by its title and sections.                                                   |
 | `docs/reports/business-standards-sync-2026-10-21.md`              | Project documentation described by its title and sections.                                                   |
+| `docs/reports/code-flow-043-sync-2026-11-10.md`                   | Project documentation described by its title and sections.                                                   |
 | `docs/reports/code-flow-sync-2026-10-21.md`                       | Project documentation described by its title and sections.                                                   |
 | `docs/reports/documentation-refresh-2026-11-09.md`                | Completed documentation validation and explicit historical-evidence boundaries.                              |
 | `docs/reports/download-refresh-2026-11-09.md`                     | Project documentation described by its title and sections.                                                   |

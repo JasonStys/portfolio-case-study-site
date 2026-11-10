@@ -23,12 +23,14 @@
 | `docs/CONTENT_GUIDE.md`                                           | Project documentation described by its title and sections.                                                   |
 | `docs/DEPLOYMENT_CHECKLIST.md`                                    | Project documentation described by its title and sections.                                                   |
 | `docs/FILE_CATALOG.md`                                            | Project documentation described by its title and sections.                                                   |
+| `docs/handbook.md`                                                | Organized user/developer navigation for the cited portfolio baseline.                                        |
 | `docs/LIMITATIONS.md`                                             | Project documentation described by its title and sections.                                                   |
 | `docs/OPERATIONS.md`                                              | Project documentation described by its title and sections.                                                   |
 | `docs/PROJECT_UPGRADES.md`                                        | Project documentation described by its title and sections.                                                   |
 | `docs/reports/ACTIONS_REVIEW_2026-10-14.md`                       | Project documentation described by its title and sections.                                                   |
 | `docs/reports/business-standards-sync-2026-10-21.md`              | Project documentation described by its title and sections.                                                   |
 | `docs/reports/code-flow-sync-2026-10-21.md`                       | Project documentation described by its title and sections.                                                   |
+| `docs/reports/documentation-refresh-2026-11-09.md`                | Completed documentation validation and explicit historical-evidence boundaries.                              |
 | `docs/reports/download-refresh-2026-11-09.md`                     | Project documentation described by its title and sections.                                                   |
 | `docs/reports/generated/search-benchmark.json`                    | Repository support file.                                                                                     |
 | `docs/reports/PERFORMANCE.md`                                     | Project documentation described by its title and sections.                                                   |
@@ -36,6 +38,8 @@
 | `docs/reports/portfolio-sync-2026-10-21.md`                       | Project documentation described by its title and sections.                                                   |
 | `docs/reports/portfolio-sync-2026-10-22.md`                       | docs/reports/portfolio-sync-2026-10-22.md; Purpose: reviewed integration and validation trail by Jason Stys. |
 | `docs/reports/practical-workflows-2026-11-09.md`                  | Project documentation described by its title and sections.                                                   |
+| `docs/reports/project-guide.docx`                                 | Individually reviewed Word edition of the cited public source and dated workflow scope.                      |
+| `docs/reports/publications.json`                                  | Exact Office bytes, source/workflow identities and page-review receipts.                                     |
 | `docs/reports/SITE_QUALITY.md`                                    | Project documentation described by its title and sections.                                                   |
 | `docs/reports/TEST_SUMMARY.md`                                    | Project documentation described by its title and sections.                                                   |
 | `docs/RESEARCH.md`                                                | Project documentation described by its title and sections.                                                   |

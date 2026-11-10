@@ -106,23 +106,23 @@
 | 15 | variable | `EXCLUDED_DIRECTORIES` |
 | 25 | variable | `checkOnly` |
 | 26 | variable | `STATIC_DESCRIPTIONS` |
-| 49 | function | `collectFiles` |
-| 50 | variable | `entries` |
-| 51 | variable | `results` |
-| 54 | variable | `absolute` |
-| 61 | function | `extractDescription` |
-| 62 | variable | `fileTag` |
-| 64 | variable | `fileLine` |
-| 66 | variable | `withoutEnd` |
-| 74 | function | `describeFile` |
-| 75 | variable | `staticDescription` |
-| 77 | variable | `extracted` |
-| 91 | function | `renderCatalog` |
-| 92 | variable | `lines` |
-| 105 | function | `main` |
-| 106 | variable | `files` |
-| 107 | variable | `records` |
-| 113 | variable | `rendered` |
+| 62 | function | `collectFiles` |
+| 63 | variable | `entries` |
+| 64 | variable | `results` |
+| 67 | variable | `absolute` |
+| 74 | function | `extractDescription` |
+| 75 | variable | `fileTag` |
+| 77 | variable | `fileLine` |
+| 79 | variable | `withoutEnd` |
+| 87 | function | `describeFile` |
+| 88 | variable | `staticDescription` |
+| 90 | variable | `extracted` |
+| 104 | function | `renderCatalog` |
+| 105 | variable | `lines` |
+| 118 | function | `main` |
+| 119 | variable | `files` |
+| 120 | variable | `records` |
+| 126 | variable | `rendered` |
 
 ## `scripts/lighthouse.mjs`
 

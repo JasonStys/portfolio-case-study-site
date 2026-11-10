@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "project": "portfolio-case-study-site",
+  "author": "Jason Stys",
+  "editionDate": "2026-11-09",
+  "sourceBaseline": "25b7f796b0ca267d4338fefca070dc07642d071d",
+  "sourceUrl": "https://github.com/JasonStys/portfolio-case-study-site/tree/25b7f796b0ca267d4338fefca070dc07642d071d",
+  "functionalEvidenceBaseline": "25b7f796b0ca267d4338fefca070dc07642d071d",
+  "evidenceObservedAt": "2026-11-10T05:25:40.628667+00:00",
+  "workflowEvidence": [
+    {
+      "conclusion": "success",
+      "databaseId": 42761343486,
+      "event": "push",
+      "headSha": "25b7f796b0ca267d4338fefca070dc07642d071d",
+      "name": "CodeQL",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/portfolio-case-study-site/actions/runs/42761343486"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42761343538,
+      "event": "push",
+      "headSha": "25b7f796b0ca267d4338fefca070dc07642d071d",
+      "name": "CI and Pages",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/portfolio-case-study-site/actions/runs/42761343538"
+    }
+  ],
+  "summary": "Static portfolio with searchable project summaries, case studies, reviewed release downloads and public validation links.",
+  "rationale": "Makes project purpose, engineering decisions and reproducible validation easy to inspect.",
+  "limitations": ["A static portfolio does not run or certify the linked applications."],
+  "documents": [
+    {
+      "filename": "project-guide.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 50117,
+      "sha256": "10cceb2bb70c6fa10b2b5184b65ad7948e0add8197f07e8e5d4d7c0444264705",
+      "sourceBaseline": "25b7f796b0ca267d4338fefca070dc07642d071d",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 10,
+        "renderedPageSha256": {
+          "page-1.png": "ddf2e9727ba43c060b9d96d76b100a6d7d5aafcdcb01dae242f66ae031cc12bf",
+          "page-2.png": "3cb433b1ac67716f647a0717d880e736f7c741f28cedd91977cb0550e3150251",
+          "page-3.png": "8cb4ac447d80cba44cc40ea601d77eff420f8b77fd4aff9eecf785b0a2e07952",
+          "page-4.png": "4197025670fcb5b151929f21fa06a9c8d2303761a03e26e34314732fd3808e06",
+          "page-5.png": "cd96538519ac70454b9f8a84804d7c62513d52c21704a3549aa420c04f376499",
+          "page-6.png": "5f17e0ef74653776c5cc93538308ef6203c65c50bafa13025fc01deda9e6b353",
+          "page-7.png": "51da8d64536111af8f1f93bac9e6ffe6f250da0a490c917b902cb56dd569e067",
+          "page-8.png": "cfb72f131df168d6d141754aa6fca5b1efa5e0e966e7833f18a6049e7aba6b8d",
+          "page-9.png": "bc03c6e3c4d63687343cd7790ee30a7d29fa6355cfaf077a80301d4214baba0c",
+          "page-10.png": "a638c18d0a436d7ffb2cb2a002a7dae84296153e0f8b6cd1d85eb3945f048f12"
+        }
+      }
+    }
+  ],
+  "scope": "Reviewed documentation editions of the cited source. Checksums identify bytes, not authorship. Historical measurements retain their own dates; integration CI must be checked separately."
+}

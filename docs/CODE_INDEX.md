@@ -840,7 +840,7 @@
 | 64 | custom property | `--radius` |
 | 65 | custom property | `--radius-lg` |
 | 66 | custom property | `--shell` |
-| 1074 | custom property | `--shell` |
+| 1098 | custom property | `--shell` |
 
 ## `tests/e2e/downloads.spec.ts`
 
@@ -874,29 +874,38 @@
 | 74 | variable | `response` |
 | 76 | variable | `section` |
 | 119 | variable | `featured` |
-| 130 | variable | `result` |
-| 157 | variable | `links` |
-| 179 | variable | `workbench` |
-| 188 | variable | `catalogEntry` |
-| 249 | variable | `context` |
-| 254 | variable | `page` |
-| 260 | variable | `response` |
-| 275 | variable | `scan` |
-| 311 | variable | `skipLink` |
-| 321 | variable | `results` |
-| 332 | variable | `bodyWidth` |
-| 334 | variable | `cards` |
-| 335 | variable | `first` |
-| 336 | variable | `second` |
-| 340 | variable | `navigation` |
-| 341 | variable | `links` |
-| 342 | variable | `expectedNavigation` |
-| 354 | variable | `rows` |
-| 357 | variable | `box` |
-| 374 | variable | `about` |
-| 394 | variable | `revision` |
-| 396 | variable | `search` |
-| 398 | variable | `index` |
+| 133 | variable | `result` |
+| 138 | variable | `coverage` |
+| 147 | variable | `exits` |
+| 164 | variable | `label` |
+| 166 | variable | `row` |
+| 171 | variable | `release` |
+| 173 | variable | `measurements` |
+| 196 | variable | `links` |
+| 222 | variable | `downloads` |
+| 236 | variable | `payload` |
+| 237 | variable | `url` |
+| 250 | variable | `workbench` |
+| 259 | variable | `catalogEntry` |
+| 320 | variable | `context` |
+| 325 | variable | `page` |
+| 331 | variable | `response` |
+| 346 | variable | `scan` |
+| 382 | variable | `skipLink` |
+| 392 | variable | `results` |
+| 403 | variable | `bodyWidth` |
+| 405 | variable | `cards` |
+| 406 | variable | `first` |
+| 407 | variable | `second` |
+| 411 | variable | `navigation` |
+| 412 | variable | `links` |
+| 413 | variable | `expectedNavigation` |
+| 425 | variable | `rows` |
+| 428 | variable | `box` |
+| 445 | variable | `about` |
+| 465 | variable | `revision` |
+| 467 | variable | `search` |
+| 469 | variable | `index` |
 
 ## `tests/e2e/upgrades.spec.ts`
 
@@ -926,48 +935,56 @@
 | 28 | variable | `edited` |
 | 40 | variable | `oldCatalogOnlyRevision` |
 | 60 | variable | `index` |
-| 79 | variable | `names` |
-| 85 | variable | `project` |
-| 89 | variable | `index` |
-| 98 | variable | `names` |
-| 104 | variable | `index` |
-| 126 | variable | `references` |
-| 127 | variable | `reversed` |
-| 134 | variable | `languages` |
-| 166 | variable | `repository` |
-| 167 | variable | `envelope` |
+| 85 | variable | `names` |
+| 91 | variable | `project` |
+| 95 | variable | `index` |
+| 104 | variable | `names` |
+| 110 | variable | `index` |
+| 132 | variable | `references` |
+| 133 | variable | `reversed` |
+| 140 | variable | `languages` |
+| 172 | variable | `repository` |
+| 173 | variable | `envelope` |
 
 ## `tests/unit/downloads.test.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 9 | function | `required` |
-| 15 | variable | `NAMES` |
-| 37 | variable | `SOURCE` |
-| 38 | variable | `VERIFIER` |
-| 39 | variable | `DESKTOP` |
-| 47 | function | `payload` |
-| 48 | variable | `suffix` |
-| 49 | variable | `assetName` |
-| 50 | variable | `checksumAssetName` |
-| 52 | variable | `base` |
-| 67 | function | `project` |
-| 68 | variable | `repository` |
-| 69 | variable | `native` |
-| 70 | variable | `zipapp` |
-| 71 | variable | `assets` |
-| 86 | variable | `run` |
-| 122 | function | `fixture` |
-| 131 | variable | `invalid` |
-| 358 | variable | `p` |
-| 373 | variable | `p` |
-| 424 | variable | `value` |
-| 426 | variable | `parsed` |
-| 442 | variable | `aes` |
-| 451 | variable | `raw` |
-| 452 | variable | `result` |
-| 459 | variable | `value` |
-| 464 | variable | `raw` |
+| 10 | function | `required` |
+| 16 | variable | `NAMES` |
+| 38 | variable | `SOURCE` |
+| 39 | variable | `VERIFIER` |
+| 40 | variable | `DESKTOP` |
+| 48 | function | `payload` |
+| 49 | variable | `suffix` |
+| 50 | variable | `assetName` |
+| 51 | variable | `checksumAssetName` |
+| 53 | variable | `base` |
+| 68 | function | `project` |
+| 69 | variable | `repository` |
+| 70 | variable | `native` |
+| 71 | variable | `zipapp` |
+| 72 | variable | `assets` |
+| 87 | variable | `run` |
+| 123 | function | `fixture` |
+| 132 | variable | `invalid` |
+| 359 | variable | `p` |
+| 374 | variable | `p` |
+| 424 | variable | `parsed` |
+| 425 | variable | `codeFlow` |
+| 426 | variable | `source` |
+| 427 | variable | `base` |
+| 470 | variable | `accepted` |
+| 549 | variable | `modified` |
+| 550 | variable | `codeFlow` |
+| 551 | variable | `asset` |
+| 565 | variable | `value` |
+| 567 | variable | `parsed` |
+| 583 | variable | `aes` |
+| 592 | variable | `raw` |
+| 593 | variable | `result` |
+| 600 | variable | `value` |
+| 605 | variable | `raw` |
 
 ## `tests/unit/lighthouse.test.ts`
 
@@ -1096,7 +1113,8 @@
 | 30 | variable | `first` |
 | 32 | variable | `fixture` |
 | 43 | variable | `isolated` |
-| 88 | variable | `bytes` |
+| 57 | variable | `result` |
+| 102 | variable | `bytes` |
 
 ## `tests/unit/upgrades.test.ts`
 
@@ -1108,6 +1126,9 @@
 | 21 | variable | `invalid` |
 | 311 | variable | `url` |
 | 321 | variable | `base` |
+| 380 | variable | `codeFlow` |
+| 382 | variable | `source` |
+| 383 | variable | `repository` |
 
 ## `tests/unit/utilities.test.ts`
 

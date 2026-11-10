@@ -825,6 +825,11 @@
   .case-sidebar li {
     padding-block: 0.35rem;
   }
+  /* Long source identities must not widen the case-study grid's mobile track. */
+  .prose {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
   .prose h2 {
     scroll-margin-top: 2rem;
     margin-top: 3.5rem;
@@ -846,6 +851,25 @@
   }
   .prose li + li {
     margin-top: 0.45rem;
+  }
+  /* Evidence tables wrap within the reading column, including narrow mobile screens. */
+  .prose table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin-block: 1.4rem;
+    font-size: 0.9rem;
+  }
+  .prose th,
+  .prose td {
+    padding: 0.6rem 0.3rem;
+    border: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+  }
+  .prose th {
+    background: var(--aqua);
   }
   .case-footer {
     display: flex;

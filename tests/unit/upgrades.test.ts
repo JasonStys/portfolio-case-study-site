@@ -376,6 +376,42 @@ const invalid: [string, Mutation][] = [
 ];
 
 describe("public exact-source upgrade manifest", () => {
+  it("shows the actual published C# correction with exact source workflows and bounded coverage claims", () => {
+    const codeFlow = projectUpgrade("code-flow-studio");
+    if (!codeFlow) throw new Error("Code Flow upgrade evidence is required.");
+    const source = "1d0b19ed589947ae45e93555d97331c95cad26cc";
+    const repository = "https://github.com/JasonStys/code-flow-studio";
+    expect(codeFlow.sourceCommit).toBe(source);
+    expect(codeFlow.sourceUrl).toBe(repository + "/tree/" + source);
+    expect(codeFlow.reviewUrl).toBe(repository + "/pull/10");
+    expect(codeFlow.validationReportUrl).toBe(
+      repository + "/blob/" + source + "/docs/reports/csharp-coverage-2026-11-10.md",
+    );
+    for (const fact of [
+      "0.4.3",
+      "C# target exits",
+      "Coverlet collector",
+      "approved nonzero",
+      "three genuine collector faults",
+      "419 tests",
+      "28 subtests",
+      "85.01% controller/training coverage",
+    ])
+      expect(codeFlow.summary).toContain(fact);
+    expect(codeFlow.workflows).toEqual([
+      { name: "CodeQL", url: repository + "/actions/runs/42891062291" },
+      { name: "Compiler execution acceptance", url: repository + "/actions/runs/42891062235" },
+      { name: "Desktop packages", url: repository + "/actions/runs/42891062323" },
+      { name: "Validate", url: repository + "/actions/runs/42891062261" },
+    ]);
+    expect(codeFlow.limitations.join(" ")).toContain("do not imply 100% line/branch coverage");
+    expect(codeFlow.limitations.join(" ")).toContain(
+      "Populated pre-existing vault upgrades and real-credential replay were not exercised.",
+    );
+    expect(codeFlow.limitations.join(" ")).not.toMatch(
+      /account tables were empty|157 files|118 legacy/u,
+    );
+  });
   it("covers exactly the 66 domain projects, with public evidence and frozen nested records", () => {
     expect(upgradeManifest.repositories.map((entry) => entry.name).sort()).toEqual(
       projects

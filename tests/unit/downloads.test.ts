@@ -5,6 +5,7 @@
  */
 import { describe, expect, it } from "vitest";
 import { DOWNLOAD_NAMES, validateDownloads } from "../../src/lib/downloads";
+import publishedDownloads from "../../src/data/project-downloads.json";
 /** Require an explicitly addressed independent fixture value; never substitute fallback data. */
 function required<T>(value: T | null | undefined): T {
   if (value === null || value === undefined)
@@ -419,6 +420,146 @@ const invalid: [string, Change][] = [
   ],
 ];
 describe("existing downloadable project contracts", () => {
+  it("binds the actual published Code Flow0.4.3 download entry to all six accepted payloads and exact source checks", () => {
+    const parsed = validateDownloads(publishedDownloads);
+    const codeFlow = required(parsed.repositories.find((p) => p.name === "code-flow-studio"));
+    const source = "1d0b19ed589947ae45e93555d97331c95cad26cc";
+    const base = "https://github.com/JasonStys/code-flow-studio";
+    expect(codeFlow.version).toBe("0.4.3");
+    expect(codeFlow.releaseUrl).toBe(base + "/releases/tag/v0.4.3");
+    expect(codeFlow.publishedAt).toBe("2026-11-10T20:18:58Z");
+    expect(codeFlow.sourceCommit).toBe(source);
+    expect(codeFlow.sourceUrl).toBe(base + "/tree/" + source);
+    expect(codeFlow.validationReportUrl).toBe(
+      base + "/blob/" + source + "/docs/reports/csharp-coverage-2026-11-10.md",
+    );
+    expect(codeFlow.sourceChecks).toEqual([
+      {
+        name: "CodeQL",
+        sourceCommit: source,
+        conclusion: "success",
+        url: base + "/actions/runs/42891062291",
+      },
+      {
+        name: "Compiler execution acceptance",
+        sourceCommit: source,
+        conclusion: "success",
+        url: base + "/actions/runs/42891062235",
+      },
+      {
+        name: "Desktop packages",
+        sourceCommit: source,
+        conclusion: "success",
+        url: base + "/actions/runs/42891062323",
+      },
+      {
+        name: "Validate",
+        sourceCommit: source,
+        conclusion: "success",
+        url: base + "/actions/runs/42891062261",
+      },
+    ]);
+    expect(codeFlow.releaseCheck).toEqual({
+      name: "Release private-account applications",
+      sourceCommit: source,
+      conclusion: "success",
+      url: base + "/actions/runs/42892088142",
+    });
+    // Local installed-Windows acceptance is reported separately, never invented as a hosted job.
+    expect(codeFlow.acceptanceCheck).toBeNull();
+    const accepted = [
+      [
+        "Code.Flow.Studio-0.4.3-arm64.dmg",
+        "0ccb3b3c5204ca2076495ac9cdcf01333b11507db320f839be6433399849a961",
+        177325228,
+        "macos",
+        "arm64",
+        "dmg",
+        "installer",
+      ],
+      [
+        "Code.Flow.Studio-0.4.3.AppImage",
+        "fce8eea77757bcc606042539a0ba57879065a989c3c60da3054bc7b701ece763",
+        191955830,
+        "linux",
+        "x64",
+        "appimage",
+        "portable",
+      ],
+      [
+        "Code.Flow.Studio.Setup.0.4.3.exe",
+        "591a0e13fc43a66e3e502ea117d80e2d37cc1b729c3b85261ddda8c3571dd3c6",
+        155405630,
+        "windows",
+        "x64",
+        "exe",
+        "installer",
+      ],
+      [
+        "CodeFlowStudio-0.4.3-linux-x64.tar.gz",
+        "1fbd475664eb9b99f55849c58e9821fcbf3fb880fe9f038aaf1df3de64a12a9e",
+        188610438,
+        "linux",
+        "x64",
+        "tar.gz",
+        "portable",
+      ],
+      [
+        "CodeFlowStudio-0.4.3-macos-arm64.tar.gz",
+        "e89275febb314bdb2d0c3c47c6c1bf60b57ef5cb8c5c148fc596df5b060c58f0",
+        176774984,
+        "macos",
+        "arm64",
+        "tar.gz",
+        "portable",
+      ],
+      [
+        "CodeFlowStudio-0.4.3-windows-x64.zip",
+        "2e1824c965d2042b70999f23b56c014c208fc5a72ae7be75efddc2c6db18a141",
+        208884825,
+        "windows",
+        "x64",
+        "zip",
+        "portable",
+      ],
+    ];
+    expect(
+      codeFlow.assets.map((asset) => [
+        asset.assetName,
+        asset.sha256,
+        asset.byteSize,
+        asset.platform,
+        asset.architecture,
+        asset.format,
+        asset.kind,
+      ]),
+    ).toEqual(accepted);
+    for (const asset of codeFlow.assets) {
+      expect(asset.assetUrl).toBe(base + "/releases/download/v0.4.3/" + asset.assetName);
+      expect(asset.checksumAssetName).toBe(asset.assetName + ".sha256");
+      expect(asset.checksumUrl).toBe(asset.assetUrl + ".sha256");
+    }
+    expect(codeFlow.requirements).toContain("code-flow-worker:0.4.3");
+    expect(parsed.repositories).toHaveLength(20);
+    expect(parsed.repositories.reduce((sum, entry) => sum + entry.assets.length, 0)).toBe(62);
+  });
+  it.each(["asset", "checksum", "source"])(
+    "rejects a stale0.4.2 %s binding in the actual0.4.3 entry",
+    (field) => {
+      const modified = structuredClone(publishedDownloads);
+      const codeFlow = required(modified.repositories.find((p) => p.name === "code-flow-studio"));
+      const asset = required(codeFlow.assets[0]);
+      if (field === "asset") asset.assetUrl = asset.assetUrl.replace("v0.4.3", "v0.4.2");
+      else if (field === "checksum")
+        asset.checksumUrl = asset.checksumUrl.replace("v0.4.3", "v0.4.2");
+      else
+        codeFlow.sourceChecks[0] = {
+          ...required(codeFlow.sourceChecks[0]),
+          sourceCommit: "eb9b1cd0c3e3fd1e70e397edeffb059073464f74",
+        };
+      expect(() => validateDownloads(modified)).toThrow(TypeError);
+    },
+  );
   it("contains exactly the20 independently enumerated existing projects and62 true payloads", () => {
     expect([...DOWNLOAD_NAMES]).toEqual(NAMES);
     const value = fixture();

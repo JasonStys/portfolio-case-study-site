@@ -43,12 +43,26 @@ describe("project search", () => {
     const isolated = buildSearchIndex([fixture], "punctuation-contract");
     expect(searchProjectIds(isolated, "cached drafts")).toEqual(["punctuation-fixture"]);
     expect(searchProjectIds(isolated, "cached drafts.")).toEqual(["punctuation-fixture"]);
-    expect(searchProjectIds(index, "matching drafts")).toContain("code-flow-studio");
+    expect(searchProjectIds(index, "collector evidence")).toContain("code-flow-studio");
   });
 
   it("finds text terms with AND semantics in catalog order", () => {
     expect(searchProjectIds(index, "deterministic collision")).toContain("forge2d-engine");
     expect(searchProjectIds(index, "definitely-not-present")).toEqual([]);
+  });
+
+  it("finds C# collector evidence without losing language punctuation or exact role filters", () => {
+    for (const query of ["C# coverage", "Coverlet", "collector"])
+      expect(searchProjectIds(index, query), query).toContain("code-flow-studio");
+    const result = searchProjectIds(index, "C# collector", {
+      role: "Developer tools engineer",
+    });
+    expect(result).toEqual(["code-flow-studio"]);
+    expect(searchProjectIds(index, "C#. collector.", { role: "Developer tools engineer" })).toEqual(
+      result,
+    );
+    expect(searchProjectIds(index, "C# collector", { role: "Security engineer" })).toEqual([]);
+    expect(searchProjectIds(index, "C# collector absent-proof-token")).toEqual([]);
   });
 
   it("intersects exact role, language, domain, and maturity facets", () => {

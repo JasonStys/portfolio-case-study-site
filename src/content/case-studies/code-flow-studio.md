@@ -1,24 +1,60 @@
 ---
-title: "From a located finding to a verified source revision"
+title: "Measured C# coverage without losing target exits"
 repository: "https://github.com/JasonStys/code-flow-studio"
-summary: "Code Flow Studio 0.4.2 combines source-bound polyglot findings with bounded report readers, cancellation-safe private workspace transitions and verified native shutdown."
+summary: "Code Flow Studio 0.4.3 separates C# target exits from collector status, measures approved nonzero returns and retains source-bound diagnostics, coverage and private history."
 role: "AI developer tools and full-stack engineering"
-languages: ["Python", "TypeScript", "SQL", "Dockerfile"]
+languages: ["Python", "TypeScript", "C#", "SQL", "Dockerfile"]
 evidence:
-  - "Content-bound source navigation"
-  - "48 three-engine web checks"
-  - "18 private account journeys"
-  - "Actual packaged Windows journey"
+  - "Measured approved C# exits"
+  - "419 tests and 28 subtests"
+  - "Three collector faults blocked"
+  - "Twelve isolated compiler adapters"
 featuredOrder: 1
 ---
 
 ## Problem
 
-A diagnostic is useful only when a developer can inspect the source that produced it. File names and line numbers alone can point to a subsequently edited draft, a generated harness or a different auxiliary file. Code Flow Studio's independent successor to an earlier Python team capstone already supported bounded polyglot compilation, tests, fuzzing, coverage and unused-code candidates. Version 0.4.0 makes the next step practical: filter a finding, verify its exact retained source, inspect the referenced line and navigate to a draft only when its content still matches.
+An application can correctly reject malformed input with exit 2 and still deserve a usable coverage report. Coverlet 8.0.1 maps positive target exits to its own failure code, losing the distinction between the tested program and the collector. Code Flow Studio 0.4.2 honestly retained partial C# coverage when that distinction was unavailable. Version 0.4.3 fixes the measurement protocol while preserving real failures and the existing isolation boundary.
+
+A diagnostic is useful only when a developer can inspect the source that produced it. File names and line numbers alone can point to a subsequently edited draft, a generated harness or a different auxiliary file. Code Flow Studio's independent successor to an earlier Python team capstone already supported bounded polyglot compilation, tests, fuzzing, coverage and unused-code candidates. Version 0.4.0 added the next practical step: filter a finding, verify its exact retained source, inspect the referenced line and navigate to a draft only when its content still matches.
 
 ## Constraints
 
 Submitted programs must remain inside restricted workers, with no host-execution fallback. Coverage, unused-code candidates and proven correctness are different kinds of evidence. A reference must bind to the original UTF-8 bytes, physical line and source/generated artifact identity. Missing hashes, binary fixtures, malformed references and changed drafts must fail visibly. Private source/history and provider secrets must stay outside the repository; remote AI transmission requires explicit consent.
+
+## C# coverage: measured approved nonzero exits
+
+The worker gives Coverlet a trusted isolated Python bridge as its fixed target. The bridge verifies bounded stdin and the source/case/input binding, starts only the job's fixed .NET assembly, waits for the actual child to finish and exclusively publishes a fresh exit observation before returning success to the collector. It inherits the existing process group and deadline. It does not infer a target return from collector exit 1 or error-message text.
+
+The controller records `target_exit_code` separately from `collector_exit_code`. It accepts measured coverage only when the collector completes successfully, the fresh observation passes validation, genuine source-bound coverage XML is present and the actual target return matches the independently approved case. Missing, inconsistent, truncated or timed-out evidence cannot become a passing measurement. See the immutable [C# coverage protocol](https://github.com/JasonStys/code-flow-studio/blob/1d0b19ed589947ae45e93555d97331c95cad26cc/docs/csharp-coverage.md).
+
+| Hosted case                                               | Actual target exit          | Collector exit  | Coverage            |
+| --------------------------------------------------------- | --------------------------- | --------------- | ------------------- |
+| Approved success                                          | 0                           | 0               | measured            |
+| Approved nonzero returns                                  | 1, 2, 7, 255                | 0 for each case | measured            |
+| Approved malformed input                                  | 2                           | 0               | measured            |
+| Target returns 7 when 2 was approved                      | 7                           | 0               | partial; case fails |
+| Collector rejects an invalid option                       | No valid target observation | 0               | blocked             |
+| Collector cannot write its report after target completion | 0                           | 101             | blocked             |
+| Collector deadline expires                                | No valid target observation | -9 / timeout    | blocked             |
+
+These are real .NET/Coverlet controls in a GitHub-hosted isolated worker. The argument rejection is particularly useful: this pinned collector can return zero without starting its target, so exit zero alone cannot prove successful collection. An authored unhandled exception also remains a failed case. The [coverage fix checkpoint](https://github.com/JasonStys/code-flow-studio/blob/1d0b19ed589947ae45e93555d97331c95cad26cc/docs/reports/csharp-coverage-2026-11-10.md) preserves the original failed acceptance assertion, its corrected independent oracle and the earlier 410-test fix checkpoint rather than rewriting that history as the later release result.
+
+## Measured result
+
+### 0.4.3 validation and release
+
+The published [0.4.3 downloads and checksums](https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.3) identify [source `1d0b19ed589947ae45e93555d97331c95cad26cc`](https://github.com/JasonStys/code-flow-studio/tree/1d0b19ed589947ae45e93555d97331c95cad26cc). The following observations apply to that released source:
+
+- **419 tests and 28 subtests** passed in [full source validation](https://github.com/JasonStys/code-flow-studio/actions/runs/42891062261). **85.01% controller/training coverage** passed the unchanged 80% floor; this is not worker-source coverage.
+- Both [70-scenario compiler lanes](https://github.com/JasonStys/code-flow-studio/actions/runs/42891062235) passed: twelve language adapters, independently approved outputs, wrong-oracle/compiler/runtime controls, exact unused/uncovered anchors and private-account API execution. Twelve complete reports per lane survived seal/logout/login/unlock/export replay. The pinned published 0.4.2 lane retains its historical C# partial state; the current lane requires measured approved C# exits.
+- [Native packages](https://github.com/JasonStys/code-flow-studio/actions/runs/42891062323), [CodeQL](https://github.com/JasonStys/code-flow-studio/actions/runs/42891062291) and all five [release workflow jobs](https://github.com/JasonStys/code-flow-studio/actions/runs/42892088142) passed. All three processed full-main CodeQL categories had zero open alerts. Actual compiled Windows, Linux and macOS journeys verify bundled bridge/analyzer bytes, source identity and real application behavior.
+- [Tag validation](https://github.com/JasonStys/code-flow-studio/actions/runs/42894070479), [tag compiler acceptance](https://github.com/JasonStys/code-flow-studio/actions/runs/42894070441) and [tag native packages](https://github.com/JasonStys/code-flow-studio/actions/runs/42894070586) also passed: eight source/release/tag workflow runs and **24 successful jobs** in total.
+- The independently downloaded Windows installer passed a real per-user 0.4.2-to-0.4.3 upgrade and an installed-app native journey using disposable accounts. File/schema preservation and the Desktop shortcut were checked separately from hosted compiler execution. This does not establish replay of real pre-existing credentials or an upgrade of a populated vault; three-OS native journeys are distinct from three OS installation transactions.
+
+The release gate now requires successful compiler acceptance, validation, native packages and all full-main CodeQL categories for the exact source. Independent negative response mutations block draft creation or final verification when compiler evidence is missing, failed, active, PR-only or belongs to another source/path/repository. Builds remain drafts until independent acceptance; six payloads and six checksum sidecars are bound to their published source and provider digests.
+
+Measured coverage means complete instrumentation for the approved cases, not 100% line/branch coverage or proof of correctness. Same-UID worker programs can interfere with job files; bindings detect stale/inconsistent evidence and are not hostile-target tamper-proof attestation. Local compilation requires a working isolated engine and the matching `code-flow-worker:0.4.3` image. The PC upgrade did not repair, rebuild or otherwise change Docker. Packages remain unsigned.
 
 ## Design
 
@@ -38,7 +74,7 @@ The actual Windows packaged app and bundled frozen service exercise real registr
 
 Accepted-source evidence: [source validation report](https://github.com/JasonStys/code-flow-studio/blob/08e4194707fb0ab20b469e335ef9e081a34200d3/docs/reports/practical-workflows-2026-11-09.md), [hosted validation](https://github.com/JasonStys/code-flow-studio/actions/runs/42726748363), [real isolated-worker acceptance](https://github.com/JasonStys/code-flow-studio/actions/runs/42726748363/job/129534214045), [verified native release build](https://github.com/JasonStys/code-flow-studio/actions/runs/42727706376).
 
-## Security review and native shutdown
+## Earlier 0.4.2 native reliability
 
 The subsequent review added Python, JavaScript/TypeScript and Actions CodeQL analysis. Actual full-main scans exposed an ambiguous demo-contract regex and unbounded worker-report reads; subsequent PR analysis found Actions checkout-reference mistakes. The corrected regex uses disjoint alternatives; worker reports use one regular-file descriptor and an eight-MiB actual-read limit. The distributed worker and native package carry matching version metadata, with exact source and worker hashes checked before release uploads.
 
@@ -46,9 +82,9 @@ A later real Windows native check reached the shutdown response but left its Pyt
 
 The [native drain investigation and validation](https://github.com/JasonStys/code-flow-studio/blob/7d2158a57bb49e8f837fffbfe23b301902465412/docs/reports/native-http-drain-2026-11-10.md) records the reproduced mechanism and the remaining limit: the particular held connection from the original failed hosted run was not identified. The unchanged 60-second native journey now requires actual HTTP-drain, workspace-sealing and service/thread/main milestones, plus disappearance of the owned service processes. It does not accept an Electron window closing as proof that the backend exited.
 
-## Measured result
+## Earlier native reliability measurements
 
-Current runtime-fix evidence is recorded separately from the earlier 0.4.0 baseline:
+The earlier native-runtime evidence remains separate from both 0.4.3 and the original 0.4.0 baseline:
 
 - **265 Python tests and 28 subtests** passed at the [runtime-fix source](https://github.com/JasonStys/code-flow-studio/tree/7d2158a57bb49e8f837fffbfe23b301902465412), with **85.12%** measured coverage and the unchanged 80% minimum. The later documentation integration adds separate Office-publication checks.
 - **48 web checks and 18 private account journeys** passed across Chromium, Firefox and WebKit. Pure source-binding checks remain separate from actual compiler acceptance.
@@ -66,7 +102,7 @@ These measurements describe the linked earlier source and release, rather than t
 - The actual existing **Windows 0.4.0 packaged executable** passed the full native journey in **7.8 seconds**; its observed unlock HTTP/session proof took **171 ms**. This is one local observation, not a latency guarantee or reproduction of the earlier hosted delay.
 - TypeScript/Vite, 70 exact source maps and release contracts passed locally. Separate locked desktop and worker JavaScript dependency graphs were audited; the separate hosted worker/compiler and three-platform native gates also passed at this accepted source, as linked above.
 
-Published downloads: [0.4.2 downloads and checksums](https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.2). The [earlier 0.4.0 release](https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.0) retains its original assets. The download catalog binds each current payload to its exact release source, passing source checks, release build and checksum; historical results above retain their own revision.
+Historical downloads: [0.4.2 downloads and checksums](https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.2). The [earlier 0.4.0 release](https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.0) retains its original assets. The current download catalog selects 0.4.3 with its exact source, passing checks, release build and checksums; historical results above retain their own revision.
 
 ## Limitations
 

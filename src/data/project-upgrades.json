@@ -1,35 +1,39 @@
 {
   "schemaVersion": 1,
-  "collectedAt": "2026-11-10T14:58:53.219795+00:00",
+  "collectedAt": "2026-11-10T20:27:34.671589+00:00",
   "scope": "66 domain repositories created in this chat; portfolio site is validated separately",
   "repositories": [
     {
       "name": "code-flow-studio",
-      "summary": "Inspect source-bound diagnostics, missed coverage and unused-code candidates. Bound hostile-input parsing and worker reads, drain native HTTP work without abandoning local vault transitions, and gate source-bound releases with CodeQL and three-platform acceptance. Documentation adds a reviewed Word guide plus a separate validation review and evidence workbook.",
-      "rationale": "Makes developer triage and native shutdown evidence reviewable, protecting real local transitions during cancellation while preserving the limits of private accounts, untrusted execution and finite HTTP drain budgets.",
-      "sourceCommit": "eb9b1cd0c3e3fd1e70e397edeffb059073464f74",
-      "sourceUrl": "https://github.com/JasonStys/code-flow-studio/tree/eb9b1cd0c3e3fd1e70e397edeffb059073464f74",
-      "reviewUrl": "https://github.com/JasonStys/code-flow-studio/pull/8",
-      "validationReportUrl": "https://github.com/JasonStys/code-flow-studio/blob/eb9b1cd0c3e3fd1e70e397edeffb059073464f74/docs/reports/draft-release-visibility-2026-11-10.md",
+      "summary": "Code Flow Studio 0.4.3 separates actual C# target exits from the Coverlet collector: approved nonzero returns have measured coverage, while three genuine collector faults remain blocked. The published source passed 419 tests and 28 subtests with 85.01% controller/training coverage, two 70-scenario twelve-language lanes and three-OS compiled native checks. Source-bound diagnostics, unused-code candidates and guarded draft navigation remain available.",
+      "rationale": "Prevents valid command-line rejection paths from being mistaken for broken instrumentation while preserving failed tests, collector failures, source-hash locations and encrypted-history replay. Exact-main compiler, native and CodeQL gates bind downloadable 0.4.3 packages to the reviewed source.",
+      "sourceCommit": "1d0b19ed589947ae45e93555d97331c95cad26cc",
+      "sourceUrl": "https://github.com/JasonStys/code-flow-studio/tree/1d0b19ed589947ae45e93555d97331c95cad26cc",
+      "reviewUrl": "https://github.com/JasonStys/code-flow-studio/pull/10",
+      "validationReportUrl": "https://github.com/JasonStys/code-flow-studio/blob/1d0b19ed589947ae45e93555d97331c95cad26cc/docs/reports/csharp-coverage-2026-11-10.md",
       "workflows": [
         {
           "name": "CodeQL",
-          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42838291353"
+          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42891062291"
+        },
+        {
+          "name": "Compiler execution acceptance",
+          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42891062235"
         },
         {
           "name": "Desktop packages",
-          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42838291731"
+          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42891062323"
         },
         {
           "name": "Validate",
-          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42838291624"
+          "url": "https://github.com/JasonStys/code-flow-studio/actions/runs/42891062261"
         }
       ],
       "limitations": [
-        "Twelve bounded flat CLI adapters do not cover every framework, dependency or architecture; coverage and unused-code candidates are not correctness or dead-code proof.",
+        "Twelve bounded flat CLI adapters do not cover every framework, dependency or architecture. Measured approved C# exits do not imply 100% line/branch coverage; unused candidates are not dead-code proof.",
         "Execution needs a separately built local Docker worker with no host fallback. Shared worker identity and containers are not a certified public hostile-code sandbox.",
         "Hashes bind retained bytes and locations, not trusted attestation by a malicious target. UI-only report fixtures are separate from native collector evidence.",
-        "Local accounts trust the OS and unlocked service. Unsigned desktop builds, no native mobile installer or clean-machine lifecycle certification. The five-second HTTP drain does not bound critical local work or total process-exit time."
+        "Unsigned builds; no mobile installer or notarization. Windows upgrade and disposable-profile installed-app checks passed. Populated pre-existing vault upgrades and real-credential replay were not exercised. Clean-machine installs, uninstall and non-Windows installation transactions were not tested. A five-second HTTP drain does not bound critical work or total exit."
       ]
     },
     {

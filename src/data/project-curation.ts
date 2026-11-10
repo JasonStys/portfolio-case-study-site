@@ -12,10 +12,10 @@ export const projectCuration = [
   {
     name: "code-flow-studio",
     roles: ["AI engineer", "Full-stack engineer", "Developer tools engineer"],
-    domains: ["AI developer tools", "Testing", "Security"],
+    domains: ["AI developer tools", "Testing", "Security", "Compiler instrumentation"],
     maturity: "validated",
     outcome:
-      "Inspect source-bound diagnostics, coverage and unused-code candidates; navigate only to matching drafts with cancellation-safe native shutdown.",
+      "Inspect source-bound diagnostics and unused-code candidates; measure C# coverage for approved nonzero exits with separate target and Coverlet collector evidence.",
     featuredOrder: 1,
     caseStudySlug: "code-flow-studio",
   },

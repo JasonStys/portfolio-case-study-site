@@ -1850,18 +1850,20 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 11 | variable | `manifest` |
-| 17 | variable | `baseURL` |
-| 18 | variable | `origin` |
-| 19 | variable | `context` |
-| 24 | variable | `external` |
-| 33 | variable | `page` |
-| 35 | variable | `ownLink` |
-| 46 | variable | `evidence` |
-| 47 | variable | `delivery` |
-| 57 | variable | `row` |
-| 102 | variable | `own` |
-| 105 | variable | `other` |
+| 12 | variable | `manifest` |
+| 18 | variable | `baseURL` |
+| 19 | variable | `origin` |
+| 20 | variable | `context` |
+| 25 | variable | `external` |
+| 34 | variable | `page` |
+| 36 | variable | `ownLink` |
+| 47 | variable | `evidence` |
+| 48 | variable | `delivery` |
+| 58 | variable | `row` |
+| 103 | variable | `own` |
+| 106 | variable | `other` |
+| 142 | variable | `timestamps` |
+| 143 | variable | `exactTimes` |
 
 ## `tests/e2e/portfolio.spec.ts`
 

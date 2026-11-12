@@ -56,3 +56,26 @@ Office exploit scanner or a general hostile-OS-owner security claim.
 The paired JSON uses the project's ordinary UTF-8/LF and formatting rules.
 Schema, identities, actual Word/JSON hashes and repository privacy checks all
 apply; no pair-specific text-conversion or formatting exception is needed.
+
+## Standalone reader layout validation
+
+The first [PR37](https://github.com/JasonStys/portfolio-case-study-site/pull/37)
+[Linux Firefox run](https://github.com/JasonStys/portfolio-case-study-site/actions/runs/43174132440/job/131034163394)
+passed the 22 existing flows but failed both new own-page
+320 px checks with a 329 px body. The trace records loaded page styles, not the
+earlier download-return readiness race. Its viewport screenshots and snapshots
+do not record the exact lower-page overflowing element, so a particular timestamp
+is not asserted as the historical offender.
+
+The standalone component lacked the text-wrapping inheritance supplied by the
+project-detail ancestor. It now owns `overflow-wrap: anywhere` and a
+`minmax(0, 1fr)` grid track. A real Firefox control with unchanged full timestamp
+strings in a wider 20 px monospace text font measured 381 px before the correction;
+its captured geometry shows the identity list and implicit grid widening. After
+the scoped correction, all six focused Chromium, Firefox and WebKit journeys pass
+the original 320 px bounds, including that text-font control. A separate deliberate
+`white-space: nowrap` timestamp control still exceeds 320 px in all three engines,
+showing that overflow remains detectable rather than clipped. No data is shortened,
+font shrunk, global overflow hidden, threshold raised, deadline changed or retry
+added. Fresh complete hosted browser acceptance remains required for the corrected
+source; this local result is not a claim that a future CI run has passed.

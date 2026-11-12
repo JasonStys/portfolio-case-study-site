@@ -7,6 +7,7 @@ import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import raw from "../../src/data/portfolio-delivery.json" with { type: "json" };
 import { validatePortfolioDelivery, PORTFOLIO_REPOSITORY } from "../../src/lib/portfolio-delivery";
+import { measuredBodyWidth } from "./layout-diagnostics";
 
 const manifest = validatePortfolioDelivery(raw);
 
@@ -130,7 +131,7 @@ test("the separate portfolio reader preserves actual evidence and unknowns witho
 
 test("the separate portfolio reader remains accessible with the normal script capability", async ({
   page,
-}) => {
+}, info) => {
   await page.setViewportSize({ width: 320, height: 800 });
   await page.goto("./downloads/portfolio/");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
@@ -138,4 +139,20 @@ test("the separate portfolio reader remains accessible with the normal script ca
   );
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
   expect(await page.locator("body").evaluate((body) => body.scrollWidth)).toBeLessThanOrEqual(320);
+  const timestamps = page.locator(".portfolio-delivery time");
+  const exactTimes = await timestamps.allTextContents();
+  // A wider user-selected text font must not let public ISO identities enlarge the card's grid.
+  await timestamps.evaluateAll((elements) => {
+    for (const element of elements) {
+      element.style.fontFamily = "monospace";
+      element.style.fontSize = "20px";
+    }
+  });
+  expect(await timestamps.allTextContents()).toEqual(exactTimes);
+  expect((await measuredBodyWidth(page, 320, info)).width).toBeLessThanOrEqual(320);
+  // Deliberately unwrappable content must remain visible to the same width oracle, not be clipped.
+  await page.addStyleTag({
+    content: ".portfolio-delivery time { white-space: nowrap !important; }",
+  });
+  expect(await page.locator("body").evaluate((body) => body.scrollWidth)).toBeGreaterThan(320);
 });

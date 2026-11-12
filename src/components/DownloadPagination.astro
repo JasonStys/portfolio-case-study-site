@@ -1,0 +1,66 @@
+---
+/**
+ * @file Links every static download page with accessible current, previous and next states without JavaScript.
+ * Functions: numbered link rendering; variables: bounded current/total page numbers and canonical relative paths.
+ * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
+ */
+import { downloadPagePath } from "@/lib/download-pages";
+import { withBase } from "@/lib/url";
+type Props = { current: number; total: number };
+const { current, total } = Astro.props;
+const pages = Array.from({ length: total }, (_, index) => index + 1);
+---
+
+<nav
+  class="download-pagination section-shell section-block"
+  id="download-pages"
+  aria-label="Download pages"
+>
+  {current > 1 && (
+    <a href={withBase(downloadPagePath(current - 1))} rel="prev">
+      Previous page
+    </a>
+  )}
+  <ol>
+    {pages.map((page) => (
+      <li>
+        <a
+          href={withBase(downloadPagePath(page))}
+          aria-label={`Download page ${page}`}
+          aria-current={current === page ? "page" : undefined}
+        >
+          Page {page}
+        </a>
+      </li>
+    ))}
+  </ol>
+  {current < total && (
+    <a href={withBase(downloadPagePath(current + 1))} rel="next">
+      Next page
+    </a>
+  )}
+</nav>
+<style>
+  .download-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+  .download-pagination ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 0.6rem;
+  }
+  .download-pagination a {
+    display: inline-block;
+    padding: 0.45rem 0.65rem;
+    border: 1px solid currentColor;
+    border-radius: 0.35rem;
+  }
+  .download-pagination [aria-current="page"] {
+    background: var(--ink);
+    color: var(--white);
+  }
+</style>

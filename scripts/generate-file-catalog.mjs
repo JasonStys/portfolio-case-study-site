@@ -18,6 +18,7 @@ const EXCLUDED_DIRECTORIES = new Set([
   ".runtime",
   "coverage",
   "dist",
+  "release",
   "node_modules",
   "playwright-report",
   "test-results",

@@ -8,6 +8,7 @@ import { access, readFile, readdir, stat } from "node:fs/promises";
 import { gzipSync } from "node:zlib";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { validateDownloadPages } from "./download-page-contract.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
@@ -135,6 +136,13 @@ async function main() {
   if (JSON.stringify(updateNames) !== JSON.stringify(names))
     throw new Error("Latest-work index must cover all 67 projects in canonical order.");
   const sitemap = await readFile(path.join(DIST, "sitemap.xml"), "utf8");
+  const downloads = JSON.parse(await readFile(path.join(DIST, "downloads/index.json"), "utf8"));
+  const downloadPages = new Map();
+  for (let number = 1; number <= Math.ceil(downloads.repositories.length / 12); number++) {
+    const route = number === 1 ? "downloads/" : `downloads/page/${number}/`;
+    downloadPages.set(route, await readFile(path.join(DIST, route, "index.html"), "utf8"));
+  }
+  validateDownloadPages(downloadPages, downloads.repositories, sitemap);
   for (const name of names) {
     const detail = await readFile(path.join(DIST, "projects", name, "index.html"), "utf8");
     if (!sitemap.includes(`/projects/${name}/`)) throw new Error(`Sitemap missing ${name}.`);

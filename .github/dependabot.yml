@@ -27,3 +27,15 @@ updates:
       codeql-actions:
         patterns:
           - "github/codeql-action/*"
+
+  - package-ecosystem: npm
+    directory: /desktop
+    schedule:
+      interval: weekly
+      day: monday
+      time: "10:00"
+      timezone: America/Los_Angeles
+    open-pull-requests-limit: 3
+    groups:
+      native-tooling:
+        dependency-type: development

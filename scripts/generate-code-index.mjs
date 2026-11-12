@@ -11,13 +11,14 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUTPUT = path.join(ROOT, "docs", "CODE_INDEX.md");
-const CODE_EXTENSIONS = new Set([".astro", ".css", ".js", ".mjs", ".ts"]);
+const CODE_EXTENSIONS = new Set([".astro", ".css", ".js", ".mjs", ".cjs", ".ts"]);
 const EXCLUDED_DIRECTORIES = new Set([
   ".astro",
   ".git",
   ".runtime",
   "coverage",
   "dist",
+  "release",
   "node_modules",
   "playwright-report",
   "test-results",

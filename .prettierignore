@@ -10,3 +10,5 @@ docs/reports/generated
 docs/CODE_INDEX.md
 docs/FILE_CATALOG.md
 package-lock.json
+
+release/

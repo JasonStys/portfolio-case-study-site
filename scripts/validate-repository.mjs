@@ -15,6 +15,7 @@ const EXCLUDED_DIRECTORIES = new Set([
   ".runtime",
   "coverage",
   "dist",
+  "release",
   "node_modules",
   "playwright-report",
   "test-results",
@@ -43,7 +44,7 @@ const REQUIRED_FILES = [
   ".github/workflows/dependency-review.yml",
   ".github/dependabot.yml",
 ];
-const CODE_EXTENSIONS = new Set([".astro", ".css", ".js", ".mjs", ".ts"]);
+const CODE_EXTENSIONS = new Set([".astro", ".css", ".js", ".mjs", ".cjs", ".ts"]);
 const FORBIDDEN_PATTERNS = [
   /ghp_[A-Za-z0-9]{20,}/u,
   /github_pat_[A-Za-z0-9_]{20,}/u,

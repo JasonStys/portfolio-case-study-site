@@ -49,6 +49,7 @@
 | `docs/LIMITATIONS.md`                                             | Project documentation described by its title and sections.                                                               |
 | `docs/native-application.md`                                      | Project documentation described by its title and sections.                                                               |
 | `docs/OPERATIONS.md`                                              | Project documentation described by its title and sections.                                                               |
+| `docs/portfolio-own-delivery.md`                                  | Project documentation described by its title and sections.                                                               |
 | `docs/portfolio-summary-2026-11-12.md`                            | Project documentation described by its title and sections.                                                               |
 | `docs/PROJECT_UPGRADES.md`                                        | Project documentation described by its title and sections.                                                               |
 | `docs/reports/ACTIONS_REVIEW_2026-10-14.md`                       | Project documentation described by its title and sections.                                                               |
@@ -63,6 +64,7 @@
 | `docs/reports/lighthouse-variance-2026-11-10.md`                  | Project documentation described by its title and sections.                                                               |
 | `docs/reports/offline-native-2026-11-12.md`                       | Project documentation described by its title and sections.                                                               |
 | `docs/reports/PERFORMANCE.md`                                     | Project documentation described by its title and sections.                                                               |
+| `docs/reports/portfolio-application-1.1.0-2026-11-12.md`          | Published-runtime and installed acceptance report with exact guide identities and retained failed observations.          |
 | `docs/reports/portfolio-sync-2026-10-14.md`                       | Project documentation described by its title and sections.                                                               |
 | `docs/reports/portfolio-sync-2026-10-21.md`                       | Project documentation described by its title and sections.                                                               |
 | `docs/reports/portfolio-sync-2026-10-22.md`                       | docs/reports/portfolio-sync-2026-10-22.md; Purpose: reviewed integration and validation trail by Jason Stys.             |
@@ -72,6 +74,8 @@
 | `docs/reports/security-documentation-2026-11-10.md`               | Project documentation described by its title and sections.                                                               |
 | `docs/reports/SITE_QUALITY.md`                                    | Project documentation described by its title and sections.                                                               |
 | `docs/reports/TEST_SUMMARY.md`                                    | Project documentation described by its title and sections.                                                               |
+| `docs/reports/windows-application-guide-1.1.0.docx`               | Approved four-page illustrated guide to the released 1.1.0 Windows reader and bounded installed acceptance.              |
+| `docs/reports/windows-application-guide-1.1.0.json`               | Canonical Word, installed-screenshot and immutable-source excerpt identities with separate visual/privacy review.        |
 | `docs/RESEARCH.md`                                                | Project documentation described by its title and sections.                                                               |
 | `docs/SECURITY.md`                                                | Project documentation described by its title and sections.                                                               |
 | `docs/TESTING.md`                                                 | Project documentation described by its title and sections.                                                               |
@@ -97,6 +101,7 @@
 | `scripts/native-snapshot.mjs`                                     | Creates a complete bounded offline snapshot of the actual Astro output and its exact public anchor registry.             |
 | `scripts/native-workflow-policy.mjs`                              | Checks the actual native workflow's independent Windows commands, read-only scope and manual-only package retention.     |
 | `scripts/owned-preview.mjs`                                       | Serves only an owned loopback production-dist socket for browser and Lighthouse acceptance.                              |
+| `scripts/publication-text.mjs`                                    | Keeps only the two named Word editions' complete XML and relationships visible to source privacy checks.                 |
 | `scripts/refresh-github-metadata.mjs`                             | Refreshes selected public GitHub facts while keeping reviewed technology annotations reproducible.                       |
 | `scripts/stage-native.mjs`                                        | Builds the same Astro site and creates one fresh source-bound offline snapshot without installing software.              |
 | `scripts/sync-readme.mjs`                                         | Jason Stys: keeps the README portfolio summary aligned with reviewed site curation.                                      |
@@ -111,6 +116,7 @@
 | `src/components/LegacyDownloadPage.astro`                         | Presents one bounded static download page with every existing package, runtime and proof boundary.                       |
 | `src/components/MetricRail.astro`                                 | Summarizes portfolio breadth with count-based evidence derived from the catalog.                                         |
 | `src/components/NativeContext.astro`                              | Identifies only the packaged offline context while keeping the ordinary website unchanged.                               |
+| `src/components/PortfolioDelivery.astro`                          | Renders only independently supplied portfolio delivery facts, keeping runtimeM separate from guideA and live metadata.   |
 | `src/components/ProjectCard.astro`                                | Presents one searchable project with outcome, evidence tags, and destination links.                                      |
 | `src/components/PublicationDownloads.astro`                       | Presents reviewed, commit-bound Office downloads and their public integrity metadata.                                    |
 | `src/components/SiteFooter.astro`                                 | Renders contact paths, provenance, and the current copyright year.                                                       |
@@ -134,6 +140,7 @@
 | `src/data/current-applications.json`                              | Repository support file.                                                                                                 |
 | `src/data/drone-systems.ts`                                       | Jason Stys's reviewed drone-safety collection and employer reading path.                                                 |
 | `src/data/github-repositories.json`                               | Reviewed GitHub repository metadata cache used by offline builds.                                                        |
+| `src/data/portfolio-delivery.json`                                | Independent portfolio release, runtime checks and current Word/report publication identities.                            |
 | `src/data/portfolio-priority.json`                                | Canonical reviewed ordering of all 67 public portfolio repositories.                                                     |
 | `src/data/project-curation.ts`                                    | Curates reviewed roles, domains, outcomes, maturity, and six featured cases.                                             |
 | `src/data/project-downloads.json`                                 | Repository support file.                                                                                                 |
@@ -147,6 +154,8 @@
 | `src/lib/download-catalog.ts`                                     | Loads only the coordinator's final public download index after all release checks pass.                                  |
 | `src/lib/download-pages.ts`                                       | Bounds static download pagination while preserving authoritative catalog order and one canonical first page.             |
 | `src/lib/downloads.ts`                                            | Validates a source-bound public index of the 20 projects with existing downloadable releases.                            |
+| `src/lib/portfolio-delivery-catalog.ts`                           | Loads only the hub's independent public delivery projection; absent facts remain explicitly null.                        |
+| `src/lib/portfolio-delivery.ts`                                   | Validates the hub's independent published delivery without extending the immutable66-app catalog.                        |
 | `src/lib/publications.ts`                                         | Validates the public, commit-bound documentation catalog for the 67 reviewed projects.                                   |
 | `src/lib/search.ts`                                               | Builds and queries a deterministic inverted index for project text and exact facets.                                     |
 | `src/lib/types.ts`                                                | Defines the validated repository, curation, search, and evidence domain types.                                           |
@@ -163,6 +172,8 @@
 | `src/pages/downloads/index.astro`                                 | Keeps the existing downloads entry as canonical static page one of the complete catalog.                                 |
 | `src/pages/downloads/index.json.ts`                               | Emits the complete public download evidence without repeating large digests in HTML.                                     |
 | `src/pages/downloads/page/[page].astro`                           | Generates only existing bounded download pages beyond the canonical first page.                                          |
+| `src/pages/downloads/portfolio/index.astro`                       | Gives the hub its own static delivery page without enlarging or relabeling the strict66-app snapshot.                    |
+| `src/pages/downloads/portfolio/index.json.ts`                     | Emits separate public portfolio delivery evidence, explicitly null until actual release and guide facts exist.           |
 | `src/pages/drone-systems.astro`                                   | Jason Stys's drone-safety collection with evidence-led highlights and explicit limits.                                   |
 | `src/pages/feed.xml.ts`                                           | Generates an RSS feed of featured case studies without runtime network access.                                           |
 | `src/pages/index.astro`                                           | Renders the employer-facing portfolio overview and six featured engineering cases.                                       |
@@ -181,6 +192,7 @@
 | `tests/e2e/download-readiness.ts`                                 | Separates actual returned-document/style readiness from the unchanged download layout assertions.                        |
 | `tests/e2e/downloads.spec.ts`                                     | Tests actual20-project62-payload static download discovery without fetching external binaries.                           |
 | `tests/e2e/layout-diagnostics.ts`                                 | Retains the original one-shot body width while collecting bounded public layout evidence only on overflow.               |
+| `tests/e2e/portfolio-delivery.spec.ts`                            | Exercises the own delivery page with actual static data and no script or outside requests.                               |
 | `tests/e2e/portfolio.spec.ts`                                     | Exercises navigation, progressive catalog filtering, URL state, case studies, and accessibility.                         |
 | `tests/e2e/upgrades.spec.ts`                                      | Exercises static upgrade discovery, exact-source links, no-JavaScript browsing and hub limits.                           |
 | `tests/unit/application-catalog.test.ts`                          | Proves every current project deep link reaches its actual static ordinal page and excludes the unreleased hub.           |
@@ -191,6 +203,9 @@
 | `tests/unit/download-pages.test.ts`                               | Independently verifies exact twelve-item partitions, complete curated-range coverage and invalid page admission.         |
 | `tests/unit/downloads.test.ts`                                    | Checks the independent20-project62-payload download fixture and hostile public metadata boundaries.                      |
 | `tests/unit/lighthouse.test.ts`                                   | Tests bounded diagnostics, historical failures and the prospective fixed-five sampling contract.                         |
+| `tests/unit/portfolio-delivery.test.ts`                           | Tests the separate hub-delivery contract with entirely fictional, inert release evidence.                                |
+| `tests/unit/portfolio-publication-files.test.ts`                  | Binds the actual approved Word, canonical pair and report bytes to the own public delivery projection.                   |
+| `tests/unit/publication-text.test.ts`                             | Exercises the exact-edition Office privacy reader with genuine inert ZIP records and XML bodies.                         |
 | `tests/unit/publications.test.ts`                                 | Tests complete publication scope, immutable file identities and hostile metadata rejection.                              |
 | `tests/unit/search.test.ts`                                       | Verifies Unicode tokenization, deterministic postings, intersections, facets, and empty results.                         |
 | `tests/unit/upgrades.test.ts`                                     | Tests exact catalog coverage, immutable source identity and public-only evidence schema.                                 |

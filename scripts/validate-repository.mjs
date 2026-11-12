@@ -4,9 +4,10 @@
  * Variables: ROOT, EXCLUDED_DIRECTORIES, REQUIRED_FILES, CODE_EXTENSIONS, FORBIDDEN_PATTERNS.
  * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
  */
-import { access, readFile, readdir } from "node:fs/promises";
+import { access, readdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { publicationText } from "./publication-text.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const EXCLUDED_DIRECTORIES = new Set([
@@ -71,7 +72,7 @@ async function readTextFiles(files) {
     records.push({
       file,
       relative: path.relative(ROOT, file).replaceAll("\\", "/"),
-      source: await readFile(file, "utf8"),
+      source: publicationText(file, path.relative(ROOT, file).replaceAll("\\", "/")),
     });
   }
   return records;

@@ -1,0 +1,130 @@
+---
+/**
+ * @file Renders only independently supplied portfolio delivery facts, keeping runtimeM separate from guideA and live metadata.
+ * Functions: static optional evidence rendering; variables: delivery and asset labels. Line locations: docs/CODE_INDEX.md.
+ */
+import { portfolioDeliveryManifest } from "@/lib/portfolio-delivery-catalog";
+import { PORTFOLIO_REPOSITORY } from "@/lib/portfolio-delivery";
+
+const delivery = portfolioDeliveryManifest.delivery;
+const labels = {
+  "windows-archive": "Windows x64 portable ZIP",
+  "archive-checksum": "ZIP SHA-256 sidecar",
+  "package-evidence": "Complete package integrity inventory — JSON",
+  license: "Project license",
+  instructions: "Installation instructions",
+};
+---
+
+<section
+  class="project-detail__section portfolio-delivery"
+  aria-labelledby="portfolio-delivery-title"
+  data-portfolio-delivery={delivery ? "published" : "unrecorded"}
+>
+  <p class="eyebrow">Independent portfolio reader delivery</p>
+  <h2 id="portfolio-delivery-title">
+    {delivery ? `Portfolio reader ${delivery.version}` : "Portfolio native reader"}
+  </h2>
+  <p>
+    The native reader packages the same portfolio for offline search, filters, case studies, source
+    evidence and internal navigation. It does not launch or install the other applications. External
+    reference, contact and download links require your confirmation before opening a browser.
+  </p>
+  {delivery ? (
+    <>
+      <p>
+        <a href={delivery.releaseUrl}>Published portfolio release</a> ·{" "}
+        <a href={delivery.runtimeSourceUrl}>Immutable packaged source</a> ·{" "}
+        <a href={delivery.guide.validationReportUrl}>Installed application validation report</a>
+      </p>
+      <h3>Download and start</h3>
+      <p>
+        Use the Windows x64 ZIP, matching checksum and package inventory below. Verify the complete
+        SHA-256 and extract the full directory before starting <code>JasonStysPortfolio.exe</code>.
+        No system Node.js, Python, Docker or local web server is required. Keep all runtime files
+        and license notices. Exit through the native controls; accepted confirmations finish first.
+      </p>
+      <ul class="project-detail__links">
+        {delivery.assets.map((asset) => (
+          <li data-portfolio-asset={asset.role}>
+            <a href={asset.url}>{labels[asset.role]}</a>
+            <p>
+              {asset.byteSize.toLocaleString("en-US")} bytes. SHA-256: <code>{asset.sha256}</code>
+            </p>
+          </li>
+        ))}
+      </ul>
+      <h3 id="portfolio-current-guide-title">Current illustrated Windows guide</h3>
+      <p>
+        <a href={delivery.guide.documentUrl}>Portfolio Windows guide — Word</a> ·{" "}
+        <a href={delivery.guide.manifestUrl}>Guide identity and validation record — JSON</a>
+      </p>
+      <p>
+        The guide describes version {delivery.guide.version} at runtime{" "}
+        <code>{delivery.runtimeSource}</code>. Its files were first published at{" "}
+        <a href={`${PORTFOLIO_REPOSITORY}/tree/${delivery.guide.publicationSource}`}>
+          <code>{delivery.guide.publicationSource}</code>
+        </a>
+        . This later website evidence does not rebuild or change that immutable native snapshot.
+      </p>
+      <p>
+        Word SHA-256: <code>{delivery.guide.documentSha256}</code>. JSON SHA-256:{" "}
+        <code>{delivery.guide.manifestSha256}</code>. Report SHA-256:{" "}
+        <code>{delivery.guide.validationReportSha256}</code>.
+      </p>
+      <h3>Source checks and evidence scope</h3>
+      <p>
+        These successful main runs describe the released runtime source, not the later guide or
+        website integration commit. Observe the native About panel for the actual installed
+        snapshot.
+      </p>
+      <ul class="project-detail__links">
+        {delivery.sourceChecks.workflows.map((workflow) => (
+          <li>
+            <a href={workflow.url}>{workflow.name} — released-source main run</a>
+          </li>
+        ))}
+      </ul>
+      <dl class="current-source-identity">
+        <dt>Released runtime source</dt>
+        <dd>
+          <code>{delivery.runtimeSource}</code>
+        </dd>
+        <dt>Published by GitHub (UTC)</dt>
+        <dd>
+          <time datetime={delivery.publishedAt}>{delivery.publishedAt}</time>
+        </dd>
+        <dt>Source checks observed (UTC)</dt>
+        <dd>
+          <time datetime={delivery.sourceChecks.observedAt}>
+            {delivery.sourceChecks.observedAt}
+          </time>
+        </dd>
+        <dt>Delivery metadata collected (UTC)</dt>
+        <dd>
+          <time datetime={delivery.collectedAt}>{delivery.collectedAt}</time>
+        </dd>
+      </dl>
+    </>
+  ) : (
+    <p>
+      This source snapshot has no projected portfolio release or current-guide identities. See{" "}
+      <a href={`${PORTFOLIO_REPOSITORY}/releases`}>portfolio Releases</a> for current package and
+      verification status. No asset IDs, hashes or guide publication are inferred here.
+    </p>
+  )}
+  <p>
+    Unsigned Windows portable software with no automatic updater or signed installer. Browser state
+    is local to the trusted OS owner. Static filesystem admission does not protect against a hostile
+    process using the same OS account. Acceptance covers the documented journeys, not clean-machine
+    installation, every possible workflow or cross-platform execution.
+  </p>
+</section>
+<style>
+  .portfolio-delivery code {
+    overflow-wrap: anywhere;
+  }
+  .portfolio-delivery li p {
+    margin-block: 0.4rem 1rem;
+  }
+</style>

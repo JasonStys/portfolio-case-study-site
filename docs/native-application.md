@@ -1,6 +1,6 @@
 # Offline Windows portfolio application
 
-The 1.1.0 native candidate packages **this same Astro site**. Browse project details,
+The published [1.1.0 native application](https://github.com/JasonStys/portfolio-case-study-site/releases/tag/v1.1.0) packages **this same Astro site**. Browse project details,
 search and exact facets, case studies, documentation and recorded evidence without
 a web server or an Internet connection. The existing GitHub Pages website and
 normal browser behavior remain available.

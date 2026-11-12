@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "delivery": {
+    "version": "1.1.0",
+    "runtimeSource": "977637a5cb208ab0181c6d56f960efbcb6adab22",
+    "runtimeSourceUrl": "https://github.com/JasonStys/portfolio-case-study-site/tree/977637a5cb208ab0181c6d56f960efbcb6adab22",
+    "releaseId": 442548555,
+    "releaseUrl": "https://github.com/JasonStys/portfolio-case-study-site/releases/tag/v1.1.0",
+    "publishedAt": "2026-11-12T05:59:08Z",
+    "collectedAt": "2026-11-12T06:53:15.326376+00:00",
+    "assets": [
+      {
+        "role": "windows-archive",
+        "name": "Jason-Stys-Portfolio-1.1.0-windows-x64.zip",
+        "url": "https://github.com/JasonStys/portfolio-case-study-site/releases/download/v1.1.0/Jason-Stys-Portfolio-1.1.0-windows-x64.zip",
+        "assetId": 738266928,
+        "byteSize": 153902137,
+        "sha256": "a2481ecc0832174544977c029bdf42ee5e4b855d862bd7be9ca274c32cfc8767"
+      },
+      {
+        "role": "archive-checksum",
+        "name": "Jason-Stys-Portfolio-1.1.0-windows-x64.zip.sha256",
+        "url": "https://github.com/JasonStys/portfolio-case-study-site/releases/download/v1.1.0/Jason-Stys-Portfolio-1.1.0-windows-x64.zip.sha256",
+        "assetId": 738267101,
+        "byteSize": 109,
+        "sha256": "97104a6ced693bc071de122783d39bc29a4db1c071540ff1ec7e637727da50c3"
+      },
+      {
+        "role": "package-evidence",
+        "name": "package-integrity.json",
+        "url": "https://github.com/JasonStys/portfolio-case-study-site/releases/download/v1.1.0/package-integrity.json",
+        "assetId": 738267134,
+        "byteSize": 33482,
+        "sha256": "ad59686c3136e6475b6c8db7e643253148eff44f371d355e11c5de5a90273988"
+      },
+      {
+        "role": "license",
+        "name": "LICENSE.txt",
+        "url": "https://github.com/JasonStys/portfolio-case-study-site/releases/download/v1.1.0/LICENSE.txt",
+        "assetId": 738267157,
+        "byteSize": 1067,
+        "sha256": "7bfeff0414583e7de937ae17f9c9a182f1c1a3f9350781b80e4d074d7fde4d48"
+      },
+      {
+        "role": "instructions",
+        "name": "INSTALL.txt",
+        "url": "https://github.com/JasonStys/portfolio-case-study-site/releases/download/v1.1.0/INSTALL.txt",
+        "assetId": 738267180,
+        "byteSize": 1047,
+        "sha256": "4c8b7bec34eb04f786c92bf7474f59368ef50071f898e2a38610b07ea080fefa"
+      }
+    ],
+    "sourceChecks": {
+      "observedAt": "2026-11-12T05:50:09.343768+00:00",
+      "workflows": [
+        {
+          "name": "CodeQL",
+          "path": ".github/workflows/codeql.yml",
+          "url": "https://github.com/JasonStys/portfolio-case-study-site/actions/runs/43163584927",
+          "sourceCommit": "977637a5cb208ab0181c6d56f960efbcb6adab22",
+          "conclusion": "success"
+        },
+        {
+          "name": "CI and Pages",
+          "path": ".github/workflows/ci.yml",
+          "url": "https://github.com/JasonStys/portfolio-case-study-site/actions/runs/43163584918",
+          "sourceCommit": "977637a5cb208ab0181c6d56f960efbcb6adab22",
+          "conclusion": "success"
+        },
+        {
+          "name": "Offline Windows application",
+          "path": ".github/workflows/native-app.yml",
+          "url": "https://github.com/JasonStys/portfolio-case-study-site/actions/runs/43163585016",
+          "sourceCommit": "977637a5cb208ab0181c6d56f960efbcb6adab22",
+          "conclusion": "success"
+        }
+      ]
+    },
+    "guide": {
+      "name": "portfolio-case-study-site",
+      "version": "1.1.0",
+      "runtimeSource": "977637a5cb208ab0181c6d56f960efbcb6adab22",
+      "publicationSource": "e6e72bec53e93a126f15c8c729d381e8a68985b3",
+      "documentPath": "docs/reports/windows-application-guide-1.1.0.docx",
+      "documentSha256": "68c36e6cb899dd7ddb7d412cf926ffce2ebfc7501681d3a6378edf21ccde2608",
+      "documentGitBlob": "29f2ea6d984a8dac96ed1fddc7f1536fdfaa73d0",
+      "documentByteSize": 252969,
+      "documentUrl": "https://github.com/JasonStys/portfolio-case-study-site/blob/e6e72bec53e93a126f15c8c729d381e8a68985b3/docs/reports/windows-application-guide-1.1.0.docx",
+      "manifestPath": "docs/reports/windows-application-guide-1.1.0.json",
+      "manifestSha256": "b396a4c01f966dd0bc44f5366a892930c7effe3a2eb415de6e5a53a31021ab46",
+      "manifestGitBlob": "b1aac64afa12ca5ce7b2e39925c5889ccabc0784",
+      "manifestByteSize": 2694,
+      "manifestUrl": "https://github.com/JasonStys/portfolio-case-study-site/blob/e6e72bec53e93a126f15c8c729d381e8a68985b3/docs/reports/windows-application-guide-1.1.0.json",
+      "validationReportPath": "docs/reports/portfolio-application-1.1.0-2026-11-12.md",
+      "validationReportSha256": "6dd709ebe3af0a020357860e89084250470735a3c793c4a4edebbbff539197d1",
+      "validationReportGitBlob": "fdcee18dd7c9aa74dad90e1265a9ae55b9651737",
+      "validationReportByteSize": 9421,
+      "validationReportUrl": "https://github.com/JasonStys/portfolio-case-study-site/blob/e6e72bec53e93a126f15c8c729d381e8a68985b3/docs/reports/portfolio-application-1.1.0-2026-11-12.md"
+    }
+  }
+}

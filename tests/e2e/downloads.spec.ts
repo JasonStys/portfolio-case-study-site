@@ -7,6 +7,7 @@ import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import raw from "../../src/data/project-downloads.json" with { type: "json" };
 import { validateDownloads } from "../../src/lib/downloads";
+import { waitForDownloadPage } from "./download-readiness";
 
 const manifest = validateDownloads(raw);
 
@@ -46,6 +47,16 @@ test("released app discovery preserves actual20/62 platform links and source bou
           .getByRole("link", { name: "Next page", exact: true })
           .click();
       const expected = manifest.repositories.slice((number - 1) * 12, number * 12);
+      await waitForDownloadPage(
+        page,
+        new URL(
+          number === 1
+            ? "downloads/history/2026-11-10/"
+            : `downloads/history/2026-11-10/page/${number}/`,
+          String(info.project.use.baseURL),
+        ).pathname,
+        expected.length,
+      );
       const cards = page.locator("[data-download-project]");
       await expect(cards).toHaveCount(expected.length);
       const actualNames = await cards.evaluateAll((elements) =>
@@ -126,6 +137,11 @@ test("released app discovery preserves actual20/62 platform links and source bou
     const index = await request.get("./downloads/history/2026-11-10/index.json");
     expect(index.status()).toBe(200);
     expect(await index.json()).toEqual(manifest);
+    await waitForDownloadPage(
+      page,
+      new URL("downloads/history/2026-11-10/", String(info.project.use.baseURL)).pathname,
+      12,
+    );
     expect(
       await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
     ).toBe(true);
@@ -177,6 +193,16 @@ test("historical download accessibility runs in the scanner's normal JavaScript 
         .getByRole("link", { name: "Next page", exact: true })
         .click();
     const expected = manifest.repositories.slice((number - 1) * 12, number * 12);
+    await waitForDownloadPage(
+      page,
+      new URL(
+        number === 1
+          ? "downloads/history/2026-11-10/"
+          : `downloads/history/2026-11-10/page/${number}/`,
+        String(info.project.use.baseURL),
+      ).pathname,
+      expected.length,
+    );
     await expect(page.locator("[data-download-project]")).toHaveCount(expected.length);
     await expect(page.locator("[data-download-platform]")).toHaveCount(
       expected.reduce((sum, project) => sum + project.assets.length, 0),

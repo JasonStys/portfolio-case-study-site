@@ -1579,47 +1579,20 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 11 | variable | `manifest` |
-| 17 | variable | `origin` |
-| 18 | variable | `context` |
-| 23 | variable | `external` |
-| 32 | variable | `page` |
-| 38 | variable | `pageCount` |
-| 39 | variable | `seenNames` |
-| 47 | variable | `expected` |
-| 48 | variable | `cards` |
-| 50 | variable | `actualNames` |
-| 55 | variable | `navigation` |
-| 63 | variable | `card` |
-| 75 | variable | `row` |
-| 112 | variable | `index` |
-| 120 | variable | `project` |
-| 121 | variable | `headingLink` |
-| 122 | variable | `projectName` |
-| 129 | variable | `first` |
-| 147 | variable | `origin` |
-| 148 | variable | `external` |
-| 158 | variable | `pageCount` |
-| 165 | variable | `expected` |
-
-## `tests/e2e/downloads.spec.ts`
-
-| Line | Kind | Symbol |
-| ---: | --- | --- |
-| 11 | variable | `manifest` |
-| 17 | variable | `origin` |
-| 18 | variable | `context` |
-| 23 | variable | `external` |
-| 32 | variable | `page` |
+| 12 | variable | `manifest` |
+| 18 | variable | `origin` |
+| 19 | variable | `context` |
+| 24 | variable | `external` |
+| 33 | variable | `page` |
 | 39 | variable | `pageCount` |
 | 40 | variable | `seenNames` |
 | 48 | variable | `expected` |
-| 49 | variable | `cards` |
-| 51 | variable | `actualNames` |
-| 56 | variable | `navigation` |
-| 64 | variable | `card` |
-| 76 | variable | `row` |
-| 126 | variable | `index` |
+| 57 | variable | `cards` |
+| 59 | variable | `actualNames` |
+| 64 | variable | `navigation` |
+| 72 | variable | `card` |
+| 84 | variable | `row` |
+| 121 | variable | `index` |
 | 134 | variable | `project` |
 | 135 | variable | `headingLink` |
 | 136 | variable | `projectName` |
@@ -1628,6 +1601,67 @@
 | 162 | variable | `external` |
 | 172 | variable | `pageCount` |
 | 179 | variable | `expected` |
+
+## `tests/e2e/download-readiness.spec.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 10 | function | `boundedEvent` |
+| 11 | variable | `timer` |
+| 30 | variable | `baseURL` |
+| 31 | variable | `origin` |
+| 32 | variable | `firstPath` |
+| 33 | variable | `context` |
+| 38 | variable | `hold` |
+| 39 | variable | `heldCount` |
+| 40 | variable | `signalHeld` |
+| 43 | variable | `release` |
+| 46 | variable | `held` |
+| 49 | variable | `released` |
+| 66 | variable | `ready` |
+| 67 | variable | `navigation` |
+| 69 | variable | `page` |
+| 82 | variable | `settled` |
+| 86 | variable | `incomplete` |
+| 104 | variable | `control` |
+
+## `tests/e2e/download-readiness.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 9 | function | `waitForDownloadPage` |
+| 10 | variable | `deadline` |
+| 11 | variable | `remaining` |
+| 12 | variable | `budget` |
+| 23 | variable | `state` |
+| 24 | variable | `styles` |
+
+## `tests/e2e/downloads.spec.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 12 | variable | `manifest` |
+| 18 | variable | `origin` |
+| 19 | variable | `context` |
+| 24 | variable | `external` |
+| 33 | variable | `page` |
+| 40 | variable | `pageCount` |
+| 41 | variable | `seenNames` |
+| 49 | variable | `expected` |
+| 60 | variable | `cards` |
+| 62 | variable | `actualNames` |
+| 67 | variable | `navigation` |
+| 75 | variable | `card` |
+| 87 | variable | `row` |
+| 137 | variable | `index` |
+| 150 | variable | `project` |
+| 151 | variable | `headingLink` |
+| 152 | variable | `projectName` |
+| 159 | variable | `first` |
+| 177 | variable | `origin` |
+| 178 | variable | `external` |
+| 188 | variable | `pageCount` |
+| 195 | variable | `expected` |
 
 ## `tests/e2e/portfolio.spec.ts`
 

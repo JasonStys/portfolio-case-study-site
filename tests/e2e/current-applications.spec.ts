@@ -7,6 +7,7 @@ import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import raw from "../../src/data/current-applications.json" with { type: "json" };
 import { validateApplications } from "../../src/lib/applications";
+import { waitForDownloadPage } from "./download-readiness";
 
 const manifest = validateApplications(raw);
 
@@ -45,6 +46,14 @@ test("released app discovery preserves current66/108 platform links and source b
           .getByRole("link", { name: "Next page", exact: true })
           .click();
       const expected = manifest.applications.slice((number - 1) * 12, number * 12);
+      await waitForDownloadPage(
+        page,
+        new URL(
+          number === 1 ? "downloads/" : `downloads/page/${number}/`,
+          String(info.project.use.baseURL),
+        ).pathname,
+        expected.length,
+      );
       const cards = page.locator("[data-download-project]");
       await expect(cards).toHaveCount(expected.length);
       const actualNames = await cards.evaluateAll((elements) =>
@@ -112,6 +121,11 @@ test("released app discovery preserves current66/108 platform links and source b
     const index = await request.get("./downloads/index.json");
     expect(index.status()).toBe(200);
     expect(await index.json()).toEqual(manifest);
+    await waitForDownloadPage(
+      page,
+      new URL("downloads/", String(info.project.use.baseURL)).pathname,
+      12,
+    );
     expect(
       await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
     ).toBe(true);
@@ -163,6 +177,14 @@ test("current download accessibility runs in the scanner's normal JavaScript con
         .getByRole("link", { name: "Next page", exact: true })
         .click();
     const expected = manifest.applications.slice((number - 1) * 12, number * 12);
+    await waitForDownloadPage(
+      page,
+      new URL(
+        number === 1 ? "downloads/" : `downloads/page/${number}/`,
+        String(info.project.use.baseURL),
+      ).pathname,
+      expected.length,
+    );
     await expect(page.locator("[data-download-project]")).toHaveCount(expected.length);
     await expect(page.locator("[data-download-platform]")).toHaveCount(
       expected.reduce((sum, project) => sum + project.assets.length, 0),

@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "repository": "portfolio-case-study-site",
+  "runtimeVersion": "1.1.0",
+  "runtimeSource": "977637a5cb208ab0181c6d56f960efbcb6adab22",
+  "createdAt": "2026-11-12T06:00:05.710Z",
+  "author": "Jason Stys",
+  "document": "windows-application-guide-1.1.0.docx",
+  "sha256": "68c36e6cb899dd7ddb7d412cf926ffce2ebfc7501681d3a6378edf21ccde2608",
+  "screenshots": [
+    {
+      "file": "native-portfolio-home.png",
+      "sha256": "467575cc7e99c780e6f4fc4e2655635846f8958e516d308e2bec05757b31f0c3",
+      "width": 1265,
+      "height": 838,
+      "caption": "The installed application displays the real portfolio homepage, native navigation and immutable snapshot identity. Its bundled catalog includes 67 project pages and 66 other current application records."
+    },
+    {
+      "file": "native-portfolio-about.png",
+      "sha256": "34915c1e4fac130ae5d97a0c5c0fa0eb7d3d56a356ba1ca1199c4324d3cf6807",
+      "width": 1265,
+      "height": 838,
+      "caption": "Keyboard and native navigation reach the actual About page. Public reference and contact links require a separate confirmation before opening an external browser."
+    }
+  ],
+  "snippets": [
+    {
+      "file": "desktop/operations.cjs",
+      "first": 16,
+      "last": 32,
+      "sha256": "48fdfe8484bccb378286a849494015414cf587266b3096961dd2266c2722488d",
+      "url": "https://github.com/JasonStys/portfolio-case-study-site/blob/977637a5cb208ab0181c6d56f960efbcb6adab22/desktop/operations.cjs#L16"
+    }
+  ],
+  "observedTests": [
+    {
+      "name": "Installed consumer",
+      "observed": "Original complete journey: two normal exits, source identity, responsive layouts, project search/history, all current download pages and JSON. All 196 program files unchanged.",
+      "result": "Passed"
+    },
+    {
+      "name": "Isolation and closure",
+      "observed": "Native isolation and permission/network/popup refusal passed, as did Cancel/Open, durable restart and held confirmation through Quit/Close. Only the OS dialog and external opener were substituted.",
+      "result": "Passed"
+    },
+    {
+      "name": "Delivery and source",
+      "observed": "Five provider downloads matched identities. Desktop and Start-menu targets read back. All three main workflows and two processed CodeQL categories passed. Ordinary default-profile icon activation was not performed.",
+      "result": "Passed"
+    }
+  ],
+  "visualReview": "approved",
+  "review": {
+    "pages": 4,
+    "renderedPageReview": "passed",
+    "ooxmlValidation": "passed",
+    "embeddedOriginalScreenshots": "passed",
+    "immutableSourceExcerpt": "passed",
+    "privacyAndScope": "passed",
+    "reviewedAt": "2026-11-12T06:14:19.767867+00:00"
+  }
+}

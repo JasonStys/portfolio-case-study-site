@@ -28,6 +28,7 @@ export const GET: APIRoute = () => {
     "projects/",
     "updates/",
     "documentation/",
+    "downloads/portfolio/",
     ...Array.from(
       { length: downloadPageCount(applicationManifest.applications.length) },
       (_, index) => downloadPagePath(index + 1),

@@ -8,6 +8,8 @@
 import BaseLayout from "@/components/BaseLayout.astro";
 import PublicationDownloads from "@/components/PublicationDownloads.astro";
 import CurrentApplication from "@/components/CurrentApplication.astro";
+import PortfolioDelivery from "@/components/PortfolioDelivery.astro";
+import { portfolioDeliveryManifest } from "@/lib/portfolio-delivery-catalog";
 import { applicationFor, applicationDownloadPath } from "@/lib/application-catalog";
 import { projects } from "@/lib/catalog";
 import { projectUpgrade, upgradeManifest } from "@/lib/upgrades";
@@ -26,7 +28,7 @@ const { project, previous, next } = Astro.props;
 const upgrade = projectUpgrade(project.name);
 const isHub = project.name === "portfolio-case-study-site";
 const application = applicationFor(project.name);
-const hasDownload = Boolean(application);
+const hasDownload = Boolean(application) || (isHub && portfolioDeliveryManifest.delivery !== null);
 if (!upgrade && !isHub) throw new Error(`Missing source evidence for ${project.name}.`);
 const observedAt = new Date(upgradeManifest.collectedAt).toISOString();
 ---
@@ -57,7 +59,9 @@ const observedAt = new Date(upgradeManifest.collectedAt).toISOString();
         {hasDownload && (
           <a
             class="button button--secondary"
-            href={withBase(applicationDownloadPath(project.name))}
+            href={withBase(
+              application ? applicationDownloadPath(project.name) : "downloads/portfolio/",
+            )}
           >
             Inspect released downloads →
           </a>
@@ -193,6 +197,7 @@ const observedAt = new Date(upgradeManifest.collectedAt).toISOString();
       )}
     </div>
     <CurrentApplication name={project.name} />
+    {isHub && <PortfolioDelivery />}
     <PublicationDownloads name={project.name} />
     <nav class="project-detail__neighbors" aria-label="Browse projects in portfolio order">
       {previous && <a href={withBase(`projects/${previous.name}/`)}>← Previous: {previous.name}</a>}

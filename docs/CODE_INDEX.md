@@ -543,23 +543,23 @@
 | 15 | variable | `EXCLUDED_DIRECTORIES` |
 | 26 | variable | `checkOnly` |
 | 27 | variable | `STATIC_DESCRIPTIONS` |
-| 67 | function | `collectFiles` |
-| 68 | variable | `entries` |
-| 69 | variable | `results` |
-| 72 | variable | `absolute` |
-| 79 | function | `extractDescription` |
-| 80 | variable | `fileTag` |
-| 82 | variable | `fileLine` |
-| 84 | variable | `withoutEnd` |
-| 92 | function | `describeFile` |
-| 93 | variable | `staticDescription` |
-| 95 | variable | `extracted` |
-| 109 | function | `renderCatalog` |
-| 110 | variable | `lines` |
-| 123 | function | `main` |
-| 124 | variable | `files` |
-| 125 | variable | `records` |
-| 131 | variable | `rendered` |
+| 83 | function | `collectFiles` |
+| 84 | variable | `entries` |
+| 85 | variable | `results` |
+| 88 | variable | `absolute` |
+| 95 | function | `extractDescription` |
+| 96 | variable | `fileTag` |
+| 98 | variable | `fileLine` |
+| 100 | variable | `withoutEnd` |
+| 108 | function | `describeFile` |
+| 109 | variable | `staticDescription` |
+| 111 | variable | `extracted` |
+| 125 | function | `renderCatalog` |
+| 126 | variable | `lines` |
+| 139 | function | `main` |
+| 140 | variable | `files` |
+| 141 | variable | `records` |
+| 147 | variable | `rendered` |
 
 ## `scripts/lighthouse.mjs`
 
@@ -762,6 +762,98 @@
 | 133 | variable | `preview` |
 | 134 | variable | `stop` |
 
+## `scripts/publication-text.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 9 | variable | `maxBytes` |
+| 10 | variable | `maxXmlBytes` |
+| 11 | variable | `utf8` |
+| 14 | function | `requireValue` |
+| 19 | function | `hasControl` |
+| 21 | variable | `code` |
+| 33 | function | `boundedBytes` |
+| 34 | variable | `descriptor` |
+| 39 | variable | `status` |
+| 40 | variable | `named` |
+| 53 | variable | `buffer` |
+| 54 | variable | `count` |
+| 56 | variable | `received` |
+| 60 | variable | `after` |
+| 61 | variable | `current` |
+| 84 | function | `entityText` |
+| 90 | variable | `predefined` |
+| 92 | variable | `code` |
+| 108 | function | `canonicalFragment` |
+| 113 | function | `xmlText` |
+| 114 | variable | `source` |
+| 120 | variable | `stack` |
+| 123 | variable | `cursor` |
+| 129 | variable | `next` |
+| 131 | variable | `value` |
+| 134 | variable | `literal` |
+| 141 | variable | `end` |
+| 150 | variable | `end` |
+| 152 | variable | `value` |
+| 153 | variable | `literal` |
+| 159 | variable | `end` |
+| 168 | variable | `end` |
+| 171 | variable | `character` |
+| 178 | variable | `tag` |
+| 180 | variable | `closing` |
+| 184 | variable | `selfClosing` |
+| 186 | variable | `opening` |
+| 188 | variable | `attributes` |
+| 189 | variable | `rest` |
+| 191 | variable | `attribute` |
+| 196 | variable | `decoded` |
+| 216 | function | `contentTypes` |
+| 217 | variable | `defaults` |
+| 219 | variable | `entry` |
+| 222 | variable | `text` |
+| 237 | variable | `type` |
+| 246 | variable | `extension` |
+| 255 | variable | `part` |
+| 276 | function | `imagePart` |
+| 277 | variable | `lower` |
+| 293 | function | `crc32` |
+| 294 | variable | `value` |
+| 303 | function | `wordText` |
+| 304 | variable | `end` |
+| 315 | variable | `count` |
+| 316 | variable | `cursor` |
+| 317 | variable | `directoryEnd` |
+| 328 | variable | `names` |
+| 329 | variable | `folded` |
+| 330 | variable | `ranges` |
+| 331 | variable | `text` |
+| 332 | variable | `parts` |
+| 333 | variable | `expanded` |
+| 339 | variable | `flags` |
+| 340 | variable | `method` |
+| 341 | variable | `expectedCrc` |
+| 342 | variable | `compressed` |
+| 343 | variable | `size` |
+| 344 | variable | `nameLength` |
+| 345 | variable | `next` |
+| 351 | variable | `nameBytes` |
+| 352 | variable | `name` |
+| 353 | variable | `directory` |
+| 354 | variable | `pathParts` |
+| 377 | variable | `local` |
+| 382 | variable | `localNameEnd` |
+| 383 | variable | `start` |
+| 384 | variable | `finish` |
+| 401 | variable | `encoded` |
+| 402 | variable | `payload` |
+| 415 | variable | `declared` |
+| 416 | variable | `xmlBytes` |
+| 420 | variable | `type` |
+| 421 | variable | `xml` |
+| 437 | function | `publicationText` |
+| 438 | variable | `bytes` |
+| 447 | variable | `source` |
+
 ## `scripts/refresh-github-metadata.mjs`
 
 | Line | Kind | Symbol |
@@ -828,88 +920,88 @@
 | 15 | variable | `DIST` |
 | 16 | variable | `BASE` |
 | 17 | variable | `REQUIRED_OUTPUTS` |
-| 35 | variable | `BUDGETS` |
-| 42 | function | `collectFiles` |
-| 43 | variable | `entries` |
-| 44 | variable | `files` |
-| 46 | variable | `absolute` |
-| 53 | function | `targetForUrl` |
-| 54 | variable | `pathname` |
-| 56 | variable | `relative` |
-| 62 | function | `validateHtml` |
-| 63 | variable | `html` |
-| 73 | variable | `urls` |
-| 75 | variable | `target` |
-| 81 | variable | `inlineJavaScript` |
-| 87 | function | `validateBudgets` |
-| 88 | variable | `javascript` |
-| 89 | variable | `css` |
-| 90 | variable | `compressedSize` |
-| 96 | variable | `metrics` |
-| 104 | variable | `failures` |
-| 112 | function | `main` |
-| 114 | variable | `names` |
-| 117 | variable | `upgrades` |
-| 120 | variable | `publications` |
-| 123 | variable | `documentation` |
-| 124 | variable | `documentedNames` |
-| 129 | variable | `index` |
-| 130 | variable | `renderedNames` |
-| 133 | variable | `updates` |
-| 134 | variable | `updateNames` |
-| 139 | variable | `sitemap` |
-| 140 | variable | `downloads` |
-| 141 | variable | `downloadPages` |
-| 143 | variable | `route` |
-| 147 | variable | `legacyPrefix` |
-| 148 | variable | `legacy` |
-| 149 | variable | `originalLegacy` |
-| 154 | variable | `legacyPages` |
-| 156 | variable | `route` |
-| 161 | variable | `detail` |
-| 163 | variable | `upgrade` |
-| 174 | variable | `publication` |
-| 177 | variable | `base` |
-| 179 | variable | `url` |
-| 187 | variable | `app` |
-| 189 | variable | `page` |
-| 190 | variable | `route` |
-| 209 | variable | `files` |
-| 210 | variable | `htmlFiles` |
-| 211 | variable | `htmlSizes` |
-| 212 | variable | `inlineJavaScript` |
-| 214 | variable | `result` |
+| 37 | variable | `BUDGETS` |
+| 44 | function | `collectFiles` |
+| 45 | variable | `entries` |
+| 46 | variable | `files` |
+| 48 | variable | `absolute` |
+| 55 | function | `targetForUrl` |
+| 56 | variable | `pathname` |
+| 58 | variable | `relative` |
+| 64 | function | `validateHtml` |
+| 65 | variable | `html` |
+| 75 | variable | `urls` |
+| 77 | variable | `target` |
+| 83 | variable | `inlineJavaScript` |
+| 89 | function | `validateBudgets` |
+| 90 | variable | `javascript` |
+| 91 | variable | `css` |
+| 92 | variable | `compressedSize` |
+| 98 | variable | `metrics` |
+| 106 | variable | `failures` |
+| 114 | function | `main` |
+| 116 | variable | `names` |
+| 119 | variable | `upgrades` |
+| 122 | variable | `publications` |
+| 125 | variable | `documentation` |
+| 126 | variable | `documentedNames` |
+| 131 | variable | `index` |
+| 132 | variable | `renderedNames` |
+| 135 | variable | `updates` |
+| 136 | variable | `updateNames` |
+| 141 | variable | `sitemap` |
+| 142 | variable | `downloads` |
+| 143 | variable | `downloadPages` |
+| 145 | variable | `route` |
+| 149 | variable | `legacyPrefix` |
+| 150 | variable | `legacy` |
+| 151 | variable | `originalLegacy` |
+| 156 | variable | `legacyPages` |
+| 158 | variable | `route` |
+| 163 | variable | `detail` |
+| 165 | variable | `upgrade` |
+| 176 | variable | `publication` |
+| 179 | variable | `base` |
+| 181 | variable | `url` |
+| 189 | variable | `app` |
+| 191 | variable | `page` |
+| 192 | variable | `route` |
+| 211 | variable | `files` |
+| 212 | variable | `htmlFiles` |
+| 213 | variable | `htmlSizes` |
+| 214 | variable | `inlineJavaScript` |
+| 216 | variable | `result` |
 
 ## `scripts/validate-repository.mjs`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 11 | variable | `ROOT` |
-| 12 | variable | `EXCLUDED_DIRECTORIES` |
-| 23 | variable | `REQUIRED_FILES` |
-| 47 | variable | `CODE_EXTENSIONS` |
-| 48 | variable | `FORBIDDEN_PATTERNS` |
-| 55 | function | `collectFiles` |
-| 56 | variable | `entries` |
-| 57 | variable | `files` |
-| 60 | variable | `absolute` |
-| 67 | function | `readTextFiles` |
-| 68 | variable | `records` |
-| 80 | function | `validateRequiredFiles` |
-| 87 | function | `validateHeaders` |
-| 89 | variable | `header` |
-| 99 | function | `validateWorkflows` |
-| 100 | variable | `workflows` |
-| 104 | variable | `codeqlVersions` |
-| 115 | variable | `action` |
-| 122 | function | `validateContent` |
-| 123 | variable | `combined` |
-| 127 | variable | `sourceRecords` |
-| 134 | variable | `caseStudies` |
-| 137 | variable | `featured` |
-| 153 | function | `main` |
-| 155 | variable | `files` |
-| 156 | variable | `records` |
+| 12 | variable | `ROOT` |
+| 13 | variable | `EXCLUDED_DIRECTORIES` |
+| 24 | variable | `REQUIRED_FILES` |
+| 48 | variable | `CODE_EXTENSIONS` |
+| 49 | variable | `FORBIDDEN_PATTERNS` |
+| 56 | function | `collectFiles` |
+| 57 | variable | `entries` |
+| 58 | variable | `files` |
+| 61 | variable | `absolute` |
+| 68 | function | `readTextFiles` |
+| 69 | variable | `records` |
+| 81 | function | `validateRequiredFiles` |
+| 88 | function | `validateHeaders` |
+| 90 | variable | `header` |
+| 100 | function | `validateWorkflows` |
+| 101 | variable | `workflows` |
+| 105 | variable | `codeqlVersions` |
+| 116 | variable | `action` |
+| 123 | function | `validateContent` |
+| 124 | variable | `combined` |
+| 128 | variable | `sourceRecords` |
+| 135 | variable | `caseStudies` |
+| 138 | variable | `featured` |
+| 154 | function | `main` |
+| 156 | variable | `files` |
+| 157 | variable | `records` |
 
 ## `src/components/ArchitectureFigure.astro`
 
@@ -965,6 +1057,13 @@
 | Line | Kind | Symbol |
 | ---: | --- | --- |
 | — | file | No declarations indexed |
+
+## `src/components/PortfolioDelivery.astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 9 | variable | `delivery` |
+| 10 | variable | `labels` |
 
 ## `src/components/ProjectCard.astro`
 
@@ -1225,6 +1324,60 @@
 | 461 | variable | `first` |
 | 462 | variable | `second` |
 
+## `src/lib/portfolio-delivery-catalog.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 8 | variable | `portfolioDeliveryManifest` |
+
+## `src/lib/portfolio-delivery.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 9 | variable | `PORTFOLIO_REPOSITORY` |
+| 10 | variable | `PORTFOLIO_ASSET_ROLES` |
+| 17 | variable | `WORKFLOW_PATHS` |
+| 58 | function | `record` |
+| 60 | variable | `prototype` |
+| 74 | function | `list` |
+| 89 | function | `text` |
+| 104 | function | `hash` |
+| 105 | variable | `result` |
+| 112 | function | `positive` |
+| 119 | function | `exact` |
+| 125 | function | `timestamp` |
+| 126 | variable | `result` |
+| 133 | variable | `micros` |
+| 142 | function | `assets` |
+| 143 | variable | `archive` |
+| 144 | variable | `filenames` |
+| 151 | variable | `ids` |
+| 154 | variable | `row` |
+| 155 | variable | `name` |
+| 156 | variable | `role` |
+| 158 | variable | `assetId` |
+| 177 | function | `sourceChecks` |
+| 182 | variable | `row` |
+| 183 | variable | `paths` |
+| 184 | variable | `urls` |
+| 185 | variable | `workflows` |
+| 186 | variable | `item` |
+| 187 | variable | `path` |
+| 188 | variable | `url` |
+| 216 | function | `guide` |
+| 217 | variable | `row` |
+| 238 | variable | `publicationSource` |
+| 243 | variable | `documentPath` |
+| 251 | variable | `manifestPath` |
+| 252 | variable | `validationReportPath` |
+| 260 | variable | `base` |
+| 285 | function | `validatePortfolioDelivery` |
+| 286 | variable | `envelope` |
+| 289 | variable | `row` |
+| 301 | variable | `version` |
+| 304 | variable | `runtimeSource` |
+| 305 | variable | `collectedAt` |
+
 ## `src/lib/publications.ts`
 
 | Line | Kind | Symbol |
@@ -1366,12 +1519,12 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 14 | variable | `newlyAnalyzed` |
-| 23 | variable | `files` |
-| 24 | variable | `wordCount` |
-| 25 | variable | `workbookCount` |
-| 100 | variable | `row` |
-| 101 | variable | `current` |
+| 15 | variable | `newlyAnalyzed` |
+| 24 | variable | `files` |
+| 25 | variable | `wordCount` |
+| 26 | variable | `workbookCount` |
+| 99 | variable | `row` |
+| 100 | variable | `current` |
 
 ## `src/pages/downloads/history/2026-11-10/index.astro`
 
@@ -1411,6 +1564,19 @@
 | ---: | --- | --- |
 | 10 | function | `getStaticPaths` |
 
+## `src/pages/downloads/portfolio/index.astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| — | file | No declarations indexed |
+
+## `src/pages/downloads/portfolio/index.json.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 7 | variable | `prerender` |
+| 9 | function | `GET` |
+
 ## `src/pages/drone-systems.astro`
 
 | Line | Kind | Symbol |
@@ -1445,12 +1611,12 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 17 | function | `getStaticPaths` |
-| 26 | variable | `upgrade` |
-| 27 | variable | `isHub` |
-| 28 | variable | `application` |
-| 29 | variable | `hasDownload` |
-| 31 | variable | `observedAt` |
+| 19 | function | `getStaticPaths` |
+| 28 | variable | `upgrade` |
+| 29 | variable | `isHub` |
+| 30 | variable | `application` |
+| 31 | variable | `hasDownload` |
+| 33 | variable | `observedAt` |
 
 ## `src/pages/projects/index.astro`
 
@@ -1485,7 +1651,7 @@
 | 18 | variable | `caseStudyPaths` |
 | 25 | variable | `projectPaths` |
 | 26 | variable | `paths` |
-| 44 | variable | `urls` |
+| 45 | variable | `urls` |
 
 ## `src/pages/space-systems.astro`
 
@@ -1679,6 +1845,25 @@
 | 56 | variable | `offenders` |
 | 59 | variable | `box` |
 | 107 | variable | `body` |
+
+## `tests/e2e/portfolio-delivery.spec.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 12 | variable | `manifest` |
+| 18 | variable | `baseURL` |
+| 19 | variable | `origin` |
+| 20 | variable | `context` |
+| 25 | variable | `external` |
+| 34 | variable | `page` |
+| 36 | variable | `ownLink` |
+| 47 | variable | `evidence` |
+| 48 | variable | `delivery` |
+| 58 | variable | `row` |
+| 103 | variable | `own` |
+| 106 | variable | `other` |
+| 142 | variable | `timestamps` |
+| 143 | variable | `exactTimes` |
 
 ## `tests/e2e/portfolio.spec.ts`
 
@@ -2004,6 +2189,192 @@
 | 700 | variable | `missing` |
 | 703 | variable | `hidden` |
 | 709 | variable | `summary` |
+
+## `tests/unit/portfolio-delivery.test.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 10 | variable | `SYNTHETIC_REPOSITORY` |
+| 11 | variable | `SYNTHETIC_RUNTIME` |
+| 12 | variable | `SYNTHETIC_GUIDE` |
+| 15 | function | `syntheticFixture` |
+| 16 | variable | `version` |
+| 17 | variable | `names` |
+| 24 | variable | `roles` |
+| 31 | variable | `documentPath` |
+| 32 | variable | `manifestPath` |
+| 33 | variable | `validationReportPath` |
+| 34 | variable | `guideBase` |
+| 94 | function | `required` |
+| 98 | function | `asset` |
+| 101 | function | `workflow` |
+| 104 | function | `edit` |
+| 115 | variable | `input` |
+| 116 | variable | `output` |
+| 123 | variable | `input` |
+| 124 | variable | `delivery` |
+| 155 | variable | `data` |
+| 156 | variable | `guide` |
+| 165 | variable | `data` |
+| 166 | variable | `guide` |
+| 177 | variable | `data` |
+| 186 | variable | `input` |
+| 187 | variable | `before` |
+| 188 | variable | `output` |
+| 189 | variable | `delivery` |
+| 216 | variable | `data` |
+| 230 | variable | `mutations` |
+| 421 | variable | `data` |
+| 426 | variable | `integerFields` |
+| 438 | variable | `data` |
+| 454 | variable | `data` |
+| 460 | variable | `data` |
+| 485 | variable | `data` |
+| 486 | variable | `collection` |
+| 488 | variable | `prototype` |
+| 489 | variable | `reads` |
+| 497 | variable | `refusal` |
+| 509 | variable | `data` |
+| 510 | variable | `inherit` |
+| 511 | variable | `input` |
+| 525 | variable | `symbolic` |
+| 534 | variable | `data` |
+| 536 | variable | `reads` |
+| 551 | variable | `collection` |
+| 553 | variable | `sparse` |
+| 556 | variable | `extra` |
+| 559 | variable | `inherited` |
+| 560 | variable | `original` |
+| 561 | variable | `target` |
+| 564 | variable | `accessor` |
+| 565 | variable | `reads` |
+
+## `tests/unit/portfolio-publication-files.test.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 13 | variable | `root` |
+| 14 | variable | `delivery` |
+| 17 | variable | `guide` |
+| 18 | variable | `files` |
+| 43 | variable | `bytes` |
+| 55 | variable | `bytes` |
+| 56 | variable | `pair` |
+
+## `tests/unit/publication-text.test.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 21 | variable | `inflation` |
+| 23 | variable | `actual` |
+| 34 | variable | `BYTE_CAP` |
+| 35 | variable | `XML_CAP` |
+| 36 | variable | `OLD_GUIDE` |
+| 37 | variable | `CURRENT_GUIDE` |
+| 38 | variable | `TOKEN` |
+| 39 | variable | `COMPANY_MARKER` |
+| 40 | variable | `runtime` |
+| 41 | variable | `scratch` |
+| 42 | variable | `sequence` |
+| 57 | function | `crc32` |
+| 58 | variable | `polynomial` |
+| 59 | variable | `crc` |
+| 61 | variable | `current` |
+| 69 | function | `archive` |
+| 70 | variable | `locals` |
+| 71 | variable | `central` |
+| 72 | variable | `positions` |
+| 73 | variable | `offset` |
+| 75 | variable | `body` |
+| 76 | variable | `name` |
+| 77 | variable | `method` |
+| 78 | variable | `encoded` |
+| 79 | variable | `flags` |
+| 80 | variable | `crc` |
+| 81 | variable | `size` |
+| 82 | variable | `local` |
+| 92 | variable | `member` |
+| 93 | variable | `directory` |
+| 116 | variable | `centralOffset` |
+| 118 | variable | `position` |
+| 123 | variable | `end` |
+| 138 | function | `wordParts` |
+| 158 | function | `requiredPart` |
+| 159 | variable | `part` |
+| 164 | function | `inspect` |
+| 165 | variable | `file` |
+| 182 | variable | `parent` |
+| 191 | variable | `actual` |
+| 192 | variable | `status` |
+| 212 | variable | `result` |
+| 222 | variable | `parts` |
+| 231 | variable | `rel` |
+| 234 | variable | `zip` |
+| 237 | variable | `result` |
+| 247 | variable | `document` |
+| 248 | variable | `raw` |
+| 249 | variable | `result` |
+| 255 | variable | `document` |
+| 265 | variable | `result` |
+| 271 | variable | `document` |
+| 272 | variable | `result` |
+| 278 | variable | `document` |
+| 283 | variable | `document` |
+| 284 | variable | `result` |
+| 290 | variable | `document` |
+| 295 | variable | `document` |
+| 296 | variable | `result` |
+| 302 | variable | `parts` |
+| 309 | variable | `parts` |
+| 310 | variable | `types` |
+| 316 | variable | `zip` |
+| 342 | variable | `parts` |
+| 348 | variable | `changed` |
+| 361 | variable | `parts` |
+| 362 | variable | `types` |
+| 368 | variable | `parts` |
+| 369 | variable | `rel` |
+| 372 | variable | `result` |
+| 378 | variable | `document` |
+| 380 | variable | `result` |
+| 392 | variable | `zip` |
+| 398 | variable | `text` |
+| 406 | variable | `parts` |
+| 407 | variable | `part` |
+| 414 | variable | `zip` |
+| 422 | variable | `parts` |
+| 423 | variable | `part` |
+| 432 | variable | `parts` |
+| 433 | variable | `part` |
+| 441 | variable | `parts` |
+| 442 | variable | `part` |
+| 479 | variable | `duplicate` |
+| 498 | variable | `zip` |
+| 505 | variable | `broken` |
+| 511 | variable | `zip` |
+| 512 | variable | `disk` |
+| 515 | variable | `zip64` |
+| 519 | variable | `many` |
+| 530 | variable | `zip` |
+| 531 | variable | `position` |
+| 538 | variable | `nameMismatch` |
+| 539 | variable | `doc` |
+| 543 | variable | `nested` |
+| 544 | variable | `overlap` |
+| 549 | variable | `carrier` |
+| 550 | variable | `alias` |
+| 559 | variable | `file` |
+| 566 | variable | `directory` |
+| 569 | variable | `file` |
+| 570 | variable | `alias` |
+| 578 | variable | `parts` |
+| 593 | variable | `binary` |
+| 594 | variable | `total` |
+| 603 | variable | `xml` |
+| 613 | variable | `parts` |
+| 614 | variable | `part` |
+| 644 | variable | `deep` |
+| 646 | variable | `many` |
 
 ## `tests/unit/publications.test.ts`
 

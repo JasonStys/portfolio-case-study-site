@@ -25,6 +25,22 @@ const EXCLUDED_DIRECTORIES = new Set([
 ]);
 const checkOnly = process.argv.includes("--check");
 const STATIC_DESCRIPTIONS = new Map([
+  [
+    "src/data/portfolio-delivery.json",
+    "Independent portfolio release, runtime checks and current Word/report publication identities.",
+  ],
+  [
+    "docs/reports/windows-application-guide-1.1.0.docx",
+    "Approved four-page illustrated guide to the released 1.1.0 Windows reader and bounded installed acceptance.",
+  ],
+  [
+    "docs/reports/windows-application-guide-1.1.0.json",
+    "Canonical Word, installed-screenshot and immutable-source excerpt identities with separate visual/privacy review.",
+  ],
+  [
+    "docs/reports/portfolio-application-1.1.0-2026-11-12.md",
+    "Published-runtime and installed acceptance report with exact guide identities and retained failed observations.",
+  ],
   ["docs/handbook.md", "Organized user/developer navigation for the cited portfolio baseline."],
   [
     "docs/reports/project-guide.docx",

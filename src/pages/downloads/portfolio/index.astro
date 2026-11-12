@@ -1,0 +1,38 @@
+---
+/**
+ * @file Gives the hub its own static delivery page without enlarging or relabeling the strict66-app snapshot.
+ * Functions: static layout rendering; variables: fixed independent route. Line locations: docs/CODE_INDEX.md.
+ */
+import BaseLayout from "@/components/BaseLayout.astro";
+import PortfolioDelivery from "@/components/PortfolioDelivery.astro";
+import { withBase } from "@/lib/url";
+---
+
+<BaseLayout
+  title="Portfolio native reader — Jason Stys"
+  description="Independent portfolio reader downloads, immutable runtime identity and separately published Windows guide evidence."
+  canonicalPath="downloads/portfolio/"
+>
+  <header class="page-intro section-shell">
+    <p class="eyebrow">Use the portfolio offline</p>
+    <h1>The portfolio reader and its evidence.</h1>
+    <p>
+      This page separates the portfolio application's own delivery from the immutable catalog of
+      <a href={withBase("downloads/")}>66 other released applications</a>. The native application
+      preserves the website snapshot built at its stated runtime source; later live website and
+      guide facts remain separately identified.
+    </p>
+    <p>
+      <a href={withBase("downloads/portfolio/index.json")}>
+        Complete portfolio delivery identities — JSON
+      </a>{" "}
+      ·{" "}
+      <a href={withBase("projects/portfolio-case-study-site/")}>
+        Project purpose and development evidence
+      </a>
+    </p>
+  </header>
+  <div class="section-shell section-block">
+    <PortfolioDelivery />
+  </div>
+</BaseLayout>

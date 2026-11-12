@@ -1,11 +1,13 @@
 # Offline Windows portfolio application
 
-The 1.1.0 native candidate packages **this same Astro site**. Browse project details,
+The published [1.1.0 native application](https://github.com/JasonStys/portfolio-case-study-site/releases/tag/v1.1.0) packages **this same Astro site**. Browse project details,
 search and exact facets, case studies, documentation and recorded evidence without
 a web server or an Internet connection. The existing GitHub Pages website and
 normal browser behavior remain available.
 
 ## Use the portable application
+
+For the published 1.1.0 application, read the [illustrated Windows guide](reports/windows-application-guide-1.1.0.docx), [paired identity record](reports/windows-application-guide-1.1.0.json) and [installed acceptance report](reports/portfolio-application-1.1.0-2026-11-12.md). They identify the released runtime separately from their later documentation publication.
 
 Extract the complete accepted Windows x64 ZIP into an ordinary directory outside
 the source checkout. Open `JasonStysPortfolio.exe`; do not move the executable away

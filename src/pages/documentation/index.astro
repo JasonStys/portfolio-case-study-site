@@ -10,6 +10,7 @@ import { projects } from "@/lib/catalog";
 import { publicationFor, publicationManifest } from "@/lib/publications";
 import { withBase } from "@/lib/url";
 import { applicationFor } from "@/lib/application-catalog";
+import { portfolioDeliveryManifest } from "@/lib/portfolio-delivery-catalog";
 
 const newlyAnalyzed = [
   "code-flow-studio",
@@ -37,13 +38,11 @@ const workbookCount = files.length - wordCount;
       The 66 released domain applications each have a current illustrated Windows guide and paired
       identity record linked below. This snapshot records the other 66 deliveries; the portfolio
       reader's own current guide is tracked with its{" "}
-      <a href="https://github.com/JasonStys/portfolio-case-study-site/releases">
-        release documentation
-      </a>
-      . All {projects.length} projects also retain their earlier organized handbook and reviewed
-      Word guide. Larger projects also provide a separate validation review and filterable Excel
-      workflow and test-source inventories: {wordCount} Word documents and {workbookCount} workbooks
-      in total.
+      <a href={withBase("downloads/portfolio/")}>separate delivery and guide page</a>. All{" "}
+      {projects.length} projects also retain their earlier organized handbook and reviewed Word
+      guide. Larger projects also provide a separate validation review and filterable Excel workflow
+      and test-source inventories: {wordCount} Word documents and {workbookCount} workbooks in
+      total.
     </p>
     <p>
       Each project page links the exact published files, SHA-256 values, documented source revision
@@ -108,6 +107,13 @@ const workbookCount = files.length - wordCount;
               <p>
                 <a href={withBase(`projects/${project.name}/#current-windows-guide-title`)}>
                   Current Windows guide and identities — v{current.version}
+                </a>
+              </p>
+            )}
+            {project.name === "portfolio-case-study-site" && portfolioDeliveryManifest.delivery && (
+              <p>
+                <a href={withBase("downloads/portfolio/#portfolio-current-guide-title")}>
+                  {`Current portfolio Windows guide and identities — v${portfolioDeliveryManifest.delivery.version}`}
                 </a>
               </p>
             )}

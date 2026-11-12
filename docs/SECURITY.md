@@ -37,3 +37,27 @@ Only synthetic examples, authored descriptions, and public repository metadata a
 ## Reporting
 
 The root `SECURITY.md` explains private reporting. Do not place exploit details or personal information in a public issue.
+
+## Offline application boundary
+
+The Windows app loads only `portfolio://catalog/portfolio-case-study-site/` from
+an exact bounded ordinary-file inventory. Paths, bodies, media types and owner
+code are checked before the site bridge is admitted. Requests use immutable
+buffers and cannot select files. The sole main frame has a sandboxed isolated
+preload with fixed navigation, state, manual-link and Quit operations; it has no
+filesystem, shell command or generic IPC API. Remote requests, popups, permissions
+and in-app downloads are denied. Executable scripts stay external to preserve a
+`script-src 'self'` policy without granting inline script execution.
+
+Manual HTTPS opening requires both the exact build-declared HTML anchor and
+explicit Open confirmation (Cancel is the default). The default browser is a
+separate user-authorized boundary. The native app neither fetches nor verifies
+live remote content. Hashes and source identities are consistency evidence, not
+publisher signatures or hostile-local-writer protection.
+
+An ordinary owner-local browser profile is kept outside application resources.
+Admission rejects existing aliases, hardlinked mutable files and unknown top-level
+content before Chromium starts. Interrupted/changed ownership is retained for
+review; it is never automatically reset. This reference profile is plaintext,
+not a multiuser authentication system or a defense against concurrent malicious
+writers with the same OS authority. Packages are unsigned.

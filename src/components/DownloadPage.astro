@@ -1,0 +1,170 @@
+---
+/**
+ * @file Presents one bounded static download page with every existing package, runtime and proof boundary.
+ * Functions: static card/asset rendering; variables: page selection, authoritative downloadManifest and platform labels.
+ * Line locations: docs/CODE_INDEX.md after integration. No client scripts, external fonts or remote fetches.
+ */
+import BaseLayout from "@/components/BaseLayout.astro";
+import { downloadManifest } from "@/lib/download-catalog";
+import { withBase } from "@/lib/url";
+import { selectDownloadPage } from "@/lib/download-pages";
+import DownloadPagination from "@/components/DownloadPagination.astro";
+
+type Props = { pageIndex: number };
+const { pageIndex } = Astro.props;
+const selection = selectDownloadPage(downloadManifest.repositories, pageIndex);
+
+const platforms = {
+  windows: "Windows",
+  linux: "Linux",
+  macos: "macOS",
+  "cross-platform": "Python",
+};
+const formats = {
+  zip: "ZIP",
+  "tar.gz": "tar.gz",
+  exe: "EXE",
+  msi: "MSI",
+  dmg: "DMG",
+  appimage: "AppImage",
+  pyz: "zipapp",
+};
+---
+
+<BaseLayout
+  title={
+    pageIndex === 1
+      ? "Downloadable projects — Jason Stys"
+      : `Downloadable projects — page ${pageIndex} — Jason Stys`
+  }
+  description="Find verified downloadable releases, supported platforms, runtime requirements and exact-source validation evidence for Jason Stys's portfolio applications."
+  canonicalPath={selection.path}
+>
+  <header class="page-intro section-shell">
+    <p class="eyebrow">Download and inspect</p>
+    <h1>Try the released applications.</h1>
+    <p>
+      Choose the actual OS and CPU package below. Portable folders are extracted applications, not
+      installers. The delivery probe is a Python command-line zipapp. Drone Operations currently
+      supplies a Windows installer only. Select a project name for its purpose, reports and full
+      limits.
+    </p>
+    <p>
+      Verify the complete SHA-256 against the linked checksum or signed manifest. Shown hashes are
+      12-character prefixes; the <a href={withBase("downloads/index.json")}>full evidence index</a>{" "}
+      contains complete digests and source checks. Do not disable OS protections to launch unsigned
+      packages.
+    </p>
+    <p>
+      Observed <time datetime={downloadManifest.collectedAt}>{downloadManifest.collectedAt}</time>.
+      Native launch-and-use checks do not establish a clean-machine installation or the default OS
+      browser opener. <a href={withBase("updates/")}>All project improvements</a>.
+    </p>
+    <p data-download-page={selection.page}>
+      Showing {selection.first}–{selection.last} of {selection.totalEntries} released projects. Page{" "}
+      {selection.page} of {selection.totalPages}.{" "}
+      <a href="#download-pages">See all download pages</a>.
+    </p>
+  </header>
+  <section class="section-shell section-block" aria-label="Released applications">
+    <ol class="downloads-list" data-download-list start={selection.first}>
+      {selection.items.map((project) => (
+        <li id={project.name} data-download-project={project.name}>
+          <h2>
+            <a href={withBase(`projects/${project.name}/`)}>{project.name}</a>{" "}
+            <small>v{project.version}</small>
+          </h2>
+          <p>{project.requirements}</p>
+          <p class="download-proof">
+            <a href={project.releaseUrl} rel="noreferrer">
+              Release
+            </a>{" "}
+            ·{" "}
+            <a href={project.sourceUrl} rel="noreferrer">
+              App source {project.sourceCommit.slice(0, 12)}
+            </a>{" "}
+            ·{" "}
+            <a href={project.releaseCheck.url} rel="noreferrer">
+              Release checks
+            </a>
+          </p>
+          {project.acceptanceCheck && (
+            <p class="download-proof">
+              <a href={project.acceptanceCheck.url} rel="noreferrer">
+                Download acceptance
+              </a>{" "}
+              ·{" "}
+              <a href={project.acceptanceCheck.verifierSourceUrl} rel="noreferrer">
+                Verifier source {project.acceptanceCheck.verifierSourceCommit.slice(0, 12)}
+              </a>
+            </p>
+          )}
+          <ul class="download-assets">
+            {project.assets.map((asset) => (
+              <li data-download-platform={asset.platform}>
+                <a href={asset.assetUrl} rel="noreferrer">
+                  {platforms[asset.platform]} {asset.architecture} ·{" "}
+                  {asset.kind === "installer"
+                    ? "installer "
+                    : asset.kind === "zipapp"
+                      ? ""
+                      : "portable "}
+                  {formats[asset.format]}
+                </a>{" "}
+                <a href={asset.checksumUrl} rel="noreferrer">
+                  {project.distribution === "cli-zipapp" ? "Signed manifest" : "SHA-256"}
+                </a>{" "}
+                <code>{asset.sha256.slice(0, 12)}</code>
+              </li>
+            ))}
+          </ul>
+          <p class="download-limit">{project.limitations[0]}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+  <DownloadPagination current={selection.page} total={selection.totalPages} />
+</BaseLayout>
+
+<style is:global>
+  .downloads-list {
+    list-style: none;
+    display: grid;
+    gap: 1.5rem;
+  }
+  .downloads-list > li {
+    padding-block: 1rem;
+    border-bottom: 1px solid currentColor;
+  }
+  .downloads-list h2 {
+    font-size: 1.2rem;
+    overflow-wrap: anywhere;
+  }
+  .downloads-list small {
+    font-size: 0.85rem;
+  }
+  .downloads-list p {
+    margin-block: 0.6rem;
+  }
+  .download-assets {
+    display: grid;
+    gap: 0.5rem;
+    list-style: none;
+  }
+  .download-assets li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.65rem;
+  }
+  .download-assets code {
+    font-size: 0.8rem;
+  }
+  .download-proof,
+  .download-limit {
+    font-size: 0.9rem;
+  }
+  .download-limit {
+    max-width: 75ch;
+  }
+</style>

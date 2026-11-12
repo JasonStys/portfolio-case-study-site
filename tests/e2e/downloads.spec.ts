@@ -35,49 +35,91 @@ test("released app discovery preserves actual20/62 platform links and source bou
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(
       "Try the released applications.",
     );
-    await expect(page.locator("[data-download-project]")).toHaveCount(20);
-    await expect(page.locator("[data-download-platform]")).toHaveCount(62);
-    for (const project of manifest.repositories) {
-      const card = page.locator(`[data-download-project="${project.name}"]`);
-      await expect(card.getByRole("link", { name: "Release", exact: true })).toHaveAttribute(
-        "href",
-        project.releaseUrl,
+    const pageCount = Math.ceil(manifest.repositories.length / 12);
+    const seenNames: string[] = [],
+      seenAssets: string[] = [];
+    for (let number = 1; number <= pageCount; number++) {
+      if (number > 1)
+        await page
+          .getByRole("navigation", { name: "Download pages" })
+          .getByRole("link", { name: "Next page", exact: true })
+          .click();
+      const expected = manifest.repositories.slice((number - 1) * 12, number * 12);
+      const cards = page.locator("[data-download-project]");
+      await expect(cards).toHaveCount(expected.length);
+      const actualNames = await cards.evaluateAll((elements) =>
+        elements.map((element) => element.getAttribute("data-download-project") ?? ""),
+      );
+      expect(actualNames).toEqual(expected.map((project) => project.name));
+      seenNames.push(...actualNames);
+      const navigation = page.getByRole("navigation", { name: "Download pages" });
+      await expect(navigation.getByRole("link", { name: /^Download page / })).toHaveCount(
+        pageCount,
       );
       await expect(
-        card.getByRole("link", {
-          name: `App source ${project.sourceCommit.slice(0, 12)}`,
-          exact: true,
-        }),
-      ).toHaveAttribute("href", project.sourceUrl);
-      for (const asset of project.assets) {
-        const row = card
-          .locator("[data-download-platform]")
-          .filter({ has: page.locator(`a[href="${asset.assetUrl}"]`) });
-        await expect(row).toHaveCount(1);
-        await expect(row.getByRole("link").nth(1)).toHaveAttribute("href", asset.checksumUrl);
-        await expect(row.locator("code")).toHaveText(asset.sha256.slice(0, 12));
+        navigation.getByRole("link", { name: `Download page ${number}`, exact: true }),
+      ).toHaveAttribute("aria-current", "page");
+      for (const project of expected) {
+        const card = page.locator(`[data-download-project="${project.name}"]`);
+        await expect(card.getByRole("link", { name: "Release", exact: true })).toHaveAttribute(
+          "href",
+          project.releaseUrl,
+        );
+        await expect(
+          card.getByRole("link", {
+            name: `App source ${project.sourceCommit.slice(0, 12)}`,
+            exact: true,
+          }),
+        ).toHaveAttribute("href", project.sourceUrl);
+        for (const asset of project.assets) {
+          const row = card
+            .locator("[data-download-platform]")
+            .filter({ has: page.locator(`a[href="${asset.assetUrl}"]`) });
+          await expect(row).toHaveCount(1);
+          await expect(row.getByRole("link").nth(1)).toHaveAttribute("href", asset.checksumUrl);
+          await expect(row.locator("code")).toHaveText(asset.sha256.slice(0, 12));
+        }
+        if (project.name === "drone-operations-console") {
+          await expect(card.locator('[data-download-platform="windows"]')).toHaveCount(1);
+          await expect(
+            card.locator('[data-download-platform="linux"],[data-download-platform="macos"]'),
+          ).toHaveCount(0);
+        }
+        if (project.name === "secure-delivery-pipeline-lab")
+          await expect(
+            card.getByRole("link", { name: "Signed manifest", exact: true }),
+          ).toBeVisible();
+        if (project.name === "applicant-evidence-studio") {
+          if (project.acceptanceCheck === null)
+            throw new Error("The reviewed Applicant Evidence download verifier must be present.");
+          await expect(
+            card.getByRole("link", { name: "Download acceptance", exact: true }),
+          ).toHaveAttribute("href", project.acceptanceCheck.url);
+        }
       }
+      seenAssets.push(
+        ...(await page
+          .locator("[data-download-platform] > a:first-child")
+          .evaluateAll((elements) =>
+            elements.map((element) => element.getAttribute("href") ?? ""),
+          )),
+      );
+      expect(
+        await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
+      ).toBe(true);
     }
-    const drone = page.locator('[data-download-project="drone-operations-console"]');
-    await expect(drone.locator('[data-download-platform="windows"]')).toHaveCount(1);
-    await expect(
-      drone.locator('[data-download-platform="linux"],[data-download-platform="macos"]'),
-    ).toHaveCount(0);
-    await expect(
-      page
-        .locator('[data-download-project="secure-delivery-pipeline-lab"]')
-        .getByRole("link", { name: "Signed manifest", exact: true }),
-    ).toBeVisible();
-    const aes = manifest.repositories.find(
-      (project) => project.name === "applicant-evidence-studio",
+    expect(seenNames).toEqual(manifest.repositories.map((project) => project.name));
+    expect(new Set(seenNames).size).toBe(manifest.repositories.length);
+    expect(seenAssets).toEqual(
+      manifest.repositories.flatMap((project) => project.assets.map((asset) => asset.assetUrl)),
     );
-    if (aes === undefined || aes.acceptanceCheck === null)
-      throw new Error("The reviewed Applicant Evidence download verifier must be present.");
-    await expect(
-      page
-        .locator('[data-download-project="applicant-evidence-studio"]')
-        .getByRole("link", { name: "Download acceptance", exact: true }),
-    ).toHaveAttribute("href", aes.acceptanceCheck.url);
+    expect((await request.get(`./downloads/page/${pageCount + 1}/`)).status()).toBe(404);
+    expect((await request.get("./downloads/page/1/")).status()).toBe(404);
+    if (pageCount > 1)
+      await page
+        .getByRole("navigation", { name: "Download pages" })
+        .getByRole("link", { name: "Download page 1", exact: true })
+        .click();
     const index = await request.get("./downloads/index.json");
     expect(index.status()).toBe(200);
     expect(await index.json()).toEqual(manifest);
@@ -124,14 +166,25 @@ test("download accessibility runs in the scanner's normal JavaScript context", a
   });
   await page.setViewportSize({ width: 320, height: 800 });
   await page.goto("./downloads/");
-  await expect(page.locator("[data-download-project]")).toHaveCount(20);
-  await expect(page.locator("[data-download-platform]")).toHaveCount(62);
-  expect(
-    (
-      await new AxeBuilder({ page })
-        .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
-        .analyze()
-    ).violations,
-  ).toEqual([]);
+  const pageCount = Math.ceil(manifest.repositories.length / 12);
+  for (let number = 1; number <= pageCount; number++) {
+    if (number > 1)
+      await page
+        .getByRole("navigation", { name: "Download pages" })
+        .getByRole("link", { name: "Next page", exact: true })
+        .click();
+    const expected = manifest.repositories.slice((number - 1) * 12, number * 12);
+    await expect(page.locator("[data-download-project]")).toHaveCount(expected.length);
+    await expect(page.locator("[data-download-platform]")).toHaveCount(
+      expected.reduce((sum, project) => sum + project.assets.length, 0),
+    );
+    expect(
+      (
+        await new AxeBuilder({ page })
+          .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+          .analyze()
+      ).violations,
+    ).toEqual([]);
+  }
   expect(external).toEqual([]);
 });

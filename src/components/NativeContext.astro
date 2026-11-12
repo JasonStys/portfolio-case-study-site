@@ -1,0 +1,97 @@
+---
+/**
+ * @file Identifies only the packaged offline context while keeping the ordinary website unchanged.
+ * Functions: native-context client initialization; no browser service worker or remote fetch.
+ * Variables: hidden native notice, navigation controls and polite status output.
+ * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
+ */
+---
+
+<aside class="native-context" data-native-context hidden aria-label="Offline application">
+  <p>
+    <strong>Offline portfolio</strong> <span data-native-version></span>
+    <br />
+    <small>
+      Pages and search work offline. Public links open in your browser after confirmation.
+    </small>
+  </p>
+  <nav aria-label="Application navigation">
+    <button type="button" data-native-action="back" disabled>
+      Back
+    </button>
+    <button type="button" data-native-action="forward" disabled>
+      Forward
+    </button>
+    <button type="button" data-native-action="home">
+      Overview
+    </button>
+    <a href="https://jasonstys.github.io/portfolio-case-study-site/">Open live portfolio</a>
+    <button type="button" data-native-action="exit">
+      Exit application
+    </button>
+  </nav>
+  <p class="native-status" data-native-status role="status"></p>
+</aside>
+<script src="../scripts/native-context.ts"></script>
+<style is:global>
+  .native-context {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.7rem 1.3rem;
+    padding: 0.8rem clamp(1rem, 4vw, 4rem);
+    color: #12313d;
+    background: #e6f2f3;
+    border-bottom: 1px solid #9cbabf;
+  }
+  .native-context[hidden] {
+    display: none;
+  }
+  .native-context p {
+    margin: 0;
+  }
+  .native-context small {
+    font-size: 0.82rem;
+  }
+  .native-context nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .native-context button {
+    font: inherit;
+    font-size: 0.84rem;
+    color: #12313d;
+    background: white;
+    border: 1px solid #7e9da6;
+    border-radius: 0.35rem;
+    padding: 0.35rem 0.65rem;
+    cursor: pointer;
+  }
+  .native-context button:disabled {
+    color: #536c75;
+    cursor: default;
+  }
+  .native-status:not(:empty) {
+    flex-basis: 100%;
+    font-size: 0.85rem;
+  }
+  :root[data-native-portfolio] .hero::before {
+    right: 0;
+  }
+  @media (max-width: 1100px) {
+    :root[data-native-portfolio] .site-header {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+    :root[data-native-portfolio] .site-header nav {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      min-width: 0;
+      padding-bottom: 0.75rem;
+    }
+    :root[data-native-portfolio] .site-header nav ul {
+      flex-wrap: wrap;
+    }
+  }
+</style>

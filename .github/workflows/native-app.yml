@@ -1,0 +1,83 @@
+# File: Builds the same offline Astro portfolio and verifies the actual unsigned Windows portable ZIP with a disposable profile.
+# Jobs: bounded source/native controls, full relocated consumer and receipt-only default retention.
+name: Offline Windows application
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      upload_package:
+        description: Retain the accepted unsigned ZIP for one day (trusted main only)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: offline-native-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  windows:
+    name: Actual offline Windows portfolio
+    runs-on: windows-2025
+    timeout-minutes: 20
+    steps:
+      - name: Check out exact source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node.js 24
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            desktop/package-lock.json
+      - name: Install exact website graph
+        run: npm ci
+      - name: Install exact desktop tooling
+        run: npm ci --prefix desktop
+      - name: Audit website graph
+        run: npm run audit
+      - name: Audit desktop tooling graph
+        run: npm audit --prefix desktop --audit-level=high
+      - name: Validate actual native workflow contract
+        run: npm run native:policy
+      - name: Run native boundary and failure controls
+        run: npm run native:test
+      - name: Prove actual Electron startup failure statuses and profile preservation
+        run: node desktop/tests/electron-faults.mjs .runtime/native-hosted-faults
+      - name: Build actual source-bound Windows ZIP
+        run: node scripts/build-native.mjs release/hosted
+      - name: Verify relocated ZIP and actual two-launch consumer
+        run: node scripts/accept-native.mjs release/hosted/Jason-Stys-Portfolio-1.1.0-windows-x64.zip release/hosted/package-integrity.json .runtime/native-hosted-acceptance
+      - name: Upload bounded native evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: offline-native-evidence
+          path: |
+            .runtime/native-hosted-acceptance/receipt.json
+            .runtime/native-hosted-faults/receipt.json
+            .runtime/native-hosted-acceptance/acceptance/acceptance.json
+            .runtime/native-hosted-acceptance/acceptance/failure.json
+            .runtime/native-hosted-acceptance/acceptance/native-portfolio-*.png
+            release/hosted/package-integrity.json
+          if-no-files-found: ignore
+          retention-days: 3
+      - name: Retain accepted package only on explicit trusted-main request
+        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.upload_package && success()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: offline-native-windows-package
+          path: |
+            release/hosted/Jason-Stys-Portfolio-1.1.0-windows-x64.zip
+            release/hosted/package-integrity.json
+          if-no-files-found: error
+          retention-days: 1

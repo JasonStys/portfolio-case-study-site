@@ -8,6 +8,364 @@
 | ---: | --- | --- |
 | — | file | No declarations indexed |
 
+## `desktop/files.cjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 9 | variable | `fs` |
+| 12 | function | `ancestors` |
+| 13 | variable | `current` |
+| 16 | variable | `value` |
+| 22 | variable | `parent` |
+| 29 | function | `createAncestorAdmission` |
+| 30 | variable | `admitted` |
+| 32 | variable | `current` |
+| 33 | variable | `checked` |
+| 35 | variable | `value` |
+| 39 | variable | `parent` |
+| 47 | function | `readRegular` |
+| 49 | variable | `descriptor` |
+| 55 | variable | `named` |
+| 56 | variable | `actual` |
+| 69 | variable | `buffer` |
+| 70 | variable | `count` |
+| 72 | variable | `size` |
+| 83 | function | `newFile` |
+| 85 | variable | `descriptor` |
+| 95 | function | `readUtf8` |
+
+## `desktop/main.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 10 | variable | `require` |
+| 15 | variable | `ownerRoot` |
+| 16 | variable | `resourceRoot` |
+| 21 | variable | `flag` |
+| 22 | variable | `profilePath` |
+| 31 | variable | `operations` |
+| 32 | variable | `profile` |
+| 48 | function | `sender` |
+| 58 | function | `state` |
+| 68 | function | `openLink` |
+| 74 | variable | `answer` |
+| 89 | function | `navigate` |
+| 105 | function | `menuNavigate` |
+| 113 | function | `closeOwned` |
+| 127 | function | `failedOwned` |
+| 155 | function | `configureMenu` |
+| 224 | variable | `update` |
+| 226 | variable | `current` |
+| 227 | variable | `menu` |
+
+## `desktop/operations.cjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 9 | function | `createOperations` |
+| 10 | variable | `pending` |
+| 11 | variable | `closing` |
+| 18 | variable | `task` |
+| 36 | function | `openPublicLink` |
+| 37 | variable | `target` |
+| 42 | variable | `approved` |
+
+## `desktop/policy.cjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 8 | variable | `VERSION` |
+| 10 | variable | `SCHEME` |
+| 11 | variable | `HOST` |
+| 12 | variable | `BASE` |
+| 13 | variable | `HOME` |
+| 14 | variable | `LIVE_HOME` |
+| 15 | variable | `LINKEDIN` |
+| 16 | variable | `MAX_URL` |
+| 17 | function | `hasControls` |
+| 24 | function | `ownUrl` |
+| 26 | variable | `parsed` |
+| 44 | function | `publicUrl` |
+| 47 | variable | `parsed` |
+| 61 | variable | `host` |
+| 72 | function | `safeName` |
+| 93 | function | `documentRoutes` |
+| 94 | variable | `routes` |
+| 100 | variable | `directory` |
+| 109 | function | `senderAllowed` |
+| 118 | variable | `url` |
+
+## `desktop/preload.cjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 18 | variable | `listener` |
+| 23 | variable | `listener` |
+
+## `desktop/profile.cjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 8 | variable | `fs` |
+| 12 | variable | `PRODUCT` |
+| 13 | variable | `ALLOWED` |
+| 16 | function | `boundedNames` |
+| 17 | variable | `handle` |
+| 20 | variable | `entry` |
+| 32 | function | `admitTree` |
+| 33 | variable | `entries` |
+| 35 | variable | `pending` |
+| 36 | variable | `cursor` |
+| 43 | variable | `path` |
+| 59 | function | `admitProfile` |
+| 62 | variable | `directory` |
+| 65 | variable | `child` |
+| 70 | variable | `entries` |
+| 79 | variable | `path` |
+| 92 | function | `openProfile` |
+| 93 | variable | `directory` |
+| 97 | variable | `value` |
+| 116 | variable | `token` |
+| 118 | variable | `browser` |
+| 120 | variable | `closed` |
+
+## `desktop/resources.cjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 8 | variable | `fs` |
+| 9 | variable | `path` |
+| 13 | variable | `OWNER` |
+| 22 | variable | `MAX_TOTAL` |
+| 23 | variable | `MAX_FILE` |
+| 24 | variable | `TYPES` |
+| 42 | variable | `CSP` |
+| 45 | function | `mediaType` |
+| 46 | variable | `value` |
+| 51 | function | `verifiedSnapshot` |
+| 52 | variable | `metadata` |
+| 69 | variable | `names` |
+| 77 | variable | `caseNames` |
+| 83 | variable | `item` |
+| 95 | variable | `parent` |
+| 101 | variable | `pending` |
+| 103 | variable | `entries` |
+| 105 | variable | `relative` |
+| 106 | variable | `handle` |
+| 108 | variable | `entry` |
+| 111 | variable | `name` |
+| 113 | variable | `value` |
+| 128 | variable | `admit` |
+| 130 | variable | `total` |
+| 132 | variable | `bytes` |
+| 144 | variable | `bytes` |
+| 166 | function | `canNavigate` |
+| 167 | variable | `url` |
+| 171 | function | `responseFor` |
+| 172 | variable | `url` |
+| 173 | variable | `headers` |
+| 183 | variable | `file` |
+| 186 | variable | `entry` |
+| 193 | variable | `type` |
+
+## `desktop/tests/archive.test.cjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 8 | variable | `test` |
+| 10 | variable | `fs` |
+| 16 | function | `fixture` |
+| 20 | variable | `root` |
+| 22 | variable | `file` |
+| 25 | variable | `offset` |
+| 26 | variable | `local` |
+| 30 | variable | `name` |
+| 35 | variable | `header` |
+| 45 | variable | `directory` |
+| 64 | variable | `centralBytes` |
+| 71 | variable | `bytes` |
+| 73 | variable | `evidence` |
+| 86 | variable | `save` |
+| 93 | variable | `evidence` |
+| 121 | variable | `original` |
+| 134 | variable | `g` |
+| 154 | variable | `central` |
+| 166 | variable | `calls` |
+| 181 | variable | `g` |
+| 194 | variable | `replacement` |
+| 197 | variable | `changed` |
+| 198 | variable | `originalIdentity` |
+| 201 | variable | `count` |
+| 202 | variable | `reading` |
+
+## `desktop/tests/electron-failure-entry.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| — | file | No declarations indexed |
+
+## `desktop/tests/electron-faults.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 10 | variable | `require` |
+| 12 | variable | `root` |
+| 21 | variable | `results` |
+| 23 | variable | `profile` |
+| 31 | variable | `owner` |
+| 41 | variable | `result` |
+| 53 | variable | `lock` |
+
+## `desktop/tests/fixtures.cjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 8 | variable | `fs` |
+| 13 | function | `fixture` |
+| 14 | variable | `root` |
+| 20 | variable | `content` |
+| 29 | variable | `types` |
+| 35 | variable | `hash` |
+| 36 | variable | `owners` |
+| 38 | variable | `data` |
+| 46 | variable | `metadata` |
+| 69 | variable | `writeMetadata` |
+
+## `desktop/tests/native-journey.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 11 | variable | `require` |
+| 14 | variable | `root` |
+| 16 | variable | `executable` |
+| 19 | variable | `output` |
+| 31 | variable | `profile` |
+| 39 | variable | `application` |
+| 40 | function | `bounded` |
+| 41 | variable | `timer` |
+| 53 | function | `windowBounds` |
+| 74 | variable | `client` |
+| 80 | variable | `bounds` |
+| 93 | function | `entry` |
+| 94 | variable | `env` |
+| 105 | variable | `record` |
+| 110 | variable | `page` |
+| 118 | variable | `expectedMetadata` |
+| 127 | variable | `observedState` |
+| 138 | variable | `identity` |
+| 161 | variable | `current` |
+| 166 | function | `normalExit` |
+| 167 | variable | `exited` |
+| 176 | variable | `page` |
+| 190 | variable | `primary` |
+| 257 | variable | `rejected` |
+| 270 | variable | `outside` |
+| 280 | variable | `beforeWindows` |
+| 289 | variable | `expectedNames` |
+| 294 | variable | `names` |
+| 301 | variable | `actual` |
+| 319 | variable | `document` |
+| 358 | variable | `exited` |
+| 393 | variable | `failureCleanup` |
+| 396 | variable | `ended` |
+
+## `desktop/tests/operations.test.cjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 8 | variable | `test` |
+| 9 | variable | `assert` |
+| 11 | variable | `URL` |
+| 12 | variable | `snapshot` |
+| 13 | function | `deferred` |
+| 14 | variable | `resolve` |
+| 15 | variable | `promise` |
+| 21 | variable | `opened` |
+| 23 | variable | `request` |
+| 42 | variable | `calls` |
+| 68 | variable | `owner` |
+| 73 | variable | `running` |
+| 88 | variable | `finished` |
+| 89 | variable | `close` |
+| 92 | variable | `repeated` |
+| 106 | variable | `owner` |
+| 108 | variable | `running` |
+| 118 | variable | `settled` |
+
+## `desktop/tests/policy.test.cjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 8 | variable | `test` |
+| 96 | variable | `documents` |
+| 106 | variable | `frame` |
+
+## `desktop/tests/profile.test.cjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 8 | variable | `test` |
+| 10 | variable | `fs` |
+| 14 | function | `workspace` |
+| 15 | variable | `root` |
+| 23 | variable | `sentinel` |
+| 28 | variable | `second` |
+| 49 | variable | `installation` |
+| 71 | variable | `sentinel` |
+
+## `desktop/tests/resources.test.cjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 8 | variable | `test` |
+| 19 | variable | `response` |
+| 34 | variable | `response` |
+| 51 | variable | `response` |
+| 87 | variable | `before` |
+
+## `desktop/tests/snapshot.test.cjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 7 | variable | `test` |
+| 14 | variable | `result` |
+| 30 | variable | `f` |
+| 33 | variable | `output` |
+| 35 | variable | `metadata` |
+
+## `desktop/tests/startup.test.cjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 8 | variable | `test` |
+| 10 | variable | `fs` |
+| 16 | variable | `host` |
+| 18 | variable | `f` |
+| 19 | variable | `app` |
+| 27 | variable | `protocol` |
+| 28 | variable | `dialog` |
+| 29 | variable | `BrowserWindow` |
+| 31 | function | `refused` |
+| 32 | variable | `root` |
+| 34 | variable | `profile` |
+| 37 | variable | `owner` |
+| 39 | variable | `marker` |
+| 42 | variable | `proof` |
+| 43 | variable | `script` |
+| 47 | variable | `child` |
+| 55 | variable | `result` |
+
+## `desktop/tests/workflow.test.cjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 7 | variable | `test` |
+| 14 | variable | `text` |
+| 19 | variable | `mutations` |
+| 27 | variable | `steps` |
+| 28 | variable | `first` |
+| 67 | variable | `data` |
+
 ## `eslint.config.js`
 
 | Line | Kind | Symbol |
@@ -19,6 +377,16 @@
 | Line | Kind | Symbol |
 | ---: | --- | --- |
 | 9 | variable | `baseURL` |
+
+## `scripts/accept-native.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 11 | variable | `root` |
+| 25 | variable | `directory` |
+| 32 | variable | `stdout` |
+| 48 | variable | `after` |
+| 51 | variable | `receipt` |
 
 ## `scripts/benchmark-search.ts`
 
@@ -46,6 +414,39 @@
 | 71 | variable | `report` |
 | 82 | variable | `failures` |
 
+## `scripts/build-native.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 18 | variable | `root` |
+| 19 | variable | `output` |
+| 20 | variable | `allowDirty` |
+| 21 | variable | `staging` |
+| 22 | variable | `version` |
+| 25 | function | `checked` |
+| 36 | function | `git` |
+| 40 | function | `fingerprint` |
+| 41 | variable | `names` |
+| 56 | variable | `file` |
+| 68 | function | `icon` |
+| 69 | variable | `side` |
+| 75 | variable | `glyphs` |
+| 91 | variable | `column` |
+| 93 | variable | `left` |
+| 94 | variable | `right` |
+| 96 | variable | `color` |
+| 97 | variable | `offset` |
+| 109 | variable | `image` |
+| 132 | variable | `source` |
+| 143 | variable | `before` |
+| 152 | variable | `configuration` |
+| 163 | variable | `app` |
+| 164 | variable | `snapshot` |
+| 178 | variable | `artifacts` |
+| 184 | variable | `directory` |
+| 185 | variable | `metadata` |
+| 199 | variable | `evidence` |
+
 ## `scripts/check-owned-preview.mjs`
 
 | Line | Kind | Symbol |
@@ -72,6 +473,28 @@
 | 127 | variable | `escaped` |
 | 144 | variable | `target` |
 
+## `scripts/download-page-contract.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 8 | function | `nodes` |
+| 9 | variable | `pending` |
+| 12 | variable | `node` |
+| 21 | function | `text` |
+| 30 | function | `validateDownloadPages` |
+| 31 | variable | `count` |
+| 37 | variable | `route` |
+| 41 | variable | `all` |
+| 46 | variable | `expected` |
+| 53 | variable | `card` |
+| 61 | variable | `expectedLinks` |
+| 78 | variable | `rows` |
+| 85 | variable | `first` |
+| 97 | variable | `navigation` |
+| 104 | variable | `links` |
+| 108 | variable | `route` |
+| 109 | variable | `link` |
+
 ## `scripts/generate-code-index.mjs`
 
 | Line | Kind | Symbol |
@@ -80,22 +503,22 @@
 | 13 | variable | `OUTPUT` |
 | 14 | variable | `CODE_EXTENSIONS` |
 | 15 | variable | `EXCLUDED_DIRECTORIES` |
-| 25 | variable | `checkOnly` |
-| 27 | function | `collectFiles` |
-| 28 | variable | `entries` |
-| 29 | variable | `results` |
-| 32 | variable | `absolute` |
-| 40 | function | `symbolsForFile` |
-| 41 | variable | `patterns` |
-| 47 | variable | `symbols` |
-| 49 | variable | `trimmed` |
-| 51 | variable | `match` |
-| 61 | function | `renderIndex` |
-| 62 | variable | `lines` |
-| 79 | function | `main` |
-| 80 | variable | `files` |
-| 81 | variable | `records` |
-| 84 | variable | `rendered` |
+| 26 | variable | `checkOnly` |
+| 28 | function | `collectFiles` |
+| 29 | variable | `entries` |
+| 30 | variable | `results` |
+| 33 | variable | `absolute` |
+| 41 | function | `symbolsForFile` |
+| 42 | variable | `patterns` |
+| 48 | variable | `symbols` |
+| 50 | variable | `trimmed` |
+| 52 | variable | `match` |
+| 62 | function | `renderIndex` |
+| 63 | variable | `lines` |
+| 80 | function | `main` |
+| 81 | variable | `files` |
+| 82 | variable | `records` |
+| 85 | variable | `rendered` |
 
 ## `scripts/generate-file-catalog.mjs`
 
@@ -104,25 +527,25 @@
 | 13 | variable | `ROOT` |
 | 14 | variable | `OUTPUT` |
 | 15 | variable | `EXCLUDED_DIRECTORIES` |
-| 25 | variable | `checkOnly` |
-| 26 | variable | `STATIC_DESCRIPTIONS` |
-| 66 | function | `collectFiles` |
-| 67 | variable | `entries` |
-| 68 | variable | `results` |
-| 71 | variable | `absolute` |
-| 78 | function | `extractDescription` |
-| 79 | variable | `fileTag` |
-| 81 | variable | `fileLine` |
-| 83 | variable | `withoutEnd` |
-| 91 | function | `describeFile` |
-| 92 | variable | `staticDescription` |
-| 94 | variable | `extracted` |
-| 108 | function | `renderCatalog` |
-| 109 | variable | `lines` |
-| 122 | function | `main` |
-| 123 | variable | `files` |
-| 124 | variable | `records` |
-| 130 | variable | `rendered` |
+| 26 | variable | `checkOnly` |
+| 27 | variable | `STATIC_DESCRIPTIONS` |
+| 67 | function | `collectFiles` |
+| 68 | variable | `entries` |
+| 69 | variable | `results` |
+| 72 | variable | `absolute` |
+| 79 | function | `extractDescription` |
+| 80 | variable | `fileTag` |
+| 82 | variable | `fileLine` |
+| 84 | variable | `withoutEnd` |
+| 92 | function | `describeFile` |
+| 93 | variable | `staticDescription` |
+| 95 | variable | `extracted` |
+| 109 | function | `renderCatalog` |
+| 110 | variable | `lines` |
+| 123 | function | `main` |
+| 124 | variable | `files` |
+| 125 | variable | `records` |
+| 131 | variable | `rendered` |
 
 ## `scripts/lighthouse.mjs`
 
@@ -201,6 +624,105 @@
 | 595 | variable | `results` |
 | 598 | variable | `summary` |
 
+## `scripts/native-archive.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 13 | variable | `require` |
+| 16 | variable | `unzipper` |
+| 17 | variable | `MAX_FILE` |
+| 20 | function | `opened` |
+| 22 | variable | `fd` |
+| 27 | variable | `actual` |
+| 45 | variable | `held` |
+| 68 | function | `hashDescriptor` |
+| 69 | variable | `hash` |
+| 71 | variable | `count` |
+| 73 | variable | `read` |
+| 82 | function | `checkedHash` |
+| 84 | variable | `digest` |
+| 88 | function | `writeAll` |
+| 89 | variable | `offset` |
+| 91 | variable | `written` |
+| 97 | function | `inventory` |
+| 99 | variable | `result` |
+| 101 | variable | `entries` |
+| 106 | variable | `handle` |
+| 108 | variable | `entry` |
+| 111 | variable | `name` |
+| 121 | variable | `input` |
+| 136 | function | `archiveEvidence` |
+| 137 | variable | `input` |
+| 139 | variable | `evidence` |
+| 158 | function | `admittedEvidence` |
+| 180 | variable | `names` |
+| 182 | variable | `total` |
+| 186 | variable | `item` |
+| 203 | function | `extractVerified` |
+| 204 | variable | `evidence` |
+| 208 | variable | `input` |
+| 217 | variable | `end` |
+| 219 | variable | `count` |
+| 234 | variable | `zip` |
+| 244 | variable | `position` |
+| 245 | variable | `end` |
+| 247 | variable | `stream` |
+| 254 | variable | `buffer` |
+| 255 | variable | `count` |
+| 270 | variable | `expectedDirectories` |
+| 274 | variable | `parent` |
+| 281 | variable | `name` |
+| 305 | variable | `name` |
+| 309 | variable | `fd` |
+| 311 | variable | `size` |
+
+## `scripts/native-snapshot.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 13 | variable | `require` |
+| 23 | variable | `digest` |
+| 25 | function | `collectStatic` |
+| 27 | variable | `pending` |
+| 30 | variable | `count` |
+| 33 | variable | `current` |
+| 36 | variable | `entry` |
+| 39 | variable | `name` |
+| 53 | variable | `bytes` |
+| 69 | function | `anchorLinks` |
+| 70 | variable | `result` |
+| 73 | variable | `text` |
+| 74 | variable | `pending` |
+| 75 | variable | `count` |
+| 78 | variable | `node` |
+| 84 | variable | `href` |
+| 85 | variable | `url` |
+| 93 | variable | `target` |
+| 103 | function | `createSnapshot` |
+| 106 | variable | `input` |
+| 110 | variable | `relative` |
+| 119 | variable | `buffers` |
+| 120 | variable | `metadata` |
+| 140 | variable | `encoded` |
+| 145 | variable | `file` |
+| 154 | function | `copySnapshot` |
+| 155 | variable | `snapshot` |
+| 159 | variable | `file` |
+
+## `scripts/native-workflow-policy.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 11 | variable | `COMMANDS` |
+| 22 | variable | `CHECKOUT` |
+| 25 | variable | `MANUAL` |
+| 27 | function | `validateNativeWorkflow` |
+| 28 | variable | `document` |
+| 30 | variable | `data` |
+| 52 | variable | `runs` |
+| 72 | variable | `checkout` |
+| 83 | variable | `bounded` |
+
 ## `scripts/owned-preview.mjs`
 
 | Line | Kind | Symbol |
@@ -253,6 +775,17 @@
 | 99 | variable | `repository` |
 | 106 | variable | `refreshed` |
 
+## `scripts/stage-native.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 11 | variable | `root` |
+| 13 | variable | `allowDirty` |
+| 22 | variable | `checked` |
+| 31 | variable | `git` |
+| 33 | variable | `source` |
+| 39 | variable | `metadata` |
+
 ## `scripts/sync-readme.mjs`
 
 | Line | Kind | Symbol |
@@ -277,50 +810,53 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 12 | variable | `ROOT` |
-| 13 | variable | `DIST` |
-| 14 | variable | `BASE` |
-| 15 | variable | `REQUIRED_OUTPUTS` |
-| 33 | variable | `BUDGETS` |
-| 40 | function | `collectFiles` |
-| 41 | variable | `entries` |
-| 42 | variable | `files` |
-| 44 | variable | `absolute` |
-| 51 | function | `targetForUrl` |
-| 52 | variable | `pathname` |
-| 54 | variable | `relative` |
-| 60 | function | `validateHtml` |
-| 61 | variable | `html` |
-| 71 | variable | `urls` |
-| 73 | variable | `target` |
-| 79 | variable | `inlineJavaScript` |
-| 85 | function | `validateBudgets` |
-| 86 | variable | `javascript` |
-| 87 | variable | `css` |
-| 88 | variable | `compressedSize` |
-| 94 | variable | `metrics` |
-| 102 | variable | `failures` |
-| 110 | function | `main` |
-| 112 | variable | `names` |
-| 115 | variable | `upgrades` |
-| 118 | variable | `publications` |
-| 121 | variable | `documentation` |
-| 122 | variable | `documentedNames` |
-| 127 | variable | `index` |
-| 128 | variable | `renderedNames` |
-| 131 | variable | `updates` |
-| 132 | variable | `updateNames` |
-| 137 | variable | `sitemap` |
-| 139 | variable | `detail` |
-| 141 | variable | `upgrade` |
-| 152 | variable | `publication` |
-| 155 | variable | `base` |
-| 157 | variable | `url` |
-| 166 | variable | `files` |
-| 167 | variable | `htmlFiles` |
-| 168 | variable | `htmlSizes` |
-| 169 | variable | `inlineJavaScript` |
-| 171 | variable | `result` |
+| 13 | variable | `ROOT` |
+| 14 | variable | `DIST` |
+| 15 | variable | `BASE` |
+| 16 | variable | `REQUIRED_OUTPUTS` |
+| 34 | variable | `BUDGETS` |
+| 41 | function | `collectFiles` |
+| 42 | variable | `entries` |
+| 43 | variable | `files` |
+| 45 | variable | `absolute` |
+| 52 | function | `targetForUrl` |
+| 53 | variable | `pathname` |
+| 55 | variable | `relative` |
+| 61 | function | `validateHtml` |
+| 62 | variable | `html` |
+| 72 | variable | `urls` |
+| 74 | variable | `target` |
+| 80 | variable | `inlineJavaScript` |
+| 86 | function | `validateBudgets` |
+| 87 | variable | `javascript` |
+| 88 | variable | `css` |
+| 89 | variable | `compressedSize` |
+| 95 | variable | `metrics` |
+| 103 | variable | `failures` |
+| 111 | function | `main` |
+| 113 | variable | `names` |
+| 116 | variable | `upgrades` |
+| 119 | variable | `publications` |
+| 122 | variable | `documentation` |
+| 123 | variable | `documentedNames` |
+| 128 | variable | `index` |
+| 129 | variable | `renderedNames` |
+| 132 | variable | `updates` |
+| 133 | variable | `updateNames` |
+| 138 | variable | `sitemap` |
+| 139 | variable | `downloads` |
+| 140 | variable | `downloadPages` |
+| 142 | variable | `route` |
+| 147 | variable | `detail` |
+| 149 | variable | `upgrade` |
+| 160 | variable | `publication` |
+| 163 | variable | `base` |
+| 165 | variable | `url` |
+| 174 | variable | `files` |
+| 175 | variable | `htmlFiles` |
+| 176 | variable | `htmlSizes` |
+| 177 | variable | `inlineJavaScript` |
+| 179 | variable | `result` |
 
 ## `scripts/validate-repository.mjs`
 
@@ -328,30 +864,30 @@
 | ---: | --- | --- |
 | 11 | variable | `ROOT` |
 | 12 | variable | `EXCLUDED_DIRECTORIES` |
-| 22 | variable | `REQUIRED_FILES` |
-| 46 | variable | `CODE_EXTENSIONS` |
-| 47 | variable | `FORBIDDEN_PATTERNS` |
-| 54 | function | `collectFiles` |
-| 55 | variable | `entries` |
-| 56 | variable | `files` |
-| 59 | variable | `absolute` |
-| 66 | function | `readTextFiles` |
-| 67 | variable | `records` |
-| 79 | function | `validateRequiredFiles` |
-| 86 | function | `validateHeaders` |
-| 88 | variable | `header` |
-| 98 | function | `validateWorkflows` |
-| 99 | variable | `workflows` |
-| 103 | variable | `codeqlVersions` |
-| 114 | variable | `action` |
-| 121 | function | `validateContent` |
-| 122 | variable | `combined` |
-| 126 | variable | `sourceRecords` |
-| 133 | variable | `caseStudies` |
-| 136 | variable | `featured` |
-| 152 | function | `main` |
-| 154 | variable | `files` |
-| 155 | variable | `records` |
+| 23 | variable | `REQUIRED_FILES` |
+| 47 | variable | `CODE_EXTENSIONS` |
+| 48 | variable | `FORBIDDEN_PATTERNS` |
+| 55 | function | `collectFiles` |
+| 56 | variable | `entries` |
+| 57 | variable | `files` |
+| 60 | variable | `absolute` |
+| 67 | function | `readTextFiles` |
+| 68 | variable | `records` |
+| 80 | function | `validateRequiredFiles` |
+| 87 | function | `validateHeaders` |
+| 89 | variable | `header` |
+| 99 | function | `validateWorkflows` |
+| 100 | variable | `workflows` |
+| 104 | variable | `codeqlVersions` |
+| 115 | variable | `action` |
+| 122 | function | `validateContent` |
+| 123 | variable | `combined` |
+| 127 | variable | `sourceRecords` |
+| 134 | variable | `caseStudies` |
+| 137 | variable | `featured` |
+| 153 | function | `main` |
+| 155 | variable | `files` |
+| 156 | variable | `records` |
 
 ## `src/components/ArchitectureFigure.astro`
 
@@ -363,15 +899,35 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 21 | variable | `canonical` |
-| 22 | variable | `socialImage` |
-| 23 | variable | `safeStructuredData` |
+| 22 | variable | `canonical` |
+| 23 | variable | `socialImage` |
+| 24 | variable | `safeStructuredData` |
+
+## `src/components/DownloadPage.astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 15 | variable | `selection` |
+| 17 | variable | `platforms` |
+| 23 | variable | `formats` |
+
+## `src/components/DownloadPagination.astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 11 | variable | `pages` |
 
 ## `src/components/MetricRail.astro`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
 | 15 | variable | `metrics` |
+
+## `src/components/NativeContext.astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| — | file | No declarations indexed |
 
 ## `src/components/ProjectCard.astro`
 
@@ -470,6 +1026,20 @@
 | Line | Kind | Symbol |
 | ---: | --- | --- |
 | 9 | variable | `downloadManifest` |
+
+## `src/lib/download-pages.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 7 | variable | `DOWNLOAD_PAGE_SIZE` |
+| 8 | variable | `MAX_PROJECTS` |
+| 9 | function | `downloadPageCount` |
+| 14 | function | `downloadPagePath` |
+| 32 | function | `selectDownloadPage` |
+| 36 | variable | `candidate` |
+| 38 | variable | `totalPages` |
+| 39 | variable | `pathname` |
+| 41 | variable | `start` |
 
 ## `src/lib/downloads.ts`
 
@@ -690,8 +1260,7 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 11 | variable | `platforms` |
-| 17 | variable | `formats` |
+| — | file | No declarations indexed |
 
 ## `src/pages/downloads/index.json.ts`
 
@@ -699,6 +1268,12 @@
 | ---: | --- | --- |
 | 8 | variable | `prerender` |
 | 9 | function | `GET` |
+
+## `src/pages/downloads/page/[page].astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 10 | function | `getStaticPaths` |
 
 ## `src/pages/drone-systems.astro`
 
@@ -768,12 +1343,12 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 12 | variable | `prerender` |
-| 14 | variable | `GET` |
-| 15 | variable | `caseStudyPaths` |
-| 22 | variable | `projectPaths` |
-| 23 | variable | `paths` |
-| 35 | variable | `urls` |
+| 14 | variable | `prerender` |
+| 16 | variable | `GET` |
+| 17 | variable | `caseStudyPaths` |
+| 24 | variable | `projectPaths` |
+| 25 | variable | `paths` |
+| 39 | variable | `urls` |
 
 ## `src/pages/space-systems.astro`
 
@@ -789,6 +1364,27 @@
 | Line | Kind | Symbol |
 | ---: | --- | --- |
 | — | file | No declarations indexed |
+
+## `src/scripts/native-context.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 24 | function | `initializeNativeContext` |
+| 25 | variable | `notice` |
+| 26 | variable | `output` |
+| 27 | variable | `version` |
+| 29 | variable | `back` |
+| 30 | variable | `forward` |
+| 31 | variable | `closing` |
+| 32 | variable | `receivedNavigation` |
+| 33 | variable | `applyNavigation` |
+| 43 | variable | `state` |
+| 50 | variable | `target` |
+| 55 | variable | `action` |
+| 69 | variable | `link` |
+| 72 | variable | `original` |
+| 73 | variable | `target` |
+| 104 | variable | `bridge` |
 
 ## `src/scripts/project-filter.ts`
 
@@ -851,17 +1447,23 @@
 | 18 | variable | `context` |
 | 23 | variable | `external` |
 | 32 | variable | `page` |
-| 41 | variable | `card` |
-| 53 | variable | `row` |
-| 61 | variable | `drone` |
-| 71 | variable | `aes` |
-| 81 | variable | `index` |
-| 89 | variable | `project` |
-| 90 | variable | `headingLink` |
-| 91 | variable | `projectName` |
-| 98 | variable | `first` |
-| 116 | variable | `origin` |
-| 117 | variable | `external` |
+| 38 | variable | `pageCount` |
+| 39 | variable | `seenNames` |
+| 47 | variable | `expected` |
+| 48 | variable | `cards` |
+| 50 | variable | `actualNames` |
+| 55 | variable | `navigation` |
+| 63 | variable | `card` |
+| 75 | variable | `row` |
+| 123 | variable | `index` |
+| 131 | variable | `project` |
+| 132 | variable | `headingLink` |
+| 133 | variable | `projectName` |
+| 140 | variable | `first` |
+| 158 | variable | `origin` |
+| 159 | variable | `external` |
+| 169 | variable | `pageCount` |
+| 176 | variable | `expected` |
 
 ## `tests/e2e/portfolio.spec.ts`
 
@@ -945,6 +1547,36 @@
 | 140 | variable | `languages` |
 | 172 | variable | `repository` |
 | 173 | variable | `envelope` |
+
+## `tests/unit/download-page-contract.test.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 10 | variable | `repositories` |
+| 11 | function | `fixture` |
+| 12 | variable | `pages` |
+| 13 | variable | `total` |
+| 14 | variable | `sitemap` |
+| 20 | variable | `route` |
+| 21 | variable | `cards` |
+| 24 | variable | `links` |
+| 35 | variable | `navigation` |
+| 46 | variable | `f` |
+| 50 | variable | `f` |
+| 55 | variable | `f` |
+| 58 | variable | `first` |
+| 73 | variable | `f` |
+| 84 | variable | `f` |
+| 89 | variable | `g` |
+
+## `tests/unit/download-pages.test.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 14 | variable | `source` |
+| 17 | variable | `first` |
+| 28 | variable | `source` |
+| 29 | variable | `pages` |
 
 ## `tests/unit/downloads.test.ts`
 

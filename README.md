@@ -9,6 +9,16 @@ An evidence-first engineering portfolio that helps employers evaluate the design
 
 ![Portfolio preview](public/images/portfolio-preview.svg)
 
+## Offline Windows application
+
+The native **1.1.0 candidate** packages this same Astro site for offline browsing,
+search and evidence inspection. It preserves the existing website and GitHub Pages
+hosting. Public HTTPS anchors require an explicit Open/Cancel confirmation; the
+app does not discover or launch other projects. See the [native usage, build and
+validation guide](docs/native-application.md) for the portable package contract,
+profile ownership and current acceptance limits. Publication and installation are
+separate from source validation.
+
 ## Why this exists
 
 A broad GitHub profile can make strong work harder to evaluate. This site creates one consistent navigation layer across software engineering, full-stack systems, AI/ML, analytics, cloud infrastructure, cybersecurity, DevOps, accessible web development, firmware, and game technology.

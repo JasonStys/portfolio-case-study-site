@@ -15,8 +15,12 @@ export default defineConfig({
     inlineStylesheets: "never",
   },
   compressHTML: true,
+  cacheDir: "./.runtime/astro-cache",
   vite: {
+    cacheDir: ".runtime/vite-cache",
     build: {
+      // Keep actual authored scripts external so the native CSP needs no inline execution grant.
+      assetsInlineLimit: 0,
       sourcemap: true,
     },
   },

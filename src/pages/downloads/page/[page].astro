@@ -1,0 +1,20 @@
+---
+/**
+ * @file Generates only existing bounded download pages beyond the canonical first page.
+ * Functions: getStaticPaths; variables: authoritative catalog count and numeric page props.
+ * Line locations: see docs/CODE_INDEX.md for the generated symbol index.
+ */
+import DownloadPage from "@/components/DownloadPage.astro";
+import { downloadManifest } from "@/lib/download-catalog";
+import { downloadPageCount } from "@/lib/download-pages";
+export function getStaticPaths() {
+  return Array.from(
+    { length: downloadPageCount(downloadManifest.repositories.length) - 1 },
+    (_, index) => ({ params: { page: String(index + 2) }, props: { pageIndex: index + 2 } }),
+  );
+}
+type Props = { pageIndex: number };
+const { pageIndex } = Astro.props;
+---
+
+<DownloadPage pageIndex={pageIndex} />

@@ -42,3 +42,26 @@ jobs:
         with:
           category: /language:javascript-typescript
           upload-database: false
+
+  analyze-actions:
+    name: Analyze GitHub Actions
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Initialize CodeQL for Actions
+        uses: github/codeql-action/init@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4.39.0; coordinated version
+        with:
+          languages: actions
+          build-mode: none
+          queries: security-extended
+          trap-caching: false
+          dependency-caching: false
+      - name: Analyze Actions
+        uses: github/codeql-action/analyze@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4.39.0; coordinated version
+        with:
+          category: /language:actions
+          upload-database: false

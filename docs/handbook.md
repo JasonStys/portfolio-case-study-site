@@ -21,6 +21,7 @@ The editable Markdown remains the maintenance source. The Word files are readabl
 ### Usage and operations
 
 - [OPERATIONS](OPERATIONS.md)
+- [Offline Windows application](native-application.md)
 
 ### Design and contracts
 

@@ -17,7 +17,9 @@ export default defineConfig(
       ".runtime/**",
       "coverage/**",
       "dist/**",
+      "release/**",
       "node_modules/**",
+      "**/node_modules/**",
       "playwright-report/**",
       "test-results/**",
     ],
@@ -27,6 +29,14 @@ export default defineConfig(
   {
     files: ["**/*.{js,mjs}"],
     languageOptions: { globals: globals.node },
+  },
+  {
+    files: ["**/*.cjs"],
+    languageOptions: { sourceType: "commonjs", globals: globals.node },
+  },
+  {
+    files: ["desktop/tests/native-journey.mjs"],
+    languageOptions: { globals: { ...globals.node, ...globals.browser } },
   },
   {
     files: ["**/*.{ts,tsx}"],

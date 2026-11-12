@@ -158,3 +158,37 @@ The portfolio does not execute downloaded binaries in browser tests. Each projec
 - No real recruiter comprehension study.
 - Pixel screenshots are not used because OS text rasterization creates noisy cross-platform diffs; deterministic layout geometry is checked instead.
 - External links are allowlisted and reviewed but not fetched during every build, avoiding rate-limit and network flakiness.
+
+## Offline native application
+
+The original website verification, three-engine browser journeys and Lighthouse
+budgets remain mandatory. Native tests are an additional denominator:
+`npm run native:test` covers custom-origin/main-frame admission, ordinary profile
+ownership, actual filesystem aliases, retained confirmations, exact static bodies,
+real compressed ZIP mutations and the parsed Windows workflow. `npm run native:policy`
+requires every Windows native command to run independently; string and YAML-boolean
+skip conditions, extra privileges and automatic full-package uploads are rejected.
+
+`node desktop/tests/electron-faults.mjs .runtime/fresh-fault-output` executes the
+unchanged real main through three actual Electron startup failures. Only the
+blocking OS error display is substituted. Each failure must exit one and release
+only its own token, preserving unknown content and preexisting ownership.
+
+The Windows workflow builds the actual ZIP and runs `scripts/accept-native.mjs`.
+It verifies every archive body before relocation, then runs the same two-launch
+site journey against the compiled executable and hashes every package member again.
+Native acceptance covers actual search/facets/history, keyboard/fragment navigation,
+readable evidence JSON, rejected network/popup/permission access, exact confirmation
+and retained Quit. Automated Open checks substitute only the OS browser opener and
+dialog response; they do not establish the default browser's behavior.
+See [native usage and limits](native-application.md) and the dated native report.
+
+Static downloads are bounded to twelve projects per page. Unit ordinals independently
+require the current 12/8 split and all 67 entries as 12/12/12/12/12/7, with invalid
+count/page/nonarray refusals. Actual generated HTML is parsed independently of the
+renderer and requires exact ordered whole-catalog/card/asset/source/checksum/limit
+coverage plus complete current-page navigation and sitemap routes. Real HTML
+mutations prove missing pages, duplicate identities, lost checksum links and bad
+current/sitemap state fail. The original no-script and three-engine accessibility
+journeys now visit every static page and keep every original download assertion;
+there is no client-side giant JSON payload or automatic external binary download.

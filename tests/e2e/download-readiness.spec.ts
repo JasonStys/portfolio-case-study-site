@@ -5,6 +5,7 @@
  */
 import { expect, test } from "@playwright/test";
 import { waitForDownloadPage } from "./download-readiness";
+import { measuredBodyWidth } from "./layout-diagnostics";
 
 /** An explicit network-event gate has a fixed deadline and always clears its timer. */
 async function boundedEvent(event: Promise<void>) {
@@ -102,6 +103,7 @@ test("returned download readiness waits for real CSS and never excuses persisten
     // An actual persistent layout defect must still fail the exact existing width oracle after readiness.
     await page.evaluate(() => {
       const control = document.createElement("div");
+      control.id = "layout-overflow-control";
       control.style.width = "640px";
       control.style.height = "1px";
       document.body.appendChild(control);
@@ -110,6 +112,13 @@ test("returned download readiness waits for real CSS and never excuses persisten
     expect(
       await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
     ).toBe(false);
+    const measured = await measuredBodyWidth(page, 320, info);
+    expect(measured.width).toBeGreaterThan(320);
+    expect(measured.diagnostic?.originalWidth).toBe(measured.width);
+    expect(measured.diagnostic?.viewport.innerWidth).toBe(320);
+    expect(
+      measured.diagnostic?.offenders.some((element) => element.id === "layout-overflow-control"),
+    ).toBe(true);
   } finally {
     release();
     await Promise.allSettled([ready, navigation].filter((value) => value !== undefined));

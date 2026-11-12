@@ -180,6 +180,7 @@
 | `tests/e2e/download-readiness.spec.ts`                            | Uses a held real stylesheet to prove navigation readiness and a genuine overflow control stays detectable.               |
 | `tests/e2e/download-readiness.ts`                                 | Separates actual returned-document/style readiness from the unchanged download layout assertions.                        |
 | `tests/e2e/downloads.spec.ts`                                     | Tests actual20-project62-payload static download discovery without fetching external binaries.                           |
+| `tests/e2e/layout-diagnostics.ts`                                 | Retains the original one-shot body width while collecting bounded public layout evidence only on overflow.               |
 | `tests/e2e/portfolio.spec.ts`                                     | Exercises navigation, progressive catalog filtering, URL state, case studies, and accessibility.                         |
 | `tests/e2e/upgrades.spec.ts`                                      | Exercises static upgrade discovery, exact-source links, no-JavaScript browsing and hub limits.                           |
 | `tests/unit/application-catalog.test.ts`                          | Proves every current project deep link reaches its actual static ordinal page and excludes the unreleased hub.           |

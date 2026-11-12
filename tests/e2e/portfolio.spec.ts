@@ -10,6 +10,7 @@ import portfolioPriority from "../../src/data/portfolio-priority.json" with { ty
 import publicationSnapshot from "../../src/data/project-publications.json" with { type: "json" };
 import { spaceHighlightNames, spaceSystemsCuration } from "../../src/data/space-systems";
 import { droneSystemsCuration } from "../../src/data/drone-systems";
+import { measuredBodyWidth } from "./layout-diagnostics";
 
 test("documentation reading path preserves all projects and exposes reviewed files on mobile", async ({
   page,
@@ -312,7 +313,7 @@ test("drone collection preserves all seven projects, limits and restorable filte
   await expect(page.getByText(/not real aircraft control/)).toBeVisible();
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
   await page.setViewportSize({ width: 390, height: 844 });
-  expect(await page.locator("body").evaluate((body) => body.scrollWidth)).toBeLessThanOrEqual(390);
+  expect((await measuredBodyWidth(page, 390, test.info())).width).toBeLessThanOrEqual(390);
   await page.getByRole("link", { name: "Filter the full catalog" }).click();
   await expect(page.getByLabel("Domain")).toHaveValue("Drone safety");
   await expect(page.locator("[data-project-card]:not([hidden])")).toHaveCount(7);

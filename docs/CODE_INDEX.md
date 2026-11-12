@@ -1606,24 +1606,25 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 10 | function | `boundedEvent` |
-| 11 | variable | `timer` |
-| 30 | variable | `baseURL` |
-| 31 | variable | `origin` |
-| 32 | variable | `firstPath` |
-| 33 | variable | `context` |
-| 38 | variable | `hold` |
-| 39 | variable | `heldCount` |
-| 40 | variable | `signalHeld` |
-| 43 | variable | `release` |
-| 46 | variable | `held` |
-| 49 | variable | `released` |
-| 66 | variable | `ready` |
-| 67 | variable | `navigation` |
-| 69 | variable | `page` |
-| 82 | variable | `settled` |
-| 86 | variable | `incomplete` |
-| 104 | variable | `control` |
+| 11 | function | `boundedEvent` |
+| 12 | variable | `timer` |
+| 31 | variable | `baseURL` |
+| 32 | variable | `origin` |
+| 33 | variable | `firstPath` |
+| 34 | variable | `context` |
+| 39 | variable | `hold` |
+| 40 | variable | `heldCount` |
+| 41 | variable | `signalHeld` |
+| 44 | variable | `release` |
+| 47 | variable | `held` |
+| 50 | variable | `released` |
+| 67 | variable | `ready` |
+| 68 | variable | `navigation` |
+| 70 | variable | `page` |
+| 83 | variable | `settled` |
+| 87 | variable | `incomplete` |
+| 105 | variable | `control` |
+| 115 | variable | `measured` |
 
 ## `tests/e2e/download-readiness.ts`
 
@@ -1663,49 +1664,65 @@
 | 188 | variable | `pageCount` |
 | 195 | variable | `expected` |
 
+## `tests/e2e/layout-diagnostics.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 9 | function | `measuredBodyWidth` |
+| 10 | variable | `width` |
+| 11 | variable | `diagnostic` |
+| 16 | variable | `rect` |
+| 17 | variable | `value` |
+| 27 | variable | `describe` |
+| 28 | variable | `style` |
+| 55 | variable | `elements` |
+| 56 | variable | `offenders` |
+| 59 | variable | `box` |
+| 107 | variable | `body` |
+
 ## `tests/e2e/portfolio.spec.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 42 | variable | `section` |
-| 65 | variable | `context` |
-| 70 | variable | `page` |
-| 76 | variable | `publication` |
-| 78 | variable | `response` |
-| 80 | variable | `section` |
-| 123 | variable | `featured` |
-| 137 | variable | `result` |
-| 142 | variable | `coverage` |
-| 151 | variable | `exits` |
-| 168 | variable | `label` |
-| 170 | variable | `row` |
-| 175 | variable | `release` |
-| 177 | variable | `measurements` |
-| 200 | variable | `links` |
-| 226 | variable | `downloads` |
-| 240 | variable | `payload` |
-| 241 | variable | `url` |
-| 254 | variable | `workbench` |
-| 263 | variable | `catalogEntry` |
-| 324 | variable | `context` |
-| 329 | variable | `page` |
-| 335 | variable | `response` |
-| 350 | variable | `scan` |
-| 386 | variable | `skipLink` |
-| 396 | variable | `results` |
-| 407 | variable | `bodyWidth` |
-| 409 | variable | `cards` |
-| 410 | variable | `first` |
-| 411 | variable | `second` |
-| 415 | variable | `navigation` |
-| 416 | variable | `links` |
-| 417 | variable | `expectedNavigation` |
-| 429 | variable | `rows` |
-| 432 | variable | `box` |
-| 449 | variable | `about` |
-| 469 | variable | `revision` |
-| 471 | variable | `search` |
-| 473 | variable | `index` |
+| 43 | variable | `section` |
+| 66 | variable | `context` |
+| 71 | variable | `page` |
+| 77 | variable | `publication` |
+| 79 | variable | `response` |
+| 81 | variable | `section` |
+| 124 | variable | `featured` |
+| 138 | variable | `result` |
+| 143 | variable | `coverage` |
+| 152 | variable | `exits` |
+| 169 | variable | `label` |
+| 171 | variable | `row` |
+| 176 | variable | `release` |
+| 178 | variable | `measurements` |
+| 201 | variable | `links` |
+| 227 | variable | `downloads` |
+| 241 | variable | `payload` |
+| 242 | variable | `url` |
+| 255 | variable | `workbench` |
+| 264 | variable | `catalogEntry` |
+| 325 | variable | `context` |
+| 330 | variable | `page` |
+| 336 | variable | `response` |
+| 351 | variable | `scan` |
+| 387 | variable | `skipLink` |
+| 397 | variable | `results` |
+| 408 | variable | `bodyWidth` |
+| 410 | variable | `cards` |
+| 411 | variable | `first` |
+| 412 | variable | `second` |
+| 416 | variable | `navigation` |
+| 417 | variable | `links` |
+| 418 | variable | `expectedNavigation` |
+| 430 | variable | `rows` |
+| 433 | variable | `box` |
+| 450 | variable | `about` |
+| 470 | variable | `revision` |
+| 472 | variable | `search` |
+| 474 | variable | `index` |
 
 ## `tests/e2e/upgrades.spec.ts`
 

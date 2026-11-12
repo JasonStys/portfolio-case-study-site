@@ -127,6 +127,11 @@ async function entry() {
   const observedState = await page.evaluate(() => window.portfolioNative.state());
   expect(observedState.source).toBe(expectedMetadata.source);
   expect(observedState.version).toBe(expectedMetadata.version);
+  expect(typeof observedState.sourceDirty).toBe("boolean");
+  expect(observedState.sourceDirty).toBe(expectedMetadata.sourceDirty);
+  if (expectedMetadata.sourceDirty)
+    await expect(page.locator("[data-native-version]")).toContainText("local candidate");
+  else await expect(page.locator("[data-native-version]")).not.toContainText("local candidate");
   expect(
     await application.evaluate(({ BrowserWindow }) => BrowserWindow.getAllWindows()[0].isVisible()),
   ).toBe(true);
@@ -147,7 +152,12 @@ async function entry() {
     isolated: true,
     nodeIntegration: false,
   });
-  identities.push(identity);
+  identities.push({
+    ...identity,
+    version: observedState.version,
+    source: observedState.source,
+    sourceDirty: observedState.sourceDirty,
+  });
   const current = fs.readFileSync(path.join(profile, "owner.json"));
   if (marker) expect(current.equals(marker)).toBe(true);
   else marker = current;

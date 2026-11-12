@@ -252,22 +252,22 @@
 | 110 | variable | `page` |
 | 118 | variable | `expectedMetadata` |
 | 127 | variable | `observedState` |
-| 133 | variable | `identity` |
-| 151 | variable | `current` |
-| 156 | function | `normalExit` |
-| 157 | variable | `exited` |
-| 166 | variable | `page` |
-| 180 | variable | `primary` |
-| 247 | variable | `rejected` |
-| 260 | variable | `outside` |
-| 270 | variable | `beforeWindows` |
-| 279 | variable | `expectedNames` |
-| 284 | variable | `names` |
-| 291 | variable | `actual` |
-| 309 | variable | `document` |
-| 348 | variable | `exited` |
-| 383 | variable | `failureCleanup` |
-| 386 | variable | `ended` |
+| 138 | variable | `identity` |
+| 161 | variable | `current` |
+| 166 | function | `normalExit` |
+| 167 | variable | `exited` |
+| 176 | variable | `page` |
+| 190 | variable | `primary` |
+| 257 | variable | `rejected` |
+| 270 | variable | `outside` |
+| 280 | variable | `beforeWindows` |
+| 289 | variable | `expectedNames` |
+| 294 | variable | `names` |
+| 301 | variable | `actual` |
+| 319 | variable | `document` |
+| 358 | variable | `exited` |
+| 393 | variable | `failureCleanup` |
+| 396 | variable | `ended` |
 
 ## `desktop/tests/operations.test.cjs`
 
@@ -480,20 +480,20 @@
 | 8 | function | `nodes` |
 | 9 | variable | `pending` |
 | 12 | variable | `node` |
-| 19 | function | `text` |
-| 28 | function | `validateDownloadPages` |
-| 29 | variable | `count` |
-| 35 | variable | `route` |
-| 39 | variable | `all` |
-| 44 | variable | `expected` |
-| 51 | variable | `card` |
-| 59 | variable | `expectedLinks` |
-| 76 | variable | `rows` |
-| 83 | variable | `first` |
-| 95 | variable | `navigation` |
-| 102 | variable | `links` |
-| 106 | variable | `route` |
-| 107 | variable | `link` |
+| 21 | function | `text` |
+| 30 | function | `validateDownloadPages` |
+| 31 | variable | `count` |
+| 37 | variable | `route` |
+| 41 | variable | `all` |
+| 46 | variable | `expected` |
+| 53 | variable | `card` |
+| 61 | variable | `expectedLinks` |
+| 78 | variable | `rows` |
+| 85 | variable | `first` |
+| 97 | variable | `navigation` |
+| 104 | variable | `links` |
+| 108 | variable | `route` |
+| 109 | variable | `link` |
 
 ## `scripts/generate-code-index.mjs`
 

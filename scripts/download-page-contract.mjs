@@ -9,10 +9,12 @@ function nodes(root) {
   const pending = [root],
     result = [];
   while (pending.length) {
-    const node = pending.shift();
+    const node = pending.pop();
     result.push(node);
     if (result.length > 100000) throw new Error("Download HTML node budget exceeded.");
-    if (Array.isArray(node.children)) pending.unshift(...node.children);
+    if (Array.isArray(node.children))
+      for (let index = node.children.length - 1; index >= 0; index--)
+        pending.push(node.children[index]);
   }
   return result;
 }

@@ -15,7 +15,7 @@ export const projectCuration = [
     domains: ["AI developer tools", "Testing", "Security", "Compiler instrumentation"],
     maturity: "validated",
     outcome:
-      "Inspect source-bound diagnostics and unused-code candidates; measure C# coverage for approved nonzero exits with separate target and Coverlet collector evidence.",
+      "Review source-bound diagnostics, unused-code candidates and C# Coverlet coverage with separate collector evidence in a desktop workspace.",
     featuredOrder: 1,
     caseStudySlug: "code-flow-studio",
   },
@@ -25,7 +25,7 @@ export const projectCuration = [
     domains: ["Document processing", "Data normalization", "Privacy"],
     maturity: "validated",
     outcome:
-      "Standardize documents and units, search numeric ranges and export authorized record bundles.",
+      "Standardize business files, search numeric ranges with same-cell units and preview/export authorized records in a desktop workspace.",
     featuredOrder: 2,
     caseStudySlug: "business-knowledge-workbench",
   },
@@ -35,7 +35,7 @@ export const projectCuration = [
     domains: ["Generative AI", "Machine learning", "Privacy"],
     maturity: "validated",
     outcome:
-      "Review captions, declared provenance and bounded split similarities before local model training.",
+      "Review datasets, train compact CPU diffusion models and compare learned generation in a private desktop workspace.",
     featuredOrder: 3,
     caseStudySlug: "personal-image-model-studio",
   },
@@ -45,7 +45,7 @@ export const projectCuration = [
     domains: ["Game technology", "Systems", "Simulation"],
     maturity: "validated",
     outcome:
-      "Build deterministic 2D games with collision layers, scene migration and overlap inspection.",
+      "Edit game scenes, inspect collisions and replay real engine inputs with reproducible state and reusable project exports.",
     caseStudySlug: "forge2d-engine",
     featuredOrder: 4,
   },
@@ -55,7 +55,7 @@ export const projectCuration = [
     domains: ["CI/CD", "Supply-chain security", "Reliability"],
     maturity: "validated",
     outcome:
-      "Review authenticated release changes, preserve deployment receipts and verify rollback trust.",
+      "Inspect offline release integrity, original inputs and saved review evidence while keeping authenticated promotion in the CLI.",
     featuredOrder: 5,
     caseStudySlug: "secure-delivery-pipeline-lab",
   },
@@ -65,7 +65,7 @@ export const projectCuration = [
     domains: ["Evidence review", "Privacy", "Accessibility"],
     maturity: "validated",
     outcome:
-      "Compare authorized applicant evidence by criterion, with citations, unknowns and private exports.",
+      "Compare cited applicant records against one rubric and retain private evidence, unknowns and human-reviewed coaching exports.",
     featuredOrder: 6,
     caseStudySlug: "applicant-evidence-studio",
   },
@@ -77,7 +77,7 @@ export const projectCuration = [
     domains: ["Distributed systems", "Cloud computing", "Operations"],
     maturity: "validated",
     outcome:
-      "Diagnose job DAGs, retries and lease state through coherent snapshots and a PostgreSQL workflow.",
+      "Author DAG jobs, inspect lease and retry state, and replay real Rust/PostgreSQL execution in a durable desktop workspace.",
     caseStudySlug: "cloud-job-orchestrator",
   },
   {
@@ -86,7 +86,7 @@ export const projectCuration = [
     domains: ["Integrations", "Reliability", "Operations"],
     maturity: "validated",
     outcome:
-      "Search integration jobs, inspect captured audit history and download exact support reviews.",
+      "Search persistent integration jobs, inspect complete audit pages and export exact results through the local Java and React app.",
     caseStudySlug: "integration-operations-console",
   },
   {
@@ -95,7 +95,7 @@ export const projectCuration = [
     domains: ["Machine learning", "MLOps", "Observability"],
     maturity: "validated",
     outcome:
-      "Review authenticated model release dossiers with recorded quality gates, history and drift context.",
+      "Train supported models, inspect verified dossiers and retain explicit promotion, rollback, prediction and drift evidence.",
     caseStudySlug: "ml-model-lifecycle-observatory",
   },
   {
@@ -104,7 +104,7 @@ export const projectCuration = [
     domains: ["Analytics", "Game technology", "Data quality"],
     maturity: "validated",
     outcome:
-      "Analyze player retention with receipt-time cutoffs and explicit mature versus incomplete cohorts.",
+      "Import event batches and inspect cohorts, sessions and retention with explicit receipt cutoffs and mature-window denominators.",
     caseStudySlug: "player-telemetry-analytics-platform",
   },
   {
@@ -113,7 +113,7 @@ export const projectCuration = [
     domains: ["Industrial IoT", "Simulation", "Telemetry"],
     maturity: "validated",
     outcome:
-      "Replay simulated industrial signals, faults and alarms with synchronized trends and read-only review.",
+      "Edit a synthetic C++ process model, record faults and replay signal quality, requested outputs and actual responses in a desktop HMI.",
   },
   {
     name: "accessible-design-system-lab",
@@ -121,7 +121,7 @@ export const projectCuration = [
     domains: ["Accessibility", "Design systems", "Developer experience"],
     maturity: "validated",
     outcome:
-      "Use accessible React tables with stable sorting, paging, preserved focus and clear status feedback.",
+      "Author component blueprints with interactive accessible previews, realistic states and editable React and CSS exports.",
     caseStudySlug: "accessible-design-system-lab",
   },
   {
@@ -130,7 +130,7 @@ export const projectCuration = [
     domains: ["Computer vision", "Edge computing", "Benchmarking"],
     maturity: "validated",
     outcome:
-      "Compare inference runtimes across shared image conditions using per-class quality and calibration gates.",
+      "Train on synthetic shape data and compare five inference engines with held-out recall, calibration and configurable review gates.",
   },
   {
     name: "secure-service-desk",
@@ -138,7 +138,7 @@ export const projectCuration = [
     domains: ["Security", "Workflow systems", "Reliability"],
     maturity: "validated",
     outcome:
-      "Manage tenant ticket ownership with version checks, atomic audit history and owner/SLA work queues.",
+      "Exercise tenant-scoped tickets, assignment and SLA queues with version checks, atomic audit writes and persistent local profiles.",
   },
   {
     name: "offline-first-field-app",
@@ -146,7 +146,7 @@ export const projectCuration = [
     domains: ["Offline-first", "Synchronization", "Mobile"],
     maturity: "validated",
     outcome:
-      "Resolve offline sync conflicts with explicit field choices and protection against stale overwrites.",
+      "Edit inspection records offline, pair local profiles and resolve base, local and server conflicts without losing pending work.",
   },
   {
     name: "mips-pipeline-workbench",
@@ -154,7 +154,7 @@ export const projectCuration = [
     domains: ["Computer architecture", "Developer tools", "Education"],
     maturity: "validated",
     outcome:
-      "Inspect imported MIPS pipeline traces, navigate hazards and measure performance beyond display limits.",
+      "Edit assembly and inspect real Rust pipeline and cache simulations beside an independent reference, saved history and exact exports.",
   },
   {
     name: "firmware-release-recovery-lab",
@@ -162,7 +162,7 @@ export const projectCuration = [
     domains: ["Firmware", "Reliability", "Security"],
     maturity: "validated",
     outcome:
-      "Rehearse simulated fleet updates with compatibility checks, trial outcomes and rollback safeguards.",
+      "Rehearse inert firmware packages, slot recovery and fleet faults with editable inputs, durable evidence and busy-state protection.",
   },
   {
     name: "ot-security-monitor-lab",
@@ -170,7 +170,7 @@ export const projectCuration = [
     domains: ["Industrial systems", "Detection engineering", "Protocols"],
     maturity: "validated",
     outcome:
-      "Audit passive Modbus read coverage by asset, function and address while keeping capture gaps visible.",
+      "Review passive captures, register coverage and policy changes with source-linked dispositions, literal search and exact exports.",
   },
   {
     name: "industrial-memory-protocol-workbench",
@@ -178,7 +178,7 @@ export const projectCuration = [
     domains: ["Protocols", "Industrial systems", "Security"],
     maturity: "validated",
     outcome:
-      "Reassemble fragmented binary streams with bounded buffering and exact corruption and EOF offsets.",
+      "Explore real C++ codec sessions and stream chunks with simulated writes, retry evidence, framing limits and exact saved reports.",
   },
   {
     name: "detection-engineering-lab",
@@ -186,7 +186,7 @@ export const projectCuration = [
     domains: ["Detection engineering", "Incident response", "Security"],
     maturity: "validated",
     outcome:
-      "Compare detection rules on the same events and preserve alert evidence with reasoned analyst review.",
+      "Replay security events, compare rule and label changes and retain reasoned analyst dispositions beside original alerts.",
   },
   {
     name: "sre-observability-workbench",
@@ -194,7 +194,7 @@ export const projectCuration = [
     domains: ["Observability", "Reliability", "Operations"],
     maturity: "validated",
     outcome:
-      "Compare service and user-journey SLOs over matched windows, exposing quality gaps and weakened targets.",
+      "Inspect service objectives and real local telemetry drills with explicit windows, journey denominators and weakened-objective queues.",
   },
   {
     name: "gitops-platform-lab",
@@ -202,7 +202,7 @@ export const projectCuration = [
     domains: ["GitOps", "Kubernetes", "CI/CD"],
     maturity: "validated",
     outcome:
-      "Verify GitOps convergence across desired and applied revisions, dependencies and evidence freshness.",
+      "Compare desired manifests with captured convergence, dependency readiness and freshness through a saved offline review workflow.",
   },
   {
     name: "container-runtime-security-lab",
@@ -210,7 +210,7 @@ export const projectCuration = [
     domains: ["Container security", "Detection engineering", "Privacy"],
     maturity: "validated",
     outcome:
-      "Triage runtime alert episodes with coverage limits and human dispositions that preserve original evidence.",
+      "Triage supplied container episodes with editable policy and health inputs, pseudonymized identities and explicit visibility gaps.",
   },
   {
     name: "zero-trust-segmentation-lab",
@@ -218,7 +218,7 @@ export const projectCuration = [
     domains: ["Network security", "Zero trust", "Policy"],
     maturity: "validated",
     outcome:
-      "Review policy and exception expiry against owner-defined access continuity requirements.",
+      "Compare offline permission graphs and inspect continuity at policy and exception boundaries without granting live access.",
   },
   {
     name: "application-security-regression-lab",
@@ -226,7 +226,7 @@ export const projectCuration = [
     domains: ["Application security", "Testing", "Security"],
     maturity: "validated",
     outcome:
-      "Compare saved HTTP security regressions while exposing changed assertions and unexecuted cases.",
+      "Run four reference web-service engines and compare exact case outcomes, changed assertions and missing execution in a desktop app.",
   },
   {
     name: "cloud-identity-access-lab",
@@ -234,7 +234,7 @@ export const projectCuration = [
     domains: ["Identity", "Cloud security", "Policy"],
     maturity: "validated",
     outcome:
-      "Compare signed access-policy decisions across MFA, expiry and authenticated registry contexts.",
+      "Verify signed fictional identities and compare closed-schema OPA entitlements with explicit reasons, context and retained history.",
   },
   {
     name: "ai-security-evaluation-lab",
@@ -242,7 +242,7 @@ export const projectCuration = [
     domains: ["AI security", "Testing", "Privacy"],
     maturity: "validated",
     outcome:
-      "Replay reviewed AI security cases and separate unsafe allowances from unavailable or untested behavior.",
+      "Review paired AI response snapshots with separate unsafe allowance, benign availability, completion and oracle-coverage evidence.",
   },
   {
     name: "infrastructure-policy-lab",
@@ -250,7 +250,7 @@ export const projectCuration = [
     domains: ["Infrastructure as code", "Policy", "Cloud security"],
     maturity: "validated",
     outcome:
-      "Review infrastructure drift and replacements with plan-bound receipts that preserve policy gates.",
+      "Inspect infrastructure drift, replacement risk and exact-decimal costs with saved reviews that remain separate from policy gates.",
   },
   {
     name: "disaster-recovery-drill-lab",
@@ -258,7 +258,7 @@ export const projectCuration = [
     domains: ["Disaster recovery", "Reliability", "Data protection"],
     maturity: "validated",
     outcome:
-      "Compare measured recovery candidates, data loss and retention choices without deleting backups.",
+      "Compare captured restore candidates against explicit objectives, lost-record evidence and supplied timing in a desktop workspace.",
   },
   {
     name: "disconnected-release-kit",
@@ -266,7 +266,7 @@ export const projectCuration = [
     domains: ["Supply-chain security", "Offline delivery", "CI/CD"],
     maturity: "validated",
     outcome:
-      "Review authenticated offline release contents and inventories with state-bound, non-executing receipts.",
+      "Verify signed offline release candidates against selected trust and target identity, retaining exact evidence and no-overwrite exports.",
   },
   {
     name: "incident-response-evidence-kit",
@@ -274,7 +274,7 @@ export const projectCuration = [
     domains: ["Incident response", "Evidence integrity", "Security"],
     maturity: "validated",
     outcome:
-      "Bookmark verified incident evidence by digest and line, then export minimized, traceable handoffs.",
+      "Preserve local evidence, inspect UTC events and export minimized analyst handoffs with exact source-line and checkpoint bindings.",
   },
   {
     name: "secret-rotation-reliability-lab",
@@ -282,7 +282,7 @@ export const projectCuration = [
     domains: ["Secrets management", "Reliability", "Identity"],
     maturity: "validated",
     outcome:
-      "Review secret rotation by generation, consumer acknowledgement, drain state and expiry.",
+      "Rehearse secret-free consumer handoffs through editable scripts, virtual time, generation acknowledgements and explicit drain evidence.",
   },
   {
     name: "vulnerability-prioritization-console",
@@ -290,7 +290,7 @@ export const projectCuration = [
     domains: ["Vulnerability management", "Risk analysis", "Security"],
     maturity: "validated",
     outcome:
-      "Compare vulnerability evidence and owner deadlines without treating absent findings as proven fixes.",
+      "Rank supplied vulnerabilities, compare assumptions and retain remediation queues, deadlines and identity changes in a desktop app.",
   },
   {
     name: "windows-identity-audit-lab",
@@ -298,7 +298,7 @@ export const projectCuration = [
     domains: ["Windows security", "Identity", "Audit"],
     maturity: "validated",
     outcome:
-      "Review nested identity exposure, source completeness and owner recertification deadlines.",
+      "Compare offline identity snapshots and inspect nested exposure, completeness, expiry and recertification queues through saved reports.",
   },
   {
     name: "network-defense-analysis-lab",
@@ -306,7 +306,7 @@ export const projectCuration = [
     domains: ["Network security", "Detection engineering", "Protocols"],
     maturity: "validated",
     outcome:
-      "Filter captured network events by UTC, protocol and severity with snapshot paging and visible data gaps.",
+      "Investigate offline captures with the real Rust decoder, snapshot-bound filters, source-linked reviews and explicit visibility limits.",
   },
   {
     name: "memory-safety-analysis-lab",
@@ -314,7 +314,7 @@ export const projectCuration = [
     domains: ["Memory safety", "Systems", "Testing"],
     maturity: "validated",
     outcome:
-      "Minimize reproducible parser disagreements under shared budgets, preserving unstable outcomes.",
+      "Run fixed C++, Rust and Python parsers and reduce reproducible disagreements with shared budgets, exact history and exports.",
   },
   {
     name: "unity-tactical-ai-sandbox",
@@ -322,7 +322,7 @@ export const projectCuration = [
     domains: ["Game AI", "Simulation", "Game technology"],
     maturity: "validated",
     outcome:
-      "Inspect deterministic game replays with timeline scrubbing, terrain and independent bot diagnostics.",
+      "Author fictional game boards, replay the original C# simulation and compare bounded seeded encounters in a Windows designer.",
   },
   {
     name: "mqtt-lifecycle-reliability-lab",
@@ -330,7 +330,7 @@ export const projectCuration = [
     domains: ["Industrial IoT", "Messaging", "Reliability"],
     maturity: "validated",
     outcome:
-      "Recover bounded MQTT outboxes with original TTLs, explicit losses and retained failed publishes.",
+      "Edit offline message campaigns and inspect reconnect, TTL loss, duplicates and cold recovery through replayable checkpoints.",
   },
   {
     name: "offline-incident-timeline-pwa",
@@ -338,7 +338,7 @@ export const projectCuration = [
     domains: ["Offline-first", "Incident response", "Accessibility"],
     maturity: "validated",
     outcome:
-      "Investigate local incident logs with UTC filters, shareable query state and offline restoration.",
+      "Filter local incident JSON and CSV with exact UTC views and complete exports in a native origin that retains browser state.",
   },
   {
     name: "documentation-quality-gate",
@@ -346,7 +346,7 @@ export const projectCuration = [
     domains: ["Documentation", "Static analysis", "CI/CD"],
     maturity: "validated",
     outcome:
-      "Track documentation debt by exact location and refresh baselines without losing unexamined findings.",
+      "Edit documentation with the original quality engine, retain accepted debt and inspect exact findings across durable revisions.",
   },
   {
     name: "versioned-product-knowledge-portal",
@@ -354,7 +354,7 @@ export const projectCuration = [
     domains: ["Documentation", "Search", "Accessibility"],
     maturity: "validated",
     outcome:
-      "Compare documentation editions beside canonical sources, warnings and missing counterparts.",
+      "Author versioned product documentation, compare warnings and retain immutable catalog revisions with exact JSON and HTML exports.",
   },
   {
     name: "engineering-documentation-foundry",
@@ -362,7 +362,7 @@ export const projectCuration = [
     domains: ["Documentation", "Data pipelines", "Accessibility"],
     maturity: "validated",
     outcome:
-      "Publish accessible documentation and compare source-cited revisions, including safety-warning changes.",
+      "Turn authorized PDFs into cited, immutable publications with editable registries, safety-change comparison, previews and exact exports.",
   },
   {
     name: "node-red-resilient-metadata",
@@ -370,7 +370,7 @@ export const projectCuration = [
     domains: ["Industrial IoT", "Integrations", "Node-RED"],
     maturity: "validated",
     outcome:
-      "Recover metadata lookups with bounded Retry-After delays, rate-limit spacing and cancellation.",
+      "Author metadata projects and inspect real Node-RED retries, cancellation, redeployment and exact completion evidence in a desktop app.",
   },
   {
     name: "host-hardening-assurance-lab",
@@ -378,7 +378,7 @@ export const projectCuration = [
     domains: ["Host security", "Policy", "Audit"],
     maturity: "validated",
     outcome:
-      "Review host-hardening evidence against expected inventory, policies and owner refresh queues.",
+      "Assess supplied host snapshots and inspect fleet drift, stale evidence, expected-host gaps and refresh queues in a desktop workspace.",
   },
   {
     name: "rmf-evidence-workbench",
@@ -386,7 +386,7 @@ export const projectCuration = [
     domains: ["Governance", "Evidence integrity", "Security"],
     maturity: "validated",
     outcome:
-      "Maintain scoped OSCAL evidence with owner calendars, freshness checks and risk/milestone queues.",
+      "Compare scoped security evidence and supported OSCAL exports with freshness, integrity, risk and owner-calendar review queues.",
   },
   {
     name: "portfolio-case-study-site",
@@ -394,6 +394,6 @@ export const projectCuration = [
     domains: ["Portfolio", "Accessibility", "Developer experience"],
     maturity: "validated",
     outcome:
-      "Explore ranked projects through searchable case studies, technical rationale and validation links.",
+      "Explore ordered projects, case studies and source-bound evidence through the implemented offline portfolio reader and live site.",
   },
 ] as const satisfies readonly ProjectCuration[];

@@ -1,0 +1,16 @@
+---
+/** @file Generates bounded historical release pages; Line locations: docs/CODE_INDEX.md. */
+import LegacyDownloadPage from "@/components/LegacyDownloadPage.astro";
+import { downloadManifest } from "@/lib/download-catalog";
+import { downloadPageCount } from "@/lib/download-pages";
+export function getStaticPaths() {
+  return Array.from(
+    { length: downloadPageCount(downloadManifest.repositories.length) - 1 },
+    (_, index) => ({ params: { page: String(index + 2) }, props: { pageIndex: index + 2 } }),
+  );
+}
+type Props = { pageIndex: number };
+const { pageIndex } = Astro.props;
+---
+
+<LegacyDownloadPage pageIndex={pageIndex} />

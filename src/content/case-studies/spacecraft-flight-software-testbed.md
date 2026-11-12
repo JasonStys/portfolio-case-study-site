@@ -1,7 +1,7 @@
 ---
 title: "Software recovery you can replay and inspect"
 repository: "https://github.com/JasonStys/spacecraft-flight-software-testbed"
-summary: "A deterministic C++ recovery executive with received-witness review and source-bound portable downloads exercised after extraction."
+summary: "Explore fictional onboard recovery and compare reset events with delayed or missing observations in a portable simulator."
 role: "Flight-software concepts and systems verification"
 languages: ["C++", "Python", "TypeScript", "SQL"]
 evidence:
@@ -12,6 +12,20 @@ evidence:
     "Cross-platform source validation",
   ]
 ---
+
+## Current usable application — 12 November 2026
+
+The desktop simulator exposes mode, boot and counter changes alongside delayed downlink observations. Recovery scenarios, reset windows and missed transitions can be explored through the existing model, graphical views and exact report exports.
+
+Shows why an onboard event and an observer's account can differ, making software recovery and incomplete evidence easier to explain.
+
+The current [version 1.1.0 release](https://github.com/JasonStys/spacecraft-flight-software-testbed/releases/tag/v1.1.0) identifies [its packaged runtime source](https://github.com/JasonStys/spacecraft-flight-software-testbed/tree/5f9dc95ad5df564373d1304b13e4bb2464d13842). The matching [illustrated Windows guide](https://github.com/JasonStys/spacecraft-flight-software-testbed/blob/cb9d78c561e07d55c4c92de8ab0f17ecbb90796d/docs/reports/windows-application-guide.docx) and [guide identity record](https://github.com/JasonStys/spacecraft-flight-software-testbed/blob/cb9d78c561e07d55c4c92de8ab0f17ecbb90796d/docs/reports/windows-application-guide.json) describe actual Windows launch-and-use acceptance, prerequisites, saving and exit. Later repository checks and the guide publication commit remain separate from the released runtime. Additional operating-system assets do not establish execution on this Windows PC. Packages are unsigned.
+
+**Requirements.** Matching Windows portable bundle, its companion files and a local web browser. Runtime is bundled; no Python installation, external account, live hardware or Docker setup is needed for prepared scenarios.
+
+**Current limits.** Synthetic logical ticks and software modes only; no spacecraft connection, guidance, targeting or flight qualification is provided.
+
+The measurements, version numbers and links in the engineering narrative below retain their dated earlier source scopes. They are not relabeled as fresh results for this current package.
 
 ## Problem
 
@@ -35,7 +49,7 @@ Recorded locally: 171 Python tests passed with 99.53% combined statement/branch 
 
 Accepted source: [`5f9dc95ad5df564373d1304b13e4bb2464d13842`](https://github.com/JasonStys/spacecraft-flight-software-testbed/tree/5f9dc95ad5df564373d1304b13e4bb2464d13842). The [validation report](https://github.com/JasonStys/spacecraft-flight-software-testbed/blob/5f9dc95ad5df564373d1304b13e4bb2464d13842/docs/reports/PORTABLE_REFRESH_20261109.md) records executed scope and conditions. Exact-source main checks passed: [CodeQL](https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752160159), [Validation](https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752160117).
 
-[Version 1.1.0 downloads](https://github.com/JasonStys/spacecraft-flight-software-testbed/releases/tag/v1.1.0) contain application source [`5f9dc95ad5df564373d1304b13e4bb2464d13842`](https://github.com/JasonStys/spacecraft-flight-software-testbed/tree/5f9dc95ad5df564373d1304b13e4bb2464d13842). The [release workflow](https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752925223) passed its documented native gates. See the [download index](/portfolio-case-study-site/downloads/) for actual platforms, file types, full checksums and runtime requirements. All three release jobs exercised their own freshly extracted application and real UI/export. The Windows download was independently checked and exercised again before publication; this does not certify an installer lifecycle or default OS browser opening.
+[Version 1.1.0 downloads](https://github.com/JasonStys/spacecraft-flight-software-testbed/releases/tag/v1.1.0) contain application source [`5f9dc95ad5df564373d1304b13e4bb2464d13842`](https://github.com/JasonStys/spacecraft-flight-software-testbed/tree/5f9dc95ad5df564373d1304b13e4bb2464d13842). The [release workflow](https://github.com/JasonStys/spacecraft-flight-software-testbed/actions/runs/42752925223) passed its documented native gates. See the [dated download snapshot](/portfolio-case-study-site/downloads/history/2026-11-10/) for those platforms, file types, full checksums and runtime requirements. All three release jobs exercised their own freshly extracted application and real UI/export. The Windows download was independently checked and exercised again before publication; this does not certify an installer lifecycle or default OS browser opening.
 
 ## Limitations
 

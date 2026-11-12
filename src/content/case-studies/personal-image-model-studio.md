@@ -1,7 +1,7 @@
 ---
 title: "Reviewable datasets before custom image-model training"
 repository: "https://github.com/JasonStys/personal-image-model-studio"
-summary: "Image Model Studio 0.3.0 adds private caption/provenance review, bounded integrity and split-similarity checks, verified visual comparisons and exact report exports before deliberate model training."
+summary: "Review datasets, train compact CPU diffusion models and compare learned generation in a private desktop workspace."
 role: "Deep learning and desktop application engineering"
 languages: ["Python", "TypeScript", "SQL"]
 evidence:
@@ -11,6 +11,20 @@ evidence:
   - "Explicit read-only sample bounds"
 featuredOrder: 3
 ---
+
+## Current usable application — 12 November 2026
+
+Dataset provenance, captions, split integrity and similarity review now lead into actual compact CPU diffusion training, learned generation and retained feedback. A portable app provides native Open, Help and completion-aware Quit controls while keeping datasets, weights and history in private local accounts.
+
+Connects data review to an inspectable training and generation workflow instead of treating a sample image or declared rights as proof of model or dataset quality.
+
+The current [version 0.3.1 release](https://github.com/JasonStys/personal-image-model-studio/releases/tag/v0.3.1) identifies [its packaged runtime source](https://github.com/JasonStys/personal-image-model-studio/tree/fb62b95a291ed2370d639e958d6f3039a7cdf0b6). The matching [illustrated Windows guide](https://github.com/JasonStys/personal-image-model-studio/blob/d3449630cdeaf87f8098bafcbe5a80f14b3a0d47/docs/reports/windows-application-guide-0.3.1.docx) and [guide identity record](https://github.com/JasonStys/personal-image-model-studio/blob/d3449630cdeaf87f8098bafcbe5a80f14b3a0d47/docs/reports/windows-application-guide-0.3.1.json) describe actual Windows launch-and-use acceptance, prerequisites, saving and exit. Later repository checks and the guide publication commit remain separate from the released runtime. Additional operating-system assets do not establish execution on this Windows PC. Packages are unsigned.
+
+**Requirements.** Windows x64 and the complete checksummed portable bundle. CPU ML/runtime are included; no provider or pretrained weights ship. Use approved images and your local account/vault phrase. Larger SD/LoRA workflows need the separate trusted full-source runtime. A local browser is required.
+
+**Current limits.** Compact models and synthetic training runs do not establish photorealism or general model quality. Optional larger runtimes and providers require separate trusted configuration. The downloadable edition includes compact CPU ML, not pretrained weights or the optional full SD/LoRA environment. Protect the separate vault phrase; recovery of login access cannot recover that phrase.
+
+The measurements, version numbers and links in the engineering narrative below retain their dated earlier source scopes. They are not relabeled as fresh results for this current package.
 
 ## Problem
 
@@ -50,7 +64,7 @@ Accepted-source evidence: [source validation report](https://github.com/JasonSty
 
 Existing reference evidence records a model trained for 6,000 CPU optimizer updates on owned procedural shapes, with rough learned samples. That is retained earlier execution evidence, not training rerun for this change. At the accepted source, the hosted genuine ML journey passed actual optimization, generation, encrypted reopen and the new read-only dataset review. All three native package builds and publication passed. This hosted acceptance is separate from the earlier 6,000-update reference model.
 
-Published downloads: [new 0.3.0 CPU application and checksums](https://github.com/JasonStys/personal-image-model-studio/releases/tag/v0.3.0). Older 0.2.0 assets and notes remain unchanged.
+Earlier published downloads: [0.3.0 CPU application and checksums](https://github.com/JasonStys/personal-image-model-studio/releases/tag/v0.3.0). Older 0.2.0 assets and notes remain unchanged.
 
 ## Subsequent security review
 

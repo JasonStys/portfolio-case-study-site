@@ -5,7 +5,7 @@
  */
 import { parse, ELEMENT_NODE, TEXT_NODE } from "ultrahtml";
 import { decodeHTML } from "entities";
-function nodes(root) {
+export function nodes(root) {
   const pending = [root],
     result = [];
   while (pending.length) {
@@ -18,7 +18,7 @@ function nodes(root) {
   }
   return result;
 }
-function text(root) {
+export function text(root) {
   return nodes(root)
     .filter((node) => node.type === TEXT_NODE)
     .map((node) => decodeHTML(node.value))
@@ -27,14 +27,14 @@ function text(root) {
     .trim();
 }
 /** @param {Map<string,string>} pages @param {readonly import('../src/lib/downloads').ProjectDownload[]} repositories @param {string} sitemap */
-export function validateDownloadPages(pages, repositories, sitemap) {
+export function validateDownloadPages(pages, repositories, sitemap, prefix = "downloads/") {
   const count = Math.ceil(repositories.length / 12),
     names = [],
     assets = [];
   if (!count || count > 6 || pages.size !== count)
     throw new Error("Download static page count differs.");
   for (let number = 1; number <= count; number++) {
-    const route = number === 1 ? "downloads/" : `downloads/page/${number}/`,
+    const route = number === 1 ? prefix : `${prefix}page/${number}/`,
       html = pages.get(route);
     if (!html || !sitemap.includes(`/portfolio-case-study-site/${route}`))
       throw new Error("Download static route/sitemap is missing.");
@@ -105,7 +105,7 @@ export function validateDownloadPages(pages, repositories, sitemap) {
       (node) => node.type === ELEMENT_NODE && node.name === "a",
     );
     for (let page = 1; page <= count; page++) {
-      const route = page === 1 ? "downloads/" : `downloads/page/${page}/`;
+      const route = page === 1 ? prefix : `${prefix}page/${page}/`;
       const link = links.find((node) => node.attributes["aria-label"] === `Download page ${page}`);
       if (
         !link ||

@@ -84,7 +84,7 @@ CI runs quality, browser, and performance jobs independently. The deployment job
 3. The build merges repository facts with curation and precomputes search postings.
 4. Output validation resolves every repository-base link and enforces asset budgets.
 5. Playwright verifies production output across Chromium, Firefox, and WebKit.
-6. Lighthouse samples three fresh Chromium sessions.
+6. Lighthouse samples five fresh Chromium sessions, retaining all samples and independently recomputing the documented median/worst/minimum aggregation.
 7. Only a green `main` push can upload and deploy the Pages artifact.
 
 ## Failure handling
@@ -102,9 +102,11 @@ Compact catalog cards preserve all initial HTML links/outcomes and no-script acc
 
 ## Download evidence
 
-The build validates a separate public index for the 20 projects with existing releases and their 62 application payloads. It binds each application to a full source commit, successful source/release workflows, explicit OS/CPU targets, package kinds and complete checksum metadata. Applicant Evidence Studio separately identifies the newer verifier revision that tests unchanged published bytes. A portable folder, Windows installer and Python zipapp retain distinct runtime requirements.
+The current `src/data/current-applications.json` indexes the 66 released domain applications and 108 payloads. Its closed validator requires canonical membership/order, exact repository and release URLs, runtime source, provider asset IDs/bytes/full digests, platform/package kinds, prerequisites and exit instructions. Current repository workflow observations and current illustrated Windows guides have separate source identities. A guide binds the exact Word/paired JSON files, Git blob IDs, byte sizes and SHA-256 values at its immutable publication commit; no Markdown sibling is inferred. Current-repository checks are not fabricated release workflows. Extra OS assets are metadata on this PC, and five unlabelled payload architectures remain unspecified.
 
-The download page is static HTML with short digest prefixes. Its explicit JSON link supplies full hashes and workflow records without adding browser API requests or downloading binaries in the background. Source-first libraries, services and PWAs remain in the broader 67-project catalog without invented native installers. The refreshed release processes exercise extracted packages on their actual native operating systems before publication.
+The download pages are static twelve-item HTML slices with short digest prefixes and all-page navigation. `/downloads/index.json` is the complete current manifest; the renderer never embeds the entire catalog in each page. Every current detail's download anchor targets its actual ordinal page. All 66 domain projects now expose their genuine project workflows in Windows applications, with original library/CLI/service contracts retained as documented. The hub's own future asset hashes and guide identities are excluded from this snapshot; its native About uses generated build provenance.
+
+The unchanged `project-downloads.json` remains a distinct dated 20-project/62-payload snapshot at `/downloads/history/2026-11-10/` with its own complete JSON and static pagination. Its source/release checks, earlier AES verifier and Python zipapp requirements retain their historical identities. The original upgrade and Office manifests likewise remain dated evidence. Independent output checks compare every current and historical card, asset, checksum, guide link, version, route and sitemap entry, including same-page guide swaps. No binary downloads or runtime GitHub API calls occur in ordinary browsing.
 
 ## Tradeoffs
 

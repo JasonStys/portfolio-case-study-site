@@ -9,6 +9,7 @@ import BaseLayout from "@/components/BaseLayout.astro";
 import { projects } from "@/lib/catalog";
 import { publicationFor, publicationManifest } from "@/lib/publications";
 import { withBase } from "@/lib/url";
+import { applicationFor } from "@/lib/application-catalog";
 
 const newlyAnalyzed = [
   "code-flow-studio",
@@ -33,9 +34,16 @@ const workbookCount = files.length - wordCount;
     <p class="eyebrow">Read the engineering evidence</p>
     <h1>Project guides and validation evidence.</h1>
     <p>
-      All {projects.length} projects have an organized handbook and reviewed Word guide. Larger
-      projects also provide a separate validation review and filterable Excel workflow and
-      test-source inventories: {wordCount} Word documents and {workbookCount} workbooks in total.
+      The 66 released domain applications each have a current illustrated Windows guide and paired
+      identity record linked below. This snapshot records the other 66 deliveries; the portfolio
+      reader's own current guide is tracked with its{" "}
+      <a href="https://github.com/JasonStys/portfolio-case-study-site/releases">
+        release documentation
+      </a>
+      . All {projects.length} projects also retain their earlier organized handbook and reviewed
+      Word guide. Larger projects also provide a separate validation review and filterable Excel
+      workflow and test-source inventories: {wordCount} Word documents and {workbookCount} workbooks
+      in total.
     </p>
     <p>
       Each project page links the exact published files, SHA-256 values, documented source revision
@@ -61,10 +69,12 @@ const workbookCount = files.length - wordCount;
       individual findings were reviewed separately from PR checks.
     </p>
     <p>
-      Applicant Evidence Studio and Image Studio retain two and 29 raw findings respectively with
-      individual false-positive rationales for their reviewed trust boundaries. Zero open alerts is
-      different from zero raw findings. Analysis supplements runtime, privacy, dependency and native
-      application checks.
+      The earlier review retained two Applicant Evidence Studio and 29 Image Studio raw findings
+      with individual false-positive rationales for those source boundaries. Image Studio's later
+      native work replaced these paths and its current source scan has zero raw results; the earlier
+      disposition record remains historical. Applicant Evidence retains its two reviewed
+      false-positive raw results. Zero open alerts is different from zero raw findings. Analysis
+      supplements runtime, privacy, dependency and native application checks.
     </p>
     <p>
       The{" "}
@@ -88,11 +98,19 @@ const workbookCount = files.length - wordCount;
     <ol class="upgrade-list" data-documentation-list>
       {projects.map((project) => {
         const row = publicationFor(project.name);
+        const current = applicationFor(project.name);
         return (
           <li data-documentation-project={project.name}>
             <h3>
               <a href={withBase(`projects/${project.name}/#documentation-title`)}>{project.name}</a>
             </h3>
+            {current && (
+              <p>
+                <a href={withBase(`projects/${project.name}/#current-windows-guide-title`)}>
+                  Current Windows guide and identities — v{current.version}
+                </a>
+              </p>
+            )}
             <p>
               {row.documents.length === 3
                 ? "Project guide, separate validation review and Excel evidence workbook."

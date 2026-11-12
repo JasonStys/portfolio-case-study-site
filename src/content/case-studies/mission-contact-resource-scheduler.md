@@ -1,7 +1,7 @@
 ---
 title: "A finite optimum, independently checked"
 repository: "https://github.com/JasonStys/mission-contact-resource-scheduler"
-summary: "A bounded exact contact scheduler with independently checked station-loss comparisons and practical portable-app planning evidence."
+summary: "Compare fictional contact schedules before and after station loss, with exact resource limits and retained-plan evidence."
 role: "Optimization and resource-constrained software"
 languages: ["Python", "TypeScript", "SQL"]
 evidence:
@@ -12,6 +12,20 @@ evidence:
     "Resource and request deltas",
   ]
 ---
+
+## Current usable application — 12 November 2026
+
+A graphical application exposes the exact allocation model and its resource constraints. Users can compare a baseline with complete single-station loss and inspect retained, added and removed contacts without silently replacing the original plan.
+
+Makes contingency tradeoffs and feasibility evidence concrete before a reviewer selects an illustrative schedule.
+
+The current [version 1.1.0 release](https://github.com/JasonStys/mission-contact-resource-scheduler/releases/tag/v1.1.0) identifies [its packaged runtime source](https://github.com/JasonStys/mission-contact-resource-scheduler/tree/4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3). The matching [illustrated Windows guide](https://github.com/JasonStys/mission-contact-resource-scheduler/blob/22256256ad2e1c0c1d470a7b50299eb674536ae6/docs/reports/windows-application-guide.docx) and [guide identity record](https://github.com/JasonStys/mission-contact-resource-scheduler/blob/22256256ad2e1c0c1d470a7b50299eb674536ae6/docs/reports/windows-application-guide.json) describe actual Windows launch-and-use acceptance, prerequisites, saving and exit. Later repository checks and the guide publication commit remain separate from the released runtime. Additional operating-system assets do not establish execution on this Windows PC. Packages are unsigned.
+
+**Requirements.** Matching Windows portable bundle, its companion files and a local web browser. Runtime is bundled; no Python installation, external account, live hardware or Docker setup is needed for prepared scenarios.
+
+**Current limits.** Finite fictional allocation only; this is not operational antenna scheduling, radio control, trajectory planning or mission commanding.
+
+The measurements, version numbers and links in the engineering narrative below retain their dated earlier source scopes. They are not relabeled as fresh results for this current package.
 
 ## Problem
 
@@ -35,7 +49,7 @@ Recorded locally: 645 Python tests passed with 99.37% combined coverage against 
 
 Accepted source: [`4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3`](https://github.com/JasonStys/mission-contact-resource-scheduler/tree/4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3). The [validation report](https://github.com/JasonStys/mission-contact-resource-scheduler/blob/4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3/docs/reports/PORTABLE_REFRESH_20261109.md) records executed scope and conditions. Exact-source main checks passed: [CodeQL](https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42752427629), [Validation](https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42752427785).
 
-[Version 1.1.0 downloads](https://github.com/JasonStys/mission-contact-resource-scheduler/releases/tag/v1.1.0) contain application source [`4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3`](https://github.com/JasonStys/mission-contact-resource-scheduler/tree/4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3). The [release workflow](https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42753749258) passed its documented native gates. See the [download index](/portfolio-case-study-site/downloads/) for actual platforms, file types, full checksums and runtime requirements. All three release jobs exercised their own freshly extracted application and real UI/export. The Windows download was independently checked and exercised again before publication; this does not certify an installer lifecycle or default OS browser opening.
+[Version 1.1.0 downloads](https://github.com/JasonStys/mission-contact-resource-scheduler/releases/tag/v1.1.0) contain application source [`4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3`](https://github.com/JasonStys/mission-contact-resource-scheduler/tree/4e5c7ecf87d8ac372a3a45cafc9b539a4fc660f3). The [release workflow](https://github.com/JasonStys/mission-contact-resource-scheduler/actions/runs/42753749258) passed its documented native gates. See the [dated download snapshot](/portfolio-case-study-site/downloads/history/2026-11-10/) for those platforms, file types, full checksums and runtime requirements. All three release jobs exercised their own freshly extracted application and real UI/export. The Windows download was independently checked and exercised again before publication; this does not certify an installer lifecycle or default OS browser opening.
 
 ## Limitations
 

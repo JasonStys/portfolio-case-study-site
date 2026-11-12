@@ -20,7 +20,7 @@ export const spaceSystemsCuration = [
     domains: ["Space systems", "Fault recovery", "Simulation"],
     maturity: "validated",
     outcome:
-      "Simulate spacecraft software faults and compare onboard transitions with downlinked evidence.",
+      "Explore fictional onboard transitions and fault recovery against delayed or missing observations in a portable simulator.",
     caseStudySlug: "spacecraft-flight-software-testbed",
   },
   {
@@ -29,7 +29,7 @@ export const spaceSystemsCuration = [
     domains: ["Space systems", "Telemetry", "Statistical learning"],
     maturity: "validated",
     outcome:
-      "Investigate telemetry alert episodes with recovery, data gaps, boundary limits and human review.",
+      "Investigate telemetry episodes with explicit gaps, modes, censored recovery and detached review annotations in a portable app.",
     caseStudySlug: "spacecraft-telemetry-anomaly-studio",
   },
   {
@@ -38,7 +38,7 @@ export const spaceSystemsCuration = [
     domains: ["Space systems", "Optimization", "Resource scheduling"],
     maturity: "validated",
     outcome:
-      "Replan bounded ground-station contacts during outages and inspect changed resource allocations.",
+      "Compare fictional contact schedules before and after station loss, with exact resource limits and retained-plan evidence.",
     caseStudySlug: "mission-contact-resource-scheduler",
   },
   {
@@ -47,7 +47,7 @@ export const spaceSystemsCuration = [
     domains: ["Space systems", "Scientific computing", "Energy"],
     maturity: "validated",
     outcome:
-      "Simulate spacecraft power and heat, tracing unmet loads and interrupted-service recovery.",
+      "Explore fictional power and thermal traces with per-load shortfall, interruption episodes and explicit science shedding.",
   },
   {
     name: "mission-verification-evidence-kit",
@@ -55,7 +55,7 @@ export const spaceSystemsCuration = [
     domains: ["Space systems", "Requirements traceability", "Software assurance"],
     maturity: "validated",
     outcome:
-      "Trace mission requirements to evidence and prioritize stale or missing revalidation work.",
+      "Inspect stale requirement evidence, component dependencies and a scoped revalidation queue through a desktop review workflow.",
     caseStudySlug: "mission-verification-evidence-kit",
   },
   {
@@ -64,7 +64,7 @@ export const spaceSystemsCuration = [
     domains: ["Space systems", "Orbital modeling", "Scientific computing"],
     maturity: "validated",
     outcome:
-      "Explore civilian close-approach simulations with threshold windows and explicit sampling limits.",
+      "Explore civilian screening windows, tangencies and sampled-orbit uncertainty with editable scenarios and graphical replay.",
   },
   {
     name: "ccsds-telemetry-integrity-lab",
@@ -72,7 +72,7 @@ export const spaceSystemsCuration = [
     domains: ["Space systems", "Binary protocols", "Data integrity"],
     maturity: "validated",
     outcome:
-      "Inspect packet continuity by APID, with provisional gaps, late recovery and ambiguous sequence history.",
+      "Inspect packet timelines, provisional gaps and late recovery while preserving original per-APID continuity decisions.",
   },
   {
     name: "delay-tolerant-mission-network-lab",
@@ -80,7 +80,7 @@ export const spaceSystemsCuration = [
     domains: ["Space systems", "Store-and-forward networking", "Reliability"],
     maturity: "validated",
     outcome:
-      "Replay delayed message delivery and explain queue, hop, expiry and contact bottlenecks.",
+      "Trace fictional message delivery through queue, hop, expiry and bottleneck waterfalls with exact timing exports.",
   },
   {
     name: "earth-observation-change-studio",
@@ -88,7 +88,7 @@ export const spaceSystemsCuration = [
     domains: ["Space systems", "Earth observation", "Data quality"],
     maturity: "validated",
     outcome:
-      "Review mapped image changes with crop-edge, excluded-area and unknown-context overlays.",
+      "Review mapped environmental-change candidates with crop edges, excluded regions, unknown context and matching geospatial exports.",
   },
   {
     name: "mission-clock-integrity-lab",
@@ -96,7 +96,7 @@ export const spaceSystemsCuration = [
     domains: ["Space systems", "Timing integrity", "Distributed systems"],
     maturity: "validated",
     outcome:
-      "Reconstruct supported event order from clock uncertainty without forcing ambiguous observations.",
+      "Inspect uncertain event ordering through interval edges and alternative frontiers without forcing unsupported chronology.",
   },
   {
     name: "resilient-energy-microgrid-lab",
@@ -104,7 +104,7 @@ export const spaceSystemsCuration = [
     domains: ["Space systems", "Energy", "Resilience"],
     maturity: "validated",
     outcome:
-      "Compare feeder-loss simulations and critical-load shortfalls using consistent energy accounting.",
+      "Compare modeled dispatch policies under identical feeder loss, with explicit unmet demand and checked energy accounting.",
   },
   {
     name: "scientific-sensor-calibration-lab",
@@ -112,7 +112,7 @@ export const spaceSystemsCuration = [
     domains: ["Space systems", "Metrology", "Scientific computing"],
     maturity: "validated",
     outcome:
-      "Fit sensor calibrations and explain covariance contributions, cross terms and uncertainty limits.",
+      "Inspect calibration uncertainty contributions, signed covariance terms and withheld components in a portable review workflow.",
   },
   {
     name: "space-weather-impact-observatory",
@@ -120,7 +120,7 @@ export const spaceSystemsCuration = [
     domains: ["Space systems", "Space weather", "Data provenance"],
     maturity: "validated",
     outcome:
-      "Compare space-weather evidence by lead time and observation window while retaining coverage gaps.",
+      "Compare forecast scores by lead time and observation window while preserving unknown issuance states and coverage denominators.",
   },
   {
     name: "reactor-systems-simulator",
@@ -128,6 +128,6 @@ export const spaceSystemsCuration = [
     domains: ["Space systems", "Energy", "Scientific computing"],
     maturity: "validated",
     outcome:
-      "Compare bounded educational thermal scenarios, forcing changes and sampled peak responses.",
+      "Compare matched forcing scenarios in a fictional dimensionless thermal model with graphical traces and exact baseline exports.",
   },
 ] as const satisfies readonly ProjectCuration[];

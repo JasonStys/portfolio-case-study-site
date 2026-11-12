@@ -7,6 +7,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 import manifest from "../../src/data/project-upgrades.json" with { type: "json" };
+import currentApplications from "../../src/data/current-applications.json" with { type: "json" };
 import priority from "../../src/data/portfolio-priority.json" with { type: "json" };
 
 test("all 67 local details and same-source evidence remain reachable without JavaScript", async ({
@@ -80,6 +81,13 @@ test("a case study opens its latest workflow and exact main evidence with no ext
     .click();
   const record = manifest.repositories.find((entry) => entry.name === "code-flow-studio");
   if (!record) throw new Error("Code Flow evidence is required.");
+  const current = currentApplications.applications.find((item) => item.name === "code-flow-studio");
+  if (!current) throw new Error("Current Code Flow application is required.");
+  await expect(page.locator("[data-current-improvements]")).toContainText(current.summary);
+  await expect(page.locator("[data-current-improvements]")).toContainText(current.rationale);
+  await expect(
+    page.getByRole("link", { name: "Illustrated Windows guide — Word", exact: true }),
+  ).toHaveAttribute("href", current.guide.documentUrl);
   await expect(page.locator("[data-project-upgrade]")).toContainText(record.summary);
   await expect(page.locator("[data-project-upgrade]")).toContainText(record.rationale);
   await expect(page.locator(".source-identity code")).toHaveText(record.sourceCommit);

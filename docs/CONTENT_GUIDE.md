@@ -50,6 +50,10 @@ The refresh script preserves reviewed technology annotations already present in 
 
 ## Writing rules
 
+Current application records live in `src/data/current-applications.json`, validated by `src/lib/applications.ts`. Keep the exact 66-domain order and project membership. Project requirements, start/exit instructions and limits describe the actual accepted workflow, including console-owned services and optional explicitly consented runtime setup. Preserve released runtime, observed repository checks and guide publication as three separate identities. The typed Windows guide binds real immutable Word/JSON paths and full hashes; never invent a sibling Markdown report or copy private installation receipts into the public record.
+
+The primary download endpoint uses `applications`; the dated history endpoint retains `repositories`. Preserve `project-downloads.json`, `project-upgrades.json` and `project-publications.json` as their original dated evidence rather than silently replacing their source/version meanings. Current and historical static pages both retain complete ordered coverage and independent checks. For the hub itself, use generated native About identity and generic release links; its own future release/guide hashes cannot be embedded in the snapshot that produces them.
+
 - Prefer concrete system behavior over claims such as “scalable” or “production ready.”
 - State inputs, bounds, failure modes, test evidence, and limitations.
 - Use synthetic and public-safe examples.

@@ -1,7 +1,7 @@
 ---
 title: "Source-linked skills review with explicit uncertainty"
 repository: "https://github.com/JasonStys/applicant-evidence-studio"
-summary: "Private evidence review and career coaching with a two-record comparison, exact citations, preserved unknowns and downloadable human observations."
+summary: "Compare cited applicant records against one rubric and retain private evidence, unknowns and human-reviewed coaching exports."
 role: "Privacy-aware full-stack and evidence-system engineering"
 languages: ["Python", "TypeScript", "SQL"]
 evidence:
@@ -13,6 +13,20 @@ evidence:
   ]
 featuredOrder: 6
 ---
+
+## Current usable application — 12 November 2026
+
+Two exact applicant records can be compared against one rubric with citations, unknowns, clarification prompts and private exports. Browser-side encrypted workspaces now run inside a downloadable local application with verified resources, exclusive profile ownership and compatible account storage.
+
+Supports consistent evidence review without inventing degrees, converting education into employment or handing a hiring decision to the software.
+
+The current [version 0.3.1 release](https://github.com/JasonStys/applicant-evidence-studio/releases/tag/v0.3.1) identifies [its packaged runtime source](https://github.com/JasonStys/applicant-evidence-studio/tree/c3d44882ee39209b3a9fbbe884e1177cc78359e5). The matching [illustrated Windows guide](https://github.com/JasonStys/applicant-evidence-studio/blob/44504b6bfc28cb7a76fe1d6e5e2bc9f8e0121973/docs/reports/windows-application-guide-0.3.1.docx) and [guide identity record](https://github.com/JasonStys/applicant-evidence-studio/blob/44504b6bfc28cb7a76fe1d6e5e2bc9f8e0121973/docs/reports/windows-application-guide-0.3.1.json) describe actual Windows launch-and-use acceptance, prerequisites, saving and exit. Later repository checks and the guide publication commit remain separate from the released runtime. Additional operating-system assets do not establish execution on this Windows PC. Packages are unsigned.
+
+**Requirements.** Windows x64 and the complete checksummed release. Use authorized sourced records, your local account and separate vault phrase. Keep recovery material and plaintext downloads private; no external provider or system Python setup is needed for local comparison. A local browser is required.
+
+**Current limits.** Missing evidence remains unknown ability. Human reviewers must check sources; exported JSON is plaintext, and local encryption does not protect an unlocked machine from its OS owner. A reviewer must make the decision. Capture/download comparisons before locking or changing context; account privacy does not make plaintext exports confidential on an unlocked machine.
+
+The measurements, version numbers and links in the engineering narrative below retain their dated earlier source scopes. They are not relabeled as fresh results for this current package.
 
 ## Problem
 
@@ -42,7 +56,7 @@ The actual published Windows 0.3.0 UI journey took 9.148 seconds before teardown
 
 Accepted source: [`f10b42ce29d665c89556b83ce9b36094bba672a1`](https://github.com/JasonStys/applicant-evidence-studio/tree/f10b42ce29d665c89556b83ce9b36094bba672a1). The [validation report](https://github.com/JasonStys/applicant-evidence-studio/blob/f10b42ce29d665c89556b83ce9b36094bba672a1/docs/reports/portable-acceptance-2026-11-09.md) records executed scope and conditions. Exact-source main checks passed: [Published portable acceptance](https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42749422809), [Validate](https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42749422853).
 
-[Version 0.3.0 downloads](https://github.com/JasonStys/applicant-evidence-studio/releases/tag/v0.3.0) contain application source [`71d51b1fcd228f89d3ff81ee166bee2ce37d7a60`](https://github.com/JasonStys/applicant-evidence-studio/tree/71d51b1fcd228f89d3ff81ee166bee2ce37d7a60). The [release workflow](https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42728346654) passed its documented native gates. See the [download index](/portfolio-case-study-site/downloads/) for actual platforms, file types, full checksums and runtime requirements. The application release remains at its original source `71d51b1fcd228f89d3ff81ee166bee2ce37d7a60`. The newer [three-OS published-byte acceptance](https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42749422809) uses separately identified [verifier source](https://github.com/JasonStys/applicant-evidence-studio/tree/f10b42ce29d665c89556b83ce9b36094bba672a1); no public application assets were replaced.
+[Version 0.3.0 downloads](https://github.com/JasonStys/applicant-evidence-studio/releases/tag/v0.3.0) contain application source [`71d51b1fcd228f89d3ff81ee166bee2ce37d7a60`](https://github.com/JasonStys/applicant-evidence-studio/tree/71d51b1fcd228f89d3ff81ee166bee2ce37d7a60). The [release workflow](https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42728346654) passed its documented native gates. See the [dated download snapshot](/portfolio-case-study-site/downloads/history/2026-11-10/) for those platforms, file types, full checksums and runtime requirements. That 0.3.0 application release remains at its original source `71d51b1fcd228f89d3ff81ee166bee2ce37d7a60`. The newer [three-OS published-byte acceptance](https://github.com/JasonStys/applicant-evidence-studio/actions/runs/42749422809) uses separately identified [verifier source](https://github.com/JasonStys/applicant-evidence-studio/tree/f10b42ce29d665c89556b83ce9b36094bba672a1); no public application assets were replaced.
 
 ## Subsequent security review
 

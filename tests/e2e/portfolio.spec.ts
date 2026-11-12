@@ -10,6 +10,7 @@ import portfolioPriority from "../../src/data/portfolio-priority.json" with { ty
 import publicationSnapshot from "../../src/data/project-publications.json" with { type: "json" };
 import { spaceHighlightNames, spaceSystemsCuration } from "../../src/data/space-systems";
 import { droneSystemsCuration } from "../../src/data/drone-systems";
+import { measuredBodyWidth } from "./layout-diagnostics";
 
 test("documentation reading path preserves all projects and exposes reviewed files on mobile", async ({
   page,
@@ -34,7 +35,11 @@ test("documentation reading path preserves all projects and exposes reviewed fil
   await expect(
     page.getByRole("region", { name: "Seven additional CodeQL configurations.", exact: true }),
   ).toContainText("Zero open alerts is different from zero raw findings.");
-  await page.locator('[data-documentation-project="code-flow-studio"]').getByRole("link").click();
+  await page
+    .locator('[data-documentation-project="code-flow-studio"]')
+    .getByRole("heading")
+    .getByRole("link")
+    .click();
   const section = page.locator('[data-project-publications="code-flow-studio"]');
   await expect(
     section.getByRole("heading", { name: "Guides, reports and evidence files" }),
@@ -134,7 +139,7 @@ test("distinguishes Code Flow target exits, collector faults and current downloa
   await expect(result).toBeVisible();
   await expect(page.locator("[data-project-card]:not([hidden])")).toHaveCount(1);
   await result.getByRole("link", { name: /Read case study/ }).click();
-  await expect(page.locator(".case-summary")).toContainText("0.4.3");
+  await expect(page.locator(".case-summary")).toContainText("0.4.4");
   const coverage = page.getByRole("heading", {
     name: "C# coverage: measured approved nonzero exits",
     exact: true,
@@ -220,14 +225,14 @@ test("distinguishes Code Flow target exits, collector faults and current downloa
   }
   await page.goto("./downloads/");
   const downloads = page.locator('[data-download-project="code-flow-studio"]');
-  await expect(downloads.getByRole("heading")).toContainText("v0.4.3");
+  await expect(downloads.getByRole("heading")).toContainText("v0.4.4");
   await expect(downloads.getByRole("link", { name: "Release", exact: true })).toHaveAttribute(
     "href",
-    "https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.3",
+    "https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.4",
   );
   await expect(downloads.getByRole("link", { name: /^App source /u })).toHaveAttribute(
     "href",
-    "https://github.com/JasonStys/code-flow-studio/tree/1d0b19ed589947ae45e93555d97331c95cad26cc",
+    "https://github.com/JasonStys/code-flow-studio/tree/8a533a0b9838b994c18ec0475d91a4f8db1be6fa",
   );
   await expect(downloads.locator("[data-download-platform]")).toHaveCount(6);
   for (const platform of ["windows", "linux", "macos"])
@@ -236,7 +241,7 @@ test("distinguishes Code Flow target exits, collector faults and current downloa
     const payload = row.getByRole("link").first();
     const url = await payload.getAttribute("href");
     expect(url).toMatch(
-      /^https:\/\/github\.com\/JasonStys\/code-flow-studio\/releases\/download\/v0\.4\.3\/[^/]+$/u,
+      /^https:\/\/github\.com\/JasonStys\/code-flow-studio\/releases\/download\/v0\.4\.4\/[^/]+$/u,
     );
     if (url === null) throw new Error("Every released package needs its actual download URL.");
     await expect(row.getByRole("link").nth(1)).toHaveAttribute("href", `${url}.sha256`);
@@ -308,7 +313,7 @@ test("drone collection preserves all seven projects, limits and restorable filte
   await expect(page.getByText(/not real aircraft control/)).toBeVisible();
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
   await page.setViewportSize({ width: 390, height: 844 });
-  expect(await page.locator("body").evaluate((body) => body.scrollWidth)).toBeLessThanOrEqual(390);
+  expect((await measuredBodyWidth(page, 390, test.info())).width).toBeLessThanOrEqual(390);
   await page.getByRole("link", { name: "Filter the full catalog" }).click();
   await expect(page.getByLabel("Domain")).toHaveValue("Drone safety");
   await expect(page.locator("[data-project-card]:not([hidden])")).toHaveCount(7);

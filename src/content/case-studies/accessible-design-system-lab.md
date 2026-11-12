@@ -1,7 +1,7 @@
 ---
 title: "Accessibility as a component contract"
 repository: "https://github.com/JasonStys/accessible-design-system-lab"
-summary: "Native-first React components with sortable, paginated tables, explicit data states, keyboard focus contracts and tested package boundaries."
+summary: "Author component blueprints with interactive accessible previews, realistic states and editable React and CSS exports."
 role: "Frontend and design-system engineering"
 languages: ["TypeScript", "JavaScript", "HTML", "CSS"]
 evidence:
@@ -12,6 +12,20 @@ evidence:
     "Measured bundle budgets",
   ]
 ---
+
+## Current usable application — 12 November 2026
+
+The tested component library now powers a desktop authoring workspace with seven block types, schema-checked editing, interactive previews and editable React/CSS export. Table sorting, pagination, focus and loading/error/empty announcements remain exercised in realistic states.
+
+Connects design choices to working controls and reusable source while making accessibility review part of authoring.
+
+The current [version 1.1.0 release](https://github.com/JasonStys/accessible-design-system-lab/releases/tag/v1.1.0) identifies [its packaged runtime source](https://github.com/JasonStys/accessible-design-system-lab/tree/13dac81ab3819cd2208d96e4061e5e5484fc9dde). The matching [illustrated Windows guide](https://github.com/JasonStys/accessible-design-system-lab/blob/fa340d3af0b8b4b970e2611a902eda914329f253/docs/reports/windows-application-guide-1.1.0.docx) and [guide identity record](https://github.com/JasonStys/accessible-design-system-lab/blob/fa340d3af0b8b4b970e2611a902eda914329f253/docs/reports/windows-application-guide-1.1.0.json) describe actual Windows launch-and-use acceptance, prerequisites, saving and exit. Later repository checks and the guide publication commit remain separate from the released runtime. Additional operating-system assets do not establish execution on this Windows PC. Packages are unsigned.
+
+**Requirements.** Windows x64 and a writable owner-local workspace. Verify the matching release checksum and retain the complete distribution and notices. The application runtime is bundled; no system Python, Node or Docker setup is needed for its prepared workflows.
+
+**Current limits.** Contrast and automated browser checks do not certify accessibility. Downstream content, focus, states and assistive-technology behavior still require review.
+
+The measurements, version numbers and links in the engineering narrative below retain their dated earlier source scopes. They are not relabeled as fresh results for this current package.
 
 ## Problem
 

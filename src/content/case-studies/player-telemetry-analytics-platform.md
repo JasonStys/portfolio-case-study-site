@@ -1,7 +1,7 @@
 ---
 title: "Player telemetry that can be trusted"
 repository: "https://github.com/JasonStys/player-telemetry-analytics-platform"
-summary: "Synthetic player analytics with receipt-time acquisition cohorts, consistent cross-platform follow-up and explicit mature versus incomplete retention windows."
+summary: "Import event batches and inspect cohorts, sessions and retention with explicit receipt cutoffs and mature-window denominators."
 role: "Data engineering and product analytics"
 languages: ["Python", "SQL", "TypeScript"]
 evidence:
@@ -12,6 +12,20 @@ evidence:
     "Actual analyst browser journey",
   ]
 ---
+
+## Current usable application — 12 November 2026
+
+The desktop app imports real supported event batches into DuckDB, retains accepted data and exposes cohort, session and player analyses. Receipt-time cutoffs and mature versus censored retention denominators remain explicit, and exact Parquet exports are checked by an independent reader.
+
+Makes product analysis repeatable while keeping the observation window and missing follow-up visible.
+
+The current [version 1.1.0 release](https://github.com/JasonStys/player-telemetry-analytics-platform/releases/tag/v1.1.0) identifies [its packaged runtime source](https://github.com/JasonStys/player-telemetry-analytics-platform/tree/9307b4aee75c7304ac9971dd502f5191d7fefe07). The matching [illustrated Windows guide](https://github.com/JasonStys/player-telemetry-analytics-platform/blob/f816035917f28092efe7ea67d4ab89651db7651e/docs/reports/windows-application-guide-1.1.0.docx) and [guide identity record](https://github.com/JasonStys/player-telemetry-analytics-platform/blob/f816035917f28092efe7ea67d4ab89651db7651e/docs/reports/windows-application-guide-1.1.0.json) describe actual Windows launch-and-use acceptance, prerequisites, saving and exit. Later repository checks and the guide publication commit remain separate from the released runtime. Additional operating-system assets do not establish execution on this Windows PC. Packages are unsigned.
+
+**Requirements.** Windows x64, a local web browser and a writable owner-local workspace. Verify the matching checksum and keep the complete distribution/notices. Runtime is bundled; no system Python/Node or Docker setup is needed for prepared workflows.
+
+**Current limits.** Supplied or synthetic events do not establish population-wide behavior. The local session is not a hosted multiuser identity service or permission to collect real player data.
+
+The measurements, version numbers and links in the engineering narrative below retain their dated earlier source scopes. They are not relabeled as fresh results for this current package.
 
 ## Problem
 

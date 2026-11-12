@@ -1835,16 +1835,17 @@
 | Line | Kind | Symbol |
 | ---: | --- | --- |
 | 9 | function | `measuredBodyWidth` |
-| 10 | variable | `width` |
-| 11 | variable | `diagnostic` |
-| 16 | variable | `rect` |
-| 17 | variable | `value` |
-| 27 | variable | `describe` |
-| 28 | variable | `style` |
-| 55 | variable | `elements` |
-| 56 | variable | `offenders` |
-| 59 | variable | `box` |
-| 107 | variable | `body` |
+| 10 | variable | `initial` |
+| 11 | variable | `width` |
+| 23 | variable | `diagnostic` |
+| 28 | variable | `rect` |
+| 29 | variable | `value` |
+| 39 | variable | `describe` |
+| 40 | variable | `style` |
+| 67 | variable | `elements` |
+| 68 | variable | `offenders` |
+| 71 | variable | `box` |
+| 120 | variable | `body` |
 
 ## `tests/e2e/portfolio-delivery.spec.ts`
 
@@ -1869,45 +1870,45 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 43 | variable | `section` |
-| 66 | variable | `context` |
-| 71 | variable | `page` |
-| 77 | variable | `publication` |
-| 79 | variable | `response` |
-| 81 | variable | `section` |
-| 124 | variable | `featured` |
-| 138 | variable | `result` |
-| 143 | variable | `coverage` |
-| 152 | variable | `exits` |
-| 169 | variable | `label` |
-| 171 | variable | `row` |
-| 176 | variable | `release` |
-| 178 | variable | `measurements` |
-| 201 | variable | `links` |
-| 227 | variable | `downloads` |
-| 241 | variable | `payload` |
-| 242 | variable | `url` |
-| 255 | variable | `workbench` |
-| 264 | variable | `catalogEntry` |
-| 325 | variable | `context` |
-| 330 | variable | `page` |
-| 336 | variable | `response` |
-| 351 | variable | `scan` |
-| 387 | variable | `skipLink` |
-| 397 | variable | `results` |
-| 408 | variable | `bodyWidth` |
-| 410 | variable | `cards` |
-| 411 | variable | `first` |
-| 412 | variable | `second` |
-| 416 | variable | `navigation` |
-| 417 | variable | `links` |
-| 418 | variable | `expectedNavigation` |
-| 430 | variable | `rows` |
-| 433 | variable | `box` |
-| 450 | variable | `about` |
-| 470 | variable | `revision` |
-| 472 | variable | `search` |
-| 474 | variable | `index` |
+| 44 | variable | `section` |
+| 67 | variable | `context` |
+| 72 | variable | `page` |
+| 78 | variable | `publication` |
+| 80 | variable | `response` |
+| 82 | variable | `section` |
+| 125 | variable | `featured` |
+| 139 | variable | `result` |
+| 144 | variable | `coverage` |
+| 153 | variable | `exits` |
+| 170 | variable | `label` |
+| 172 | variable | `row` |
+| 177 | variable | `release` |
+| 179 | variable | `measurements` |
+| 202 | variable | `links` |
+| 228 | variable | `downloads` |
+| 242 | variable | `payload` |
+| 243 | variable | `url` |
+| 256 | variable | `workbench` |
+| 265 | variable | `catalogEntry` |
+| 330 | variable | `context` |
+| 335 | variable | `page` |
+| 341 | variable | `response` |
+| 356 | variable | `scan` |
+| 392 | variable | `skipLink` |
+| 402 | variable | `results` |
+| 413 | variable | `bodyWidth` |
+| 415 | variable | `cards` |
+| 416 | variable | `first` |
+| 417 | variable | `second` |
+| 421 | variable | `navigation` |
+| 422 | variable | `links` |
+| 423 | variable | `expectedNavigation` |
+| 435 | variable | `rows` |
+| 438 | variable | `box` |
+| 455 | variable | `about` |
+| 475 | variable | `revision` |
+| 477 | variable | `search` |
+| 479 | variable | `index` |
 
 ## `tests/e2e/upgrades.spec.ts`
 
@@ -1929,6 +1930,44 @@
 | 174 | variable | `unknown` |
 | 177 | variable | `sitemap` |
 | 178 | variable | `urls` |
+
+## `tests/e2e/viewport-readiness.spec.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 16 | variable | `control` |
+| 22 | variable | `gate` |
+| 23 | variable | `original` |
+| 24 | variable | `released` |
+| 25 | variable | `count` |
+| 26 | variable | `pending` |
+| 27 | variable | `signalHeld` |
+| 28 | variable | `held` |
+| 52 | variable | `settled` |
+| 53 | variable | `ready` |
+| 75 | variable | `state` |
+| 81 | variable | `measured` |
+
+## `tests/e2e/viewport-readiness.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 9 | function | `resizeForMobileLayout` |
+| 14 | variable | `owner` |
+| 16 | variable | `firstFrame` |
+| 17 | variable | `secondFrame` |
+| 18 | variable | `settled` |
+| 19 | variable | `resolveDone` |
+| 30 | variable | `rejectDone` |
+| 31 | variable | `done` |
+| 37 | variable | `cleanup` |
+| 43 | variable | `fail` |
+| 49 | variable | `resized` |
+| 52 | variable | `resizeAt` |
+| 58 | variable | `grid` |
+| 59 | variable | `style` |
+| 60 | variable | `state` |
+| 92 | variable | `timer` |
 
 ## `tests/unit/application-catalog.test.ts`
 

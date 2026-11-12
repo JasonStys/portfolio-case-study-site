@@ -195,6 +195,8 @@
 | `tests/e2e/portfolio-delivery.spec.ts`                            | Exercises the own delivery page with actual static data and no script or outside requests.                               |
 | `tests/e2e/portfolio.spec.ts`                                     | Exercises navigation, progressive catalog filtering, URL state, case studies, and accessibility.                         |
 | `tests/e2e/upgrades.spec.ts`                                      | Exercises static upgrade discovery, exact-source links, no-JavaScript browsing and hub limits.                           |
+| `tests/e2e/viewport-readiness.spec.ts`                            | Gates real animation-frame delivery to prove resize readiness and retain a persistent overflow countercontrol.           |
+| `tests/e2e/viewport-readiness.ts`                                 | Waits for a requested live mobile resize and two rendering opportunities before a layout assertion.                      |
 | `tests/unit/application-catalog.test.ts`                          | Proves every current project deep link reaches its actual static ordinal page and excludes the unreleased hub.           |
 | `tests/unit/applications.test.ts`                                 | Tests the real66-app manifest and independent malformed source/asset/guide counterexamples.                              |
 | `tests/unit/catalog.test.ts`                                      | Verifies cache validation, deterministic catalog merging, featured order, and facets.                                    |

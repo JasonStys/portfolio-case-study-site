@@ -7,12 +7,24 @@ import type { Page, TestInfo } from "@playwright/test";
 
 /** Observe once, optionally diagnose, and return the same captured value even if layout later changes. */
 export async function measuredBodyWidth(page: Page, maximum: number, info: TestInfo) {
-  const width = await page.locator("body").evaluate((body) => body.scrollWidth);
+  const initial = await page.locator("body").evaluate((body) => {
+    const width = body.scrollWidth;
+    return {
+      width,
+      observedAt: performance.now(),
+      innerWidth,
+      innerHeight,
+      visualWidth: visualViewport?.width,
+      visualHeight: visualViewport?.height,
+      narrowMedia: matchMedia("(max-width: 720px)").matches,
+    };
+  });
+  const { width } = initial;
   let diagnostic = null;
   if (width > maximum) {
     try {
       diagnostic = await page.evaluate(
-        ({ maximum, originalWidth }) => {
+        ({ maximum, originalWidth, initial }) => {
           const rect = (element: Element) => {
             const value = element.getBoundingClientRect();
             return {
@@ -68,6 +80,7 @@ export async function measuredBodyWidth(page: Page, maximum: number, info: TestI
           return {
             maximum,
             originalWidth,
+            initial,
             observedAt: performance.now(),
             pathname: location.pathname,
             viewport: {
@@ -102,7 +115,7 @@ export async function measuredBodyWidth(page: Page, maximum: number, info: TestI
             offenders,
           };
         },
-        { maximum, originalWidth: width },
+        { maximum, originalWidth: width, initial },
       );
       const body = Buffer.from(JSON.stringify(diagnostic, null, 2));
       if (body.length > 64 * 1024)
@@ -124,5 +137,5 @@ export async function measuredBodyWidth(page: Page, maximum: number, info: TestI
       });
     }
   }
-  return { width, diagnostic };
+  return { width, initial, diagnostic };
 }

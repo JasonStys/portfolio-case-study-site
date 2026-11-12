@@ -9,6 +9,7 @@ import { gzipSync } from "node:zlib";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { validateDownloadPages } from "./download-page-contract.mjs";
+import { validateApplicationPages } from "./current-application-contract.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
@@ -138,11 +139,24 @@ async function main() {
   const sitemap = await readFile(path.join(DIST, "sitemap.xml"), "utf8");
   const downloads = JSON.parse(await readFile(path.join(DIST, "downloads/index.json"), "utf8"));
   const downloadPages = new Map();
-  for (let number = 1; number <= Math.ceil(downloads.repositories.length / 12); number++) {
+  for (let number = 1; number <= Math.ceil(downloads.applications.length / 12); number++) {
     const route = number === 1 ? "downloads/" : `downloads/page/${number}/`;
     downloadPages.set(route, await readFile(path.join(DIST, route, "index.html"), "utf8"));
   }
-  validateDownloadPages(downloadPages, downloads.repositories, sitemap);
+  validateApplicationPages(downloadPages, downloads.applications, sitemap);
+  const legacyPrefix = "downloads/history/2026-11-10/";
+  const legacy = JSON.parse(await readFile(path.join(DIST, legacyPrefix, "index.json"), "utf8"));
+  const originalLegacy = JSON.parse(
+    await readFile(path.join(ROOT, "src/data/project-downloads.json"), "utf8"),
+  );
+  if (JSON.stringify(legacy) !== JSON.stringify(originalLegacy))
+    throw new Error("Historical download identities changed.");
+  const legacyPages = new Map();
+  for (let number = 1; number <= Math.ceil(legacy.repositories.length / 12); number++) {
+    const route = number === 1 ? legacyPrefix : `${legacyPrefix}page/${number}/`;
+    legacyPages.set(route, await readFile(path.join(DIST, route, "index.html"), "utf8"));
+  }
+  validateDownloadPages(legacyPages, legacy.repositories, sitemap, legacyPrefix);
   for (const name of names) {
     const detail = await readFile(path.join(DIST, "projects", name, "index.html"), "utf8");
     if (!sitemap.includes(`/projects/${name}/`)) throw new Error(`Sitemap missing ${name}.`);
@@ -170,6 +184,27 @@ async function main() {
     }
     if (!detail.includes(publication.sourceBaseline))
       throw new Error(`Documented source baseline missing for ${name}.`);
+    const app = downloads.applications.find((entry) => entry.name === name);
+    if (app) {
+      const page = Math.floor(downloads.applications.indexOf(app) / 12) + 1;
+      const route = page === 1 ? "downloads/" : `downloads/page/${page}/`;
+      for (const identity of [
+        app.runtimeSource,
+        app.currentSource.commit,
+        app.guide.publicationSource,
+        app.guide.documentSha256,
+        app.guide.manifestSha256,
+      ])
+        if (!detail.includes(identity))
+          throw new Error(`Current application identity missing for ${name}.`);
+      for (const link of [
+        app.guide.documentUrl,
+        app.guide.manifestUrl,
+        `/portfolio-case-study-site/${route}#${name}`,
+      ])
+        if (!detail.includes(`href="${link}"`))
+          throw new Error(`Current guide/download link missing for ${name}.`);
+    }
   }
   const files = await collectFiles(DIST);
   const htmlFiles = files.filter((file) => file.endsWith(".html"));

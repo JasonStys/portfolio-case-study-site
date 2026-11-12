@@ -1,64 +1,59 @@
 ---
 /**
- * @file Presents one bounded static download page with every existing package, runtime and proof boundary.
- * Functions: static card/asset rendering; variables: page selection, authoritative downloadManifest and platform labels.
- * Line locations: docs/CODE_INDEX.md after integration. No client scripts, external fonts or remote fetches.
+ * @file Renders current application packages in bounded static pages with separate runtime and guide identities.
+ * Functions: static card rendering; variables: selection, applicationManifest and platform labels.
+ * Line locations: see docs/CODE_INDEX.md. No client fetching or third-party resources.
  */
 import BaseLayout from "@/components/BaseLayout.astro";
-import { downloadManifest } from "@/lib/download-catalog";
-import { withBase } from "@/lib/url";
-import { selectDownloadPage } from "@/lib/download-pages";
 import DownloadPagination from "@/components/DownloadPagination.astro";
-
+import { applicationManifest } from "@/lib/application-catalog";
+import { selectDownloadPage } from "@/lib/download-pages";
+import { withBase } from "@/lib/url";
 type Props = { pageIndex: number };
 const { pageIndex } = Astro.props;
-const selection = selectDownloadPage(downloadManifest.repositories, pageIndex);
-
-const platforms = {
-  windows: "Windows",
-  linux: "Linux",
-  macos: "macOS",
-  "cross-platform": "Python",
-};
-const formats = {
-  zip: "ZIP",
-  "tar.gz": "tar.gz",
-  exe: "EXE",
-  msi: "MSI",
-  dmg: "DMG",
-  appimage: "AppImage",
-  pyz: "zipapp",
-};
+const selection = selectDownloadPage(applicationManifest.applications, pageIndex);
+const platforms = { windows: "Windows", linux: "Linux", macos: "macOS" };
 ---
 
 <BaseLayout
   title={
     pageIndex === 1
-      ? "Downloadable projects — Jason Stys"
-      : `Downloadable projects — page ${pageIndex} — Jason Stys`
+      ? "Current application downloads — Jason Stys"
+      : `Application downloads — page ${pageIndex} — Jason Stys`
   }
-  description="Find verified downloadable releases, supported platforms, runtime requirements and exact-source validation evidence for Jason Stys's portfolio applications."
+  description="Current released applications, Windows guides, exact runtime sources, prerequisites and checksum evidence."
   canonicalPath={selection.path}
 >
   <header class="page-intro section-shell">
     <p class="eyebrow">Download and inspect</p>
     <h1>Try the released applications.</h1>
     <p>
-      Choose the actual OS and CPU package below. Portable folders are extracted applications, not
-      installers. The delivery probe is a Python command-line zipapp. Drone Operations currently
-      supplies a Windows installer only. Select a project name for its purpose, reports and full
-      limits.
+      These 66 domain applications have published packages and actual Windows launch-and-use checks.
+      Each guide explains its real workflow, data and exit behavior. This snapshot indexes the other
+      66 apps; see{" "}
+      <a href="https://github.com/JasonStys/portfolio-case-study-site/releases">
+        portfolio Releases
+      </a>{" "}
+      for its current native package and verification status.
     </p>
     <p>
-      Verify the complete SHA-256 against the linked checksum or signed manifest. Shown hashes are
-      12-character prefixes; the <a href={withBase("downloads/index.json")}>full evidence index</a>{" "}
-      contains complete digests and source checks. Do not disable OS protections to launch unsigned
-      packages.
+      Choose the exact platform and package kind. Portable archives need extraction; installers and
+      disk images have different setup steps. Packages are unsigned. macOS and Linux entries below
+      are published asset metadata; their presence does not establish execution on this Windows PC.
+      Architecture “unspecified” means the filename and available evidence do not establish it.
     </p>
     <p>
-      Observed <time datetime={downloadManifest.collectedAt}>{downloadManifest.collectedAt}</time>.
-      Native launch-and-use checks do not establish a clean-machine installation or the default OS
-      browser opener. <a href={withBase("updates/")}>All project improvements</a>.
+      Verify the complete SHA-256 with the linked checksum. Displayed digests are 12-character
+      prefixes; the <a href={withBase("downloads/index.json")}>full evidence index</a> contains all
+      108 package identities, complete hashes, runtime sources and guide bindings.{" "}
+      <a href={withBase("downloads/history/2026-11-10/")}>Earlier 20-project release snapshot</a>.
+    </p>
+    <p>
+      Collected{" "}
+      <time datetime={applicationManifest.collectedAt}>{applicationManifest.collectedAt}</time>.
+      Source, documentation and packaged runtime commits remain separate. Windows acceptance is
+      bounded to the documented journeys and does not establish a clean-machine installation,
+      production suitability or publisher signature.
     </p>
     <p data-download-page={selection.page}>
       Showing {selection.first}–{selection.last} of {selection.totalEntries} released projects. Page{" "}
@@ -76,44 +71,21 @@ const formats = {
           </h2>
           <p>{project.requirements}</p>
           <p class="download-proof">
-            <a href={project.releaseUrl} rel="noreferrer">
-              Release
-            </a>{" "}
-            ·{" "}
-            <a href={project.sourceUrl} rel="noreferrer">
-              App source {project.sourceCommit.slice(0, 12)}
-            </a>{" "}
-            ·{" "}
-            <a href={project.releaseCheck.url} rel="noreferrer">
-              Release checks
-            </a>
+            <a href={project.releaseUrl}>Release</a> ·{" "}
+            <a href={project.runtimeSourceUrl}>App source {project.runtimeSource.slice(0, 12)}</a> ·{" "}
+            <a href={project.guide.documentUrl}>Current Windows guide</a> ·{" "}
+            <a href={project.guide.manifestUrl}>Guide identities</a>
           </p>
-          {project.acceptanceCheck && (
-            <p class="download-proof">
-              <a href={project.acceptanceCheck.url} rel="noreferrer">
-                Download acceptance
-              </a>{" "}
-              ·{" "}
-              <a href={project.acceptanceCheck.verifierSourceUrl} rel="noreferrer">
-                Verifier source {project.acceptanceCheck.verifierSourceCommit.slice(0, 12)}
-              </a>
-            </p>
-          )}
           <ul class="download-assets">
             {project.assets.map((asset) => (
               <li data-download-platform={asset.platform}>
-                <a href={asset.assetUrl} rel="noreferrer">
+                <a href={asset.url}>
                   {platforms[asset.platform]} {asset.architecture} ·{" "}
-                  {asset.kind === "installer"
-                    ? "installer "
-                    : asset.kind === "zipapp"
-                      ? ""
-                      : "portable "}
-                  {formats[asset.format]}
-                </a>{" "}
-                <a href={asset.checksumUrl} rel="noreferrer">
-                  {project.distribution === "cli-zipapp" ? "Signed manifest" : "SHA-256"}
-                </a>{" "}
+                  {asset.kind.replaceAll("-", " ")} {asset.format}
+                </a>
+                <a href={asset.checksumURL}>
+                  {asset.checksumName === "SHA256SUMS.txt" ? "SHA-256 manifest" : "SHA-256"}
+                </a>
                 <code>{asset.sha256.slice(0, 12)}</code>
               </li>
             ))}
@@ -125,7 +97,6 @@ const formats = {
   </section>
   <DownloadPagination current={selection.page} total={selection.totalPages} />
 </BaseLayout>
-
 <style is:global>
   .downloads-list {
     list-style: none;

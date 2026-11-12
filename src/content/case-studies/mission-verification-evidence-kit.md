@@ -1,7 +1,7 @@
 ---
 title: "A passing test is not enough evidence"
 repository: "https://github.com/JasonStys/mission-verification-evidence-kit"
-summary: "Requirements, test and fault traceability with metadata-bound revalidation queues and source-bound portable evidence review."
+summary: "Inspect stale requirement evidence, component dependencies and a scoped revalidation queue through a desktop review workflow."
 role: "Verification evidence and developer tooling"
 languages: ["Python", "TypeScript", "SQL"]
 evidence:
@@ -12,6 +12,20 @@ evidence:
     "Explicit provenance limits",
   ]
 ---
+
+## Current usable application — 12 November 2026
+
+The desktop evidence review links requirement and component scope to freshness, dependency and source-work references. Reviewers can inspect a metadata-bound revalidation queue and export the existing model's exact evidence without weakening release gates.
+
+Helps reviewers direct follow-up work to unsupported requirements instead of treating a collected report as permanent verification.
+
+The current [version 1.1.0 release](https://github.com/JasonStys/mission-verification-evidence-kit/releases/tag/v1.1.0) identifies [its packaged runtime source](https://github.com/JasonStys/mission-verification-evidence-kit/tree/2743307a90da1621392fcafa138b6e103db751d5). The matching [illustrated Windows guide](https://github.com/JasonStys/mission-verification-evidence-kit/blob/3a8181c541f512de7aefb0c33bda448c19871809/docs/reports/windows-application-guide.docx) and [guide identity record](https://github.com/JasonStys/mission-verification-evidence-kit/blob/3a8181c541f512de7aefb0c33bda448c19871809/docs/reports/windows-application-guide.json) describe actual Windows launch-and-use acceptance, prerequisites, saving and exit. Later repository checks and the guide publication commit remain separate from the released runtime. Additional operating-system assets do not establish execution on this Windows PC. Packages are unsigned.
+
+**Requirements.** Matching Windows portable bundle, its companion files and a local web browser. Runtime is bundled; no Python installation, external account, live hardware or Docker setup is needed for prepared scenarios.
+
+**Current limits.** Educational evidence management does not grant mission certification, authenticate every supplied source or replace an independent verification authority.
+
+The measurements, version numbers and links in the engineering narrative below retain their dated earlier source scopes. They are not relabeled as fresh results for this current package.
 
 ## Problem
 
@@ -35,7 +49,7 @@ Recorded locally: 266 Python tests passed with 98.13% combined coverage against 
 
 Accepted source: [`2743307a90da1621392fcafa138b6e103db751d5`](https://github.com/JasonStys/mission-verification-evidence-kit/tree/2743307a90da1621392fcafa138b6e103db751d5). The [validation report](https://github.com/JasonStys/mission-verification-evidence-kit/blob/2743307a90da1621392fcafa138b6e103db751d5/docs/reports/PORTABLE_REFRESH_20261109.md) records executed scope and conditions. Exact-source main checks passed: [CodeQL](https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42752190053), [Validation](https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42752189945).
 
-[Version 1.1.0 downloads](https://github.com/JasonStys/mission-verification-evidence-kit/releases/tag/v1.1.0) contain application source [`2743307a90da1621392fcafa138b6e103db751d5`](https://github.com/JasonStys/mission-verification-evidence-kit/tree/2743307a90da1621392fcafa138b6e103db751d5). The [release workflow](https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42753754176) passed its documented native gates. See the [download index](/portfolio-case-study-site/downloads/) for actual platforms, file types, full checksums and runtime requirements. All three release jobs exercised their own freshly extracted application and real UI/export. The Windows download was independently checked and exercised again before publication; this does not certify an installer lifecycle or default OS browser opening.
+[Version 1.1.0 downloads](https://github.com/JasonStys/mission-verification-evidence-kit/releases/tag/v1.1.0) contain application source [`2743307a90da1621392fcafa138b6e103db751d5`](https://github.com/JasonStys/mission-verification-evidence-kit/tree/2743307a90da1621392fcafa138b6e103db751d5). The [release workflow](https://github.com/JasonStys/mission-verification-evidence-kit/actions/runs/42753754176) passed its documented native gates. See the [dated download snapshot](/portfolio-case-study-site/downloads/history/2026-11-10/) for those platforms, file types, full checksums and runtime requirements. All three release jobs exercised their own freshly extracted application and real UI/export. The Windows download was independently checked and exercised again before publication; this does not certify an installer lifecycle or default OS browser opening.
 
 ## Limitations
 

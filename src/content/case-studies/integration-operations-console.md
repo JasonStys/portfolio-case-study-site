@@ -1,7 +1,7 @@
 ---
 title: "Reliable integration operations, made observable"
 repository: "https://github.com/JasonStys/integration-operations-console"
-summary: "A Java and TypeScript integration lab with complete job search, coherent audit snapshots, exact review downloads and deterministic connector discovery."
+summary: "Search persistent integration jobs, inspect complete audit pages and export exact results through the local Java and React app."
 role: "Full-stack and reliability engineering"
 languages: ["Java", "TypeScript", "SQL"]
 evidence:
@@ -12,6 +12,20 @@ evidence:
     "Deterministic discovery order",
   ]
 ---
+
+## Current usable application — 12 November 2026
+
+A bundled Java/Spring and React app provides persistent H2 storage, account/state search, complete pagination and exact review downloads. Request-key intent, real-client binding, timestamp precision, connector ordering and mobile layout were corrected using real API and browser workflows.
+
+Lets support users investigate older or filtered work coherently instead of relying on a recent-activity feed.
+
+The current [version 1.1.0 release](https://github.com/JasonStys/integration-operations-console/releases/tag/v1.1.0) identifies [its packaged runtime source](https://github.com/JasonStys/integration-operations-console/tree/8646ee63608448651beeaa734ff3a055d17149d7). The matching [illustrated Windows guide](https://github.com/JasonStys/integration-operations-console/blob/90cf1f8fdde1dc1b45812fd03ecb8c88b22b4efc/docs/reports/windows-application-guide-1.1.0.docx) and [guide identity record](https://github.com/JasonStys/integration-operations-console/blob/90cf1f8fdde1dc1b45812fd03ecb8c88b22b4efc/docs/reports/windows-application-guide-1.1.0.json) describe actual Windows launch-and-use acceptance, prerequisites, saving and exit. Later repository checks and the guide publication commit remain separate from the released runtime. Additional operating-system assets do not establish execution on this Windows PC. Packages are unsigned.
+
+**Requirements.** Windows x64, a local web browser and a writable owner-local workspace. Verify the matching checksum and keep the complete distribution/notices. Runtime is bundled; no system Python/Node or Docker setup is needed for prepared workflows.
+
+**Current limits.** Fictional providers and simulated actor roles are not a production identity provider. The unsigned Windows app-image stores trusted-owner local data.
+
+The measurements, version numbers and links in the engineering narrative below retain their dated earlier source scopes. They are not relabeled as fresh results for this current package.
 
 ## Problem
 

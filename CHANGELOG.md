@@ -2,6 +2,13 @@
 
 All notable changes use a simplified Keep a Changelog structure. Version numbers follow semantic versioning for the repository's public behavior and content contracts.
 
+## Current application evidence - 2026-11-12
+
+- Current66-application catalog with108published payload identities and66matching immutable illustrated Windows guides, explicit prerequisites/start/exit behavior and separate runtime/repository/documentation sources.
+- Combined67-project purpose/change/rationale/limits summary, current15case additions and compact searchable outcomes, preserving six broad highlights plus the14space/energy and seven-drone collections.
+- Bounded static current download pages and correct project deep anchors, with the earlier20/62release snapshot and original Office/upgrade manifests retained separately.
+- Closed schema and complete current/history presentation tests, including wrong-card guide/version mutations; unchanged quality, performance, accessibility and coverage gates.
+
 ## [Unreleased] - 2026-11-09
 
 ### Added

@@ -1,7 +1,7 @@
 ---
 title: "Delivery gates that verify identity and recovery"
 repository: "https://github.com/JasonStys/secure-delivery-pipeline-lab"
-summary: "A defensive delivery lab with authenticated release comparison, atomic deployment receipts and independently verified rollback trust."
+summary: "Inspect offline release integrity, original inputs and saved review evidence while keeping authenticated promotion in the CLI."
 role: "DevSecOps and software supply-chain engineering"
 languages: ["Python", "Bash", "Dockerfile"]
 evidence:
@@ -13,6 +13,20 @@ evidence:
   ]
 featuredOrder: 5
 ---
+
+## Current usable application — 12 November 2026
+
+Authenticated promotion and rollback evidence remain in the original CLI. The desktop workbench adds source-inventory calculation, exact offline release-file inspection, original versus effective inputs and durable review exports, clearly separating checksum integrity from authenticated publisher trust.
+
+Makes release eligibility and recovery evidence easier to inspect while preserving the distinction between matching bytes and a trusted publisher.
+
+The current [version 1.2.0 release](https://github.com/JasonStys/secure-delivery-pipeline-lab/releases/tag/v1.2.0) identifies [its packaged runtime source](https://github.com/JasonStys/secure-delivery-pipeline-lab/tree/83df1d81fb48f29256efab51b742a96a5776cc50). The matching [illustrated Windows guide](https://github.com/JasonStys/secure-delivery-pipeline-lab/blob/5d6fec179d05825ce61e2c57e1d57318ce7a31cd/docs/reports/windows-application-guide-1.2.0.docx) and [guide identity record](https://github.com/JasonStys/secure-delivery-pipeline-lab/blob/5d6fec179d05825ce61e2c57e1d57318ce7a31cd/docs/reports/windows-application-guide-1.2.0.json) describe actual Windows launch-and-use acceptance, prerequisites, saving and exit. Later repository checks and the guide publication commit remain separate from the released runtime. Additional operating-system assets do not establish execution on this Windows PC. Packages are unsigned.
+
+**Requirements.** Windows x64 and a writable owner-local workspace. Verify the matching release checksum and retain the complete distribution and notices. The application runtime is bundled; no system Python, Node or Docker setup is needed for its prepared workflows.
+
+**Current limits.** The GUI preflight is integrity-only and performs no payload execution, promotion or rollback. Authenticated delivery operations remain separately controlled CLI workflows. Independent expected identities are essential: checksum equality and the offline expected tuple do not authenticate a publisher, signature or payload safety.
+
+The measurements, version numbers and links in the engineering narrative below retain their dated earlier source scopes. They are not relabeled as fresh results for this current package.
 
 ## Problem
 
@@ -40,7 +54,7 @@ The corrected source passed **140 tests with no skips**, **93.05% combined state
 
 Accepted source: [`e37b189fa604bb0d6951e4a926d20ed9606298a1`](https://github.com/JasonStys/secure-delivery-pipeline-lab/tree/e37b189fa604bb0d6951e4a926d20ed9606298a1). The [validation report](https://github.com/JasonStys/secure-delivery-pipeline-lab/blob/e37b189fa604bb0d6951e4a926d20ed9606298a1/docs/reports/release-refresh-2026-11-09.md) records executed scope and conditions. Exact-source main checks passed: [Validate](https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42746536402), [CodeQL](https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42746536395).
 
-[Version 1.1.0 downloads](https://github.com/JasonStys/secure-delivery-pipeline-lab/releases/tag/v1.1.0) contain application source [`e37b189fa604bb0d6951e4a926d20ed9606298a1`](https://github.com/JasonStys/secure-delivery-pipeline-lab/tree/e37b189fa604bb0d6951e4a926d20ed9606298a1). The [release workflow](https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42747854973) passed its documented native gates. See the [download index](/portfolio-case-study-site/downloads/) for actual platforms, file types, full checksums and runtime requirements. The downloadable zipapp is the small inventory example; its trusted verification and promotion manager remains reviewed source, not an embedded desktop installer.
+[Version 1.1.0 downloads](https://github.com/JasonStys/secure-delivery-pipeline-lab/releases/tag/v1.1.0) contain application source [`e37b189fa604bb0d6951e4a926d20ed9606298a1`](https://github.com/JasonStys/secure-delivery-pipeline-lab/tree/e37b189fa604bb0d6951e4a926d20ed9606298a1). The [release workflow](https://github.com/JasonStys/secure-delivery-pipeline-lab/actions/runs/42747854973) passed its documented native gates. See the [dated download snapshot](/portfolio-case-study-site/downloads/history/2026-11-10/) for those platforms, file types, full checksums and runtime requirements. The downloadable zipapp is the small inventory example; its trusted verification and promotion manager remains reviewed source, not an embedded desktop installer.
 
 ## Limitations
 

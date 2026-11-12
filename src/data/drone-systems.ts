@@ -13,7 +13,7 @@ export const droneSystemsCuration = [
     domains: ["Drone safety", "Simulation", "Operations"],
     maturity: "validated",
     outcome:
-      "Edit and replay civilian drone scenes with obstacle checks, saved routes and timeline scrubbing.",
+      "Rehearse civilian drone scenes with animated routes, obstacles, saved plans and reliable desktop upgrades.",
   },
   {
     name: "mavlink-sitl-assurance-lab",
@@ -21,7 +21,7 @@ export const droneSystemsCuration = [
     domains: ["Drone safety", "Protocol assurance", "Fault injection"],
     maturity: "validated",
     outcome:
-      "Test simulated MAVLink faults and inspect delay, drop and ambiguous packet-correlation evidence.",
+      "Import, filter and export offline MAVLink evidence while distinguishing relay observations from receiver acknowledgement.",
   },
   {
     name: "first-response-drone-coordinator",
@@ -29,7 +29,7 @@ export const droneSystemsCuration = [
     domains: ["Drone safety", "Resource allocation", "Human review"],
     maturity: "validated",
     outcome:
-      "Compare civilian response plans under aircraft or operator loss with revision-bound human review.",
+      "Review fictional response plans and resource-loss contingencies with staff roles, durable inputs and exact evidence exports.",
   },
   {
     name: "drone-video-privacy-studio",
@@ -37,7 +37,7 @@ export const droneSystemsCuration = [
     domains: ["Drone safety", "Privacy", "Media processing"],
     maturity: "validated",
     outcome:
-      "Redact video and review manual keyframes with conservative privacy envelopes and controlled exports.",
+      "Edit moving privacy envelopes, inspect processed frames and retain reviewer approval before exporting minimized footage.",
   },
   {
     name: "drone-maintenance-readiness-studio",
@@ -45,7 +45,7 @@ export const droneSystemsCuration = [
     domains: ["Drone safety", "Reliability", "Evidence review"],
     maturity: "validated",
     outcome:
-      "Track component life and compare draft maintenance standards before changing approved records.",
+      "Import maintenance ledgers, inspect component findings and compare draft standards against the same workload and assessment time.",
   },
   {
     name: "drone-airspace-awareness-lab",
@@ -53,7 +53,7 @@ export const droneSystemsCuration = [
     domains: ["Drone safety", "Scientific computing", "Uncertainty"],
     maturity: "validated",
     outcome:
-      "Inspect synthetic traffic overlaps with track freshness, altitude-reference limits and coverage gaps.",
+      "Inspect track and zone evidence with a bundled Rust kernel, readable map labels and explicit freshness and coverage limits.",
   },
   {
     name: "drone-flight-policy-workbench",
@@ -61,7 +61,7 @@ export const droneSystemsCuration = [
     domains: ["Drone safety", "Policy as code", "Governance"],
     maturity: "validated",
     outcome:
-      "Compare active and draft drone policies against identical evidence without authorizing flight.",
+      "Edit organizational drone policies and compare actual OPA decisions against the same operation evidence without publishing drafts.",
   },
 ] as const satisfies readonly ProjectCuration[];
 

@@ -289,7 +289,7 @@ try {
   const expectedNames = await page.evaluate(async () =>
     (
       await (await fetch("/portfolio-case-study-site/downloads/index.json")).json()
-    ).repositories.map((project) => project.name),
+    ).applications.map((project) => project.name),
   );
   const names = [];
   for (let number = 1; number <= Math.ceil(expectedNames.length / 12); number++) {

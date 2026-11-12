@@ -22,6 +22,9 @@ The editable Markdown remains the maintenance source. The Word files are readabl
 
 - [OPERATIONS](OPERATIONS.md)
 - [Offline Windows application](native-application.md)
+- [All67 combined application changes and rationale](portfolio-summary-2026-11-12.md)
+- [Current released applications and Windows guides](https://jasonstys.github.io/portfolio-case-study-site/downloads/)
+- [Earlier20-project release snapshot](https://jasonstys.github.io/portfolio-case-study-site/downloads/history/2026-11-10/)
 
 ### Design and contracts
 

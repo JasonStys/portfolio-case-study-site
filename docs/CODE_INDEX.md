@@ -473,6 +473,20 @@
 | 127 | variable | `escaped` |
 | 144 | variable | `target` |
 
+## `scripts/current-application-contract.mjs`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 10 | function | `validateApplicationPages` |
+| 12 | variable | `presentation` |
+| 27 | variable | `cards` |
+| 34 | variable | `app` |
+| 36 | variable | `route` |
+| 37 | variable | `html` |
+| 38 | variable | `children` |
+| 39 | variable | `links` |
+| 42 | variable | `heading` |
+
 ## `scripts/download-page-contract.mjs`
 
 | Line | Kind | Symbol |
@@ -810,53 +824,61 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 13 | variable | `ROOT` |
-| 14 | variable | `DIST` |
-| 15 | variable | `BASE` |
-| 16 | variable | `REQUIRED_OUTPUTS` |
-| 34 | variable | `BUDGETS` |
-| 41 | function | `collectFiles` |
-| 42 | variable | `entries` |
-| 43 | variable | `files` |
-| 45 | variable | `absolute` |
-| 52 | function | `targetForUrl` |
-| 53 | variable | `pathname` |
-| 55 | variable | `relative` |
-| 61 | function | `validateHtml` |
-| 62 | variable | `html` |
-| 72 | variable | `urls` |
-| 74 | variable | `target` |
-| 80 | variable | `inlineJavaScript` |
-| 86 | function | `validateBudgets` |
-| 87 | variable | `javascript` |
-| 88 | variable | `css` |
-| 89 | variable | `compressedSize` |
-| 95 | variable | `metrics` |
-| 103 | variable | `failures` |
-| 111 | function | `main` |
-| 113 | variable | `names` |
-| 116 | variable | `upgrades` |
-| 119 | variable | `publications` |
-| 122 | variable | `documentation` |
-| 123 | variable | `documentedNames` |
-| 128 | variable | `index` |
-| 129 | variable | `renderedNames` |
-| 132 | variable | `updates` |
-| 133 | variable | `updateNames` |
-| 138 | variable | `sitemap` |
-| 139 | variable | `downloads` |
-| 140 | variable | `downloadPages` |
-| 142 | variable | `route` |
-| 147 | variable | `detail` |
-| 149 | variable | `upgrade` |
-| 160 | variable | `publication` |
-| 163 | variable | `base` |
-| 165 | variable | `url` |
-| 174 | variable | `files` |
-| 175 | variable | `htmlFiles` |
-| 176 | variable | `htmlSizes` |
-| 177 | variable | `inlineJavaScript` |
-| 179 | variable | `result` |
+| 14 | variable | `ROOT` |
+| 15 | variable | `DIST` |
+| 16 | variable | `BASE` |
+| 17 | variable | `REQUIRED_OUTPUTS` |
+| 35 | variable | `BUDGETS` |
+| 42 | function | `collectFiles` |
+| 43 | variable | `entries` |
+| 44 | variable | `files` |
+| 46 | variable | `absolute` |
+| 53 | function | `targetForUrl` |
+| 54 | variable | `pathname` |
+| 56 | variable | `relative` |
+| 62 | function | `validateHtml` |
+| 63 | variable | `html` |
+| 73 | variable | `urls` |
+| 75 | variable | `target` |
+| 81 | variable | `inlineJavaScript` |
+| 87 | function | `validateBudgets` |
+| 88 | variable | `javascript` |
+| 89 | variable | `css` |
+| 90 | variable | `compressedSize` |
+| 96 | variable | `metrics` |
+| 104 | variable | `failures` |
+| 112 | function | `main` |
+| 114 | variable | `names` |
+| 117 | variable | `upgrades` |
+| 120 | variable | `publications` |
+| 123 | variable | `documentation` |
+| 124 | variable | `documentedNames` |
+| 129 | variable | `index` |
+| 130 | variable | `renderedNames` |
+| 133 | variable | `updates` |
+| 134 | variable | `updateNames` |
+| 139 | variable | `sitemap` |
+| 140 | variable | `downloads` |
+| 141 | variable | `downloadPages` |
+| 143 | variable | `route` |
+| 147 | variable | `legacyPrefix` |
+| 148 | variable | `legacy` |
+| 149 | variable | `originalLegacy` |
+| 154 | variable | `legacyPages` |
+| 156 | variable | `route` |
+| 161 | variable | `detail` |
+| 163 | variable | `upgrade` |
+| 174 | variable | `publication` |
+| 177 | variable | `base` |
+| 179 | variable | `url` |
+| 187 | variable | `app` |
+| 189 | variable | `page` |
+| 190 | variable | `route` |
+| 209 | variable | `files` |
+| 210 | variable | `htmlFiles` |
+| 211 | variable | `htmlSizes` |
+| 212 | variable | `inlineJavaScript` |
+| 214 | variable | `result` |
 
 ## `scripts/validate-repository.mjs`
 
@@ -903,19 +925,34 @@
 | 23 | variable | `socialImage` |
 | 24 | variable | `safeStructuredData` |
 
+## `src/components/CurrentApplication.astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 9 | variable | `application` |
+| 10 | variable | `guide` |
+
 ## `src/components/DownloadPage.astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 14 | variable | `selection` |
+| 15 | variable | `platforms` |
+
+## `src/components/DownloadPagination.astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 11 | variable | `pagePath` |
+| 15 | variable | `pages` |
+
+## `src/components/LegacyDownloadPage.astro`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
 | 15 | variable | `selection` |
 | 17 | variable | `platforms` |
 | 23 | variable | `formats` |
-
-## `src/components/DownloadPagination.astro`
-
-| Line | Kind | Symbol |
-| ---: | --- | --- |
-| 11 | variable | `pages` |
 
 ## `src/components/MetricRail.astro`
 
@@ -982,6 +1019,85 @@
 | ---: | --- | --- |
 | 9 | variable | `spaceHighlightNames` |
 | 16 | variable | `spaceSystemsCuration` |
+
+## `src/lib/application-catalog.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 10 | variable | `applicationManifest` |
+| 12 | function | `applicationFor` |
+| 16 | function | `applicationDownloadPath` |
+| 17 | variable | `index` |
+
+## `src/lib/applications.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 9 | variable | `APPLICATION_NAMES` |
+| 12 | variable | `OWNER` |
+| 13 | variable | `SHA` |
+| 14 | variable | `DIGEST` |
+| 15 | variable | `VERSION` |
+| 83 | function | `record` |
+| 86 | variable | `prototype` |
+| 99 | function | `list` |
+| 118 | function | `text` |
+| 137 | function | `timestamp` |
+| 138 | variable | `result` |
+| 139 | variable | `match` |
+| 148 | variable | `micros` |
+| 149 | variable | `base` |
+| 150 | variable | `fraction` |
+| 159 | function | `identity` |
+| 160 | variable | `result` |
+| 165 | function | `positive` |
+| 171 | function | `exact` |
+| 177 | function | `asset` |
+| 178 | variable | `row` |
+| 191 | variable | `filename` |
+| 192 | variable | `checksumName` |
+| 200 | variable | `escapedVersion` |
+| 203 | variable | `platform` |
+| 204 | variable | `architecture` |
+| 205 | variable | `format` |
+| 206 | variable | `kind` |
+| 221 | variable | `stated` |
+| 224 | variable | `stem` |
+| 231 | variable | `base` |
+| 248 | function | `guide` |
+| 249 | variable | `row` |
+| 268 | variable | `publicationSource` |
+| 269 | variable | `documentPath` |
+| 270 | variable | `suffix` |
+| 278 | variable | `manifestPath` |
+| 279 | variable | `base` |
+| 299 | function | `currentSource` |
+| 304 | variable | `row` |
+| 305 | variable | `commit` |
+| 306 | variable | `base` |
+| 307 | variable | `links` |
+| 308 | variable | `titles` |
+| 309 | variable | `workflows` |
+| 310 | variable | `item` |
+| 311 | variable | `title` |
+| 312 | variable | `url` |
+| 313 | variable | `prefix` |
+| 336 | function | `validateApplications` |
+| 337 | variable | `envelope` |
+| 344 | variable | `collectedAt` |
+| 345 | variable | `ids` |
+| 346 | variable | `releaseIds` |
+| 347 | variable | `urls` |
+| 348 | variable | `applications` |
+| 349 | variable | `row` |
+| 368 | variable | `name` |
+| 371 | variable | `version` |
+| 374 | variable | `runtimeSource` |
+| 375 | variable | `base` |
+| 376 | variable | `releaseId` |
+| 379 | variable | `assets` |
+| 380 | variable | `assetNames` |
+| 390 | variable | `limitations` |
 
 ## `src/lib/catalog-revision.ts`
 
@@ -1250,11 +1366,31 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 13 | variable | `newlyAnalyzed` |
-| 22 | variable | `files` |
-| 23 | variable | `wordCount` |
-| 24 | variable | `workbookCount` |
-| 90 | variable | `row` |
+| 14 | variable | `newlyAnalyzed` |
+| 23 | variable | `files` |
+| 24 | variable | `wordCount` |
+| 25 | variable | `workbookCount` |
+| 100 | variable | `row` |
+| 101 | variable | `current` |
+
+## `src/pages/downloads/history/2026-11-10/index.astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| — | file | No declarations indexed |
+
+## `src/pages/downloads/history/2026-11-10/index.json.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 6 | variable | `prerender` |
+| 7 | function | `GET` |
+
+## `src/pages/downloads/history/2026-11-10/page/[page].astro`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 6 | function | `getStaticPaths` |
 
 ## `src/pages/downloads/index.astro`
 
@@ -1309,11 +1445,12 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 16 | function | `getStaticPaths` |
-| 25 | variable | `upgrade` |
-| 26 | variable | `isHub` |
-| 27 | variable | `hasDownload` |
-| 29 | variable | `observedAt` |
+| 17 | function | `getStaticPaths` |
+| 26 | variable | `upgrade` |
+| 27 | variable | `isHub` |
+| 28 | variable | `application` |
+| 29 | variable | `hasDownload` |
+| 31 | variable | `observedAt` |
 
 ## `src/pages/projects/index.astro`
 
@@ -1343,12 +1480,12 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 14 | variable | `prerender` |
-| 16 | variable | `GET` |
-| 17 | variable | `caseStudyPaths` |
-| 24 | variable | `projectPaths` |
-| 25 | variable | `paths` |
-| 39 | variable | `urls` |
+| 15 | variable | `prerender` |
+| 17 | variable | `GET` |
+| 18 | variable | `caseStudyPaths` |
+| 25 | variable | `projectPaths` |
+| 26 | variable | `paths` |
+| 44 | variable | `urls` |
 
 ## `src/pages/space-systems.astro`
 
@@ -1438,7 +1575,7 @@
 | 66 | custom property | `--shell` |
 | 1098 | custom property | `--shell` |
 
-## `tests/e2e/downloads.spec.ts`
+## `tests/e2e/current-applications.spec.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
@@ -1455,79 +1592,153 @@
 | 55 | variable | `navigation` |
 | 63 | variable | `card` |
 | 75 | variable | `row` |
-| 123 | variable | `index` |
-| 131 | variable | `project` |
-| 132 | variable | `headingLink` |
-| 133 | variable | `projectName` |
-| 140 | variable | `first` |
-| 158 | variable | `origin` |
-| 159 | variable | `external` |
-| 169 | variable | `pageCount` |
-| 176 | variable | `expected` |
+| 112 | variable | `index` |
+| 120 | variable | `project` |
+| 121 | variable | `headingLink` |
+| 122 | variable | `projectName` |
+| 129 | variable | `first` |
+| 147 | variable | `origin` |
+| 148 | variable | `external` |
+| 158 | variable | `pageCount` |
+| 165 | variable | `expected` |
+
+## `tests/e2e/downloads.spec.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 11 | variable | `manifest` |
+| 17 | variable | `origin` |
+| 18 | variable | `context` |
+| 23 | variable | `external` |
+| 32 | variable | `page` |
+| 39 | variable | `pageCount` |
+| 40 | variable | `seenNames` |
+| 48 | variable | `expected` |
+| 49 | variable | `cards` |
+| 51 | variable | `actualNames` |
+| 56 | variable | `navigation` |
+| 64 | variable | `card` |
+| 76 | variable | `row` |
+| 126 | variable | `index` |
+| 134 | variable | `project` |
+| 135 | variable | `headingLink` |
+| 136 | variable | `projectName` |
+| 143 | variable | `first` |
+| 161 | variable | `origin` |
+| 162 | variable | `external` |
+| 172 | variable | `pageCount` |
+| 179 | variable | `expected` |
 
 ## `tests/e2e/portfolio.spec.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 38 | variable | `section` |
-| 61 | variable | `context` |
-| 66 | variable | `page` |
-| 72 | variable | `publication` |
-| 74 | variable | `response` |
-| 76 | variable | `section` |
-| 119 | variable | `featured` |
-| 133 | variable | `result` |
-| 138 | variable | `coverage` |
-| 147 | variable | `exits` |
-| 164 | variable | `label` |
-| 166 | variable | `row` |
-| 171 | variable | `release` |
-| 173 | variable | `measurements` |
-| 196 | variable | `links` |
-| 222 | variable | `downloads` |
-| 236 | variable | `payload` |
-| 237 | variable | `url` |
-| 250 | variable | `workbench` |
-| 259 | variable | `catalogEntry` |
-| 320 | variable | `context` |
-| 325 | variable | `page` |
-| 331 | variable | `response` |
-| 346 | variable | `scan` |
-| 382 | variable | `skipLink` |
-| 392 | variable | `results` |
-| 403 | variable | `bodyWidth` |
-| 405 | variable | `cards` |
-| 406 | variable | `first` |
-| 407 | variable | `second` |
-| 411 | variable | `navigation` |
-| 412 | variable | `links` |
-| 413 | variable | `expectedNavigation` |
-| 425 | variable | `rows` |
-| 428 | variable | `box` |
-| 445 | variable | `about` |
-| 465 | variable | `revision` |
-| 467 | variable | `search` |
-| 469 | variable | `index` |
+| 42 | variable | `section` |
+| 65 | variable | `context` |
+| 70 | variable | `page` |
+| 76 | variable | `publication` |
+| 78 | variable | `response` |
+| 80 | variable | `section` |
+| 123 | variable | `featured` |
+| 137 | variable | `result` |
+| 142 | variable | `coverage` |
+| 151 | variable | `exits` |
+| 168 | variable | `label` |
+| 170 | variable | `row` |
+| 175 | variable | `release` |
+| 177 | variable | `measurements` |
+| 200 | variable | `links` |
+| 226 | variable | `downloads` |
+| 240 | variable | `payload` |
+| 241 | variable | `url` |
+| 254 | variable | `workbench` |
+| 263 | variable | `catalogEntry` |
+| 324 | variable | `context` |
+| 329 | variable | `page` |
+| 335 | variable | `response` |
+| 350 | variable | `scan` |
+| 386 | variable | `skipLink` |
+| 396 | variable | `results` |
+| 407 | variable | `bodyWidth` |
+| 409 | variable | `cards` |
+| 410 | variable | `first` |
+| 411 | variable | `second` |
+| 415 | variable | `navigation` |
+| 416 | variable | `links` |
+| 417 | variable | `expectedNavigation` |
+| 429 | variable | `rows` |
+| 432 | variable | `box` |
+| 449 | variable | `about` |
+| 469 | variable | `revision` |
+| 471 | variable | `search` |
+| 473 | variable | `index` |
 
 ## `tests/e2e/upgrades.spec.ts`
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 16 | variable | `context` |
-| 21 | variable | `page` |
-| 28 | variable | `longest` |
-| 30 | variable | `card` |
-| 37 | variable | `record` |
-| 47 | variable | `response` |
-| 49 | variable | `html` |
-| 51 | variable | `evidence` |
-| 68 | variable | `external` |
-| 69 | variable | `origin` |
-| 81 | variable | `record` |
-| 114 | variable | `longest` |
-| 166 | variable | `unknown` |
-| 169 | variable | `sitemap` |
-| 170 | variable | `urls` |
+| 17 | variable | `context` |
+| 22 | variable | `page` |
+| 29 | variable | `longest` |
+| 31 | variable | `card` |
+| 38 | variable | `record` |
+| 48 | variable | `response` |
+| 50 | variable | `html` |
+| 52 | variable | `evidence` |
+| 69 | variable | `external` |
+| 70 | variable | `origin` |
+| 82 | variable | `record` |
+| 84 | variable | `current` |
+| 122 | variable | `longest` |
+| 174 | variable | `unknown` |
+| 177 | variable | `sitemap` |
+| 178 | variable | `urls` |
+
+## `tests/unit/application-catalog.test.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 16 | variable | `page` |
+
+## `tests/unit/applications.test.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 12 | function | `fixture` |
+| 15 | function | `required` |
+| 19 | function | `application` |
+| 22 | function | `firstAsset` |
+| 25 | function | `edit` |
+| 31 | variable | `result` |
+| 37 | variable | `cfs` |
+| 47 | variable | `app` |
+| 52 | variable | `windows` |
+| 60 | variable | `apps` |
+| 64 | variable | `pim` |
+| 72 | variable | `data` |
+| 73 | variable | `before` |
+| 74 | variable | `out` |
+| 88 | variable | `data` |
+| 89 | variable | `app` |
+| 90 | variable | `commit` |
+| 96 | variable | `output` |
+| 101 | variable | `data` |
+| 110 | variable | `mutations` |
+| 138 | variable | `a` |
+| 494 | variable | `s` |
+| 555 | variable | `data` |
+| 569 | variable | `data` |
+| 591 | variable | `data` |
+| 599 | variable | `data` |
+| 600 | variable | `inherited` |
+| 603 | variable | `second` |
+| 604 | variable | `reads` |
+| 614 | variable | `third` |
+| 619 | variable | `data` |
+| 622 | variable | `other` |
+| 625 | variable | `limits` |
+| 630 | variable | `data` |
+| 631 | variable | `reads` |
 
 ## `tests/unit/catalog.test.ts`
 
@@ -1547,6 +1758,28 @@
 | 140 | variable | `languages` |
 | 172 | variable | `repository` |
 | 173 | variable | `envelope` |
+
+## `tests/unit/current-application-contract.test.ts`
+
+| Line | Kind | Symbol |
+| ---: | --- | --- |
+| 9 | variable | `apps` |
+| 10 | variable | `first` |
+| 15 | function | `html` |
+| 16 | variable | `value` |
+| 20 | function | `fixture` |
+| 21 | variable | `pages` |
+| 22 | variable | `count` |
+| 23 | variable | `route` |
+| 24 | variable | `sitemap` |
+| 29 | variable | `cards` |
+| 36 | variable | `navigation` |
+| 50 | variable | `f` |
+| 54 | variable | `f` |
+| 62 | variable | `f` |
+| 68 | variable | `g` |
+| 73 | variable | `f` |
+| 82 | variable | `g` |
 
 ## `tests/unit/download-page-contract.test.ts`
 

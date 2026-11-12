@@ -1,7 +1,7 @@
 ---
 title: "Governed standards for business documents and data"
 repository: "https://github.com/JasonStys/business-knowledge-workbench"
-summary: "Owner-governed document and data standardization with consistent units, editable schemas and layouts, quantitative library search and authorized evidence packs."
+summary: "Standardize, preview and search business files with authorized formats, consistent units and same-cell numeric filters."
 role: "Full-stack, document, and data engineering"
 languages: ["Python", "TypeScript", "SQL"]
 evidence:
@@ -13,6 +13,20 @@ evidence:
   ]
 featuredOrder: 2
 ---
+
+## Current usable application — 12 November 2026
+
+Configurable units, fields, structure and exports are paired with previews, authorized document downloads and numeric searches that keep related conditions on the same cell. The private desktop edition retains each authenticated user's workspace and standards, with corrected scientific notation and readable interface symbols.
+
+Makes records easier to compare and reuse while keeping formatting choices, measurement meaning and access rules attached to the data.
+
+The current [version 1.4.1 release](https://github.com/JasonStys/business-knowledge-workbench/releases/tag/v1.4.1) identifies [its packaged runtime source](https://github.com/JasonStys/business-knowledge-workbench/tree/ba3cf3cfc6f2d443747f7350af06ca0329b1fcc4). The matching [illustrated Windows guide](https://github.com/JasonStys/business-knowledge-workbench/blob/6f1eaa4aa288722420c993513921357da33a1198/docs/reports/windows-application-guide-1.4.1.docx) and [guide identity record](https://github.com/JasonStys/business-knowledge-workbench/blob/6f1eaa4aa288722420c993513921357da33a1198/docs/reports/windows-application-guide-1.4.1.json) describe actual Windows launch-and-use acceptance, prerequisites, saving and exit. Later repository checks and the guide publication commit remain separate from the released runtime. Additional operating-system assets do not establish execution on this Windows PC. Packages are unsigned.
+
+**Requirements.** Windows and the matching installer/checksum; no system Python is required. Use authorized supported files and your own local account plus separate vault phrase. Back up the complete stopped account archive and keep recovery material private.
+
+**Current limits.** Supported parsers have explicit fidelity limits. Private account workspaces and role previews do not constitute an enterprise staff-directory system or universal document understanding. The trusted local OS/service can access active plaintext while the owner unlocks a vault. Keep account backups and vault phrases private; unsupported layouts or embedded objects may lose fidelity.
+
+The measurements, version numbers and links in the engineering narrative below retain their dated earlier source scopes. They are not relabeled as fresh results for this current package.
 
 ## Problem
 

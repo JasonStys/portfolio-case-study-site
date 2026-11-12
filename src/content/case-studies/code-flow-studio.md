@@ -1,7 +1,7 @@
 ---
 title: "Measured C# coverage without losing target exits"
 repository: "https://github.com/JasonStys/code-flow-studio"
-summary: "Code Flow Studio 0.4.3 separates C# target exits from collector status, measures approved nonzero returns and retains source-bound diagnostics, coverage and private history."
+summary: "Code Flow Studio 0.4.4 retains source-bound diagnostics, private history and isolated C# coverage with separate target and collector evidence. Earlier compiler measurements retain their 0.4.3 source scope."
 role: "AI developer tools and full-stack engineering"
 languages: ["Python", "TypeScript", "C#", "SQL", "Dockerfile"]
 evidence:
@@ -11,6 +11,20 @@ evidence:
   - "Twelve isolated compiler adapters"
 featuredOrder: 1
 ---
+
+## Current usable application — 12 November 2026
+
+Exact file and line evidence, unused-code candidates and verified source navigation now sit in a downloadable workspace with encrypted history and reliable shutdown. Supported compiler workers keep C# target exit results separate from coverage-collector success, and the current release preserves existing accounts during upgrade.
+
+Helps developers reproduce a finding, inspect the right source and compare test evidence without mistaking a failed measurement for a successful result.
+
+The current [version 0.4.4 release](https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.4) identifies [its packaged runtime source](https://github.com/JasonStys/code-flow-studio/tree/8a533a0b9838b994c18ec0475d91a4f8db1be6fa). The matching [illustrated Windows guide](https://github.com/JasonStys/code-flow-studio/blob/8c029ee5a441bc75b6a3c8d1766df02503ad3b69/docs/reports/windows-application-guide-0.4.4.docx) and [guide identity record](https://github.com/JasonStys/code-flow-studio/blob/8c029ee5a441bc75b6a3c8d1766df02503ad3b69/docs/reports/windows-application-guide-0.4.4.json) describe actual Windows launch-and-use acceptance, prerequisites, saving and exit. Later repository checks and the guide publication commit remain separate from the released runtime. Additional operating-system assets do not establish execution on this Windows PC. Packages are unsigned.
+
+**Requirements.** Windows and the matching installer/checksum. Opening and static review need no system Python or IDE. Compiler execution additionally needs the supported isolated engine and matching 0.4.4 worker image. Keep your login, separate vault phrase and recovery material private.
+
+**Current limits.** Compiler execution requires the supported isolated workers. Coverage and unused-code candidates support review; they do not prove correctness or arbitrary-language support. Measured coverage does not prove correctness. Stored archives are encrypted while locked; the trusted local OS/service can access active plaintext. Optional AI output remains an unverified proposal.
+
+The measurements, version numbers and links in the engineering narrative below retain their dated earlier source scopes. They are not relabeled as fresh results for this current package.
 
 ## Problem
 
@@ -54,7 +68,7 @@ The published [0.4.3 downloads and checksums](https://github.com/JasonStys/code-
 
 The release gate now requires successful compiler acceptance, validation, native packages and all full-main CodeQL categories for the exact source. Independent negative response mutations block draft creation or final verification when compiler evidence is missing, failed, active, PR-only or belongs to another source/path/repository. Builds remain drafts until independent acceptance; six payloads and six checksum sidecars are bound to their published source and provider digests.
 
-Measured coverage means complete instrumentation for the approved cases, not 100% line/branch coverage or proof of correctness. Same-UID worker programs can interfere with job files; bindings detect stale/inconsistent evidence and are not hostile-target tamper-proof attestation. Local compilation requires a working isolated engine and the matching `code-flow-worker:0.4.3` image. The PC upgrade did not repair, rebuild or otherwise change Docker. Packages remain unsigned.
+Measured coverage means complete instrumentation for the approved cases, not 100% line/branch coverage or proof of correctness. Same-UID worker programs can interfere with job files; bindings detect stale/inconsistent evidence and are not hostile-target tamper-proof attestation. Those 0.4.3 compiler measurements require a working isolated engine and the matching `code-flow-worker:0.4.3` image; current use requires the matching current worker. The PC upgrade did not repair, rebuild or otherwise change Docker. Packages remain unsigned.
 
 ## Design
 
@@ -102,7 +116,7 @@ These measurements describe the linked earlier source and release, rather than t
 - The actual existing **Windows 0.4.0 packaged executable** passed the full native journey in **7.8 seconds**; its observed unlock HTTP/session proof took **171 ms**. This is one local observation, not a latency guarantee or reproduction of the earlier hosted delay.
 - TypeScript/Vite, 70 exact source maps and release contracts passed locally. Separate locked desktop and worker JavaScript dependency graphs were audited; the separate hosted worker/compiler and three-platform native gates also passed at this accepted source, as linked above.
 
-Historical downloads: [0.4.2 downloads and checksums](https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.2). The [earlier 0.4.0 release](https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.0) retains its original assets. The current download catalog selects 0.4.3 with its exact source, passing checks, release build and checksums; historical results above retain their own revision.
+Historical downloads: [0.4.2 downloads and checksums](https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.2). The [earlier 0.4.0 release](https://github.com/JasonStys/code-flow-studio/releases/tag/v0.4.0) retains its original assets. At that review, the then-current download catalog selected 0.4.3 with its exact source, passing checks, release build and checksums; historical results above retain their own revision.
 
 ## Limitations
 

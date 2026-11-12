@@ -9,6 +9,7 @@ import { absoluteUrl } from "@/lib/url";
 import { escapeXml } from "@/lib/xml";
 import type { APIRoute } from "astro";
 import { downloadManifest } from "@/lib/download-catalog";
+import { applicationManifest } from "@/lib/application-catalog";
 import { downloadPageCount, downloadPagePath } from "@/lib/download-pages";
 
 export const prerender = true;
@@ -27,8 +28,12 @@ export const GET: APIRoute = () => {
     "projects/",
     "updates/",
     "documentation/",
+    ...Array.from(
+      { length: downloadPageCount(applicationManifest.applications.length) },
+      (_, index) => downloadPagePath(index + 1),
+    ),
     ...Array.from({ length: downloadPageCount(downloadManifest.repositories.length) }, (_, index) =>
-      downloadPagePath(index + 1),
+      downloadPagePath(index + 1).replace("downloads/", "downloads/history/2026-11-10/"),
     ),
     "space-systems/",
     "drone-systems/",

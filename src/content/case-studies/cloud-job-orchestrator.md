@@ -1,7 +1,7 @@
 ---
 title: "Reliable job control across process boundaries"
 repository: "https://github.com/JasonStys/cloud-job-orchestrator"
-summary: "A Rust and PostgreSQL job control plane with read-only DAG planning, coherent job/event inspection, bounded dependency explanations and real worker acceptance."
+summary: "Author job graphs and inspect real Rust-worker execution, retries and cancellation through a local PostgreSQL-backed workspace."
 role: "Cloud, backend, and distributed-systems engineering"
 languages: ["Rust", "SQL", "TypeScript", "Bash"]
 evidence:
@@ -12,6 +12,20 @@ evidence:
     "Bounded blocker explanations",
   ]
 ---
+
+## Current usable application — 12 November 2026
+
+The native workspace runs the original Rust workers against bundled PostgreSQL. Editable DAGs, imports, explicit worker admission and pause, cancellation, captured results and durable event history connect lease and retry evidence to the actual workflow.
+
+Turns job state into actionable diagnosis while keeping the executed job set closed and the recovery evidence inspectable.
+
+The current [version 1.1.0 release](https://github.com/JasonStys/cloud-job-orchestrator/releases/tag/v1.1.0) identifies [its packaged runtime source](https://github.com/JasonStys/cloud-job-orchestrator/tree/60a08d2d059dc4cf813e1b96029dd42ec76dc067). The matching [illustrated Windows guide](https://github.com/JasonStys/cloud-job-orchestrator/blob/2b13da97103b6a7e73ed2f9b144b71e4c8159d5f/docs/reports/windows-application-guide-1.1.0.docx) and [guide identity record](https://github.com/JasonStys/cloud-job-orchestrator/blob/2b13da97103b6a7e73ed2f9b144b71e4c8159d5f/docs/reports/windows-application-guide-1.1.0.json) describe actual Windows launch-and-use acceptance, prerequisites, saving and exit. Later repository checks and the guide publication commit remain separate from the released runtime. Additional operating-system assets do not establish execution on this Windows PC. Packages are unsigned.
+
+**Requirements.** Windows x64 and the complete checksummed ZIP, including its app-local PostgreSQL tree and notices. Keep a writable owner-local workspace; no global database service, compiler or Docker setup is required for the fixed local jobs.
+
+**Current limits.** Closed local job types and trusted-owner plaintext storage only; the app does not supply cloud execution or a production multiuser identity, network or TLS boundary.
+
+The measurements, version numbers and links in the engineering narrative below retain their dated earlier source scopes. They are not relabeled as fresh results for this current package.
 
 ## Problem
 

@@ -8,6 +8,7 @@
 import BaseLayout from "@/components/BaseLayout.astro";
 import { projects } from "@/lib/catalog";
 import { upgradeManifest } from "@/lib/upgrades";
+import { applicationManifest } from "@/lib/application-catalog";
 import { withBase } from "@/lib/url";
 ---
 
@@ -21,13 +22,19 @@ import { withBase } from "@/lib/url";
     <h1>Useful workflows, inspectable results.</h1>
     <p>
       Open any project for its purpose, improvements, rationale, validation report and limits. The
-      66 domain projects link to successful main-branch workflow results for their exact reviewed
-      source commits. The portfolio hub has separate current site checks.
+      66 domain applications now have published packages, Windows launch-and-use acceptance and
+      current illustrated Windows guides. Each detail separates its released runtime source, current
+      repository checks and guide publication. This snapshot records the other 66 deliveries; the
+      portfolio hub's implemented offline reader has its own{" "}
+      <a href="https://github.com/JasonStys/portfolio-case-study-site/releases">
+        release and verification status
+      </a>
+      .
     </p>
     <p>
       Evidence observed{" "}
-      <time datetime={upgradeManifest.collectedAt}>
-        {new Date(upgradeManifest.collectedAt).toISOString()}
+      <time datetime={applicationManifest.collectedAt}>
+        {new Date(applicationManifest.collectedAt).toISOString()}
       </time>
       . Source results describe their exact commits; the download index separately identifies the
       released application bytes and their acceptance tooling.
@@ -36,8 +43,9 @@ import { withBase } from "@/lib/url";
       <a class="text-link" href={withBase("downloads/")}>
         Download released applications
       </a>{" "}
-      — platform-specific packages, checksums, runtime requirements and release evidence for the 20
-      existing downloadable projects.
+      — 66 current applications and 108 published package identities, with requirements, exit
+      instructions and matching Windows guides. Extra operating-system assets remain separately
+      qualified.
     </p>
   </header>
   <section class="section-shell section-block" aria-labelledby="reviewed-documentation-title">
@@ -47,6 +55,12 @@ import { withBase } from "@/lib/url";
       67 projects, separate validation reports and Excel evidence for 24 larger projects, and seven
       additional CodeQL configurations. Each project’s documentation links identify the exact files
       and source scope.
+    </p>
+    <p>
+      The original documentation editions and{" "}
+      <a href={withBase("downloads/history/2026-11-10/")}>earlier 20-project release snapshot</a>{" "}
+      retain their dated source identities. The earlier domain review was observed{" "}
+      {new Date(upgradeManifest.collectedAt).toISOString()}.
     </p>
   </section>
   <section class="section-shell section-block" aria-label="Projects in portfolio order">

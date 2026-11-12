@@ -32,9 +32,10 @@ test("released app discovery preserves actual20/62 platform links and source bou
     const page = await context.newPage();
     await page.goto("./updates/");
     await page.getByRole("link", { name: "Download released applications", exact: true }).click();
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-      "Try the released applications.",
-    );
+    await page
+      .getByRole("link", { name: "Earlier 20-project release snapshot", exact: true })
+      .click();
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Earlier release snapshot.");
     const pageCount = Math.ceil(manifest.repositories.length / 12);
     const seenNames: string[] = [],
       seenAssets: string[] = [];
@@ -113,14 +114,16 @@ test("released app discovery preserves actual20/62 platform links and source bou
     expect(seenAssets).toEqual(
       manifest.repositories.flatMap((project) => project.assets.map((asset) => asset.assetUrl)),
     );
-    expect((await request.get(`./downloads/page/${pageCount + 1}/`)).status()).toBe(404);
-    expect((await request.get("./downloads/page/1/")).status()).toBe(404);
+    expect(
+      (await request.get(`./downloads/history/2026-11-10/page/${pageCount + 1}/`)).status(),
+    ).toBe(404);
+    expect((await request.get("./downloads/history/2026-11-10/page/1/")).status()).toBe(404);
     if (pageCount > 1)
       await page
         .getByRole("navigation", { name: "Download pages" })
         .getByRole("link", { name: "Download page 1", exact: true })
         .click();
-    const index = await request.get("./downloads/index.json");
+    const index = await request.get("./downloads/history/2026-11-10/index.json");
     expect(index.status()).toBe(200);
     expect(await index.json()).toEqual(manifest);
     expect(
@@ -151,7 +154,7 @@ test("released app discovery preserves actual20/62 platform links and source bou
   }
 });
 
-test("download accessibility runs in the scanner's normal JavaScript context", async ({
+test("historical download accessibility runs in the scanner's normal JavaScript context", async ({
   page,
   context,
 }, info) => {
@@ -165,7 +168,7 @@ test("download accessibility runs in the scanner's normal JavaScript context", a
     return route.continue();
   });
   await page.setViewportSize({ width: 320, height: 800 });
-  await page.goto("./downloads/");
+  await page.goto("./downloads/history/2026-11-10/");
   const pageCount = Math.ceil(manifest.repositories.length / 12);
   for (let number = 1; number <= pageCount; number++) {
     if (number > 1)

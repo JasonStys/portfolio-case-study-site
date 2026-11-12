@@ -6,8 +6,12 @@
  */
 import { downloadPagePath } from "@/lib/download-pages";
 import { withBase } from "@/lib/url";
-type Props = { current: number; total: number };
-const { current, total } = Astro.props;
+type Props = { current: number; total: number; history?: boolean };
+const { current, total, history = false } = Astro.props;
+const pagePath = (page: number) =>
+  history
+    ? downloadPagePath(page).replace("downloads/", "downloads/history/2026-11-10/")
+    : downloadPagePath(page);
 const pages = Array.from({ length: total }, (_, index) => index + 1);
 ---
 
@@ -17,7 +21,7 @@ const pages = Array.from({ length: total }, (_, index) => index + 1);
   aria-label="Download pages"
 >
   {current > 1 && (
-    <a href={withBase(downloadPagePath(current - 1))} rel="prev">
+    <a href={withBase(pagePath(current - 1))} rel="prev">
       Previous page
     </a>
   )}
@@ -25,7 +29,7 @@ const pages = Array.from({ length: total }, (_, index) => index + 1);
     {pages.map((page) => (
       <li>
         <a
-          href={withBase(downloadPagePath(page))}
+          href={withBase(pagePath(page))}
           aria-label={`Download page ${page}`}
           aria-current={current === page ? "page" : undefined}
         >
@@ -35,7 +39,7 @@ const pages = Array.from({ length: total }, (_, index) => index + 1);
     ))}
   </ol>
   {current < total && (
-    <a href={withBase(downloadPagePath(current + 1))} rel="next">
+    <a href={withBase(pagePath(current + 1))} rel="next">
       Next page
     </a>
   )}

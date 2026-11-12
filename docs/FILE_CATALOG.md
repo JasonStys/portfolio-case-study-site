@@ -49,11 +49,13 @@
 | `docs/LIMITATIONS.md`                                             | Project documentation described by its title and sections.                                                               |
 | `docs/native-application.md`                                      | Project documentation described by its title and sections.                                                               |
 | `docs/OPERATIONS.md`                                              | Project documentation described by its title and sections.                                                               |
+| `docs/portfolio-summary-2026-11-12.md`                            | Project documentation described by its title and sections.                                                               |
 | `docs/PROJECT_UPGRADES.md`                                        | Project documentation described by its title and sections.                                                               |
 | `docs/reports/ACTIONS_REVIEW_2026-10-14.md`                       | Project documentation described by its title and sections.                                                               |
 | `docs/reports/business-standards-sync-2026-10-21.md`              | Project documentation described by its title and sections.                                                               |
 | `docs/reports/code-flow-043-sync-2026-11-10.md`                   | Project documentation described by its title and sections.                                                               |
 | `docs/reports/code-flow-sync-2026-10-21.md`                       | Project documentation described by its title and sections.                                                               |
+| `docs/reports/current-applications-2026-11-12.md`                 | Project documentation described by its title and sections.                                                               |
 | `docs/reports/documentation-refresh-2026-11-09.md`                | Completed documentation validation and explicit historical-evidence boundaries.                                          |
 | `docs/reports/download-refresh-2026-11-09.md`                     | Project documentation described by its title and sections.                                                               |
 | `docs/reports/generated/search-benchmark.json`                    | Repository support file.                                                                                                 |
@@ -86,6 +88,7 @@
 | `scripts/benchmark-search.ts`                                     | Benchmarks inverted-index construction and intersections over deterministic synthetic projects.                          |
 | `scripts/build-native.mjs`                                        | Build the actual Astro portfolio and isolated browser owner into a fresh unsigned Windows x64 application directory.     |
 | `scripts/check-owned-preview.mjs`                                 | Independently checks static-preview isolation, literal paths, HTTP semantics and port refusal.                           |
+| `scripts/current-application-contract.mjs`                        | Checks every current download card and current guide binding against authoritative data, separately from history.        |
 | `scripts/download-page-contract.mjs`                              | Independently checks every generated static download page against complete authoritative evidence and the sitemap.       |
 | `scripts/generate-code-index.mjs`                                 | Generates exact declaration locations for authored TypeScript, JavaScript, Astro, and CSS.                               |
 | `scripts/generate-file-catalog.mjs`                               | Generates a complete repository file catalog from source headers and curated fallbacks.                                  |
@@ -102,8 +105,10 @@
 | `SECURITY.md`                                                     | Supported versions, reporting process, and public-data policy.                                                           |
 | `src/components/ArchitectureFigure.astro`                         | Renders an accessible static diagram of the portfolio build and delivery path.                                           |
 | `src/components/BaseLayout.astro`                                 | Provides shared metadata, structured data, global styles, header, main, and footer.                                      |
-| `src/components/DownloadPage.astro`                               | Presents one bounded static download page with every existing package, runtime and proof boundary.                       |
+| `src/components/CurrentApplication.astro`                         | Presents current released runtime, repository checks and immutable Windows guide as separate identities.                 |
+| `src/components/DownloadPage.astro`                               | Renders current application packages in bounded static pages with separate runtime and guide identities.                 |
 | `src/components/DownloadPagination.astro`                         | Links every static download page with accessible current, previous and next states without JavaScript.                   |
+| `src/components/LegacyDownloadPage.astro`                         | Presents one bounded static download page with every existing package, runtime and proof boundary.                       |
 | `src/components/MetricRail.astro`                                 | Summarizes portfolio breadth with count-based evidence derived from the catalog.                                         |
 | `src/components/NativeContext.astro`                              | Identifies only the packaged offline context while keeping the ordinary website unchanged.                               |
 | `src/components/ProjectCard.astro`                                | Presents one searchable project with outcome, evidence tags, and destination links.                                      |
@@ -126,6 +131,7 @@
 | `src/content/case-studies/spacecraft-flight-software-testbed.md`  | Project documentation described by its title and sections.                                                               |
 | `src/content/case-studies/spacecraft-telemetry-anomaly-studio.md` | Project documentation described by its title and sections.                                                               |
 | `src/content.config.ts`                                           | Defines the schema-validated Markdown collection for consistent engineering case studies.                                |
+| `src/data/current-applications.json`                              | Repository support file.                                                                                                 |
 | `src/data/drone-systems.ts`                                       | Jason Stys's reviewed drone-safety collection and employer reading path.                                                 |
 | `src/data/github-repositories.json`                               | Reviewed GitHub repository metadata cache used by offline builds.                                                        |
 | `src/data/portfolio-priority.json`                                | Canonical reviewed ordering of all 67 public portfolio repositories.                                                     |
@@ -134,6 +140,8 @@
 | `src/data/project-publications.json`                              | Public, immutable Office file identities and documented source revisions for all 67 reviewed projects.                   |
 | `src/data/project-upgrades.json`                                  | Repository support file.                                                                                                 |
 | `src/data/space-systems.ts`                                       | Jason Stys's reviewed civilian space/energy portfolio collection and highlight rationale.                                |
+| `src/lib/application-catalog.ts`                                  | Exposes the validated current application catalog without live requests or private evidence.                             |
+| `src/lib/applications.ts`                                         | Validates the exact66 published Windows application records and immutable guide links.                                   |
 | `src/lib/catalog-revision.ts`                                     | Derives build-only search cache identities from the complete reviewed catalog and metadata timestamp.                    |
 | `src/lib/catalog.ts`                                              | Validates cached GitHub metadata, merges curation, and derives deterministic facets.                                     |
 | `src/lib/download-catalog.ts`                                     | Loads only the coordinator's final public download index after all release checks pass.                                  |
@@ -149,6 +157,9 @@
 | `src/pages/about.astro`                                           | Presents the portfolio owner's engineering focus, working principles, and role alignment.                                |
 | `src/pages/case-studies/[slug].astro`                             | Pre-renders each schema-validated case study with repository and evidence context.                                       |
 | `src/pages/documentation/index.astro`                             | Provides a static reading path to reviewed Word guides, Excel evidence and security reviews.                             |
+| `src/pages/downloads/history/2026-11-10/index.astro`              | Preserves the dated release snapshot; Line locations: docs/CODE_INDEX.md.                                                |
+| `src/pages/downloads/history/2026-11-10/index.json.ts`            | Emits the unchanged dated release manifest; no identities are relabeled.                                                 |
+| `src/pages/downloads/history/2026-11-10/page/[page].astro`        | Generates bounded historical release pages; Line locations: docs/CODE_INDEX.md.                                          |
 | `src/pages/downloads/index.astro`                                 | Keeps the existing downloads entry as canonical static page one of the complete catalog.                                 |
 | `src/pages/downloads/index.json.ts`                               | Emits the complete public download evidence without repeating large digests in HTML.                                     |
 | `src/pages/downloads/page/[page].astro`                           | Generates only existing bounded download pages beyond the canonical first page.                                          |
@@ -165,10 +176,14 @@
 | `src/scripts/native-context.ts`                                   | Enhances only the fixed native scheme with visible offline navigation and manual public-link requests.                   |
 | `src/scripts/project-filter.ts`                                   | Enhances the project catalog with debounced text search, exact facets, URL state, and announcements.                     |
 | `src/styles/global.css`                                           | Defines the evidence-first visual system, responsive layouts, focus states, and motion policy.                           |
+| `tests/e2e/current-applications.spec.ts`                          | Tests current66-project108-payload static download discovery without fetching external binaries.                         |
 | `tests/e2e/downloads.spec.ts`                                     | Tests actual20-project62-payload static download discovery without fetching external binaries.                           |
 | `tests/e2e/portfolio.spec.ts`                                     | Exercises navigation, progressive catalog filtering, URL state, case studies, and accessibility.                         |
 | `tests/e2e/upgrades.spec.ts`                                      | Exercises static upgrade discovery, exact-source links, no-JavaScript browsing and hub limits.                           |
+| `tests/unit/application-catalog.test.ts`                          | Proves every current project deep link reaches its actual static ordinal page and excludes the unreleased hub.           |
+| `tests/unit/applications.test.ts`                                 | Tests the real66-app manifest and independent malformed source/asset/guide counterexamples.                              |
 | `tests/unit/catalog.test.ts`                                      | Verifies cache validation, deterministic catalog merging, featured order, and facets.                                    |
+| `tests/unit/current-application-contract.test.ts`                 | Tests complete current HTML evidence and targeted missing-guide/platform-scope regressions.                              |
 | `tests/unit/download-page-contract.test.ts`                       | Proves actual HTML pagination checks reject missing/duplicate cards, dropped evidence and incomplete navigation.         |
 | `tests/unit/download-pages.test.ts`                               | Independently verifies exact twelve-item partitions, complete curated-range coverage and invalid page admission.         |
 | `tests/unit/downloads.test.ts`                                    | Checks the independent20-project62-payload download fixture and hostile public metadata boundaries.                      |

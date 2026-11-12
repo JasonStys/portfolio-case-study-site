@@ -1,0 +1,87 @@
+---
+/**
+ * @file Presents current released runtime, repository checks and immutable Windows guide as separate identities.
+ * Functions: static optional application rendering; variables: application and guide. Line locations: docs/CODE_INDEX.md.
+ */
+import { applicationFor, applicationDownloadPath } from "@/lib/application-catalog";
+import { withBase } from "@/lib/url";
+type Props = { name: string };
+const application = applicationFor(Astro.props.name);
+const guide = application?.guide;
+---
+
+{application && guide && (
+  <section
+    class="project-detail__section"
+    aria-labelledby="current-application-title"
+    data-current-application={application.name}
+  >
+    <p class="eyebrow">Current application and guide</p>
+    <h2 id="current-application-title">Use version {application.version}</h2>
+    <p>
+      <a href={withBase(applicationDownloadPath(application.name))}>
+        Current packages and checksums
+      </a>{" "}
+      · <a href={application.releaseUrl}>Published release</a>
+    </p>
+    <h3>Requirements</h3>
+    <p>{application.requirements}</p>
+    <h3>Start</h3>
+    <p>{application.start}</p>
+    <h3>Exit and keep your work</h3>
+    <p>{application.exit}</p>
+    <p>
+      Windows launch-and-use acceptance covers the documented workflow. Other platform assets retain
+      their own published metadata and do not imply execution on this PC. Packages are unsigned.
+    </p>
+    <dl class="current-source-identity">
+      <dt>Released runtime source</dt>
+      <dd>
+        <a href={application.runtimeSourceUrl}>
+          <code>{application.runtimeSource}</code>
+        </a>
+      </dd>
+      <dt>Current repository checks</dt>
+      <dd>
+        <a href={application.currentSource.url}>
+          <code>{application.currentSource.commit}</code>
+        </a>
+      </dd>
+      <dt>Checks observed (UTC)</dt>
+      <dd>
+        <time datetime={application.currentSource.observedAt}>
+          {application.currentSource.observedAt}
+        </time>
+      </dd>
+    </dl>
+    <p>
+      These repository runs describe that later source revision, including documentation changes;
+      they are not release jobs or an assertion that every linked package was rebuilt at that
+      revision.
+    </p>
+    <ul class="project-detail__links">
+      {application.currentSource.workflows.map((workflow) => (
+        <li>
+          <a href={workflow.url}>{workflow.name} — current repository run</a>
+        </li>
+      ))}
+    </ul>
+    <h3 id="current-windows-guide-title">Current Windows application guide</h3>
+    <p>
+      <a href={guide.documentUrl}>Illustrated Windows guide — Word</a> ·{" "}
+      <a href={guide.manifestUrl}>Guide identity and validation record — JSON</a>
+    </p>
+    <p>
+      Documents version {guide.version} at released runtime <code>{guide.runtimeSource}</code>.
+      Published from{" "}
+      <a href={`https://github.com/JasonStys/${application.name}/tree/${guide.publicationSource}`}>
+        <code>{guide.publicationSource}</code>
+      </a>
+      . The guide publication commit is separate from its documented application.
+    </p>
+    <p>
+      Word SHA-256: <code>{guide.documentSha256}</code>. JSON SHA-256:{" "}
+      <code>{guide.manifestSha256}</code>. Hashes identify bytes; they are not signatures.
+    </p>
+  </section>
+)}

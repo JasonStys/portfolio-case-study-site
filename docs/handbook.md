@@ -20,6 +20,8 @@ The editable Markdown remains the maintenance source. The Word files are readabl
 
 ### Usage and operations
 
+- [Current 1.1.0 illustrated Windows guide](reports/windows-application-guide-1.1.0.docx), [paired identities](reports/windows-application-guide-1.1.0.json) and [installed application validation](reports/portfolio-application-1.1.0-2026-11-12.md). These describe the released runtime; the earlier project guide above retains its dated source identity.
+
 - [OPERATIONS](OPERATIONS.md)
 - [Offline Windows application](native-application.md)
 - [All67 combined application changes and rationale](portfolio-summary-2026-11-12.md)

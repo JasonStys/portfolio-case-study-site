@@ -19,6 +19,8 @@ validation guide](docs/native-application.md) for the portable package contract,
 profile ownership and current acceptance limits. Publication and installation are
 separate from source validation.
 
+The published application's [illustrated Windows guide](docs/reports/windows-application-guide-1.1.0.docx), [paired identities](docs/reports/windows-application-guide-1.1.0.json) and [installed validation report](docs/reports/portfolio-application-1.1.0-2026-11-12.md) document version 1.1.0 at its exact released source. These later documents do not relabel the immutable native snapshot.
+
 ## Why this exists
 
 A broad GitHub profile can make strong work harder to evaluate. This site creates one consistent navigation layer across software engineering, full-stack systems, AI/ML, analytics, cloud infrastructure, cybersecurity, DevOps, accessible web development, firmware, and game technology.

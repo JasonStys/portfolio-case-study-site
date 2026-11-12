@@ -11,6 +11,7 @@ import publicationSnapshot from "../../src/data/project-publications.json" with 
 import { spaceHighlightNames, spaceSystemsCuration } from "../../src/data/space-systems";
 import { droneSystemsCuration } from "../../src/data/drone-systems";
 import { measuredBodyWidth } from "./layout-diagnostics";
+import { resizeForMobileLayout } from "./viewport-readiness";
 
 test("documentation reading path preserves all projects and exposes reviewed files on mobile", async ({
   page,
@@ -312,7 +313,11 @@ test("drone collection preserves all seven projects, limits and restorable filte
   ).toEqual(droneSystemsCuration.map((project) => project.name));
   await expect(page.getByText(/not real aircraft control/)).toBeVisible();
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
-  await page.setViewportSize({ width: 390, height: 844 });
+  await resizeForMobileLayout(
+    page,
+    { width: 390, height: 844 },
+    "#drone-highlights .featured-grid",
+  );
   expect((await measuredBodyWidth(page, 390, test.info())).width).toBeLessThanOrEqual(390);
   await page.getByRole("link", { name: "Filter the full catalog" }).click();
   await expect(page.getByLabel("Domain")).toHaveValue("Drone safety");

@@ -79,3 +79,32 @@ showing that overflow remains detectable rather than clipped. No data is shorten
 font shrunk, global overflow hidden, threshold raised, deadline changed or retry
 added. Fresh complete hosted browser acceptance remains required for the corrected
 source; this local result is not a claim that a future CI run has passed.
+
+## Live viewport resize lifecycle
+
+The merged-main [Firefox run at 19f3bbe](https://github.com/JasonStys/portfolio-case-study-site/actions/runs/43177006525/job/131043591417)
+passed 23 cases, including both own-page journeys, but the earlier drone collection
+check again captured 401 px immediately after a requested 390 × 844 resize. The
+retained first observation remains a failure. The next diagnostic found the inner
+and visual viewport, root and body widths all 390 px, loaded styles and fonts,
+the mobile media query active, and no offender among all 151 elements. The resize
+API resolved at trace time 20816.079 ms; the following diagnostic began at
+20833.514 ms. This establishes a transient between observations, not a persistent
+overflow element or a proven internal Firefox cause.
+
+The test now registers a resize listener before requesting the viewport, then
+requires two animation-frame opportunities, the requested inner and visual
+dimensions, and the computed mobile one-column grid. This is a new bounded
+eight-second readiness barrier within the original 30-second case deadline.
+The [HTML rendering steps](https://html.spec.whatwg.org/multipage/webappapis.html#update-the-rendering)
+order resize and media evaluation before animation callbacks and style/layout;
+[Playwright's resize API](https://playwright.dev/docs/api/class-page#page-set-viewport-size)
+does not promise completed rendering. The barrier does not certify an OS paint.
+It never reads or polls body width: the original one-shot 390 px assertion and
+failure diagnostics run afterward. A real browser contract holds animation-frame
+delivery to require pending readiness until release; a persistent 640 px element
+must still exceed that same width bound after the barrier. The first width read
+also retains viewport and media context in the same synchronous callback. No
+product styles, data, threshold, retry, native package or release identity change.
+Fresh full 75-case hosted acceptance is required; this contract does not relabel
+the retained failure or claim an unobserved CI result.

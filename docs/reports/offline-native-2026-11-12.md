@@ -56,6 +56,17 @@ complete JSON remains authoritative; sitemap and independent DOM contracts requi
 ordered exact aggregate coverage without omissions/duplicates. Unknown extra page
 and duplicate first-page aliases return 404. No delivery facts were refreshed.
 
+A subsequent clean-source diagnostic found that the visible Back control retained
+its initial response even after main cleared the verification-page history. A fixed
+navigation-state notification now follows actual history/document/hash updates.
+The renderer subscribes before its initial request and does not let an older reply
+overwrite an observed notification. The same real source journey now requires the
+initial disabled states and actual hash/document Back/Forward transitions, with both
+normal exits still zero. The first PR's CodeQL quality warning concerned a direct
+path read in the intentional archive-rename fixture; its postconditions now use
+bounded same-descriptor readers. No query, source or test was excluded. A fresh
+processed analysis must confirm that correction.
+
 Tiny actual ZIP fixtures caught incorrect shared-descriptor stream ownership;
 the reader now uses bounded ranges over one retained descriptor, with one close.
 Independent review identified possible partial output writes. The complete-write

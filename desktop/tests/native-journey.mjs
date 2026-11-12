@@ -164,6 +164,18 @@ async function normalExit() {
 }
 try {
   let page = await entry();
+  await expect(page.locator('[data-native-action="back"]')).toBeDisabled();
+  await expect(page.locator('[data-native-action="forward"]')).toBeDisabled();
+  await page.getByRole("link", { name: "Skip to main content", exact: true }).focus();
+  await page.keyboard.press("Enter");
+  await expect(page.locator('[data-native-action="back"]')).toBeEnabled();
+  await page.locator('[data-native-action="back"]').click();
+  await expect(page).toHaveURL("portfolio://catalog/portfolio-case-study-site/");
+  await expect(page.locator('[data-native-action="back"]')).toBeDisabled();
+  await expect(page.locator('[data-native-action="forward"]')).toBeEnabled();
+  await page.locator('[data-native-action="forward"]').click();
+  await expect(page).toHaveURL("portfolio://catalog/portfolio-case-study-site/#main-content");
+  await expect(page.locator('[data-native-action="forward"]')).toBeDisabled();
   await windowBounds(page);
   const primary = page.getByRole("navigation", { name: "Primary navigation", exact: true });
   await primary.getByRole("link", { name: "Projects", exact: true }).click();
@@ -177,6 +189,11 @@ try {
     .click();
   await expect(page.locator("main h1")).toContainText("code-flow-studio");
   await expect(page.locator('[data-native-action="back"]')).toBeEnabled();
+  await page.locator('[data-native-action="back"]').click();
+  await expect(page.locator("#project-query")).toHaveValue("code flow");
+  await expect(page.locator('[data-native-action="forward"]')).toBeEnabled();
+  await page.locator('[data-native-action="forward"]').click();
+  await expect(page.locator("main h1")).toContainText("code-flow-studio");
   await page.locator('[data-native-action="back"]').click();
   await expect(page.locator("#project-query")).toHaveValue("code flow");
   await page.locator("#project-reset").click();
@@ -196,7 +213,7 @@ try {
     scale: "css",
   });
   steps.push(
-    "same site project search/facets/query history, detail, Back, keyboard About and fragment navigation",
+    "same site project search/facets/query history, detail, initial/hash/document Back and Forward, keyboard About and fragment navigation",
   );
   await application.evaluate(({ dialog, shell }) => {
     globalThis.portfolioOpened = [];

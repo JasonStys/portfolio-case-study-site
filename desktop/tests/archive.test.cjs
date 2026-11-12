@@ -12,6 +12,7 @@ const fs = require("node:fs"),
   os = require("node:os");
 const { crc32, deflateRawSync } = require("node:zlib"),
   { createHash } = require("node:crypto");
+const { readUtf8, readRegular } = require("../files.cjs");
 function fixture(
   t,
   entries = [{ name: "resources/app/main.mjs", body: "// actual inert fixture\n" }],
@@ -214,7 +215,7 @@ test("replacement of the named archive during a held descriptor read is detected
   } finally {
     fs.readSync = original;
   }
-  assert.equal(fs.readFileSync(f.file, "utf8"), "outside replacement sentinel");
-  assert.deepEqual(fs.readFileSync(retained), f.bytes);
+  assert.equal(readUtf8(f.file, 100), "outside replacement sentinel");
+  assert.deepEqual(readRegular(retained, f.bytes.length), f.bytes);
   assert.equal(fs.existsSync(f.output), false);
 });

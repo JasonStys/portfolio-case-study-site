@@ -223,13 +223,13 @@ function configureMenu() {
   );
   const update = () => {
     if (!window || window.isDestroyed()) return;
+    const current = state();
     const menu = Menu.getApplicationMenu();
     menu?.getMenuItemById("native-back") &&
-      (menu.getMenuItemById("native-back").enabled =
-        window.webContents.navigationHistory.canGoBack());
+      (menu.getMenuItemById("native-back").enabled = current.canGoBack);
     menu?.getMenuItemById("native-forward") &&
-      (menu.getMenuItemById("native-forward").enabled =
-        window.webContents.navigationHistory.canGoForward());
+      (menu.getMenuItemById("native-forward").enabled = current.canGoForward);
+    window.webContents.send("portfolio:navigation", current);
   };
   window.webContents.on("did-navigate", update);
   window.webContents.on("did-navigate-in-page", update);

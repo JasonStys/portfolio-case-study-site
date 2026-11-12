@@ -55,7 +55,8 @@
 | 127 | function | `failedOwned` |
 | 155 | function | `configureMenu` |
 | 224 | variable | `update` |
-| 226 | variable | `menu` |
+| 226 | variable | `current` |
+| 227 | variable | `menu` |
 
 ## `desktop/operations.cjs`
 
@@ -99,6 +100,7 @@
 | Line | Kind | Symbol |
 | ---: | --- | --- |
 | 18 | variable | `listener` |
+| 23 | variable | `listener` |
 
 ## `desktop/profile.cjs`
 
@@ -172,29 +174,29 @@
 | ---: | --- | --- |
 | 8 | variable | `test` |
 | 10 | variable | `fs` |
-| 15 | function | `fixture` |
-| 19 | variable | `root` |
-| 21 | variable | `file` |
-| 24 | variable | `offset` |
-| 25 | variable | `local` |
-| 29 | variable | `name` |
-| 34 | variable | `header` |
-| 44 | variable | `directory` |
-| 63 | variable | `centralBytes` |
-| 70 | variable | `bytes` |
-| 72 | variable | `evidence` |
-| 85 | variable | `save` |
-| 92 | variable | `evidence` |
-| 120 | variable | `original` |
-| 133 | variable | `g` |
-| 153 | variable | `central` |
-| 165 | variable | `calls` |
-| 180 | variable | `g` |
-| 193 | variable | `replacement` |
-| 196 | variable | `changed` |
-| 197 | variable | `originalIdentity` |
-| 200 | variable | `count` |
-| 201 | variable | `reading` |
+| 16 | function | `fixture` |
+| 20 | variable | `root` |
+| 22 | variable | `file` |
+| 25 | variable | `offset` |
+| 26 | variable | `local` |
+| 30 | variable | `name` |
+| 35 | variable | `header` |
+| 45 | variable | `directory` |
+| 64 | variable | `centralBytes` |
+| 71 | variable | `bytes` |
+| 73 | variable | `evidence` |
+| 86 | variable | `save` |
+| 93 | variable | `evidence` |
+| 121 | variable | `original` |
+| 134 | variable | `g` |
+| 154 | variable | `central` |
+| 166 | variable | `calls` |
+| 181 | variable | `g` |
+| 194 | variable | `replacement` |
+| 197 | variable | `changed` |
+| 198 | variable | `originalIdentity` |
+| 201 | variable | `count` |
+| 202 | variable | `reading` |
 
 ## `desktop/tests/electron-failure-entry.mjs`
 
@@ -255,17 +257,17 @@
 | 156 | function | `normalExit` |
 | 157 | variable | `exited` |
 | 166 | variable | `page` |
-| 168 | variable | `primary` |
-| 230 | variable | `rejected` |
-| 243 | variable | `outside` |
-| 253 | variable | `beforeWindows` |
-| 262 | variable | `expectedNames` |
-| 267 | variable | `names` |
-| 274 | variable | `actual` |
-| 292 | variable | `document` |
-| 331 | variable | `exited` |
-| 366 | variable | `failureCleanup` |
-| 369 | variable | `ended` |
+| 180 | variable | `primary` |
+| 247 | variable | `rejected` |
+| 260 | variable | `outside` |
+| 270 | variable | `beforeWindows` |
+| 279 | variable | `expectedNames` |
+| 284 | variable | `names` |
+| 291 | variable | `actual` |
+| 309 | variable | `document` |
+| 348 | variable | `exited` |
+| 383 | variable | `failureCleanup` |
+| 386 | variable | `ended` |
 
 ## `desktop/tests/operations.test.cjs`
 
@@ -1367,19 +1369,22 @@
 
 | Line | Kind | Symbol |
 | ---: | --- | --- |
-| 23 | function | `initializeNativeContext` |
-| 24 | variable | `notice` |
-| 25 | variable | `output` |
-| 26 | variable | `version` |
-| 28 | variable | `state` |
-| 33 | variable | `back` |
-| 34 | variable | `forward` |
-| 38 | variable | `target` |
-| 43 | variable | `action` |
-| 57 | variable | `link` |
-| 60 | variable | `original` |
-| 61 | variable | `target` |
-| 91 | variable | `bridge` |
+| 24 | function | `initializeNativeContext` |
+| 25 | variable | `notice` |
+| 26 | variable | `output` |
+| 27 | variable | `version` |
+| 29 | variable | `back` |
+| 30 | variable | `forward` |
+| 31 | variable | `closing` |
+| 32 | variable | `receivedNavigation` |
+| 33 | variable | `applyNavigation` |
+| 43 | variable | `state` |
+| 50 | variable | `target` |
+| 55 | variable | `action` |
+| 69 | variable | `link` |
+| 72 | variable | `original` |
+| 73 | variable | `target` |
+| 104 | variable | `bridge` |
 
 ## `src/scripts/project-filter.ts`
 

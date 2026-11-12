@@ -18,6 +18,7 @@ type NativeBridge = Readonly<{
   navigate: (action: "back" | "forward" | "home") => Promise<void>;
   quit: () => void;
   onClosing: (callback: () => void) => () => void;
+  onNavigation: (callback: (value: NativeState) => void) => () => void;
 }>;
 
 async function initializeNativeContext(api: NativeBridge): Promise<void> {
@@ -25,15 +26,26 @@ async function initializeNativeContext(api: NativeBridge): Promise<void> {
   const output = notice?.querySelector<HTMLElement>("[data-native-status]");
   const version = notice?.querySelector<HTMLElement>("[data-native-version]");
   if (!notice || !output || !version) throw new Error("Native portfolio controls are missing.");
+  const back = notice.querySelector<HTMLButtonElement>('[data-native-action="back"]');
+  const forward = notice.querySelector<HTMLButtonElement>('[data-native-action="forward"]');
+  let closing = false;
+  let receivedNavigation = false;
+  const applyNavigation = (value: NativeState): void => {
+    if (closing) return;
+    if (back) back.disabled = !value.canGoBack;
+    if (forward) forward.disabled = !value.canGoForward;
+  };
+  // Subscribe before the initial request. A later history notification must not be replaced by an earlier reply.
+  api.onNavigation((value) => {
+    receivedNavigation = true;
+    applyNavigation(value);
+  });
   const state = await api.state();
   if (!state.offline) throw new Error("Offline portfolio identity is missing.");
   document.documentElement.dataset.nativePortfolio = "";
   notice.hidden = false;
   version.textContent = `v${state.version} · snapshot ${state.source.slice(0, 12)}${state.sourceDirty ? " · local candidate" : ""}`;
-  const back = notice.querySelector<HTMLButtonElement>('[data-native-action="back"]');
-  const forward = notice.querySelector<HTMLButtonElement>('[data-native-action="forward"]');
-  if (back) back.disabled = !state.canGoBack;
-  if (forward) forward.disabled = !state.canGoForward;
+  if (!receivedNavigation) applyNavigation(state);
   notice.addEventListener("click", (event) => {
     const target =
       event.target instanceof Element
@@ -82,6 +94,7 @@ async function initializeNativeContext(api: NativeBridge): Promise<void> {
     true,
   );
   api.onClosing(() => {
+    closing = true;
     output.textContent = "Finishing the accepted public-link request before closing...";
     for (const button of notice.querySelectorAll<HTMLButtonElement>("button"))
       button.disabled = true;

@@ -30,7 +30,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4.39.0; coordinated version
+        uses: github/codeql-action/init@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.0; coordinated version
         with:
           languages: javascript-typescript
           build-mode: none
@@ -38,7 +38,7 @@ jobs:
           trap-caching: false
           dependency-caching: false
       - name: Analyze
-        uses: github/codeql-action/analyze@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4.39.0; coordinated version
+        uses: github/codeql-action/analyze@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.0; coordinated version
         with:
           category: /language:javascript-typescript
           upload-database: false
@@ -53,7 +53,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Initialize CodeQL for Actions
-        uses: github/codeql-action/init@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4.39.0; coordinated version
+        uses: github/codeql-action/init@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.0; coordinated version
         with:
           languages: actions
           build-mode: none
@@ -61,7 +61,7 @@ jobs:
           trap-caching: false
           dependency-caching: false
       - name: Analyze Actions
-        uses: github/codeql-action/analyze@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4.39.0; coordinated version
+        uses: github/codeql-action/analyze@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.0; coordinated version
         with:
           category: /language:actions
           upload-database: false
